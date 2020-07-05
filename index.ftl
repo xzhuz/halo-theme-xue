@@ -25,14 +25,14 @@
                         <div class="post-card mt-4">
                             <header class="card-header card-img">
                                 <#if post.thumbnail?? && post.thumbnail!=''>
-                                    <a data-ajax href="${post.fullPath!}"
+                                    <a  href="${post.fullPath!}"
                                        style=" background-image: url(${post.thumbnail!''});"
                                        class="img-cover img-cover-bg">
                                     </a>
                                 <#elseif settings.card_random_cover!false>
                                     <#assign x = "${settings.card_random_cover_img_num?number}" />
                                     <#assign thumbnailIndex ="${post_index % (x?number)}"/>
-                                    <a data-ajax href="${post.fullPath!}" class="img-cover img-cover-bg"
+                                    <a href="${post.fullPath!}" class="img-cover img-cover-bg"
                                         style="background-image: url(${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix});"
                                     >
                                     </a>

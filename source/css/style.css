@@ -1219,7 +1219,7 @@ input[type="checkbox"]:checked + label:after {
   min-height: 4rem;
   width: 100%;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 100;
   padding: 0;
   display: block;
   transition: all 0.2s ease-in-out;
@@ -1691,6 +1691,11 @@ a.no-thumb {
   top: 0;
   width: 100%;
   height: 100% !important;
+}
+.author-image.cover {
+  background-repeat: no-repeat !important;
+  background-position: center center!important;
+  background-size: cover!important;
 }
 @media all and (min-width: 800px) {
   .post-card {
