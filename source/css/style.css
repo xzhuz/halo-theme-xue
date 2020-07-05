@@ -1697,6 +1697,14 @@ a.no-thumb {
   background-position: center center!important;
   background-size: cover!important;
 }
+.post-card {
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.post-card:hover {
+  box-shadow: 0 1em 1.5em -0.625em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+}
 @media all and (min-width: 800px) {
   .post-card {
     max-width: none;
@@ -2188,6 +2196,7 @@ td .hljs-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 .modal__container {
   background-color: #fff;
