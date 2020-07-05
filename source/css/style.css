@@ -374,6 +374,7 @@ footer.footer .offsite-links a {
   position: relative;
   text-align: center;
   width: 40px;
+  padding-left: 1px;
 }
 .circle:after {
   border-radius: 50%;

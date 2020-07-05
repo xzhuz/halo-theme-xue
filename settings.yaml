@@ -165,17 +165,6 @@ post:
           label: 开启
         - value: false
           label: 关闭
-    open_read_progress:
-      name: open_read_progress
-      label: 是否使用阅读进度条
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 显示
-        - value: false
-          label: 关闭
     enabled_mathjax:
       name: enabled_mathjax
       label: Mathjax
@@ -187,17 +176,17 @@ post:
           label: 开启
         - value: false
           label: 关闭
-    enabled_mermaid:
-      name: enabled_mermaid
-      label: Mermaid
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+#    enabled_mermaid:
+#      name: enabled_mermaid
+#      label: Mermaid
+#      type: radio
+#      data-type: bool
+#      default: false
+#      options:
+#        - value: true
+#          label: 开启
+#        - value: false
+#          label: 关闭
 title:
   label: 页面标题
   items:
