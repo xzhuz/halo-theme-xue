@@ -1,13 +1,13 @@
 var coffeeModal = {
     toggleCoffeeModal: function () {
         $('#buyCoffee').on('click', function () {
-            let coffeeModal = $('#coffeeModal');
+            var coffeeModal = $('#coffeeModal');
             coffeeModal.addClass('is-open');
             coffeeModal.attr('aria-hidden', 'false');
         });
 
         $('#closeCoffeeModalBtn').on('click', function () {
-            let coffeeModal = $('#coffeeModal');
+            var coffeeModal = $('#coffeeModal');
             coffeeModal.attr('aria-hidden', 'true');
             setTimeout(function () {
                 coffeeModal.removeClass('is-open');

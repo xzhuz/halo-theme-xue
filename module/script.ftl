@@ -14,12 +14,28 @@
 <#-- 相册相关的js -->
 <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>
 
+<#--  顶部菜单  -->
+<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/simply-nav.js"></script>
+<#--右下角按钮-->
+<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/moon.js"></script>
+
 <#--目录-->
 <#if settings.post_toc!true>
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
 </#if>
 
 <#if settings.enabled_mathjax!true>
+    <script type="javascript">
+        var katex_config = {
+            delimiters:
+                [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                ]
+        }
+    </script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
             onload="if (document.getElementById('write') ) {renderMathInElement(document.getElementById('write'),katex_config)}"></script>
