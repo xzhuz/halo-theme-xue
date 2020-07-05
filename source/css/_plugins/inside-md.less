@@ -1,0 +1,431 @@
+
+p {
+  font-family: "Josefin Sans", "Noto Sans SC", -apple-system, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #363636;
+}
+
+h1 {
+  font-size: 25px;
+  font-style: normal;
+  line-height: 2;
+  font-weight: 900;
+  color: #363636;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 2;
+  color: #363636;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  color: #363636;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  color: #363636;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h5,
+h6 {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  color: #363636;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+a {
+  cursor: pointer
+}
+
+strong, b {
+  font-weight: 900;
+}
+
+canvas,
+iframe,
+video {
+  display: block;
+  margin: auto;
+  max-width: 100%
+}
+
+img {
+  max-width: 100%;
+  //margin-top: 0.2em;
+  //margin-bottom: 0.2em;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0
+}
+
+table {
+  padding: 0;
+  word-break: initial;
+}
+
+table tr {
+  border-top: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #dfe2e5;
+  border-bottom: 0;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+mark {
+  background: #FFFD54;
+  font-weight: 500;
+}
+
+td,
+th {
+  padding: 0
+}
+
+
+code,
+pre {
+  font-size: 85%;
+  font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
+  font-weight: normal;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial
+}
+
+code {
+  font-size: .9em;
+  color: #333333; /*  #537AA2;  */
+  /*    border: 1px solid #d0d0d0;  */
+  font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
+  padding: .3em .3em;
+  border-radius: 5px;
+  background: #F3F4F4; /* #F7F7F7 #F3F4F4 #F5F7FA*/
+}
+
+pre {
+  padding: .75rem 1rem;
+  line-height: 1.6;
+  overflow-wrap: normal;
+  border: 1px solid;
+  border-color: inherit
+}
+
+pre pre {
+  border: 0
+}
+
+pre code {
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: inherit
+}
+
+li .mathjax-block, li p {
+  margin: .1rem 0;
+}
+
+input,
+textarea {
+  border: 1px solid;
+  color: inherit;
+  font-family: inherit;
+  padding: 4px 6px;
+  background: none
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .5
+}
+
+input:focus,
+textarea:focus {
+  outline: none
+}
+
+blockquote {
+  position: relative;
+  margin: 2em 0;
+  padding-left: 24px;
+  background-color: rgba(96,125,139,.05);
+}
+
+blockquote:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  bottom: 0;
+  background-color: currentColor;
+  content: "";
+  opacity: .2
+}
+
+ul > li > ul > li {
+  list-style-type: circle;
+}
+
+ul > li > ul > li > ul > li {
+  list-style-type: square;
+}
+
+ol,
+ul {
+  padding-left: 2em;
+  line-height: 2;
+}
+
+ol > li {
+  list-style-type: decimal
+}
+
+ol > li > ol > li {
+  list-style-type: lower-alpha
+}
+
+ol > li > ol > li > ol > li {
+  list-style-type: lower-roman
+}
+
+#write {
+  font-size: 1.2rem;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+  margin-left: -1.3rem;
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: auto;
+}
+
+#write h1::before, #write h2::before, #write h3::before, #write h4::before, #write h5::before, #write h6::before {
+  position: relative;
+  top: .1rem;
+  right: .5rem;
+  //right: calc(100% + 10px);
+  bottom: 0;
+  color: #b4b4b4;
+  font-size: .8rem;
+  font-weight: bold;
+  font-variant: 'small-caps';
+  border: 0;
+  border-radius: 0;
+  left: auto;
+  float: none;
+  padding: 0;
+  vertical-align: baseline;
+  line-height: 2;
+}
+
+#write h1 {
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 2;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#write h1::before {
+  content: 'H1';
+  bottom: .45rem;
+}
+
+#write h2 {
+  font-size: 20px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 2;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#write h2::before {
+  content: 'H2';
+  bottom: .2rem;
+}
+
+#write h3 {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#write h3::before {
+  content: 'H3';
+  bottom: .18rem;
+}
+
+#write h4 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#write h4::before {
+  content: 'H4';
+  bottom: .15rem;
+}
+
+#write h5, #write h6 {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 2;
+  font-style: normal;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#write h5::before, #write h6::before {
+  bottom: .1rem;
+}
+
+#write h5::before {
+  content: 'H5';
+}
+
+#write h6::before {
+  content: 'H6';
+}
+
+#write strong {
+  font-weight: 900;
+  padding: 0 1px;
+}
+
+
+#write ol > li, #write ul > li {
+  //color: #db4d52;
+  list-style: disc;
+}
+
+#write ol > li > *, #write ul > li > * {
+  color: #333;
+}
+
+#write ol > li > *:not(ol):not(ul), #write ul > li > *:not(ol):not(ul) {
+  padding-left: .25rem;
+}
+
+#write ul > li > ul > li {
+  list-style-type: circle;
+}
+
+#write ul > li > ul > li > ul > li {
+  list-style-type: square;
+}
+
+#write p {
+  margin: 1rem auto;
+  line-height: 2;
+}
+
+#write a {
+  color: var(--base-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: pointer;
+}
+
+#write pre {
+  padding: 10px;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border: 0;
+  border-radius: 3px;
+  color: #777777;
+  margin-top: 0 !important;
+}
+
+
+.code-tooltip {
+  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+  border-top: 1px solid #eef2f2;
+}
+
+.gist .gist-meta {
+  background: none !important
+}
+
+.gist .gist-file {
+  border-color: #eee !important;
+  border-radius: 3px !important
+}
+
+.gist .gist-data {
+  padding: .4em 0 !important;
+  border-color: #eee !important;
+  border-radius: 3px 3px 0 0 !important
+}
+
+@media only screen and (max-width: 640px) {
+  #write {
+    font-size: 1rem;
+  }
+
+  #write p {
+    line-height: 1.68;
+  }
+}

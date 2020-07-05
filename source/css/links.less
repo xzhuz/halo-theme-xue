@@ -1,0 +1,84 @@
+.lk-card-im  {
+  width: 240px;
+  max-width: 300px;
+  margin: 20px 10px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0.25rem 1rem rgba(48,55,66,.15);
+  color: #4a4a4a;
+  display: block;
+  transition: all .3s;
+}
+
+.lk-card-im .media {
+  align-items: flex-start;
+  display: flex;
+  text-align: left;
+}
+
+.lk-card-im:hover {
+  box-shadow: 0 1rem 2rem 0 rgba(48,55,66,.15)!important;
+  color: #4a4a4a;
+  transform: translateY(-6px);
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+}
+
+.media-left {
+  margin-right: 1rem;
+}
+
+.media-left, .media-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.media-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+}
+
+.media-content p.lk-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  max-width: 160px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.media-content p.lk-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  margin: 0;
+  max-width: 160px;
+  line-height: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.media-left .image img {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+figure {
+  margin: 0;
+}
+
+.image {
+  display: block;
+  position: relative;
+}
+
+.image.is-64x64 {
+  height: 64px;
+  width: 64px;
+}

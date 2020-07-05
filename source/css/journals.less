@@ -1,0 +1,275 @@
+.tree-hole li, .tree-hole ol, .tree-hole ul {
+    list-style: none;
+}
+#tree-hole {
+    //background-color: #ffffff;
+    padding: 20px 20px 10px;
+    max-width: 960px;
+    margin: auto;
+}
+
+#tree-hole .comment-list:before {
+    background-color: #ffa331;
+}
+
+.tree-hole-box {
+    letter-spacing: .1em;
+    font-weight: 400;
+    //box-shadow: 0 0 10px #bfbfbf;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.tree-hole-box p {
+    color: #7b7b7b;
+}
+
+.tree-hole-box a {
+    color: #000000;
+}
+
+.tree-hole-box a:hover {
+    color: var(--base-color);
+}
+
+
+.tree-hole-go {
+    color: rgba(3, 169, 244, .7);
+}
+
+#tree-hole .comment-list {
+    padding: 100px 0 20px;
+    position: relative;
+    list-style: none;
+}
+
+#tree-hole .comment-list:before {
+    content: '';
+    width: 4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+@keyframes ShadowFlashing {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff2f00;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+#tree-hole .comment-list:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 4px solid #E91E63;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    animation: ShadowFlashing 1.5s linear infinite;
+}
+
+.tree-hole-body > div {
+    position: relative;
+}
+
+.tree-hole-body > div:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 4px solid #2196F3;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.tree-hole-body > div > img {
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.tree-hole-body > div > img:hover, .tree-hole-box:hover {
+    transform: translateY(-5px);
+    /*cursor: pointer;*/
+}
+
+#tree-hole .comment-list {
+    margin-left: 0 !important;
+}
+
+.tree-hole-author{
+    color:#000000;
+    padding: 1px 10px;
+}
+
+.tree-hole-box {
+    display: inline-block;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: all .3s;
+    /*box-shadow: 0 0 10px #bfbfbf;*/
+}
+
+.tree-hole-box p {
+    padding: 5px 10px;
+    line-height: 30px;
+}
+
+.tree-hole-go {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tree-hole-go-aircraft {
+    //font-family: icomoon;
+    font-size: 20px;
+    color: rgba(3, 169, 244, .7);
+}
+
+@media (min-width: 768px) {
+    #tree-hole .comment-list:before, #tree-hole .comment-list:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .tree-hole-body > div {
+        width: 50%;
+    }
+
+    .tree-hole-odd > div {
+        text-align: right;
+    }
+
+    .tree-hole-odd > div:before {
+        right: 0;
+        transform: translateX(10px);
+    }
+
+    .tree-hole-even > div {
+        margin-left: 50%;
+    }
+
+    .tree-hole-even > div:before {
+        left: 0;
+        transform: translateX(-10px);
+    }
+
+    .tree-hole-odd > div > img {
+        right: 20px;
+    }
+
+    .tree-hole-even > div > img {
+        left: 20px;
+    }
+
+    .tree-hole-odd .tree-hole-box {
+        margin-right: 85px;
+        text-align: left;
+    }
+
+    .tree-hole-even .tree-hole-box {
+        margin-left: 85px;
+    }
+
+    .tree-hole-odd .tree-hole-box:before {
+        right: -10px;
+        border-width: 15px 0 5px 10px;
+        border-color: transparent transparent transparent rgba(0, 0, 0, .05);
+    }
+
+    .tree-hole-even .tree-hole-box:before {
+        left: -10px;
+        border-width: 15px 10px 5px 0;
+        border-color: transparent rgba(0, 0, 0, .05) transparent transparent;
+    }
+}
+
+@media (max-width: 767px) {
+    #tree-hole .comment-list:before {
+        left: 10px;
+    }
+
+    #tree-hole .comment-list:after {
+        left: 2px;
+    }
+
+    .tree-hole-body > div {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .tree-hole-body > div:before {
+        transform: translateX(2px);
+    }
+
+    .tree-hole-body > div > img {
+        left: 40px;
+    }
+
+    .tree-hole-box {
+        margin-left: 105px;
+    }
+
+    .tree-hole-box:before {
+        left: -10px;
+        border-width: 15px 10px 5px 0;
+        border-color: transparent rgba(0, 0, 0, .05) transparent transparent;
+    }
+}
+
+
+.page-navigator li {
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+}
+
+.page-navigator li a, .page-navigator li span {
+    //font-family: icomoon;
+    color: #8590a6;
+    padding: 5px 20px;
+    transition: all .3s linear;
+}
+
+.page-navigator .current:before {
+    content: "";
+    position: absolute;
+    bottom: -5PX;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #29d;
+}
+
+.comment-page {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.tree-hole-box:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    border-style: solid;
+}
+
+#tree-hole ol > li {
+    list-style-type: none !important;
+}

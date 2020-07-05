@@ -1,0 +1,80 @@
+.bg-cover {
+    background-color: #101012;
+    display: table;
+    height: 480px;
+    position: relative;
+    width: 100%;
+    opacity: .95;
+}
+
+.cover-bg img {
+    height: 100%;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.cover-bg {
+    -webkit-animation: fadein 1s ease-in-out;
+    animation: fadein 1s ease-in-out;
+    bottom: 0;
+    left: 0;
+    opacity: .3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.cover-content {
+    height: 480px;
+}
+
+.cover-content .inner {
+    padding-bottom: 120px;
+    padding-top: 170px;
+    height: 480px;
+}
+
+.cover-content .inner .slogan {
+    color: #d4d3d3;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card {
+    min-width: 400px;
+}
+
+
+/* Animations */
+@-moz-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}

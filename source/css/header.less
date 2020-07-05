@@ -1,0 +1,58 @@
+.han-extra {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-items    : center;
+  height         : 58px;
+  margin-left: auto !important;
+}
+
+//.nav-list > .list > .item > .link {
+//  font-size: 1rem !important;
+//}
+
+.show-sm {
+  display: none !important;
+}
+
+.show-lg {
+  display: flex !important;;
+}
+
+@media screen and (max-width: 800px) {
+  .han-extra {
+    top     : 0;
+    position: absolute;
+    right   : 5%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .show-lg {
+    display: none !important;;
+  }
+
+  .show-sm {
+    display: flex !important;
+  }
+}
+
+.navbar-search {
+  height : 58px;
+  padding: 18px 12px 18px 12px;
+  color: #e0e0e0;
+}
+
+// ********** 夜晚模式相关css 开始 ***********
+.luxbar-item-nohover {
+  background: none !important;
+}
+
+.day-night-mode {
+  height : 58px;
+  padding: 18px 12px 18px 12px;
+}
+
+// ********** 夜晚模式相关css 结束 ***********

@@ -1,0 +1,68 @@
+// toggle 框样式
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + label {
+  transition: all 0.3s ease-in-out;
+}
+.switch_Word + label {
+  background-color: rgb(230,230,222);
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  //box-shadow: 0.2px 0.2px 1px 0.5px rgb(180,180,180);
+  width: 52px;
+}
+
+input[type="checkbox"]:checked + label:before, input[type="checkbox"]:checked + label i:before, input[type="checkbox"]:not(:checked) + label i:before, input[type="checkbox"]:checked + label i:after, input[type="checkbox"]:not(:checked) + label i:after, input[type="checkbox"]:not(:checked) + label:before {
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:not(:checked) + label:after {
+  transition: all 0.3s ease-out;
+}
+
+
+.switch_Word:checked + label:before {
+  content: '🌚';
+  font-size: 16px;
+  left: 5px;
+  color: #fff;
+}
+.switch_Word + label:before {
+  content: '🌝';
+  height: 20px;
+  width: 20px;
+  color: rgb(180,180,180);
+  font-size: 16px;
+  position: absolute;
+  //top: 2px;
+  left: 30px;
+}
+
+.switch_Word + label:after {
+  border-radius: 50%;
+  background-color: #fff;
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  /* box-shadow: 0.2px 0.2px 1px 0.5px rgb(180,180,180); */
+  //border: 2px solid rgb(156,140,197);
+}
+
+.switch_Word + label {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+input[type="checkbox"]:checked + label:after {
+  transition: all 0.3s ease-in;
+}
+.switch_Word:checked + label:after {
+  //border: 2px solid #fff;
+  left: 30px;
+}

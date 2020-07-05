@@ -1,0 +1,109 @@
+.arch-year {
+  position: relative;
+  padding: 2.15rem 0;
+  border-color: inherit;
+}
+
+.arch-year:first-of-type {
+  margin-top: -2.15rem;
+}
+
+.arch-year:before {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  height: 100%;
+  border-left: 1px solid;
+  border-color: inherit;
+  content: "";
+}
+
+.year-title {
+  margin: 0;
+  line-height: 2.4em;
+}
+
+.bg-fff,.af-bg-fff:after {
+  background: #fff;
+}
+
+.mh-hd:after {
+  position: absolute;
+}
+
+.mh-hd {
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0 .6em;
+  border-radius: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 2;
+  transform: translate3d(-50%,-50%,0) scale3d(.75,.75,1);
+}
+
+.mh-hd:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: inherit;
+  content: "";
+  opacity: .63;
+  transition: opacity .4s;
+}
+
+.mh-bg {
+  background-color: #607d8b;
+  background-image: none;
+}
+
+.ah-hf {
+  position: relative;
+  display: block;
+  margin-left: 1.5rem;
+  padding: .5rem 0;
+  line-height: 2rem;
+  transition: color .15s;
+}
+
+.ah-hf:before {
+  position: absolute;
+  top: 1.5rem;
+  left: -1rem;
+  content: "-";
+  opacity: .63;
+  transform: translateY(-50%);
+}
+
+.ah-dt {
+  float: left;
+  padding-right: .5rem;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  font-size: .85rem;
+  opacity: .63;
+}
+
+.ah-tt {
+  display: table-cell;
+  font-size: 1.15rem;
+}
+
+.ah-hv:hover {
+  opacity: 0.7;
+}
+
+.ct-f-size {
+  font-size: 1.25rem;
+}
+
+.op-10 {
+  opacity: 1;
+}
+
+.op-06 {
+  opacity: 0.63;
+}

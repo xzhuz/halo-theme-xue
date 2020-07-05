@@ -1,0 +1,328 @@
+# configurations
+# 详情请参考：https://halo.run/develop/theme.html#settings-yaml
+genernal:
+  label: 基本设置
+  items:
+    home_title:
+      name: home_title
+      label: 首页展示博客名
+      type: text
+      placeholder: '用于首页展示名字'
+      description: '注意：如填写，会覆盖原有博客名'
+    home_description:
+      name: home_description
+      label: 首页描述
+      type: text
+      placeholder: '用于首页描述'
+    base_color:
+      name: base_color
+      label: 网站主题色
+      type: color
+      default: '#2474b5'
+      placeholder: '网站主题色'
+    home_cover:
+      name: home_cover
+      label: 首页背景
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    header_logoimg:
+      name: header_logoimg
+      label: 菜单 Logo
+      type: attachment
+    card_random_cover:
+      name: card_random_cover
+      label: 卡篇文章风格随机选择封面
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: '即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/archives/random-thumbnail'
+    card_random_cover_img_suffix:
+      name: card_random_cover_img_suffix
+      label: 卡篇文章风格随机选择封面后缀
+      type: radio
+      data-type: string
+      default: png
+      options:
+        - value: png
+          label: png
+        - value: jpeg
+          label: jpeg
+        - value: jpg
+          label: jpg
+      description: '随机封面后缀'
+    card_random_cover_img_num:
+      name: card_random_cover_img_num
+      label: 卡篇文章风格随机选择封面数量
+      type: number
+      default: 4
+    auto_night_mode:
+      name: auto_night_mode
+      label: 暗夜模式总开关
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    night_mode:
+      name: night_mode
+      label: 暗夜模式顶部按钮(需要先打开暗黑模式总开关)
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    Icp:
+      name: Icp
+      label: 'ICP 备案号'
+      type: text
+      placeholder: '填入 ICP 备案号，没有则不填. '
+    PublicSecurityRecord:
+      name: PublicSecurityRecord
+      label: '网安备案号'
+      type: text
+      placeholder: '填入网安备案号代码，没有则不填'
+    QR_code_zfb:
+      name: QR_code_zfb
+      label: '支付宝二维码链接'
+      type: attachment
+      placeholder: '支付宝收款二维码链接，不填不显示'
+    QR_code_wx:
+      name: QR_code_wx
+      label: '微信二维码链接'
+      type: attachment
+      placeholder: '微信收款二维码链接，不填不显示'
+head_img:
+  label: 网页首部图片
+  items:
+    archives_patternimg:
+      name: archives_patternimg
+      label: 归档页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    links_patternimg:
+      name: links_patternimg
+      label: 友情链接页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    tag_patternimg:
+      name: tag_patternimg
+      label: 标签页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    categories_patternimg:
+      name: categories_patternimg
+      label: 分类页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    journals_patternimg:
+      name: journals_patternimg
+      label: 日志下文章页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    photos_patternimg:
+      name: photos_patternimg
+      label: 相册页面头部装饰图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+    links_placeholder:
+      name: links_placeholder
+      label: 友情链接默认用户头像
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+post:
+  label: 文章页
+  items:
+    post_toc:
+      name: post_toc
+      label: 目录
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    post_nepre:
+      name: post_nepre
+      label: 下一篇
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    open_read_progress:
+      name: open_read_progress
+      label: 是否使用阅读进度条
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 关闭
+    enabled_mathjax:
+      name: enabled_mathjax
+      label: Mathjax
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enabled_mermaid:
+      name: enabled_mermaid
+      label: Mermaid
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+title:
+  label: 页面标题
+  items:
+    links_title:
+      name: links_title
+      label: 友链页面标题
+      type: text
+      default: 友链
+    jounarls_title:
+      name: jounarls_title
+      label: 日志页面标题
+      type: text
+      default: 日志
+    tags_title:
+      name: tags_title
+      label: 标签页面标题
+      type: text
+      default: 标签列表
+    categories_title:
+      name: categories_title
+      label: 分类列表页面标题
+      type: text
+      default: 分类列表
+    achieve_title:
+      name: achieve_title
+      label: 归档页面标题
+      type: text
+      default: 归档
+    photos_title:
+      name: photos_title
+      label: 相册页面标题
+      type: text
+      default: 相册
+social:
+  label: 社交网络
+  items:
+    #    wechat:
+    #      name: wechat
+    #      label: 微信二维码
+    #      type: attachment
+    sina:
+      name: sina
+      label: 新浪微博
+      type: text
+      placeholder: '用于展示底部新浪微博社交信息'
+      description: '新浪微博主页链接'
+    telegram:
+      name: telegram
+      label: Telegram
+      type: text
+      placeholder: '用于展示底部 Telegram 社交信息'
+      description: 'Telegram 用户名'
+    twitter:
+      name: twitter
+      label: Twitter
+      type: text
+      placeholder: '用于展示底部 Twitter 社交信息'
+      description: 'Twitter 主页链接'
+    qq:
+      name: qq
+      label: 腾讯 QQ
+      type: text
+      placeholder: '用于展示底部 QQ 社交信息'
+      description: 'QQ 号码'
+    github:
+      name: github
+      label: Github
+      type: text
+      placeholder: '用于展示底部 Github 社交信息'
+      description: 'GitHub 主页链接'
+    zhihu:
+      name: zhihu
+      label: 知乎
+      type: text
+      placeholder: '用于展示底部知乎社交信息'
+      description: '知乎主页链接'
+    mail:
+      name: mail
+      label: 邮箱
+      type: text
+      placeholder: '用于展示底部邮箱社交信息'
+      description: '邮箱地址'
+    rss:
+      name: rss
+      label: 订阅按钮
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+#experimental:
+#  label: 实验性功能
+#  items:
+#    pjax_enabled:
+#      name: pjax_enabled
+#      label: 全局 Pjax
+#      type: radio
+#      data-type: bool
+#      default: false
+#      options:
+#        - value: true
+#          label: 开启
+#        - value: false
+#          label: 关闭
+other:
+  label: 其他
+  items:
+#    Aplayer:
+#      name: Aplayer
+#      label: Aplayer吸底播放器
+#      type: text
+#      placeholder: '网易云歌单id'
+#      description: '网易云歌单id, 比如: 60198. 暂时就只能这样子了, 后面再优化吧'
+    xiang_ying_xiong_zhi_jing:
+      name: xiang_ying_xiong_zhi_jing
+      label: 向英雄致敬, 愿精神长存
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: '惟愿此功能永远不会被使用'

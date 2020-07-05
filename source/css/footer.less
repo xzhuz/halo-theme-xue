@@ -1,0 +1,87 @@
+footer.footer {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(30,35,42,.06);
+  box-shadow: 0 4px 10px 10px rgba(0,0,0,.05);
+  transition: background .6s ease-in-out,padding .6s ease-in-out;
+}
+
+footer.footer .inner {
+  margin: 0 auto;
+}
+
+footer.footer .offsite-links a {
+  margin: 7px;
+}
+
+.circle {
+  background-color: transparent;
+  border: 1px solid #d4d3d3;
+  border-radius: 50%;
+  color: #34495e;
+  display: inline-block;
+  font-size: 16px;
+  height: 40px;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  width: 40px;
+}
+
+.circle:after {
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(90, 90, 90, 0.3);
+  box-sizing: content-box;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .2s, opacity .4s;
+  -webkit-transition: transform .2s, opacity .4s;
+  transition: transform .2s, opacity .4s;
+  width: 100%;
+}
+
+.circle:hover {
+  color: var(--base-color);
+}
+
+.circle:hover:after {
+  left: -7px;
+  opacity: 0;
+  padding: 7px;
+  top: -7px;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.circle svg {
+  fill: currentColor;
+  height: 16px;
+  position: relative;
+  top: 12px;
+}
+
+.site-info {
+  color: #a9a9b3;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-info p {
+  line-height: 1.4rem;
+  margin: 0 auto !important;
+}
+
+a {
+  color: var(--base-color);
+  text-decoration: none;
+  transition: .3s;
+}
