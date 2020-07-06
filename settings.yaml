@@ -24,7 +24,7 @@ genernal:
       name: home_cover
       label: 首页背景
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     header_logoimg:
       name: header_logoimg
       label: 菜单 Logo
@@ -109,37 +109,37 @@ head_img:
       name: archives_patternimg
       label: 归档页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     links_patternimg:
       name: links_patternimg
       label: 友情链接页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     tag_patternimg:
       name: tag_patternimg
       label: 标签页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     categories_patternimg:
       name: categories_patternimg
       label: 分类页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     journals_patternimg:
       name: journals_patternimg
       label: 日志下文章页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     photos_patternimg:
       name: photos_patternimg
       label: 相册页面头部装饰图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
     links_placeholder:
       name: links_placeholder
       label: 友情链接默认用户头像
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.2/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
 post:
   label: 文章页
   items:
