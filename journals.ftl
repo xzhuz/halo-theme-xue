@@ -29,7 +29,7 @@
                                      height="40">
                                 <div class="tree-hole-box">
                                     <div class="tree-hole-author">
-                                        <a href="${blog_url!}" data-ajax
+                                        <a href="${blog_url!}"
                                            rel="external nofollow">${user.nickname}</a> ${journal.createTime?string('yyyy年MM月dd日')}
                                     </div>
                                     <p>${journal.content!}</p>
@@ -38,39 +38,41 @@
                         </li>
                     </#list>
                 </ol>
-                <div class="tree-hole-go">
-                    <span class="tree-hole-go-aircraft"><i class="fa fa-paper-plane fa-lg"></i></span><br>
-                </div>
-                <div class="comment-page">
+                <#--                <div class="tree-hole-go">-->
+                <#--                    <span class="tree-hole-go-aircraft"><i class="fa fa-paper-plane fa-lg"></i></span><br>-->
+                <#--                </div>-->
+                <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
                     <#if journals.totalPages gt 1>
                         <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
-                            <ol class="page-navigator">
-                                <#if pagination.hasPrev>
-                                    <li class="prev">
-                                        <a href="${pagination.prevPageFullPath!}" data-ajax>
-                                            <i class="fa fa-angle-left fa-lg"></i>
-                                        </a>
-                                    </li>
-                                </#if>
+                            <ul class="pagination-list flex flex-row ">
+                                <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
+                                    <a class="pagination-circle " href="${pagination.prevPageFullPath!}">
+                                        <#--            <#include "icon/arrow-left.ftl">-->
+                                        <span class="cst-icon icon-previous"> </span>
+                                    </a>
+                                </li>
                                 <#list pagination.rainbowPages as number>
                                     <#if number.isCurrent>
-                                        <li class="current"><a href="${number.fullPath!}" data-ajax>${number.page!}</a>
+                                        <li>
+                                            <a class="pagination-circle is-current"
+                                               href="${number.fullPath!}">${number.page!}</a>
                                         </li>
                                     <#else>
-                                        <li><a class="" href="${number.fullPath!}" data-ajax>${number.page!}</a></li>
+                                        <li>
+                                            <a class="pagination-circle" href="${number.fullPath!}">${number.page!}</a>
+                                        </li>
                                     </#if>
                                 </#list>
-                                <#if pagination.hasNext>
-                                    <li class="next">
-                                        <a href="${pagination.nextPageFullPath!}" data-ajax>
-                                            <i class="fa fa-angle-right fa-lg"></i>
-                                        </a>
-                                    </li>
-                                </#if>
-                            </ol>
+                                <li class="pagination-next<#if pagination.hasNext><#else > is-invisible </#if>">
+                                    <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
+                                        <#--            <#include "icon/arrow-right.ftl">-->
+                                        <span class="cst-icon icon-next"> </span>
+                                    </a>
+                                </li>
+                            </ul>
                         </@paginationTag>
                     </#if>
-                </div>
+                </nav>
             </div>
         </div>
     </main>

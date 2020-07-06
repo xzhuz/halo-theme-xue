@@ -150,6 +150,18 @@ input {
 .ph-container {
   max-width: 1024px;
 }
+.pl-6 {
+  padding-left: 0.6rem;
+}
+.pad-4 {
+  padding: 4px;
+}
+.pad-10 {
+  padding: 10px;
+}
+.pl-1 {
+  padding-left: 1px;
+}
 @font-face {
   font-weight: 400;
   font-style: normal;
@@ -374,7 +386,6 @@ footer.footer .offsite-links a {
   position: relative;
   text-align: center;
   width: 40px;
-  padding-left: 1px;
 }
 .circle:after {
   border-radius: 50%;
@@ -1131,6 +1142,10 @@ figure {
 .card {
   min-width: 400px;
 }
+.svg-f svg {
+  display: inline-block;
+  padding-bottom: 5px;
+}
 /* Animations */
 @-webkit-keyframes fadein {
   0% {
@@ -1750,6 +1765,7 @@ a.no-thumb {
 .pagination-circle:hover {
   background-color: var(--base-color);
   background-image: none;
+  color: #fff;
 }
 .pagination-circle:hover {
   color: #fff;
@@ -2202,7 +2218,7 @@ td .hljs-button {
 .modal__container {
   background-color: #fff;
   padding: 30px;
-  max-width: 500px;
+  width: 300px;
   max-height: 100vh;
   border-radius: 4px;
   overflow-y: auto;
@@ -2610,7 +2626,6 @@ a.is-active-link {
   font-size: 1.5rem;
   line-height: 2.8rem;
   opacity: 0;
-  padding-left: 0.6rem;
   cursor: pointer;
   transition: 0.4s cubic-bezier(0, 0, 0.382, 1.618);
   transition-property: transform,opacity;

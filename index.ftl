@@ -43,10 +43,10 @@
                                 </#if>
                             </header>
                             <div class="card-body">
-                                <p class="text-center text-2xl tracking-wider text-clamp-1">
+                                <p class="text-center text-2xl tracking-wider text-clamp-1 svg-f">
                                     <a href="${post.fullPath!}">
                                         <#if post.topPriority gt 0>
-                                            <i class="fas fa-fire"></i>
+                                            <#include "module/icon/zhiding.ftl">
                                         </#if>
                                         ${post.title!}
                                     </a>
@@ -55,7 +55,7 @@
                                     ${post.summary!}
                                 </p>
                             </div>
-                            <footer class="card-footer">
+                            <footer class="card-footer svg-f">
                                 <a href="" class="author" title="">
                                     <span class="author-image cover"
                                           style="background-image: url(${user.avatar!});"></span>
@@ -63,10 +63,10 @@
                                 </a>
                                 <div>
                                 <span class="visitors-count">
-                                    ${post.visits!} <i class="fas fa-eye"></i>
+                                    <span>${post.visits!}</span> <#include "module/icon/eye-sight.ftl">
                                 </span>
                                     <span class="visitors-comment" style="margin-left: 10px;">
-                                    ${post.commentCount} <i class="fas fa-comment-dots"></i>
+                                    <span>${post.commentCount}</span> <#include "module/icon/comment.ftl">
                                 </span>
                                 </div>
                             </footer>

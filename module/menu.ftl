@@ -1,10 +1,10 @@
 <div class="moon-menu">
     <div class="moon-menu-items">
-        <span class="moon-menu-item cst-icon icon-up"> </span>
-        <span class="moon-menu-item cst-icon icon-down"> </span>
-        <span class="moon-menu-item cst-icon icon-search" id="toggleSearch"></span>
+        <span class="moon-menu-item pl-6 cst-icon icon-up"> </span>
+        <span class="moon-menu-item pl-6 cst-icon icon-down"> </span>
+        <span class="moon-menu-item pl-6 cst-icon icon-search" id="toggleSearch"></span>
         <#if is_post?? && settings.post_toc!true>
-            <span class="moon-menu-item cst-icon icon-toc"></span>
+            <span class="moon-menu-item pl-6 cst-icon icon-toc"></span>
         </#if>
     </div>
 

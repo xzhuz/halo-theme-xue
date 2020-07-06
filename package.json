@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.0",
-    "micromodal": "^0.4.6"
+    "micromodal": "^0.4.6",
+    "tailwindcss": "^1.4.6"
   }
 }

@@ -1,10 +1,8 @@
 <ul class="pagination-list flex flex-row ">
     <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
-<#--        <a class="pagination-circle" href="${blog_url!}">-->
-<#--            <i class="fas fa-angle-double-left"></i>-->
-<#--        </a>-->
         <a class="pagination-circle" href="${pagination.prevPageFullPath!}">
-            <i class="fas fa-chevron-circle-left"></i>
+<#--            <#include "icon/arrow-left.ftl">-->
+            <span class="cst-icon icon-previous"> </span>
         </a>
     </li>
     <#list pagination.rainbowPages as number>
@@ -20,10 +18,8 @@
     </#list>
     <li class="pagination-next<#if pagination.hasNext><#else > is-invisible </#if>">
         <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
-            <i class="fas fa-chevron-circle-right"></i>
+<#--            <#include "icon/arrow-right.ftl">-->
+            <span class="cst-icon icon-next"> </span>
         </a>
-<#--        <a class="pagination-circle" href="${blog_url!}/page/${posts.totalPages}">-->
-<#--            <i class="fas fa-angle-double-right"></i>-->
-<#--        </a>-->
     </li>
 </ul>

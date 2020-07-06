@@ -23,7 +23,7 @@
                 <#if tags?? && tags?size gt 0>
                     <#list tags as tag>
                         <a href="${tag.fullPath}" class="ah-hf ah-hv">
-                            <span class="ah-dt ct-f-size op-10"><i class="fas fa-tag"></i> ${tag.name}</span>
+                            <span class="ah-dt ct-f-size op-10"># ${tag.name}</span>
                             <span class="ah-tt h-6 op-06"></span>
                         </a>
                     </#list>

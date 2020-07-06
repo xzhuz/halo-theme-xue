@@ -1,7 +1,7 @@
 <header class="nav-wrapper -sticky ">
     <nav class="nav ">
-        <button class="toggle-nav" type="button">
-            <div class="burger -squeeze" type="button">
+        <button class="toggle-nav">
+            <div class="burger -squeeze">
                 <span class="burger-lines"></span>
             </div>
         </button>

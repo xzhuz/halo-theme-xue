@@ -34,27 +34,25 @@
 
             <#--向英雄致敬-->
             <#if settings.xiang_ying_xiong_zhi_jing!false>
-            html {
-                -webkit-filter: grayscale(100%);
-                -moz-filter: grayscale(100%);
-                -ms-filter: grayscale(100%);
-                -o-filter: grayscale(100%);
-                filter: grayscale(100%);
-                filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-            }
-
+                html {
+                    -webkit-filter: grayscale(100%);
+                    -moz-filter: grayscale(100%);
+                    -ms-filter: grayscale(100%);
+                    -o-filter: grayscale(100%);
+                    filter: grayscale(100%);
+                    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+                }
             </#if>
 
         </style>
 
-        <#--   font-awesome css -->
-        <#--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">-->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type='text/css'
-              media='all'/>
+
+        <#--        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type='text/css'-->
+        <#--              media='all'/>-->
         <#-- css库 -->
-        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
         <#-- 引入的头部header -->
-        <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+        <#--        <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">-->
         <#-- 图片预览   -->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
         <!-- 相册 -->
@@ -66,7 +64,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github-gist.css">
 
         <#if settings.enabled_mathjax!true>
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" >
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
         </#if>
 
         <#-- 所有的css -->
@@ -95,7 +93,7 @@
     <#-- jquery工具类 -->
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <#-- icon -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <#--    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
 
 
     <#-- 暗夜模式 -->
@@ -104,16 +102,16 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-<#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
     <#--模态框-->
-<#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
     <#--切换白天/夜晚模式-->
-<#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
     <!-- 右下角按钮-->
-<#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
     <#-- 文章页样式 -->
-<#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
-<#--    所有的js-->
+    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+    <#--    所有的js-->
     <script src="${theme_base!}/dist/index.js?ver=${.now?long}"></script>
     <#include "script.ftl">
     </html>

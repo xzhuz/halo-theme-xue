@@ -61,17 +61,17 @@
             </p>
             <#--            </#if>-->
             <p class="flex flex-row justify-start space-x-4 flex-wrap">
-                <#if post.categories?? && post.categories?size gt 0>
-                    <#list post.categories as category>
-                        <a href="${category.fullPath!}" class="post-tag mt-2 mb-2">
-                            <i class="fas fa-folder"></i>&nbsp;${category.name!}
-                        </a>
-                    </#list>
-                </#if>
+<#--                <#if post.categories?? && post.categories?size gt 0>-->
+<#--                    <#list post.categories as category>-->
+<#--                        <a href="${category.fullPath!}" class="post-tag mt-2 mb-2">-->
+<#--                            <i class="fas fa-folder"></i>&nbsp;${category.name!}-->
+<#--                        </a>-->
+<#--                    </#list>-->
+<#--                </#if>-->
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
                         <a href="${tag.fullPath!}" class="post-tag mt-2 mb-2">
-                            <i class="fas fa-tag"></i>&nbsp;${tag.name!}
+                            #&nbsp;${tag.name!}
                         </a>
                     </#list>
                 </#if>
@@ -86,7 +86,7 @@
                     <#if prevPost??>
                         <a href="${prevPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
-                                <span class="nav-before"><i class="fas fa-arrow-circle-left"></i></span>
+                                <span class="nav-before"><span class="cst-icon icon-previous"> </span></span>
                                 <span class="nav-title">${prevPost.title!}</span>
                             </div>
                         </a>
@@ -97,13 +97,15 @@
                         <a href="${nextPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
                                 <span class="nav-title">${nextPost.title!}</span>
-                                <span class="nav-before"><i class="fas fa-arrow-circle-right"></i></span>
+                                <span class="nav-before"> <span class="cst-icon icon-next"> </span></span>
                             </div>
                         </a>
                     </#if>
                 </div>
             </div>
         </#if>
+
+
 
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
             <#include "module/comment.ftl">

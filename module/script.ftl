@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/moon.js"></script>
 
 <#--目录-->
-<#if settings.post_toc!true>
+<#if is_post?? && settings.post_toc!true>
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
 </#if>
 
@@ -52,7 +52,7 @@
                 <h2 class="modal__title" id="coffeeModalTitle"> </h2>
                 <button class="modal__close" aria-label="Close modal" id="closeCoffeeModalBtn"></button>
             </header>
-            <div class="modal__content" id="coffeeModalContent">
+            <div class="modal__content flex flex-row justify-center" id="coffeeModalContent">
                 <#if settings.QR_code_zfb??>
                     <div id='qrCodeZfb' class="pay-code-invisible" code-data="支付宝">
                         <img class="qr_code_zfb qr-code" src="${settings.QR_code_zfb!}" alt="AliPay"/>
@@ -77,9 +77,12 @@
 </div>
 
 <script type="text/javascript">
-    console.clear();
+    // console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");
+
+    var performance =window.performance ||window.msPerformance ||window.webkitPerformance;if(performance) {console.log(performance);    }
+
 </script>
 

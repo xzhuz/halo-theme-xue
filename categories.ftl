@@ -23,7 +23,7 @@
                 <#if categories?? && categories?size gt 0>
                     <#list categories as category>
                         <a href="${category.fullPath}/" class="ah-hf ah-hv">
-                            <span class="ah-dt ct-f-size op-10"><i class="fas fa-folder"></i> ${category.name}</span>
+                            <span class="ah-dt ct-f-size op-10"><span class="cst-icon icon-toc"></span> ${category.name}</span>
                             <span class="ah-tt h-6 op-06">${category.description}</span>
                         </a>
                     </#list>

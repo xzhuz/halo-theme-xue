@@ -3,43 +3,43 @@
         <#-- 社交信息 begin -->
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.sina??>
-                <a href="${settings.sina!}" class="circle" target="_blank" rel="noopener">
-                    <#include "icon/weibo.ftl">
+                <a href="${settings.sina!}" class="circle pad-10" target="_blank" rel="noopener">
+                    <span class="cst-icon icon-weibo"> </span>
                 </a>
             </#if>
             <#if settings.qq??>
-                <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle" target="_blank" rel="noopener" title="QQ Chat">
-                    <#include "icon/qq.ftl">
+                <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10" target="_blank" rel="noopener" title="QQ Chat">
+                    <span class="cst-icon icon-qq"> </span>
                 </a>
             </#if>
             <#if settings.telegram??>
-                <a href="https://t.me/${settings.telegram!}" class="circle" target="_blank" rel="noopener" title="Telegram Chat">
-                    <#include "icon/telegram.ftl">
+                <a href="https://t.me/${settings.telegram!}" class="circle pad-10" target="_blank" rel="noopener" title="Telegram Chat">
+                    <span class="cst-icon icon-telegram"> </span>
                 </a>
             </#if>
             <#if settings.twitter??>
-                <a href="${settings.twitter!}" class="circle" target="_blank" rel="noopener" title="Twitter">
-                    <#include "icon/twitter.ftl">
+                <a href="${settings.twitter!}" class="circle pad-10" target="_blank" rel="noopener" title="Twitter">
+                    <span class="cst-icon icon-twitter"> </span>
                 </a>
             </#if>
             <#if settings.github??>
-                <a href="${settings.github!}" class="circle" target="_blank" rel="noopener" title="Github">
-                    <#include "icon/github.ftl">
+                <a href="${settings.github!}" class="circle pad-10" target="_blank" rel="noopener" title="Github">
+                    <span class="cst-icon icon-github"> </span>
                 </a>
             </#if>
             <#if settings.zhihu??>
-                <a href="${settings.zhihu!}" class="circle" target="_blank" rel="noopener" title="知乎">
+                <a href="${settings.zhihu!}" class="circle pl-1" target="_blank" rel="noopener" title="知乎">
                     <#include "icon/zhihu.ftl">
                 </a>
             </#if>
             <#if settings.mail??>
-                <a href="mailto:${settings.mail!}" class="circle" target="_blank" rel="noopener" title="邮箱">
-                    <#include "icon/mail.ftl">
+                <a href="mailto:${settings.mail!}" class="circle pad-10" target="_blank" rel="noopener" title="邮箱">
+                    <span class="cst-icon icon-email"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
-                <a href="${atom_url!}" class="circle" target="_blank" rel="noopener" title="RSS">
-                    <#include "icon/rss.ftl">
+                <a href="${atom_url!}" class="circle pad-10" target="_blank" rel="noopener" title="RSS">
+                    <span class="cst-icon icon-feed"> </span>
                 </a>
             </#if>
         </div>
