@@ -1,6 +1,6 @@
 <#-- 代码高亮-->
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
-<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/go.min.js"></script>
+<#--<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/go.min.js"></script>-->
 <#--代码行数-->
 <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
 <#-- 代码copy按钮-->
@@ -11,8 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
 <#--相册插件-->
 <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-<#-- 相册相关的js -->
-<script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>
+
 
 <#--  顶部菜单  -->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/simply-nav.js"></script>
@@ -20,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/moon.js"></script>
 
 <#--目录-->
-<#if is_post?? && settings.post_toc!true>
+<#if settings.post_toc!true>
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
 </#if>
 
@@ -77,12 +76,12 @@
 </div>
 
 <script type="text/javascript">
-    // console.clear();
+    console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");
 
-    var performance =window.performance ||window.msPerformance ||window.webkitPerformance;if(performance) {console.log(performance);    }
+    // var performance =window.performance ||window.msPerformance ||window.webkitPerformance;if(performance) {console.log(performance);    }
 
 </script>
 

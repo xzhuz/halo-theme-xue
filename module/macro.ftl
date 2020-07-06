@@ -47,12 +47,9 @@
         </style>
 
 
-        <#--        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type='text/css'-->
         <#--              media='all'/>-->
         <#-- css库 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
-        <#-- 引入的头部header -->
-        <#--        <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">-->
         <#-- 图片预览   -->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
         <!-- 相册 -->
@@ -68,8 +65,7 @@
         </#if>
 
         <#-- 所有的css -->
-        <link rel="stylesheet" href="${theme_base!}/source/css/style.css?ver=${.now?long}">
-        <#--  <link rel="stylesheet" href="${theme_base!}/source/css/style.less">  -->
+        <link rel="stylesheet" href="${theme_base!}/source/css/style.min.css?ver=${.now?long}">
         <script language=javascript>
             <!--
             window.onerror = function () {
@@ -92,9 +88,6 @@
     </body>
     <#-- jquery工具类 -->
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <#-- icon -->
-    <#--    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
-
 
     <#-- 暗夜模式 -->
     <#if settings.auto_night_mode!true>
@@ -102,17 +95,19 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
+<#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
     <#--模态框-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
+<#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
     <#--切换白天/夜晚模式-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
+<#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
     <!-- 右下角按钮-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
+<#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
     <#-- 文章页样式 -->
-    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+<#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+    <#-- 相册相关的js -->
+    <#--<script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/index.js?ver=${.now?long}"></script>
+    <script src="${theme_base!}/dist/1f2f698b389046eb84c98714ec17685a.js"></script>
     <#include "script.ftl">
     </html>
 </#macro>

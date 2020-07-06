@@ -162,6 +162,9 @@ input {
 .pl-1 {
   padding-left: 1px;
 }
+.pl-7 {
+  padding-left: 7px;
+}
 @font-face {
   font-weight: 400;
   font-style: normal;
@@ -579,6 +582,11 @@ a {
     margin-left: 0;
     padding-left: 0;
   }
+}
+#toc ol > li,
+#toc ul > li {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 @media only screen and (max-width: 640px) {
   .post-cover .post-title:after {
@@ -2093,8 +2101,8 @@ ol > li > ol > li > ol > li {
 #write ol > li,
 #write ul > li {
   list-style: disc;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
 }
 #write ol > li > *,
 #write ul > li > * {

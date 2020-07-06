@@ -35,11 +35,10 @@ var moonMenu = {
             hasInnerContainers: false,
         });
     },
-    toggleSearch: function () {
-        $('#toggleSearch').on('click', function () {
+    searchBox: function () {
+        $('.icon-search').on('click', function () {
             $('#searchBox').toggleClass('hidden');
         });
-
         $('.sh-exit').on('click', function () {
             $('#searchBox').toggleClass('hidden');
         });
@@ -78,11 +77,19 @@ $(function () {
     moonMenu.ckBack2Top();
     // 返回底部
     moonMenu.ckBack2Bottom();
+    // 搜索框
+    moonMenu.searchBox();
+
+    var Obj = $('#tocFlag');
+    //判断元素是否存在, 如果不存在,说明都不是文章页面
+    if (Obj.length !== 1) {
+        return false;
+    }
+
     // 初始化目录
     moonMenu.initMoonToc();
+
     // 点击展示目录
     moonMenu.ckShowContent();
-    // 搜索框
-    moonMenu.toggleSearch();
 
 });

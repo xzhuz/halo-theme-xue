@@ -1,5 +1,5 @@
 var tocId = '#toc';
-var flagId = '#tocFlag'
+var flagId = '#tocFlag';
 var post = {
     loadHighlight: function() {
         var codes = document.querySelectorAll('.md-content pre code');

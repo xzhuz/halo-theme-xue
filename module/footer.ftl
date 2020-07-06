@@ -28,7 +28,7 @@
                 </a>
             </#if>
             <#if settings.zhihu??>
-                <a href="${settings.zhihu!}" class="circle pl-1" target="_blank" rel="noopener" title="知乎">
+                <a href="${settings.zhihu!}" class="circle pl-7"  target="_blank" rel="noopener" title="知乎">
                     <#include "icon/zhihu.ftl">
                 </a>
             </#if>
