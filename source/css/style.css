@@ -2101,8 +2101,8 @@ ol > li > ol > li > ol > li {
 #write ol > li,
 #write ul > li {
   list-style: disc;
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 #write ol > li > *,
 #write ul > li > * {
@@ -2121,6 +2121,10 @@ ol > li > ol > li > ol > li {
 #write p {
   margin: 1rem auto;
   line-height: 2;
+}
+#write ol > li > p,
+#write ul > li > p {
+  margin: 0  auto;
 }
 #write a {
   color: var(--base-color);

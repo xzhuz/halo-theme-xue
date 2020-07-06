@@ -91,7 +91,7 @@ var post = {
     // 因为不使用后端渲染目录, 所以如果在发布文章的时候在文章开头加上 [TOC] 会在文章页面开头有一个ul 标签
     // 这里粗暴的去除
     removeFirstUL: function () {
-        var post_content = document.getElementById('md-content');
+        var post_content = document.getElementById('write');
         if (!post_content) {
             return;
         }
