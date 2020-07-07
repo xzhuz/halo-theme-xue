@@ -7,7 +7,7 @@
     "build": "npm run build-clean && npm run build-less && npm run build-autoprefix && npm run build-cleancss",
     "build-autoprefix": "postcss --use autoprefixer --map false --output source/css/style.css source/css/style.css",
     "build-clean": "rimraf css",
-    "build-cleancss": "cleancss -o source/css/style.min.css source/css/style.css",
+    "build-cleancss": "cleancss -o dist/style.min.css source/css/style.css",
     "build-less": "lessc source/css/style.less source/css/style.css",
     "deploy": "npm run build",
     "start": "npm run build-less -- --watch",

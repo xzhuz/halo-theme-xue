@@ -64,8 +64,10 @@
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
         </#if>
 
-        <#-- 所有的css -->
-        <link rel="stylesheet" href="${theme_base!}/source/css/style.min.css?ver=${.now?long}">
+        <#-- 所有的css 开发用 -->
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
+        <#-- 发布用 -->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007071924">-
         <script language=javascript>
             <!--
             window.onerror = function () {
