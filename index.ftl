@@ -19,13 +19,18 @@
             </div>
         </header>
         <div class="container mx-auto px-4">
-            <div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-8 md:gap-4 mt-4">
+            <div class="posts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-8 md:gap-4 sm:gap-3 mt-4">
                 <#if posts?? && posts.getTotalElements() gt 0>
                     <#list posts.content as post>
                         <div class="post-card mt-4">
+                            <#if post.topPriority gt 0>
+                                <div class="post-top">
+                                    <div>置顶</div>
+                                </div>
+                            </#if>
                             <header class="card-header card-img">
                                 <#if post.thumbnail?? && post.thumbnail!=''>
-                                    <a  href="${post.fullPath!}"
+                                    <a href="${post.fullPath!}"
                                        style=" background-image: url(${post.thumbnail!''});"
                                        class="img-cover img-cover-bg">
                                     </a>
@@ -33,41 +38,38 @@
                                     <#assign x = "${settings.card_random_cover_img_num?number}" />
                                     <#assign thumbnailIndex ="${post_index % (x?number)}"/>
                                     <a href="${post.fullPath!}" class="img-cover img-cover-bg"
-                                        style="background-image: url(${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix});"
+                                       style="background-image: url(${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix});"
                                     >
                                     </a>
                                 <#else>
-                                    <a data-ajax href="${post.fullPath!}" class= "img-cover no-thumb">
+                                    <a data-ajax href="${post.fullPath!}" class="img-cover no-thumb">
                                         <span class="full-image placeholder-bg" role="img" aria-label=""></span>
                                     </a>
                                 </#if>
                             </header>
                             <div class="card-body">
                                 <p class="text-center text-2xl tracking-wider text-clamp-1 svg-f">
-                                    <a href="${post.fullPath!}">
-                                        <#if post.topPriority gt 0>
-                                            <#include "module/icon/zhiding.ftl">
-                                        </#if>
+                                    <a href="${post.fullPath!}" class="font-medium text-gray-700 post-title">
                                         ${post.title!}
                                     </a>
                                 </p>
-                                <p class="post-excerpt text-sm tracking-wider text-clamp-4">
-                                    ${post.summary!}
-                                </p>
+                                <#--                                <p class="post-excerpt text-sm tracking-wider text-clamp-2">-->
+                                <#--                                    ${post.summary!}-->
+                                <#--                                </p>-->
                             </div>
                             <footer class="card-footer svg-f">
-                                <a href="" class="author" title="">
-                                    <span class="author-image cover"
-                                          style="background-image: url(${user.avatar!});"></span>
-                                    <span class="author-name">${user.nickname!}</span>
-                                </a>
-                                <div>
-                                <span class="visitors-count">
-                                    <span>${post.visits!}</span> <#include "module/icon/eye-sight.ftl">
-                                </span>
-                                    <span class="visitors-comment" style="margin-left: 10px;">
-                                    <span>${post.commentCount}</span> <#include "module/icon/comment.ftl">
-                                </span>
+                                <span class="cst-icon icon-calendar lh-25 f-10" style="margin-right: 5px"></span>
+                                <span class="post-time lh-25 mr-auto">
+                                        <span class="published"
+                                              datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</span>
+                                    </span>
+                                <div class="lh-25">
+                                    <span class="visitors-count">
+                                        <span>${post.visits!}</span> <#include "module/icon/eye-sight.ftl">
+                                    </span>
+                                    <span class="visitors-comment">
+                                        <span>${post.commentCount}</span> <#include "module/icon/comment.ftl">
+                                    </span>
                                 </div>
                             </footer>
                         </div>
