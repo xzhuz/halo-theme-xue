@@ -8,7 +8,7 @@
             </div>
         </section>
 
-        <script type="application/javascript">
+        <script type="application/javascript" data-pjax-comment>
             function getLocalStorage(key) {
                 var exp = 60 * 60 * 1000; // 一个小时的秒数
                 if (localStorage.getItem(key)) {

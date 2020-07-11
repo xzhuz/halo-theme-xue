@@ -280,23 +280,28 @@ social:
           label: 开启
         - value: false
           label: 关闭
-#experimental:
-#  label: 实验性功能
-#  items:
-#    pjax_enabled:
-#      name: pjax_enabled
-#      label: 全局 Pjax
-#      type: radio
-#      data-type: bool
-#      default: false
-#      options:
-#        - value: true
-#          label: 开启
-#        - value: false
-#          label: 关闭
+experimental:
+  label: 实验性功能
+  items:
+    pjax_enabled:
+      name: pjax_enabled
+      label: 全局 Pjax
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 other:
   label: 其他
   items:
+    TimeStatistics:
+      name: TimeStatistics
+      label: '站点运行时间统计'
+      type: text
+      description: '填入起始时间，格式：月/日/年 时:分:秒，如08/20/2018 12:00:00'
 #    Aplayer:
 #      name: Aplayer
 #      label: Aplayer吸底播放器

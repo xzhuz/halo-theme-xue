@@ -108,19 +108,19 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>
+<#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
     <#--模态框-->
-        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>
+<#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
     <#--切换白天/夜晚模式-->
-        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>
+<#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
     <!-- 右下角按钮-->
-        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>
+<#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
     <#-- 文章页样式 -->
-        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>
+<#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
     <#-- 相册相关的js -->
-    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>
+<#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
     <#--    所有的js-->
-<#--    <script src="${theme_base!}/dist/1f2f698b389046eb84c98714ec17685a.js"></script>-->
+    <script src="${theme_base!}/dist/521fc66ff91f561e88ec8356c28873f2.js"></script>
     <#include "script.ftl">
     </html>
 </#macro>

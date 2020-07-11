@@ -23,47 +23,7 @@
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
 </#if>
 
-<script type="text/javascript">
-    function sheetViewer() {
-        if (document.getElementById('sheetContent')) {
-            const viewer = new Viewer(document.getElementById('sheetContent'), {
-                toolbar: false,
-            });
-        }
-    }
-
-    function journalViewer() {
-        if (document.getElementById('tree-hole')) {
-            const viewer = new Viewer(document.getElementById('tree-hole'), {
-                toolbar: false,
-                filter(image) {
-                    if (!image.classList) {
-                        return true;
-                    }
-                    return !image.classList.contains('avatar');
-                },
-            });
-        }
-    }
-
-    $(function () {
-        sheetViewer();
-        journalViewer();
-    });
-</script>
-
 <#if settings.enabled_mathjax!true>
-    <script type="text/javascript">
-        var katex_config = {
-            delimiters:
-                [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\[", right: "\\]", display: true},
-                ]
-        }
-    </script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
             onload="if (document.getElementById('write'))
@@ -104,6 +64,138 @@
         </div>
     </div>
 </div>
+
+<#if settings.pjax_enabled!false>
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+    <script type="text/javascript">
+        var pjax = new Pjax({
+            elements: 'a[href]:not([href^="#"]):not([data-not-pjax]), form', // default is "a[href], form[action]"
+            cacheBust: false,
+            debug: false,
+            selectors: [
+                'title',
+                '#container'
+            ]
+        });
+
+        //在Pjax请求开始后触发
+        document.addEventListener('pjax:send', function () {
+            NProgress.start();
+        });
+
+        //在Pjax请求完成后触发
+        document.addEventListener('pjax:complete', function (e) {
+            NProgress.done();
+
+            // 加载相册
+            if ($("#container").find('.photos-page').length > 0) {
+                photo.loadGallery();
+            }
+
+            //重载
+            if (typeof _hmt !== 'undefined') {
+                // support 百度统计
+                _hmt.push(['_trackPageview', location.pathname + location.search]);
+            }
+            if (typeof ga !== 'undefined') {
+                // support google analytics
+                ga('send', 'pageview', location.pathname + location.search);
+            }
+
+            // 重新加载 评论
+            $('script[data-pjax-comment]').each(function () {
+                $(this).parent().append($(this).remove());
+            });
+
+            if ($("#container").find('.article-content').length > 0) {
+                window.removeEventListener('scroll', post.tocScroll, false);
+                // 代码高亮
+                post.loadHighlight();
+
+                // 图片预览
+                post.initViewer();
+
+                // 目录事件
+                post.scrollTocFixed();
+
+                // 初始化toc
+                post.initToc()
+
+                // 删除文章最开始第一个 <ul>(如果有)
+                post.removeFirstUL()
+
+
+                try {
+
+                    if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
+                        renderMathInElement(document.getElementById('write'), katex_config);
+                    }
+
+                    // if (mermaid && typeof mermaid !== 'undefined') {
+                    //     mermaid.initialize();
+                    // }
+                } catch (e) {
+                    console.log("error");
+                }
+            }
+
+            // 自定义页面 viewer
+            hanUtils.sheetViewer();
+
+            // 相册页面 viewer
+            hanUtils.journalViewer();
+            if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
+                if (document.getElementById('write')) {
+                    renderMathInElement(document.getElementById('write'), katex_config)
+                } else if (document.getElementById('sheetContent')) {
+                    renderMathInElement(document.getElementById('sheetContent'), katex_config)
+                } else if (document.getElementById('tree-hole')) {
+                    renderMathInElement(document.getElementById('tree-hole'), katex_config)
+                }
+            }
+
+        });
+
+        document.addEventListener('pjax:end', function () {
+
+        });
+
+        //Pjax请求失败后触发，请求对象将作为一起传递event.options.request
+        document.addEventListener('pjax:error', function () {
+            NProgress.done();
+            bar('系统出现问题，请手动刷新一次', '3000');
+        });
+    </script>
+</#if>
+
+<#if settings.TimeStatistics??>
+    <script type="text/javascript">
+        // 建站时间统计
+        function show_date_time() {
+            if ($("#span_dt_dt").length > 0) {
+                window.setTimeout("show_date_time()", 1000);
+                BirthDay = new Date("${settings.TimeStatistics!}");
+                today = new Date();
+                timeold = (today.getTime() - BirthDay.getTime());
+                sectimeold = timeold / 1000;
+                secondsold = Math.floor(sectimeold);
+                msPerDay = 24 * 60 * 60 * 1000;
+                e_daysold = timeold / msPerDay;
+                daysold = Math.floor(e_daysold);
+                e_hrsold = (e_daysold - daysold) * 24;
+                hrsold = Math.floor(e_hrsold);
+                e_minsold = (e_hrsold - hrsold) * 60;
+                minsold = Math.floor((e_hrsold - hrsold) * 60);
+                seconds = Math.floor((e_minsold - minsold) * 60);
+                span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+            }
+        }
+
+        show_date_time();
+    </script>
+</#if>
 
 <script type="text/javascript">
     console.clear();

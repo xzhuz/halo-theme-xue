@@ -3,7 +3,11 @@ var nightModeId = 'nightMode';
 var nightMode = {
     //
     clickNightMode: function () {
-        nightMode.switchDayAndNight('switch_Word');
+        $('#switch_Word').on('change', function () {
+            // 夜晚模式 true  白天模式 false
+            var isChecked = $('#switch_Word').prop('checked');
+            nightMode.changeNightMode(isChecked);
+        });
     },
     changeNightMode: function (checked) {
         checked = !!checked;
@@ -35,13 +39,6 @@ var nightMode = {
             nightMode.changeNightMode(isNight);
         }
     },
-    switchDayAndNight: function(id) {
-        $('#' + id).change(() => {
-            // 夜晚模式 true  白天模式 false
-            var isChecked = $('#' + id).prop('checked');
-            nightMode.changeNightMode(isChecked);
-        });
-    }
 };
 
 $(function () {

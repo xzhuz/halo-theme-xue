@@ -1,3 +1,13 @@
+var katex_config = {
+    delimiters:
+        [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\[", right: "\\]", display: true},
+        ]
+};
+
 var hanUtils = {
     getLocalStorage: function (key) {
         var exp = 60 * 60 * 1000; // 一个小时的秒数
@@ -59,6 +69,35 @@ var hanUtils = {
                 console.log("Error: 保存到本地存储失败");
             }
         }
-    }
+    },
 
+    sheetViewer: function () {
+        if (document.getElementById('sheetContent')) {
+            const viewer = new Viewer(document.getElementById('sheetContent'), {
+                toolbar: false,
+            });
+        }
+    },
+
+    journalViewer: function () {
+        if (document.getElementById('tree-hole')) {
+            const viewer = new Viewer(document.getElementById('tree-hole'), {
+                toolbar: false,
+                filter: function(image) {
+                    if (!image.classList) {
+                        return true;
+                    }
+                    return !image.classList.contains('avatar');
+                },
+            });
+        }
+    }
 }
+
+$(function () {
+    // 自定义页面 viewer
+    hanUtils.sheetViewer();
+
+    // 相册页面 viewer
+    hanUtils.journalViewer();
+});

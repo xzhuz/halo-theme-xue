@@ -8,12 +8,14 @@
                 </a>
             </#if>
             <#if settings.qq??>
-                <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10" target="_blank" rel="noopener" title="QQ Chat">
+                <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10"
+                   target="_blank" rel="noopener" title="QQ Chat">
                     <span class="cst-icon icon-qq"> </span>
                 </a>
             </#if>
             <#if settings.telegram??>
-                <a href="https://t.me/${settings.telegram!}" class="circle pad-10" target="_blank" rel="noopener" title="Telegram Chat">
+                <a href="https://t.me/${settings.telegram!}" class="circle pad-10" target="_blank" rel="noopener"
+                   title="Telegram Chat">
                     <span class="cst-icon icon-telegram"> </span>
                 </a>
             </#if>
@@ -28,7 +30,7 @@
                 </a>
             </#if>
             <#if settings.zhihu??>
-                <a href="${settings.zhihu!}" class="circle pl-7"  target="_blank" rel="noopener" title="知乎">
+                <a href="${settings.zhihu!}" class="circle pl-7" target="_blank" rel="noopener" title="知乎">
                     <#include "icon/zhihu.ftl">
                 </a>
             </#if>
@@ -52,12 +54,36 @@
             </#if>
             <#if settings.PublicSecurityRecord??>
                 <p style="display: inline-block;background-image: url(${theme_base!}/assets/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
-                    <a href="http://www.beian.gov.cn" target="_blank" class="text-xs">${settings.PublicSecurityRecord!}</a>
+                    <a href="http://www.beian.gov.cn" target="_blank"
+                       class="text-xs">${settings.PublicSecurityRecord!}</a>
                 </p>
             </#if>
             <!-- 请尊重作者，请务必保留版权 -->
-            <p>Powered by <a target="_blank" href="http://halo.run">Halo</a> •
-                Theme by <a target="_blank" href="https://github.com/hshanx/halo-theme-hshan.git">Han Shan</a>
+            <div class="badges">
+                <div class="github-badge">
+                    <a style="color: #fff" rel="license" href="http://halo.run" target="_blank">
+                        <span class="badge-subject">Powered</span>
+                        <span class="badge-value bg-blue">Halo</span>
+                    </a>
+                </div>
+                <div class="github-badge">
+                    <a style="color: #fff" rel="license" href="https://github.com/hshanx/halo-theme-bao.git"
+                       target="_blank">
+                        <span class="badge-subject">Theme</span>
+                        <span class="badge-value bg-red">Bao</span>
+                    </a>
+                </div>
+
+                <#if settings.TimeStatistics??>
+                    <div class="github-badge">
+                        <a style="color: #fff" rel="license" href="javascript:void(0)"
+                           target="_blank">
+                            <span class="badge-subject">运行</span>
+                            <span class="badge-value bg-orange" id="span_dt_dt"></span>
+                        </a>
+                    </div>
+                </#if>
+            </div>
         </div>
     </div>
 </footer>
