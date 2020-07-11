@@ -76,9 +76,9 @@
         </#if>
 
         <#-- 所有的css 开发用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007112120">--->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007120323">-
         <script language=javascript>
             <!--
             window.onerror = function () {
