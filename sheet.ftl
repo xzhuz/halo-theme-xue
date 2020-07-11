@@ -5,7 +5,7 @@
             <#if settings.links_patternimg?? && settings.links_patternimg!=''>
                 <div class="w-screen cover-bg">
                     <img src="${settings.links_patternimg!}" class="z-auto"
-                         alt="${settings.links_title!'Friends'}">
+                         alt="${sheet.title!}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -14,11 +14,11 @@
             <div class="cover-content">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <h2 class="slogan text-center">${settings.links_title!'Friends'}</h2>
+                    <h2 class="slogan text-center">${sheet.title!}</h2>
                 </div>
             </div>
         </header>
-        <div class="container mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+        <div class="container mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd" id="sheetContent">
             ${sheet.formatContent!}
         </div>
     </main>

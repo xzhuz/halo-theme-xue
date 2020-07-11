@@ -2228,7 +2228,6 @@ ol > li > ol > li > ol > li {
   /* your custom style here */
   width: 40px;
   min-width: 30px;
-  background: rgba(200, 200, 200, 0.15);
 }
 /* for block of code */
 .hljs-ln-code {

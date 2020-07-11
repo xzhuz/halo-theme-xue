@@ -23,8 +23,36 @@
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
 </#if>
 
+<script type="text/javascript">
+    function sheetViewer() {
+        if (document.getElementById('sheetContent')) {
+            const viewer = new Viewer(document.getElementById('sheetContent'), {
+                toolbar: false,
+            });
+        }
+    }
+
+    function journalViewer() {
+        if (document.getElementById('tree-hole')) {
+            const viewer = new Viewer(document.getElementById('tree-hole'), {
+                toolbar: false,
+                filter(image) {
+                    if (!image.classList) {
+                        return true;
+                    }
+                    return !image.classList.contains('avatar');
+                },
+            });
+        }
+    }
+    $(function(){
+        sheetViewer();
+        journalViewer();
+    });
+</script>
+
 <#if settings.enabled_mathjax!true>
-    <script type="javascript">
+    <script type="text/javascript">
         var katex_config = {
             delimiters:
                 [
@@ -37,11 +65,12 @@
     </script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-            onload="if (document.getElementById('write') ) {renderMathInElement(document.getElementById('write'),katex_config)}"></script>
+            onload="if (document.getElementById('write'))
+            { renderMathInElement(document.getElementById('write'),katex_config)}
+            else if (document.getElementById('sheetContent'))
+            {renderMathInElement(document.getElementById('sheetContent'),katex_config)} else if (document.getElementById('tree-hole'))
+            {renderMathInElement(document.getElementById('tree-hole'),katex_config)}"></script>
 </#if>
-
-
-
 
 <#-- 赞赏模态框 -->
 <div class="modal micromodal-slide" id="coffeeModal" aria-hidden="true" role="dialog">
