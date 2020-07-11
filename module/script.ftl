@@ -1,3 +1,4 @@
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 <#-- 代码高亮-->
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
 <#--<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/go.min.js"></script>-->
@@ -11,7 +12,6 @@
 <script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
 <#--相册插件-->
 <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-
 
 <#--  顶部菜单  -->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/simply-nav.js"></script>
@@ -94,6 +94,7 @@
                 photo.loadGallery();
             }
 
+
             //重载
             if (typeof _hmt !== 'undefined') {
                 // support 百度统计
@@ -106,7 +107,9 @@
 
             // 重新加载 评论
             $('script[data-pjax-comment]').each(function () {
-                $(this).parent().append($(this).remove());
+                var commentParent = $(this).parent()
+                var comment = $(this).remove();
+                commentParent.append(comment);
             });
 
             if ($("#container").find('.article-content').length > 0) {
@@ -198,7 +201,7 @@
 </#if>
 
 <script type="text/javascript">
-    console.clear();
+    // console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");

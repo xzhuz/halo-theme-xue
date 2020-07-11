@@ -109,18 +109,19 @@
         </script>
     </#if>
 <#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
-    <#--模态框-->
+<#--    &lt;#&ndash;模态框&ndash;&gt;-->
 <#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
-    <#--切换白天/夜晚模式-->
+<#--    &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
 <#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
-    <!-- 右下角按钮-->
+<#--    <!-- 右下角按钮&ndash;&gt;-->
 <#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
-    <#-- 文章页样式 -->
-<#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
-    <#-- 相册相关的js -->
+<#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
 <#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
+
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/521fc66ff91f561e88ec8356c28873f2.js"></script>
+    <script src="${theme_base!}/dist/def37c4b7fb35e129ecd18b8e06534f4.js"></script>
+    <#-- 文章页样式 -->
+    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>
     <#include "script.ftl">
     </html>
 </#macro>

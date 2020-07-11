@@ -21,13 +21,15 @@
         <div class="container mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd" id="sheetContent">
             ${sheet.formatContent!}
         </div>
+
+        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+            <#include "module/comment.ftl">
+            <#if is_post??>
+                <@comment post,"post" />
+            <#elseif is_sheet??>
+                <@comment sheet,"sheet" />
+            </#if>
+        </div>
     </main>
-    <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
-        <#include "module/comment.ftl">
-        <#if is_post??>
-            <@comment post,"post" />
-        <#elseif is_sheet??>
-            <@comment sheet,"sheet" />
-        </#if>
-    </div>
+
 </@layout>
