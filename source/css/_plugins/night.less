@@ -1,0 +1,79 @@
+.night {
+  background-color: var(--night-background);
+  color: var(--night-txt-color) !important;
+
+  // 公共样式
+  p {
+    color: var(--night-txt-color) !important;
+  }
+
+  img {
+    -webkit-filter: brightness(.6) !important;
+    filter: brightness(.6) !important;
+  }
+
+  .btn-primary img {
+    -webkit-filter: brightness(1) !important;
+    filter: brightness(1) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--night-txt-color) !important;
+  }
+
+  :not(pre) > code {
+    color: var(--night-code-txt-color) !important;
+    background-color: var(--night-code-bg-color) !important;
+  }
+
+  a.text-gray-700, .pagination-circle, .circle {
+    color: var(--night-txt-color) !important;
+  }
+
+  // 代码和文章页面
+  .hljs, pre, .hljs table tr:nth-child(2n), thead {
+    background: var(--night-code-bg-color) !important;
+    color: var(--night-code-txt-color) !important;
+  }
+
+  .hljs table tr:nth-child(2n), thead {
+    background: var(--night-code-bg-color) !important;
+  }
+
+  .post-tag {
+    color: var(--night-tag-txt-color) !important;
+    background: var(--night-tag-bg-color) !important;
+  }
+
+  #write ol > li > *, #write ul > li > * {
+    color: var(--night-code-txt-color) !important;
+  }
+
+  .is-active-link {
+    color: var(--night-txt-color) !important;
+  }
+
+  // 友链
+  .lk-card-im {
+    background-color: var(--night-link-card-bg-color) !important;
+    color: var(--night-txt-color) !important;
+  }
+
+  // 日志页面
+  .tree-hole-author, .tree-hole-box a {
+    color: var(--night-txt-color) !important;
+  }
+
+  #tree-hole .comment-list:before, .tree-hole-body > div:before, #tree-hole .comment-list:after {
+    filter: brightness(.6) !important;
+  }
+
+  // 归档页面
+  .arch-year:before {
+    filter: brightness(.4) !important;
+  }
+
+  .mh-bg {
+    background: var(--night-tag-bg-color) !important;
+  }
+}

@@ -45,7 +45,8 @@
             });
         }
     }
-    $(function(){
+
+    $(function () {
         sheetViewer();
         journalViewer();
     });
@@ -77,7 +78,7 @@
     <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
         <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
             <header class="modal__header">
-                <h2 class="modal__title" id="coffeeModalTitle"> </h2>
+                <h2 class="modal__title" id="coffeeModalTitle"></h2>
                 <button class="modal__close" aria-label="Close modal" id="closeCoffeeModalBtn"></button>
             </header>
             <div class="modal__content flex flex-row justify-center" id="coffeeModalContent">

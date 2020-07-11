@@ -65,7 +65,10 @@
                                     </span>
                                 <div class="lh-25">
                                     <span class="visitors-count">
-                                        <span>${post.visits!}</span> <#include "module/icon/eye-sight.ftl">
+                                        <span>${post.visits!}</span>
+                                        <a href="javascript:void(0)">
+                                            <#include "module/icon/eye-sight.ftl">
+                                        </a>
                                     </span>
                                     <span class="visitors-comment">
                                         <span>${post.commentCount}</span> <#include "module/icon/comment.ftl">

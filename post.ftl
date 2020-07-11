@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-    <main class="mx-auto">
+    <main class="mx-auto" id="container">
         <header class="bg-cover post-cover" id="postHeader">
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <div class="w-screen cover-bg">
@@ -23,7 +23,7 @@
                             <time class="published"
                                   datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</time>
                         </div>
-                        <div class="lg:text-center">${user.nickname!}</div>
+                        <div class="md:text-center">${user.nickname!}</div>
                     </div>
                 </div>
             </div>

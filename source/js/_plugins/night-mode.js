@@ -4,22 +4,23 @@ var nightMode = {
     //
     clickNightMode: function () {
         nightMode.switchDayAndNight('switch_Word');
-        nightMode.switchDayAndNight('switch_Word_sm')
     },
     changeNightMode: function (checked) {
         checked = !!checked;
         // 夜晚模式 true  白天模式 false
         // 夜晚模式
         if (checked) {
-            $(document.body).addClass('night-mode');
+            $(document.body).addClass('night');
             hanUtils.setLocalStorage(nightModeId, true);
             $('#switch_Word').attr("checked", true);
-            $('#switch_Word_sm').attr("checked", true);
         } else {
-            $(document.body).removeClass('night-mode');
+            $(document.body).removeClass('night');
             hanUtils.setLocalStorage(nightModeId, false);
             $('#switch_Word').attr("checked", false);
-            $('#switch_Word_sm').attr("checked", false);
+        }
+
+        if (typeof renderComment === 'function') {
+            renderComment();
         }
     },
     autoNightMode: function () {

@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="分类：${category.name} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-    <main class="mx-auto">
+    <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>
                 <div class="w-screen cover-bg">

@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="归档 | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-    <main class="mx-auto">
+    <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.archives_patternimg?? && settings.archives_patternimg!=''>
                 <div class="w-screen cover-bg">
@@ -22,9 +22,9 @@
             <@postTag method="archiveMonth">
                 <#list archives as archive>
                     <section class="arch-year">
-                        <h1 class="year-title bg-fff relative">${archive.year?c}</h1>
+                        <h1 class="year-title relative">${archive.year?c}</h1>
                         <div class="relative pl-12">
-                            <header class="absolute mh-hd bg-fff af-bg-fff mh-bg "> ${archive.month!} 月</header>
+                            <header class="absolute mh-hd af-bg-fff mh-bg "> ${archive.month!} 月</header>
                             <span class="">
                             <#list archive.posts?sort_by("createTime")?reverse as post>
                                 <a class="ah-hf ah-hv" href="${post.fullPath!}">

@@ -425,7 +425,7 @@ footer.footer .offsite-links a {
   fill: currentColor;
   height: 16px;
   position: relative;
-  top: 12px;
+  top: 11px;
 }
 .site-info {
   color: #a9a9b3;
@@ -745,6 +745,7 @@ a {
   max-width: 160px;
   font-size: 14px;
   font-weight: 700;
+  padding: 2px 0;
 }
 .media-content p.lk-desc {
   display: -webkit-box;
@@ -756,6 +757,7 @@ a {
   line-height: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding: 5px 2px 0 0;
 }
 .media-left .image img {
   border-top-left-radius: 6px;
@@ -1207,8 +1209,8 @@ input[type="checkbox"]:not(:checked) + label:after {
 }
 .switch_Word:checked + label:before {
   content: '🌚';
-  font-size: 16px;
-  left: 5px;
+  font-size: 20px;
+  left: 2px;
   color: #fff;
 }
 .switch_Word + label:before {
@@ -1216,7 +1218,7 @@ input[type="checkbox"]:not(:checked) + label:after {
   height: 20px;
   width: 20px;
   color: #b4b4b4;
-  font-size: 16px;
+  font-size: 20px;
   position: absolute;
   left: 30px;
 }
@@ -2744,6 +2746,81 @@ a.is-active-link {
   .icon-toc {
     display: none !important;
   }
+}
+.night {
+  background-color: var(--night-background);
+  color: var(--night-txt-color) !important;
+}
+.night p {
+  color: var(--night-txt-color) !important;
+}
+.night img {
+  -webkit-filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
+}
+.night .btn-primary img {
+  -webkit-filter: brightness(1) !important;
+  filter: brightness(1) !important;
+}
+.night h1,
+.night h2,
+.night h3,
+.night h4,
+.night h5,
+.night h6 {
+  color: var(--night-txt-color) !important;
+}
+.night :not(pre) > code {
+  color: var(--night-code-txt-color) !important;
+  background-color: var(--night-code-bg-color) !important;
+}
+.night a.text-gray-700,
+.night .pagination-circle,
+.night .circle {
+  color: var(--night-txt-color) !important;
+}
+.night .hljs,
+.night pre,
+.night .hljs table tr:nth-child(2n),
+.night thead {
+  background: var(--night-code-bg-color) !important;
+  color: var(--night-code-txt-color) !important;
+}
+.night .hljs table tr:nth-child(2n),
+.night thead {
+  background: var(--night-code-bg-color) !important;
+}
+.night .post-tag {
+  color: var(--night-tag-txt-color) !important;
+  background: var(--night-tag-bg-color) !important;
+}
+.night #write ol > li > *,
+.night #write ul > li > * {
+  color: var(--night-code-txt-color) !important;
+}
+.night .is-active-link {
+  color: var(--night-txt-color) !important;
+}
+.night .lk-card-im {
+  background-color: var(--night-link-card-bg-color) !important;
+  color: var(--night-txt-color) !important;
+}
+.night .tree-hole-author,
+.night .tree-hole-box a {
+  color: var(--night-txt-color) !important;
+}
+.night #tree-hole .comment-list:before,
+.night .tree-hole-body > div:before,
+.night #tree-hole .comment-list:after {
+  -webkit-filter: brightness(0.6) !important;
+          filter: brightness(0.6) !important;
+}
+.night .arch-year:before {
+  -webkit-filter: brightness(0.4) !important;
+          filter: brightness(0.4) !important;
+}
+.night .mh-bg {
+  background: var(--night-tag-bg-color) !important;
 }
 
 /*# sourceMappingURL=style.css.map */

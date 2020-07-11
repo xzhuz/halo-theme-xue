@@ -26,7 +26,18 @@
                 --text-color: #333333;
                 --text-hover-color: #B5D6FC;
                 --toc-bg-color: #8e8787;
+                /*夜晚默认*/
                 --night-toc-bg-color: #e5e5e5;
+                --night-tag-txt-color: #e5e5e5;
+                --night-tag-bg-color: #555;
+                --night-link-card-bg-color: rgba(0, 0, 0, .4);
+
+                --night-background: #292a2d;
+                --night-txt-color: #a9a9b3;
+                --night-input-backgrround: #232125;
+                --night-code-txt-color: #c5c8c6;
+                --night-code-color: #969896;
+                --night-code-bg-color: #2d2d2d;
                 --select-text-bg-color: #B5D6FC;
                 --select-text-font-color: auto;
                 --monospace: "Lucida Console", Consolas, "Courier", monospace;
@@ -65,9 +76,9 @@
         </#if>
 
         <#-- 所有的css 开发用 -->
-<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007112120">-
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007112120">--->
         <script language=javascript>
             <!--
             window.onerror = function () {
@@ -97,19 +108,19 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-<#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>
     <#--模态框-->
-<#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>
     <#--切换白天/夜晚模式-->
-<#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>
     <!-- 右下角按钮-->
-<#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>
     <#-- 文章页样式 -->
-<#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>
     <#-- 相册相关的js -->
-    <#--<script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
+    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/1f2f698b389046eb84c98714ec17685a.js"></script>
+<#--    <script src="${theme_base!}/dist/1f2f698b389046eb84c98714ec17685a.js"></script>-->
     <#include "script.ftl">
     </html>
 </#macro>

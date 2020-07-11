@@ -25,5 +25,9 @@
                 <div class="overlay"></div>
             </div>
         </ul>
+        <div class="day-night-mode">
+            <input id="switch_Word" type="checkbox" class="switch_Word">
+            <label for="switch_Word"><i></i></label>
+        </div>
     </nav>
 </header>
