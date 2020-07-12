@@ -75,7 +75,7 @@ var post = {
             contentSelector: content,
             headingSelector: headerEl,
             scrollSmooth: true,
-            headingsOffset: 0 - $('#postHeader').height() -58,
+            headingsOffset: 0 - $('#postHeader').height(),
             hasInnerContainers: false,
         });
 

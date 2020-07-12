@@ -1,4 +1,4 @@
-<header class="nav-wrapper -sticky ">
+<header class="nav-wrapper -sticky nav-box-sd">
     <nav class="nav ">
         <button class="toggle-nav">
             <div class="burger -squeeze">
@@ -12,7 +12,7 @@
             </a>
         </#if>
         <ul class="nav-list " role="navigation">
-            <div class="list -left ">
+            <div class="list -left " id="menuLinks">
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
                         <li class="item">

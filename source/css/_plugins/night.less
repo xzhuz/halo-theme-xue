@@ -21,6 +21,10 @@
     color: var(--night-txt-color) !important;
   }
 
+  table tr:nth-child(2n), thead {
+    background-color: var(--night-code-bg-color) !important;
+  }
+
   :not(pre) > code {
     color: var(--night-code-txt-color) !important;
     background-color: var(--night-code-bg-color) !important;
@@ -50,6 +54,7 @@
   }
 
   .is-active-link {
+    opacity: .6 !important;
     color: var(--night-txt-color) !important;
   }
 
@@ -81,4 +86,28 @@
   .github-badge {
     filter: brightness(.8);
   }
+
+  // header
+  .nav-list > .list > .overlay {
+    background: rgba(59, 59, 59, 0.65);
+  }
+
+  .nav-list > .list.-left {
+    background: var(--night-background);
+  }
+
+  .nav-list > .list > .item > .link {
+    color: var(--night-txt-color);
+  }
+
+  .nav-wrapper {
+    background: var(--night-background);
+  }
+
+  .burger-lines,
+  .burger-lines:after,
+  .burger-lines:before {
+    background-color: var(--night-txt-color);
+  }
+
 }

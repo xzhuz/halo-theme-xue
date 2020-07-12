@@ -94,6 +94,8 @@
                 photo.loadGallery();
             }
 
+            // 当前菜单菜单高亮
+            hanUtils.highlightMenu();
 
             //重载
             if (typeof _hmt !== 'undefined') {
@@ -130,6 +132,17 @@
                 post.removeFirstUL()
 
 
+                // 模态框
+                //  模态框
+                coffeeModal.toggleCoffeeModal();
+
+                // 初始展示二维码
+                coffeeModal.initShowCode();
+
+                // 切换支付二维码
+                coffeeModal.switchQrCode();
+
+
                 try {
 
                     if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
@@ -149,6 +162,7 @@
 
             // 相册页面 viewer
             hanUtils.journalViewer();
+
             if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
                 if (document.getElementById('write')) {
                     renderMathInElement(document.getElementById('write'), katex_config)

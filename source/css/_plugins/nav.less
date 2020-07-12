@@ -1,6 +1,7 @@
 // 顶部 nav 样式
 .nav-wrapper {
-  background-color: #212121;
+  background-color: var(--header-bg-color);
+  //border-bottom: 1px solid rgba(30,35,42,.06);
   position: absolute;
   top: 0;
   left: 0;
@@ -11,12 +12,16 @@
   z-index: 100;
   padding: 0;
   display: block;
-  transition: all 0.2s ease-in-out;
+  //transition: all 0.2s ease-in-out;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  -webkit-transition: all 0.2s ease-in-out;
+  //-webkit-transition: all 0.2s ease-in-out;
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
+}
+
+.nav-wrapper.nav-box-sd {
+  box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
 }
 
 .nav-wrapper > .nav {
@@ -139,7 +144,7 @@
 }
 
 .nav-list > .list.-left {
-  background: #212121;
+  background: var(--header-bg-color);
   position: relative;
   width: 60%;
   height: 100%;
@@ -161,24 +166,29 @@
 
 .nav-list > .list > .item > .link {
   border-color: transparent;
-  padding: 0.75rem 1rem 0.5rem 1rem;
   flex-basis: 100%;
   display: block;
   background: transparent;
   font-size: 1.5rem;
-  padding-left: 1.5rem;
-  color: #e0e0e0;
+  padding: 0.75rem 1rem 0.5rem 1.5rem;
+  color: var(--header-link-color);
   transition: all 0.3s ease-in-out;
+
+
+}
+
+.nav-list > .list > .item > .link.current {
+  color: var(--base-hover-color) !important;
 }
 
 .nav-list > .list > .item > .link:hover, .nav-list > .list > .item > .link.-active {
-  color: #7dc580;
+  color: var(--base-hover-color) !important;
 }
 
 .nav-list > .list > .overlay {
   width: 40%;
   height: 100%;
-  background: rgba(59, 59, 59, 0.65);
+  background: rgba(243, 237, 237, 0.2);
   position: absolute;
   right: 0;
   top: 0;
@@ -223,12 +233,12 @@
   }
 
   .nav-list > .list > .item > .link {
-    border-bottom: 2px solid transparent;
     display: block;
     flex-basis: unset;
     background: transparent;
-    padding: 1.25rem 0;
-    font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.1rem;
     outline: 0;
     transition: all 0.2s ease-in-out;
   }
@@ -360,7 +370,7 @@
   content: '';
   width: 100%;
   border-radius: 0.25em;
-  background-color: #e0e0e0;
+  background-color: var(--header-link-color);
   height: 0.25em;
   position: absolute;
   -webkit-transform: rotate(0);

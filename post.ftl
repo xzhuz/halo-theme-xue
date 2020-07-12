@@ -50,24 +50,25 @@
 
 
         <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd coffee-tags">
-            <#--            <#if settings.QR_code_zfb?? || settings.QR_code_wx??>-->
-            <p class="flex flex-col justify-center pt-8 pb-8">
-                <span class="text-center block pb-2">Buy me a cup of coffee ☕.</span>
-                <button id="buyCoffee"
-                        class="btn-primary rounded h-10 leading-10 w-32 mg-auto">
-                    <img src="${theme_base!}/source/images/cuplogo-sm.png" style="height: 13px"/>
-                    <span class="pt-1 pl-2">Coffee</span>
-                </button>
-            </p>
+            <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
+                <p class="flex flex-col justify-center pt-8 pb-8">
+                    <span class="text-center block pb-2">Buy me a cup of coffee ☕.</span>
+                    <button id="buyCoffee"
+                            class="btn-primary rounded h-10 leading-10 w-32 mg-auto">
+                        <img src="${theme_base!}/source/images/cuplogo-sm.png" style="height: 13px"/>
+                        <span class="pt-1 pl-2">Coffee</span>
+                    </button>
+                </p>
+            </#if>
             <#--            </#if>-->
             <p class="flex flex-row justify-start space-x-4 flex-wrap">
-<#--                <#if post.categories?? && post.categories?size gt 0>-->
-<#--                    <#list post.categories as category>-->
-<#--                        <a href="${category.fullPath!}" class="post-tag mt-2 mb-2">-->
-<#--                            <i class="fas fa-folder"></i>&nbsp;${category.name!}-->
-<#--                        </a>-->
-<#--                    </#list>-->
-<#--                </#if>-->
+                <#--                <#if post.categories?? && post.categories?size gt 0>-->
+                <#--                    <#list post.categories as category>-->
+                <#--                        <a href="${category.fullPath!}" class="post-tag mt-2 mb-2">-->
+                <#--                            <i class="fas fa-folder"></i>&nbsp;${category.name!}-->
+                <#--                        </a>-->
+                <#--                    </#list>-->
+                <#--                </#if>-->
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
                         <a href="${tag.fullPath!}" class="post-tag mt-2 mb-2">
@@ -77,6 +78,7 @@
                 </#if>
             </p>
             <hr class="mt-4" style="background-color: rgba(96, 125, 139, .05); size: 2px;">
+
         </div>
 
         <!-- 上一篇和下一篇 -->

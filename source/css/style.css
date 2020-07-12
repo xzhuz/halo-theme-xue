@@ -367,7 +367,7 @@ input {
 }
 .day-night-mode {
   height: 58px;
-  padding: 10px 12px 18px 12px;
+  padding: 16px 12px 18px 12px;
 }
 footer.footer {
   padding-bottom: 30px;
@@ -562,7 +562,7 @@ a {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  background-color: #ff5f5f;
+  background-color: var(--btn-pri-bg-color);
   max-height: 46px;
   max-width: 200px;
   color: #fff;
@@ -1284,7 +1284,7 @@ input[type="checkbox"]:checked + label:after {
   left: 30px;
 }
 .nav-wrapper {
-  background-color: #212121;
+  background-color: var(--header-bg-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -1295,12 +1295,13 @@ input[type="checkbox"]:checked + label:after {
   z-index: 100;
   padding: 0;
   display: block;
-  transition: all 0.2s ease-in-out;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  -webkit-transition: all 0.2s ease-in-out;
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
+}
+.nav-wrapper.nav-box-sd {
+  box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
 }
 .nav-wrapper > .nav {
   max-width: 80rem;
@@ -1406,7 +1407,7 @@ input[type="checkbox"]:checked + label:after {
   -webkit-overflow-scrolling: touch;
 }
 .nav-list > .list.-left {
-  background: #212121;
+  background: var(--header-bg-color);
   position: relative;
   width: 60%;
   height: 100%;
@@ -1424,23 +1425,25 @@ input[type="checkbox"]:checked + label:after {
 }
 .nav-list > .list > .item > .link {
   border-color: transparent;
-  padding: 0.75rem 1rem 0.5rem 1rem;
   flex-basis: 100%;
   display: block;
   background: transparent;
   font-size: 1.5rem;
-  padding-left: 1.5rem;
-  color: #e0e0e0;
+  padding: 0.75rem 1rem 0.5rem 1.5rem;
+  color: var(--header-link-color);
   transition: all 0.3s ease-in-out;
+}
+.nav-list > .list > .item > .link.current {
+  color: var(--base-hover-color) !important;
 }
 .nav-list > .list > .item > .link:hover,
 .nav-list > .list > .item > .link.-active {
-  color: #7dc580;
+  color: var(--base-hover-color) !important;
 }
 .nav-list > .list > .overlay {
   width: 40%;
   height: 100%;
-  background: rgba(59, 59, 59, 0.65);
+  background: rgba(243, 237, 237, 0.2);
   position: absolute;
   right: 0;
   top: 0;
@@ -1482,12 +1485,12 @@ input[type="checkbox"]:checked + label:after {
     justify-content: flex-start;
   }
   .nav-list > .list > .item > .link {
-    border-bottom: 2px solid transparent;
     display: block;
     flex-basis: unset;
     background: transparent;
-    padding: 1.25rem 0;
-    font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.1rem;
     outline: 0;
     transition: all 0.2s ease-in-out;
   }
@@ -1588,7 +1591,7 @@ input[type="checkbox"]:checked + label:after {
   content: '';
   width: 100%;
   border-radius: 0.25em;
-  background-color: #e0e0e0;
+  background-color: var(--header-link-color);
   height: 0.25em;
   position: absolute;
   transform: rotate(0);
@@ -1681,7 +1684,7 @@ button:focus {
   transition: 0.6s all;
 }
 .card-body .post-title:hover {
-  color: #ff5f5f;
+  color: var(--cd-hover-color) !important;
 }
 .card-body .post-excerpt {
   padding: 1rem;
@@ -1790,7 +1793,7 @@ a.no-thumb {
   top: 10px;
   left: -28px;
   width: 100px;
-  background-color: #ff5f5f;
+  background-color: var(--base-hl-color);
   color: #fff;
   box-shadow: -3px 5px 6px -5px rgba(0, 0, 0, 0.5);
 }
@@ -2072,6 +2075,8 @@ ol > li > ol > li > ol > li {
 #write h5,
 #write h6 {
   margin-left: -1.3rem;
+  margin-top: -52px !important;
+  padding-top: 52px;
 }
 #write h1,
 #write h2,
@@ -2269,8 +2274,7 @@ ol > li > ol > li > ol > li {
   vertical-align: top;
   padding-right: 5px;
   /* your custom style here */
-  width: 40px;
-  min-width: 30px;
+  width: 20px;
 }
 /* for block of code */
 .hljs-ln-code {
@@ -2811,6 +2815,10 @@ a.is-active-link {
 .night h6 {
   color: var(--night-txt-color) !important;
 }
+.night table tr:nth-child(2n),
+.night thead {
+  background-color: var(--night-code-bg-color) !important;
+}
 .night :not(pre) > code {
   color: var(--night-code-txt-color) !important;
   background-color: var(--night-code-bg-color) !important;
@@ -2840,6 +2848,7 @@ a.is-active-link {
   color: var(--night-code-txt-color) !important;
 }
 .night .is-active-link {
+  opacity: 0.6 !important;
   color: var(--night-txt-color) !important;
 }
 .night .lk-card-im {
@@ -2866,6 +2875,23 @@ a.is-active-link {
 .night .github-badge {
   -webkit-filter: brightness(0.8);
           filter: brightness(0.8);
+}
+.night .nav-list > .list > .overlay {
+  background: rgba(59, 59, 59, 0.65);
+}
+.night .nav-list > .list.-left {
+  background: var(--night-background);
+}
+.night .nav-list > .list > .item > .link {
+  color: var(--night-txt-color);
+}
+.night .nav-wrapper {
+  background: var(--night-background);
+}
+.night .burger-lines,
+.night .burger-lines:after,
+.night .burger-lines:before {
+  background-color: var(--night-txt-color);
 }
 
 /*# sourceMappingURL=style.css.map */

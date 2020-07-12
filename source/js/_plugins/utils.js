@@ -91,6 +91,29 @@ var hanUtils = {
                 },
             });
         }
+    },
+
+    highlightMenu: function () {
+        var nav = document.getElementById('menuLinks')
+        var links = nav.getElementsByClassName('link');
+        var currenturl = document.location.pathname
+        var last = 0
+        if (links) {
+            for (var i = 0; i < links.length; i++) {
+                var linkurl = links[i].getAttribute('href');
+                if (currenturl.indexOf(linkurl) !== -1) {
+                    if (currenturl.indexOf(linkurl) !== -1)
+                        last = i
+                }
+            }
+                $(links[last]).addClass('current')
+
+            for (var i = 0; i < links.length; i++) {
+                if (last !== i) {
+                    $(links[i]).removeClass('current')
+                }
+            }
+        }
     }
 }
 
@@ -100,4 +123,7 @@ $(function () {
 
     // 相册页面 viewer
     hanUtils.journalViewer();
+
+    // 当前菜单菜单高亮
+    hanUtils.highlightMenu();
 });
