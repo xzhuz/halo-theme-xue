@@ -10,11 +10,11 @@
                 <div class="default-cover-bg">
                 </div>
             </#if>
-            <div class="cover-content">
+            <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <#--                    <h2 class="title text-center">${settings.home_title!options.blog_title!}</h2>-->
-                    <h2 class="slogan text-center">${settings.home_description!}</h2>
+                    <h2 class="cover-title text-left md:text-4xl lg:text-4xl xl:text-5xl">${settings.home_title!options.blog_title!}</h2>
+                    <p class="slogan text-center">${settings.home_description!}</p>
                 </div>
             </div>
         </header>

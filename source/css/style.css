@@ -171,6 +171,56 @@ input {
 .f-10 {
   font-size: 10px;
 }
+.cover-title {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.cover-title:after {
+  background-color: var(--base-color);
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 80px;
+}
+.cover-content .inner {
+  max-width: 80%;
+}
+.cover-title {
+  text-align: left;
+}
+@media only screen and (max-width: 768px) {
+  .cover-title {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .cover-content .inner {
+    width: 100%;
+  }
+  .slogan {
+    font-size: 1.3rem !important;
+    text-align: left !important;
+  }
+}
+@media only screen and (min-width: 861px) {
+  .cover-title:after {
+    left: 50%;
+    margin-left: -40px;
+  }
+  .cover-title {
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .cover-title:after {
+    width: 60px;
+  }
+}
 @font-face {
   font-weight: 400;
   font-style: normal;

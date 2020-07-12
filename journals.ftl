@@ -11,10 +11,10 @@
                 <div class="placeholder-bg">
                 </div>
             </#if>
-            <div class="cover-content">
+            <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <h2 class="slogan text-center">${settings.jounarls_title! 'Journals'}</h2>
+                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.jounarls_title! 'Journals'}</p>
                 </div>
             </div>
         </header>
