@@ -20,7 +20,7 @@
 
 <#--目录-->
 <#if settings.post_toc!true>
-    <script src="//cdn.jsdelivr.net/npm/tocbot@4.4.2/dist/tocbot.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
 </#if>
 
 <#if settings.enabled_mathjax!true>
@@ -28,8 +28,7 @@
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
             onload="if (document.getElementById('write'))
             { renderMathInElement(document.getElementById('write'),katex_config)}
-            else if (document.getElementById('sheetContent'))
-            {renderMathInElement(document.getElementById('sheetContent'),katex_config)} else if (document.getElementById('tree-hole'))
+            else if (document.getElementById('tree-hole'))
             {renderMathInElement(document.getElementById('tree-hole'),katex_config)}"></script>
 </#if>
 
@@ -97,6 +96,12 @@
             // 当前菜单菜单高亮
             hanUtils.highlightMenu();
 
+            // table 要加上 div 避免出现小屏幕下展示不全
+            hanUtils.tableAddNode();
+
+            // li 添加 span
+            hanUtils.liAddSpan();
+
             //重载
             if (typeof _hmt !== 'undefined') {
                 // support 百度统计
@@ -130,7 +135,6 @@
 
                 // 删除文章最开始第一个 <ul>(如果有)
                 post.removeFirstUL()
-
 
                 // 模态框
                 //  模态框
@@ -166,8 +170,6 @@
             if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
                 if (document.getElementById('write')) {
                     renderMathInElement(document.getElementById('write'), katex_config)
-                } else if (document.getElementById('sheetContent')) {
-                    renderMathInElement(document.getElementById('sheetContent'), katex_config)
                 } else if (document.getElementById('tree-hole')) {
                     renderMathInElement(document.getElementById('tree-hole'), katex_config)
                 }
@@ -215,7 +217,7 @@
 </#if>
 
 <script type="text/javascript">
-    // console.clear();
+    console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");

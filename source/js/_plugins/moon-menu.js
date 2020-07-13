@@ -32,6 +32,7 @@ var moonMenu = {
             scrollSmooth: true,
             isCollapsedClass: '',
             headingsOffset: 0 - ($('#postHeader').height() + 58),
+            scrollSmoothOffset: -60,
             hasInnerContainers: false,
         });
     },

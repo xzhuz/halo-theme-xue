@@ -13,7 +13,7 @@
             <div class="cover-content post-cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <p class="post-title cover-title text-base lg:text-4xl xl:text-5xl">${post.title!}</p>
+                    <p class="post-title cover-title text-base lg:text-4xl xl:text-5xl md:text-3xl">${post.title!}</p>
                     <div class="post-meta">
                         <div class="post-meta-wrap">
                             <img class="author-avatar"

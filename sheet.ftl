@@ -18,7 +18,8 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd" id="sheetContent">
+        <div class="container mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd"
+             id="write">
             ${sheet.formatContent!}
         </div>
 

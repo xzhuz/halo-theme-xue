@@ -72,8 +72,8 @@ var hanUtils = {
     },
 
     sheetViewer: function () {
-        if (document.getElementById('sheetContent')) {
-            const viewer = new Viewer(document.getElementById('sheetContent'), {
+        if (document.getElementById('write')) {
+            const viewer = new Viewer(document.getElementById('write'), {
                 toolbar: false,
             });
         }
@@ -114,6 +114,32 @@ var hanUtils = {
                 }
             }
         }
+    },
+
+    tableAddNode: function () {
+        var postContent = document.getElementById('write');
+        if (!postContent) {
+            return;
+        }
+        var tables = postContent.getElementsByTagName('table');
+        if (tables) {
+            for (var i = 0; i < tables.length; i++) {
+                var table = tables[i];
+                $(table).wrap('<div class="md-table"></div>')
+            }
+        }
+    },
+
+    liAddSpan: function () {
+        $('#write li').each(function (i) {
+            if (this.classList.length > 0) {
+
+            } else {
+                var liContent = $(this).html();
+                $(this).html('<span>' + liContent + '</span>');
+            }
+        });
+
     }
 }
 
@@ -126,4 +152,10 @@ $(function () {
 
     // 当前菜单菜单高亮
     hanUtils.highlightMenu();
+
+    // table 要加上 div 避免出现小屏幕下展示不全
+    hanUtils.tableAddNode();
+
+    // li 添加 span
+    hanUtils.liAddSpan();
 });

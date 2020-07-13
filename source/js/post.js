@@ -76,6 +76,7 @@ var post = {
             headingSelector: headerEl,
             scrollSmooth: true,
             headingsOffset: 0 - $('#postHeader').height(),
+            scrollSmoothOffset: -60, // 实现点击目录精准跳转到header
             hasInnerContainers: false,
         });
 
@@ -97,7 +98,7 @@ var post = {
         }
         var firstNodeName = post_content.firstElementChild.nodeName;
         if (firstNodeName === 'UL') {
-            $(post_content.firstElementChild).hide();
+            $(post_content.firstElementChild).remove();
         }
     },
 }

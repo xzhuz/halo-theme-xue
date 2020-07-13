@@ -1982,9 +1982,13 @@ blockquote {
   margin: 0;
   padding: 0;
 }
+.md-table {
+  overflow: scroll;
+}
 table {
   padding: 0;
-  word-break: initial;
+  table-layout: auto;
+  width: 100%;
 }
 table tr {
   border-top: 1px solid #dfe2e5;
@@ -2001,6 +2005,7 @@ table tr th {
   border-bottom: 0;
   margin: 0;
   padding: 6px 13px;
+  white-space: nowrap;
 }
 table tr td {
   border: 1px solid #dfe2e5;
@@ -2125,8 +2130,6 @@ ol > li > ol > li > ol > li {
 #write h5,
 #write h6 {
   margin-left: -1.3rem;
-  margin-top: -52px !important;
-  padding-top: 52px;
 }
 #write h1,
 #write h2,
@@ -2236,10 +2239,11 @@ ol > li > ol > li > ol > li {
   list-style: disc;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
+  color: var(--base-hl-color);
 }
 #write ol > li > *,
 #write ul > li > * {
-  color: #333;
+  color: #333 !important;
 }
 #write ol > li > *:not(ol):not(ul),
 #write ul > li > *:not(ol):not(ul) {
