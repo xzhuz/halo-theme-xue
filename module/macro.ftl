@@ -82,7 +82,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007131447">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007131647">
         <script language=javascript>
             <!--
             window.onerror = function () {
@@ -123,9 +123,9 @@
 <#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/23a1312c59235ab088c0ad10a3777.js"></script>
+    <script src="${theme_base!}/dist/9b3e0d6399755edabf262a9b23fa72f1.js"></script>
     <#-- 文章页样式 -->
-    <script src="${theme_base!}/source/js/post.js?ver=202007131447"></script>
+    <script src="${theme_base!}/source/js/post.js?ver=202007131647"></script>
 <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
     <#include "script.ftl">
     </html>

@@ -133,10 +133,22 @@ var hanUtils = {
     liAddSpan: function () {
         $('#write li').each(function (i) {
             if (this.classList.length > 0) {
-
+                // do nothing
+            } else if ($(this).find('p').length > 0
+                || $(this).find('div').length > 0) {
+                // do nothing
             } else {
                 var liContent = $(this).html();
-                $(this).html('<span>' + liContent + '</span>');
+                liContent = liContent.trim();
+                var len = liContent.length;
+                if (len > 0) {
+                    if (liContent.indexOf('<') === 0 && liContent.lastIndexOf('>') === len - 1) {
+                        // do nothing
+                    } else {
+                        $(this).html('<span>' + liContent + '</span>');
+                    }
+                }
+
             }
         });
 
