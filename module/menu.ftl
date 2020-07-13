@@ -35,7 +35,7 @@
         <div class="search-ipt ipt ipt-w">
             <div class="ipt-ct ct-bg">
                 <label class="sh-lab">
-                    <input class="sh-ipt" maxlength="30" name="keyword"  spellcheck="false" placeholder="Search" autocomplete="off">
+                    <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autocomplete="off">
                     <i class="sh-icon cst-icon icon-search"></i>
                 </label>
                 <a class="sh-exit cst-icon icon-exit"></a>

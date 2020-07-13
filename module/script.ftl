@@ -93,6 +93,10 @@
                 photo.loadGallery();
             }
 
+            // 隐藏 search box 并清空 input
+            $('#searchBox').addClass('hidden');
+            $("#searchBoxInput").val("");
+
             // 当前菜单菜单高亮
             hanUtils.highlightMenu();
 
