@@ -1,6 +1,6 @@
 # Halo Theme Xue
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?style=flat-square)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
 
 > 由于[原先的主题](https://github.com/hshanx/halo-theme-hshan)实在是太复杂了, 所以砍掉了一些多余的功能, 也就变成了现在的主题
 
