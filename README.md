@@ -4,8 +4,6 @@
 
 > 由于[原先的主题](https://github.com/hshanx/halo-theme-hshan)实在是太复杂了, 所以砍掉了一些多余的功能, 也就变成了现在的主题
 
-此主题目录为前端渲染,可以不用再文章开头加上`[TOC]`
-
 ## 主题预览
 
 [预览地址](https://baozi.fun)
@@ -35,3 +33,8 @@
   
   ​        
 
+## 安装
+
+请下载最新发布版本，直接使用代码不能安装。
+
+详见：[下载地址](https://github.com/hshanx/halo-theme-xue/tags)
