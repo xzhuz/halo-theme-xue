@@ -101,6 +101,7 @@ var post = {
             $(post_content.firstElementChild).remove();
         }
     },
+
 }
 
 $(function () {

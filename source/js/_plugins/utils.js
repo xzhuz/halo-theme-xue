@@ -151,6 +151,29 @@ var hanUtils = {
 
             }
         });
+    },
+
+    documentClick: function () {
+        $(document).click(function (e) {
+            var target = e.target;
+            var coffeeModal = $('#coffeeModal');
+            // 如果 coffeeModal 打开了
+            if (coffeeModal && coffeeModal.hasClass('is-open')) {
+                if ($(target).closest('#modalContainer').length === 0
+                    && $(target).closest('#buyCoffee').length === 0) {
+                    $('#closeCoffeeModalBtn').trigger('click');
+                }
+            }
+
+            var moonMenu = $('#moonMenu')
+            if (moonMenu && moonMenu.hasClass('active')) {
+                if ($(target).closest('.moon-menu').length === 0) {
+                    // 模拟点击事件
+                    $('.moon-menu-button').trigger("click");
+                }
+            }
+
+        });
 
     }
 }
@@ -170,4 +193,7 @@ $(function () {
 
     // li 添加 span
     hanUtils.liAddSpan();
+
+    // document 点击事件
+    hanUtils.documentClick();
 });

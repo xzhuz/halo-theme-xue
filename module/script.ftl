@@ -34,8 +34,8 @@
 
 <#-- 赞赏模态框 -->
 <div class="modal micromodal-slide" id="coffeeModal" aria-hidden="true" role="dialog">
-    <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+    <div class="modal__overlay model_bg" tabindex="-1" data-micromodal-close="">
+        <div class="modal__container" role="dialog" aria-modal="true" id="modalContainer" aria-labelledby="modal-1-title">
             <header class="modal__header">
                 <h2 class="modal__title" id="coffeeModalTitle"></h2>
                 <button class="modal__close" aria-label="Close modal" id="closeCoffeeModalBtn"></button>
@@ -221,7 +221,7 @@
 </#if>
 
 <script type="text/javascript">
-    console.clear();
+    // console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");

@@ -1,5 +1,5 @@
 <div class="moon-menu">
-    <div class="moon-menu-items">
+    <div class="moon-menu-items" id="moonMenu">
         <span class="moon-menu-item pl-6 cst-icon icon-up"> </span>
         <span class="moon-menu-item pl-6 cst-icon icon-down"> </span>
         <span class="moon-menu-item pl-6 cst-icon icon-search" id="toggleSearch"></span>
@@ -33,7 +33,7 @@
 <form method="get" action="/search">
     <div class="hidden search-box" id="searchBox">
         <div class="search-ipt ipt ipt-w">
-            <div class="ipt-ct ct-bg">
+            <div class="ipt-ct ct-bg" id="searchInput">
                 <label class="sh-lab">
                     <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autocomplete="off">
                     <i class="sh-icon cst-icon icon-search"></i>

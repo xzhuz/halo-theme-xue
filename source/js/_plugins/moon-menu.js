@@ -9,17 +9,22 @@ var moonMenu = {
     },
     ckBack2Top: function () {
         $('.icon-up').on('click', function () {
+            $('#moonToc').removeClass('mm-active');
             moonMenu.smoothBack2Top();
         });
     },
     ckBack2Bottom: function () {
         $('.icon-down').on('click', function () {
+            $('#moonToc').removeClass('mm-active');
             moonMenu.smoothBack2Bottom();
         });
     },
     ckShowContent: function () {
         $('.icon-toc').on('click', function () {
-          $('#moonToc').toggleClass('mm-active');
+            $('#moonToc').toggleClass('mm-active');
+
+            // 模拟点击事件
+            $('.moon-menu-button').trigger("click");
         });
     },
     initMoonToc: function () {
@@ -65,7 +70,6 @@ var moonMenu = {
         $('.moon-menu-button').on('click', function () {
             // 右下角的小点
             moonMenu.toggleCircle();
-
             $('.moon-menu-items').toggleClass('item-ani');
         });
     },

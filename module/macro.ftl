@@ -82,8 +82,8 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007131647">
-        <script language=javascript>
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007152146">
+        <script type="application/javascript">
             <!--
             window.onerror = function () {
                 return true;
@@ -121,12 +121,11 @@
 <#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
 <#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
 <#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
+    <#-- 文章页样式 -->
+    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/9b3e0d6399755edabf262a9b23fa72f1.js"></script>
-    <#-- 文章页样式 -->
-    <script src="${theme_base!}/source/js/post.js?ver=202007131647"></script>
-<#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c80f55.js"></script>
     <#include "script.ftl">
     </html>
 </#macro>
