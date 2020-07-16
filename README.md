@@ -1,13 +1,12 @@
-# Halo Theme Bao
+# Halo Theme Xue
 
-> 由于[原先的主题](https://github.com/hshanx/halo-theme-hshan)实在是太复杂了, 所以砍掉了一些多余的功能, 最终变成了现在的主题
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?style=flat-square)
+
+> 由于[原先的主题](https://github.com/hshanx/halo-theme-hshan)实在是太复杂了, 所以砍掉了一些多余的功能, 也就变成了现在的主题
 
 此主题目录为前端渲染,可以不用再文章开头加上`[TOC]`
 
 ## 主题预览
-![主题预览](https://github.com/hshanx/halo-theme-bao/blob/master/screenshot.png )
-
-[主题指南](https://baozi.fun/archives/theme-manual)
 
 [预览地址](https://baozi.fun)
 

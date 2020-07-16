@@ -2,9 +2,9 @@
 <@layout title="${sheet.title!} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
-            <#if settings.thumbnail?? && settings.thumbnail!=''>
+            <#if sheet.thumbnail?? && sheet.thumbnail!=''>
                 <div class="w-screen cover-bg">
-                    <img src="${settings.thumbnail!}" class="z-auto"
+                    <img src="${sheet.thumbnail!}" class="z-auto"
                          alt="${sheet.title!}">
                 </div>
             <#else>

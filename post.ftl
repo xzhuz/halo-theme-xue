@@ -83,8 +83,8 @@
 
         <!-- 上一篇和下一篇 -->
         <#if settings.post_nepre!true>
-            <div class="container mx-auto mt-8 pb-8 max-w-6xl flex flex-row justify-between  ct-container cn-pd post-navigation">
-                <div class="pre-post pt-4">
+            <div class="container mx-auto mt-8 pb-8 max-w-6xl grid grid-cols-2 flex flex-row justify-between  ct-container cn-pd post-navigation">
+                <div class="pre-post pt-4 ">
                     <#if prevPost??>
                         <a href="${prevPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
@@ -94,7 +94,7 @@
                         </a>
                     </#if>
                 </div>
-                <div class="next-post pt-4">
+                <div class="next-post pt-4 text-right">
                     <#if nextPost??>
                         <a href="${nextPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
