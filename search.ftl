@@ -3,7 +3,7 @@
     <main class="mx-auto"  id="container">
         <header class="bg-cover post-cover">
             <#if settings.searh_patternimg?? && settings.searh_patternimg!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${settings.searh_patternimg!}" class="z-auto"
                          alt="${keyword!}">
                 </div>

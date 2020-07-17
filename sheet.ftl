@@ -3,7 +3,7 @@
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if sheet.thumbnail?? && sheet.thumbnail!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${sheet.thumbnail!}" class="z-auto"
                          alt="${sheet.title!}">
                 </div>

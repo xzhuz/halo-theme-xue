@@ -82,7 +82,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007152146">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007171215">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -125,7 +125,7 @@
     <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c80f55.js"></script>
+    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c80f55.js?ver=202007171215"></script>
     <#include "script.ftl">
     </html>
 </#macro>

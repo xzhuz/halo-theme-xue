@@ -3,7 +3,7 @@
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover" id="postHeader">
             <#if post.thumbnail?? && post.thumbnail!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${post.thumbnail!}" class="z-auto" alt="${post.title!}">
                 </div>
             <#else>

@@ -3,7 +3,7 @@
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.tag_patternimg?? && settings.tag_patternimg!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${settings.tag_patternimg!}" class="z-auto"
                          alt="${settings.tags_title! 'Tags'}">
                 </div>

@@ -3,7 +3,7 @@
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${settings.journals_patternimg!}" class="z-auto"
                          alt="${settings.jounarls_title! 'Journals'}">
                 </div>

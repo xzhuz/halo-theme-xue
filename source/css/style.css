@@ -1311,7 +1311,7 @@ input[type="checkbox"]:not(:checked) + label:after {
   color: #b4b4b4;
   font-size: 20px;
   position: absolute;
-  left: 30px;
+  left: 29px;
 }
 .switch_Word + label:after {
   border-radius: 50%;

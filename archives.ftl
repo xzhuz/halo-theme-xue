@@ -3,7 +3,7 @@
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.archives_patternimg?? && settings.archives_patternimg!=''>
-                <div class="w-screen cover-bg">
+                <div class="cover-bg">
                     <img src="${settings.archives_patternimg!}" class="z-auto"
                          alt="${settings.achieve_title!'Achieves'}">
                 </div>
