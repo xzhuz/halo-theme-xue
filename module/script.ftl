@@ -1,7 +1,8 @@
 <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 <#-- 代码高亮-->
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
-<#--<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/languages/go.min.js"></script>-->
+<#--其他语言包-->
+<script src="//cdn.jsdelivr.net/gh/hshanx/static@master/js/highlight.lang.js"></script>
 <#--代码行数-->
 <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
 <#-- 代码copy按钮-->
@@ -14,9 +15,9 @@
 <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 
 <#--  顶部菜单  -->
-<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/simply-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/simply-nav.js"></script>
 <#--右下角按钮-->
-<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/moon.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/moon.js"></script>
 
 <#--目录-->
 <#if settings.post_toc!true>
