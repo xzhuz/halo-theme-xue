@@ -2269,6 +2269,7 @@ ol > li > ol > li > ol > li {
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
   cursor: pointer;
+  word-break: break-word;
 }
 #write pre {
   padding: 10px;
