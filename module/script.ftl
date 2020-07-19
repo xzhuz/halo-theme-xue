@@ -131,7 +131,14 @@
             $('#moonToc').removeClass('mm-active');
 
             if ($("#container").find('.article-content').length > 0) {
-                window.removeEventListener('scroll', post.tocScroll, false);
+
+                // 小屏幕目录
+                $('#moonMenu').append('<span class="moon-menu-item pl-6 cst-icon icon-toc"></span>')
+
+                moonMenu.initMoonToc();
+
+                moonMenu.ckShowContent();
+
                 // 代码高亮
                 post.loadHighlight();
 
@@ -157,12 +164,6 @@
                 // 切换支付二维码
                 coffeeModal.switchQrCode();
 
-                // 小屏幕目录
-                $('#moonMenu').append('<span class="moon-menu-item pl-6 cst-icon icon-toc"></span>')
-
-                moonMenu.initMoonToc();
-
-                moonMenu.ckShowContent();
                 try {
 
                     if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
