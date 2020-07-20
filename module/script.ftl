@@ -26,17 +26,37 @@
 
 <#if settings.enabled_mathjax!true>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
-    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-            onload="if (document.getElementById('write'))
-            { renderMathInElement(document.getElementById('write'),katex_config)}
-            else if (document.getElementById('tree-hole'))
-            {renderMathInElement(document.getElementById('tree-hole'),katex_config)}"></script>
+<#--    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"-->
+<#--            onload="if (document.getElementById('write'))-->
+<#--            { renderMathInElement(document.getElementById('write'),katex_config)}-->
+<#--            else if (document.getElementById('tree-hole'))-->
+<#--            {renderMathInElement(document.getElementById('tree-hole'),katex_config)}"></script>-->
+
+    <script type="module">
+        import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.mjs";
+        var katex_config = {
+            delimiters:
+                [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                ]
+        };
+
+        if (document.getElementById('write')) {
+            renderMathInElement(document.getElementById('write'), katex_config)
+        } else if (document.getElementById('tree-hole')) {
+            renderMathInElement(document.getElementById('tree-hole'), katex_config)
+        }
+    </script>
 </#if>
 
 <#-- 赞赏模态框 -->
 <div class="modal micromodal-slide" id="coffeeModal" aria-hidden="true" role="dialog">
     <div class="modal__overlay model_bg" tabindex="-1" data-micromodal-close="">
-        <div class="modal__container" role="dialog" aria-modal="true" id="modalContainer" aria-labelledby="modal-1-title">
+        <div class="modal__container" role="dialog" aria-modal="true" id="modalContainer"
+             aria-labelledby="modal-1-title">
             <header class="modal__header">
                 <h2 class="modal__title" id="coffeeModalTitle"></h2>
                 <button class="modal__close" aria-label="Close modal" id="closeCoffeeModalBtn"></button>
@@ -80,6 +100,16 @@
             ]
         });
 
+        var katex_config = {
+            delimiters:
+                [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                ]
+        };
+
         //在Pjax请求开始后触发
         document.addEventListener('pjax:send', function () {
             NProgress.start();
@@ -87,6 +117,7 @@
 
         //在Pjax请求完成后触发
         document.addEventListener('pjax:complete', function (e) {
+            import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.mjs";
             NProgress.done();
 
             // 加载相册
@@ -165,7 +196,6 @@
                 coffeeModal.switchQrCode();
 
                 try {
-
                     if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
                         renderMathInElement(document.getElementById('write'), katex_config);
                     }

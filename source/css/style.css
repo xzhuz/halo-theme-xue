@@ -2947,5 +2947,11 @@ a.is-active-link {
 .night .burger-lines:before {
   background-color: var(--night-txt-color);
 }
+.katex-display {
+  display: inline-block !important;
+}
+.katex-display > .katex {
+  display: inline-block !important;
+}
 
 /*# sourceMappingURL=style.css.map */

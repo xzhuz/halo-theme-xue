@@ -77,13 +77,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github-gist.css">
 
         <#if settings.enabled_mathjax!true>
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
         </#if>
 
         <#-- 所有的css 开发用 -->
         <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007192247">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007201247">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -113,17 +113,17 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-    <#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash;模态框&ndash;&gt;-->
-    <#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
-    <#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
-    <#--    <!-- 右下角按钮&ndash;&gt;-->
-    <#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
-    <#-- 文章页样式 -->
-    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+<#--            <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
+<#--        &lt;#&ndash;模态框&ndash;&gt;-->
+<#--            <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
+<#--        &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
+<#--            <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
+<#--        <!-- 右下角按钮&ndash;&gt;-->
+<#--            <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
+<#--        &lt;#&ndash; 相册相关的js &ndash;&gt;-->
+<#--        <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
+<#--     文章页样式-->
+<#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
     <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c801235.js?ver=202007200035"></script>
