@@ -140,6 +140,10 @@ body {
 input {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
 }
+a {
+  cursor: pointer;
+  word-break: break-word;
+}
 .cn-pd {
   padding-left: 30px;
   padding-right: 30px;
@@ -1959,9 +1963,6 @@ h6 {
   color: #363636;
   margin-top: 2em;
   margin-bottom: 2em;
-}
-a {
-  cursor: pointer;
 }
 strong,
 b {
