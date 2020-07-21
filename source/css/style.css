@@ -2850,6 +2850,10 @@ span.toc-link-dot {
   -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
+.night .img-cover-bg {
+  -webkit-filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
+}
 .night .btn-primary img {
   -webkit-filter: brightness(1) !important;
   filter: brightness(1) !important;
@@ -2875,6 +2879,14 @@ span.toc-link-dot {
 .night .circle {
   color: var(--night-txt-color) !important;
 }
+.night .pagination-circle.is-current,
+.night .pagination-circle:hover {
+  -webkit-filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
+}
+.night .pagination-circle {
+  color: var(--night-page-a-color) !important;
+}
 .night .hljs,
 .night pre,
 .night .hljs table tr:nth-child(2n),
@@ -2885,6 +2897,9 @@ span.toc-link-dot {
 .night .hljs table tr:nth-child(2n),
 .night thead {
   background: var(--night-code-bg-color) !important;
+}
+.night .hljs-string {
+  color: var(--night-code-hljs-string-color) !important;
 }
 .night .post-tag {
   color: var(--night-tag-txt-color) !important;
@@ -2918,6 +2933,12 @@ span.toc-link-dot {
 }
 .night .mh-bg {
   background: var(--night-tag-bg-color) !important;
+  -webkit-filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
+}
+.night .ah-hf {
+  -webkit-filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
 }
 .night .github-badge {
   -webkit-filter: brightness(0.8);

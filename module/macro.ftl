@@ -44,6 +44,8 @@
                 --night-code-txt-color: #c5c8c6;
                 --night-code-color: #969896;
                 --night-code-bg-color: #2d2d2d;
+                --night-code-hljs-string-color: #0857b3;
+                --night-page-a-color: #fffff;
                 --monospace: "Lucida Console", Consolas, "Courier", monospace;
             }
 
@@ -86,7 +88,7 @@
         <#-- 所有的css 开发用 -->
         <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007212100">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007212300">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
