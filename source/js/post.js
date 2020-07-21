@@ -59,6 +59,9 @@ var post = {
             tocFixed.removeClass('toc-right-fixed');
         }
 
+        // 设置目录right
+        post.tocEleRight();
+
         event.preventDefault();
     },
 
@@ -80,12 +83,19 @@ var post = {
             hasInnerContainers: false,
         });
 
-        var tocLinks = $('.md-content .toc-link');
-        if (tocLinks) {
-            for (var i = 0; i < tocLinks.length; i++) {
-                var tocLink = tocLinks[i];
-                tocLink.after(document.createElement("span"));
-            }
+        $('.toc-link').each(function() {
+            var linkContent = $(this).html();
+            $(this).html('<span class="toc-link-dot"></span>'+ linkContent );
+        });
+        // 设置目录right
+        post.tocEleRight();
+    },
+
+    tocEleRight: function () {
+        var screenWidth = document.body.clientWidth;
+        var tocEle = document.getElementById('toc');
+        if (tocEle) {
+            tocEle.style.left = (screenWidth - 800) / 2 + 820 + "px";
         }
     },
 

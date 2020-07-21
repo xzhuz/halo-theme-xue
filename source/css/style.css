@@ -2085,7 +2085,7 @@ textarea:focus {
 }
 blockquote {
   position: relative;
-  margin: 2em 0;
+  margin: 1em 0;
   padding-left: 24px;
   background-color: rgba(96, 125, 139, 0.05);
 }
@@ -2120,7 +2120,7 @@ ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
 #write {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 #write h1,
 #write h2,
@@ -2256,7 +2256,7 @@ ol > li > ol > li > ol > li {
 }
 #write p {
   margin: 1rem auto;
-  line-height: 2;
+  line-height: 1.8;
 }
 #write ol > li > p,
 #write ul > li > p {
@@ -2560,11 +2560,9 @@ td .hljs-button {
 }
 .toc {
   position: fixed;
-  right: 30px;
   bottom: 50%;
   transform: translateY(50%);
   display: none;
-  text-align: right;
 }
 .toc ul,
 .toc ol {
@@ -2585,7 +2583,7 @@ td .hljs-button {
 a.toc-link {
   font-size: 14px;
   line-height: 17px;
-  color: var(--night-toc-bg-color);
+  color: var(--header-link-color);
   display: inline-block;
   max-width: 230px;
   vertical-align: middle;
@@ -2603,12 +2601,6 @@ a.toc-link:hover {
 }
 .is-active-link {
   font-weight: 500;
-}
-a.is-active-link {
-  opacity: 1 !important;
-}
-.toc-list-item span:hover + .toc-link {
-  opacity: 1 !important;
 }
 .is-collapsible {
   max-height: 1000px;
@@ -2629,51 +2621,53 @@ a.is-active-link {
   opacity: 1 !important;
   color: var(--toc-bg-color) !important;
 }
-.toc-link + span {
+span.toc-link-dot {
   background: var(--night-toc-bg-color);
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
   transition: background 0.5s;
-  margin-left: 8px;
+  pointer-events: none;
 }
-.node-name--H1 + span {
+.node-name--H1 span {
   width: 12px;
   height: 12px;
   border-radius: 12px;
+  margin-bottom: 2px;
+  margin-right: 6px;
 }
-.node-name--H2 + span {
+.node-name--H2 span {
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  margin: 0 1px 0 6px;
+  margin: 0 6px 4px 2px;
 }
-.node-name--H3 + span {
+.node-name--H3 span {
   width: 8px;
   height: 8px;
   border-radius: 8px;
-  margin: 0 2px 0 8px;
+  margin: 0 6px 4px 3px;
 }
-.node-name--H4 + span {
+.node-name--H4 span {
   width: 6px;
   height: 6px;
   border-radius: 6px;
-  margin: 0 3px 0 10px;
+  margin: 0 6px 5px 4px;
 }
-.node-name--H5 + span,
-.node-name--H6 + span {
+.node-name--H5 span,
+.node-name--H6 span {
   width: 4px;
   height: 4px;
   border-radius: 4px;
-  margin: 0 4px 0 12px;
+  margin: 0 6px 6px 5px;
 }
-.toc-link + span:hover {
-  background-color: var(--toc-bg-color) !important;
+.toc-link:hover {
+  opacity: 0.7 !important;
 }
 .is-active-link {
-  color: var(--toc-bg-color) !important;
+  opacity: 0.7 !important;
 }
-.is-active-link + span {
+.is-active-link span {
   background-color: var(--toc-bg-color) !important;
 }
 #write ol > li,
@@ -2691,7 +2685,6 @@ a.is-active-link {
 .toc-right-fixed {
   position: absolute;
   bottom: 0;
-  right: 30px;
   transform: translateY(0);
 }
 .moon-menu,

@@ -32,12 +32,11 @@
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd"
                  id="write">
                 ${post.formatContent!}
-
-                <div id="tocFlag"></div>
-                <#if settings.post_toc!true>
-                    <aside id="toc" class="toc"></aside>
-                </#if>
             </div>
+            <div id="tocFlag"></div>
+            <#if settings.post_toc!true>
+                <aside id="toc" class="toc"></aside>
+            </#if>
         </div>
 
         <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">

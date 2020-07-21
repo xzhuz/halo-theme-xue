@@ -86,7 +86,7 @@
         <#-- 所有的css 开发用 -->
         <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007201247">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007212100">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -131,7 +131,7 @@
     <#--    所有的js-->
     <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c801235.js?ver=202007200035"></script>
 
-    <script src="${theme_base!}/source/js/post.js?ver=202007200035"></script>
+    <script src="${theme_base!}/source/js/post.js?ver=202007212100"></script>
     <#include "script.ftl">
     </html>
 </#macro>

@@ -1,12 +1,12 @@
 .toc {
   position: fixed;
-  right: 30px;
+  //right: calc((screen.width - 1024px) / 2) !important;
   bottom: 50%;
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
   //z-index: 90;
   display: none;
-  text-align: right;
+  //text-align: right;
 }
 
 .toc ul, .toc ol {
@@ -31,7 +31,7 @@
 a.toc-link {
   font-size: 14px;
   line-height: 17px;
-  color: var(--night-toc-bg-color);
+  color: var(--header-link-color);
   display: inline-block;
   max-width: 230px;
   vertical-align: middle;
@@ -52,16 +52,6 @@ a.toc-link:hover {
 
 .is-active-link {
   font-weight: 500;
-}
-
-a.is-active-link {
-  opacity: 1 !important;
-}
-
-.toc-list-item span:hover {
-  & + .toc-link {
-    opacity: 1 !important;
-  }
 }
 
 
@@ -89,58 +79,61 @@ a.is-active-link {
   color: var(--toc-bg-color) !important;
 }
 
-.toc-link + span {
+span.toc-link-dot {
   background: var(--night-toc-bg-color);
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
   -webkit-transition: background .5s;
   transition: background .5s;
-  margin-left: 8px;
+  pointer-events: none;
 }
 
-.node-name--H1 + span {
+.node-name--H1 span {
   width: 12px;
   height: 12px;
   border-radius: 12px;
+  margin-bottom: 2px;
+  margin-right: 6px;
 }
 
-.node-name--H2 + span {
+.node-name--H2 span {
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  margin: 0 1px 0 6px;
+  margin: 0 6px 4px 2px;
 }
 
-.node-name--H3 + span {
+.node-name--H3 span {
   width: 8px;
   height: 8px;
   border-radius: 8px;
-  margin: 0 2px 0 8px;
+  margin: 0 6px 4px 3px;
 }
 
-.node-name--H4 + span {
+.node-name--H4 span {
   width: 6px;
   height: 6px;
   border-radius: 6px;
-  margin: 0 3px 0 10px;
+  margin: 0 6px 5px 4px;
 }
 
-.node-name--H5 + span,.node-name--H6 + span {
+.node-name--H5 span ,.node-name--H6 span  {
   width: 4px;
   height: 4px;
   border-radius: 4px;
-  margin: 0 4px 0 12px;
+  margin: 0 6px 6px 5px;
 }
 
-.toc-link+span:hover {
-  background-color: var(--toc-bg-color) !important;
+.toc-link:hover {
+  opacity: .7 !important;
 }
 
 .is-active-link {
-  color: var(--toc-bg-color) !important;
+  opacity: .7 !important;
 }
-.is-active-link+span {
+
+.is-active-link span {
   background-color: var(--toc-bg-color) !important;
 }
 
@@ -161,7 +154,7 @@ a.is-active-link {
 .toc-right-fixed {
   position: absolute;
   bottom: 0;
-  right: 30px;
+  //right: 200px;
   //right: -290px;
   -webkit-transform: translateY(0);
   transform: translateY(0);
