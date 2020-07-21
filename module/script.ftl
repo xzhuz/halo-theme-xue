@@ -23,33 +23,28 @@
 <#if settings.post_toc!true>
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
 </#if>
-
+<#if settings.Aplayer?? && settings.Aplayer != ''>
+    <script src="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+</#if>
+<script type="text/javascript">
+    var katex_config = {
+        delimiters:
+            [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\[", right: "\\]", display: true},
+            ]
+    };
+</script>
 <#if settings.enabled_mathjax!true>
     <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
-<#--    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"-->
-<#--            onload="if (document.getElementById('write'))-->
-<#--            { renderMathInElement(document.getElementById('write'),katex_config)}-->
-<#--            else if (document.getElementById('tree-hole'))-->
-<#--            {renderMathInElement(document.getElementById('tree-hole'),katex_config)}"></script>-->
-
-    <script type="module">
-        import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.mjs";
-        var katex_config = {
-            delimiters:
-                [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\[", right: "\\]", display: true},
-                ]
-        };
-
-        if (document.getElementById('write')) {
-            renderMathInElement(document.getElementById('write'), katex_config)
-        } else if (document.getElementById('tree-hole')) {
-            renderMathInElement(document.getElementById('tree-hole'), katex_config)
-        }
-    </script>
+    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+            onload="if (document.getElementById('write'))
+            { renderMathInElement(document.getElementById('write'), katex_config)}
+            else if (document.getElementById('tree-hole'))
+            {renderMathInElement(document.getElementById('tree-hole'), katex_config)}"></script>
 </#if>
 
 <#-- 赞赏模态框 -->
@@ -100,16 +95,6 @@
             ]
         });
 
-        var katex_config = {
-            delimiters:
-                [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\[", right: "\\]", display: true},
-                ]
-        };
-
         //在Pjax请求开始后触发
         document.addEventListener('pjax:send', function () {
             NProgress.start();
@@ -117,7 +102,6 @@
 
         //在Pjax请求完成后触发
         document.addEventListener('pjax:complete', function (e) {
-            import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.mjs";
             NProgress.done();
 
             // 加载相册
@@ -268,8 +252,6 @@
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
     // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");
-
-    // var performance =window.performance ||window.msPerformance ||window.webkitPerformance;if(performance) {console.log(performance);    }
 
 </script>
 

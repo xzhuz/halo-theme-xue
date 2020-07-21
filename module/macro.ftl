@@ -79,6 +79,9 @@
         <#if settings.enabled_mathjax!true>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
         </#if>
+        <#if settings.Aplayer?? && settings.Aplayer != ''>
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+        </#if>
 
         <#-- 所有的css 开发用 -->
         <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->

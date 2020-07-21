@@ -302,12 +302,12 @@ other:
       label: '站点运行时间统计'
       type: text
       description: '填入起始时间，格式：月/日/年 时:分:秒，如08/20/2018 12:00:00'
-#    Aplayer:
-#      name: Aplayer
-#      label: Aplayer吸底播放器
-#      type: text
-#      placeholder: '网易云歌单id'
-#      description: '网易云歌单id, 比如: 60198. 暂时就只能这样子了, 后面再优化吧'
+    Aplayer:
+      name: Aplayer
+      label: Aplayer吸底播放器
+      type: text
+      placeholder: '网易云歌单id'
+      description: '网易云歌单id, 比如: 60198. '
     xiang_ying_xiong_zhi_jing:
       name: xiang_ying_xiong_zhi_jing
       label: 向英雄致敬, 愿精神长存

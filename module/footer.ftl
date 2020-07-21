@@ -87,3 +87,12 @@
         </div>
     </div>
 </footer>
+
+<#if settings.Aplayer?? && settings.Aplayer != ''>
+    <meting-js
+            server="netease"
+            type="playlist"
+            fixed="true"
+            id="${settings.Aplayer}">
+    </meting-js>
+</#if>
