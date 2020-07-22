@@ -2662,6 +2662,18 @@ span.toc-link-dot {
   border-radius: 4px;
   margin: 0 6px 6px 5px;
 }
+.node-name--H3 {
+  padding-left: 0.5rem;
+}
+.node-name--H4 {
+  padding-left: 0.7rem;
+}
+.node-name--H5 {
+  padding-left: 0.9rem;
+}
+.node-name--H6 {
+  padding-left: 1.1rem;
+}
 .toc-link:hover {
   opacity: 0.7 !important;
 }
