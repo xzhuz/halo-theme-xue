@@ -131,7 +131,7 @@
     <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
-    <#--    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c801235.js?ver=202007200035"></script>-->
+    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c801235.js?ver=202007200035"></script>
 
     <script src="${theme_base!}/source/js/post.js?ver=202007212100"></script>
     <#include "script.ftl">
