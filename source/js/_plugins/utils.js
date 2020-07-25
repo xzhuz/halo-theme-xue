@@ -165,7 +165,22 @@ var hanUtils = {
             }
 
         });
+    },
 
+    menuBgFFF: function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var postHeader = $('#navHeader');
+        if (scrollTop > 0 && postHeader) {
+            postHeader.addClass('nav-bg-fff');
+            postHeader.addClass('nav-box-sd');
+        } else {
+            postHeader.removeClass('nav-bg-fff');
+            postHeader.addClass('nav-box-sd');
+        }
+    },
+
+    scrollMenuShow: function () {
+        window.addEventListener('scroll', hanUtils.menuBgFFF, false);
     }
 }
 
@@ -187,4 +202,7 @@ $(function () {
 
     // document 点击事件
     hanUtils.documentClick();
+
+    // 滚动目录背景展示
+    hanUtils.scrollMenuShow();
 });

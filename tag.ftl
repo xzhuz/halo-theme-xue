@@ -18,8 +18,8 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4">
-            <div class="posts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-8 md:gap-4 sm:gap-3 mt-4">
+        <div class="container mx-auto px-4 content-container">
+            <div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4">
                 <#if posts?? && posts.getTotalElements() gt 0>
                     <#list posts.content as post>
                         <div class="post-card mt-4">
@@ -43,14 +43,16 @@
                                 </#if>
                             </header>
                             <div class="card-body">
-                                <p class="text-center text-2xl tracking-wider text-clamp-1 svg-f">
-                                    <a href="${post.fullPath!}" class="font-medium text-gray-700 post-title">
+                                <p class="text-center text-xl tracking-wider svg-f text-clamp-1">
+                                    <a href="${post.fullPath!}" class="font-medium text-gray-700 post-title font-sans">
                                         ${post.title!}
                                     </a>
                                 </p>
-                                <#--                                <p class="post-excerpt text-sm tracking-wider text-clamp-2">-->
-                                <#--                                    ${post.summary!}-->
-                                <#--                                </p>-->
+                                <#if settings.card_hover_summary!false>
+                                    <p class="post-excerpt text-sm tracking-wider text-clamp-3 font-sans">
+                                        ${post.summary!}
+                                    </p>
+                                </#if>
                             </div>
                             <footer class="card-footer svg-f">
                                 <span class="cst-icon icon-calendar lh-25 f-10" style="margin-right: 5px"></span>

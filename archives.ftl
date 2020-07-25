@@ -18,7 +18,7 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
             <@postTag method="archiveMonth">
                 <#list archives as archive>
                     <section class="arch-year">
@@ -27,7 +27,7 @@
                             <header class="absolute mh-hd af-bg-fff mh-bg "> ${archive.month!} 月</header>
                             <span class="">
                             <#list archive.posts?sort_by("createTime")?reverse as post>
-                                <a class="ah-hf ah-hv" href="${post.fullPath!}">
+                                <a class="ah-hf ah-hv font-sans" href="${post.fullPath!}">
                                     <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
                                     <span class="ah-tt">${post.title!}</span>
                                 </a>

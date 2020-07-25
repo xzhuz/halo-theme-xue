@@ -62,6 +62,15 @@
 
             </#if>
 
+            <#if settings.enabled_index_cover_height!true>
+            @media only screen and (min-width: 861px) {
+                .home-page .bg-cover {
+                    height: 100vh !important;
+                }
+            }
+
+            </#if>
+
         </style>
 
 
@@ -87,8 +96,8 @@
 
         <#-- 所有的css 开发用 -->
         <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-        <#-- 发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007222322">
+        <#--         发布用 -->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007251722">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -118,22 +127,22 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash;模态框&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
-    <#--    <!-- 右下角按钮&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
-    <#--    &lt;#&ndash;     文章页样式&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+    <#--        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=${.now?long}"></script>-->
+    <#--        &lt;#&ndash;模态框&ndash;&gt;-->
+    <#--        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=${.now?long}"></script>-->
+    <#--        &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
+    <#--        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>-->
+    <#--        <!-- 右下角按钮&ndash;&gt;-->
+    <#--        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=${.now?long}"></script>-->
+    <#--        &lt;#&ndash; 相册相关的js &ndash;&gt;-->
+    <#--        <script src="${theme_base!}/source/js/gallery.js?ver=${.now?long}"></script>-->
+    <#--        &lt;#&ndash;     文章页样式&ndash;&gt;-->
+    <#--        <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
 
     <#--    所有的js-->
-    <#--    <script src="${theme_base!}/dist/8e363b4ff9ee564b83885f7e6c801235.js?ver=202007200035"></script>-->
+    <script src="${theme_base!}/dist/e43a18a7bb2256e8bf0a8dd9c035ccd2.js?ver=202007251722"></script>
 
-    <script src="${theme_base!}/source/js/post.js?ver=202007212100"></script>
+    <script src="${theme_base!}/source/js/post.js?ver=202007251722"></script>
     <#include "script.ftl">
     </html>
 </#macro>

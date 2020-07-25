@@ -31,6 +31,10 @@
 
 .cover-content {
     height: 480px;
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
 }
 
 .cover-content .inner {
@@ -41,9 +45,9 @@
 
 .cover-content .inner .slogan {
     color: #d4d3d3;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 }
 
 .card {
@@ -53,6 +57,67 @@
 .svg-f svg {
     display: inline-block;
     padding-bottom: 5px;
+}
+
+.arrow-down, .arrow-left, .arrow-right, .arrow-up {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 30px;
+}
+
+.bg-cover .arrow-down {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: blink;
+    animation-name: blink;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -15px;
+    position: absolute;
+}
+
+.screen-reader-text {
+    border: 0 none;
+    clip: rect(1px,1px,1px,1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute!important;
+    width: 1px;
+}
+
+.bg-cover .arrow-down:after, .bg-cover .arrow-down:before {
+    background-color: #fff;
+}
+
+.arrow-down:before {
+    transform: translateX(-7px) rotate(45deg);
+}
+
+.arrow-down:after {
+    transform: translateX(7px) rotate(-45deg);
+}
+
+.arrow-down:after,
+.arrow-down:before,
+.arrow-left:after,
+.arrow-left:before,
+.arrow-right:after,
+.arrow-right:before,
+.arrow-up:after,
+.arrow-up:before {
+    background-color: #adabac;
+    content: "";
+    height: 2px;
+    left: 50%;
+    margin-left: -11px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    width: 22px;
 }
 
 /* Animations */
@@ -80,5 +145,38 @@
     }
     100% {
         opacity: 0.3;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
     }
 }

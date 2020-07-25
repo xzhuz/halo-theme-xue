@@ -22,7 +22,7 @@
             <#if posts?? && posts.content?size gt 0>
                 <#list posts.content as post>
                     <a href="${post.fullPath}" class="ah-hf ah-hv">
-                        <a class="ah-hf ah-hv" href="${post.fullPath!}">
+                        <a class="ah-hf ah-hv font-sans" href="${post.fullPath!}">
                             <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
                             <span class="ah-tt">${post.title!}</span>
                         </a>
@@ -55,7 +55,7 @@
                                                 <@postTag method="latest" top="10">
                                                     <#list posts as post>
                                                         <li>
-                                                            <a class="ah-hf ah-hv" href="${post.fullPath!}">
+                                                            <a class="ah-hf ah-hv font-sans" href="${post.fullPath!}">
                                                                 <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
                                                                 <span class="ah-tt">${post.title!}</span>
                                                             </a>

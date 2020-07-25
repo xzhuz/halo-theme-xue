@@ -28,6 +28,12 @@
     <script src="//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 </#if>
 <script type="text/javascript">
+    $('.arrow-down').on('click', function () {
+        var postHeight = $('#homeHeader').height();
+        window.scroll({ top: postHeight - 50, behavior: 'smooth' });
+    })
+</script>
+<script type="text/javascript">
     var katex_config = {
         delimiters:
             [
@@ -86,7 +92,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
     <script type="text/javascript">
         var pjax = new Pjax({
-            elements: 'a[href]:not([href^="#"]):not([data-not-pjax]), form', // default is "a[href], form[action]"
+            elements: 'a[href]:not([href^="#"]):not([data-not-pjax]):not([target^="_blank"]), form', // default is "a[href], form[action]"
             cacheBust: false,
             debug: false,
             selectors: [

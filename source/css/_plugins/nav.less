@@ -67,10 +67,27 @@
   justify-content: flex-end;
 }
 
+.nav-bg-fff {
+  background-color: var(--header-bg-color) !important;
+  transition: all .6s;
+
+  .nav-list>.list>.item>.link {
+    color: var(--header-link-color) !important;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .nav-wrapper.-sticky.-bottom > .nav > .nav-list > .list.-left {
     flex-direction: row;
     justify-content: flex-start;
+  }
+
+  .nav-wrapper {
+    background:none;
+  }
+
+  .nav-list>.list>.item>.link {
+    color: #ffffff !important;
   }
 }
 

@@ -25,13 +25,24 @@ genernal:
       label: 首页背景
       type: attachment
       default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+    enabled_index_cover_height:
+      name: enabled_index_cover_height
+      label: 首页开启全屏图片
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     header_logoimg:
       name: header_logoimg
       label: 菜单 Logo
       type: attachment
     card_random_cover:
       name: card_random_cover
-      label: 卡篇文章风格随机选择封面
+      label: 卡片随机选择封面
       type: radio
       data-type: bool
       default: false
@@ -43,7 +54,7 @@ genernal:
       description: '即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/archives/random-thumbnail'
     card_random_cover_img_suffix:
       name: card_random_cover_img_suffix
-      label: 卡篇文章风格随机选择封面后缀
+      label: 卡片随机选择封面后缀
       type: radio
       data-type: string
       default: png
@@ -57,9 +68,21 @@ genernal:
       description: '随机封面后缀'
     card_random_cover_img_num:
       name: card_random_cover_img_num
-      label: 卡篇文章风格随机选择封面数量
+      label: 卡片随机选择封面数量
       type: number
       default: 4
+    card_hover_summary:
+      name: card_hover_summary
+      label: 卡片显示简介
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: '悬浮显示简介'
     auto_night_mode:
       name: auto_night_mode
       label: 暗夜模式总开关

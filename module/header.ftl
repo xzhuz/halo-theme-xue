@@ -1,4 +1,4 @@
-<header class="nav-wrapper -sticky nav-box-sd">
+<header class="nav-wrapper -sticky" id="navHeader">
     <nav class="nav ">
         <button class="toggle-nav">
             <div class="burger -squeeze">
