@@ -113,6 +113,7 @@
             // 加载相册
             if ($("#container").find('.photos-page').length > 0) {
                 photo.loadGallery();
+                photo.showPhotos();
             }
 
             // 隐藏 search box 并清空 input

@@ -920,6 +920,92 @@ figure {
   max-width: 1024px;
   margin: 50px auto;
 }
+.gallery-item {
+  transition: all 0.6s;
+}
+h1.photo-ach-title {
+  cursor: pointer;
+}
+ul.cards {
+  width: 25%;
+  display: inline-block;
+  height: 250px;
+  list-style-type: none;
+  position: relative;
+  padding: 40px 0 0 0;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+ul.cards li.title {
+  margin: 0 0 20px;
+}
+ul.cards li.title h2 {
+  font-weight: 700;
+}
+ul.cards li.card {
+  background: #FFF;
+  overflow: hidden;
+  height: 180px;
+  width: 200px;
+  border-radius: 10px;
+  position: absolute;
+  left: 10%;
+  box-shadow: 1px 2px 2px 0 #aaa;
+  transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
+}
+ul.cards li.card a img {
+  width: 100%;
+  padding: 5px;
+  height: 123px;
+}
+ul.cards li.card div.content {
+  padding: 5px 10px;
+}
+ul.cards li.card {
+  z-index: 10;
+  transform: rotateZ(-2deg);
+}
+ul.cards li.card.card-2 {
+  z-index: 9;
+  transform: rotateZ(-7deg);
+  transition-delay: 0.05s;
+}
+ul.cards li.card.card-3 {
+  z-index: 8;
+  transform: rotateZ(5deg);
+  transition-delay: 0.1s;
+}
+.gallery-card-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 300;
+}
+.gallery-cards {
+  transition: all 0.6s;
+}
+.gallery-area {
+  display: inline-block;
+  transition: all 0.6s;
+}
+.gallery-area-tog {
+  margin-bottom: 20px;
+}
+.gallery-area-bg {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.gallery-area:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  border-style: solid;
+}
+.gallery-area:before {
+  left: -10px;
+  border-width: 15px 10px 5px 0;
+  border-color: transparent rgba(0, 0, 0, 0.05) transparent transparent;
+}
 .tree-hole li,
 .tree-hole ol,
 .tree-hole ul {
@@ -1299,9 +1385,6 @@ figure {
   color: #d4d3d3;
   font-size: 1.5rem;
   letter-spacing: 2px;
-}
-.card {
-  min-width: 400px;
 }
 .svg-f svg {
   display: inline-block;
@@ -3158,12 +3241,20 @@ span.toc-link-dot {
   color: var(--night-txt-color);
 }
 .night .nav-wrapper {
-  background: var(--night-background);
+  background: var(--night-background) !important;
 }
 .night .burger-lines,
 .night .burger-lines:after,
 .night .burger-lines:before {
   background-color: var(--night-txt-color);
+}
+.night ul.cards li.card {
+  background-color: #27282b !important;
+  box-shadow: 1px 2px 2px 0 rgba(19, 19, 19, 0.94) !important;
+}
+.night .photos img {
+  -webkit-filter: brightness(0.8) !important;
+  filter: brightness(0.8) !important;
 }
 .katex-display {
   display: inline-block !important;

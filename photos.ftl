@@ -19,20 +19,27 @@
             </div>
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd photos-page content-container">
-            <div class="photos-box article-content" id="gallery-content">
+            <div class="photos grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4"
+                 id="galleryCards">
                 <@photoTag method="listTeams">
                     <#list teams as item>
-                        <#if item.team?? && item.team!=''>
-                            <h3 class="w-full m-4">${item.team}</h3>
-                        </#if>
-                        <div class="justified-gallery">
-                            <#list item.photos as photo>
-                                <a class="gallery-item jg-entry entry-visible"
-                                   href="javascript:void(0)">
-                                    <img src="${photo.url!}" data-src="${photo.url!}" alt="${photo.name!}"/>
-                                    <p class="has-text-centered is-size-6 caption">${photo.name}</p>
-                                </a>
-                            </#list>
+                        <div class="gallery-cards" itemIndex="${item_index}">
+                            <ul class="cards" id="cards_${item_index}">
+                                <#list item.photos as photo>
+                                    <li class="card card-${photo_index + 1}">
+                                        <a class="gallery-item jg-entry entry-visible" href="javascript:void(0)">
+                                            <img src="${photo.url!}" data-src="${photo.url!}" alt="${photo.name!}"/>
+                                            <div class="content">
+                                                <#if item.team?? && item.team!=''>
+                                                    <h1 class="gallery-card-title">${item.team}</h1>
+                                                <#else>
+                                                    <h1 class="gallery-card-title">默认相册</h1>
+                                                </#if>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </#list>
+                            </ul>
                         </div>
                     </#list>
                 </@photoTag>
