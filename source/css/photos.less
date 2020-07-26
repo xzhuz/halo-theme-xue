@@ -13,7 +13,7 @@ h1.photo-ach-title {
 }
 
 ul.cards {
-  width: 25%;
+  //width: 25%;
   display: inline-block;
   //margin: 0 auto;
   height: 250px;
@@ -44,7 +44,7 @@ ul.cards li.card {
 ul.cards li.card a img {
   width: 100%;
   padding: 5px;
-  height: 123px;
+  height: 130px;
 }
 ul.cards li.card div.content {
   padding: 5px 10px;
@@ -83,7 +83,8 @@ ul.cards li.card.card-3 {
 
 .gallery-area {
   display: inline-block;
-  transition: all .6s;
+  -webkit-animation: fade-down .6s;
+  animation: fade-down .6s;
 }
 
 .gallery-area-tog {
@@ -98,12 +99,25 @@ ul.cards li.card.card-3 {
 .gallery-area:before {
   content: '';
   position: absolute;
-  top: 10px;
+  top: -10px;
   border-style: solid;
 }
 
 .gallery-area:before {
-  left: -10px;
-  border-width: 15px 10px 5px 0;
-  border-color: transparent rgba(0,0,0,.05) transparent transparent;
+  left: var(--left);
+  //border-width: 15px 10px 5px 0;
+  //border-color: transparent rgba(0,0,0,.05) transparent transparent;
+  font-size: 0;
+  line-height: 0;
+  border-width: 10px;
+  border-color: rgba(0, 0, 0, .05);
+  border-top-width: 0;
+  border-style: dashed;
+  border-bottom-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.justified-gallery {
+  overflow: inherit !important;
 }

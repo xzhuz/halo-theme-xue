@@ -61,20 +61,22 @@ var photo = {
 
     // 添加元素
     appendEle: function (thisEle, itemIndex) {
-
         var galleryCards = $('#galleryCards');
         var cardLen = galleryCards.children().length;
         var cardsIndex = $('#galleryCards .gallery-cards').index(thisEle);
 
         var screenWidth = document.documentElement.clientWidth;
         var element;
+        var left = '30%';
         if (screenWidth >= 1024) { //lg
             element = '<div class="gallery-area col-span-4 gallery-area-bg transition duration-500 ease-in-out" id="galleryArea" itemIndex=' + itemIndex + '></div>';
             photo.doAppendDiv(cardsIndex, cardLen, 4, element, thisEle);
+            left = (cardsIndex + 1) % 4 * 18 + '%';
         } else if (screenWidth >= 768 && screenWidth < 1024) { //md
             element = '<div class="gallery-area col-span-3 gallery-area-bg transition duration-500 ease-in-out" id="galleryArea" itemIndex=' + itemIndex + '></div>';
             photo.doAppendDiv(cardsIndex, cardLen, 3, element, thisEle);
-
+            // left = 3;
+            left = (cardsIndex + 1) % 3 * 20 + '%';
         } else if (screenWidth >= 640 && screenWidth < 768) { // sm
             element = '<div class="gallery-area gallery-area-bg col-span-2 transition duration-500 ease-in-out" id="galleryArea" itemIndex=' + itemIndex + '></div>';
             if ((cardsIndex + 1) % 2 === 0) {
@@ -82,17 +84,26 @@ var photo = {
             } else {
                 $(thisEle).next().after(element);
             }
+            left = (cardsIndex + 1) % 2 * 20 + '%';
+            if (left === '0%') {
+                left = '70%';
+            }
         } else {  // xs
             element = '<div class="gallery-area gallery-area-bg transition duration-500 ease-in-out" id="galleryArea" itemIndex=' + itemIndex + '></div>';
             $(thisEle).after(element);
         }
+        if (left === '0%') {
+            left = '85%';
+        }
+        console.log(left);
+        var style = document.querySelector('.gallery-area').style;
+        style.setProperty('--left', left);
     },
 
     // 真正实现添加div
     doAppendDiv: function (cardsIndex, cardLen, size, element, thisEle) {
         if ((cardsIndex + 1) % size === 0 || cardsIndex + 1 === cardLen) {
             $(thisEle).after(element);
-            console.log('after');
         } else {
             var addNumber = (size - (cardsIndex + 1) % size);
             var lastEle;

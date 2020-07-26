@@ -18,7 +18,7 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd photos-page content-container">
+        <div class="container mx-auto px-4 mt-16  tracking-wider md:leading-relaxed sm:leading-normal cn-pd photos-page content-container">
             <div class="photos grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4"
                  id="galleryCards">
                 <@photoTag method="listTeams">
