@@ -16,7 +16,8 @@
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
                         <li class="item">
-                            <a class="link md:text-base sm:text-sm " href="${menu.url!}" target="${menu.target!}">${menu.name}</a>
+                            <a class="link md:text-base sm:text-sm " href="${menu.url!}"
+                               target="${menu.target!}">${menu.name}</a>
                         </li>
                     </#list>
                 </@menuTag>
@@ -25,9 +26,11 @@
                 <div class="overlay"></div>
             </div>
         </ul>
-        <div class="day-night-mode">
-            <input id="switch_Word" type="checkbox" class="switch_Word">
-            <label for="switch_Word"><i></i></label>
-        </div>
+        <#if settings.open_night_mode!true>
+            <div class="day-night-mode">
+                <input id="switch_Word" type="checkbox" class="switch_Word">
+                <label for="switch_Word"><i></i></label>
+            </div>
+        </#if>
     </nav>
 </header>

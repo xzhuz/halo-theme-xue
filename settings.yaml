@@ -83,9 +83,9 @@ genernal:
         - value: false
           label: 关闭
       description: '悬浮显示简介'
-    auto_night_mode:
-      name: auto_night_mode
-      label: 暗夜模式总开关
+    open_night_mode:
+      name: open_night_mode
+      label: 开启夜晚模式
       type: radio
       data-type: bool
       default: true
@@ -94,17 +94,17 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    night_mode:
-      name: night_mode
-      label: 暗夜模式顶部按钮(需要先打开暗黑模式总开关)
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+#    night_mode:
+#      name: night_mode
+#      label: 暗夜模式顶部按钮(需要先打开暗黑模式总开关)
+#      type: radio
+#      data-type: bool
+#      default: true
+#      options:
+#        - value: true
+#          label: 开启
+#        - value: false
+#          label: 关闭
     Icp:
       name: Icp
       label: 'ICP 备案号'
