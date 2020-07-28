@@ -96,7 +96,7 @@
         <#-- 所有的css 开发用 -->
 <#--                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007270000">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007281228">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
