@@ -94,17 +94,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-#    night_mode:
-#      name: night_mode
-#      label: 暗夜模式顶部按钮(需要先打开暗黑模式总开关)
-#      type: radio
-#      data-type: bool
-#      default: true
-#      options:
-#        - value: true
-#          label: 开启
-#        - value: false
-#          label: 关闭
     Icp:
       name: Icp
       label: 'ICP 备案号'
@@ -199,6 +188,28 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    code_style:
+      name: code_style
+      label: 代码风格
+      type: select
+      data-type: string
+      default: 'tomorrow-night-bright'
+      description: '代码风格'
+      options:
+        - value: 'tomorrow-night-bright'
+          label: 'tomorrow'
+        - value: 'atelier-lakeside-light'
+          label: 'atelier'
+        - value: 'atom-one-light'
+          label: 'atom'
+        - value: 'github'
+          label: 'github'
+        - value: 'github-gist'
+          label: 'github-gist'
+        - value: 'kimbie.light'
+          label: 'kimbie'
+        - value: 'paraiso-light'
+          label: 'paraiso'
 #    enabled_mermaid:
 #      name: enabled_mermaid
 #      label: Mermaid
