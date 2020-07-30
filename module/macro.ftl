@@ -94,7 +94,7 @@
         </#if>
 
         <#--标签云-->
-        <link href="https://cdn.bootcdn.net/ajax/libs/jqcloud/1.0.4/jqcloud.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/hshanx/static@master/css/jqcloud.min.css" rel="stylesheet">
 
 
         <#-- 所有的css 开发用 -->

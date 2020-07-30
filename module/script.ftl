@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/moon.js"></script>
 
 <#--标签云-->
-<script src="https://cdn.bootcdn.net/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/jqcloud-1.0.4.min.js"></script>
 <script type='text/javascript'>
     // 标签
     var tagArray = [
@@ -154,6 +154,18 @@
             $('#searchBox').addClass('hidden');
             $("#searchBoxInput").val("");
 
+            // 标签云
+            var tagCloud = $("#tagCloud");
+            if (tagCloud && tagCloud.children().length === 0) {
+                tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
+            }
+
+            // 分类云
+            var categoryCloud = $("#categoryCloud");
+            if (categoryCloud && categoryCloud.children().length === 0) {
+                categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
+            }
+
             // 当前菜单菜单高亮
             hanUtils.highlightMenu();
 
@@ -245,18 +257,6 @@
                 } else if (document.getElementById('tree-hole')) {
                     renderMathInElement(document.getElementById('tree-hole'), katex_config)
                 }
-            }
-
-            // 标签云
-            var tagCloud = $("#tagCloud");
-            if (tagCloud && tagCloud.children().length === 0) {
-                tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
-            }
-
-            // 分类云
-            var categoryCloud = $("#categoryCloud");
-            if (categoryCloud && categoryCloud.children().length === 0) {
-                categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
             }
 
         });
