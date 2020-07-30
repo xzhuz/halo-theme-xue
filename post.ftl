@@ -23,7 +23,19 @@
                             <time class="published"
                                   datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</time>
                         </div>
-                        <div class="md:text-center">${user.nickname!}</div>
+                        <div class="md:text-center post-categories">
+                            <#if post.categories?? && post.categories?size gt 0>
+                                <#include "module/icon/folder.ftl">
+                            </#if>
+                            <#if post.categories?? && post.categories?size gt 0>
+
+                                <#list post.categories as category>
+                                    <a href="${category.fullPath!}" class="post-category">
+                                        · ${category.name!}
+                                    </a>
+                                </#list>
+                            </#if>
+                        </div>
                     </div>
                 </div>
             </div>
