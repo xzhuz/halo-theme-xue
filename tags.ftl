@@ -19,16 +19,20 @@
             </div>
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
-            <@tagTag method="list">
-                <#if tags?? && tags?size gt 0>
-                    <#list tags as tag>
-                        <a href="${tag.fullPath}" class="ah-hf ah-hv">
-                            <span class="ah-dt ct-f-size op-10"># ${tag.name}</span>
-                            <span class="ah-tt h-6 op-06"></span>
-                        </a>
-                    </#list>
-                </#if>
-            </@tagTag>
+            <h2>标签</h2>
+            <p class="flex flex-row justify-start space-x-4 flex-wrap">
+                <@tagTag method="list">
+                    <#if tags?? && tags?size gt 0>
+                        <#list tags as tag>
+                            <a href="${tag.fullPath}" class="post-tag mt-2 mb-2">
+                                ${tag.name} <span class="tag-length">${tag.postCount!}</span>
+                            </a>
+                        </#list>
+                    </#if>
+                </@tagTag>
+            </p>
+            <h2 style="margin-bottom: 0;">标签云</h2>
+            <div id="tagCloud" class="card-content jqcloud jqcloud-hg"></div>
         </div>
     </main>
 </@layout>

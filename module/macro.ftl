@@ -93,10 +93,14 @@
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
+        <#--标签云-->
+        <link href="https://cdn.bootcdn.net/ajax/libs/jqcloud/1.0.4/jqcloud.min.css" rel="stylesheet">
+
+
         <#-- 所有的css 开发用 -->
-<#--                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
         <#--         发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007281305">
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007281305">-->
         <script type="application/javascript">
             <!--
             window.onerror = function () {

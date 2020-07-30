@@ -19,6 +19,40 @@
 <#--右下角按钮-->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/moon.js"></script>
 
+<#--标签云-->
+<script src="https://cdn.bootcdn.net/ajax/libs/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>
+<script type='text/javascript'>
+    // 标签
+    var tagArray = [
+        <@tagTag method="list">
+        <#list tags as tag>
+        {'text': '${tag.name!}', 'weight': '${tag.postCount!}', 'link': '${tag.fullPath!}'},
+        </#list>
+        </@tagTag>
+    ];
+
+    // 分类
+    var categoryArray = [
+        <@categoryTag method="list">
+        <#list categories as category>
+        {'text': '${category.name!}', 'weight': '${category.postCount!}', 'link': '${category.fullPath!}'},
+        </#list>
+        </@categoryTag>
+    ];
+    $(function () {
+        var tagCloud = $("#tagCloud");
+        if (tagCloud && tagCloud.children().length === 0) {
+            tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
+        }
+
+        var categoryCloud = $("#categoryCloud");
+        if (categoryCloud && categoryCloud.children().length === 0) {
+            categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
+        }
+    });
+
+</script>
+
 <#--目录-->
 <#if settings.post_toc!true>
     <script src="//cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
@@ -30,7 +64,7 @@
 <script type="text/javascript">
     $('.arrow-down').on('click', function () {
         var postHeight = $('#homeHeader').height();
-        window.scroll({ top: postHeight - 50, behavior: 'smooth' });
+        window.scroll({top: postHeight - 50, behavior: 'smooth'});
     })
 </script>
 <script type="text/javascript">
@@ -211,6 +245,18 @@
                 } else if (document.getElementById('tree-hole')) {
                     renderMathInElement(document.getElementById('tree-hole'), katex_config)
                 }
+            }
+
+            // 标签云
+            var tagCloud = $("#tagCloud");
+            if (tagCloud && tagCloud.children().length === 0) {
+                tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
+            }
+
+            // 分类云
+            var categoryCloud = $("#categoryCloud");
+            if (categoryCloud && categoryCloud.children().length === 0) {
+                categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
             }
 
         });

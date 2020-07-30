@@ -19,16 +19,20 @@
             </div>
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
-            <@categoryTag method="list">
-                <#if categories?? && categories?size gt 0>
-                    <#list categories as category>
-                        <a href="${category.fullPath}/" class="ah-hf ah-hv">
-                            <span class="ah-dt ct-f-size op-10"><span class="cst-icon icon-toc"></span> ${category.name}</span>
-                            <span class="ah-tt h-6 op-06">${category.description}</span>
-                        </a>
-                    </#list>
-                </#if>
-            </@categoryTag>
+            <h2>分类</h2>
+            <p class="flex flex-row justify-start space-x-4 flex-wrap">
+                <@categoryTag method="list">
+                    <#if categories?? && categories?size gt 0>
+                        <#list categories as category>
+                            <a href="${category.fullPath}" class="post-tag mt-2 mb-2">
+                                ${category.name} <span class="tag-length">${category.postCount!}</span>
+                            </a>
+                        </#list>
+                    </#if>
+                </@categoryTag>
+            </p>
+            <h2 style="margin-bottom: 0;">分类云</h2>
+            <div id="categoryCloud" class="card-content jqcloud jqcloud-hg"></div>
         </div>
     </main>
 </@layout>
