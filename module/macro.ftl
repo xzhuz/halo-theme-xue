@@ -63,11 +63,12 @@
             </#if>
 
             <#if settings.enabled_index_cover_height!true>
-                @media only screen and (min-width: 861px) {
-                    .home-page .bg-cover {
-                        height: 100vh !important;
-                    }
+            @media only screen and (min-width: 861px) {
+                .home-page .bg-cover {
+                    height: 100vh !important;
                 }
+            }
+
             </#if>
 
         </style>
@@ -82,7 +83,8 @@
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
         <#--  代码高亮样式  -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 
         <#if settings.enabled_mathjax!true>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
@@ -96,9 +98,9 @@
 
 
         <#-- 所有的css 开发用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007281305">-->
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007310025">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -128,22 +130,22 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=202007260022"></script>
-    <#--模态框-->
-    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=202007260022"></script>
-    <#--切换白天/夜晚模式-->
-    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=202007260022"></script>
-    <!-- 右下角按钮-->
-    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=202007260022"></script>
-    <#-- 相册相关的js -->
-    <script src="${theme_base!}/source/js/gallery.js?ver=202007260022"></script>
-    <#--     文章页样式-->
-    <script src="${theme_base!}/source/js/post.js?ver=202007260022"></script>
+    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=202007260022"></script>-->
+    <#--    &lt;#&ndash;模态框&ndash;&gt;-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=202007260022"></script>-->
+    <#--    &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=202007260022"></script>-->
+    <#--    <!-- 右下角按钮&ndash;&gt;-->
+    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=202007260022"></script>-->
+    <#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
+    <#--    <script src="${theme_base!}/source/js/gallery.js?ver=202007260022"></script>-->
+    <#--    &lt;#&ndash;     文章页样式&ndash;&gt;-->
+    <#--    <script src="${theme_base!}/source/js/post.js?ver=202007260022"></script>-->
 
     <#--    所有的js-->
-<#--        <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->
+    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>
 
-<#--    <script src="${theme_base!}/source/js/post.js?ver=202007270000"></script>-->
+    <script src="${theme_base!}/source/js/post.js?ver=202007270000"></script>
     <#include "script.ftl">
     </html>
 </#macro>
