@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${blog_title!} | ${settings.jounarls_title!'Journals'} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.jounarls_title!'Journals'} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>

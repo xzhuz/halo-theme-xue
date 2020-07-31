@@ -1,11 +1,11 @@
 <#include "module/macro.ftl">
-<@layout title="友情链接 | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${sheet.title!'友情链接'} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
-            <#if sheet.thumbnail?? && sheet.thumbnail!=''>
+            <#if settings.links_placeholder?? && settings.links_placeholder!=''>
                 <div class="cover-bg">
-                    <img src="${sheet.thumbnail!}" class="z-auto"
-                         alt="${sheet.title!'Friends'}">
+                    <img src="${settings.links_placeholder!}" class="z-auto"
+                         alt="${sheet.title!'友情链接'}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -14,7 +14,7 @@
             <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${sheet.title!'Friends'}</p>
+                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${sheet.title!'友情链接'}</p>
                 </div>
             </div>
         </header>

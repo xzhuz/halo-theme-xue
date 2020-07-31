@@ -1,11 +1,11 @@
 <#include "module/macro.ftl">
-<@layout title="分类列表 | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.categories_title! 'Categories'} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>
                 <div class="cover-bg">
                     <img src="${settings.categories_patternimg!}" class="z-auto"
-                         alt="${settings.categories_title! 'Categories'}">
+                         alt="${settings.categories_title! '分类列表'}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -14,7 +14,7 @@
             <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.categories_title! 'Categories'}</p>
+                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.categories_title! '分类列表'}</p>
                 </div>
             </div>
         </header>

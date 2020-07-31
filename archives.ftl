@@ -1,11 +1,11 @@
 <#include "module/macro.ftl">
-<@layout title="归档 | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.achieve_title!'归档'} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.archives_patternimg?? && settings.archives_patternimg!=''>
                 <div class="cover-bg">
                     <img src="${settings.archives_patternimg!}" class="z-auto"
-                         alt="${settings.achieve_title!'Achieves'}">
+                         alt="${settings.achieve_title!'归档'}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -14,7 +14,7 @@
             <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.achieve_title!'Achieves'}</p>
+                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.achieve_title!'归档'}</p>
                 </div>
             </div>
         </header>

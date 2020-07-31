@@ -1,11 +1,11 @@
 <#include "module/macro.ftl">
-<@layout title="友情链接 | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.links_title!'友情链接'} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.links_patternimg?? && settings.links_patternimg!=''>
                 <div class="cover-bg">
                     <img src="${settings.links_patternimg!}" class="z-auto"
-                         alt="${settings.links_title!'Friends'}">
+                         alt="${settings.links_title!'友情链接'}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -14,7 +14,7 @@
             <div class="cover-content flex justify-center">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.links_title!'Friends'}</p>
+                    <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${settings.links_title!'友情链接'}</p>
                 </div>
             </div>
         </header>
