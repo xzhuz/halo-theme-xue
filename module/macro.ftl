@@ -101,9 +101,9 @@
 
 
         <#-- 所有的css 开发用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007310025">-->
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007312309">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -148,7 +148,7 @@
     <#--    所有的js-->
     <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>
 
-    <script src="${theme_base!}/source/js/post.js?ver=202007270000"></script>
+    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>
     <#include "script.ftl">
     </html>
 </#macro>
