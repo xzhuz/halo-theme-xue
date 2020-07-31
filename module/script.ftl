@@ -19,6 +19,9 @@
 <#--右下角按钮-->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/moon.js"></script>
 
+<#--分享-->
+<script src="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+
 <#--标签云-->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/jqcloud-1.0.4.min.js"></script>
 <script type='text/javascript'>
@@ -39,6 +42,8 @@
         </#list>
         </@categoryTag>
     ];
+
+
     $(function () {
         var tagCloud = $("#tagCloud");
         if (tagCloud && tagCloud.children().length === 0) {
@@ -66,6 +71,9 @@
         var postHeight = $('#homeHeader').height();
         window.scroll({top: postHeight - 50, behavior: 'smooth'});
     })
+
+    // 禁用的分享站点, 现在已经不支持腾讯微博
+    var socialDisabled = '${settings.share_disabeld?default('')}';
 </script>
 <script type="text/javascript">
     var katex_config = {
@@ -221,6 +229,9 @@
 
                 // 删除文章最开始第一个 <ul>(如果有)
                 post.removeFirstUL()
+
+                // 分享按钮
+                post.shareIcon()
 
                 // 模态框
                 //  模态框

@@ -23,7 +23,7 @@
                             <time class="published"
                                   datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</time>
                         </div>
-                        <div class="md:text-center post-categories">
+                        <div class="text-center post-categories">
                             <#if post.categories?? && post.categories?size gt 0>
                                 <#include "module/icon/folder.ftl">
                             </#if>
@@ -72,24 +72,26 @@
                 </p>
             </#if>
             <#--            </#if>-->
-            <p class="flex flex-row justify-start space-x-4 flex-wrap">
-                <#--                <#if post.categories?? && post.categories?size gt 0>-->
-                <#--                    <#list post.categories as category>-->
-                <#--                        <a href="${category.fullPath!}" class="post-tag mt-2 mb-2">-->
-                <#--                            <i class="fas fa-folder"></i>&nbsp;${category.name!}-->
-                <#--                        </a>-->
-                <#--                    </#list>-->
-                <#--                </#if>-->
+            <p class="flex flex-row justify-start flex-wrap">
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
-                        <a href="${tag.fullPath!}" class="post-tag mt-2 mb-2">
+                        <a href="${tag.fullPath!}" class="post-tag mt-2 mb-2 mr-2">
                             #&nbsp;${tag.name!}
                         </a>
                     </#list>
                 </#if>
+                <#if settings.social_share!false>
+                    <span class="share-btn">
+                        <#include "module/icon/share.ftl">
+                    </span>
+                </#if>
             </p>
             <hr class="mt-4" style="background-color: rgba(96, 125, 139, .05); size: 2px;">
-
+            <#if settings.social_share!false>
+                <div id="socialShare" class="no-show mt-4 share-area">
+                    <div class="social-share" data-disabled="${settings.share_disabeld!''}"></div>
+                </div>
+            </#if>
         </div>
 
         <!-- 上一篇和下一篇 -->

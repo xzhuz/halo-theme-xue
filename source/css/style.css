@@ -702,6 +702,9 @@ a {
   .cover-content .inner {
     padding-bottom: 50px ;
   }
+  .post-categories {
+    text-align: left;
+  }
 }
 @media only screen and (min-width: 861px) {
   .post-meta-wrap {
@@ -742,6 +745,24 @@ a {
 #toc ul > li {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+.share-btn {
+  height: 16px;
+  line-height: 4;
+  margin-left: auto;
+}
+.share-btn svg {
+  display: inline-block;
+}
+.share-area {
+  -webkit-animation: fade-down 0.3s;
+  animation: fade-down 0.3s;
+}
+.no-show {
+  display: none;
+}
+.show {
+  display: block !important;
 }
 @media only screen and (max-width: 640px) {
   .post-cover .post-title:after {

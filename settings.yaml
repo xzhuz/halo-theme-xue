@@ -188,6 +188,24 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    social_share:
+      name: social_share
+      label: 开启文章分享
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否
+    share_disabeld:
+      name: share_disabeld
+      label: 分享禁用
+      type: text
+      default: 'google,twitter,facebook'
+      placeholder: '文章分享禁用社交软件'
+      description: '文章分享禁用社交软件,比如: google,twitter,facebook,weibo,qq,tencent,qzone,linkedin,wechat,douban,diandian'
     code_style:
       name: code_style
       label: 代码风格

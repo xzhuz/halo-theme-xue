@@ -20,11 +20,11 @@
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
             <h2>分类</h2>
-            <p class="flex flex-row justify-start space-x-4 flex-wrap">
+            <p class="flex flex-row justify-start flex-wrap">
                 <@categoryTag method="list">
                     <#if categories?? && categories?size gt 0>
                         <#list categories as category>
-                            <a href="${category.fullPath}" class="post-tag mt-2 mb-2">
+                            <a href="${category.fullPath}" class="post-tag mt-2 mb-2 mr-2">
                                 ${category.name} <span class="tag-length">${category.postCount!}</span>
                             </a>
                         </#list>
