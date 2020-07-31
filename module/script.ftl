@@ -22,6 +22,11 @@
 <#--分享-->
 <script src="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
 
+<#-- 分享-->
+<#if settings.visit_statistics!false>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</#if>
+
 <#--标签云-->
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/jqcloud-1.0.4.min.js"></script>
 <script type='text/javascript'>

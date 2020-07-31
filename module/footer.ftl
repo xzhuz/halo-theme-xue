@@ -76,10 +76,23 @@
 
                 <#if settings.TimeStatistics??>
                     <div class="github-badge">
-                        <a style="color: #fff" rel="license" href="javascript:void(0)"
-                           target="_blank">
+                        <a style="color: #fff" rel="license" href="javascript:void(0)">
                             <span class="badge-subject">运行</span>
                             <span class="badge-value bg-orange" id="span_dt_dt"></span>
+                        </a>
+                    </div>
+                </#if>
+                <#if settings.visit_statistics!false>
+                    <div class="github-badge">
+                        <a style="color: #fff" rel="license" href="javascript:void(0)">
+                            <span class="badge-subject">人数</span>
+                            <span id="busuanzi_container_site_uv"><span class="badge-value bg-brightgreen" id="busuanzi_value_site_uv"></span></span>
+                        </a>
+                    </div>
+                    <div class="github-badge">
+                        <a style="color: #fff" rel="license" href="javascript:void(0)">
+                            <span class="badge-subject">人数</span>
+                            <span id="busuanzi_container_site_pv"><span class="badge-value bg-blueviolet" id="busuanzi_value_site_pv"></span></span>
                         </a>
                     </div>
                 </#if>
