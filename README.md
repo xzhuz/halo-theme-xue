@@ -39,4 +39,4 @@
 
 请下载最新发布版本，直接使用代码不能安装。
 
-详见：[下载地址](https://github.com/hshanx/halo-theme-xue/tags)
+详见：[下载地址](https://github.com/hshanx/halo-theme-xue/releases)
