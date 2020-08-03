@@ -1621,9 +1621,6 @@ input[type="checkbox"]:checked + label:after {
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
-.nav-wrapper.nav-box-sd {
-  box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
-}
 .nav-wrapper > .nav {
   max-width: 80rem;
   width: 100%;
@@ -1761,7 +1758,7 @@ input[type="checkbox"]:checked + label:after {
   flex-basis: 100%;
   display: block;
   background: transparent;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0.75rem 1rem 0.5rem 1.5rem;
   color: var(--header-link-color);
   transition: all 0.3s ease-in-out;
@@ -1791,11 +1788,28 @@ input[type="checkbox"]:checked + label:after {
     height: 100%;
     min-height: initial;
     background: transparent;
-    overflow: hidden;
   }
-  .nav-list > .list.-left,
-  .nav-list > .list.-right {
-    overflow: hidden;
+  .nav-list .sub-menu-tree {
+    position: absolute;
+    top: 58px;
+    color: var(--header-link-color);
+    background-color: var(--header-bg-color);
+    -webkit-animation: fade-down 0.3s;
+    animation: fade-down 0.3s;
+    border-radius: 2px;
+  }
+  .nav-list .sub-menu-tree ul {
+    padding: 0 !important;
+  }
+  .nav-list .sub-menu-tree ul:hover {
+    cursor: pointer;
+  }
+  .nav-list .sub-menu-tree ul li {
+    padding: 0.6rem 1.8rem;
+  }
+  .nav-list .sub-menu-tree ul li:hover {
+    -webkit-filter: brightness(0.6) !important;
+    filter: brightness(0.6) !important;
   }
   .nav-list > .list.-left.-left,
   .nav-list > .list.-right.-left {

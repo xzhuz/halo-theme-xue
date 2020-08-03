@@ -21,7 +21,7 @@
 }
 
 .nav-wrapper.nav-box-sd {
-  box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+  //box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
 }
 
 .nav-wrapper > .nav {
@@ -186,12 +186,10 @@
   flex-basis: 100%;
   display: block;
   background: transparent;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0.75rem 1rem 0.5rem 1.5rem;
   color: var(--header-link-color);
   transition: all 0.3s ease-in-out;
-
-
 }
 
 .nav-list > .list > .item > .link.current {
@@ -221,11 +219,45 @@
     height: 100%;
     min-height: initial;
     background: transparent;
-    overflow: hidden;
+    //overflow: hidden;
   }
 
+  .nav-list .sub-menu-tree {
+    position: absolute;
+    top: 58px;
+    color: var(--header-link-color);
+    background-color: var(--header-bg-color);
+    -webkit-animation: fade-down .3s;
+    animation: fade-down .3s;
+    border-radius: 2px;
+
+    ul {
+      padding: 0 !important;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      li {
+        padding: .6rem 1.8rem;
+
+        &:hover {
+          -webkit-filter: brightness(.6) !important;
+          filter: brightness(.6) !important;
+        }
+      }
+    }
+  }
+  //
+  //.has-sub:hover {
+  //  .sub-menu-tree, .sub-menu-tree:hover {
+  //    display: inherit !important;
+  //  }
+  //
+  //}
+
   .nav-list > .list.-left, .nav-list > .list.-right {
-    overflow: hidden;
+    //overflow: hidden;
   }
 
   .nav-list > .list.-left.-left, .nav-list > .list.-right.-left {

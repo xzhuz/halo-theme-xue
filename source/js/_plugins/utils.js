@@ -156,11 +156,21 @@ var hanUtils = {
                 }
             }
 
-            var moonMenu = $('#moonMenu')
-            if (moonMenu && moonMenu.hasClass('active')) {
-                if ($(target).closest('.moon-menu').length === 0) {
-                    // 模拟点击事件
-                    $('.moon-menu-button').trigger("click");
+            // var moonMenu = $('#moonMenu')
+            // if (moonMenu && moonMenu.hasClass('active')) {
+            //     if ($(target).closest('.moon-menu').length === 0) {
+            //         // 模拟点击事件
+            //         $('.moon-menu-button').trigger("click");
+            //     }
+            // }
+
+            var searchBox = $('#searchBox');
+            if (!searchBox || searchBox.hasClass('hidden')) {
+            } else {
+                if ($(target).closest('.search-container').length === 0
+                    && !$(target).hasClass('icon-search')
+                    && !$(target).hasClass('sh-exit')) {
+                    searchBox.toggleClass('hidden');
                 }
             }
 

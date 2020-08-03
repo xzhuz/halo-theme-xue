@@ -87,7 +87,7 @@
               href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 
         <#if settings.enabled_mathjax!true>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
         </#if>
         <#if settings.Aplayer?? && settings.Aplayer != ''>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
@@ -103,7 +103,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202007312309">
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008032322">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -133,22 +133,24 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=202007260022"></script>-->
-    <#--    &lt;#&ndash;模态框&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=202007260022"></script>-->
-    <#--    &lt;#&ndash;切换白天/夜晚模式&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=202007260022"></script>-->
-    <#--    <!-- 右下角按钮&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=202007260022"></script>-->
-    <#--    &lt;#&ndash; 相册相关的js &ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/gallery.js?ver=202007260022"></script>-->
-    <#--    &lt;#&ndash;     文章页样式&ndash;&gt;-->
-    <#--    <script src="${theme_base!}/source/js/post.js?ver=${.now?long}"></script>-->
+        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008032322"></script>
+        <#--模态框-->
+        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=2020008032322"></script>
+        <#--切换白天/夜晚模式-->
+        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008032322"></script>
+        <!-- 右下角按钮-->
+        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008032322"></script>
+        <#-- 相册相关的js -->
+        <script src="${theme_base!}/source/js/gallery.js?ver=2020008032322"></script>
+        <#--     文章页样式-->
+        <script src="${theme_base!}/source/js/post.js??ver=2020008032322"></script>
+        <#--     文章页样式-->
+        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008032322"></script>
 
     <#--    所有的js-->
-    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>
+<#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->
 
-    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>
+<#--    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>-->
     <#include "script.ftl">
     </html>
 </#macro>

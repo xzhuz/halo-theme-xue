@@ -25,6 +25,8 @@ var moonMenu = {
 
             // 模拟点击事件
             $('.moon-menu-button').trigger("click");
+
+            $('.icon-search').toggleClass('hidden');
         });
     },
     initMoonToc: function () {
@@ -40,6 +42,14 @@ var moonMenu = {
             scrollSmoothOffset: -60,
             hasInnerContainers: false,
         });
+
+        var moonToc = $('#moonToc');
+        // 没有生成目录
+        if (moonToc && moonToc.children().length === 0) {
+            $('.icon-toc').hide();
+        } else {
+            $('.icon-toc').show();
+        }
     },
     searchBox: function () {
         $('.icon-search').on('click', function () {

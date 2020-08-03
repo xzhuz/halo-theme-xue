@@ -33,7 +33,7 @@
 <form method="get" action="/search">
     <div class="hidden search-box" id="searchBox">
         <div class="search-ipt ipt ipt-w">
-            <div class="ipt-ct ct-bg" id="searchInput">
+            <div class="ipt-ct ct-bg search-container" id="searchInput">
                 <label class="sh-lab">
                     <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autocomplete="off">
                     <i class="sh-icon cst-icon icon-search"></i>

@@ -1,4 +1,6 @@
 <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+<#-- marked -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <#-- 代码高亮-->
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
 <#--其他语言包-->
@@ -92,8 +94,8 @@
     };
 </script>
 <#if settings.enabled_mathjax!true>
-    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
-    <script defer src="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
             onload="if (document.getElementById('write'))
             { renderMathInElement(document.getElementById('write'), katex_config)}
             else if (document.getElementById('tree-hole'))
@@ -157,6 +159,9 @@
         document.addEventListener('pjax:complete', function (e) {
             NProgress.done();
 
+            // header
+            header.hoverSubMenu();
+
             // 加载相册
             if ($("#container").find('.photos-page').length > 0) {
                 photo.loadGallery();
@@ -182,12 +187,6 @@
             // 当前菜单菜单高亮
             hanUtils.highlightMenu();
 
-            // table 要加上 div 避免出现小屏幕下展示不全
-            hanUtils.tableAddNode();
-
-            // li 添加 span
-            hanUtils.liAddSpan();
-
             //重载
             if (typeof _hmt !== 'undefined') {
                 // support 百度统计
@@ -212,6 +211,9 @@
             $('#moonToc').removeClass('mm-active');
 
             if ($("#container").find('.article-content').length > 0) {
+
+                // 转换post内容为 Markdown
+                post.formatContent();
 
                 // 小屏幕目录
                 $('#moonMenu').append('<span class="moon-menu-item pl-6 cst-icon icon-toc"></span>')
@@ -261,11 +263,18 @@
                 }
             }
 
+            // table 要加上 div 避免出现小屏幕下展示不全
+            hanUtils.tableAddNode();
+
+            // li 添加 span
+            hanUtils.liAddSpan();
+
             // 自定义页面 viewer
             hanUtils.sheetViewer();
 
             // 相册页面 viewer
             hanUtils.journalViewer();
+
 
             if (renderMathInElement && typeof renderMathInElement !== 'undefined') {
                 if (document.getElementById('write')) {

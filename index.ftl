@@ -54,7 +54,7 @@
                             </header>
                             <div class="card-body">
                                 <p class="text-center text-xl tracking-wider svg-f text-clamp-1">
-                                    <a href="${post.fullPath!}" class="font-medium text-gray-700 post-title font-sans">
+                                    <a href="${post.fullPath!}" class="font-medium text-gray-700 post-title">
                                         ${post.title!}
                                     </a>
                                 </p>

@@ -43,7 +43,7 @@
         <div class="article-content content-container">
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd"
                  id="write">
-                ${post.formatContent!}
+                ${post.originalContent!}
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>

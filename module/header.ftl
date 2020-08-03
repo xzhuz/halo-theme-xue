@@ -15,10 +15,24 @@
             <div class="list -left " id="menuLinks">
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
-                        <li class="item">
-                            <a class="link md:text-base sm:text-sm " href="${menu.url!}"
+                        <li class="item <#if menu.children?? && menu.children?size gt 0> has-sub </#if>" index="${menu_index}">
+                            <a class="link md:text-base sm:text-sm" href="${menu.url!}"
                                target="${menu.target!}">${menu.name}</a>
                         </li>
+<#--                        <#if menu.children?? && menu.children?size gt 0>-->
+<#--                            <div class="sub-menu-tree hidden" id="subMenu_${menu_index}">-->
+<#--                                <ul class="sub-menu">-->
+<#--                                    <#list menu.children?sort_by('priority') as child>-->
+<#--                                        <li>-->
+<#--                                            <a href="${child.url!}" data-ajax target="${child.target!}"-->
+<#--                                               onfocus="this.blur();">-->
+<#--                                                ${child.name}-->
+<#--                                            </a>-->
+<#--                                        </li>-->
+<#--                                    </#list>-->
+<#--                                </ul>-->
+<#--                            </div>-->
+<#--                        </#if>-->
                     </#list>
                 </@menuTag>
             </div>
