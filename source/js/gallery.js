@@ -95,7 +95,6 @@ var photo = {
         if (left === '0%') {
             left = '85%';
         }
-        console.log(left);
         var style = document.querySelector('.gallery-area').style;
         style.setProperty('--left', left);
     },

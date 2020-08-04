@@ -153,14 +153,16 @@
         //在Pjax请求开始后触发
         document.addEventListener('pjax:send', function () {
             NProgress.start();
+
         });
 
         //在Pjax请求完成后触发
         document.addEventListener('pjax:complete', function (e) {
             NProgress.done();
-
+            // 最开始就要隐藏
+            header.hideSubMenu();
             // header
-            header.hoverSubMenu();
+            // header.hoverSubMenu();
 
             // 加载相册
             if ($("#container").find('.photos-page').length > 0) {
@@ -213,7 +215,7 @@
             if ($("#container").find('.article-content').length > 0) {
 
                 // 转换post内容为 Markdown
-                post.formatContent();
+                // post.formatContent();
 
                 // 小屏幕目录
                 $('#moonMenu').append('<span class="moon-menu-item pl-6 cst-icon icon-toc"></span>')
@@ -241,7 +243,6 @@
                 post.shareIcon()
 
                 // 模态框
-                //  模态框
                 coffeeModal.toggleCoffeeModal();
 
                 // 初始展示二维码

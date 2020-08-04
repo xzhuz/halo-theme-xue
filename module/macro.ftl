@@ -23,6 +23,8 @@
         <style type="text/css">
             :root {
                 --header-bg-color: #fff;
+                --header-sub-bg-color: #f0f5f9;
+                --header-sub-hover-bg-color: #c9d6de;
                 --header-link-color: #504b4d;
                 --base-color: #4facfe;
                 --base-hover-color: #4facfe;
@@ -103,7 +105,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008032322">
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008042122">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -133,19 +135,19 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008042122"></script>
         <#--模态框-->
-        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=2020008042122"></script>
         <#--切换白天/夜晚模式-->
-        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008042122"></script>
         <!-- 右下角按钮-->
-        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008042122"></script>
         <#-- 相册相关的js -->
-        <script src="${theme_base!}/source/js/gallery.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/gallery.js?ver=2020008042122"></script>
         <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/post.js??ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/post.js??ver=2020008042122"></script>
         <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008032322"></script>
+        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008042122"></script>
 
     <#--    所有的js-->
 <#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->

@@ -123,12 +123,16 @@
     background: var(--night-background);
   }
 
-  .nav-list > .list > .item > .link {
+  .nav-list > .list > .item > .link, .nav-list > .list > .item > .void-link, .nav-list .sub-menu-tree ul li .link {
     color: var(--night-txt-color);
   }
 
   .nav-wrapper {
     background: var(--night-background) !important;
+  }
+
+  .nav-list .sub-menu-tree {
+    background-color: #3e4149 !important
   }
 
   .burger-lines,
@@ -147,4 +151,15 @@
     -webkit-filter: brightness(.8)!important;
     filter: brightness(.8)!important;
   }
+}
+
+@media all and (max-width: 800px) {
+  .night .nav-list .sh-box-t {
+    box-shadow: 2px 10px 15px -9px #444f59 inset;
+  }
+
+  .night .nav-list .sh-box-b {
+    box-shadow: 0px -10px 15px -10px #444f59 inset;
+  }
+
 }

@@ -85,26 +85,32 @@ var hanUtils = {
     },
 
     highlightMenu: function () {
-        var nav = document.getElementById('menuLinks')
-        var links = nav.getElementsByClassName('link');
-        var currenturl = document.location.pathname
-        var last = 0
-        if (links) {
-            for (var i = 0; i < links.length; i++) {
-                var linkurl = links[i].getAttribute('href');
-                if (currenturl.indexOf(linkurl) !== -1) {
-                    if (currenturl.indexOf(linkurl) !== -1)
-                        last = i
-                }
+        $('a.link').on('click', function (e) {
+            $('a.link').each(function (e) {
+                $(this).removeClass('current');
+            })
+            $(this).addClass('current');
+            var screenWidth = document.body.clientWidth;
+            if (screenWidth < 800) {
+                $(this).parent('.sub-menu-tree').removeClass('hidden');
             }
-                $(links[last]).addClass('current')
+        });
 
-            for (var i = 0; i < links.length; i++) {
-                if (last !== i) {
-                    $(links[i]).removeClass('current')
-                }
-            }
+        // var nav = document.getElementById('menuLinks')
+        // var links = nav.getElementsByClassName('link');
+        var currentUrl = document.location.pathname
+        if (currentUrl === '/') {
+            return;
         }
+        $('a.link').each(function () {
+            var href = $(this).attr('href');
+            if (href && href.indexOf(currentUrl) > -1) {
+                $(this).addClass('current');
+            } else {
+                $(this).removeClass('current');
+            }
+        });
+
     },
 
     tableAddNode: function () {
@@ -180,12 +186,13 @@ var hanUtils = {
     menuBgFFF: function () {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         var postHeader = $('#navHeader');
-        if (scrollTop > 0 && postHeader) {
+        var isChecked = $('#switch_Word').prop('checked');
+        if (scrollTop > 0 && postHeader && !isChecked) {
             postHeader.addClass('nav-bg-fff');
             postHeader.addClass('nav-box-sd');
         } else {
             postHeader.removeClass('nav-bg-fff');
-            postHeader.addClass('nav-box-sd');
+            postHeader.removeClass('nav-box-sd');
         }
     },
 

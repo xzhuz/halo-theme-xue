@@ -51,6 +51,10 @@
                         </#list>
                     </div>
                 </#list>
+                <div id="write">
+                    <!--声明区域-->
+                    ${sheet.formatContent!}
+                </div>
             </@linkTag>
         </div>
 
