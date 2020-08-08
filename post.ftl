@@ -25,7 +25,7 @@
                         </div>
                         <div class="text-center post-categories">
                             <#if post.categories?? && post.categories?size gt 0>
-                                <#include "module/icon/folder.ftl">
+                                <span class="iconfont icon-folder"> </span>
                             </#if>
                             <#if post.categories?? && post.categories?size gt 0>
 
@@ -82,7 +82,7 @@
                 </#if>
                 <#if settings.social_share!false>
                     <span class="share-btn">
-                        <#include "module/icon/share.ftl">
+                        <span class="iconfont icon-share"> </span>
                     </span>
                 </#if>
             </p>

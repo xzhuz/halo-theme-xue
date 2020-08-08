@@ -62,10 +62,10 @@
                                     </span>
                                 <div class="lh-25">
                                     <span class="visitors-count">
-                                        <span>${post.visits!}</span> <#include "module/icon/eye-sight.ftl">
+                                        <span>${post.visits!}</span> <span class="iconfont icon-Eyesight"> </span>
                                     </span>
                                     <span class="visitors-comment">
-                                        <span>${post.commentCount}</span> <#include "module/icon/comment.ftl">
+                                        <span>${post.commentCount}</span> <span class="iconfont icon-comment"> </span>
                                     </span>
                                 </div>
                             </footer>

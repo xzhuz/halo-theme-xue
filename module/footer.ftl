@@ -30,8 +30,8 @@
                 </a>
             </#if>
             <#if settings.zhihu??>
-                <a href="${settings.zhihu!}" class="circle pl-7" target="_blank" rel="noopener" title="知乎">
-                    <#include "icon/zhihu.ftl">
+                <a href="${settings.zhihu!}" class="circle pad-10" target="_blank" rel="noopener" title="知乎">
+                    <span class="iconfont icon-zhihu"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
