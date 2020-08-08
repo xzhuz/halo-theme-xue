@@ -2217,9 +2217,6 @@ a.no-thumb {
 .post-card:hover {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
-.post-card:hover .img-cover {
-  transform: scale(1.1);
-}
 .card-header-title {
   display: flex;
   justify-content: center;
