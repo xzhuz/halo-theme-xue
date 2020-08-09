@@ -47,7 +47,7 @@
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
-                <aside id="toc" class="toc"></aside>
+                <aside id="toc" class="toc font-sans"></aside>
             </#if>
         </div>
 
