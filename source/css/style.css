@@ -3012,6 +3012,7 @@ td .hljs-button {
   bottom: 50%;
   transform: translateY(50%);
   display: none;
+  font-size: 0.9rem;
 }
 .toc ul,
 .toc ol {
@@ -3030,7 +3031,7 @@ td .hljs-button {
   padding-left: 10px;
 }
 a.toc-link {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 17px;
   color: var(--header-link-color);
   display: inline-block;
