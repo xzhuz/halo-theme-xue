@@ -1,7 +1,7 @@
 <#macro comment target,type>
     <#if !post.disallowComment!false>
         <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
-        <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/hshanx/halo-comment-hshan@latest/dist/halo-comment.min.js'}"></script>
+        <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/xzzai/halo-comment-hshan@latest/dist/halo-comment.min.js'}"></script>
         <section class="comments-area">
             <div class="inner" id="commentInner">
                 <div id="haloComment"></div>

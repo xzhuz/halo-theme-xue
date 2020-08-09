@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="github-badge">
-                    <a style="color: #fff" rel="license" href="https://github.com/hshanx/halo-theme-xue.git"
+                    <a style="color: #fff" rel="license" href="https://github.com/xzzai/halo-theme-xue.git"
                        target="_blank">
                         <span class="badge-subject">Theme</span>
                         <span class="badge-value bg-red">Xue</span>

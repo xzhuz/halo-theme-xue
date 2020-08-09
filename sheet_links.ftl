@@ -37,7 +37,7 @@
                                                 <img src="${settings.links_placeholder}"
                                                      alt="${link.name}">
                                             <#else>
-                                                <img src="https://cdn.jsdelivr.net/gh/hshanx/static@v1.0.1/placeholder.jpg"
+                                                <img src="https://cdn.jsdelivr.net/gh/xzzai/static@v1.0.1/placeholder.jpg"
                                                      alt="${link.name}">
                                             </#if>
                                         </figure>

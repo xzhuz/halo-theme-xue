@@ -96,7 +96,7 @@
         </#if>
 
         <#--标签云-->
-        <link href="https://cdn.jsdelivr.net/gh/hshanx/static@master/css/jqcloud.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
         <#-- 分享 -->
         <link href="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" rel="stylesheet">
@@ -105,7 +105,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008081530">
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008091400">
         <script type="application/javascript">
             <!--
             window.onerror = function () {

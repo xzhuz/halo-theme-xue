@@ -2,9 +2,9 @@
 <@layout title="${keyword!} - 搜索结果 - ${blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto"  id="container">
         <header class="bg-cover post-cover">
-            <#if settings.searh_patternimg?? && settings.searh_patternimg!=''>
+            <#if settings.search_patternimg?? && settings.search_patternimg!=''>
                 <div class="cover-bg">
-                    <img src="${settings.searh_patternimg!}" class="z-auto"
+                    <img src="${settings.search_patternimg!}" class="z-auto"
                          alt="${keyword!}">
                 </div>
             <#else>
@@ -14,7 +14,7 @@
             <div class="cover-content">
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
-                    <h2 class="slogan text-center">关于「${keyword!}」的搜索结果</h2>
+                    <h2 class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">关于「${keyword!}」的搜索结果</h2>
                 </div>
             </div>
         </header>
@@ -22,10 +22,8 @@
             <#if posts?? && posts.content?size gt 0>
                 <#list posts.content as post>
                     <a href="${post.fullPath}" class="ah-hf ah-hv">
-                        <a class="ah-hf ah-hv font-sans" href="${post.fullPath!}">
-                            <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
-                            <span class="ah-tt">${post.title!}</span>
-                        </a>
+                        <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
+                        <span class="ah-tt">${post.title!}</span>
                     </a>
                 </#list>
 
@@ -55,7 +53,7 @@
                                                 <@postTag method="latest" top="10">
                                                     <#list posts as post>
                                                         <li>
-                                                            <a class="ah-hf ah-hv font-sans" href="${post.fullPath!}">
+                                                            <a class="ah-hf ah-hv" href="${post.fullPath!}">
                                                                 <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
                                                                 <span class="ah-tt">${post.title!}</span>
                                                             </a>
