@@ -105,7 +105,7 @@
         <#-- 所有的css 开发用 -->
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008091530">
+                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008112122">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -141,13 +141,13 @@
         <#--切换白天/夜晚模式-->
         <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008042122"></script>
         <!-- 右下角按钮-->
-        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008042122"></script>
+        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008092122"></script>
         <#-- 相册相关的js -->
         <script src="${theme_base!}/source/js/gallery.js?ver=2020008042122"></script>
         <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/post.js??ver=2020008042122"></script>
+        <script src="${theme_base!}/source/js/post.js??ver=2020008112122"></script>
         <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008042122"></script>
+        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008112122"></script>
 
     <#--    所有的js-->
 <#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->

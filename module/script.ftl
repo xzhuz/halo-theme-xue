@@ -92,6 +92,10 @@
                 {left: "\\[", right: "\\]", display: true},
             ]
     };
+    var openToc = false;
+    <#if settings.post_toc!true>
+        openToc = true;
+    </#if>
 </script>
 <#if settings.enabled_mathjax!true>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
@@ -230,14 +234,16 @@
                 // 图片预览
                 post.initViewer();
 
-                // 目录事件
-                post.scrollTocFixed();
+                if (openToc) {
+                    // 目录事件
+                    post.scrollTocFixed();
 
-                // 初始化toc
-                post.initToc()
+                    // 初始化toc
+                    post.initToc()
 
-                // 删除文章最开始第一个 <ul>(如果有)
-                post.removeFirstUL()
+                    // 删除文章最开始第一个 <ul>(如果有)
+                    post.removeFirstUL()
+                }
 
                 // 分享按钮
                 post.shareIcon()
@@ -327,7 +333,7 @@
 </#if>
 
 <script type="text/javascript">
-    console.clear();
+    // console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
     <#if settings.github??>
         console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");

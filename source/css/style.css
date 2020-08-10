@@ -1873,6 +1873,14 @@ input[type="checkbox"]:checked + label:after {
 .nav-list > .list > .item > .void-link {
   width: 100%;
 }
+/* 修复二级菜单点击不跳转 */
+.nav-list .sub-menu li {
+  padding: 0 !important;
+}
+.nav-list .sub-menu li a {
+  display: block;
+  padding: 0.6rem 1.8rem;
+}
 @media all and (min-width: 800px) {
   .nav-list {
     top: unset;
@@ -2575,6 +2583,17 @@ ol > li > ol > li > ol > li {
 #write h5,
 #write h6 {
   margin-left: -1.3rem;
+  margin-top: -60px !important;
+  padding-top: 60px !important;
+  outline: none !important;
+}
+#write h1:visited,
+#write h2:visited,
+#write h3:visited,
+#write h4:visited,
+#write h5:visited,
+#write h6:visited {
+  outline: none !important;
 }
 #write h1,
 #write h2,

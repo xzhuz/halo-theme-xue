@@ -30,6 +30,10 @@ var moonMenu = {
         });
     },
     initMoonToc: function () {
+        // 没有打开 目录
+        if (!openToc) {
+            return;
+        }
         var headerEl = 'h1,h2,h3,h4,h5,h6',  //headers
             content = '.md-content';//文章容器
         tocbot.init({

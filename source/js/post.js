@@ -10,19 +10,19 @@ var post = {
         }
     },
 
-    loadHighlight: function() {
+    loadHighlight: function () {
         var codes = document.querySelectorAll('.md-content pre code');
         for (var i = 0; i < codes.length; i++) {
             var block = codes[i];
             hljs.highlightBlock(block);
             // 行号
-            $('code.hljs').each(function(i, block) {
+            $('code.hljs').each(function (i, block) {
                 hljs.lineNumbersBlock(block);
             });
-        // //    copy 按钮
-        //     $('code.hljs').each(function(i, block) {
-        //         hljs.addCopyButton(block);
-        //     });
+            // //    copy 按钮
+            //     $('code.hljs').each(function(i, block) {
+            //         hljs.addCopyButton(block);
+            //     });
         }
     },
     initViewer: function () {
@@ -87,13 +87,13 @@ var post = {
             headingSelector: headerEl,
             scrollSmooth: true,
             headingsOffset: 0 - $('#postHeader').height(),
-            scrollSmoothOffset: -60, // 实现点击目录精准跳转到header
+            // scrollSmoothOffset: -80, // 实现点击目录精准跳转到header
             hasInnerContainers: false,
         });
 
-        $('.toc-link').each(function() {
+        $('.toc-link').each(function () {
             var linkContent = $(this).html();
-            $(this).html('<span class="toc-link-dot"></span>'+ linkContent );
+            $(this).html('<span class="toc-link-dot"></span>' + linkContent);
         });
         // 设置目录right
         post.tocEleRight();
@@ -120,13 +120,13 @@ var post = {
         }
     },
 
-    shareIcon: function() {
+    shareIcon: function () {
 
         var $config = {
-            sites               : ['google','twitter','facebook','weibo','qq','qzone','linkedin','wechat','douban'], // 启用的站点
-            disabled            : socialDisabled.split(','), // 禁用的站点
-            wechatQrcodeTitle   : '微信扫一扫：分享', // 微信二维码提示文字
-            wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
+            sites: ['google', 'twitter', 'facebook', 'weibo', 'qq', 'qzone', 'linkedin', 'wechat', 'douban'], // 启用的站点
+            disabled: socialDisabled.split(','), // 禁用的站点
+            wechatQrcodeTitle: '微信扫一扫：分享', // 微信二维码提示文字
+            wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
         };
 
         $('.share-btn').on('click', function () {
@@ -147,14 +147,17 @@ $(function () {
     // 图片预览
     post.initViewer();
 
-    // 目录事件
-    post.scrollTocFixed();
+    if (openToc) {
 
-    // 初始化toc
-    post.initToc()
+        // 目录事件
+        post.scrollTocFixed();
 
-    // 删除文章最开始第一个 <ul>(如果有)
-    post.removeFirstUL()
+        // 初始化toc
+        post.initToc()
+
+        // 删除文章最开始第一个 <ul>(如果有)
+        post.removeFirstUL()
+    }
 
     // 分享按钮
     post.shareIcon();
