@@ -865,7 +865,6 @@ a {
   position: absolute;
 }
 .mh-hd {
-  top: 1.5rem;
   left: 1.5rem;
   padding: 0 0.6em;
   border-radius: 2em;
@@ -874,6 +873,7 @@ a {
   font-weight: 600;
   line-height: 2;
   transform: translate3d(-50%, -50%, 0) scale3d(0.75, 0.75, 1);
+  margin-top: 20px;
 }
 .mh-hd:after {
   top: 0;
