@@ -24,7 +24,7 @@ genernal:
       name: home_cover
       label: 首页背景
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     enabled_index_cover_height:
       name: enabled_index_cover_height
       label: 首页开启全屏图片
@@ -51,7 +51,7 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-      description: '即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/archives/random-thumbnail'
+      description: '即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/2020/06/03/random-thumbnail'
     card_random_cover_img_suffix:
       name: card_random_cover_img_suffix
       label: 卡片随机选择封面后缀
@@ -119,39 +119,44 @@ head_img:
   items:
     archives_patternimg:
       name: archives_patternimg
-      label: 归档页面头部装饰图
+      label: 归档页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     links_patternimg:
       name: links_patternimg
-      label: 友情链接页面头部装饰图
+      label: 友情链接页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     tag_patternimg:
       name: tag_patternimg
-      label: 标签页面头部装饰图
+      label: 标签页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     categories_patternimg:
       name: categories_patternimg
-      label: 分类页面头部装饰图
+      label: 分类页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     journals_patternimg:
       name: journals_patternimg
-      label: 日志下文章页面头部装饰图
+      label: 日志下文章页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     photos_patternimg:
       name: photos_patternimg
-      label: 相册页面头部装饰图
+      label: 相册页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
+    search_patternimg:
+      name: search_patternimg
+      label: 搜索结果默认头部图
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     links_placeholder:
       name: links_placeholder
       label: 友情链接默认用户头像
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/hshanx/static@master/default-bg.jpeg
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
 post:
   label: 文章页
   items:
@@ -205,7 +210,7 @@ post:
       type: text
       default: 'google,twitter,facebook'
       placeholder: '文章分享禁用社交软件'
-      description: '文章分享禁用社交软件,比如: google,twitter,facebook,weibo,qq,tencent,qzone,linkedin,wechat,douban,diandian'
+      description: '文章分享禁用社交软件,比如: google,twitter,facebook,weibo,qq,qzone,linkedin,wechat,douban,diandian'
     code_style:
       name: code_style
       label: 代码风格

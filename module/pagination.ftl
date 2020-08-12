@@ -1,8 +1,7 @@
 <ul class="pagination-list flex flex-row ">
     <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
         <a class="pagination-circle" href="${pagination.prevPageFullPath!}">
-<#--            <#include "icon/arrow-left.ftl">-->
-            <span class="cst-icon icon-previous"> </span>
+            <span class="iconfont icon-left-fill"> </span>
         </a>
     </li>
     <#list pagination.rainbowPages as number>
@@ -18,8 +17,7 @@
     </#list>
     <li class="pagination-next<#if pagination.hasNext><#else > is-invisible </#if>">
         <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
-<#--            <#include "icon/arrow-right.ftl">-->
-            <span class="cst-icon icon-next"> </span>
+            <span class="iconfont icon-right-fill"> </span>
         </a>
     </li>
 </ul>

@@ -30,8 +30,8 @@
                 </a>
             </#if>
             <#if settings.zhihu??>
-                <a href="${settings.zhihu!}" class="circle pl-7" target="_blank" rel="noopener" title="知乎">
-                    <#include "icon/zhihu.ftl">
+                <a href="${settings.zhihu!}" class="circle pad-10" target="_blank" rel="noopener" title="知乎">
+                    <span class="iconfont icon-zhihu"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="github-badge">
-                    <a style="color: #fff" rel="license" href="https://github.com/hshanx/halo-theme-xue.git"
+                    <a style="color: #fff" rel="license" href="https://github.com/xzzai/halo-theme-xue.git"
                        target="_blank">
                         <span class="badge-subject">Theme</span>
                         <span class="badge-value bg-red">Xue</span>

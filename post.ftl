@@ -25,7 +25,7 @@
                         </div>
                         <div class="text-center post-categories">
                             <#if post.categories?? && post.categories?size gt 0>
-                                <#include "module/icon/folder.ftl">
+                                <span class="iconfont icon-folder"> </span>
                             </#if>
                             <#if post.categories?? && post.categories?size gt 0>
 
@@ -47,7 +47,7 @@
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
-                <aside id="toc" class="toc"></aside>
+                <aside id="toc" class="toc font-sans"></aside>
             </#if>
         </div>
 
@@ -82,7 +82,7 @@
                 </#if>
                 <#if settings.social_share!false>
                     <span class="share-btn">
-                        <#include "module/icon/share.ftl">
+                        <span class="iconfont icon-Share"> </span>
                     </span>
                 </#if>
             </p>
@@ -101,7 +101,7 @@
                     <#if prevPost??>
                         <a href="${prevPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
-                                <span class="nav-before"><span class="cst-icon icon-previous"> </span></span>
+                                <span class="nav-before"><span class="iconfont icon-left"> </span></span>
                                 <span class="nav-title">${prevPost.title!}</span>
                             </div>
                         </a>
@@ -112,7 +112,7 @@
                         <a href="${nextPost.fullPath!}" class="nav-previous">
                             <div class="nav-inside">
                                 <span class="nav-title">${nextPost.title!}</span>
-                                <span class="nav-before"> <span class="cst-icon icon-next"> </span></span>
+                                <span class="nav-before"> <span class="iconfont icon-right"> </span></span>
                             </div>
                         </a>
                     </#if>

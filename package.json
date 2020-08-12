@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hshanx/halo-theme-hshan.git"
+    "url": "git+https://github.com/xzzai/halo-theme-hshan.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hshanx/halo-theme-hshan/issues"
+    "url": "https://github.com/xzzai/halo-theme-hshan/issues"
   },
-  "homepage": "https://github.com/hshanx/halo-theme-hshan#readme",
+  "homepage": "https://github.com/xzzai/halo-theme-hshan#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "clean-css-cli": "^4.3.0",

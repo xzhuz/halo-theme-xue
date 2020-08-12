@@ -252,8 +252,13 @@ ol > li > ol > li > ol > li {
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
   margin-left: -1.3rem;
   // 实现点击目录精准跳转到header
-  //margin-top:-52px !important;
-  //padding-top: 52px;
+  margin-top:-60px !important;
+  padding-top: 60px !important;
+  outline: none !important;
+}
+
+#write h1:visited, #write h2:visited, #write h3:visited, #write h4:visited, #write h5:visited, #write h6:visited {
+  outline: none !important;
 }
 
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
@@ -368,6 +373,10 @@ ol > li > ol > li > ol > li {
   padding-top: .2rem;
   padding-bottom: .2rem;
   color: var(--base-hl-color);
+}
+
+#write ol > li {
+  list-style: decimal !important;
 }
 
 #write ol > li > *, #write ul > li > * {

@@ -4,11 +4,11 @@
 <#-- 代码高亮-->
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
 <#--其他语言包-->
-<script src="//cdn.jsdelivr.net/gh/hshanx/static@master/js/highlight.lang.js"></script>
+<script src="//cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"></script>
 <#--代码行数-->
 <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
 <#-- 代码copy按钮-->
-<#--<script src="https://cdn.jsdelivr.net/gh/hshanx/highlightjs-copy-button@master/dist/highlightjs-copy-button.min.js"></script>-->
+<#--<script src="https://cdn.jsdelivr.net/gh/xzzai/highlightjs-copy-button@master/dist/highlightjs-copy-button.min.js"></script>-->
 <!--图片预览插件-->
 <script data-pjax-viewer src="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.js"></script>
 <#-- 模态框-->
@@ -17,9 +17,9 @@
 <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 
 <#--  顶部菜单  -->
-<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/simply-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/simply-nav.js"></script>
 <#--右下角按钮-->
-<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/moon.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/moon.js"></script>
 
 <#--分享-->
 <script src="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
@@ -30,7 +30,7 @@
 </#if>
 
 <#--标签云-->
-<script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/jqcloud-1.0.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
 <script type='text/javascript'>
     // 标签
     var tagArray = [
@@ -92,6 +92,10 @@
                 {left: "\\[", right: "\\]", display: true},
             ]
     };
+    var openToc = false;
+    <#if settings.post_toc!true>
+        openToc = true;
+    </#if>
 </script>
 <#if settings.enabled_mathjax!true>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
@@ -230,14 +234,16 @@
                 // 图片预览
                 post.initViewer();
 
-                // 目录事件
-                post.scrollTocFixed();
+                if (openToc) {
+                    // 目录事件
+                    post.scrollTocFixed();
 
-                // 初始化toc
-                post.initToc()
+                    // 初始化toc
+                    post.initToc()
 
-                // 删除文章最开始第一个 <ul>(如果有)
-                post.removeFirstUL()
+                    // 删除文章最开始第一个 <ul>(如果有)
+                    post.removeFirstUL()
+                }
 
                 // 分享按钮
                 post.shareIcon()
@@ -329,8 +335,9 @@
 <script type="text/javascript">
     // console.clear();
     console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
-    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/hshanx");
-    // console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.4.2");
+    <#if settings.github??>
+        console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");
+    </#if>
 
 </script>
 

@@ -25,6 +25,14 @@ var header = {
         $('.has-sub').click(function () {
             $(this).find('.sub-menu-tree').toggleClass('hidden');
         });
+    },
+
+    fixMenu: function () {
+        // 修复多个菜单重叠展开问题
+        $('.nav-list .first-menu').mouseover(function(){
+            $('.nav-list .sub-menu-tree').addClass('hidden');
+            $(this).find('.sub-menu-tree').removeClass('hidden');
+        });
     }
 };
 
@@ -34,5 +42,7 @@ $(function () {
     header.hoverSubMenu();
 
     header.clickShowSub();
+
+    header.fixMenu();
 
 });

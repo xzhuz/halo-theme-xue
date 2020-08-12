@@ -89,23 +89,25 @@
               href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 
         <#if settings.enabled_mathjax!true>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+                  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+                  crossorigin="anonymous">
         </#if>
         <#if settings.Aplayer?? && settings.Aplayer != ''>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
         <#--标签云-->
-        <link href="https://cdn.jsdelivr.net/gh/hshanx/static@master/css/jqcloud.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
         <#-- 分享 -->
         <link href="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" rel="stylesheet">
 
 
         <#-- 所有的css 开发用 -->
-<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
+        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-                <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008042122">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008111115">
         <script type="application/javascript">
             <!--
             window.onerror = function () {
@@ -135,24 +137,24 @@
             var autoNightModeOpen = true;
         </script>
     </#if>
-        <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008042122"></script>
-        <#--模态框-->
-        <script src="${theme_base!}/source/js/_plugins/modal.js?ver=2020008042122"></script>
-        <#--切换白天/夜晚模式-->
-        <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008042122"></script>
-        <!-- 右下角按钮-->
-        <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008042122"></script>
-        <#-- 相册相关的js -->
-        <script src="${theme_base!}/source/js/gallery.js?ver=2020008042122"></script>
-        <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/post.js??ver=2020008042122"></script>
-        <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008042122"></script>
+    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008042122"></script>
+    <#--模态框-->
+    <script src="${theme_base!}/source/js/_plugins/modal.js?ver=2020008042122"></script>
+    <#--切换白天/夜晚模式-->
+    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=2020008042122"></script>
+    <!-- 右下角按钮-->
+    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008092122"></script>
+    <#-- 相册相关的js -->
+    <script src="${theme_base!}/source/js/gallery.js?ver=2020008042122"></script>
+    <#--     文章页样式-->
+    <script src="${theme_base!}/source/js/post.js??ver=2020008112122"></script>
+    <#--     文章页样式-->
+    <script src="${theme_base!}/source/js/_plugins/header.js?ver=2020008112122"></script>
 
     <#--    所有的js-->
-<#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->
+    <#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->
 
-<#--    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>-->
+    <#--    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>-->
     <#include "script.ftl">
     </html>
 </#macro>
