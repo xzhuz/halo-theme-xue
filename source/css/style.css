@@ -1129,6 +1129,12 @@ ul.cards li.card.card-3 {
 }
 .tree-hole-box p {
   color: #7b7b7b;
+  max-width: 200px;
+  overflow-x: scroll;
+}
+.tree-hole-box pre {
+  max-width: 200px;
+  overflow-x: scroll;
 }
 .tree-hole-box a {
   color: #000000;
@@ -2724,7 +2730,7 @@ ol > li > ol > li > ol > li {
 }
 #write p {
   margin: 1rem auto;
-  line-height: 1.8;
+  line-height: 2;
 }
 #write ol > li > p,
 #write ul > li > p {
@@ -3328,15 +3334,12 @@ span.toc-link-dot {
   color: var(--night-txt-color) !important;
 }
 .night img {
-  -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
 .night .img-cover-bg {
-  -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
 .night .btn-primary img {
-  -webkit-filter: brightness(1) !important;
   filter: brightness(1) !important;
 }
 .night h1,
@@ -3362,7 +3365,6 @@ span.toc-link-dot {
 }
 .night .pagination-circle.is-current,
 .night .pagination-circle:hover {
-  -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
 .night .pagination-circle {
@@ -3411,25 +3413,20 @@ span.toc-link-dot {
 .night #tree-hole .comment-list:before,
 .night .tree-hole-body > div:before,
 .night #tree-hole .comment-list:after {
-  -webkit-filter: brightness(0.6) !important;
-          filter: brightness(0.6) !important;
+  filter: brightness(0.6) !important;
 }
 .night .arch-year:before {
-  -webkit-filter: brightness(0.4) !important;
-          filter: brightness(0.4) !important;
+  filter: brightness(0.4) !important;
 }
 .night .mh-bg {
   background: var(--night-tag-bg-color) !important;
-  -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
 .night .ah-hf {
-  -webkit-filter: brightness(0.6) !important;
   filter: brightness(0.6) !important;
 }
 .night .github-badge {
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 .night .nav-list > .list > .overlay {
   background: rgba(59, 59, 59, 0.65);
@@ -3458,7 +3455,6 @@ span.toc-link-dot {
   box-shadow: 1px 2px 2px 0 rgba(19, 19, 19, 0.94) !important;
 }
 .night .photos img {
-  -webkit-filter: brightness(0.8) !important;
   filter: brightness(0.8) !important;
 }
 @media all and (max-width: 800px) {

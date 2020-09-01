@@ -32,7 +32,7 @@
                                         <a href="${blog_url!}"
                                            rel="external nofollow">${user.nickname}</a> ${journal.createTime?string('yyyy年MM月dd日')}
                                     </div>
-                                    <p>${journal.content!}</p>
+                                    <p style="overflow-x: auto;">${journal.content!}</p>
                                 </div>
                             </div>
                         </li>
