@@ -21,7 +21,11 @@
                                  src="${user.avatar!}" alt=""/>
                             <span class="post-author">${post.visits} 次访问</span>
                             <time class="published"
-                                  datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</time>
+                                  datetime="${post.createTime?string("yyyy-MM-dd")}">发布: ${post.createTime?string("yyyy-MM-dd")}</time>
+                            <#if "${post.createTime}" != "${post.editTime}">
+                                <time class="published"
+                                      datetime="${post.editTime?string("yyyy-MM-dd")}">最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
+                            </#if>
                         </div>
                         <div class="text-center post-categories">
                             <#if post.categories?? && post.categories?size gt 0>
