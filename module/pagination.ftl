@@ -16,7 +16,7 @@
         </#if>
     </#list>
     <#if pagination.hasNext>
-        <li class="pagination-next is-invisible">
+        <li class="pagination-next">
             <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
                 <span class="iconfont icon-right-fill"> </span>
             </a>

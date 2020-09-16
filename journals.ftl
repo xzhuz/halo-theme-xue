@@ -64,7 +64,7 @@
                                     </#if>
                                 </#list>
                                 <#if pagination.hasNext>
-                                    <li class="pagination-next is-invisible">
+                                    <li class="pagination-next">
                                         <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
                                             <#--            <#include "icon/arrow-right.ftl">-->
                                             <span class="cst-icon icon-next"> </span>
