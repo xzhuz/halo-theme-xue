@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${post.title!} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${post.title!} | ${options.blog_title!} " keywords="${meta_keywords!}" description="${meta_description!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover" id="postHeader">
             <#if post.thumbnail?? && post.thumbnail!=''>
@@ -21,7 +21,11 @@
                                  src="${user.avatar!}" alt=""/>
                             <span class="post-author">${post.visits} 次访问</span>
                             <time class="published"
-                                  datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</time>
+                                  datetime="${post.createTime?string("yyyy-MM-dd")}">发布: ${post.createTime?string("yyyy-MM-dd")}</time>
+                            <#if "${post.createTime}" != "${post.editTime}">
+                                <time class="published"
+                                      datetime="${post.editTime?string("yyyy-MM-dd")}">最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
+                            </#if>
                         </div>
                         <div class="text-center post-categories">
                             <#if post.categories?? && post.categories?size gt 0>
