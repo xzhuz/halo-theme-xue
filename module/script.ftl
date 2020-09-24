@@ -310,7 +310,7 @@
         // 建站时间统计
         function show_date_time() {
             if ($("#span_dt_dt").length > 0) {
-                window.setTimeout("show_date_time()", 1000);
+                window.setTimeout(show_date_time, 1000);
                 BirthDay = new Date("${settings.TimeStatistics!}");
                 today = new Date();
                 timeold = (today.getTime() - BirthDay.getTime());
