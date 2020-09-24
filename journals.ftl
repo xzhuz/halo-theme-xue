@@ -32,7 +32,7 @@
                                         <a href="${blog_url!}"
                                            rel="external nofollow">${user.nickname}</a> ${journal.createTime?string('yyyy年MM月dd日')}
                                     </div>
-                                    <p>${journal.content!}</p>
+                                    <p style="overflow-x: auto;">${journal.content!}</p>
                                 </div>
                             </div>
                         </li>
@@ -63,12 +63,14 @@
                                         </li>
                                     </#if>
                                 </#list>
-                                <li class="pagination-next<#if pagination.hasNext><#else > is-invisible </#if>">
-                                    <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
-                                        <#--            <#include "icon/arrow-right.ftl">-->
-                                        <span class="cst-icon icon-next"> </span>
-                                    </a>
-                                </li>
+                                <#if pagination.hasNext>
+                                    <li class="pagination-next">
+                                        <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
+                                            <#--            <#include "icon/arrow-right.ftl">-->
+                                            <span class="cst-icon icon-next"> </span>
+                                        </a>
+                                    </li>
+                                </#if>
                             </ul>
                         </@paginationTag>
                     </#if>

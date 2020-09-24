@@ -2,7 +2,7 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
 
-> 由于[原先的主题](https://github.com/xzzai/halo-theme-hshan)实在是太复杂了, 所以砍掉了一些多余的功能, 也就变成了现在的主题
+> 对于前端React感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支
 
 ## 主题预览
 
