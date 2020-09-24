@@ -1,15 +1,6 @@
 var tocId = '#toc';
 var flagId = '#tocFlag';
 var post = {
-    formatContent: function () {
-        var postContent = $('#write');
-        if (postContent) {
-            var originContent = postContent.html();
-            postContent.empty();
-            postContent.append(marked(originContent));
-        }
-    },
-
     loadHighlight: function () {
         var codes = document.querySelectorAll('.md-content pre code');
         for (var i = 0; i < codes.length; i++) {
@@ -19,10 +10,6 @@ var post = {
             $('code.hljs').each(function (i, block) {
                 hljs.lineNumbersBlock(block);
             });
-            // //    copy 按钮
-            //     $('code.hljs').each(function(i, block) {
-            //         hljs.addCopyButton(block);
-            //     });
         }
     },
     initViewer: function () {
@@ -120,26 +107,10 @@ var post = {
         }
     },
 
-    shareIcon: function () {
-
-        var $config = {
-            sites: ['google', 'twitter', 'facebook', 'weibo', 'qq', 'qzone', 'linkedin', 'wechat', 'douban'], // 启用的站点
-            disabled: socialDisabled.split(','), // 禁用的站点
-            wechatQrcodeTitle: '微信扫一扫：分享', // 微信二维码提示文字
-            wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
-        };
-
-        $('.share-btn').on('click', function () {
-            socialShare('.social-share', $config);
-            $('#socialShare').toggleClass('show');
-        });
-    }
 
 }
 
 $(function () {
-    // 转换post内容为 Markdown
-    // post.formatContent();
 
     // 代码高亮
     post.loadHighlight();
@@ -160,6 +131,6 @@ $(function () {
     }
 
     // 分享按钮
-    post.shareIcon();
+    // post.shareIcon();
 
 });

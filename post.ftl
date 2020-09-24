@@ -84,18 +84,8 @@
                         </a>
                     </#list>
                 </#if>
-                <#if settings.social_share!false>
-                    <span class="share-btn">
-                        <span class="iconfont icon-Share"> </span>
-                    </span>
-                </#if>
             </p>
             <hr class="mt-4" style="background-color: rgba(96, 125, 139, .05); size: 2px;">
-            <#if settings.social_share!false>
-                <div id="socialShare" class="no-show mt-4 share-area">
-                    <div class="social-share" data-disabled="${settings.share_disabeld!''}"></div>
-                </div>
-            </#if>
         </div>
 
         <!-- 上一篇和下一篇 -->
