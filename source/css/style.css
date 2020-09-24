@@ -1130,7 +1130,6 @@ ul.cards li.card.card-3 {
 .tree-hole-box p {
   color: #7b7b7b;
   max-width: 200px;
-  overflow-x: scroll;
 }
 .tree-hole-box pre {
   max-width: 200px;
