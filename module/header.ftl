@@ -1,41 +1,25 @@
-<div class="xue-mobile-menu"><i class="ion-ios-close-empty"></i>
-    <nav>
-        <ul id="menu-menu-1" class="sf-mobile-menu clearfix">
-            <@menuTag method="tree">
-                <#list menus?sort_by('priority') as menu>
-                    <li class="menu-item <#if menu.children?? && menu.children?size gt 0>menu-item-has-children</#if>"
-                    >
-                        <#if menu.children?? && menu.children?size gt 0>
-                            <a href="javascript:void(0)" target="${menu.target!}"
-                               class="void-link md:text-base sm:text-sm">${menu.name}</a>
-                        <#else >
-                            <a class="link md:text-base sm:text-sm" href="${menu.url!}"
-                               target="${menu.target!}">${menu.name}</a>
-                        </#if>
+<header class="slide header">
+    <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+    <ul id="navToggle" class="burger slide">
+        <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
-                        <#if menu.children?? && menu.children?size gt 0>
-                            <ul class="sub-menu">
-                                <#list menu.children?sort_by('priority') as child>
-                                    <li class="menu-item">
-                                        <a href="${child.url!}"
-                                           class="link md:text-base sm:text-sm"
-                                           target="${child.target!}">${child.name}</a>
-                                    </li>
-                                </#list>
-                            </ul>
+</header>
 
-                        </#if>
-                    </li>
-                </#list>
-            </@menuTag>
-        </ul>
-    </nav>
-</div>
-<header class="header-area header-2">
-    <div class="xue-menu-container" style="">
-        <div class="container">
-            <div class="xue-logo">
-                <#if settings.open_night_mode!true>
+<nav class="slide header-nav">
+    <ul>
+        <@menuTag method="tree">
+            <#list menus?sort_by('priority') as menu>
+                <li>
+                    <a class="link md:text-base sm:text-sm" href="${menu.url!}"
+                       target="${menu.target!}">${menu.name}</a>
+                </li>
+            </#list>
+            <#if settings.open_night_mode!true>
+                <li>
                     <div class="day-night-switch" role="button" onClick="dayNightSwitch()">
                         <div class="onOff daySwitch" id="daySwitch">
                             <div class="star star1"></div>
@@ -53,41 +37,9 @@
                             </div>
                         </div>
                     </div>
-                </#if>
-            </div>
-            <a href="#" class="mobile-menu-icon"><span></span></a>
-            <nav class="xue-menu">
-                <ul class="sf-menu sf-js-enabled">
-                    <@menuTag method="tree">
-                        <#list menus?sort_by('priority') as menu>
-                            <li class="menu-item <#if menu.children?? && menu.children?size gt 0>menu-item-has-children</#if>"
-                            >
-                                <#if menu.children?? && menu.children?size gt 0>
-                                    <a href="javascript:void(0)" target="${menu.target!}"
-                                       class="void-link md:text-base sm:text-sm">${menu.name}</a>
-                                <#else >
-                                    <a class="link md:text-base sm:text-sm" href="${menu.url!}"
-                                       target="${menu.target!}">${menu.name}</a>
-                                </#if>
+                </li>
+            </#if>
+        </@menuTag>
 
-                                <#if menu.children?? && menu.children?size gt 0>
-                                    <ul class="sub-menu" style="display: none; visibility: hidden;">
-                                        <#list menu.children?sort_by('priority') as child>
-                                            <li class="menu-item">
-                                                <a href="${child.url!}"
-                                                   class="link md:text-base sm:text-sm"
-                                                   target="${child.target!}">${child.name}</a>
-                                            </li>
-                                        </#list>
-                                    </ul>
-
-                                </#if>
-                            </li>
-                        </#list>
-                    </@menuTag>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <div class="header-clone"></div>
-</header>
+    </ul>
+</nav>

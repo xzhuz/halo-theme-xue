@@ -18,7 +18,7 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
+        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container cloud">
             <h2>标签</h2>
             <p class="flex flex-row justify-start flex-wrap">
                 <@tagTag method="list">

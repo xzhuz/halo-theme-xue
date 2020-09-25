@@ -76,8 +76,9 @@
 
         </style>
 
-
-        <#--              media='all'/>-->
+        <#-- 字体库 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+              rel="stylesheet">
         <#-- css库 -->
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
@@ -85,11 +86,8 @@
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
         <!-- 相册 -->
 
-        <#--        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">-->
-        <#if is_photos??>
-            <link rel="stylesheet"
-                  href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-        </#if>
+        <link rel="stylesheet"
+              href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
         <#--  代码高亮样式  -->
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
@@ -104,12 +102,9 @@
                   href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
-        <#if is_category?? || is_tags ??>
         <#--标签云-->
-            <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
-                  rel="stylesheet">
-
-        </#if>
+        <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
+              rel="stylesheet">
         <#-- 所有的css 开发用 -->
         <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
         <#--         发布用 -->
@@ -123,42 +118,26 @@
         </script>
     </head>
     <body>
+    <div class="">
+        <#include "header.ftl">
+        <div class="content slide">
+            <#nested >
+            <#include "footer.ftl">
+        </div>
+    </div>
 
-    <#include "header.ftl">
-
-    <#nested >
-
-    <#--    <#include "menu.ftl">-->
-    <#include "footer.ftl">
-
-
-    <#--<@global.footer />-->
     </body>
+
     <#-- jquery工具类 -->
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-
     <#-- 暗夜模式 -->
     <#if settings.auto_night_mode!true>
         <script type="text/javascript">
           var autoNightModeOpen = true;
         </script>
     </#if>
-    <#--    <script src="${theme_base!}/source/js/_plugins/utils.js?ver=2020008042122"></script>-->
-    <#--切换白天/夜晚模式-->
-    <script src="${theme_base!}/source/js/_plugins/night-mode.js?ver=${.now?long}"></script>
-    <!-- 右下角按钮-->
-    <#--    <script src="${theme_base!}/source/js/_plugins/moon-menu.js?ver=2020008092122"></script>-->
-    <#-- 相册相关的js -->
-        <script src="${theme_base!}/source/js/gallery.js?ver=2020008042122"></script>
-    <#--     文章页样式-->
-        <script src="${theme_base!}/source/js/post.js??ver=2020008112122"></script>
-    <#--     文章页样式-->
-    <script src="${theme_base!}/source/js/_plugins/header.js?ver=${.now?long}"></script>
-
-    <#--    所有的js-->
-    <#--    <script src="${theme_base!}/dist/1ef78256ded850d390d7ea7d2eb3b4ed.js?ver=202007270000"></script>-->
-
-    <#--    <script src="${theme_base!}/source/js/post.js?ver=202007312309"></script>-->
+    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
     <#include "script.ftl">
     </html>
 </#macro>

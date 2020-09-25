@@ -17,7 +17,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Josefin Sans", "Noto Sans SC", -apple-system, sans-serif;
+  font-family: 'Roboto', 'Noto Sans SC',  -apple-system, sans-serif;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%
@@ -109,6 +109,28 @@ a {
 .content-container {
   -webkit-animation: fade-up .3s;
   animation: fade-up .3s;
+}
+
+// 定义滚动条
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+  background: hsla(0, 0%, 100%, 0.6);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(95,95,95,.4);
+  transition: all .2s;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: rgba(95,95,95, .7);
+  }
 }
 
 @media only screen and (max-width: 768px) {

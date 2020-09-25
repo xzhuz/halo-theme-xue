@@ -44,7 +44,7 @@
                 </div>
             </div>
         </header>
-        <div class="article-content content-container">
+        <div class="article-content content-container" id="gallery-content">
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd"
                  id="write">
                 ${post.formatContent!}
@@ -121,6 +121,5 @@
                 <@comment sheet,"sheet" />
             </#if>
         </div>
-
     </main>
 </@layout>
