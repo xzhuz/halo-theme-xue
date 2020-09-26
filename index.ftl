@@ -25,8 +25,12 @@
             </div>
         </header>
         <div class="container mx-auto px-4 content-container">
-            <div class="posts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-4 md:gap-2 sm:gap-1 mt-4">
+            <div class="posts  mt-4">
+                <#if posts?? && posts.getTotalElements() gt 3>
+
+                </#if>
                 <#if posts?? && posts.getTotalElements() gt 0>
+                    <h3 style="padding-left: 2em">最新文章</h3>
                     <#include "module/post-card.ftl">
                 </#if>
             </div>

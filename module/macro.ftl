@@ -23,12 +23,16 @@
         <#--  公共的js,必须写到这边,因为有配置项 -->
         <style type="text/css">
           :root {
-            --header-bg-color: #fff;
+            --base-bg-color: #f4f4f4;
+            --header-bg-color: #dddfe6;
+            --header-link-color: #252c41;
+
+            --base-hover-color: #f1404b;
+
+
             --header-sub-bg-color: #f0f5f9;
             --header-sub-hover-bg-color: #c9d6de;
-            --header-link-color: #504b4d;
             --base-color: #4facfe;
-            --base-hover-color: #4facfe;
             --cd-hover-color: #E53A40;
             --btn-pri-bg-color: #E53A40;
             --base-hl-color: #E53A40;
@@ -77,8 +81,9 @@
         </style>
 
         <#-- 字体库 -->
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
-              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <#-- 图标库 -->
+<#--        <link rel="stylesheet" href="${theme_base!}/source/icons/font-awesome.min.css">-->
         <#-- css库 -->
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
