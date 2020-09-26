@@ -4,16 +4,11 @@ function dayNightSwitch() {
   const daySwitch = $('#daySwitch')
   daySwitch.toggleClass('daySwitch')
   $(document.body).toggleClass('night');
-
-  if (typeof renderComment === 'function') {
-    renderComment();
-  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   loadGallery();
   loadHighlight();
-  menu();
 });
 
 
@@ -39,7 +34,7 @@ function loadGallery() {
  *
  *  文章页面相关
  *
- */
+ *******************************/
 
 // 代码高亮
 function loadHighlight() {

@@ -25,7 +25,7 @@
             </div>
         </header>
         <div class="container mx-auto px-4 content-container">
-            <div class="posts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-12 md:gap-12 sm:gap-3 mt-4">
+            <div class="posts grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 lg:gap-4 md:gap-2 sm:gap-1 mt-4">
                 <#if posts?? && posts.getTotalElements() gt 0>
                     <#include "module/post-card.ftl">
                 </#if>
