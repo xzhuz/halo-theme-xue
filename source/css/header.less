@@ -1,12 +1,12 @@
-
 .header {
   height: 58px;
   position: relative;
   background-color: var(--header-bg-color);
+  box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
 }
 
 .header h1 {
-  color: var(--header-link-color);
+  color: var(--header-text-color);
   text-align: left;
   font-size: 27px;
   line-height: 58px;
@@ -26,13 +26,9 @@
 .burger li {
   width: 30px;
   height: 4px;
-  background-color: #fff;
+  background-color: #d9dde1;
   border-radius: 3px;
   margin: 5px 0;
-}
-
-.burger.open li {
-  background-color: #d9dde1;
 }
 
 .header-nav {
@@ -51,18 +47,22 @@
 }
 
 .header-nav li a {
-  color: #9aa6af;
+  color: var(--header-text-color);
   padding: 15px;
 
   display: block;
 }
 
 .header-nav li a:hover {
-  color: #000;
+  color: var(--base-hl-color);
 }
 
 .day-switch {
   float: right !important;
+}
+
+.content.slide.open .cover-content {
+  box-shadow: 0 1px 3px 3px rgba(10, 10, 22, 0.05);
 }
 
 @media only screen and (max-width: 780px) {
@@ -70,7 +70,7 @@
   .header {
     height: 58px;
     z-index: 2;
-    background-color: #060a0c;
+    background-color: var(--header-bg-color);
 
     position: fixed;
     top: 0;
@@ -118,7 +118,8 @@
     letter-spacing: 3px;
   }
   .header-nav.open li a {
-    padding: 22px 25px;
+    padding: 18px 25px;
+    font-size: 1.2rem;
   }
 
 

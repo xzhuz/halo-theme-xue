@@ -9,6 +9,7 @@ function dayNightSwitch() {
 document.addEventListener('DOMContentLoaded', function () {
   loadGallery();
   loadHighlight();
+  loadCodeLineNumber()
 });
 
 
@@ -40,11 +41,13 @@ function loadGallery() {
 function loadHighlight() {
   $('.md-content pre code').each(function () {
     hljs.highlightBlock(this);
+  });
+}
 
-    // 行号
-    $('code.hljs').each(function (i, block) {
-      hljs.lineNumbersBlock(this);
-    });
+function loadCodeLineNumber() {
+  // 行号
+  $('.md-content pre code.hljs').each(function (i, block) {
+    hljs.lineNumbersBlock(this);
   });
 
 }
@@ -136,5 +139,32 @@ function removeFirstUL () {
   if (firstNodeName === 'UL') {
     $(post_content.firstElementChild).remove();
   }
+}
+
+function getData(e) {
+  const path = $(e).attr("path");
+  var pageContainer = "#container .pagination-container";
+  $.ajax({
+    type: "GET",
+    url: path,
+    beforeSend: function () {
+      $(pageContainer).empty();
+      $(pageContainer).addClass('loading');
+    },
+    success: function (data) {
+      $(pageContainer).removeClass('loading');
+      $(pageContainer).empty();
+      let result = $(data).find(pageContainer);
+      $(pageContainer).append(result.children());
+      let page = '#pagination';
+      let pagination = $(data).find(page);
+      $(page).empty();
+      $(page).append(pagination.children());
+    },
+    error: function () {
+      $(pageContainer).empty();
+      $(pageContainer).addClass('loading');
+    }
+  });
 }
 

@@ -129,7 +129,6 @@
   font-size: 13px;
   height: auto;
   white-space: nowrap;
-  line-height: 13px;
 }
 
 .post .has-category .post-more-link {
@@ -158,6 +157,12 @@
   vertical-align: middle;
 }
 
+.post:hover .post-more-link .text {
+  max-width: 100px;
+  opacity: 1;
+}
+
+
 .post .post-more-link::after {
   font-family: iconfont !important;
   content: "\e719";
@@ -173,12 +178,6 @@
 
 .post:hover .has-category .post-more-link {
   opacity: 1;
-}
-
-.post:hover .post-more-link .text {
-  max-width: 100px;
-  opacity: 1;
-  margin-right: 3px;
 }
 
 .posts-list h2 {

@@ -24,7 +24,9 @@
         <style type="text/css">
           :root {
             --base-bg-color: #fff;
-            --header-bg-color: #dddfe6;
+            --header-bg-color: #fff;
+            --link-color: #52616a;
+            --header-text-color: #252c41;
             --header-link-color: #252c41;
             --base-hover-color: #f1404b;
             --base-hl-color: #f1404b;
@@ -52,7 +54,7 @@
             --night-code-color: #969896;
             --night-code-bg-color: #2d2d2d;
             --night-code-hljs-string-color: #0857b3;
-            --night-page-a-color: #fffff;
+            --night-page-a-color: #fff;
             --monospace: "Lucida Console", Consolas, "Courier", monospace;
           }
 
@@ -80,10 +82,6 @@
 
         </style>
 
-        <#-- 字体库 -->
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-        <#-- 图标库 -->
-<#--        <link rel="stylesheet" href="${theme_base!}/source/icons/font-awesome.min.css">-->
         <#-- css库 -->
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
@@ -111,9 +109,9 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
               rel="stylesheet">
         <#-- 所有的css 开发用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
         <#--         发布用 -->
-        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=2020008111115">-->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009272330">
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -141,8 +139,10 @@
           var autoNightModeOpen = true;
         </script>
     </#if>
-    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>
-    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
+    <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
+    <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
+    <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202009272330}"></script>
     <#include "script.ftl">
     </html>
 </#macro>

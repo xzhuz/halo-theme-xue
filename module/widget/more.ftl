@@ -1,32 +1,25 @@
-<div class="mg-auto" id="pagination">
+<ul class="pagination-list flex flex-row " id="pagination">
+    <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
+        <span class="pagination-circle" path="${pagination.prevPageFullPath!}" onClick="getData(this)">
+            <span class="iconfont icon-left"> </span>
+        </span>
+    </li>
+    <#list pagination.rainbowPages as number>
+        <#if number.isCurrent>
+            <li>
+                <span class="pagination-circle is-current" path="${number.fullPath!}" onClick="getData(this)">${number.page!}</span>
+            </li>
+        <#else>
+            <li>
+                <span class="pagination-circle" path="${number.fullPath!}" onClick="getData(this)">${number.page!}</span>
+            </li>
+        </#if>
+    </#list>
     <#if pagination.hasNext>
-        <span href="javascript:void(0)" class="more-post" path="${pagination.nextPageFullPath!}"
-              onClick="getData(this)"
-              data-not-pjax>查看更多</span>
-    <#else>
-        <span>你已经到底了</span>
+        <li class="pagination-next">
+            <span class="pagination-circle" path="${pagination.nextPageFullPath!}" onClick="getData(this)">
+                <span class="iconfont icon-right"> </span>
+            </span>
+        </li>
     </#if>
-</div>
-
-<script type="text/javascript">
-  function getData(e) {
-    console.log(e);
-    $('#pagination span').addClass('loading').text("");
-    $.ajax({
-      type: "GET",
-      url: $('#pagination span').attr("path"),
-      success: function (data) {
-        let result = $(data).find("#container .pagination-container");
-        let nextHref = $(data).find("#pagination span").attr("href");
-        // In the new content
-        $("#container .pagination-container").append(result);
-        $("#pagination .more-post").removeClass("loading").text("下一页");
-        if (nextHref !== undefined) {
-          $("#pagination span").attr("path", nextHref);
-        } else {
-          $("#pagination").html("<span>你已经到底了</span>");
-        }
-      }
-    });
-  }
-</script>
+</ul>

@@ -31,21 +31,9 @@
         });
 
         if ($("#container").find('.md-content').length > 0) {
+          loadHighlight();
+          loadCodeLineNumber()
           loadGallery();
-          if (typeof hljs === 'undefined') {
-            $.when(
-                $.getScript(
-                    "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"),
-                $.getScript(
-                    "https://cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"),
-                $.getScript(
-                    "https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"),
-                $.Deferred(function (deferred) {
-                  $(deferred.resolve);
-                })).done(function () {
-              loadHighlight();
-            });
-          }
         }
 
         //重载

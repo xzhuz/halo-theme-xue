@@ -40,13 +40,5 @@
                 </section>
             </#list>
         </div>
-        <#if posts.totalPages gt 1>
-        <#-- 分页-->
-            <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-                <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
-                    <#include "module/widget/pagination.ftl">
-                </@paginationTag>
-            </nav>
-        </#if>
     </main>
 </@layout>

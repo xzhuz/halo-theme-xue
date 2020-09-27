@@ -1,7 +1,7 @@
 @charset "UTF-8";
-body,html {
+body, html {
   height: 100%;
-  padding:0;
+  padding: 0;
   margin: 0;
 }
 
@@ -9,7 +9,7 @@ html {
   font-size: 14px
 }
 
-@media screen and (max-width:359px) {
+@media screen and (max-width: 359px) {
   html {
     font-size: 12px
   }
@@ -25,12 +25,14 @@ body {
 }
 
 input {
-  -webkit-tap-highlight-color:rgba(255,0,0,0);
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
 }
 
 a {
   cursor: pointer;
   word-break: break-word;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 .cn-pd {
@@ -59,11 +61,11 @@ a {
 }
 
 .pad-4 {
-  padding:4px;
+  padding: 4px;
 }
 
-.pad-10{
-  padding:10px;
+.pad-10 {
+  padding: 10px;
 }
 
 .pl-1 {
@@ -132,12 +134,12 @@ a {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background-color: rgba(95,95,95,.4);
+  background-color: rgba(95, 95, 95, .4);
   transition: all .2s;
   border-radius: .5rem;
 
   &:hover {
-    background-color: rgba(95,95,95, .7);
+    background-color: rgba(95, 95, 95, .7);
   }
 }
 
@@ -153,7 +155,7 @@ a {
   }
 
   .slogan {
-    font-size:1.3rem !important;
+    font-size: 1.3rem !important;
     text-align: left !important;
   }
 }
@@ -171,7 +173,7 @@ a {
 }
 
 @media only screen and (max-width: 640px) {
-  .cover-title:after{
+  .cover-title:after {
     width: 60px;
   }
 }
