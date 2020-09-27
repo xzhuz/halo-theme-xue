@@ -1,12 +1,11 @@
 <#if settings.pjax_enabled!false>
-    <script src="https://tanyaodan.com/wp-includes/js/jquery.pjax.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jquery.pjax.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
     <script type="text/javascript">
       $(document).pjax(
           'a[href]:not([href^="#"]):not([data-not-pjax]):not([target^="_blank"]), form',
           '#container', {fragment: '#container', timeout: 8000});
-
 
       $(document).on('pjax:send', function () {
         NProgress.start();
@@ -15,11 +14,13 @@
       $(document).on('pjax:complete', function () {
         NProgress.done();
         if ($("#container").find('.photos-page').length > 0) {
-          $.getScript(
-              "https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js",
-              function () {
-                loadGallery();
-              });
+          if (typeof justifiedGallery === 'undefined') {
+            $.getScript(
+                "https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js",
+                function () {
+                  loadGallery();
+                });
+          }
         }
 
         // 重新加载 评论
@@ -31,19 +32,20 @@
 
         if ($("#container").find('.md-content').length > 0) {
           loadGallery();
-
-          $.when(
-              $.getScript(
-                  "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"),
-              $.getScript(
-                  "https://cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"),
-              $.getScript(
-                  "https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"),
-              $.Deferred(function (deferred) {
-                $(deferred.resolve);
-              })).done(function () {
-            loadHighlight();
-          });
+          if (typeof hljs === 'undefined') {
+            $.when(
+                $.getScript(
+                    "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"),
+                $.getScript(
+                    "https://cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"),
+                $.getScript(
+                    "https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"),
+                $.Deferred(function (deferred) {
+                  $(deferred.resolve);
+                })).done(function () {
+              loadHighlight();
+            });
+          }
         }
 
         //重载

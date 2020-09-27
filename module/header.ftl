@@ -19,7 +19,7 @@
                 </li>
             </#list>
             <#if settings.open_night_mode!true>
-                <li>
+                <li class="day-switch">
                     <div class="day-night-switch" role="button" onClick="dayNightSwitch()">
                         <div class="onOff daySwitch" id="daySwitch">
                             <div class="star star1"></div>

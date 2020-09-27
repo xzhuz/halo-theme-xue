@@ -23,11 +23,12 @@
         <#--  公共的js,必须写到这边,因为有配置项 -->
         <style type="text/css">
           :root {
-            --base-bg-color: #f4f4f4;
+            --base-bg-color: #fff;
             --header-bg-color: #dddfe6;
             --header-link-color: #252c41;
-
             --base-hover-color: #f1404b;
+            --base-hl-color: #f1404b;
+            --page-text-color: #fff;
 
 
             --header-sub-bg-color: #f0f5f9;
@@ -35,7 +36,6 @@
             --base-color: #4facfe;
             --cd-hover-color: #E53A40;
             --btn-pri-bg-color: #E53A40;
-            --base-hl-color: #E53A40;
             /*--btn-pri-bg-color: #ff5f5f;*/
             --text-color: #333333;
             --text-hover-color: #4facfe;
