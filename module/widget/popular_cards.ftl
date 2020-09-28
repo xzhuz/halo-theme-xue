@@ -1,4 +1,4 @@
-<#list posts.content?sort_by("visits") as post>
+<#list posts.content?sort_by("visits")?reverse as post>
     <#if post_index==4><#break></#if>
     <div class="popular-thumb xs:mt-4">
         <a href="${post.fullPath!}">
