@@ -1,23 +1,24 @@
 @charset "UTF-8";
-body, html {
+body,
+html {
   height: 100%;
   padding: 0;
   margin: 0;
 }
 
 html {
-  font-size: 14px
+  font-size: 14px;
 }
 
 @media screen and (max-width: 359px) {
   html {
-    font-size: 12px
+    font-size: 12px;
   }
 }
 
 body {
   margin: 0;
-  font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+  font-family: "Lato", "Noto Sans SC", -apple-system, sans-serif;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -41,10 +42,14 @@ a {
 }
 
 .container {
-  max-width: 850px;
+  // max-width: 850px;
   padding: 0 30px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-850 {
+  max-width: 850px;
 }
 
 .ct-container {
@@ -55,9 +60,8 @@ a {
   max-width: 1024px;
 }
 
-
 .pl-6 {
-  padding-left: .6rem;
+  padding-left: 0.6rem;
 }
 
 .pad-4 {
@@ -87,7 +91,7 @@ a {
 .cover-title {
   color: #fff;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   //padding-bottom: 10px;
   position: relative;
 }
@@ -111,20 +115,31 @@ a {
   text-align: left;
 }
 
+.home-cover .cover-title,
+.home-cover .slogan {
+  text-align: center !important;
+}
+
+.home-cover .cover-title:after {
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+}
+
 .bg-cover {
-  -webkit-animation: fade-down .3s;
-  animation: fade-down .3s;
+  -webkit-animation: fade-down 0.3s;
+  animation: fade-down 0.3s;
 }
 
 .content-container {
-  -webkit-animation: fade-up .3s;
-  animation: fade-up .3s;
+  -webkit-animation: fade-up 0.3s;
+  animation: fade-up 0.3s;
 }
 
 // 定义滚动条
 ::-webkit-scrollbar {
-  width: .5rem;
-  height: .5rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background: hsla(0, 0%, 100%, 0.6);
 }
 
@@ -134,12 +149,12 @@ a {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background-color: rgba(95, 95, 95, .4);
-  transition: all .2s;
-  border-radius: .5rem;
+  background-color: rgba(95, 95, 95, 0.4);
+  transition: all 0.2s;
+  border-radius: 0.5rem;
 
   &:hover {
-    background-color: rgba(95, 95, 95, .7);
+    background-color: rgba(95, 95, 95, 0.7);
   }
 }
 
@@ -156,7 +171,7 @@ a {
 
   .slogan {
     font-size: 1.3rem !important;
-    text-align: left !important;
+    text-align: left;
   }
 }
 
@@ -169,7 +184,6 @@ a {
   .cover-title {
     text-align: center !important;
   }
-
 }
 
 @media only screen and (max-width: 640px) {
@@ -181,48 +195,43 @@ a {
 @keyframes fade-down {
   0% {
     transform: translateY(-20px);
-    opacity: 0
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fade-down {
   0% {
     -webkit-transform: translateY(-20px);
-    opacity: 0
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
-
 
 @keyframes fade-up {
   0% {
     transform: translateY(20px);
-    opacity: 0
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fade-up {
   0% {
     -webkit-transform: translateY(20px);
-    opacity: 0
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
-
-
-
-

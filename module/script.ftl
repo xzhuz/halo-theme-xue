@@ -84,19 +84,3 @@
 
 <#-- Pjax 相关代码 -->
 <#include "pjax.ftl">
-<#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-  <#--  <script type="text/javascript">
-
-      $(document).ready(function() {
-          $('#alipay').click(function() {
-            $('.qrcode-wechat').addClass('hidden');
-            $('.qrcode-alipay').toggleClass('hidden');
-          });
-
-          $('#wechat').click(function() {
-              $('.qrcode-alipay').addClass('hidden');
-              $('.qrcode-wechat').toggleClass('hidden');
-          })
-      })  -->
-  </script>
-</#if>

@@ -1,33 +1,32 @@
 // 夜间模式
 function dayNightSwitch() {
   // 夜晚模式开关
-  const daySwitch = $('#daySwitch')
-  daySwitch.toggleClass('daySwitch')
-  $(document.body).toggleClass('night');
+  const daySwitch = $("#daySwitch");
+  daySwitch.toggleClass("daySwitch");
+  $(document.body).toggleClass("night");
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   loadGallery();
   loadHighlight();
-  loadCodeLineNumber()
-  removeFirstUL()
+  loadCodeLineNumber();
+  removeFirstUL();
 });
-
 
 // 图片
 function loadGallery() {
-  if (document.getElementById('gallery-content')) {
-    new Viewer(document.getElementById('gallery-content'), {
+  if (document.getElementById("gallery-content")) {
+    new Viewer(document.getElementById("gallery-content"), {
       toolbar: true,
     });
   }
 
-  if ($('.justified-gallery').length > 0) {
-    if (typeof ($.fn.justifiedGallery) === 'function') {
-      if ($('.justified-gallery > p > .gallery-item').length) {
-        $('.justified-gallery > p > .gallery-item').unwrap();
+  if ($(".justified-gallery").length > 0) {
+    if (typeof $.fn.justifiedGallery === "function") {
+      if ($(".justified-gallery > p > .gallery-item").length) {
+        $(".justified-gallery > p > .gallery-item").unwrap();
       }
-      $('.justified-gallery').justifiedGallery({rowHeight: 230, margins: 4});
+      $(".justified-gallery").justifiedGallery({ rowHeight: 230, margins: 4 });
     }
   }
 }
@@ -40,27 +39,26 @@ function loadGallery() {
 
 // 代码高亮
 function loadHighlight() {
-  $('.md-content pre code').each(function () {
+  $(".md-content pre code").each(function () {
     hljs.highlightBlock(this);
   });
 }
 
 function loadCodeLineNumber() {
   // 行号
-  $('.md-content pre code.hljs').each(function (i, block) {
+  $(".md-content pre code.hljs").each(function (i, block) {
     hljs.lineNumbersBlock(this);
   });
-
 }
 
 //获取滚动条距离顶部位置
-function getScrollTop () {
+function getScrollTop() {
   return document.documentElement.scrollTop || document.body.scrollTop;
 }
 
-function tocScroll (event) {
-  var tocId = '#toc';
-  var Obj = $('#tocFlag');
+function tocScroll(event) {
+  var tocId = "#toc";
+  var Obj = $("#tocFlag");
 
   //判断元素是否存在
   if (Obj.length !== 1) {
@@ -72,7 +70,7 @@ function tocScroll (event) {
 
   // 滚动条离页面顶端的距离
   var scrollTop = getScrollTop();
-  var postHeaderHeight = $('#postHeader').height();
+  var postHeaderHeight = $("#postHeader").height();
   if (scrollTop > postHeaderHeight) {
     tocFixed.show();
   } else {
@@ -85,9 +83,9 @@ function tocScroll (event) {
   }
   var tocHeight = tocEle.getBoundingClientRect().height;
   if (scrollTop > ObjTop - tocHeight * 0.5) {
-    tocFixed.addClass('toc-right-fixed');
+    tocFixed.addClass("toc-right-fixed");
   } else {
-    tocFixed.removeClass('toc-right-fixed');
+    tocFixed.removeClass("toc-right-fixed");
   }
 
   // 设置目录right
@@ -96,24 +94,24 @@ function tocScroll (event) {
   event.preventDefault();
 }
 
-function scrollTocFixed () {
-  window.addEventListener('scroll', tocScroll, false);
+function scrollTocFixed() {
+  window.addEventListener("scroll", tocScroll, false);
 }
 
-function initToc () {
-  var headerEl = 'h1,h2,h3,h4,h5,h6',  //headers
-      content = '.md-content';//文章容器
+function initToc() {
+  var headerEl = "h1,h2,h3,h4,h5,h6", //headers
+    content = ".md-content"; //文章容器
   tocbot.init({
-    tocSelector: '#toc',
+    tocSelector: "#toc",
     contentSelector: content,
     headingSelector: headerEl,
     scrollSmooth: true,
-    headingsOffset: 0 - $('#postHeader').height(),
+    headingsOffset: 0 - $("#postHeader").height(),
     // scrollSmoothOffset: -80, // 实现点击目录精准跳转到header
     hasInnerContainers: false,
   });
 
-  $('.toc-link').each(function () {
+  $(".toc-link").each(function () {
     var linkContent = $(this).html();
     $(this).html('<span class="toc-link-dot"></span>' + linkContent);
   });
@@ -121,9 +119,9 @@ function initToc () {
   tocEleRight();
 }
 
-function tocEleRight () {
+function tocEleRight() {
   var screenWidth = document.body.clientWidth;
-  var tocEle = document.getElementById('toc');
+  var tocEle = document.getElementById("toc");
   if (tocEle) {
     tocEle.style.left = (screenWidth - 800) / 2 + 820 + "px";
   }
@@ -131,34 +129,39 @@ function tocEleRight () {
 
 // 因为不使用后端渲染目录, 所以如果在发布文章的时候在文章开头加上 [TOC] 会在文章页面开头有一个ul 标签
 // 这里粗暴的去除
-function removeFirstUL () {
-  var post_content = document.getElementById('write');
+function removeFirstUL() {
+  var post_content = document.getElementById("write");
   if (!post_content) {
     return;
   }
   var firstNodeName = post_content.firstElementChild.nodeName;
-  if (firstNodeName === 'UL') {
+  if (firstNodeName === "UL") {
     $(post_content.firstElementChild).remove();
   }
 }
 
 function toggleAliPay() {
-  $('.qrcode-wechat').addClass('hidden');
-  $('.qrcode-alipay').toggleClass('hidden');
-  $('#wechat i').removeClass('active-bg');
-  $('#alipay i').toggleClass('active-bg');
+  $(".qrcode-wechat").addClass("hidden");
+  $(".qrcode-alipay").toggleClass("hidden");
+  $("#wechat i").removeClass("active-bg");
+  $("#alipay i").toggleClass("active-bg");
 }
 
 function toggleWeChat() {
-  $('.qrcode-alipay').addClass('hidden');
-  $('.qrcode-wechat').toggleClass('hidden');
-  $('#alipay i').removeClass('active-bg')
-  $('#wechat i').toggleClass('active-bg')
+  $(".qrcode-alipay").addClass("hidden");
+  $(".qrcode-wechat").toggleClass("hidden");
+  $("#alipay i").removeClass("active-bg");
+  $("#wechat i").toggleClass("active-bg");
+}
+
+function scollTo() {
+  var postHeight = $("#homeHeader").height();
+  window.scroll({ top: postHeight, behavior: "smooth" });
 }
 
 /**
  * 异步获取分页数据
- * @param  e 
+ * @param  e
  */
 function getData(e) {
   const path = $(e).attr("path");
@@ -168,22 +171,21 @@ function getData(e) {
     url: path,
     beforeSend: function () {
       $(pageContainer).empty();
-      $(pageContainer).addClass('loading');
+      $(pageContainer).addClass("loading");
     },
     success: function (data) {
-      $(pageContainer).removeClass('loading');
+      $(pageContainer).removeClass("loading");
       $(pageContainer).empty();
       let result = $(data).find(pageContainer);
       $(pageContainer).append(result.children());
-      let page = '#pagination';
+      let page = "#pagination";
       let pagination = $(data).find(page);
       $(page).empty();
       $(page).append(pagination.children());
     },
     error: function () {
       $(pageContainer).empty();
-      $(pageContainer).addClass('loading');
-    }
+      $(pageContainer).addClass("loading");
+    },
   });
 }
-

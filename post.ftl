@@ -79,7 +79,7 @@
         </div>
 
         <!-- 上一篇和下一篇 -->
-        <#include "module/widget/prev-next-page.ftl">
+        <#include "module/widget/prev_next_page.ftl">
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
             <#include "module/comment.ftl">
             <#if is_post??>

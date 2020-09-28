@@ -75,36 +75,26 @@
 
         </style>
 
-        <#-- css库 -->
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
-        <#-- 图片预览   -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
+
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
-        <!-- 相册 -->
 
-        <link rel="stylesheet"
-              href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-        <#--  代码高亮样式  -->
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
 
-        <#--        <#if settings.enabled_mathjax!true>-->
-        <#--            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"-->
-        <#--                  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"-->
-        <#--                  crossorigin="anonymous">-->
-        <#--        </#if>-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
+
         <#if settings.Aplayer?? && settings.Aplayer != ''>
             <link rel="stylesheet"
                   href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
         <#--标签云-->
-        <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
-              rel="stylesheet">
-        <#-- 所有的css 开发用 -->
-            <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
-        <#--         发布用 -->
-        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=20200928090">  -->
+        <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
+
+        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
+
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281500">
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -124,18 +114,18 @@
 
     </body>
 
-    <#-- jquery工具类 -->
+
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <#-- 暗夜模式 -->
+
     <#if settings.auto_night_mode!true>
         <script type="text/javascript">
           var autoNightModeOpen = true;
         </script>
     </#if>
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
+    <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
     <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
-    <#--  <script src="${theme_base!}/source/js/main.js?ver=202009272330}"></script>  -->
+    <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>
     <#include "script.ftl">
     </html>
 </#macro>
