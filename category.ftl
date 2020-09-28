@@ -18,7 +18,7 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 content-container">
+        <div class="container mx-auto px-4 content-container mx-850 mt-8">
             <div class="posts mt-4">
                 <#if posts?? && posts.getTotalElements() gt 0>
                     <#include "module/widget/post_items.ftl">
