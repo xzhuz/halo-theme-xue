@@ -45,7 +45,7 @@
             </div>
         </header>
         <div class="article-content content-container" id="gallery-content">
-            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd"
+            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container"
                  id="write">
                 ${post.formatContent!}
             </div>
@@ -55,7 +55,7 @@
             </#if>
         </div>
 
-        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd">
+        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container">
             <blockquote class="post-copyright">
                 <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
                                             rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>
@@ -65,7 +65,7 @@
 
 
         <#include "module/widget/sponsor.ftl">
-        <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags">
+        <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags ct-container">
             <p class="flex flex-row justify-start flex-wrap">
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>

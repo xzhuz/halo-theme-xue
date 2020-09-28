@@ -1,5 +1,5 @@
 <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-<div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags">
+<div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags ct-container">
     <section class="donate">
         <div class="icon">
             <#if settings.QR_code_zfb??>
