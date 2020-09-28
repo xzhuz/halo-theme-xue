@@ -94,7 +94,7 @@
 
         <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281500">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">
         <script type="application/javascript">
           <!--
           window.onerror = function () {

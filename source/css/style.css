@@ -3866,9 +3866,6 @@ span.toc-link-dot {
   background: var(--night-tag-bg-color) !important;
   filter: brightness(0.6) !important;
 }
-.night .ah-hf {
-  filter: brightness(0.6) !important;
-}
 .night .github-badge {
   filter: brightness(0.8);
 }
