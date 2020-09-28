@@ -7,9 +7,17 @@
                     <span>${post.createTime?string("yyyy年MM月")}</span>
                 </div>
                 <div class="post-preview">
-                    <a href="${post.fullPath!}">
-                        <img src="${post.thumbnail}" alt="${post.title}"/>
-                    </a>
+                    <#if post.thumbnail?? && post.thumbnail!=''>
+                        <a href="${post.fullPath!}">
+                            <img src="${post.thumbnail}" alt="${post.title}"/>
+                        </a>
+                   <#elseif settings.card_random_cover!false>
+                       <#assign x = "${settings.card_random_cover_img_num?number}" />
+                       <#assign thumbnailIndex ="${post_index % (x?number)}"/>
+                       <a href="${post.fullPath!}">
+                           <img src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${post.title}"/>
+                       </a>
+                   </#if>
                 </div>
             </div>
             <div class="post-content <#if post.categories?? && post.categories?size gt 0>has-category</#if> ">
@@ -25,7 +33,8 @@
 
                 <h2>
                     <a href="${post.fullPath!}"
-                       rel="bookmark"><#if post.topPriority gt 0><i class="iconfont icon-zhiding zhiding"></i></#if> ${post.title}</a>
+                       rel="bookmark"><#if post.topPriority gt 0><i
+                                class="iconfont icon-zhiding zhiding"></i></#if> ${post.title}</a>
                 </h2>
                 <p>${post.summary!}</p>
                 <a class="post-more-link" href="${post.fullPath!}">

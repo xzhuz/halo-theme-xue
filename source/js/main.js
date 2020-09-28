@@ -7,10 +7,19 @@ function dayNightSwitch() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // 图片和相册
   loadGallery();
+  // 代码高亮
   loadHighlight();
+  // 代码行号
   loadCodeLineNumber();
+  // 删除文章第一个目录
   removeFirstUL();
+  // toc
+  if (typeof tocbot !== 'undefined' && document.getElementById('toc')) {
+    initToc();
+    scrollTocFixed();
+  }
 });
 
 // 图片
@@ -71,7 +80,7 @@ function tocScroll(event) {
   // 滚动条离页面顶端的距离
   var scrollTop = getScrollTop();
   var postHeaderHeight = $("#postHeader").height();
-  if (scrollTop > postHeaderHeight) {
+  if (scrollTop > postHeaderHeight / 2) {
     tocFixed.show();
   } else {
     tocFixed.hide();

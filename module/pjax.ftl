@@ -35,6 +35,11 @@
           loadCodeLineNumber()
           loadGallery();
           removeFirstUL()
+
+          if (typeof tocbot !== 'undefined' && document.getElementById('toc')) {
+            initToc();
+            scrollTocFixed();
+          }
         }
 
         //重载
@@ -45,6 +50,14 @@
         if (typeof ga !== 'undefined') {
           // support google analytics
           ga('send', 'pageview', location.pathname + location.search);
+        }
+
+        if (openKatex && renderMathInElement && typeof renderMathInElement !== 'undefined') {
+          if (document.getElementById('write')) {
+            renderMathInElement(document.getElementById('write'), katex_config)
+          } else if (document.getElementById('tree-hole')) {
+            renderMathInElement(document.getElementById('tree-hole'), katex_config)
+          }
         }
 
       });

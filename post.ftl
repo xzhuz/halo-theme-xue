@@ -21,10 +21,12 @@
                                  src="${user.avatar!}" alt=""/>
                             <span class="post-author">${post.visits} 次访问</span>
                             <time class="published"
-                                  datetime="${post.createTime?string("yyyy-MM-dd")}">发布: ${post.createTime?string("yyyy-MM-dd")}</time>
+                                  datetime="${post.createTime?string("yyyy-MM-dd")}">
+                                发布: ${post.createTime?string("yyyy-MM-dd")}</time>
                             <#if "${post.createTime}" != "${post.editTime}">
                                 <time class="published"
-                                      datetime="${post.editTime?string("yyyy-MM-dd")}">最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
+                                      datetime="${post.editTime?string("yyyy-MM-dd")}">
+                                    最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
                             </#if>
                         </div>
                         <div class="text-center post-categories">
@@ -51,20 +53,21 @@
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
-                <aside id="toc" class="toc font-sans"></aside>
+                <aside id="toc" class="toc"></aside>
             </#if>
         </div>
 
-        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container">
+        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container coffee-tags">
             <blockquote class="post-copyright">
-                <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"
+                                            target="_blank"
                                             rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>
                 <p><b>Links: </b> <a href="${post.fullPath!}">${post.fullPath!}</a></p>
             </blockquote>
+            <#include "module/widget/sponsor.ftl">
         </div>
 
 
-        <#include "module/widget/sponsor.ftl">
         <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags ct-container">
             <p class="flex flex-row justify-start flex-wrap">
                 <#if post.tags?? && post.tags?size gt 0>

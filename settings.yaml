@@ -198,6 +198,18 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    more_lang_code:
+      name: more_lang_code
+      label: 更多代码高亮
+      type: radio
+      data-type: bool
+      default: false
+      decription: "如果目前代码高亮不支持,可以尝试开启此开关"
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     code_style:
       name: code_style
       label: 代码风格

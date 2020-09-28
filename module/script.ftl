@@ -50,14 +50,49 @@
 </#if>
 
 <script type="text/javascript">
-    $('.arrow-down').on('click', function () {
-        var postHeight = $('#homeHeader').height();
-        window.scroll({top: postHeight, behavior: 'smooth'});
-    })
+  $(function () {
+    pageScroll();
+  });
+
+  /**
+   * header scroll 事件
+   */
+  function pageScroll() {
+    var start = 0;
+    var scrollFunc = function () {
+      const scrollTop = getScrollTop();
+      if (start > scrollTop) {
+        addBg();
+      } else {
+        removeBg();
+      }
+      // 到顶部, 取消展示
+      if (scrollTop === 0) {
+        remove()
+      }
+      start = scrollTop;
+    }
+
+    var addBg = function () {
+      $('.slide.header-nav').removeClass('hidden').addClass('bg-fff');
+    }
+
+    var removeBg = function () {
+      $('.slide.header-nav').addClass('hidden').removeClass('bg-fff');
+    };
+
+    var remove = function () {
+      $('.slide.header-nav').removeClass('hidden').removeClass('bg-fff');
+    };
+
+    document.addEventListener('scroll', scrollFunc, false);
+  }
+
 </script>
 
 <script type="text/javascript">
-  var katex_config = {
+  <#if settings.enabled_mathjax!true>
+  const katex_config = {
     delimiters:
         [
           {left: "$$", right: "$$", display: true},
@@ -66,11 +101,23 @@
           {left: "\\[", right: "\\]", display: true},
         ]
   };
-  var openToc;
-  <#if settings.post_toc!true>
-    openToc = true;
+  const openKatex = true;
   </#if>
+
 </script>
+
+<#if settings.enabled_mathjax!true>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+            integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+            crossorigin="anonymous"
+            onload="if (document.getElementById('write') && openKatex)
+            { renderMathInElement(document.getElementById('write'), katex_config)}
+            else if (document.getElementById('tree-hole') && openKatex)
+            {renderMathInElement(document.getElementById('tree-hole'), katex_config)}"></script>
+</#if>
 
 
 <script type="text/javascript">
@@ -80,7 +127,6 @@
   console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");
   </#if>
 </script>
-
 
 <#-- Pjax 相关代码 -->
 <#include "pjax.ftl">

@@ -85,16 +85,15 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 
         <#if settings.Aplayer?? && settings.Aplayer != ''>
-            <link rel="stylesheet"
-                  href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
 
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">
+        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">-->
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -123,9 +122,9 @@
         </script>
     </#if>
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
-    <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
+      <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
     <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
-    <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>
+<#--    <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>-->
     <#include "script.ftl">
     </html>
 </#macro>

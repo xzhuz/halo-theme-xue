@@ -48,11 +48,6 @@
     color: var(--night-txt-color) !important;
   }
 
-  //.pagination-circle.is-current, .pagination-circle:hover {
-  //  -webkit-filter: brightness(.6)!important;
-  //  filter: brightness(.6)!important;
-  //}
-
   .pagination-circle {
     color: var(--night-page-a-color) !important;
   }
@@ -170,13 +165,26 @@
     filter: brightness(0.8) !important;
   }
 
-  .header {
+  .header-nav li a {
+    color: #fff;
+  }
+
+  .header.open {
     background-color: var(--night-background) !important;
   }
 
-  .header-nav li a {
+  .bg-fff {
+    background-color: var(--night-background) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
+  }
+  .header-nav.bg-fff li a {
     color: var(--night-txt-color) !important;
   }
+
+  .content.slide.open {
+    box-shadow: 0 1px 3px 3px rgba(10, 10, 22, 0.05);
+  }
+
 
   .posts-list h2 a {
     color: var(--night-txt-color) !important;
