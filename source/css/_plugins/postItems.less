@@ -19,7 +19,7 @@
   font-size: 15px;
   line-height: 1.5;
   color: #555;
-  min-height: 48px;
+  // min-height: 48px;
   word-break: break-all;
 }
 
@@ -245,6 +245,11 @@
   transform: translateY(100%);
 }
 
+.post .zhiding {
+  font-size: 1.5rem;
+  color: var(--base-hl-color);
+}
+
 @media screen and (max-width: 719px) {
   .posts-list > li~li {
     padding-top: 20px;
@@ -264,5 +269,9 @@
     color: #718096;
     font-size: 12px;
     display: inline-block;
+  }
+
+  .post .post-more-link {
+    opacity: 1;
   }
 }

@@ -64,18 +64,8 @@
         </div>
 
 
+        <#include "module/widget/sponsor.ftl">
         <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags">
-            <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-                <p class="flex flex-col justify-center pt-8 pb-8">
-                    <span class="text-center block pb-2">Buy me a cup of coffee ☕.</span>
-                    <button id="buyCoffee"
-                            class="btn-primary rounded h-10 leading-10 w-32 mg-auto">
-                        <img src="${theme_base!}/source/images/cuplogo-sm.png" style="height: 13px"/>
-                        <span class="pt-1 pl-2">Coffee</span>
-                    </button>
-                </p>
-            </#if>
-            <#--            </#if>-->
             <p class="flex flex-row justify-start flex-wrap">
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
@@ -89,30 +79,7 @@
         </div>
 
         <!-- 上一篇和下一篇 -->
-        <#if settings.post_nepre!true>
-            <div class="container mx-auto mt-8 pb-8 max-w-6xl grid grid-cols-2 flex flex-row justify-between  ct-container cn-pd post-navigation">
-                <div class="pre-post pt-4 ">
-                    <#if prevPost??>
-                        <a href="${prevPost.fullPath!}" class="nav-previous">
-                            <div class="nav-inside">
-                                <span class="nav-before"><span class="iconfont icon-left"> </span></span>
-                                <span class="nav-title">${prevPost.title!}</span>
-                            </div>
-                        </a>
-                    </#if>
-                </div>
-                <div class="next-post pt-4 text-right">
-                    <#if nextPost??>
-                        <a href="${nextPost.fullPath!}" class="nav-previous">
-                            <div class="nav-inside">
-                                <span class="nav-title">${nextPost.title!}</span>
-                                <span class="nav-before"> <span class="iconfont icon-right"> </span></span>
-                            </div>
-                        </a>
-                    </#if>
-                </div>
-            </div>
-        </#if>
+        <#include "module/widget/prev-next-page.ftl">
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
             <#include "module/comment.ftl">
             <#if is_post??>

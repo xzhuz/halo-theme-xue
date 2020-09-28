@@ -16,7 +16,7 @@
                 <#if post.categories?? && post.categories?size gt 0>
                     <div class="post-meta">
                         <#list post.categories as category>
-                            <span class="post-categories">${category.name!}</span>
+                            <span class="post-categories">#${category.name!} </span>
                         </#list>
                     </div>
                 <#else>
@@ -25,7 +25,7 @@
 
                 <h2>
                     <a href="${post.fullPath!}"
-                       rel="bookmark"><#if post.topPriority gt 0><i class="iconfont icon-zhiding"></i></#if> ${post.title}</a>
+                       rel="bookmark"><#if post.topPriority gt 0><i class="iconfont icon-zhiding zhiding"></i></#if> ${post.title}</a>
                 </h2>
                 <p>${post.summary!}</p>
                 <a class="post-more-link" href="${post.fullPath!}">

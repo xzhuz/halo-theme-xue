@@ -19,6 +19,7 @@
             </div>
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
+        <@postTag method="archiveMonth">
             <#list archives as archive>
                 <section class="arch-year">
                     <h1 class="year-title relative">${archive.year?c}</h1>
@@ -39,6 +40,7 @@
                     </div>
                 </section>
             </#list>
+            </@postTag>
         </div>
     </main>
 </@layout>

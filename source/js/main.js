@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadGallery();
   loadHighlight();
   loadCodeLineNumber()
+  removeFirstUL()
 });
 
 

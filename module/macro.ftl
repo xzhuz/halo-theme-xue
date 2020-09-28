@@ -109,9 +109,9 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
               rel="stylesheet">
         <#-- 所有的css 开发用 -->
-        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
+            <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
         <#--         发布用 -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009272330">
+        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=20200928090">  -->
         <script type="application/javascript">
           <!--
           window.onerror = function () {

@@ -34,6 +34,7 @@
           loadHighlight();
           loadCodeLineNumber()
           loadGallery();
+          removeFirstUL()
         }
 
         //重载

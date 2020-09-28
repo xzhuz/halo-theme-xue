@@ -15,7 +15,7 @@
                 <!-- 封面内容 -->
                 <div class="inner flex flex-col justify-center">
                     <h2 class="cover-title text-left md:text-4xl lg:text-4xl xl:text-5xl">${settings.home_title!options.blog_title!}</h2>
-                    <p class="slogan text-center">${settings.home_description!}</p>
+                    <p class="slogan text-center" id="slogan">${settings.home_description!}</p>
                     <#if settings.enabled_index_cover_height!true>
                         <a class="arrow-down" data-scroll id="arch">
                             <span class="screen-reader-text">Scroll Down</span>
