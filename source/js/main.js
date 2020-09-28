@@ -142,6 +142,24 @@ function removeFirstUL () {
   }
 }
 
+function toggleAliPay() {
+  $('.qrcode-wechat').addClass('hidden');
+  $('.qrcode-alipay').toggleClass('hidden');
+  $('#wechat i').removeClass('active-bg');
+  $('#alipay i').toggleClass('active-bg');
+}
+
+function toggleWeChat() {
+  $('.qrcode-alipay').addClass('hidden');
+  $('.qrcode-wechat').toggleClass('hidden');
+  $('#alipay i').removeClass('active-bg')
+  $('#wechat i').toggleClass('active-bg')
+}
+
+/**
+ * 异步获取分页数据
+ * @param  e 
+ */
 function getData(e) {
   const path = $(e).attr("path");
   var pageContainer = "#container .pagination-container";

@@ -1,15 +1,19 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto home-page" id="container">
-        <header class="bg-cover" id="homeHeader">
+        <header class="bg-cover home-cover <#if !(settings.home_cover?? && settings.home_cover!='') && (settings.enabled_index_cover_height!true) >no-cover-bg </#if>" id="homeHeader">
             <#if settings.home_cover?? && settings.home_cover!=''>
                 <div class="cover-bg">
                     <img src="${settings.home_cover!}"
                          alt="${settings.home_title!options.blog_title!}">
                 </div>
-            <#else>
-                <div class="default-cover-bg">
+            <#elseif !(settings.enabled_index_cover_height!true)>
+                <div class="cover-bg">
+                    <img src="https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg"
+                         alt="${settings.home_title!options.blog_title!}">
                 </div>
+            <#else>
+                <div class="default-cover-bg"></div> 
             </#if>
             <div class="cover-content index flex justify-center">
                 <!-- 封面内容 -->

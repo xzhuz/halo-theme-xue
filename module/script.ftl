@@ -50,6 +50,13 @@
 </#if>
 
 <script type="text/javascript">
+    $('.arrow-down').on('click', function () {
+        var postHeight = $('#homeHeader').height();
+        window.scroll({top: postHeight, behavior: 'smooth'});
+    })
+</script>
+
+<script type="text/javascript">
   var katex_config = {
     delimiters:
         [
@@ -78,18 +85,18 @@
 <#-- Pjax 相关代码 -->
 <#include "pjax.ftl">
 <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
+  <#--  <script type="text/javascript">
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#alipay').click(function() {
-           $('.qrcode-wechat').addClass('hidden');
+      $(document).ready(function() {
+          $('#alipay').click(function() {
+            $('.qrcode-wechat').addClass('hidden');
             $('.qrcode-alipay').toggleClass('hidden');
-        });
+          });
 
-         $('#wechat').click(function() {
-            $('.qrcode-alipay').addClass('hidden');
-            $('.qrcode-wechat').toggleClass('hidden');
-        })
-    })
-</script>
+          $('#wechat').click(function() {
+              $('.qrcode-alipay').addClass('hidden');
+              $('.qrcode-wechat').toggleClass('hidden');
+          })
+      })  -->
+  </script>
 </#if>

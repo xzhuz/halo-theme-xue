@@ -2,26 +2,21 @@
     display: block;
     text-align: center;
     margin-bottom: 20px;
-    position: relative;
+
 }
 
 .coffee-tags .donate .qrcode {
     padding: 10px;
     width: 200px;
     height: 200px;
-    box-shadow: 0 5px 40px -1px rgba(2,10,18,0.11);
-    position: absolute;
-    left: calc(50% - 100px);
-    bottom: 150px;
-    z-index: 10;
-    // display: none;
+    z-index: 999;
+    margin: 10px auto;
 }
 
 .coffee-tags .donate .qrcode img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
+    -webkit-animation: fade-down .3s;
+    animation: fade-down .3s;
+    max-height: 200px;
 }
 
 .coffee-tags .donate .icon {
@@ -30,7 +25,7 @@
     border: 1px solid #e0e0e0;
     background-color: #fff;
     border-radius: 2em;
-    padding: 8px 16px;
+    padding: 4px 16px;
     z-index: 20;
 }
 
@@ -47,4 +42,12 @@
 
 .coffee-tags .donate .icon #wechat {
     padding-left: 8px;
+}
+
+.coffee-tags .donate .active-bg {
+    color: var(--base-hl-color);
+}
+
+.coffee-tags .donate .icon a:hover {
+    transform: scale(1.1);
 }

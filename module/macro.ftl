@@ -11,15 +11,6 @@
         <@global.head />
         <title>${title}</title>
 
-        <#--  不打印错误日志  -->
-        <script language=javascript>
-          <!--
-          window.onerror = function () {
-            return true;
-          }
-          // -->
-        </script>
-
         <#--  公共的js,必须写到这边,因为有配置项 -->
         <style type="text/css">
           :root {
@@ -31,6 +22,8 @@
             --base-hover-color: #f1404b;
             --base-hl-color: #f1404b;
             --page-text-color: #fff;
+            --cover-no-img-bg: #fff;
+            --cover-default-bg: #101012;
 
 
             --header-sub-bg-color: #f0f5f9;
@@ -73,7 +66,7 @@
 
           <#if settings.enabled_index_cover_height!true>
           @media only screen and (min-width: 861px) {
-            .home-page .bg-cover {
+            .home-cover {
               height: 100vh !important;
             }
           }
@@ -140,9 +133,9 @@
         </script>
     </#if>
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
-    <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
+    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
     <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
-    <script src="${theme_base!}/source/js/main.js?ver=202009272330}"></script>
+    <#--  <script src="${theme_base!}/source/js/main.js?ver=202009272330}"></script>  -->
     <#include "script.ftl">
     </html>
 </#macro>

@@ -24,7 +24,7 @@ genernal:
       name: home_cover
       label: 首页背景
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
+      # default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     enabled_index_cover_height:
       name: enabled_index_cover_height
       label: 首页开启全屏图片
