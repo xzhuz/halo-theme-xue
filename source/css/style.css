@@ -1171,7 +1171,7 @@ a {
 }
 .arch-year {
   position: relative;
-  padding: 2.15rem 0;
+  padding: 0.1rem 0;
   border-color: inherit;
 }
 .arch-year:first-of-type {
