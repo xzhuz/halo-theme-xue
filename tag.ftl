@@ -18,18 +18,12 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 content-container mx-850 mt-8">
-            <div class="posts mt-4">
-                <#if posts?? && posts.getTotalElements() gt 0>
-                    <#include "module/widget/post_items.ftl">
-                </#if>
-            </div>
-            <#-- 分页-->
-            <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-                <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
-                    <#include "module/widget/pagination.ftl">
-                </@paginationTag>
-            </nav>
+         <div class="container mx-auto px-4 content-container <#if !(settings.posts_style!true)>mx-850</#if>">
+            <#if settings.posts_style!true>
+                <#include "module/widget/post_cards.ftl">
+            <#else>
+                <#include "module/widget/post_list.ftl">
+            </#if>
         </div>
     </main>
 </@layout>

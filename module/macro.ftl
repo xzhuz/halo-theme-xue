@@ -78,12 +78,15 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
 
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
-
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
-
+        <#if settings.enable_image_view!false>
+          <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
+        </#if>
+        <#if settings.enable_photo!false>
+          <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+        </#if>
+        <#if settings.enable_code_highlight!true>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
+        </#if>
         <#if settings.Aplayer?? && settings.Aplayer != ''>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
@@ -91,18 +94,12 @@
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 
-        <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">-->
-        <script type="application/javascript">
-          <!--
-          window.onerror = function () {
-            return true;
-          }
-          // -->
-        </script>
+              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">
+
     </head>
-    <body>
+    <body class="<#if settings.default_night_mode!false>night</#if>">
     <div class="">
         <#include "header.ftl">
         <div class="content slide">
@@ -116,16 +113,12 @@
 
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 
-    <#if settings.auto_night_mode!true>
-        <script type="text/javascript">
-          var autoNightModeOpen = true;
-        </script>
-    </#if>
-    <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
-      <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>
-    <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
-<#--    <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>-->
     <#include "script.ftl">
+    <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
+      <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
+    <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
+  <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>
+    
     </html>
 </#macro>
 

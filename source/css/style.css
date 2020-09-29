@@ -612,9 +612,6 @@ a {
     transition: all 0.6s;
     -webkit-transition: all 0.6s;
   }
-  .header.open {
-    background-color: var(--base-bg-color);
-  }
   .header h1 {
     color: #ffffff;
     text-align: center;
@@ -3468,6 +3465,9 @@ ol > li > ol > li > ol > li {
 .hljs-ln tr {
   border: none !important;
 }
+.hljs-ln:first-child(.hljs-ln-numbers) {
+  display: none;
+}
 /* for block of numbers */
 .hljs-ln-numbers {
   -webkit-touch-callout: none;
@@ -3477,7 +3477,7 @@ ol > li > ol > li > ol > li {
   user-select: none;
   text-align: center;
   color: #ccc;
-  border-right: 1px solid #CCC;
+  border-right: 1px solid #ccc;
   vertical-align: top;
   padding-right: 5px;
   /* your custom style here */
@@ -3493,6 +3493,12 @@ td .hljs-button {
   border: none !important;
   background-color: #f8f8f8 !important;
   box-shadow: none !important;
+}
+.hljs-ln-n:before {
+  content: attr(data-line-number);
+}
+table.hljs-ln td {
+  padding: 2px 0 2px 4px !important;
 }
 .toc {
   position: fixed;

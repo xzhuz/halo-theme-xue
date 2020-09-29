@@ -13,13 +13,16 @@
 
       $(document).on('pjax:complete', function () {
         NProgress.done();
+        // 相册页面功能
         if ($("#container").find('.photos-page').length > 0) {
-          if (typeof justifiedGallery === 'undefined') {
+          if (typeof $.fn.justifiedGallery !== "function") {
             $.getScript(
                 "https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js",
                 function () {
                   loadGallery();
                 });
+          } else {
+            loadGallery();
           }
         }
 
@@ -30,11 +33,12 @@
           commentParent.append(comment);
         });
 
+        // 存在 markdown 页面的功能
         if ($("#container").find('.md-content').length > 0) {
-          loadHighlight();
-          loadCodeLineNumber()
+          // 格式化内容
+          formatContent();
+
           loadGallery();
-          removeFirstUL()
 
           if (typeof tocbot !== 'undefined' && document.getElementById('toc')) {
             initToc();

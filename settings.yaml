@@ -22,9 +22,20 @@ genernal:
       default: true
       options:
         - value: true
-          label: card
+          label: 卡片
         - value: false
-          label: list
+          label: 列表
+    card_hover_summary:
+      name: card_hover_summary
+      label: 卡片风格首页是否展示文章简介
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     home_cover:
       name: home_cover
       label: 首页背景
@@ -32,7 +43,7 @@ genernal:
       default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     enabled_index_cover_height:
       name: enabled_index_cover_height
-      label: 首页开启全屏图片
+      label: 首页全屏图片
       type: radio
       data-type: bool
       default: true
@@ -41,13 +52,9 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    header_logoimg:
-      name: header_logoimg
-      label: 菜单 Logo
-      type: attachment
     card_random_cover:
       name: card_random_cover
-      label: 卡片随机选择封面
+      label: 随机封面
       type: radio
       data-type: bool
       default: false
@@ -59,7 +66,7 @@ genernal:
       description: "即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/2020/06/03/random-thumbnail"
     card_random_cover_img_suffix:
       name: card_random_cover_img_suffix
-      label: 卡片随机选择封面后缀
+      label: 随机封面图片后缀
       type: radio
       data-type: string
       default: png
@@ -70,15 +77,16 @@ genernal:
           label: jpeg
         - value: jpg
           label: jpg
-      description: "随机封面后缀"
+      description: "图片后缀"
     card_random_cover_img_num:
       name: card_random_cover_img_num
-      label: 卡片随机选择封面数量
+      label: 随机图片库图片数量
       type: number
       default: 4
-    card_hover_summary:
-      name: card_hover_summary
-      label: 卡片显示简介
+      description: "根据管理后台静态存储中的图片数量决定"
+    default_night_mode:
+      name: default_night_mode
+      label: 默认夜晚模式
       type: radio
       data-type: bool
       default: false
@@ -87,7 +95,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-      description: "悬浮显示简介"
     open_night_mode:
       name: open_night_mode
       label: 开启夜晚模式
@@ -111,12 +118,12 @@ genernal:
       placeholder: "填入网安备案号代码，没有则不填"
     QR_code_zfb:
       name: QR_code_zfb
-      label: "支付宝二维码链接"
+      label: "支付宝二维码图片"
       type: attachment
       placeholder: "支付宝收款二维码链接，不填不显示"
     QR_code_wx:
       name: QR_code_wx
-      label: "微信二维码链接"
+      label: "微信二维码图片"
       type: attachment
       placeholder: "微信收款二维码链接，不填不显示"
 head_img:
@@ -167,7 +174,7 @@ post:
   items:
     post_toc:
       name: post_toc
-      label: 目录
+      label: 是否展示目录
       type: radio
       data-type: bool
       default: true
@@ -178,7 +185,7 @@ post:
           label: 关闭
     post_nepre:
       name: post_nepre
-      label: 下一篇
+      label: 文章页是否显示上一篇和下一篇文章
       type: radio
       data-type: bool
       default: true
@@ -189,10 +196,32 @@ post:
           label: 关闭
     enabled_mathjax:
       name: enabled_mathjax
-      label: Mathjax
+      label: 是否展示公式
       type: radio
       data-type: bool
       default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_code_highlight:
+      name: enable_code_highlight
+      label: 是否开启代码高亮
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_code_lineNumber:
+      name: enable_code_lineNumber
+      label: 代码是否展示行号(需先开启代码高亮)
+      type: radio
+      data-type: bool
+      default: false
       options:
         - value: true
           label: 开启
@@ -244,7 +273,7 @@ post:
 #        - value: false
 #          label: 关闭
 title:
-  label: 页面标题
+  label: 自定义页面标题
   items:
     links_title:
       name: links_title
@@ -279,10 +308,6 @@ title:
 social:
   label: 社交网络
   items:
-    #    wechat:
-    #      name: wechat
-    #      label: 微信二维码
-    #      type: attachment
     sina:
       name: sina
       label: 新浪微博
@@ -337,7 +362,7 @@ social:
         - value: false
           label: 关闭
 experimental:
-  label: 实验性功能
+  label: 高级功能
   items:
     pjax_enabled:
       name: pjax_enabled
@@ -350,6 +375,29 @@ experimental:
           label: 开启
         - value: false
           label: 关闭
+    enable_image_view:
+      name: enable_image_view
+      label: 是否启用图片预览（点击全屏）
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    enable_photo:
+      name: enable_photo
+      label: 是否启用相册
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+
 other:
   label: 其他
   items:

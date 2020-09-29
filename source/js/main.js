@@ -9,14 +9,13 @@ function dayNightSwitch() {
 document.addEventListener("DOMContentLoaded", function () {
   // 图片和相册
   loadGallery();
-  // 代码高亮
-  loadHighlight();
+
+  // loadHighlight();
   // 代码行号
   loadCodeLineNumber();
-  // 删除文章第一个目录
-  removeFirstUL();
+
   // toc
-  if (typeof tocbot !== 'undefined' && document.getElementById('toc')) {
+  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
     initToc();
     scrollTocFixed();
   }
@@ -24,7 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 图片
 function loadGallery() {
-  if (document.getElementById("gallery-content")) {
+  if (
+    typeof Viewer !== "undefined" &&
+    document.getElementById("gallery-content")
+  ) {
     new Viewer(document.getElementById("gallery-content"), {
       toolbar: true,
     });
@@ -48,16 +50,19 @@ function loadGallery() {
 
 // 代码高亮
 function loadHighlight() {
-  $(".md-content pre code").each(function () {
-    hljs.highlightBlock(this);
-  });
+  if (enableCodeHighlight) {
+    $(".md-content pre code").each(function () {
+      hljs.highlightBlock(this);
+    });
+  }
 }
 
 function loadCodeLineNumber() {
-  // 行号
-  $(".md-content pre code.hljs").each(function (i, block) {
-    hljs.lineNumbersBlock(this);
-  });
+  if (enableLineNumber) {
+    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
+      lineNumbersBlock(block);
+    });
+  }
 }
 
 //获取滚动条距离顶部位置
@@ -136,19 +141,6 @@ function tocEleRight() {
   }
 }
 
-// 因为不使用后端渲染目录, 所以如果在发布文章的时候在文章开头加上 [TOC] 会在文章页面开头有一个ul 标签
-// 这里粗暴的去除
-function removeFirstUL() {
-  var post_content = document.getElementById("write");
-  if (!post_content) {
-    return;
-  }
-  var firstNodeName = post_content.firstElementChild.nodeName;
-  if (firstNodeName === "UL") {
-    $(post_content.firstElementChild).remove();
-  }
-}
-
 function toggleAliPay() {
   $(".qrcode-wechat").addClass("hidden");
   $(".qrcode-alipay").toggleClass("hidden");
@@ -166,6 +158,113 @@ function toggleWeChat() {
 function scollTo() {
   var postHeight = $("#homeHeader").height();
   window.scroll({ top: postHeight, behavior: "smooth" });
+}
+
+/**
+ * 将文本转成 markdown
+ */
+function formatContent() {
+  if (!document.getElementById("write")) {
+    return;
+  }
+  const mdContent = document.getElementById("write");
+  const originalContent = mdContent.innerText;
+  if (typeof originalContent === "undefined") {
+    return;
+  }
+  console.log(originalContent);
+
+  const renderer = new marked.Renderer();
+
+  renderer.heading = function (text, level) {
+    // const id = generateId();
+    return `<h${level} id="${text}">${text}</h${level}>`;
+  };
+
+  renderer.link = function (href, title, text) {
+    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  };
+
+  renderer.image = function (href, title, text) {
+    const reg = /([^]*)\[([^]*)\]\(([^]*)\)/;
+    const isContainUrl = reg.test(text);
+    const imgHtml = `<img src=${href} alt=${text}><span class="text-center" style="font-size: .8rem">${text}</span>`;
+    return `<p style="text-align: center;">
+              ${
+                isContainUrl
+                  ? getImgWithUrlHtml(text.match(reg), href)
+                  : imgHtml
+              }
+            </p>`;
+  };
+
+  function getImgWithUrlHtml(textArr, href) {
+    return `<img src=${href} alt=${textArr[2]}><br>
+              ${textArr[1]}<a href="${textArr[3]}" target="_blank" rel="noopener noreferrer">${textArr[2]}</a>`;
+  }
+
+  renderer.blockquote = function (text) {
+    console.log(text);
+    text = text.trim();
+    text = text.replace(/<p>/g, "");
+    text = text.replace(/<\/p>/g, "<br>");
+    const textArr = text.split("<br>");
+    const context = [];
+    for (let i = 0; i < textArr.length; i++) {
+      if (textArr[i].trim().length === 0) {
+        continue;
+      }
+      context.push(`<p>${textArr[i]}</p>`);
+    }
+    return `<blockquote>${context.join("")}</blockquote>`;
+  };
+
+  renderer.table = function (header, body) {
+    if (body) body = "<tbody>" + body + "</tbody>";
+
+    return (
+      '<div class="md-table"><table>\n' +
+      "<thead>\n" +
+      header +
+      "</thead>\n" +
+      body +
+      "</table></div>\n"
+    );
+  };
+
+  marked.setOptions({
+    renderer: renderer,
+    highlight: function (code, language) {
+      if (enableCodeHighlight) {
+        const validLanguage = hljs.getLanguage(language)
+          ? language
+          : "plaintext";
+        return hljs.highlight(validLanguage, code).value;
+      }
+      return code;
+    },
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false,
+  });
+  mdContent.innerHTML = marked(originalContent.trim());
+  // 展示转换后的内容
+  mdContent.style.display = "block";
+
+  // 代码行号
+  loadCodeLineNumber();
+}
+
+function HTMLDecode(text) {
+  console.log(text);
+  var arrEntities = { lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"' };
+  return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, function (all, t) {
+    return arrEntities[t];
+  });
 }
 
 /**

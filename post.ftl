@@ -6,6 +6,12 @@
                 <div class="cover-bg">
                     <img src="${post.thumbnail!}" class="z-auto" alt="${post.title!}">
                 </div>
+            <#elseif settings.card_random_cover!false>
+                 <#assign x = "${settings.card_random_cover_img_num?number}" />
+                 <#assign thumbnailIndex ="${post.id % (x?number)}"/>    
+                 <div class="cover-bg">
+                    <img src="${blog_url!}/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" class="z-auto"  alt="${post.title}"/>
+                </div>
             <#else>
                 <div class="placeholder-bg">
                 </div>
@@ -48,8 +54,10 @@
         </header>
         <div class="article-content content-container" id="gallery-content">
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container"
-                 id="write">
-                ${post.formatContent!}
+                 id="write" style="display: none">
+                ${post.originalContent!}
+                <#--  ${post.originalContent!}  -->
+            </div>
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
@@ -92,4 +100,10 @@
             </#if>
         </div>
     </main>
+
+    
 </@layout>
+
+<#include "module/widget/marked.ftl">
+
+

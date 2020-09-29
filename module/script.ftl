@@ -1,12 +1,8 @@
 <#include "plugins.ftl"/>
 
-<#--  顶部菜单  -->
-<script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/simply-nav.js"></script>
-
 <#if is_category?? || is_tags ??>
 <#--标签云-->
-    <script data-pjax-cloud
-            src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
     <script type='text/javascript'>
       // 标签
       var tagArray = [
@@ -91,6 +87,7 @@
 </script>
 
 <script type="text/javascript">
+  let openKatex = false;
   <#if settings.enabled_mathjax!true>
   const katex_config = {
     delimiters:
@@ -101,9 +98,20 @@
           {left: "\\[", right: "\\]", display: true},
         ]
   };
-  const openKatex = true;
+  openKatex = true;
   </#if>
 
+
+  // 是否开启代码高亮
+  let enableCodeHighlight = false;
+  <#if settings.enable_code_highlight!true>
+    enableCodeHighlight = true;
+  </#if>
+  let enableLineNumber = false;
+  // 是否开启行号
+  <#if settings.enable_code_lineNumber!false> 
+    enableLineNumber = typeof lineNumbersBlock === 'function';
+  </#if>
 </script>
 
 <#if settings.enabled_mathjax!true>
@@ -124,7 +132,7 @@
   // console.clear();
   console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
   <#if settings.github??>
-  console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");
+    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");
   </#if>
 </script>
 
