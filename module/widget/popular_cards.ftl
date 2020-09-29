@@ -4,10 +4,9 @@
         <a href="${post.fullPath!}">
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <img width="300" height="200" src="${post.thumbnail}" alt="${post.title}"/>
-            <#elseif settings.card_random_cover!false>
-                <#assign x = "${settings.card_random_cover_img_num?number}" />
-                <#assign thumbnailIndex ="${post_index % (x?number)}"/>
-                <img width="300" height="200" src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${post.title}"/>
+            <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+                    <#assign thumbnailIndex = "${(.now?long / post.id) % thumbnailSize}"/>
+                    <img width="300" height="200" src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
             </#if>
         </a>
 

@@ -6,11 +6,16 @@
                 <div class="cover-bg">
                     <img src="${post.thumbnail!}" class="z-auto" alt="${post.title!}">
                 </div>
-            <#elseif settings.card_random_cover!false>
-                 <#assign x = "${settings.card_random_cover_img_num?number}" />
-                 <#assign thumbnailIndex ="${post.id % (x?number)}"/>    
-                 <div class="cover-bg">
-                    <img src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" class="z-auto"  alt="${post.title}"/>
+            <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+                <div class="cover-bg">
+                    <#assign x = "${settings.card_random_cover_list}"?trim />
+                    <#assign thumbnails = x?trim?split(";") />
+                    <#assign thumbnailSize = thumbnails?size />
+                    <#if settings.card_random_cover_list?ends_with(";")>
+                        <#assign thumbnailSize =thumbnailSize - 1 />
+                    </#if>
+                    <#assign thumbnailIndex = "${(.now?long / post.id) % thumbnailSize}"/>
+                    <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" class="z-auto"  alt="${post.title}"/>
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -55,6 +60,7 @@
         <div class="article-content content-container" id="gallery-content">
 
             <div id="original" style="display: none">${post.originalContent!}</div>
+            <div id="format" style="display: none">${post.formatContent!}</div>
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container loading"
                  id="write" >
             </div>

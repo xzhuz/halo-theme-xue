@@ -11,11 +11,10 @@
                         <a href="${post.fullPath!}">
                             <img src="${post.thumbnail}" alt="${post.title}"/>
                         </a>
-                   <#elseif settings.card_random_cover!false>
-                       <#assign x = "${settings.card_random_cover_img_num?number}" />
-                       <#assign thumbnailIndex ="${post_index % (x?number)}"/>
+                   <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+                       <#assign thumbnailIndex = "${(.now?long / post_index) % thumbnailSize}"/>
                        <a href="${post.fullPath!}">
-                           <img src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${post.title}"/>
+                           <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
                        </a>
                    </#if>
                 </div>

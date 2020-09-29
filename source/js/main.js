@@ -98,12 +98,6 @@ function tocScroll(event) {
     return;
   }
   var tocHeight = tocEle.getBoundingClientRect().height;
-  console.log(
-    scrollTop,
-    ObjTop,
-    tocHeight,
-    scrollTop > ObjTop - tocHeight * 0.5
-  );
   if (scrollTop > ObjTop - tocHeight * 0.5) {
     tocFixed.addClass("toc-right-fixed");
   } else {
@@ -177,10 +171,11 @@ function formatContent() {
   if (!mdContent || !persentContent) {
     return;
   }
-  const originalContent = mdContent.innerText;
+  let originalContent = mdContent.innerHTML;
   if (typeof originalContent === "undefined") {
     return;
   }
+  originalContent = HTMLDecode(originalContent);
 
   persentContent.empty();
   persentContent.addClass("loading");
@@ -216,6 +211,8 @@ function formatContent() {
 
   renderer.blockquote = function (text) {
     text = text.trim();
+    // 去掉换行符
+    text = text.replace(/[\r\n]/g, "<br/>");
     text = text.replace(/<p>/g, "");
     text = text.replace(/<\/p>/g, "<br>");
     const textArr = text.split("<br>");
@@ -249,6 +246,7 @@ function formatContent() {
         const validLanguage = hljs.getLanguage(language)
           ? language
           : "plaintext";
+        console.info(language, code);
         return hljs.highlight(validLanguage, code).value;
       }
       return code;

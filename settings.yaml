@@ -52,49 +52,11 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    card_random_cover:
-      name: card_random_cover
-      label: 随机封面
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-      description: "即使开启了此选项,也只有文章没有封面的情况下才会生效.请查看教程: https://baozi.fun/2020/06/03/random-thumbnail"
-    card_random_cover_img_suffix:
-      name: card_random_cover_img_suffix
-      label: 随机封面图片后缀
-      type: radio
-      data-type: string
-      default: png
-      options:
-        - value: png
-          label: png
-        - value: jpeg
-          label: jpeg
-        - value: jpg
-          label: jpg
-      description: "图片后缀"
-    card_random_cover_img_num:
-      name: card_random_cover_img_num
-      label: 随机图片库图片数量
-      type: number
-      default: 4
-      description: "根据管理后台静态存储中的图片数量决定"
-    default_night_mode:
-      name: default_night_mode
-      label: 默认夜晚模式
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+    card_random_cover_list:
+      name: card_random_cover_list
+      label: 随机图片列表，分号分割
+      type: textarea
+      description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"
     open_night_mode:
       name: open_night_mode
       label: 开启夜晚模式

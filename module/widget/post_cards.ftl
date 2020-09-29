@@ -13,11 +13,10 @@
                            style=" background-image: url(${post.thumbnail!''});"
                            class="img-cover img-cover-bg">
                         </a>
-                    <#elseif settings.card_random_cover!false>
-                        <#assign x = "${settings.card_random_cover_img_num?number}" />
-                        <#assign thumbnailIndex ="${post_index % (x?number)}"/>
+                    <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+                        <#assign thumbnailIndex = "${(.now?long / post_index) % thumbnailSize}"/>
                         <a href="${post.fullPath!}" class="img-cover img-cover-bg"
-                           style="background-image: url(${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix});"
+                           style="background-image: url(${thumbnails[thumbnailIndex?number?abs]?trim});"
                         >
                         </a>
                     <#else>

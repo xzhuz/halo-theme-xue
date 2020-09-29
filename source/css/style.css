@@ -2491,6 +2491,7 @@ ul.cards li.card.card-3 {
   font-size: 15px;
   line-height: 1.5;
   color: #555;
+  min-height: 45px;
   word-break: break-all;
 }
 .post img {

@@ -96,7 +96,7 @@
 
         <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 
-              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009291337">
+              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009291737">
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -123,7 +123,7 @@
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
       <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
     <script src="${theme_base!}/source/js/header.js?ver=202009291337"></script>
-  <script src="${theme_base!}/source/js/main.js?ver=202009291337}"></script>
+  <script src="${theme_base!}/source/js/main.js?ver=202009291737}"></script>
 
   <#include "script.ftl">
     
