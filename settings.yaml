@@ -1,7 +1,7 @@
 # configurations
 # 详情请参考：https://halo.run/develop/theme.html#settings-yaml
 genernal:
-  label: 基本设置
+  label: 通用设置
   items:
     home_title:
       name: home_title
@@ -60,6 +60,17 @@ genernal:
     open_night_mode:
       name: open_night_mode
       label: 开启夜晚模式
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    right_corner_circle:
+      name: right_corner_circle
+      label: 开启右下角按钮
       type: radio
       data-type: bool
       default: true

@@ -99,6 +99,9 @@
             </div>
         </div>
     </div>
+    <#if settings.right_corner_circle!true>
+    <#include "menu.ftl"/>
+    </#if>
 </footer>
 
 <#if settings.Aplayer?? && settings.Aplayer != ''>

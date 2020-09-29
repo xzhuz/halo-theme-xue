@@ -29,6 +29,10 @@
     <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 </#if>
 
+<#if settings.right_corner_circle!true>
+    <#--右下角按钮-->
+    <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/moon.js"></script>
+</#if>
 
 
 <#if settings.visit_statistics!false>

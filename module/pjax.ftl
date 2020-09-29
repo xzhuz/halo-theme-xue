@@ -42,7 +42,8 @@
 
           loadGallery();
 
-          if (typeof tocbot !== 'undefined' && document.getElementById('toc')) {
+          // 小屏幕下面初始化 toc
+          if (typeof tocbot !== 'undefined' && document.getElementById('toc') && getClientWidth() > 1359) {
             initToc();
             scrollTocFixed();
           }

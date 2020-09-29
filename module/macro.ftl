@@ -94,9 +94,9 @@
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
+<#--          <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 
-              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009291737">
+              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009292137">
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -121,9 +121,9 @@
     <#include "plugins.ftl"/>
     
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
-      <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
+<#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
     <script src="${theme_base!}/source/js/header.js?ver=202009291337"></script>
-  <script src="${theme_base!}/source/js/main.js?ver=202009291737}"></script>
+  <script src="${theme_base!}/source/js/main.js?ver=202009292137}"></script>
 
   <#include "script.ftl">
     

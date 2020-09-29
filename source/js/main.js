@@ -12,12 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   formatContent();
 
-  // loadHighlight();
-  // 代码行号
-  // loadCodeLineNumber();
-
   // toc
-  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+  if (typeof tocbot !== "undefined" && document.getElementById("toc") && getClientWidth() > 1359) {
     initToc();
     scrollTocFixed();
   }
@@ -26,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // 图片
 function loadGallery() {
   if (
-    typeof Viewer !== "undefined" &&
-    document.getElementById("gallery-content")
+      typeof Viewer !== "undefined" &&
+      document.getElementById("gallery-content")
   ) {
     new Viewer(document.getElementById("gallery-content"), {
       toolbar: true,
@@ -39,7 +35,7 @@ function loadGallery() {
       if ($(".justified-gallery > p > .gallery-item").length) {
         $(".justified-gallery > p > .gallery-item").unwrap();
       }
-      $(".justified-gallery").justifiedGallery({ rowHeight: 230, margins: 4 });
+      $(".justified-gallery").justifiedGallery({rowHeight: 230, margins: 4});
     }
   }
 }
@@ -114,9 +110,13 @@ function scrollTocFixed() {
   window.addEventListener("scroll", tocScroll, false);
 }
 
+function getClientWidth() {
+  return document.body.clientWidth;
+}
+
 function initToc() {
   var headerEl = "h1,h2,h3,h4,h5,h6", //headers
-    content = ".md-content"; //文章容器
+      content = ".md-content"; //文章容器
   tocbot.init({
     tocSelector: "#toc",
     contentSelector: content,
@@ -136,7 +136,7 @@ function initToc() {
 }
 
 function tocEleRight() {
-  var screenWidth = document.body.clientWidth;
+  var screenWidth = getClientWidth();
   var tocEle = document.getElementById("toc");
   if (tocEle) {
     tocEle.style.left = (screenWidth - 800) / 2 + 820 + "px";
@@ -159,7 +159,7 @@ function toggleWeChat() {
 
 function scollTo() {
   var postHeight = $("#homeHeader").height();
-  window.scroll({ top: postHeight, behavior: "smooth" });
+  window.scroll({top: postHeight, behavior: "smooth"});
 }
 
 /**
@@ -197,10 +197,10 @@ function formatContent() {
     const imgHtml = `<img src=${href} alt=${text}><span class="text-center" style="font-size: .8rem">${text}</span>`;
     return `<p style="text-align: center;">
               ${
-                isContainUrl
-                  ? getImgWithUrlHtml(text.match(reg), href)
-                  : imgHtml
-              }
+        isContainUrl
+            ? getImgWithUrlHtml(text.match(reg), href)
+            : imgHtml
+    }
             </p>`;
   };
 
@@ -227,15 +227,17 @@ function formatContent() {
   };
 
   renderer.table = function (header, body) {
-    if (body) body = "<tbody>" + body + "</tbody>";
+    if (body) {
+      body = "<tbody>" + body + "</tbody>";
+    }
 
     return (
-      '<div class="md-table"><table>\n' +
-      "<thead>\n" +
-      header +
-      "</thead>\n" +
-      body +
-      "</table></div>\n"
+        '<div class="md-table"><table>\n' +
+        "<thead>\n" +
+        header +
+        "</thead>\n" +
+        body +
+        "</table></div>\n"
     );
   };
 
@@ -244,8 +246,8 @@ function formatContent() {
     highlight: function (code, language) {
       if (enableCodeHighlight) {
         const validLanguage = hljs.getLanguage(language)
-          ? language
-          : "plaintext";
+            ? language
+            : "plaintext";
         console.info(language, code);
         return hljs.highlight(validLanguage, code).value;
       }
@@ -270,11 +272,101 @@ function formatContent() {
   loadCodeLineNumber();
 }
 
+/**
+ * 反转义 HTML
+ * @param text
+ * @returns {*}
+ * @constructor
+ */
 function HTMLDecode(text) {
-  var arrEntities = { lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"' };
+  var arrEntities = {lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"'};
   return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, function (all, t) {
     return arrEntities[t];
   });
+}
+
+function smoothBack2Top() {
+  window.scroll({top: 0, behavior: 'smooth'});
+}
+
+function smoothBack2Bottom() {
+  const offsetHeight = document.documentElement.offsetHeight;
+  const scrollHeight = document.documentElement.scrollHeight;
+  window.scroll({top: scrollHeight - offsetHeight, behavior: 'smooth'});
+}
+
+function ckBack2Top() {
+  $('#moonToc').removeClass('mm-active');
+  smoothBack2Top();
+}
+
+function ckBack2Bottom() {
+  $('#moonToc').removeClass('mm-active');
+  smoothBack2Bottom();
+}
+
+function ckShowContent() {
+  $('#moonToc').toggleClass('mm-active');
+
+  // 模拟点击事件
+  $('.moon-menu-button').trigger("click");
+
+  $('.icon-search').toggleClass('hidden');
+}
+
+function initMoonToc() {
+  // 没有打开 目录
+  if (!openToc) {
+    return;
+  }
+  var headerEl = 'h1,h2,h3,h4,h5,h6',  //headers
+      content = '.md-content';//文章容器
+  tocbot.init({
+    tocSelector: '#moonToc',
+    contentSelector: content,
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    isCollapsedClass: '',
+    headingsOffset: 0 - ($('#postHeader').height() + 58),
+    scrollSmoothOffset: -60,
+    hasInnerContainers: false,
+  });
+
+  var moonToc = $('#moonToc');
+  // 没有生成目录
+  if (moonToc && moonToc.children().length === 0) {
+    $('.icon-toc').hide();
+  } else {
+    $('.icon-toc').show();
+  }
+}
+
+function toggleSearchBox() {
+  $('#searchBox').toggleClass('hidden');
+}
+
+function toggleCircle() {
+  var $moonDot = $('g.moon-dot');
+  var firstCircle = $moonDot.children('circle:first');
+  var lastCircle = $moonDot.children('circle:last');
+  var cy = $(firstCircle).attr('cy');
+  if (cy === '0') {
+    $(firstCircle).attr('cx', '0');
+    $(firstCircle).attr('cy', '-.8rem');
+    $(lastCircle).attr('cx', '0');
+    $(lastCircle).attr('cy', '.8rem');
+  } else {
+    $(firstCircle).attr('cx', '-.8rem');
+    $(firstCircle).attr('cy', '0');
+    $(lastCircle).attr('cx', '.8rem');
+    $(lastCircle).attr('cy', '0');
+  }
+}
+
+function ckMoonButton() {
+  // 右下角的小点
+  toggleCircle();
+  $('.moon-menu-items').toggleClass('item-ani');
 }
 
 /**

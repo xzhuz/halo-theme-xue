@@ -1716,7 +1716,7 @@ ul.cards li.card.card-3 {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .search-box .search-ipt {
-  margin: 3rem auto 2rem;
+  margin: 6rem auto 2rem;
   max-width: 660px;
   -webkit-animation: 0.2s both;
   animation: 0.2s both;
