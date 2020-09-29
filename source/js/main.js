@@ -172,7 +172,6 @@ function formatContent() {
   if (typeof originalContent === "undefined") {
     return;
   }
-  console.log(originalContent);
 
   const renderer = new marked.Renderer();
 

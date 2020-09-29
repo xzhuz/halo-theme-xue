@@ -96,8 +96,14 @@
 
         <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 
-              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009281546">
-
+              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009291337">
+        <script type="application/javascript">
+          <!--
+          window.onerror = function () {
+            return true;
+          }
+          // -->
+        </script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">
     <div class="">
@@ -116,8 +122,8 @@
     <#include "script.ftl">
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
       <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
-    <script src="${theme_base!}/source/js/header.js?ver=202009272330"></script>
-  <script src="${theme_base!}/source/js/main.js?ver=202009281500}"></script>
+    <script src="${theme_base!}/source/js/header.js?ver=202009291337"></script>
+  <script src="${theme_base!}/source/js/main.js?ver=202009291337}"></script>
     
     </html>
 </#macro>
