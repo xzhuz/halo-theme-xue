@@ -1,5 +1,4 @@
-<#if settings.post_nepre!true>
-    <div class="container mx-auto mt-8 pb-8 max-w-6xl flex flex-row justify-between ct-container">
+ <div class="container mx-auto mt-4 pb-8  ct-container">
         <div class="entry-navigation">
             <div class="nav previous">
                 <#if prevPost??>
@@ -31,4 +30,3 @@
             </div>
         </div>
     </div>
-</#if>

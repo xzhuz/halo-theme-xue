@@ -1,4 +1,4 @@
-<#include "plugins.ftl"/>
+
 
 <#if is_category?? || is_tags ??>
 <#--标签云-->
@@ -86,33 +86,6 @@
 
 </script>
 
-<script type="text/javascript">
-  let openKatex = false;
-  <#if settings.enabled_mathjax!true>
-  const katex_config = {
-    delimiters:
-        [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false},
-          {left: "\\(", right: "\\)", display: false},
-          {left: "\\[", right: "\\]", display: true},
-        ]
-  };
-  openKatex = true;
-  </#if>
-
-
-  // 是否开启代码高亮
-  let enableCodeHighlight = false;
-  <#if settings.enable_code_highlight!true>
-    enableCodeHighlight = true;
-  </#if>
-  let enableLineNumber = false;
-  // 是否开启行号
-  <#if settings.enable_code_lineNumber!false> 
-    enableLineNumber = typeof lineNumbersBlock === 'function';
-  </#if>
-</script>
 
 <#if settings.enabled_mathjax!true>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"

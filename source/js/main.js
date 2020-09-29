@@ -10,9 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // 图片和相册
   loadGallery();
 
+  formatContent();
+
   // loadHighlight();
   // 代码行号
-  loadCodeLineNumber();
+  // loadCodeLineNumber();
 
   // toc
   if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
@@ -96,6 +98,12 @@ function tocScroll(event) {
     return;
   }
   var tocHeight = tocEle.getBoundingClientRect().height;
+  console.log(
+    scrollTop,
+    ObjTop,
+    tocHeight,
+    scrollTop > ObjTop - tocHeight * 0.5
+  );
   if (scrollTop > ObjTop - tocHeight * 0.5) {
     tocFixed.addClass("toc-right-fixed");
   } else {
@@ -164,14 +172,18 @@ function scollTo() {
  * 将文本转成 markdown
  */
 function formatContent() {
-  if (!document.getElementById("write")) {
+  var mdContent = document.getElementById("original");
+  const persentContent = $("#write");
+  if (!mdContent || !persentContent) {
     return;
   }
-  const mdContent = document.getElementById("write");
   const originalContent = mdContent.innerText;
   if (typeof originalContent === "undefined") {
     return;
   }
+
+  persentContent.empty();
+  persentContent.addClass("loading");
 
   const renderer = new marked.Renderer();
 
@@ -203,7 +215,6 @@ function formatContent() {
   }
 
   renderer.blockquote = function (text) {
-    console.log(text);
     text = text.trim();
     text = text.replace(/<p>/g, "");
     text = text.replace(/<\/p>/g, "<br>");
@@ -250,16 +261,18 @@ function formatContent() {
     smartypants: false,
     xhtml: false,
   });
-  mdContent.innerHTML = marked(originalContent.trim());
-  // 展示转换后的内容
-  mdContent.style.display = "block";
 
+  persentContent.empty();
+  persentContent.removeClass("loading");
+  persentContent.html(marked(originalContent.trim()));
+
+  mdContent.remove();
+  mdContent = null;
   // 代码行号
   loadCodeLineNumber();
 }
 
 function HTMLDecode(text) {
-  console.log(text);
   var arrEntities = { lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"' };
   return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, function (all, t) {
     return arrEntities[t];

@@ -118,12 +118,14 @@
 
 
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-
-    <#include "script.ftl">
+    <#include "plugins.ftl"/>
+    
     <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
       <#--  <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>  -->
     <script src="${theme_base!}/source/js/header.js?ver=202009291337"></script>
   <script src="${theme_base!}/source/js/main.js?ver=202009291337}"></script>
+
+  <#include "script.ftl">
     
     </html>
 </#macro>

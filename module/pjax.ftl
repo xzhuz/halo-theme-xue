@@ -13,7 +13,7 @@
 
       $(document).on('pjax:complete', function () {
         NProgress.done();
-        // 相册页面功能
+         // 相册页面功能
         if ($("#container").find('.photos-page').length > 0) {
           if (typeof $.fn.justifiedGallery !== "function") {
             $.getScript(
@@ -25,7 +25,8 @@
             loadGallery();
           }
         }
-
+        
+       
         // 重新加载 评论
         $('script[data-pjax-comment]').each(function () {
           var commentParent = $(this).parent()
@@ -33,10 +34,11 @@
           commentParent.append(comment);
         });
 
+
         // 存在 markdown 页面的功能
         if ($("#container").find('.md-content').length > 0) {
           // 格式化内容
-          formatContent();
+          formatContent(); 
 
           loadGallery();
 
@@ -46,7 +48,7 @@
           }
         }
 
-        //重载
+        <#--  //重载
         if (typeof _hmt !== 'undefined') {
           // support 百度统计
           _hmt.push(['_trackPageview', location.pathname + location.search]);
@@ -62,7 +64,7 @@
           } else if (document.getElementById('tree-hole')) {
             renderMathInElement(document.getElementById('tree-hole'), katex_config)
           }
-        }
+        }   -->
 
       });
 

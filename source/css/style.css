@@ -2478,7 +2478,8 @@ ul.cards li.card.card-3 {
   list-style: none;
   position: relative;
 }
-.posts-list > li ~ li {
+.posts-list > li ~ li,
+.posts-list > li {
   border-top: 1px solid #e6e6e670;
   width: 100%;
   padding-top: 25px;
@@ -3055,7 +3056,7 @@ a.no-thumb {
   color: var(--page-text-color);
 }
 p {
-  font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+  font-family: "Lato", "Noto Sans SC", -apple-system, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #363636;
@@ -3163,7 +3164,7 @@ table tr td:last-child {
   margin-bottom: 0;
 }
 mark {
-  background: #FFFD54;
+  background: #fffd54;
   font-weight: 500;
 }
 td,
@@ -3173,7 +3174,7 @@ th {
 code,
 pre {
   font-size: 85%;
-  font-family: Consolas, 'Courier New', monospace;
+  font-family: Consolas, "Courier New", monospace;
   font-weight: normal;
   -webkit-font-smoothing: initial;
   -moz-osx-font-smoothing: initial;
@@ -3184,7 +3185,7 @@ code {
   /*  #537AA2;  */
   padding: 0.3em 0.3em;
   border-radius: 5px;
-  background: #F3F4F4;
+  background: #f3f4f4;
   /* #F7F7F7 #F3F4F4 #F5F7FA*/
 }
 pre {
@@ -3305,7 +3306,7 @@ ol > li > ol > li > ol > li {
   color: #b4b4b4;
   font-size: 0.8rem;
   font-weight: bold;
-  font-variant: 'small-caps';
+  font-variant: "small-caps";
   border: 0;
   border-radius: 0;
   left: auto;
@@ -3323,7 +3324,7 @@ ol > li > ol > li > ol > li {
   margin-bottom: 14px;
 }
 #write h1::before {
-  content: 'H1';
+  content: "H1";
   bottom: 0.45rem;
 }
 #write h2 {
@@ -3335,7 +3336,7 @@ ol > li > ol > li > ol > li {
   margin-bottom: 14px;
 }
 #write h2::before {
-  content: 'H2';
+  content: "H2";
   bottom: 0.2rem;
 }
 #write h3 {
@@ -3347,7 +3348,7 @@ ol > li > ol > li > ol > li {
   margin-bottom: 14px;
 }
 #write h3::before {
-  content: 'H3';
+  content: "H3";
   bottom: 0.18rem;
 }
 #write h4 {
@@ -3359,7 +3360,7 @@ ol > li > ol > li > ol > li {
   margin-bottom: 14px;
 }
 #write h4::before {
-  content: 'H4';
+  content: "H4";
   bottom: 0.15rem;
 }
 #write h5,
@@ -3376,10 +3377,10 @@ ol > li > ol > li > ol > li {
   bottom: 0.1rem;
 }
 #write h5::before {
-  content: 'H5';
+  content: "H5";
 }
 #write h6::before {
-  content: 'H6';
+  content: "H6";
 }
 #write strong {
   font-weight: 900;
@@ -3414,7 +3415,7 @@ ol > li > ol > li > ol > li {
 }
 #write ol > li > p,
 #write ul > li > p {
-  margin: 0  auto;
+  margin: 0 auto;
 }
 #write a {
   cursor: pointer;
@@ -3429,6 +3430,7 @@ ol > li > ol > li > ol > li {
   border-radius: 3px;
   color: #777777;
   margin: 1em auto;
+  overflow: auto;
 }
 .code-tooltip {
   box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);

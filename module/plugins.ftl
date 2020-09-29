@@ -34,3 +34,32 @@
 <#if settings.visit_statistics!false>
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </#if>
+
+
+
+<script type="text/javascript">
+  let openKatex = false;
+  <#if settings.enabled_mathjax!true>
+  const katex_config = {
+    delimiters:
+        [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false},
+          {left: "\\[", right: "\\]", display: true},
+        ]
+  };
+  openKatex = true;
+  </#if>
+
+  // 是否开启代码高亮
+  let enableCodeHighlight = false;
+  <#if settings.enable_code_highlight!true>
+    enableCodeHighlight = true;
+  </#if>
+  let enableLineNumber = false;
+  // 是否开启行号
+  <#if settings.enable_code_lineNumber!false> 
+    enableLineNumber = typeof lineNumbersBlock === 'function';
+  </#if>
+</script>
