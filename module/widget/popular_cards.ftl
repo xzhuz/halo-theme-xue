@@ -7,7 +7,7 @@
             <#elseif settings.card_random_cover!false>
                 <#assign x = "${settings.card_random_cover_img_num?number}" />
                 <#assign thumbnailIndex ="${post_index % (x?number)}"/>
-                <img width="300" height="200" src="${blog_url!}/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${post.title}"/>
+                <img width="300" height="200" src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${post.title}"/>
             </#if>
         </a>
 

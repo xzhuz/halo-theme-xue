@@ -10,7 +10,7 @@
                  <#assign x = "${settings.card_random_cover_img_num?number}" />
                  <#assign thumbnailIndex ="${post.id % (x?number)}"/>    
                  <div class="cover-bg">
-                    <img src="${blog_url!}/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" class="z-auto"  alt="${post.title}"/>
+                    <img src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" class="z-auto"  alt="${post.title}"/>
                 </div>
             <#else>
                 <div class="placeholder-bg">

@@ -8,7 +8,7 @@
                      <#elseif settings.card_random_cover!false>
                         <#assign x = "${settings.card_random_cover_img_num?number}" />
                         <#assign thumbnailIndex ="${prevPost.id % (x?number)}"/>
-                        <img class="lazyloaded" src="${blog_url!}/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${prevPost.title!}"/>
+                        <img class="lazyloaded" src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${prevPost.title!}"/>
                      </#if>
                     <span>上一篇</span>
                     <h4 class="entry-title">${prevPost.title!}</h4>
@@ -22,7 +22,7 @@
                      <#elseif settings.card_random_cover!false>
                         <#assign x = "${settings.card_random_cover_img_num?number}" />
                         <#assign thumbnailIndex ="${nextPost.id % (x?number)}"/>
-                        <img class="lazyloaded" src="${blog_url!}/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${nextPost.title!}"/>
+                        <img class="lazyloaded" src="${blog_url!}/thumbnail/thumbnail-${thumbnailIndex?number?abs}.${settings.card_random_cover_img_suffix}" alt="${nextPost.title!}"/>
                      </#if>
                     <span>下一篇</span>
                     <h4 class="entry-title">${nextPost.title!}</h4>
