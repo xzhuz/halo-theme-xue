@@ -19,6 +19,7 @@
             </div>
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
+        <@postTag method="archiveMonth">
             <#list archives as archive>
                 <section class="arch-year">
                     <h1 class="year-title relative">${archive.year?c}</h1>
@@ -39,14 +40,7 @@
                     </div>
                 </section>
             </#list>
+            </@postTag>
         </div>
-        <#if posts.totalPages gt 1>
-        <#-- 分页-->
-            <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-                <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
-                    <#include "module/pagination.ftl">
-                </@paginationTag>
-            </nav>
-        </#if>
     </main>
 </@layout>

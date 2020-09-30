@@ -6,6 +6,17 @@
                 <div class="cover-bg">
                     <img src="${post.thumbnail!}" class="z-auto" alt="${post.title!}">
                 </div>
+            <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+                <div class="cover-bg">
+                    <#assign x = "${settings.card_random_cover_list}"?trim />
+                    <#assign thumbnails = x?trim?split(";") />
+                    <#assign thumbnailSize = thumbnails?size />
+                    <#if settings.card_random_cover_list?ends_with(";")>
+                        <#assign thumbnailSize =thumbnailSize - 1 />
+                    </#if>
+                    <#assign thumbnailIndex = "${(.now?long / (post.id + 1)) % thumbnailSize}"/>
+                    <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" class="z-auto"  alt="${post.title}"/>
+                </div>
             <#else>
                 <div class="placeholder-bg">
                 </div>
@@ -21,10 +32,12 @@
                                  src="${user.avatar!}" alt=""/>
                             <span class="post-author">${post.visits} 次访问</span>
                             <time class="published"
-                                  datetime="${post.createTime?string("yyyy-MM-dd")}">发布: ${post.createTime?string("yyyy-MM-dd")}</time>
+                                  datetime="${post.createTime?string("yyyy-MM-dd")}">
+                                发布: ${post.createTime?string("yyyy-MM-dd")}</time>
                             <#if "${post.createTime}" != "${post.editTime}">
                                 <time class="published"
-                                      datetime="${post.editTime?string("yyyy-MM-dd")}">最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
+                                      datetime="${post.editTime?string("yyyy-MM-dd")}">
+                                    最后编辑: ${post.editTime?string("yyyy-MM-dd")}</time>
                             </#if>
                         </div>
                         <div class="text-center post-categories">
@@ -44,38 +57,31 @@
                 </div>
             </div>
         </header>
-        <div class="article-content content-container">
-            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd"
-                 id="write">
-                ${post.formatContent!}
+        <div class="article-content content-container" id="gallery-content">
+
+            <div id="original" style="display: none">${post.originalContent!}</div>
+            <div id="format" style="display: none">${post.formatContent!}</div>
+            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container loading"
+                 id="write" >
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
-                <aside id="toc" class="toc font-sans"></aside>
+                <aside id="toc" class="toc"></aside>
             </#if>
         </div>
 
-        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+        <div class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container coffee-tags">
             <blockquote class="post-copyright">
-                <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"
+                                            target="_blank"
                                             rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>
                 <p><b>Links: </b> <a href="${post.fullPath!}">${post.fullPath!}</a></p>
             </blockquote>
+            <#include "module/widget/sponsor.ftl">
         </div>
 
 
-        <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd coffee-tags">
-            <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-                <p class="flex flex-col justify-center pt-8 pb-8">
-                    <span class="text-center block pb-2">Buy me a cup of coffee ☕.</span>
-                    <button id="buyCoffee"
-                            class="btn-primary rounded h-10 leading-10 w-32 mg-auto">
-                        <img src="${theme_base!}/source/images/cuplogo-sm.png" style="height: 13px"/>
-                        <span class="pt-1 pl-2">Coffee</span>
-                    </button>
-                </p>
-            </#if>
-            <#--            </#if>-->
+        <div class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags ct-container">
             <p class="flex flex-row justify-start flex-wrap">
                 <#if post.tags?? && post.tags?size gt 0>
                     <#list post.tags as tag>
@@ -84,45 +90,15 @@
                         </a>
                     </#list>
                 </#if>
-                <#if settings.social_share!false>
-                    <span class="share-btn">
-                        <span class="iconfont icon-Share"> </span>
-                    </span>
-                </#if>
             </p>
             <hr class="mt-4" style="background-color: rgba(96, 125, 139, .05); size: 2px;">
-            <#if settings.social_share!false>
-                <div id="socialShare" class="no-show mt-4 share-area">
-                    <div class="social-share" data-disabled="${settings.share_disabeld!''}"></div>
-                </div>
-            </#if>
         </div>
 
         <!-- 上一篇和下一篇 -->
         <#if settings.post_nepre!true>
-            <div class="container mx-auto mt-8 pb-8 max-w-6xl grid grid-cols-2 flex flex-row justify-between  ct-container cn-pd post-navigation">
-                <div class="pre-post pt-4 ">
-                    <#if prevPost??>
-                        <a href="${prevPost.fullPath!}" class="nav-previous">
-                            <div class="nav-inside">
-                                <span class="nav-before"><span class="iconfont icon-left"> </span></span>
-                                <span class="nav-title">${prevPost.title!}</span>
-                            </div>
-                        </a>
-                    </#if>
-                </div>
-                <div class="next-post pt-4 text-right">
-                    <#if nextPost??>
-                        <a href="${nextPost.fullPath!}" class="nav-previous">
-                            <div class="nav-inside">
-                                <span class="nav-title">${nextPost.title!}</span>
-                                <span class="nav-before"> <span class="iconfont icon-right"> </span></span>
-                            </div>
-                        </a>
-                    </#if>
-                </div>
-            </div>
+            <#include "module/widget/prev_next_page.ftl">
         </#if>
+        
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
             <#include "module/comment.ftl">
             <#if is_post??>
@@ -131,6 +107,9 @@
                 <@comment sheet,"sheet" />
             </#if>
         </div>
-
     </main>
+
 </@layout>
+
+
+

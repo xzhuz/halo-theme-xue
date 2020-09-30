@@ -4,29 +4,29 @@
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.sina??>
                 <a href="${settings.sina!}" class="circle pad-10" target="_blank" rel="noopener">
-                    <span class="cst-icon icon-weibo"> </span>
+                    <span class="iconfont icon-weibo"> </span>
                 </a>
             </#if>
             <#if settings.qq??>
                 <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10"
                    target="_blank" rel="noopener" title="QQ Chat">
-                    <span class="cst-icon icon-qq"> </span>
+                    <span class="iconfont icon-qq"> </span>
                 </a>
             </#if>
             <#if settings.telegram??>
                 <a href="https://t.me/${settings.telegram!}" class="circle pad-10" target="_blank" rel="noopener"
                    title="Telegram Chat">
-                    <span class="cst-icon icon-telegram"> </span>
+                    <span class="iconfont icon-telegram"> </span>
                 </a>
             </#if>
             <#if settings.twitter??>
                 <a href="${settings.twitter!}" class="circle pad-10" target="_blank" rel="noopener" title="Twitter">
-                    <span class="cst-icon icon-twitter"> </span>
+                    <span class="iconfont icon-twitter"> </span>
                 </a>
             </#if>
             <#if settings.github??>
                 <a href="${settings.github!}" class="circle pad-10" target="_blank" rel="noopener" title="Github">
-                    <span class="cst-icon icon-github"> </span>
+                    <span class="iconfont icon-github"> </span>
                 </a>
             </#if>
             <#if settings.zhihu??>
@@ -100,12 +100,3 @@
         </div>
     </div>
 </footer>
-
-<#if settings.Aplayer?? && settings.Aplayer != ''>
-    <meting-js
-            server="netease"
-            type="playlist"
-            fixed="true"
-            id="${settings.Aplayer}">
-    </meting-js>
-</#if>

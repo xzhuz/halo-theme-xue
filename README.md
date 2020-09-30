@@ -1,12 +1,18 @@
-# Halo Theme Xue
+# <div align="center" style="font-weight:800; font-size: 30px">Halo Theme Xue</div>
+
+<p align="center">
+追求个性与至简
+</p>
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
 
-> 对于前端React感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支
+![](https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/screenshot-2300.png)
 
-## 主题预览
+## 示例站点
 
-[预览地址](https://baozi.fun)
+[寒山志](https://baozi.fun)
+
+### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
 
 ## 已实现功能 
 * [x] 日志页面
@@ -19,11 +25,12 @@
 * [x] 链接页面分组显示
 * [x] 相册页面
 * [x] 适配 halo 1.3.x
-* [x] 随机文章封面图
+* [x] 随机文章封面
 * [x] 全局PJAX
 * [x] 夜晚模式
 * [x] 文章分享功能
-* [x] 二级目录
+* [x] ~~二级目录~~
+* [x] 支持js插件
 
 ## 更新日志
 
@@ -35,10 +42,15 @@
 - 2020-07-26 重构相册页面
 - 2020-07-30 标签云功能
 - 2020-07-31 文章分享功能
-- 2020-08-05 二级目录
+- ~~2020-08-05 二级目录~~
+- 2020-10-01 **支持js插件、目录升级、随机封面升级、首页升级、功能配置更灵活和高效、更多细节优化**
 
 ## 安装
 
-请下载最新发布版本，直接使用代码不能安装。
+请下载最新发布版本，也可以通过git仓库直接安装。
 
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
+
+
+
+> 对于前端React感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支

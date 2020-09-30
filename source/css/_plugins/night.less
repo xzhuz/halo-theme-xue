@@ -8,13 +8,13 @@
   }
 
   img {
-    -webkit-filter: brightness(.6) !important;
-    filter: brightness(.6) !important;
+    -webkit-filter: brightness(0.6) !important;
+    filter: brightness(0.6) !important;
   }
 
   .img-cover-bg {
-    -webkit-filter: brightness(.6)!important;
-    filter: brightness(.6)!important;
+    -webkit-filter: brightness(0.6) !important;
+    filter: brightness(0.6) !important;
   }
 
   .btn-primary img {
@@ -22,11 +22,18 @@
     filter: brightness(1) !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .post-list h2 a {
     color: var(--night-txt-color) !important;
   }
 
-  table tr:nth-child(2n), thead {
+  table tr:nth-child(2n),
+  thead {
     background-color: var(--night-code-bg-color) !important;
   }
 
@@ -35,13 +42,10 @@
     background-color: var(--night-code-bg-color) !important;
   }
 
-  a.text-gray-700, .pagination-circle, .circle {
+  a.text-gray-700,
+  .pagination-circle,
+  .circle {
     color: var(--night-txt-color) !important;
-  }
-
-  .pagination-circle.is-current, .pagination-circle:hover {
-    -webkit-filter: brightness(.6)!important;
-    filter: brightness(.6)!important;
   }
 
   .pagination-circle {
@@ -53,12 +57,16 @@
   }
 
   // 代码和文章页面
-  .hljs, pre, .hljs table tr:nth-child(2n), thead {
+  .hljs,
+  pre,
+  .hljs table tr:nth-child(2n),
+  thead {
     background: var(--night-code-bg-color) !important;
     color: var(--night-code-txt-color) !important;
   }
 
-  .hljs table tr:nth-child(2n), thead {
+  .hljs table tr:nth-child(2n),
+  thead {
     background: var(--night-code-bg-color) !important;
   }
 
@@ -70,17 +78,18 @@
     background: var(--night-tag-bg-color) !important;
   }
 
-  #write ol > li > *, #write ul > li > * {
+  #write ol > li > *,
+  #write ul > li > * {
     color: var(--night-code-txt-color) !important;
   }
 
   .is-active-link {
-    opacity: .6 !important;
+    opacity: 0.6 !important;
     color: var(--night-txt-color) !important;
   }
 
   .post-category {
-    color: var(--night-txt-color)!important
+    color: var(--night-txt-color) !important;
   }
   // 友链
   .lk-card-im {
@@ -89,33 +98,31 @@
   }
 
   // 日志页面
-  .tree-hole-author, .tree-hole-box a {
+  .tree-hole-author,
+  .tree-hole-box a {
     color: var(--night-txt-color) !important;
   }
 
-  #tree-hole .comment-list:before, .tree-hole-body > div:before, #tree-hole .comment-list:after {
-    filter: brightness(.6) !important;
+  #tree-hole .comment-list:before,
+  .tree-hole-body > div:before,
+  #tree-hole .comment-list:after {
+    filter: brightness(0.6) !important;
   }
 
   // 归档页面
   .arch-year:before {
-    filter: brightness(.4) !important;
+    filter: brightness(0.4) !important;
   }
 
   .mh-bg {
     background: var(--night-tag-bg-color) !important;
-    -webkit-filter: brightness(.6)!important;
-    filter: brightness(.6)!important;
-  }
-
-  .ah-hf {
-    -webkit-filter: brightness(.6)!important;
-    filter: brightness(.6)!important;
+    -webkit-filter: brightness(0.6) !important;
+    filter: brightness(0.6) !important;
   }
 
   // footer
   .github-badge {
-    filter: brightness(.8);
+    filter: brightness(0.8);
   }
 
   // header
@@ -127,16 +134,19 @@
     background: var(--night-background);
   }
 
-  .nav-list > .list > .item > .link, .nav-list > .list > .item > .void-link, .nav-list .sub-menu-tree ul li .link {
-    color: var(--night-txt-color);
+  .nav-list > .list > .item > .link,
+  .nav-list > .list > .item > .void-link,
+  .nav-list .sub-menu-tree ul li .link {
+    color: var(--night-txt-color) !important;
   }
 
   .nav-wrapper {
     background: var(--night-background) !important;
+    color: var(--night-txt-color) !important;
   }
 
   .nav-list .sub-menu-tree {
-    background-color: #3e4149 !important
+    background-color: #3e4149 !important;
   }
 
   .burger-lines,
@@ -148,12 +158,43 @@
   // 相册页面
   ul.cards li.card {
     background-color: #27282b !important;
-    box-shadow: 1px 2px 2px 0 rgba(19, 19, 19, 0.94) !important;;
+    box-shadow: 1px 2px 2px 0 rgba(19, 19, 19, 0.94) !important;
   }
 
   .photos img {
-    -webkit-filter: brightness(.8)!important;
-    filter: brightness(.8)!important;
+    -webkit-filter: brightness(0.8) !important;
+    filter: brightness(0.8) !important;
+  }
+
+  .header-nav li a {
+    color: #fff;
+  }
+
+  .header.open {
+    background-color: var(--night-background) !important;
+  }
+
+  .bg-fff {
+    background-color: var(--night-background) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
+  }
+  .header-nav.bg-fff li a {
+    color: var(--night-txt-color) !important;
+  }
+
+  .content.slide.open {
+    box-shadow: 0 1px 3px 3px rgba(10, 10, 22, 0.05);
+  }
+
+
+  .posts-list h2 a {
+    color: var(--night-txt-color) !important;
+  }
+
+  .coffee-tags .donate .icon {
+    background-color: var(--night-background) !important;
+    color: var(--night-txt-color) !important;
+    border: 1px solid var(--night-txt-color) !important;
   }
 }
 
@@ -165,5 +206,4 @@
   .night .nav-list .sh-box-b {
     box-shadow: 0px -10px 15px -10px #444f59 inset;
   }
-
 }

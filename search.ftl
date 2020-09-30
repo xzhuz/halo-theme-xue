@@ -32,7 +32,7 @@
             <#-- 分页-->
                 <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
                     <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" display="3" keyword="${keyword}">
-                        <#include "module/pagination.ftl">
+                        <#include "module/widget/pagination.ftl">
                     </@paginationTag>
                 </nav>
             </#if>
