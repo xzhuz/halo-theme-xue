@@ -5,7 +5,7 @@
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <img width="300" height="200" src="${post.thumbnail}" alt="${post.title}"/>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    <#assign thumbnailIndex = "${(.now?long / post.id) % thumbnailSize}"/>
+                    <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
                     <img width="300" height="200" src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
             </#if>
         </a>

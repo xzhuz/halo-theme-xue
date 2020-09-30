@@ -12,7 +12,7 @@
                             <img src="${post.thumbnail}" alt="${post.title}"/>
                         </a>
                    <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                       <#assign thumbnailIndex = "${(.now?long / post_index) % thumbnailSize}"/>
+                       <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
                        <a href="${post.fullPath!}">
                            <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
                        </a>

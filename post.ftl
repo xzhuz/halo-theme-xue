@@ -14,7 +14,7 @@
                     <#if settings.card_random_cover_list?ends_with(";")>
                         <#assign thumbnailSize =thumbnailSize - 1 />
                     </#if>
-                    <#assign thumbnailIndex = "${(.now?long / post.id) % thumbnailSize}"/>
+                    <#assign thumbnailIndex = "${(.now?long / (post.id + 1)) % thumbnailSize}"/>
                     <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" class="z-auto"  alt="${post.title}"/>
                 </div>
             <#else>

@@ -11,7 +11,7 @@
                      <#if prevPost.thumbnail?? && prevPost.thumbnail!=''>
                         <img class="lazyloaded" src="${prevPost.thumbnail}" alt="${prevPost.title!}"/>
                      <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                        <#assign preThumbnailIndex ="${.now?long / prevPost.id % thumbnailSize}"/>
+                        <#assign preThumbnailIndex ="${.now?long / (prevPost.id + 1) % thumbnailSize}"/>
                         <img class="lazyloaded" src="${thumbnails[preThumbnailIndex?number?abs]?trim}" alt="${prevPost.title!}"/>
                      </#if>
                     <span>上一篇</span>
@@ -24,7 +24,7 @@
                     <#if nextPost.thumbnail?? && nextPost.thumbnail!=''>
                         <img class="lazyloaded" src="${nextPost.thumbnail}" alt="${nextPost.title!}"/>
                      <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                        <#assign nextThumbnailIndex ="${.now?long / nextPost.id % thumbnailSize}"/>
+                        <#assign nextThumbnailIndex ="${.now?long / (nextPost.id + 1) % thumbnailSize}"/>
                         <img class="lazyloaded" src="${thumbnails[nextThumbnailIndex?number?abs]?trim}" alt="${nextPost.title!}"/>
                      </#if>
                     <span>下一篇</span>

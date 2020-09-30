@@ -14,7 +14,7 @@
                            class="img-cover img-cover-bg">
                         </a>
                     <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                        <#assign thumbnailIndex = "${(.now?long / post_index) % thumbnailSize}"/>
+                        <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
                         <a href="${post.fullPath!}" class="img-cover img-cover-bg"
                            style="background-image: url(${thumbnails[thumbnailIndex?number?abs]?trim});"
                         >
