@@ -1,4 +1,4 @@
-<div align="center" style="font-weight:800; font-size: 30px">Xue</div>
+# <div align="center" style="font-weight:800; font-size: 30px">Halo Theme Xue</div>
 
 <p align="center">
 一款追求个性和至简的主题
