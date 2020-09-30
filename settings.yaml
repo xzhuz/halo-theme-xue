@@ -408,3 +408,8 @@ other:
         - value: false
           label: 关闭
       description: "惟愿此功能永远不会被使用"
+    common_js:
+      name: common_js
+      label: 作为插件引入的js脚本
+      type: textarea
+      default: ""

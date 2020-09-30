@@ -66,6 +66,8 @@
           }
         }
 
+        ${settings.common_js!''}
+
       });
 
       $(document).on('pjax:error', function () {

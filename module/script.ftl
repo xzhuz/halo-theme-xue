@@ -108,5 +108,9 @@
   </#if>
 </script>
 
+<script type="text/javascript">
+  ${settings.common_js!''}
+</script>
+
 <#-- Pjax 相关代码 -->
 <#include "pjax.ftl">
