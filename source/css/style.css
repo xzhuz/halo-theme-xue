@@ -563,33 +563,58 @@ a {
   position: absolute;
   top: 15px;
   left: 40px;
+  z-index: 999;
 }
-.slide {
-  animation: leftEaseInAnimate 0.6s ease 1;
+.slideIn {
+  animation: slideIn 0.6s ease 1;
   /*调用动画：动画名、时间、时间线条、播放次数*/
-  -webkit-animation: leftEaseInAnimate 0.6s ease 1;
+  -webkit-animation: slideIn 0.6s ease 1;
   /*调用动画：动画名、时间、时间线条、播放次数*/
 }
-@-webkit-keyframes leftEaseInAnimate {
-  /*定义从右边滑入文字的动画*/
-  0% {
-    transform: translateX(-100%);
+.slideOut {
+  animation: slideOut 0.6s ease-out 1;
+  /*调用动画：动画名、时间、时间线条、播放次数*/
+  -webkit-animation: slideOut 0.6s ease-out 1;
+  /*调用动画：动画名、时间、时间线条、播放次数*/
+}
+@-webkit-keyframes slideIn {
+  from {
+    transform: translate3d(100%, 0, 0);
     opacity: 0;
   }
-  100% {
-    transform: translateX(0);
+  to {
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
-@keyframes leftEaseInAnimate {
-  /*定义从右边滑入文字的动画*/
-  0% {
-    transform: translateX(-100%);
+@keyframes slideIn {
+  from {
+    transform: translate3d(100%, 0, 0);
     opacity: 0;
   }
-  100% {
-    transform: translateX(0);
+  to {
+    transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+}
+@-webkit-keyframes slideOut {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
   }
 }
 .nav-wrapper > .nav > .toggle-nav {
@@ -3666,7 +3691,7 @@ ol > li > ol > li > ol > li {
   border-color: #eee !important;
   border-radius: 3px 3px 0 0 !important;
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 800px) {
   #write {
     font-size: 1rem;
   }

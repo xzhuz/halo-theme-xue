@@ -4,7 +4,7 @@
             <span class="burger-lines"></span>
         </div>
     </button>
-    <nav class="nav" style="display: none" id="nav">
+    <nav class="nav opacity-0"  id="nav">
         <button class="toggle-nav">
             <div class="burger -squeeze">
                 <span class="burger-lines"></span>

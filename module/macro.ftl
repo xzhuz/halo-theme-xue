@@ -94,8 +94,7 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009302237">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010010012">
         
         <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
@@ -118,7 +117,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202009302237}"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202010010012"></script>
 
   <#include "script.ftl">
 
