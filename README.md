@@ -1,7 +1,7 @@
 # <div align="center" style="font-weight:800; font-size: 30px">Halo Theme Xue</div>
 
 <p align="center">
-一款追求个性和至简的主题
+追求个性与至简
 </p>
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
