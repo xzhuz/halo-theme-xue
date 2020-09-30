@@ -67,3 +67,5 @@
     enableLineNumber = typeof lineNumbersBlock === 'function';
   </#if>
 </script>
+
+${other_script_file!''}

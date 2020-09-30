@@ -98,14 +98,6 @@
         <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009301337">
         
         <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-
-        <script type="application/javascript">
-          <!--
-          window.onerror = function () {
-            return true;
-          }
-          // -->
-        </script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">
     <div class="">
