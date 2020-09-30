@@ -54,7 +54,7 @@ genernal:
           label: 关闭
     card_random_cover_list:
       name: card_random_cover_list
-      label: 随机图片列表，分号分割
+      label: 随机封面图片列表，分号分割
       type: textarea
       description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"
     open_night_mode:

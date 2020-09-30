@@ -6,6 +6,46 @@ function dayNightSwitch() {
   $(document.body).toggleClass("night");
 }
 
+/**
+ * 点击页面处理小屏幕目录事件
+ * @param target
+ */
+function documentClickToc(target) {
+  var moonToc = $('#moonToc')
+  if (moonToc && moonToc.hasClass('mm-active')) {
+    if (target.id && target.id === "moonToc") {
+    } else if (target.id && target.id === "moonMenu") {
+    } else if (target.id && target.classList.contains('icon-toc')) {
+    } else if (target.classList.contains('moon-menu-button')) {
+    } else if (target.classList.contains('moon-menu-text')) {
+    } else {
+      toggleSmallToc()
+    }
+  }
+}
+
+/**
+ * 处理目录
+ */
+function dealContentToc() {
+  if (getClientWidth() > 1359) {
+    initToc();
+    scrollTocFixed();
+  } else {
+    var smallToc = $('.moon-menu-item.icon-toc');
+    if (smallToc) {
+      smallToc.toggleClass('hidden');
+      // 渲染目录
+      initMoonToc()
+    }
+
+    $(document).click(function (e) {
+      var target = e.target;
+      documentClickToc(target);
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // 图片和相册
   loadGallery();
@@ -13,9 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
   formatContent();
 
   // toc
-  if (typeof tocbot !== "undefined" && document.getElementById("toc") && getClientWidth() > 1359) {
-    initToc();
-    scrollTocFixed();
+  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+    dealContentToc();
   }
 });
 
@@ -248,7 +287,6 @@ function formatContent() {
         const validLanguage = hljs.getLanguage(language)
             ? language
             : "plaintext";
-        console.info(language, code);
         return hljs.highlight(validLanguage, code).value;
       }
       return code;
@@ -306,19 +344,24 @@ function ckBack2Bottom() {
 }
 
 function ckShowContent() {
-  $('#moonToc').toggleClass('mm-active');
+  toggleSmallToc()
 
   // 模拟点击事件
   $('.moon-menu-button').trigger("click");
+}
 
-  $('.icon-search').toggleClass('hidden');
+function toggleSmallToc() {
+  var moonContent = $('#moonToc')
+  moonContent.toggleClass('mm-active');
+
+  if (moonContent.hasClass('mm-active')) {
+    moonContent.show();
+  } else {
+    moonContent.hide()
+  }
 }
 
 function initMoonToc() {
-  // 没有打开 目录
-  if (!openToc) {
-    return;
-  }
   var headerEl = 'h1,h2,h3,h4,h5,h6',  //headers
       content = '.md-content';//文章容器
   tocbot.init({
@@ -335,9 +378,7 @@ function initMoonToc() {
   var moonToc = $('#moonToc');
   // 没有生成目录
   if (moonToc && moonToc.children().length === 0) {
-    $('.icon-toc').hide();
-  } else {
-    $('.icon-toc').show();
+    $('.icon-toc').addClass('hidden');
   }
 }
 

@@ -1,10 +1,10 @@
-<div class="moon-menu">
-    <div class="moon-menu-items" id="moonMenu">
-        <span class="moon-menu-item iconfont icon-up" onClick="ckBack2Top()"> </span>
-        <span class="moon-menu-item iconfont icon-down" onClick="ckBack2Bottom()"> </span>
-        <span class="moon-menu-item iconfont icon-search" onclick="toggleSearchBox()"></span>
-        <#if is_post?? && settings.post_toc!true>
-            <span class="moon-menu-item cst-icon icon-toc" onclick="ckShowContent()"></span>
+<div class="moon-menu" id="moonMenu" >
+    <div class="moon-menu-items" >
+        <span class="moon-menu-item pl-6 iconfont icon-up" onClick="ckBack2Top()"> </span>
+        <span class="moon-menu-item pl-6 iconfont icon-down" onClick="ckBack2Bottom()"> </span>
+        <span class="moon-menu-item pl-6 iconfont icon-search" onclick="toggleSearchBox()"></span>
+        <#if settings.post_toc!true>
+            <span class="moon-menu-item pl-6 cst-icon icon-toc hidden" onclick="ckShowContent()" id="smallToc"></span>
         </#if>
     </div>
 
@@ -38,7 +38,7 @@
                     <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
                     <i class="sh-icon cst-icon icon-search"></i>
                 </label>
-                <a class="sh-exit cst-icon icon-exit"></a>
+                <a class="sh-exit cst-icon icon-exit" onClick="toggleSearchBox()"></a>
             </div>
         </div>
     </div>

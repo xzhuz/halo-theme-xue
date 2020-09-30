@@ -24,8 +24,7 @@
             --page-text-color: #fff;
             --cover-no-img-bg: #fff;
             --cover-default-bg: #101012;
-
-
+            --menu-btn-color: #52616a;
             --header-sub-bg-color: #f0f5f9;
             --header-sub-hover-bg-color: #c9d6de;
             --base-color: #4facfe;
@@ -94,9 +93,9 @@
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-<#--          <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
+<#--          <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
 
-              <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009292137">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009301337">
         <script type="application/javascript">
           <!--
           window.onerror = function () {
@@ -108,10 +107,21 @@
     <body class="<#if settings.default_night_mode!false>night</#if>">
     <div class="">
         <#include "header.ftl">
-        <div class="content slide">
+        <div class="content-wrap">
             <#nested >
             <#include "footer.ftl">
         </div>
+        <#if settings.right_corner_circle!true>
+            <#include "menu.ftl"/>
+        </#if>
+        <#if settings.Aplayer?? && settings.Aplayer != ''>
+            <meting-js
+                    server="netease"
+                    type="playlist"
+                    fixed="true"
+                    id="${settings.Aplayer}">
+            </meting-js>
+        </#if>
     </div>
 
     </body>
@@ -119,14 +129,13 @@
 
     <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <#include "plugins.ftl"/>
-    
-    <#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script> -->
+<#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/header.js?ver=202009291337"></script>
-  <script src="${theme_base!}/source/js/main.js?ver=202009292137}"></script>
+    <script src="${theme_base!}/source/js/header.js?ver=202009301337"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202009301337}"></script>
 
   <#include "script.ftl">
-    
+
     </html>
 </#macro>
 

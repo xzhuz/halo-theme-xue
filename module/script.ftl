@@ -1,5 +1,4 @@
 
-
 <#if is_category?? || is_tags ??>
 <#--标签云-->
     <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
@@ -65,23 +64,23 @@
       // 到顶部, 取消展示
       if (scrollTop === 0) {
         remove()
+        start = scrollTop;
       }
-      start = scrollTop;
     }
 
-    var addBg = function () {
-      $('.slide.header-nav').removeClass('hidden').addClass('bg-fff');
-    }
+      var addBg = function () {
+        $('.slide.header-nav').removeClass('hidden').addClass('bg-fff');
+      }
 
-    var removeBg = function () {
-      $('.slide.header-nav').addClass('hidden').removeClass('bg-fff');
-    };
+      var removeBg = function () {
+        $('.slide.header-nav').addClass('hidden').removeClass('bg-fff');
+      };
 
-    var remove = function () {
-      $('.slide.header-nav').removeClass('hidden').removeClass('bg-fff');
-    };
+      var remove = function () {
+        $('.slide.header-nav').removeClass('hidden').removeClass('bg-fff');
+      };
 
-    document.addEventListener('scroll', scrollFunc, false);
+      document.addEventListener('scroll', scrollFunc, false);
   }
 
 </script>

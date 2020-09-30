@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta http-equiv="Cache-Control" content="no-transform">
 		<meta http-equiv="Cache-Control" content="no-siteapp">
-		<title>Nothing here - ${options.blog_title!}</title>
+		<title>~你似乎来到了没有知识的荒原~</title>
 		<style>
 		body {
 			margin: 0;

@@ -43,13 +43,12 @@
           loadGallery();
 
           // 小屏幕下面初始化 toc
-          if (typeof tocbot !== 'undefined' && document.getElementById('toc') && getClientWidth() > 1359) {
-            initToc();
-            scrollTocFixed();
+          if (typeof tocbot !== "undefined" && document.getElementById("toc") ) {
+              dealContentToc()
           }
         }
 
-        <#--  //重载
+        //重载
         if (typeof _hmt !== 'undefined') {
           // support 百度统计
           _hmt.push(['_trackPageview', location.pathname + location.search]);
@@ -65,7 +64,7 @@
           } else if (document.getElementById('tree-hole')) {
             renderMathInElement(document.getElementById('tree-hole'), katex_config)
           }
-        }   -->
+        }
 
       });
 

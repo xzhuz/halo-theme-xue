@@ -99,16 +99,4 @@
             </div>
         </div>
     </div>
-    <#if settings.right_corner_circle!true>
-    <#include "menu.ftl"/>
-    </#if>
 </footer>
-
-<#if settings.Aplayer?? && settings.Aplayer != ''>
-    <meting-js
-            server="netease"
-            type="playlist"
-            fixed="true"
-            id="${settings.Aplayer}">
-    </meting-js>
-</#if>
