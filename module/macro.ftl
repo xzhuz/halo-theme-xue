@@ -93,19 +93,16 @@
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-<#--          <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}"> -->
+<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
 
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009301337">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202009302237">
         
         <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">
-    <div class="">
         <#include "header.ftl">
-        <div class="content-wrap">
-            <#nested >
-            <#include "footer.ftl">
-        </div>
+        <#nested >
+        <#include "footer.ftl">
         <#if settings.right_corner_circle!true>
             <#include "menu.ftl"/>
         </#if>
@@ -117,14 +114,11 @@
                     id="${settings.Aplayer}">
             </meting-js>
         </#if>
-    </div>
 
     </body>
     <#include "plugins.ftl"/>
-<#--    <script src="${theme_base!}/source/js/header.js?ver=${.now?long}"></script>-->
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/header.js?ver=202009301337"></script>
-    <script src="${theme_base!}/source/js/main.js?ver=202009301337}"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202009302237}"></script>
 
   <#include "script.ftl">
 

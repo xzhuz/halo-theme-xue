@@ -1,15 +1,40 @@
-<div class="menu-wrap">
-    <nav class="menu">
-        <div class="icon-list">
-            <@menuTag method="tree">
-                <#list menus?sort_by('priority') as menu>
-                        <a href="${menu.url!}">
-                            <span >${menu.name}</span>
-                        </a>
-                </#list>
-            </@menuTag>
-            <#if settings.open_night_mode!true>
-                <a class="day-night-switch" role="button" onClick="dayNightSwitch()">
+<header class="nav-wrapper -sticky" id="navHeader">
+    <button class="collapse-nav" onClick="collapseNav()" id="collapseNav">
+        <div class="collapse-burger -squeeze">
+            <span class="burger-lines"></span>
+        </div>
+    </button>
+    <nav class="nav" style="display: none" id="nav">
+        <button class="toggle-nav">
+            <div class="burger -squeeze">
+                <span class="burger-lines"></span>
+            </div>
+        </button>
+        <#if settings.header_logoimg?? && settings.header_logoimg!=''>
+            <a href="${blog_url!}" id="headerLogo" class="logo-link"
+               onfocus="this.blur();">
+                <img src="${settings.header_logoimg}" alt="${blog_title!}" class="logo" id="logo"
+                     style="height: 3rem"/>
+            </a>
+        </#if>
+        <ul class="nav-list " role="navigation">
+            <div class="list -left " id="menuLinks">
+                <@menuTag method="tree">
+                    <#list menus?sort_by('priority') as menu>
+                        <li class="item ">
+                            <a class="link md:text-base sm:text-sm" href="${menu.url!}"
+                               target="${menu.target!}">${menu.name}</a>
+                        </li>
+                    </#list>
+                </@menuTag>
+            </div>
+            <div class="list -right">
+                <div class="overlay"></div>
+            </div>
+        </ul>
+        <#if settings.open_night_mode!true>
+            <div class="day-switch" style="position: relative; right: 40px">
+                <div class="day-night-switch" role="button" onClick="dayNightSwitch()">
                     <div class="onOff daySwitch" id="daySwitch">
                         <div class="star star1"></div>
                         <div class="star star2"></div>
@@ -25,10 +50,8 @@
                             <div class="cloud part2"></div>
                         </div>
                     </div>
-                </a>
-            </#if>
-        </div>
+                </div>
+            </div>
+        </#if>
     </nav>
-    <button class="close-button" id="close-button">Close Menu</button>
-</div>
-<button class="menu-button" id="open-button">Open Menu</button>
+</header>

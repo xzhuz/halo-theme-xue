@@ -47,16 +47,60 @@ function dealContentToc() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // 处理导航菜单
+  handleNavMenu();
+
   // 图片和相册
   loadGallery();
 
+  // 格式化markdown文章
   formatContent();
 
-  // toc
+  // 目录相关
   if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
     dealContentToc();
   }
 });
+
+/**
+ * 处理导航菜单
+ */
+function handleNavMenu() {
+  if (getClientWidth() <= 800) {
+    $('#navHeader .nav').show()
+    $('#collapseNav').empty();
+    return ;
+  }
+  document.addEventListener('scroll', function () {
+    if (getClientWidth() <= 800) {
+      $('#navHeader .nav').show()
+      $('#collapseNav').empty();
+      return;
+    }
+    var scrollTop = getScrollTop();
+    if (scrollTop > 29) {
+      $('#navHeader').addClass('nav-bg-fff')
+      $('#navHeader .nav').show()
+      $('#navHeader .collapse-nav').hide()
+      $('.collapse-burger').removeClass('open');
+    } else {
+      $('#navHeader').removeClass('nav-bg-fff')
+      $('#navHeader .nav').hide()
+      $('#navHeader .collapse-nav').show()
+    }
+  }, false);
+}
+
+function collapseNav() {
+  $('.collapse-burger').toggleClass('open');
+  var nav = $('#navHeader .nav');
+  nav.toggleClass('slide')
+  if (nav.is(":visible")) {
+    nav.hide()
+  } else {
+    nav.show()
+  }
+}
 
 // 图片
 function loadGallery() {
@@ -85,13 +129,8 @@ function loadGallery() {
  *
  *******************************/
 
-// 代码高亮
-function loadHighlight() {
-  if (enableCodeHighlight) {
-    $(".md-content pre code").each(function () {
-      hljs.highlightBlock(this);
-    });
-  }
+function scrollTocFixed() {
+  window.addEventListener("scroll", tocScroll, false);
 }
 
 function loadCodeLineNumber() {
@@ -143,10 +182,6 @@ function tocScroll(event) {
   tocEleRight();
 
   event.preventDefault();
-}
-
-function scrollTocFixed() {
-  window.addEventListener("scroll", tocScroll, false);
 }
 
 function getClientWidth() {
@@ -205,17 +240,21 @@ function scollTo() {
  * 将文本转成 markdown
  */
 function formatContent() {
+
   var mdContent = document.getElementById("original");
   const persentContent = $("#write");
   if (!mdContent || !persentContent) {
     return;
   }
+  // 获取原始html
   let originalContent = mdContent.innerHTML;
   if (typeof originalContent === "undefined") {
     return;
   }
+  // 反转义原始markdown文本
   originalContent = HTMLDecode(originalContent);
 
+  //
   persentContent.empty();
   persentContent.addClass("loading");
 
@@ -323,6 +362,9 @@ function HTMLDecode(text) {
   });
 }
 
+/*******************************
+ * 右下角按钮相关
+ */
 function smoothBack2Top() {
   window.scroll({top: 0, behavior: 'smooth'});
 }

@@ -44,48 +44,6 @@
     <script src="//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 </#if>
 
-<script type="text/javascript">
-  $(function () {
-    pageScroll();
-  });
-
-  /**
-   * header scroll 事件
-   */
-  function pageScroll() {
-    var start = 0;
-    var scrollFunc = function () {
-      const scrollTop = getScrollTop();
-      if (start > scrollTop) {
-        addBg();
-      } else {
-        removeBg();
-      }
-      // 到顶部, 取消展示
-      if (scrollTop === 0) {
-        remove()
-        start = scrollTop;
-      }
-    }
-
-      var addBg = function () {
-        $('.slide.header-nav').removeClass('hidden').addClass('bg-fff');
-      }
-
-      var removeBg = function () {
-        $('.slide.header-nav').addClass('hidden').removeClass('bg-fff');
-      };
-
-      var remove = function () {
-        $('.slide.header-nav').removeClass('hidden').removeClass('bg-fff');
-      };
-
-      document.addEventListener('scroll', scrollFunc, false);
-  }
-
-</script>
-
-
 <#if settings.enabled_mathjax!true>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
             integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
