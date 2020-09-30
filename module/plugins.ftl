@@ -68,4 +68,4 @@
   </#if>
 </script>
 
-${other_script_file!''}
+${settings.other_script_file!''}
