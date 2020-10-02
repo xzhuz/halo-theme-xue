@@ -5,7 +5,7 @@
     </div>
 </div>
 <h3><i class="iconfont icon-new list-brands"></i>最新文章</h3>
-<div class="posts mt-4 pagination-container">
+<div class="posts mt-4 pagination-container" id="pageContainer">
     <#if posts?? && posts.getTotalElements() gt 0>
         <#include "post_items.ftl">
     </#if>
