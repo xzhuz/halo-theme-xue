@@ -12,6 +12,8 @@
 
 [寒山志](https://baozi.fun)
 
+http://www.superdevops.cn
+
 ### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
 
 ## 已实现功能 
