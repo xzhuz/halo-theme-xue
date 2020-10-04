@@ -2175,6 +2175,9 @@ ul.cards li.card.card-3 {
   top: 50%;
   width: 22px;
 }
+.postList a {
+  text-decoration: none;
+}
 /* Animations */
 @-webkit-keyframes fadein {
   0% {

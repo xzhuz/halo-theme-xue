@@ -29,7 +29,7 @@
                     </#if>
             </div>
         </header>
-        <div class="container mx-auto px-4 content-container <#if !(settings.posts_style!true)>mx-850</#if>">
+        <div class="container mx-auto px-4 content-container postList <#if !(settings.posts_style!true)>mx-850</#if>">
             <#if settings.posts_style!true>
                 <#include "module/widget/post_cards.ftl">
             <#else>
