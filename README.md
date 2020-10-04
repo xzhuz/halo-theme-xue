@@ -10,15 +10,15 @@
 
 ## 说明
 
-[开始](https://baozi.fun/2020/09/29/halo-blog-transfer)
+- [开始](https://baozi.fun/2020/09/29/halo-blog-transfer)
 
-[示例站点](#示例站点)
+- [示例站点](#示例站点)
 
-[文档](https://baozi.fun/2020/10/05/theme-xue-showcase)
+- [文档](https://baozi.fun/2020/10/05/theme-xue-showcase)
 
-[主题特性](#特性)
+- [主题特性](#特性)
 
-[更新日志](#更新日志)
+- [更新日志](#更新日志)
 
 ## 示例站点
 
