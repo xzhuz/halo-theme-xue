@@ -14,6 +14,8 @@
 
 www.superdevops.cn
 
+[南国薏米](https://eelve.com/)
+
 ### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
 
 ## 已实现功能 
