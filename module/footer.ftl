@@ -10,7 +10,7 @@
             <#if settings.qq??>
                 <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10"
                    target="_blank" rel="noopener" title="QQ Chat">
-                    <span class="iconfont icon-qq"> </span>
+                    <span class="iconfont icon-tencentqq"> </span>
                 </a>
             </#if>
             <#if settings.telegram??>
@@ -31,7 +31,7 @@
             </#if>
             <#if settings.zhihu??>
                 <a href="${settings.zhihu!}" class="circle pad-10" target="_blank" rel="noopener" title="知乎">
-                    <span class="iconfont icon-zhihu"> </span>
+                    <span class="iconfont icon-zhihu-circle-fill"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
