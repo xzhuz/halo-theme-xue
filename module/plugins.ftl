@@ -3,7 +3,7 @@
 
 <!--图片预览插件-->
 <#if settings.enable_image_view!false>
-    <script src="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.js"></script>
 </#if>
 <#if settings.enable_code_highlight!true>
     <#-- 代码高亮-->
@@ -20,13 +20,13 @@
 
 <#--目录-->
 <#if settings.post_toc!true>
-    <script src="//cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
 </#if>
 
 
 <#if settings.enable_photo!false && is_photos??>
 <#--相册插件-->
-    <script src="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 </#if>
 
 <#if settings.right_corner_circle!true>

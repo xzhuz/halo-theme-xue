@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   handleNavMenu();
 
   // 图片和相册
-  loadGallery();
+  // loadGallery();
 
   // 格式化markdown文章
   formatContent();
@@ -110,6 +110,7 @@ function loadGallery() {
       typeof Viewer !== "undefined" &&
       document.getElementById("gallery-content")
   ) {
+
     new Viewer(document.getElementById("gallery-content"), {
       toolbar: true,
     });
@@ -238,6 +239,16 @@ function scollTo() {
   window.scroll({top: postHeight, behavior: "smooth"});
 }
 
+
+function generateId() {
+  const chars = `ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz`;
+  let id = ``;
+  for (let i = 0; i < 8; i++) {
+    id += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return id;
+}
+
 /**
  * 将文本转成 markdown
  */
@@ -262,9 +273,8 @@ function formatContent() {
 
   const renderer = new marked.Renderer();
 
-  renderer.heading = function (text, level) {
-    // const id = generateId();
-    return `<h${level} id="${text}">${text}</h${level}>`;
+  renderer.heading = function (text, level, raw, slugger) {
+    return `<h${level} id=${raw}>${text}</h${level}>`;
   };
 
   renderer.link = function (href, title, text) {
@@ -274,20 +284,27 @@ function formatContent() {
   renderer.image = function (href, title, text) {
     const reg = /([^]*)\[([^]*)\]\(([^]*)\)/;
     const isContainUrl = reg.test(text);
-    const imgHtml = `<img src=${href} alt=${text}><span class="text-center" style="font-size: .8rem">${text}</span>`;
-    return `<p style="text-align: center;">
+    const imgHtml = `<img src=${href} alt=${text}>`;
+    return `<span style="text-align: center;">
               ${
         isContainUrl
             ? getImgWithUrlHtml(text.match(reg), href)
             : imgHtml
     }
-            </p>`;
+            </span>`;
   };
 
   function getImgWithUrlHtml(textArr, href) {
-    return `<img src=${href} alt=${textArr[2]}><br>
-              ${textArr[1]}<a href="${textArr[3]}" target="_blank" rel="noopener noreferrer">${textArr[2]}</a>`;
+    return `<img src=${href} alt=${textArr[2]}></a>`;
   }
+
+
+  renderer.listitem = function (text, task) {
+    if (task) {
+      return `<li style="list-style: none;">${text}</li>`;
+    }
+    return `<li>${text}</li>`;
+  };
 
   renderer.blockquote = function (text) {
     text = text.trim();
@@ -301,10 +318,13 @@ function formatContent() {
       if (textArr[i].trim().length === 0) {
         continue;
       }
-      context.push(`<p>${textArr[i]}</p>`);
+      let txt = textArr[i].replace(/<br\/>/g, '')
+      txt = txt.replace(/<br>/g, '')
+      context.push(`<p>${txt}</p>`);
     }
     return `<blockquote>${context.join("")}</blockquote>`;
   };
+
 
   renderer.table = function (header, body) {
     if (body) {
@@ -349,6 +369,9 @@ function formatContent() {
   mdContent = null;
   // 代码行号
   loadCodeLineNumber();
+
+  // 相册
+  loadGallery()
 }
 
 /**

@@ -28,7 +28,10 @@ a {
   cursor: pointer;
   word-break: break-word;
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dashed;
+          text-decoration-style: dashed;
+  text-underline-position: under;
 }
 .cn-pd {
   padding-left: 30px;
@@ -546,6 +549,9 @@ a {
   backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
+}
+.nav-list a {
+  text-decoration: none !important;
 }
 .nav-wrapper.nav-box-sd {
   box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
@@ -3492,7 +3498,7 @@ ul > li > ul > li > ul > li {
 }
 ol,
 ul {
-  padding-left: 2em;
+  padding-left: 1.5em;
   line-height: 2;
 }
 ol > li {
@@ -3504,44 +3510,44 @@ ol > li > ol > li {
 ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
-#write {
+.md-content {
   font-size: 1.1rem;
 }
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6 {
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6 {
   margin-left: -1.3rem;
   margin-top: -60px !important;
   padding-top: 60px !important;
   outline: none !important;
 }
-#write h1:visited,
-#write h2:visited,
-#write h3:visited,
-#write h4:visited,
-#write h5:visited,
-#write h6:visited {
+.md-content h1:visited,
+.md-content h2:visited,
+.md-content h3:visited,
+.md-content h4:visited,
+.md-content h5:visited,
+.md-content h6:visited {
   outline: none !important;
 }
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6,
-#write p,
-#write pre {
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4,
+.md-content h5,
+.md-content h6,
+.md-content p,
+.md-content pre {
   width: auto;
 }
-#write h1::before,
-#write h2::before,
-#write h3::before,
-#write h4::before,
-#write h5::before,
-#write h6::before {
+.md-content h1::before,
+.md-content h2::before,
+.md-content h3::before,
+.md-content h4::before,
+.md-content h5::before,
+.md-content h6::before {
   position: relative;
   top: 0.1rem;
   right: 0.5rem;
@@ -3558,7 +3564,7 @@ ol > li > ol > li > ol > li {
   vertical-align: baseline;
   line-height: 2;
 }
-#write h1 {
+.md-content h1 {
   font-size: 25px;
   font-style: normal;
   font-weight: 900;
@@ -3566,11 +3572,11 @@ ol > li > ol > li > ol > li {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-#write h1::before {
+.md-content h1::before {
   content: "H1";
   bottom: 0.45rem;
 }
-#write h2 {
+.md-content h2 {
   font-size: 20px;
   font-weight: 900;
   font-style: normal;
@@ -3578,11 +3584,11 @@ ol > li > ol > li > ol > li {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-#write h2::before {
+.md-content h2::before {
   content: "H2";
   bottom: 0.2rem;
 }
-#write h3 {
+.md-content h3 {
   font-size: 18px;
   font-weight: 900;
   line-height: 2;
@@ -3590,11 +3596,11 @@ ol > li > ol > li > ol > li {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-#write h3::before {
+.md-content h3::before {
   content: "H3";
   bottom: 0.18rem;
 }
-#write h4 {
+.md-content h4 {
   font-size: 16px;
   font-weight: 900;
   line-height: 2;
@@ -3602,12 +3608,12 @@ ol > li > ol > li > ol > li {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-#write h4::before {
+.md-content h4::before {
   content: "H4";
   bottom: 0.15rem;
 }
-#write h5,
-#write h6 {
+.md-content h5,
+.md-content h6 {
   font-size: 14px;
   font-weight: 900;
   line-height: 2;
@@ -3615,56 +3621,59 @@ ol > li > ol > li > ol > li {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-#write h5::before,
-#write h6::before {
+.md-content h5::before,
+.md-content h6::before {
   bottom: 0.1rem;
 }
-#write h5::before {
+.md-content h5::before {
   content: "H5";
 }
-#write h6::before {
+.md-content h6::before {
   content: "H6";
 }
-#write strong {
+.md-content strong {
   font-weight: 900;
   padding: 0 1px;
 }
-#write ol > li,
-#write ul > li {
+.md-content ol > li,
+.md-content ul > li {
   list-style: disc;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
 }
-#write ol > li {
+.md-content ol > li {
   list-style: decimal !important;
 }
-#write ol > li > *,
-#write ul > li > * {
+.md-content ol > li > *,
+.md-content ul > li > * {
   color: #333 !important;
 }
-#write ol > li > *:not(ol):not(ul),
-#write ul > li > *:not(ol):not(ul) {
+.md-content ol > li > *:not(ol):not(ul),
+.md-content ul > li > *:not(ol):not(ul) {
   padding-left: 0.25rem;
 }
-#write ul > li > ul > li {
+.md-content ul > li > ul > li {
   list-style-type: circle;
 }
-#write ul > li > ul > li > ul > li {
+.md-content ul > li > ul > li > ul > li {
   list-style-type: square;
 }
-#write p {
+.md-content p {
   margin: 1rem auto;
   line-height: 2;
 }
-#write ol > li > p,
-#write ul > li > p {
+.md-content blockquote p {
+  margin: 0.6rem auto;
+}
+.md-content ol > li > p,
+.md-content ul > li > p {
   margin: 0 auto;
 }
-#write a {
+.md-content a {
   cursor: pointer;
   word-break: break-word;
 }
-#write pre {
+.md-content pre {
   padding: 10px;
   font-size: 85%;
   line-height: 1.45;
@@ -3674,6 +3683,9 @@ ol > li > ol > li > ol > li {
   color: #777777;
   margin: 1em auto;
   overflow: auto;
+}
+.md-content p img {
+  display: inline-block;
 }
 .code-tooltip {
   box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
@@ -3692,10 +3704,10 @@ ol > li > ol > li > ol > li {
   border-radius: 3px 3px 0 0 !important;
 }
 @media only screen and (max-width: 800px) {
-  #write {
+  .md-content {
     font-size: 1rem;
   }
-  #write p {
+  .md-content p {
     line-height: 1.68;
   }
 }
@@ -3852,14 +3864,14 @@ span.toc-link-dot {
   opacity: 0.7 !important;
 }
 .is-active-link {
-  color: var(--base-hl-color);
+  color: var(--toc-active-color);
   font-weight: 700;
 }
 .is-active-link span {
   background-color: var(--toc-bg-color) !important;
 }
-#write ol > li,
-#write ul > li {
+.md-content ol > li,
+.md-content ul > li {
   line-height: 1.625rem !important;
 }
 @media only screen and (max-width: 1360px) {
@@ -4092,8 +4104,8 @@ span.toc-link-dot {
   color: var(--night-tag-txt-color) !important;
   background: var(--night-tag-bg-color) !important;
 }
-.night #write ol > li > *,
-.night #write ul > li > * {
+.night .md-content ol > li > *,
+.night .md-content ul > li > * {
   color: var(--night-code-txt-color) !important;
 }
 .night .is-active-link {

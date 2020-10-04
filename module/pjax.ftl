@@ -38,7 +38,7 @@
           // 格式化内容
           formatContent();
 
-          loadGallery();
+          // loadGallery();
 
           // 小屏幕下面初始化 toc
           if (typeof tocbot !== "undefined" && document.getElementById("toc")) {

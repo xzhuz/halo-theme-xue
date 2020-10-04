@@ -18,6 +18,10 @@ www.superdevops.cn
 
 ### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
 
+
+
+## [ShowCase](https://baozi.fun/2020/10/05/theme-xue-showcaseS)
+
 ## 已实现功能 
 * [x] 日志页面
 * [x] 文章目录且可配置

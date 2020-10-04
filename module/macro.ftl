@@ -19,6 +19,7 @@
             --link-color: #52616a;
             --header-text-color: #252c41;
             --header-link-color: #252c41;
+            --toc-active-color: #dddfe6;
             --base-hover-color: #f1404b;
             --base-hl-color: #f1404b;
             --page-text-color: #fff;
@@ -30,6 +31,8 @@
             --base-color: #4facfe;
             --cd-hover-color: #E53A40;
             --btn-pri-bg-color: #E53A40;
+
+
             /*--btn-pri-bg-color: #ff5f5f;*/
             --text-color: #333333;
             --text-hover-color: #4facfe;
@@ -76,25 +79,25 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
 
         <#if settings.enable_image_view!false>
-          <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
         </#if>
         <#if settings.enable_photo!false>
-          <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
         </#if>
         <#if settings.enable_code_highlight!true>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
         </#if>
         <#if settings.Aplayer?? && settings.Aplayer != ''>
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
         </#if>
 
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010042137">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010050037">
         
-        <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">
         <#include "header.ftl">
@@ -115,7 +118,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202010042137"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202010050037"></script>
 
   <#include "script.ftl">
 

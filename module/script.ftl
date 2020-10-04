@@ -11,8 +11,8 @@
 </#if>
 
 <#if settings.Aplayer?? && settings.Aplayer != ''>
-    <script src="//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 </#if>
 
 <#if settings.enabled_mathjax!true>

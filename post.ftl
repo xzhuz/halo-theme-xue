@@ -60,7 +60,6 @@
         <div class="article-content content-container" id="gallery-content">
 
             <div id="original" style="display: none">${post.originalContent!}</div>
-            <div id="format" style="display: none">${post.formatContent!}</div>
             <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container loading"
                  id="write" >
             </div>
