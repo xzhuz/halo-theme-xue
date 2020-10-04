@@ -68,6 +68,48 @@
   <#if settings.enable_code_lineNumber!false> 
     enableLineNumber = typeof lineNumbersBlock === 'function';
   </#if>
+
+  function renderTagCloud() {
+    // 标签云
+    var tagCloud = $("#tagCloud");
+    if (!(tagCloud && tagCloud.children().length === 0)) {
+      return;
+    }
+    // 标签
+    var tagArray = [
+      <@tagTag method="list">
+      <#list tags as tag>
+      {'text': '${tag.name!}', 'weight': '${tag.postCount!}', 'link': '${tag.fullPath!}'},
+      </#list>
+      </@tagTag>
+    ];
+
+    // 标签云
+    tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
+
+  }
+
+  function renderCategoryCloud() {
+    // 分类云
+    var categoryCloud = $("#categoryCloud");
+    if (!(categoryCloud && categoryCloud.children().length === 0)) {
+      return;
+    }
+    // 分类
+    var array = [
+      <@categoryTag method="list">
+          <#list categories as category>
+          {
+            'text': '${category.name!}',
+            'weight': '${category.postCount!}',
+            'link': '${category.fullPath!}'
+          },
+          </#list>
+      </@categoryTag>
+    ];
+
+    categoryCloud.jQCloud(array, {autoResize: true, delayedMode: true});
+  }
 </script>
 
 ${settings.other_script_file!''}

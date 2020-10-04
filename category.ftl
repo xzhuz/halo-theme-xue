@@ -1,6 +1,14 @@
 <#include "module/macro.ftl">
 <@layout title="${category.name} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto" id="container">
+        <#if settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+            <#assign x = "${settings.card_random_cover_list}"?trim />
+            <#assign thumbnails = x?trim?split(";") />
+            <#assign thumbnailSize = thumbnails?size />
+            <#if settings.card_random_cover_list?ends_with(";")>
+                <#assign thumbnailSize =thumbnailSize - 1 />
+            </#if>
+        </#if>
         <header class="bg-cover post-cover">
             <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>
                 <div class="cover-bg">

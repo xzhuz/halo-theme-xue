@@ -31,7 +31,7 @@
                     </#if>
                 </@tagTag>
             </p>
-            <h2 style="margin-bottom: 0;">标签云</h2>
+            <h2 style="margin-bottom: 0;">云</h2>
             <div id="tagCloud" class="card-content jqcloud jqcloud-hg"></div>
         </div>
     </main>

@@ -33,6 +33,13 @@
             <#if settings.posts_style!true>
                 <#include "module/widget/post_cards.ftl">
             <#else>
+                <div class="popular-posts">
+                    <h3><i class="iconfont icon-hot list-brands"></i>热门文章</h3>
+                    <div class="posts grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4  lg:gap-4 md:gap-2 sm:gap-1">
+                        <#include "module/widget/popular_cards.ftl">
+                    </div>
+                </div>
+                <h3><i class="iconfont icon-new list-brands"></i>最新文章</h3>
                 <#include "module/widget/post_list.ftl">
             </#if>
         </div>

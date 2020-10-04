@@ -1,40 +1,11 @@
 
-<#if is_category?? || is_tags ??>
-<#--标签云-->
+<#if is_categories?? || is_tags ??>
+    <#--标签云-->
     <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
     <script type='text/javascript'>
-      // 标签
-      var tagArray = [
-        <@tagTag method="list">
-        <#list tags as tag>
-        {'text': '${tag.name!}', 'weight': '${tag.postCount!}', 'link': '${tag.fullPath!}'},
-        </#list>
-        </@tagTag>
-      ];
-
-      // 分类
-      var categoryArray = [
-        <@categoryTag method="list">
-        <#list categories as category>
-        {
-          'text': '${category.name!}',
-          'weight': '${category.postCount!}',
-          'link': '${category.fullPath!}'
-        },
-        </#list>
-        </@categoryTag>
-      ];
-
       $(function () {
-        var tagCloud = $("#tagCloud");
-        if (tagCloud && tagCloud.children().length === 0) {
-          tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
-        }
-
-        var categoryCloud = $("#categoryCloud");
-        if (categoryCloud && categoryCloud.children().length === 0) {
-          categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
-        }
+        renderTagCloud();
+        renderCategoryCloud();
       });
     </script>
 </#if>

@@ -64,14 +64,12 @@
           </#if>
 
           <#if settings.enabled_index_cover_height!true>
-          @media only screen and (min-width: 861px) {
-            .home-cover {
-              height: 100vh !important;
-            }
-          }
-
+              @media only screen and (min-width: 861px) {
+                .home-cover {
+                  height: 100vh !important;
+                }
+              }
           </#if>
-
         </style>
 
 
@@ -94,7 +92,7 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010010012">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010042137">
         
         <script src="//cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
@@ -117,7 +115,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202010021405"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202010042137"></script>
 
   <#include "script.ftl">
 

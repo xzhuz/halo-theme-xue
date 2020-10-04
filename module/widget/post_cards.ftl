@@ -41,20 +41,19 @@
                     <span class="cst-icon icon-calendar lh-25 f-10"
                           style="margin-right: 5px"></span>
                     <span class="post-time lh-25 mr-auto">
-                                        <span class="published"
-                                              datetime="${post.createTime?string("yyyy-MM-dd")}">${post.createTime?string("yyyy-MM-dd")}</span>
-                                    </span>
+                        <span class="published">${post.createTime?string("yyyy-MM-dd")}</span>
+                    </span>
                     <div class="lh-25">
-                                    <span class="visitors-count">
-                                        <span>${post.visits!}</span>
-                                        <a href="javascript:void(0)" class="eye-sight">
-                                            <span class="iconfont icon-Eyesight"> </span>
-                                        </a>
-                                    </span>
+                        <span class="visitors-count">
+                            <span>${post.visits!}</span>
+                            <a href="javascript:void(0)" class="eye-sight">
+                                <span class="iconfont icon-Eyesight"> </span>
+                            </a>
+                        </span>
                         <span class="visitors-comment">
-                                        <span>${post.commentCount}</span> <span
-                                    class="iconfont icon-comment"> </span>
-                                    </span>
+                            <span>${post.commentCount}</span>
+                            <span class="iconfont icon-comment"> </span>
+                        </span>
                     </div>
                 </footer>
             </div>

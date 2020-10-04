@@ -13,7 +13,7 @@
 
       $(document).on('pjax:complete', function () {
         NProgress.done();
-         // 相册页面功能
+        // 相册页面功能
         if ($("#container").find('.photos-page').length > 0) {
           if (typeof $.fn.justifiedGallery !== "function") {
             $.getScript(
@@ -25,8 +25,7 @@
             loadGallery();
           }
         }
-        
-       
+
         // 重新加载 评论
         $('script[data-pjax-comment]').each(function () {
           var commentParent = $(this).parent()
@@ -34,17 +33,16 @@
           commentParent.append(comment);
         });
 
-
         // 存在 markdown 页面的功能
         if ($("#container").find('.md-content').length > 0) {
           // 格式化内容
-          formatContent(); 
+          formatContent();
 
           loadGallery();
 
           // 小屏幕下面初始化 toc
-          if (typeof tocbot !== "undefined" && document.getElementById("toc") ) {
-              dealContentToc()
+          if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+            dealContentToc()
           }
         }
 
@@ -66,7 +64,22 @@
           }
         }
 
-        ${settings.common_js!''}
+        if ($('#container').find('.jqcloud').length > 0) {
+          if (typeof $.fn.jQCloud !== "function") {
+            $.getScript(
+                "https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js",
+                function () {
+                  renderTagCloud();
+                  renderCategoryCloud();
+                });
+          } else {
+            renderTagCloud();
+            renderCategoryCloud();
+          }
+
+        }
+
+        ${settings.common_js!''};
 
       });
 
@@ -74,41 +87,5 @@
         NProgress.done();
       });
 
-      // 标签云
-      function renderCloud() {
-        // 标签
-        var tagArray = [
-          <@tagTag method="list">
-          <#list tags as tag>
-          {'text': '${tag.name!}', 'weight': '${tag.postCount!}', 'link': '${tag.fullPath!}'},
-          </#list>
-          </@tagTag>
-        ];
-
-        // 分类
-        var categoryArray = [
-          <@categoryTag method="list">
-          <#list categories as category>
-          {
-            'text': '${category.name!}',
-            'weight': '${category.postCount!}',
-            'link': '${category.fullPath!}'
-          },
-          </#list>
-          </@categoryTag>
-        ];
-
-        // 标签云
-        var tagCloud = $("#tagCloud");
-        if (tagCloud && tagCloud.children().length === 0) {
-          tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
-        }
-
-        // 分类云
-        var categoryCloud = $("#categoryCloud");
-        if (categoryCloud && categoryCloud.children().length === 0) {
-          categoryCloud.jQCloud(categoryArray, {autoResize: true, delayedMode: true});
-        }
-      }
     </script>
 </#if>

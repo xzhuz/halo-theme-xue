@@ -4052,6 +4052,9 @@ span.toc-link-dot {
 .night .post-list h2 a {
   color: var(--night-txt-color) !important;
 }
+.night .posts-list .post-time-img {
+  border: none !important;
+}
 .night table tr:nth-child(2n),
 .night thead {
   background-color: var(--night-code-bg-color) !important;
@@ -4126,15 +4129,12 @@ span.toc-link-dot {
 .night .nav-list > .list > .overlay {
   background: rgba(59, 59, 59, 0.65);
 }
-.night .nav-list > .list.-left {
-  background: var(--night-background);
-}
 .night .nav-list > .list > .item > .link,
 .night .nav-list > .list > .item > .void-link,
 .night .nav-list .sub-menu-tree ul li .link {
   color: var(--night-txt-color) !important;
 }
-.night .nav-wrapper {
+.night .nav-bg-fff {
   background: var(--night-background) !important;
   color: var(--night-txt-color) !important;
 }
