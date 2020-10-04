@@ -1231,6 +1231,7 @@ a {
   transition: background-color 0.15s;
   background-color: rgba(96, 125, 139, 0.05);
   color: var(--text-color);
+  text-decoration: none !important;
 }
 .post-tag:hover {
   background-color: var(--base-color);
@@ -1259,6 +1260,7 @@ a {
 }
 .post-category {
   color: #fff !important;
+  text-decoration: none !important;
 }
 .post-categories svg {
   display: inline-block;
