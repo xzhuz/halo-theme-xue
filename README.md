@@ -20,7 +20,7 @@ www.superdevops.cn
 
 
 
-## [ShowCase](https://baozi.fun/2020/10/05/theme-xue-showcaseS)
+## [ShowCase](https://baozi.fun/2020/10/05/theme-xue-showcase)
 
 ## 已实现功能 
 * [x] 日志页面
