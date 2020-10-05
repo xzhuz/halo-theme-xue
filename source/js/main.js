@@ -500,6 +500,10 @@ function getData(e) {
       let pagination = $(data).find(page);
       $(page).empty();
       $(page).append(pagination.children());
+      // 改变浏览器url
+      let pageCircles = $(data).find('.pagination-circle.is-current');
+      let path = pageCircles.attr('path');
+      window.history.pushState({page: path},null, path);
     },
     error: function () {
       $(pageContainer).empty();
