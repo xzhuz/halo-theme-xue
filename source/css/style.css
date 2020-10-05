@@ -3383,7 +3383,7 @@ blockquote {
   padding: 0;
 }
 .md-table {
-  overflow: scroll;
+  overflow: auto;
 }
 table {
   padding: 0;
