@@ -32,6 +32,13 @@
             <#else>
                 <#include "module/widget/post_list.ftl">
             </#if>
+             <#-- 分页-->
+             <#if posts.totalPages gt 1>
+                 <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
+                     <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">                         <#include "module/widget/pagination.ftl">
+                     </@paginationTag>
+                 </nav>
+             </#if>
         </div>
     </main>
 </@layout>

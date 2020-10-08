@@ -60,9 +60,3 @@
         </#list>
     </#if>
 </div>
-<#-- 分页-->
-<nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-    <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
-        <#include "pagination.ftl">
-    </@paginationTag>
-</nav>

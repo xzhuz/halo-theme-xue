@@ -20,7 +20,7 @@
         </header>
 
         <#if posts?? && posts.content?size gt 0>
-            <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd">
+            <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd" id="pageContainer">
                 <#list posts.content as post>
                     <a href="${post.fullPath}" class="ah-hf ah-hv">
                         <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
@@ -45,7 +45,7 @@
                         <label class="sh-lab sh-br">
                             <input class="sh-ipt" maxlength="30" name="keyword" spellcheck="false"
                                    placeholder="Search" autocomplete="off">
-                            <i class="sh-icon cst-icon icon-search"></i>
+                            <i class="sh-icon iconfont icon-search"></i>
                         </label>
                     </form>
                     <!-- search end -->

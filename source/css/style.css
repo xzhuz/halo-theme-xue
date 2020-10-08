@@ -28,10 +28,6 @@ a {
   cursor: pointer;
   word-break: break-word;
   color: var(--link-color);
-  text-decoration: underline;
-  -webkit-text-decoration-style: dashed;
-          text-decoration-style: dashed;
-  text-underline-position: under;
 }
 .cn-pd {
   padding-left: 30px;
@@ -3680,6 +3676,10 @@ ol > li > ol > li > ol > li {
 .md-content a {
   cursor: pointer;
   word-break: break-word;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dashed;
+          text-decoration-style: dashed;
+  text-underline-position: under;
 }
 .md-content pre {
   padding: 10px;

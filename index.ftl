@@ -42,6 +42,12 @@
                 <h3><i class="iconfont icon-new list-brands"></i>最新文章</h3>
                 <#include "module/widget/post_list.ftl">
             </#if>
+            <#-- 分页-->
+            <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
+                <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
+                    <#include "module/widget/pagination.ftl">
+                </@paginationTag>
+            </nav>
         </div>
     </main>
 </@layout>

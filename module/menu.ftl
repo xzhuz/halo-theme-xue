@@ -36,7 +36,7 @@
             <div class="ipt-ct ct-bg search-container" id="searchInput">
                 <label class="sh-lab">
                     <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
-                    <i class="sh-icon cst-icon icon-search"></i>
+                    <i class="sh-icon iconfont icon-search"></i>
                 </label>
                 <a class="sh-exit cst-icon icon-exit" onClick="toggleSearchBox()"></a>
             </div>
