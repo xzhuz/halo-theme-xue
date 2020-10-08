@@ -56,14 +56,6 @@
           ga('send', 'pageview', location.pathname + location.search);
         }
 
-        if (openKatex && renderMathInElement && typeof renderMathInElement !== 'undefined') {
-          if (document.getElementById('write')) {
-            renderMathInElement(document.getElementById('write'), katex_config)
-          } else if (document.getElementById('tree-hole')) {
-            renderMathInElement(document.getElementById('tree-hole'), katex_config)
-          }
-        }
-
         if ($('#container').find('.jqcloud').length > 0) {
           if (typeof $.fn.jQCloud !== "function") {
             $.getScript(

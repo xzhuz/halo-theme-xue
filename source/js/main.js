@@ -372,6 +372,9 @@ function formatContent() {
 
   // 相册
   loadGallery()
+
+  // 数学公式
+  renderMath()
 }
 
 /**
@@ -510,4 +513,15 @@ function getData(e) {
       $(pageContainer).addClass("loading");
     },
   });
+}
+
+
+function renderMath() {
+  if (openKatex && renderMathInElement && typeof renderMathInElement !== 'undefined') {
+    if (document.getElementById('write')) {
+      renderMathInElement(document.getElementById('write'), katex_config)
+    } else if (document.getElementById('tree-hole')) {
+      renderMathInElement(document.getElementById('tree-hole'), katex_config)
+    }
+  }
 }

@@ -21,11 +21,7 @@
             crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
             integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-            crossorigin="anonymous"
-            onload="if (document.getElementById('write') && openKatex)
-            { renderMathInElement(document.getElementById('write'), katex_config)}
-            else if (document.getElementById('tree-hole') && openKatex)
-            {renderMathInElement(document.getElementById('tree-hole'), katex_config)}"></script>
+            crossorigin="anonymous"></script>
 </#if>
 
 
