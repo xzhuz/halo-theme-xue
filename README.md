@@ -28,6 +28,10 @@ www.superdevops.cn
 
 [南国薏米](https://eelve.com/)
 
+[通往体面生活的路上](https://codeyee.com/)
+
+[pengzhenjin's blog](https://www.pengzhenjin.top/)
+
 ### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
 
 ## 特性 
