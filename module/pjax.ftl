@@ -13,6 +13,13 @@
 
       $(document).on('pjax:complete', function () {
         NProgress.done();
+
+        // 删除listener
+        removeScrollTocFixed();
+
+        // 图片懒加载
+        lazyloadImg()
+
         // 相册页面功能
         if ($("#container").find('.photos-page').length > 0) {
           if (typeof $.fn.justifiedGallery !== "function") {
@@ -36,9 +43,13 @@
         // 存在 markdown 页面的功能
         if ($("#container").find('.md-content').length > 0) {
           // 格式化内容
-          formatContent();
+          // 格式化markdown文章
+          const format = formatContent();
 
-          // loadGallery();
+          if (!format) {
+            loadGallery();
+            lazyloadImg();
+          }
 
           // 小屏幕下面初始化 toc
           if (typeof tocbot !== "undefined" && document.getElementById("toc")) {

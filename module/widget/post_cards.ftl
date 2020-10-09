@@ -10,14 +10,14 @@
                 <header class="card-header card-img">
                     <#if post.thumbnail?? && post.thumbnail!=''>
                         <a href="${post.fullPath!}"
-                           style=" background-image: url(${post.thumbnail!''});"
-                           class="img-cover img-cover-bg">
+                           class="img-cover-bg lazyload-link">
+                            <img class="lazyload img-cover img-200" src="${theme_base!}/source/images/loading.svg" data-src="${post.thumbnail!''}" alt="${post.title}" />
                         </a>
                     <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                         <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
-                        <a href="${post.fullPath!}" class="img-cover img-cover-bg"
-                           style="background-image: url(${thumbnails[thumbnailIndex?number?abs]?trim});"
+                        <a href="${post.fullPath!}" class="img-cover-bg lazyload-link"
                         >
+                            <img class="lazyload img-cover img-200" src="${theme_base!}/source/images/loading.svg" data-src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title!}" />
                         </a>
                     <#else>
                         <a data-ajax href="${post.fullPath!}" class="img-cover no-thumb">

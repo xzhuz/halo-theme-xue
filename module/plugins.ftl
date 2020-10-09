@@ -24,7 +24,7 @@
 </#if>
 
 
-<#if settings.enable_photo!false && is_photos??>
+<#if settings.enable_photo!false>
 <#--相册插件-->
     <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 </#if>

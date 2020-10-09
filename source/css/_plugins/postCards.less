@@ -11,16 +11,11 @@
 
 .img-cover {
   display: block;
-  //height: 160px;
   position: relative;
-  //z-index: 1;
-  height: 200px;
 }
 
 .img-cover-bg {
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
+  height: 200px;
 }
 
 .card-body {
@@ -124,15 +119,6 @@ a.no-thumb {
   overflow: hidden;
 }
 
-.img-cover .full-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100% !important;
-  //z-index: 1;
-}
-
 .author-image.cover {
   background-repeat: no-repeat !important;
   background-position: center center !important;
@@ -140,8 +126,6 @@ a.no-thumb {
 }
 
 .post-card {
-  //position: relative;
-  //overflow: hidden;
   transition: 0.6s all;
   border-radius: 10px;
   cursor: pointer;
@@ -196,15 +180,6 @@ a.no-thumb {
 .post-card:hover {
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-
-  .img-cover {
-    //-webkit-transform: scale(1.1);
-    //-moz-transform: scale(1.1);
-    //transform: scale(1.1);
-    //-webkit-filter: blur(1px);
-    //-moz-filter: blur(1px);
-    //filter: blur(1px);
-  }
 }
 
 .card-header-title {
@@ -216,6 +191,22 @@ a.no-thumb {
 
 .post-card .card-footer .post-time {
   line-height: 25px;
+}
+
+.post-card a.img-cover-bg {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-card img.img-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+img.img-200 {
+  height: 200px;
 }
 
 @media only screen and (max-width: 640px) {

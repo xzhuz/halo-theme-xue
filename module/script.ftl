@@ -35,6 +35,8 @@
 
 <script type="text/javascript">
   ${settings.common_js!''}
+
+  const loading = "${theme_base!}/source/images/loading-45.svg";
 </script>
 
 <#if settings.TimeStatistics??>

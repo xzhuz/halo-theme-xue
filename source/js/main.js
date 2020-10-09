@@ -54,12 +54,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // loadGallery();
 
   // 格式化markdown文章
-  formatContent();
+  const format = formatContent();
+  if (!format) {
+    loadGallery();
+    lazyloadImg();
+  }
 
   // 目录相关
   if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
     dealContentToc();
   }
+
+  // 图片懒加载
+  lazyloadImg()
 });
 
 /**
@@ -70,23 +77,25 @@ function handleNavMenu() {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
-  document.addEventListener('scroll', function () {
-    if (getClientWidth() <= 800) {
-      $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-      return;
-    }
-    var scrollTop = getScrollTop();
-    if (scrollTop > 29) {
-      $('#navHeader').addClass('nav-bg-fff')
-      $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-      $('#navHeader .collapse-nav').hide()
-      $('.collapse-burger').removeClass('open');
-    } else {
-      $('#navHeader').removeClass('nav-bg-fff')
-      $('#navHeader .nav').removeClass('opacity-100').addClass('opacity-0')
-      $('#navHeader .collapse-nav').show()
-    }
-  }, false);
+  document.addEventListener('scroll', handleScrollMenu, false);
+}
+
+function handleScrollMenu() {
+  if (getClientWidth() <= 800) {
+    $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
+    return;
+  }
+  var scrollTop = getScrollTop();
+  if (scrollTop > 29) {
+    $('#navHeader').addClass('nav-bg-fff')
+    $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
+    $('#navHeader .collapse-nav').hide()
+    $('.collapse-burger').removeClass('open');
+  } else {
+    $('#navHeader').removeClass('nav-bg-fff')
+    $('#navHeader .nav').removeClass('opacity-100').addClass('opacity-0')
+    $('#navHeader .collapse-nav').show()
+  }
 }
 
 function collapseNav() {
@@ -112,7 +121,7 @@ function loadGallery() {
   ) {
 
     new Viewer(document.getElementById("gallery-content"), {
-      toolbar: true,
+      toolbar: true
     });
   }
 
@@ -121,6 +130,7 @@ function loadGallery() {
       if ($(".justified-gallery > p > .gallery-item").length) {
         $(".justified-gallery > p > .gallery-item").unwrap();
       }
+      console.log(1231);
       $(".justified-gallery").justifiedGallery({rowHeight: 230, margins: 4});
     }
   }
@@ -133,7 +143,11 @@ function loadGallery() {
  *******************************/
 
 function scrollTocFixed() {
-  window.addEventListener("scroll", tocScroll, false);
+  document.addEventListener("scroll", tocScroll, false);
+}
+
+function removeScrollTocFixed() {
+  document.removeEventListener('scroll', tocScroll, false);
 }
 
 function loadCodeLineNumber() {
@@ -239,7 +253,6 @@ function scollTo() {
   window.scroll({top: postHeight, behavior: "smooth"});
 }
 
-
 function generateId() {
   const chars = `ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz`;
   let id = ``;
@@ -262,7 +275,7 @@ function formatContent() {
   // 获取原始html
   let originalContent = mdContent.innerHTML;
   if (typeof originalContent === "undefined") {
-    return;
+    return false;
   }
   // 反转义原始markdown文本
   originalContent = HTMLDecode(originalContent);
@@ -284,7 +297,7 @@ function formatContent() {
   renderer.image = function (href, title, text) {
     const reg = /([^]*)\[([^]*)\]\(([^]*)\)/;
     const isContainUrl = reg.test(text);
-    const imgHtml = `<img src=${href} alt=${text}>`;
+    const imgHtml = `<img class="lazyload" src=${loading} data-src=${href} alt=${text}>`;
     return `<span style="text-align: center;">
               ${
         isContainUrl
@@ -295,9 +308,8 @@ function formatContent() {
   };
 
   function getImgWithUrlHtml(textArr, href) {
-    return `<img src=${href} alt=${textArr[2]}></a>`;
+    return `<img class="lazyload" src=${loading} data-src=${href} alt=${textArr[2]}></a>`;
   }
-
 
   renderer.listitem = function (text, task) {
     if (task) {
@@ -324,7 +336,6 @@ function formatContent() {
     }
     return `<blockquote>${context.join("")}</blockquote>`;
   };
-
 
   renderer.table = function (header, body) {
     if (body) {
@@ -375,6 +386,10 @@ function formatContent() {
 
   // 数学公式
   renderMath()
+
+  // 图片懒加载
+  lazyloadImg()
+  return true;
 }
 
 /**
@@ -503,10 +518,7 @@ function getData(e) {
       let pagination = $(data).find(page);
       $(page).empty();
       $(page).append(pagination.children());
-      // 改变浏览器url
-      let pageCircles = $(data).find('.pagination-circle.is-current');
-      // let path = pageCircles.attr('path');
-      // window.history.pushState({page: path},null, path);
+      lazyloadImg()
     },
     error: function () {
       $(pageContainer).empty();
@@ -515,13 +527,48 @@ function getData(e) {
   });
 }
 
-
+/**
+ * 渲染数学公式
+ */
 function renderMath() {
-  if (openKatex && renderMathInElement && typeof renderMathInElement !== 'undefined') {
+  if (openKatex && renderMathInElement && typeof renderMathInElement
+      !== 'undefined') {
     if (document.getElementById('write')) {
       renderMathInElement(document.getElementById('write'), katex_config)
     } else if (document.getElementById('tree-hole')) {
       renderMathInElement(document.getElementById('tree-hole'), katex_config)
     }
+  }
+}
+
+function lazyloadImg() {
+  var imgs = document.querySelectorAll('img.lazyload');
+
+  //用来判断bound.top<=clientHeight的函数，返回一个bool值
+  function isIn(el) {
+    const bound = el.getBoundingClientRect();
+    const clientHeight = window.innerHeight;
+    return bound.top <= clientHeight;
+  }
+
+  //检查图片是否在可视区内，如果不在，则加载
+  function check() {
+    Array.from(imgs).forEach(function (el) {
+      if (isIn(el)) {
+        loadImg(el);
+      }
+    })
+  }
+
+  function loadImg(el) {
+    const loaded = el['data-loaded']
+    if (!loaded) {
+      el.src = el.dataset.src;
+      el.setAttribute('data-loaded', true)
+    }
+  }
+
+  window.onload = window.onscroll = function () { //onscroll()在滚动条滚动的时候触发
+    check();
   }
 }
