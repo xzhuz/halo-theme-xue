@@ -280,7 +280,6 @@ function formatContent() {
   // 反转义原始markdown文本
   originalContent = HTMLDecode(originalContent);
 
-  //
   persentContent.empty();
   persentContent.addClass("loading");
 
