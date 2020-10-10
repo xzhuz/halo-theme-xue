@@ -34,7 +34,7 @@
                                 <div class="ziyan-body markdown-body md-content">
                                     ${journal.content!}
                                 </div>
-                                <div class="ziyan-footer">
+                                <div class="ziyan-footer" style="display: none">
                                     <a class="ziyan-icon ziyan-reaction  ">
                                         <div class="is-icon-reaction-wrap">
                                             <span class="iconfont icon-like"></span>
