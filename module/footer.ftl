@@ -36,12 +36,12 @@
             </#if>
             <#if settings.mail??>
                 <a href="mailto:${settings.mail!}" class="circle pad-10" target="_blank" rel="noopener" title="邮箱">
-                    <span class="cst-icon icon-email"> </span>
+                    <span class="iconfont icon-email"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
                 <a href="${atom_url!}" class="circle pad-10" target="_blank" rel="noopener" title="RSS">
-                    <span class="cst-icon icon-feed"> </span>
+                    <span class="iconfont icon-rss"> </span>
                 </a>
             </#if>
         </div>

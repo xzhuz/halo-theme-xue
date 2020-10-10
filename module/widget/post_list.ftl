@@ -33,9 +33,12 @@
                         </#if>
 
                         <h2>
-                            <a href="${post.fullPath!}"
-                               rel="bookmark"><#if post.topPriority gt 0><i
-                                        class="iconfont icon-zhiding zhiding"></i></#if> ${post.title}</a>
+                            <a href="${post.fullPath!}" rel="bookmark">
+                                <#if post.topPriority gt 0>
+                                    <i class="iconfont icon-zhiding zhiding"></i>
+                                </#if>
+                                ${post.title}
+                            </a>
                         </h2>
                         <p>${post.summary!}</p>
                         <a class="post-more-link" href="${post.fullPath!}">

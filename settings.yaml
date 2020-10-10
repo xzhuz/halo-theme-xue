@@ -68,6 +68,18 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
+    auto_night_mode:
+      name: auto_night_mode
+      label: 自动夜晚模式
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: "这里会根据浏览器主题改变"
     right_corner_circle:
       name: right_corner_circle
       label: 开启右下角按钮

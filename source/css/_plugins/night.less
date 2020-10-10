@@ -101,18 +101,6 @@
     color: var(--night-txt-color) !important;
   }
 
-  // 日志页面
-  .tree-hole-author,
-  .tree-hole-box a {
-    color: var(--night-txt-color) !important;
-  }
-
-  #tree-hole .comment-list:before,
-  .tree-hole-body > div:before,
-  #tree-hole .comment-list:after {
-    filter: brightness(0.6) !important;
-  }
-
   // 归档页面
   .arch-year:before {
     filter: brightness(0.4) !important;
@@ -132,10 +120,6 @@
   // header
   .nav-list > .list > .overlay {
     background: rgba(59, 59, 59, 0.65);
-  }
-
-  .nav-list > .list.-left {
-    //background: var(--night-background);
   }
 
   .nav-list > .list > .item > .link,
@@ -200,6 +184,44 @@
     color: var(--night-txt-color) !important;
     border: 1px solid var(--night-txt-color) !important;
   }
+
+  .is-container .ziyan-content {
+    background: var(--night-tag-bg-color) !important;
+    box-shadow: none
+  }
+
+  .is-container .ziyan-content .markdown-body {
+    color: var(--night-txt-color) !important;
+
+    a {
+      color: var(--base-hl-color) !important;
+    }
+  }
+
+  .is-container .ziyan-content:hover {
+    box-shadow: none !important;
+  }
+
+  .is-container .ziyan-date, .is-container .ziyan-text {
+    color: var(--night-tag-txt-color);
+    text-shadow: none !important;
+  }
+
+  .is-container .ziyan-username {
+    color: var(--night-txt-color) !important;
+  }
+
+  .is-container .is-reaction-count  {
+    color: var(--night-txt-color) !important;
+  }
+
+  .diag-btn.more-btn {
+    color: var(--night-txt-color) !important;
+  }
+
+  .diag-btn:hover {
+    color: #fff !important;
+  }
 }
 
 @media all and (max-width: 800px) {
@@ -209,5 +231,9 @@
 
   .night .nav-list .sh-box-b {
     box-shadow: 0px -10px 15px -10px #444f59 inset;
+  }
+
+  .night .nav-list > .list.-left {
+    background: var(--night-background);
   }
 }

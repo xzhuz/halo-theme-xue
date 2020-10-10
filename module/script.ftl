@@ -37,6 +37,11 @@
   ${settings.common_js!''}
 
   const loading = "${theme_base!}/source/images/loading-45.svg";
+
+  var autoNightMode = false
+  <#if settings.auto_night_mode!true>
+    autoNightMode = true;
+  </#if>
 </script>
 
 <#if settings.TimeStatistics??>

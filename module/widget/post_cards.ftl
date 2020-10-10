@@ -38,7 +38,7 @@
                     </#if>
                 </div>
                 <footer class="card-footer svg-f">
-                    <span class="cst-icon icon-calendar lh-25 f-10"
+                    <span class="iconfont icon-calendar lh-25 f-10"
                           style="margin-right: 5px"></span>
                     <span class="post-time lh-25 mr-auto">
                         <span class="published">${post.createTime?string("yyyy-MM-dd")}</span>

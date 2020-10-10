@@ -1,9 +1,36 @@
 // 夜间模式
 function dayNightSwitch() {
+  const key = 'nightMode';
   // 夜晚模式开关
   const daySwitch = $("#daySwitch");
   daySwitch.toggleClass("daySwitch");
   $(document.body).toggleClass("night");
+  if (document.body.classList.contains('night')) {
+    setLocalStorage(key, true);
+  } else {
+    setLocalStorage(key, false);
+  }
+}
+
+/**
+ * 自动切换夜间模式
+ */
+function autoDayNight() {
+  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    setLocalStorage('nightMode', true);
+    // 默认是日间模式，如果检测到系统处于夜间模式，则自动切换到夜间模式
+    checkNightMode()
+  }
+}
+
+function checkNightMode() {
+  const isNight = getLocalStorage('nightMode');
+  // 如果已经是夜间模式
+  if (isNight) {
+    const daySwitch = $("#daySwitch");
+    daySwitch.removeClass("daySwitch");
+    $(document.body).addClass("night");
+  }
 }
 
 /**
@@ -46,28 +73,6 @@ function dealContentToc() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // 处理导航菜单
-  handleNavMenu();
-
-  // 图片和相册
-  // loadGallery();
-
-  // 格式化markdown文章
-  const format = formatContent();
-  if (!format) {
-    loadGallery();
-    lazyloadImg();
-  }
-
-  // 目录相关
-  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-    dealContentToc();
-  }
-
-  // 图片懒加载
-  lazyloadImg()
-});
 
 /**
  * 处理导航菜单
@@ -517,11 +522,54 @@ function getData(e) {
       let pagination = $(data).find(page);
       $(page).empty();
       $(page).append(pagination.children());
-      lazyloadImg()
+      lazyloadImg();
+      if ($(data).find(".ziyan")) {
+        // 计算时间
+        setTimeAgo();
+
+        // 自言代码高亮
+        hljsZiYanCode()
+
+      }
     },
     error: function () {
       $(pageContainer).empty();
       $(pageContainer).addClass("loading");
+    },
+  });
+}
+
+/**
+ * 自言查看更多
+ * @param e
+ */
+function getMore(e) {
+  const path = $(e).attr("path");
+  var moreContainer = "#moreContainer";
+  var moreLoading = '#pagination';
+  $.ajax({
+    type: "GET",
+    url: path,
+    beforeSend: function () {
+      $(moreLoading).empty();
+      $(moreLoading).addClass("loading");
+    },
+    success: function (data) {
+      $(moreLoading).removeClass("loading");
+      $(moreLoading).empty();
+      let result = $(data).find(moreContainer);
+      $(moreContainer).append(result.children());
+      let page = "#pagination";
+      let pagination = $(data).find(page);
+      $(page).empty();
+      $(page).append(pagination.children());
+      if ($(data).find(".ziyan")) {
+        // 计算时间
+        setTimeAgo();
+
+        // 自言代码高亮
+        hljsZiYanCode()
+      }
     },
   });
 }
@@ -534,12 +582,15 @@ function renderMath() {
       !== 'undefined') {
     if (document.getElementById('write')) {
       renderMathInElement(document.getElementById('write'), katex_config)
-    } else if (document.getElementById('tree-hole')) {
-      renderMathInElement(document.getElementById('tree-hole'), katex_config)
+    } else if (document.getElementById('ziyan')) {
+      renderMathInElement(document.getElementById('ziyan'), katex_config)
     }
   }
 }
 
+/**
+ * 懒加载图片
+ */
 function lazyloadImg() {
   var imgs = document.querySelectorAll('img.lazyload');
 
@@ -571,3 +622,195 @@ function lazyloadImg() {
     check();
   }
 }
+
+/**
+ * 计算时间
+ * @param time
+ * @returns {string|*}
+ */
+function timeAgo(time) {
+  var currentTime = new Date().getTime()
+  var between = currentTime - time
+  var days = Math.floor(between / (24 * 3600 * 1000))
+  if (days === 0) {
+    var leave1 = between % (24 * 3600 * 1000)
+    var hours = Math.floor(leave1 / (3600 * 1000))
+    if (hours === 0) {
+      var leave2 = leave1 % (3600 * 1000)
+      var minutes = Math.floor(leave2 / (60 * 1000))
+      if (minutes === 0) {
+        var leave3 = leave2 % (60 * 1000)
+        var seconds = Math.round(leave3 / 1000)
+        return seconds + ' 秒前'
+      }
+      return minutes + ' 分钟前'
+    }
+    return hours + ' 小时前'
+  }
+  if (days < 0) return '刚刚'
+  if (days < 1) {
+    return days + ' 天前'
+  } else {
+    return formatDate(time, 'yyyy/MM/dd hh:mm');
+  }
+}
+
+/**
+ * 格式化时间
+ * @param date
+ * @param fmt
+ * @returns {*}
+ */
+function formatDate(date, fmt) {
+  date = new Date(date);
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+  }
+  let o = {
+    'M+': date.getMonth() + 1,
+    'd+': date.getDate(),
+    'h+': date.getHours(),
+    'm+': date.getMinutes(),
+    's+': date.getSeconds()
+  };
+  for (let k in o) {
+    if (new RegExp(`(${k})`).test(fmt)) {
+      let str = o[k] + '';
+      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str));
+    }
+  }
+  return fmt;
+}
+
+/**
+ *
+ * @param str
+ * @returns {string}
+ */
+function padLeftZero(str) {
+  return ('00' + str).substr(str.length);
+}
+
+/**
+ * 设置时间
+ */
+function setTimeAgo() {
+  $('.time-ago').each(function () {
+    const time = $(this).attr('time');
+    const timeStr = timeAgo(new Date(time));
+    $(this).html(timeStr);
+  });
+}
+
+/**
+ * 自言代码高亮
+ */
+function hljsZiYanCode() {
+  $('.ziyan .md-content pre code').each(function () {
+    hljs.highlightBlock(this);
+  });
+}
+
+/**
+ * 获取本地
+ * @param key
+ * @returns {null|*}
+ */
+function getLocalStorage(key) {
+  var exp = 60 * 60 * 1000; // 一个小时的秒数
+  if (localStorage.getItem(key)) {
+    var vals = localStorage.getItem(key); // 获取本地存储的值
+    var dataObj = JSON.parse(vals); // 将字符串转换成JSON对象
+    // 如果(当前时间 - 存储的元素在创建时候设置的时间) > 过期时间
+    var isTimed = (new Date().getTime() - dataObj.timer) > exp;
+    if (isTimed) {
+      console.log("存储已过期");
+      localStorage.removeItem(key);
+      return null;
+    } else {
+      var newValue = dataObj.val;
+    }
+    return newValue;
+  } else {
+    return null;
+  }
+}
+
+function isQuotaExceeded (e) {
+  var quotaExceeded = false;
+  if (e) {
+    if (e.code) {
+      switch (e.code) {
+        case 22:
+          quotaExceeded = true;
+          break;
+        case 1014: // Firefox
+          if (e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+            quotaExceeded = true;
+          }
+          break;
+      }
+    } else if (e.number === -2147024882) { // IE8
+      quotaExceeded = true;
+    }
+  }
+  return quotaExceeded;
+
+}
+
+function setLocalStorage (key, value) {
+  var curtime = new Date().getTime(); // 获取当前时间 ，转换成JSON字符串序列
+  var valueDate = JSON.stringify({
+    val: value,
+    timer: curtime
+  });
+  try {
+    localStorage.removeItem(key)
+    localStorage.setItem(key, valueDate);
+  } catch (e) {
+    // 兼容性写法
+    if (isQuotaExceeded(e)) {
+      console.log("Error: 本地存储超过限制");
+      localStorage.clear();
+    } else {
+      console.log("Error: 保存到本地存储失败");
+    }
+  }
+}
+
+
+$(function () {
+  checkNightMode()
+
+  // 自动切换夜间模式
+  if (autoNightMode) {
+    autoDayNight();
+  }
+
+  // 处理导航菜单
+  handleNavMenu();
+
+  // 格式化markdown文章
+  const format = formatContent();
+  if (!format) {
+    loadGallery();
+    lazyloadImg();
+  }
+
+  // 目录相关
+  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+    dealContentToc();
+  }
+
+  // 图片懒加载
+  lazyloadImg();
+
+  if ($('#container').find('.ziyan').length > 0) {
+    // 计算时间
+    setTimeAgo();
+
+    // 自言代码高亮
+    hljsZiYanCode()
+
+  }
+});

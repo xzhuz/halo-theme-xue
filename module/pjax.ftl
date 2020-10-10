@@ -14,6 +14,14 @@
       $(document).on('pjax:complete', function () {
         NProgress.done();
 
+        // 检查夜间模式
+        checkNightMode()
+
+        // 自动切换夜间模式
+        if (autoNightMode) {
+          autoDayNight();
+        }
+
         // 删除listener
         removeScrollTocFixed();
 
@@ -39,6 +47,15 @@
           var comment = $(this).remove();
           commentParent.append(comment);
         });
+
+        if ($('#container').find('.ziyan').length > 0) {
+          // 计算时间
+          setTimeAgo();
+
+          // 自言代码高亮
+          hljsZiYanCode()
+
+        }
 
         // 存在 markdown 页面的功能
         if ($("#container").find('.md-content').length > 0) {

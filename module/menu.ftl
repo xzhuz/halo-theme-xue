@@ -4,7 +4,7 @@
         <span class="moon-menu-item pl-6 iconfont icon-down" onClick="ckBack2Bottom()"> </span>
         <span class="moon-menu-item pl-6 iconfont icon-search" onclick="toggleSearchBox()"></span>
         <#if settings.post_toc!true>
-            <span class="moon-menu-item pl-6 cst-icon icon-toc hidden" onclick="ckShowContent()" id="smallToc"></span>
+            <span class="moon-menu-item pl-6 iconfont icon-toc hidden" onclick="ckShowContent()" id="smallToc"></span>
         </#if>
     </div>
 
@@ -38,7 +38,7 @@
                     <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
                     <i class="sh-icon iconfont icon-search"></i>
                 </label>
-                <a class="sh-exit cst-icon icon-exit" onClick="toggleSearchBox()"></a>
+                <a class="sh-exit iconfont icon-exit" onClick="toggleSearchBox()"></a>
             </div>
         </div>
     </div>
