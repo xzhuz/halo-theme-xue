@@ -76,6 +76,6 @@ www.superdevops.cn
 
 ## 为爱发电
 
-如果你觉得这个主题很不错，也觉得作者很辛苦，可以请作者喝一杯咖啡
+如果你觉得这个主题很不错，也觉得作者很辛苦，可以请作者喝一杯咖啡☕️
 
 <img src="https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/IMG_0105.JPG" alt="WeiChatPay" style="zoom:50%;" />
