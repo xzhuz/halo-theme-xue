@@ -32,7 +32,7 @@ www.superdevops.cn
 
 [pengzhenjin's blog](https://www.pengzhenjin.top/)
 
-### [👉点此申请加入示例](https://github.com/xzzai/halo-theme-xue/issues/67)
+
 
 ## 特性 
 * [x] 日志页面
@@ -72,6 +72,10 @@ www.superdevops.cn
 
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
 
-
-
 > 对于前端React感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支
+
+## 为爱发电
+
+如果你觉得这个主题很不错，也觉得作者很辛苦，可以请作者喝一杯咖啡
+
+<img src="https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/IMG_0105.JPG" alt="WeiChatPay" style="zoom:50%;" />
