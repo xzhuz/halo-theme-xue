@@ -267,6 +267,19 @@ function generateId() {
   return id;
 }
 
+function getBilibili(width, height, id) {
+ return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=202434950&bvid=BV1Xa411w7HU&cid=${id}&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
+}
+
+function getWangYiMusic(id) {
+  return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=${id}&auto=1&height=90"></iframe>`
+}
+
+const wangyi = /\[music:\d+\]/g;
+
+var bilibili = /\[bilibili:\d+,\d+,\d+\]/g
+
+
 /**
  * 将文本转成 markdown
  */
@@ -292,6 +305,33 @@ function formatContent() {
 
   renderer.heading = function (text, level, raw, slugger) {
     return `<h${level} id=${raw}>${text}</h${level}>`;
+  };
+
+  renderer.paragraph = function (text) {
+    // 渲染网易云音乐
+    var musics = text.match(wangyi);
+    if (musics && musics.length > 0) {
+      for(var i = 0; i< musics.length; i++) {
+        var wangyiMusic = musics[i].match(/\d+/);
+        if (wangyiMusic && wangyiMusic.length > 0) {
+          var id = wangyiMusic[0];
+          text = text.replace(musics[i], getWangYiMusic(id));
+        }
+      }
+    }
+
+    // 渲染bilibili视频
+    var videos = text.match(bilibili);
+    if (videos && videos.length > 0) {
+      for (var j = 0; j < videos.length; j++) {
+        var video = videos[j].match(/\d+/g);
+        if (video && video.length > 0 && video.length === 3) {
+          var aid = video[0], width = video[1], height = video[2];
+          text = text.replace(videos[j], getBilibili(width, height, aid));
+        }
+      }
+    }
+    return `<p>${text}</p>`
   };
 
   renderer.link = function (href, title, text) {
@@ -778,6 +818,9 @@ function setLocalStorage (key, value) {
   }
 }
 
+function isEmpty(arr) {
+  return !(arr && arr.length > 0);
+}
 
 $(function () {
   checkNightMode()

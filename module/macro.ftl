@@ -121,7 +121,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202010110340"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202010120340"></script>
 
   <#include "script.ftl">
 
