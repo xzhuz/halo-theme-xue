@@ -275,9 +275,9 @@ function getWangYiMusic(id) {
   return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=${id}&auto=1&height=90"></iframe>`
 }
 
-const wangyi = /\[music:\d+\]/g;
+const wangyi = /\[music:\s*\d+\s*\]/g;
 
-var bilibili = /\[bilibili:\d+,\d+,\d+\]/g
+var bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g
 
 
 /**
