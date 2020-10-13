@@ -5,7 +5,7 @@
             <#if settings.photos_patternimg?? && settings.photos_patternimg!=''>
                 <div class="cover-bg">
                     <img src="${settings.photos_patternimg!}" class="z-auto"
-                         alt="${settings.photos_title!'Photos'}">
+                         alt="${settings.photos_title!'相册'}">
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -20,22 +20,42 @@
         </header>
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd photos-page content-container">
             <div class="photos-box article-content" id="gallery-content">
-                <@photoTag method="listTeams">
-                    <#list teams as item>
-                        <#if item.team?? && item.team!=''>
-                            <h3 class="w-full m-4">${item.team}</h3>
-                        </#if>
-                        <div class="justified-gallery">
-                            <#list item.photos as photo>
-                                <a class="gallery-item jg-entry entry-visible"
-                                   href="javascript:void(0)">
-                                    <img src="${photo.url!}" data-src="${photo.url!}" alt="${photo.name!}"/>
-                                    <p class="has-text-centered is-size-6 caption">${photo.name}</p>
-                                </a>
+                <nav id="gallery-filter">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);" data-filter="*" onclick="switchGallery(this)" class="active">全部</a>
+                        </li>
+                        <@photoTag method="listTeams">
+                            <#list teams as item>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="switchGallery(this)"
+                                       data-filter=".${((item.team)?length>0)?string((item.team),'默认')}">${((item.team)?length>0)?string((item.team),'默认')}</a>
+                                </li>
                             </#list>
-                        </div>
-                    </#list>
-                </@photoTag>
+                        </@photoTag>
+                    </ul>
+                </nav>
+                <div class="gallery masonry-gallery">
+                    <@photoTag method="list">
+                        <#list photos as photo>
+                            <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}">
+                                <header class="gallery-icon">
+                                    <a data-fancybox="gallery" href="javascript:void(0);">
+                                        <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${photo.url!}" alt="${photo.name!}"/>
+                                    </a>
+                                </header>
+                                <figcaption class="gallery-caption">
+                                    <div class="entry-summary">
+                                        <h3>${photo.name}</h3>
+                                        <#if photo.description?? && photo.description != "">
+                                            <p>${photo.description!}</p>
+                                        </#if>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </#list>
+                    </@photoTag>
+                </div>
             </div>
         </div>
     </main>

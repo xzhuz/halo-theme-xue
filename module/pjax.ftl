@@ -30,15 +30,7 @@
 
         // 相册页面功能
         if ($("#container").find('.photos-page').length > 0) {
-          if (typeof $.fn.justifiedGallery !== "function") {
-            $.getScript(
-                "https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js",
-                function () {
-                  loadGallery();
-                });
-          } else {
-            loadGallery();
-          }
+          loadGallery();
         }
 
         // 重新加载 评论

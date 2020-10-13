@@ -1485,98 +1485,131 @@ figure {
 .gallery-item {
   transition: all 0.6s;
 }
-h1.photo-ach-title {
-  cursor: pointer;
-}
-ul.cards {
-  display: inline-block;
-  height: 250px;
-  list-style-type: none;
-  position: relative;
-  padding: 40px 0 0 0;
-  cursor: pointer;
-  transition: all 0.6s;
-}
-ul.cards li.title {
-  margin: 0 0 20px;
-}
-ul.cards li.title h2 {
-  font-weight: 700;
-}
-ul.cards li.card {
-  background: #FFF;
-  overflow: hidden;
-  height: 180px;
-  width: 200px;
-  border-radius: 10px;
-  position: absolute;
-  left: 10%;
-  box-shadow: 1px 2px 2px 0 #aaa;
-  transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
-}
-ul.cards li.card a img {
-  width: 100%;
-  padding: 5px;
-  height: 130px;
-}
-ul.cards li.card div.content {
-  padding: 5px 10px;
-}
-ul.cards li.card {
-  z-index: 10;
-  transform: rotateZ(-2deg);
-}
-ul.cards li.card.card-2 {
-  z-index: 9;
-  transform: rotateZ(-7deg);
-  transition-delay: 0.05s;
-}
-ul.cards li.card.card-3 {
-  z-index: 8;
-  transform: rotateZ(5deg);
-  transition-delay: 0.1s;
-}
-.gallery-card-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 300;
-}
-.gallery-cards {
-  transition: all 0.6s;
-}
-.gallery-area {
-  display: inline-block;
-  -webkit-animation: fade-down 0.6s;
-  animation: fade-down 0.6s;
-}
-.gallery-area-tog {
-  margin-bottom: 20px;
-}
-.gallery-area-bg {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-.gallery-area:before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  border-style: solid;
-}
-.gallery-area:before {
-  left: var(--left);
-  font-size: 0;
-  line-height: 0;
-  border-width: 10px;
-  border-color: rgba(0, 0, 0, 0.05);
-  border-top-width: 0;
-  border-style: dashed;
-  border-bottom-style: solid;
-  border-left-color: transparent;
-  border-right-color: transparent;
-}
 .justified-gallery {
   overflow: inherit !important;
+}
+#gallery-filter {
+  display: block;
+  position: relative;
+  top: 12px;
+}
+#gallery-filter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.3em 0;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+#gallery-filter ul li {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 2em 1.5em 0;
+}
+#gallery-filter ul li a {
+  display: block;
+  color: #222;
+  position: relative;
+}
+#gallery-filter ul li a.active::after {
+  width: 100%;
+  transform: scale(1);
+}
+#gallery-filter ul li a:hover::after {
+  width: 100%;
+  transform: scale(1);
+}
+#gallery-filter ul li a::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid var(--base-hl-color);
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: 50% 0;
+  transition: transform 0.35s;
+}
+.gallery-item {
+  position: relative;
+  display: block;
+  width: auto;
+}
+.masonry-gallery .gallery-item {
+  margin: 0;
+}
+.masonry-gallery .gallery-item {
+  margin-bottom: 10px;
+}
+.gallery-icon img {
+  width: 100%;
+  height: auto;
+}
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.gallery-caption .entry-summary {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: #f7f6f5;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.masonry-gallery .gallery-caption .entry-summary {
+  text-align: center;
+  bottom: 0;
+  padding: 1em;
+  font-size: 0.8em;
+  color: #f7f6f5;
+}
+.gallery-caption h3,
+.gallery-caption p {
+  transition: transform 0.35s;
+  padding: 0;
+  margin: 0;
+}
+.gallery-caption h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+.masonry-gallery .gallery-caption h3 {
+  transform: translate3d(0, -20px, 0);
+  margin-bottom: 0.5em;
+}
+.masonry-gallery .gallery-item:hover .gallery-icon {
+  opacity: 0.3;
+}
+.gallery-item:hover .gallery-caption h3,
+.gallery-item:hover .gallery-caption p {
+  transform: translate3d(0, 0, 0);
+}
+.gallery-item:hover .gallery-caption .entry-summary {
+  opacity: 1;
+}
+.masonry-gallery .gallery-item.col-3 {
+  width: 31.3%;
+}
+@media screen and (max-width: 860px) {
+  .masonry-gallery .gallery-item {
+    width: 49% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .masonry-gallery .gallery-item {
+    width: 98% !important;
+  }
 }
 .is-container,
 .is-container * {

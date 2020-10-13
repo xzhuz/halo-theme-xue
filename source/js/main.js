@@ -1,3 +1,4 @@
+"use strict";
 // 夜间模式
 function dayNightSwitch() {
   const key = 'nightMode';
@@ -124,21 +125,12 @@ function loadGallery() {
       typeof Viewer !== "undefined" &&
       document.getElementById("gallery-content")
   ) {
-
     new Viewer(document.getElementById("gallery-content"), {
       toolbar: true
     });
   }
 
-  if ($(".justified-gallery").length > 0) {
-    if (typeof $.fn.justifiedGallery === "function") {
-      if ($(".justified-gallery > p > .gallery-item").length) {
-        $(".justified-gallery > p > .gallery-item").unwrap();
-      }
-      console.log(1231);
-      $(".justified-gallery").justifiedGallery({rowHeight: 230, margins: 4});
-    }
-  }
+  gallery()
 }
 
 /********************************
@@ -820,6 +812,38 @@ function setLocalStorage (key, value) {
 
 function isEmpty(arr) {
   return !(arr && arr.length > 0);
+}
+
+// 相册页面
+function gallery() {
+
+  var $photoPage = $(".photos-page");
+  // 判断当前是否为图库界面
+  if ($photoPage.length < 1) {
+    return;
+  }
+  // 渲染图库信息
+  var $masonrys = $(".masonry-gallery.gallery");
+
+  $masonrys.find("img.lazyload").on('load', function() {
+    $(this).parents(".gallery-item").css("background", "#222")
+    $masonrys.isotope({
+      masonry: {
+        gutter: 10,
+      },
+      itemSelector: ".gallery-item",
+    });
+  })
+}
+
+function switchGallery(e) {
+  var $masonrys = $(".masonry-gallery.gallery");
+  $("#gallery-filter li a").removeClass("active");
+  $(e).addClass("active");
+  var dataFilter = $(e).data("filter");
+  $masonrys.isotope({
+    filter: dataFilter,
+  });
 }
 
 $(function () {
