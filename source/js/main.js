@@ -268,7 +268,7 @@ function generateId() {
 }
 
 function getBilibili(width, height, id) {
- return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=202434950&bvid=BV1Xa411w7HU&cid=${id}&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
+ return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
 }
 
 function getWangYiMusic(id) {
