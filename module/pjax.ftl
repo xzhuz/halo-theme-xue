@@ -25,14 +25,6 @@
         // 删除listener
         removeScrollTocFixed();
 
-        // 图片懒加载
-        lazyloadImg()
-
-        // 相册页面功能
-        if ($("#container").find('.photos-page').length > 0) {
-          loadGallery();
-        }
-
         // 重新加载 评论
         $('script[data-pjax-comment]').each(function () {
           var commentParent = $(this).parent()
@@ -55,7 +47,9 @@
           // 格式化markdown文章
           const format = formatContent();
 
-          if (!format) {
+          if ($('#container').find('.md-content').length > 0 && format) {
+            return;
+          } else {
             loadGallery();
             lazyloadImg();
           }
@@ -65,6 +59,14 @@
             dealContentToc()
           }
         }
+
+        // 相册页面功能
+        if ($("#container").find('.photos-page').length > 0) {
+          loadGallery();
+        }
+
+        // 图片懒加载
+        lazyloadImg()
 
         //重载
         if (typeof _hmt !== 'undefined') {

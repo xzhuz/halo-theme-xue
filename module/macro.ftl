@@ -81,9 +81,6 @@
         <#if settings.enable_image_view!false>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
         </#if>
-<#--        <#if settings.enable_photo!false>-->
-<#--          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">-->
-<#--        </#if>-->
         <#if settings.enable_code_highlight!true>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
         </#if>
@@ -98,7 +95,7 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
 <#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010132322">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010132332">
         
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
@@ -121,7 +118,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--    <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202010132322"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202010132332"></script>
 
   <#include "script.ftl">
 

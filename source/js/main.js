@@ -814,7 +814,6 @@ function setLocalStorage(key, value) {
   }
 }
 
-
 // 相册页面
 function gallery() {
 
@@ -826,49 +825,24 @@ function gallery() {
   // 渲染图库信息
   var $masonrys = $(".masonry-gallery.gallery");
 
-  $masonrys.find("img.lazyload").on('load', function () {
-    $(this).parents(".gallery-item").css("background", "#222")
-    $masonrys.isotope({
-      masonry: {
-        gutter: 10,
-      },
-      itemSelector: ".gallery-item",
-    });
-  })
-
-}
-
-/**
- * 切换相册风格
- * @param e
- */
-function switchGalleryStyle(e) {
-  var $masonrys = $(".masonry-gallery.gallery");
-  $("#grid-changer a").removeClass("active");
-  $(e).toggleClass("active");
-  for (var i = 2; i < 9; i++) {
-    $masonrys.find(".gallery-item").removeClass("col-" + i);
-  }
-  $masonrys.find(".gallery-item").toggleClass($(e).closest("li").attr("class"));
-  $masonrys.isotope({
+  var option = {
     masonry: {
       gutter: 10,
     },
     itemSelector: ".gallery-item",
-  });
-}
+  }
+  $masonrys.find("img.lazyload").on('load', function () {
+    $masonrys.isotope(option);
+  })
 
-/**
- * 切换相册
- * @param e
- */
-function switchGallery(e) {
-  var $masonrys = $(".masonry-gallery.gallery");
-  $("#gallery-filter li a").removeClass("active");
-  $(e).addClass("active");
-  var dataFilter = $(e).data("filter");
-  $masonrys.isotope({
-    filter: dataFilter,
+  $("#gallery-filter li a").on("click", function () {
+    $("#gallery-filter li a").removeClass("active");
+    $(this).addClass("active");
+    var dataFilter = $(this).data("filter");
+    $masonrys.isotope({
+      filter: dataFilter,
+    });
+    return false;
   });
 }
 
@@ -885,16 +859,18 @@ $(function () {
 
   // 格式化markdown文章
   const format = formatContent();
-  if (!format) {
-    loadGallery();
-    lazyloadImg();
-  }
 
   // 目录相关
   if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
     dealContentToc();
   }
 
+  if ($('#container').find('.md-content').length > 0 && format) {
+    return;
+  }
+
+  // 相册
+  loadGallery();
   // 图片懒加载
   lazyloadImg();
 
