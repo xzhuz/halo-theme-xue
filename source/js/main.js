@@ -1,4 +1,5 @@
 "use strict";
+
 // 夜间模式
 function dayNightSwitch() {
   const key = 'nightMode';
@@ -17,7 +18,8 @@ function dayNightSwitch() {
  * 自动切换夜间模式
  */
 function autoDayNight() {
-  if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+  if (window.matchMedia && window.matchMedia(
+      '(prefers-color-scheme: dark)').matches) {
     setLocalStorage('nightMode', true);
     // 默认是日间模式，如果检测到系统处于夜间模式，则自动切换到夜间模式
     checkNightMode()
@@ -73,7 +75,6 @@ function dealContentToc() {
     });
   }
 }
-
 
 /**
  * 处理导航菜单
@@ -260,7 +261,7 @@ function generateId() {
 }
 
 function getBilibili(width, height, id) {
- return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
+  return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
 }
 
 function getWangYiMusic(id) {
@@ -270,7 +271,6 @@ function getWangYiMusic(id) {
 const wangyi = /\[music:\s*\d+\s*\]/g;
 
 var bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g
-
 
 /**
  * 将文本转成 markdown
@@ -303,7 +303,7 @@ function formatContent() {
     // 渲染网易云音乐
     var musics = text.match(wangyi);
     if (musics && musics.length > 0) {
-      for(var i = 0; i< musics.length; i++) {
+      for (var i = 0; i < musics.length; i++) {
         var wangyiMusic = musics[i].match(/\d+/);
         if (wangyiMusic && wangyiMusic.length > 0) {
           var id = wangyiMusic[0];
@@ -679,7 +679,9 @@ function timeAgo(time) {
     }
     return hours + ' 小时前'
   }
-  if (days < 0) return '刚刚'
+  if (days < 0) {
+    return '刚刚'
+  }
   if (days < 1) {
     return days + ' 天前'
   } else {
@@ -696,7 +698,8 @@ function timeAgo(time) {
 function formatDate(date, fmt) {
   date = new Date(date);
   if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+    fmt = fmt.replace(RegExp.$1,
+        (date.getFullYear() + '').substr(4 - RegExp.$1.length));
   }
   let o = {
     'M+': date.getMonth() + 1,
@@ -708,7 +711,8 @@ function formatDate(date, fmt) {
   for (let k in o) {
     if (new RegExp(`(${k})`).test(fmt)) {
       let str = o[k] + '';
-      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str));
+      fmt = fmt.replace(RegExp.$1,
+          (RegExp.$1.length === 1) ? str : padLeftZero(str));
     }
   }
   return fmt;
@@ -768,7 +772,7 @@ function getLocalStorage(key) {
   }
 }
 
-function isQuotaExceeded (e) {
+function isQuotaExceeded(e) {
   var quotaExceeded = false;
   if (e) {
     if (e.code) {
@@ -790,7 +794,7 @@ function isQuotaExceeded (e) {
 
 }
 
-function setLocalStorage (key, value) {
+function setLocalStorage(key, value) {
   var curtime = new Date().getTime(); // 获取当前时间 ，转换成JSON字符串序列
   var valueDate = JSON.stringify({
     val: value,
@@ -810,9 +814,6 @@ function setLocalStorage (key, value) {
   }
 }
 
-function isEmpty(arr) {
-  return !(arr && arr.length > 0);
-}
 
 // 相册页面
 function gallery() {
@@ -825,7 +826,7 @@ function gallery() {
   // 渲染图库信息
   var $masonrys = $(".masonry-gallery.gallery");
 
-  $masonrys.find("img.lazyload").on('load', function() {
+  $masonrys.find("img.lazyload").on('load', function () {
     $(this).parents(".gallery-item").css("background", "#222")
     $masonrys.isotope({
       masonry: {
@@ -834,8 +835,33 @@ function gallery() {
       itemSelector: ".gallery-item",
     });
   })
+
 }
 
+/**
+ * 切换相册风格
+ * @param e
+ */
+function switchGalleryStyle(e) {
+  var $masonrys = $(".masonry-gallery.gallery");
+  $("#grid-changer a").removeClass("active");
+  $(e).toggleClass("active");
+  for (var i = 2; i < 9; i++) {
+    $masonrys.find(".gallery-item").removeClass("col-" + i);
+  }
+  $masonrys.find(".gallery-item").toggleClass($(e).closest("li").attr("class"));
+  $masonrys.isotope({
+    masonry: {
+      gutter: 10,
+    },
+    itemSelector: ".gallery-item",
+  });
+}
+
+/**
+ * 切换相册
+ * @param e
+ */
 function switchGallery(e) {
   var $masonrys = $(".masonry-gallery.gallery");
   $("#gallery-filter li a").removeClass("active");

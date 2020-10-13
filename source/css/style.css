@@ -1598,12 +1598,53 @@ figure {
 .gallery-item:hover .gallery-caption .entry-summary {
   opacity: 1;
 }
+#grid-changer {
+  display: inline-block;
+  float: right;
+  margin-top: -2.6em;
+  z-index: 12;
+  margin-right: 1em;
+}
+#grid-changer ul li {
+  display: inline-block;
+  vertical-align: top;
+  margin: -0.3em 0 0 0.2em;
+}
+#grid-changer ul li a.active,
+#grid-changer ul li a.active:hover {
+  border-color: #222;
+  color: #222;
+}
+#grid-changer ul li a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #ccc;
+  position: relative;
+  border: 2px solid #999;
+  transition: all 0.2s ease;
+}
+#grid-changer ul li a:hover {
+  border-color: var(--base-hl-color);
+  color: var(--base-hl-color);
+}
+#grid-changer svg {
+  fill: #222;
+}
 .masonry-gallery .gallery-item.col-3 {
   width: 31.3%;
+}
+.masonry-gallery .gallery-item.col-5 {
+  width: 18%;
 }
 @media screen and (max-width: 860px) {
   .masonry-gallery .gallery-item {
     width: 49% !important;
+  }
+  .masonry-gallery .gallery-item.col-5 {
+    width: 31.3%;
   }
 }
 @media screen and (max-width: 500px) {
