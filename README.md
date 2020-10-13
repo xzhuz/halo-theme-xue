@@ -24,13 +24,21 @@
 
 [寒山志](https://baozi.fun)
 
-www.superdevops.cn
+[微服务驿站](https://github.com/xzzai/halo-theme-xue/issues/www.superdevops.cn)
 
 [南国薏米](https://eelve.com/)
 
 [通往体面生活的路上](https://codeyee.com/)
 
 [pengzhenjin's blog](https://www.pengzhenjin.top/)
+
+[nEo.](https://neo00.top/)
+
+[一只从代码中寻找乐趣的猿](https://zwc365.com/)
+
+[千与千寻](https://blog.chihiro.org.cn/)
+
+[Symon's Blog](https://www.ssymon.com/)
 
 
 
