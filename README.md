@@ -11,18 +11,17 @@
 ## 说明
 
 - [开始](https://baozi.fun/2020/09/29/halo-blog-transfer)
-
+- [预览](#预览)
 - [示例站点](#示例站点)
-
 - [文档](https://baozi.fun/2020/10/05/theme-xue-showcase)
-
 - [主题特性](#特性)
-
 - [更新日志](#更新日志)
 
-## 示例站点
+## 预览
 
-[寒山志](https://baozi.fun)
+[Preview](https://halo.hshan.fun) | [我的博客](https://baozi.fun)
+
+## 示例站点
 
 [微服务驿站](https://github.com/xzzai/halo-theme-xue/issues/www.superdevops.cn)
 
