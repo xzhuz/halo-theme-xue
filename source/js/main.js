@@ -829,6 +829,9 @@ function gallery() {
     masonry: {
       gutter: 10,
     },
+    // layoutMode: 'masonry',
+    // sortBy: 'name',
+    // percentPosition: true,
     itemSelector: ".gallery-item",
   }
   $masonrys.find("img.lazyload").on('load', function () {

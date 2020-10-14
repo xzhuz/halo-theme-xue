@@ -37,7 +37,7 @@
                 </nav>
                 <div class="gallery masonry-gallery">
                     <@photoTag method="list">
-                        <#list photos as photo>
+                        <#list photos?sort_by('name')?reverse as photo>
                             <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}">
                                 <header class="gallery-icon">
                                     <a data-fancybox="gallery" href="javascript:void(0);">
@@ -46,12 +46,13 @@
                                 </header>
                                 <figcaption class="gallery-caption">
                                     <div class="entry-summary">
-                                        <h3>${photo.name}</h3>
+                                        <h3 >${photo.name}</h3>
                                         <#if photo.description?? && photo.description != "">
                                             <p>${photo.description!}</p>
                                         </#if>
                                     </div>
                                 </figcaption>
+                                <p class="name" style="display: none">${photo.name}</p>
                             </figure>
                         </#list>
                     </@photoTag>
