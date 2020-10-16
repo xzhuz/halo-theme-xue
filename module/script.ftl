@@ -37,6 +37,19 @@
   ${settings.common_js!''}
 
   const loading = "${theme_base!}/source/images/loading-45.svg";
+  var photoList = `${settings.card_random_cover_list!''}`;
+  var photos = []
+  if (photoList && photoList.trim() !== '') {
+    if(photoList.endsWith(';')) {
+      photoList = photoList.substring(0, photoList.length - 1);
+    }
+     photos = photoList.split(";");
+  }
+  // 默认收缩菜单
+  var hideMenu = false;
+  <#if settings.default_hide_menu!false> 
+      hideMenu = true;
+  </#if>
 
   var autoNightMode = false
   <#if settings.auto_night_mode!true>

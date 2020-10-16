@@ -1,14 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
     <main class="mx-auto home-page" id="container">
-        <#if settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-            <#assign x = "${settings.card_random_cover_list}"?trim />
-            <#assign thumbnails = x?trim?split(";") />
-            <#assign thumbnailSize = thumbnails?size />
-            <#if settings.card_random_cover_list?ends_with(";")>
-                <#assign thumbnailSize =thumbnailSize - 1 />
-            </#if>
-        </#if>
         <header class="bg-cover home-cover" id="homeHeader">
             <#if settings.home_cover?? && settings.home_cover!=''>
                 <div class="cover-bg">
@@ -33,12 +25,16 @@
             <#if settings.posts_style!true>
                 <#include "module/widget/post_cards.ftl">
             <#else>
-                <div class="popular-posts">
-                    <h3><i class="iconfont icon-hot list-brands"></i>热门文章</h3>
-                    <div class="posts grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4  lg:gap-4 md:gap-2 sm:gap-1">
-                        <#include "module/widget/popular_cards.ftl">
+                <#if settings.show_popular!true>
+                    <div class="popular-posts">
+                        <h3>
+                           <i class="iconfont icon-hot list-brands"></i>热门文章
+                        </h3>
+                        <div class="posts grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4  lg:gap-4 md:gap-2 sm:gap-1">
+                             <#include "module/widget/popular_cards.ftl">
+                        </div>
                     </div>
-                </div>
+                </#if>
                 <h3><i class="iconfont icon-new list-brands"></i>最新文章</h3>
                 <#include "module/widget/post_list.ftl">
             </#if>

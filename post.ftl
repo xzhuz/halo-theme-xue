@@ -8,14 +8,7 @@
                 </div>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                 <div class="cover-bg">
-                    <#assign x = "${settings.card_random_cover_list}"?trim />
-                    <#assign thumbnails = x?trim?split(";") />
-                    <#assign thumbnailSize = thumbnails?size />
-                    <#if settings.card_random_cover_list?ends_with(";")>
-                        <#assign thumbnailSize =thumbnailSize - 1 />
-                    </#if>
-                    <#assign thumbnailIndex = "${(.now?long / (post.id + 1)) % thumbnailSize}"/>
-                    <img src="${thumbnails[thumbnailIndex?number?abs]?trim}" class="z-auto"  alt="${post.title}"/>
+                    <img src="${theme_base!}/source/images/loading.svg" class="z-auto lazyload img-random"  alt="${post.title}"/>
                 </div>
             <#else>
                 <div class="placeholder-bg">

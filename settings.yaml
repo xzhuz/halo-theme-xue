@@ -25,6 +25,17 @@ genernal:
           label: 卡片
         - value: false
           label: 列表
+    show_popular:
+      name: show_popular
+      label: 列表风格下是否展示热门文章
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否
     card_hover_summary:
       name: card_hover_summary
       label: 卡片风格首页是否展示文章简介
@@ -91,6 +102,18 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
+    default_hide_menu:
+      name: default_hide_menu
+      label: 打开展示收缩菜单按钮
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: "打开后会默认收缩菜单"
     Icp:
       name: Icp
       label: "ICP 备案号"

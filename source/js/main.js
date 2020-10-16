@@ -54,6 +54,19 @@ function documentClickToc(target) {
   }
 }
 
+
+function getHashCode(str, caseSensitive) {
+  if (!caseSensitive) {
+    str = str.toLowerCase();
+  }
+  var hash = 1315423911, i, ch;
+  for (i = str.length - 1; i >= 0; i--) {
+    ch = str.charCodeAt(i);
+    hash ^= ((hash << 5) + ch + (hash >> 2));
+  }
+  return (hash & 0x7FFFFFFF);
+}
+
 /**
  * 处理目录
  */
@@ -84,10 +97,13 @@ function handleNavMenu() {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
-  document.addEventListener('scroll', handleScrollMenu, false);
+  if(hideMenu) {
+    document.addEventListener('scroll', handleScrollMenu, false);
+  }
 }
 
 function handleScrollMenu() {
+  
   if (getClientWidth() <= 800) {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
@@ -643,9 +659,15 @@ function lazyloadImg() {
   }
 
   function loadImg(el) {
-    const loaded = el['data-loaded']
+    const loaded = el.getAttribute('data-loaded')
     if (!loaded) {
-      el.src = el.dataset.src;
+      var index = el.getAttribute('index');
+      var imgIndex = !index ? new Date().getSeconds() : index;
+      if (el.classList.contains('img-random') && typeof photos !== 'undefined' && photos.length > 0) {
+        el.src = photos[imgIndex % photos.length];
+      } else {
+        el.src = el.dataset.src;
+      }
       el.setAttribute('data-loaded', true)
     }
   }

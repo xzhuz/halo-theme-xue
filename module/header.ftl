@@ -1,10 +1,10 @@
-<header class="nav-wrapper -sticky" id="navHeader">
-    <button class="collapse-nav" onClick="collapseNav()" id="collapseNav">
+<header class="nav-wrapper -sticky  <#if settings.default_hide_menu!true> <#else>nav-bg-fff</#if>" id="navHeader">
+    <button class="collapse-nav" onClick="collapseNav()" id="collapseNav" style="<#if settings.default_hide_menu!true> <#else>display:none</#if>">
         <div class="collapse-burger -squeeze">
             <span class="burger-lines"></span>
         </div>
     </button>
-    <nav class="nav opacity-0"  id="nav">
+    <nav class="nav <#if settings.default_hide_menu!true>opacity-0<#else> opacity-100  </#if> "  id="nav">    
         <button class="toggle-nav">
             <div class="burger -squeeze">
                 <span class="burger-lines"></span>

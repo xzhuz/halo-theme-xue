@@ -14,9 +14,8 @@
                                     <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${post.thumbnail}" alt="${post.title}"/>
                                 </a>
                             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                                <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
                                 <a href="${post.fullPath!}">
-                                    <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
+                                    <img class="lazyload img-random" src="${theme_base!}/source/images/loading.svg" data-src="" index="${post_index}" alt="${post.title}"/>
                                 </a>
                             </#if>
                         </div>

@@ -5,8 +5,8 @@
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <img width="300" height="200" src="${post.thumbnail}" alt="${post.title}"/>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    <#assign thumbnailIndex = "${(.now?long / (post_index + 1)) % thumbnailSize}"/>
-                    <img width="300" height="200" class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${thumbnails[thumbnailIndex?number?abs]?trim}" alt="${post.title}"/>
+                    
+                    <img width="300" height="200" class="lazyload img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title}"/>
             </#if>
         </a>
 
