@@ -28,18 +28,3 @@
 <#-- 目录 -->
 <div class="moon-content menu-bg" id="moonToc">
 </div>
-
-<#-- 搜索 -->
-<form method="get" action="/search">
-    <div class="hidden search-box" id="searchBox">
-        <div class="search-ipt ipt ipt-w">
-            <div class="ipt-ct ct-bg search-container" id="searchInput">
-                <label class="sh-lab">
-                    <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
-                    <i class="sh-icon iconfont icon-search"></i>
-                </label>
-                <a class="sh-exit iconfont icon-exit" onClick="toggleSearchBox()"></a>
-            </div>
-        </div>
-    </div>
-</form>

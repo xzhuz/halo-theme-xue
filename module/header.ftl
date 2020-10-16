@@ -32,6 +32,11 @@
                 <div class="overlay"></div>
             </div>
         </ul>
+        <#if !(settings.right_corner_circle!true)>
+            <div class="search">
+                <span class="iconfont icon-search " onclick="toggleSearchBox()"></span>
+            </div>
+        </#if>
         <#if settings.open_night_mode!true>
             <div class="day-switch" style="position: relative; right: 40px">
                 <div class="day-night-switch" role="button" onClick="dayNightSwitch()">

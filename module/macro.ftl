@@ -94,8 +94,8 @@
         <#--标签云-->
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
-<#--        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">-->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010141233">
+       <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202010161233">
         
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
@@ -103,17 +103,6 @@
         <#include "header.ftl">
         <#nested >
         <#include "footer.ftl">
-        <#if settings.right_corner_circle!true>
-            <#include "menu.ftl"/>
-        </#if>
-        <#if settings.Aplayer?? && settings.Aplayer != ''>
-            <meting-js
-                    server="netease"
-                    type="playlist"
-                    fixed="true"
-                    id="${settings.Aplayer}">
-            </meting-js>
-        </#if>
 
     </body>
     <#include "plugins.ftl"/>
