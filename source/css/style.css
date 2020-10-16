@@ -1412,6 +1412,9 @@ a {
 .op-06 {
   opacity: 0.63;
 }
+a.base-color {
+  color: var(--base-txt-color);
+}
 .lk-card-im {
   width: 240px;
   max-width: 300px;
