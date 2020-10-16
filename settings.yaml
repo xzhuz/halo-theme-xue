@@ -246,6 +246,8 @@ post:
           label: "kimbie"
         - value: "paraiso-light"
           label: "paraiso"
+        - value: "androidstudio"
+          label: "androidstudio"
 #    enabled_mermaid:
 #      name: enabled_mermaid
 #      label: Mermaid
