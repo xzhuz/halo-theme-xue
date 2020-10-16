@@ -628,9 +628,6 @@ a {
   padding: 0;
   border-bottom: 1px solid rgba(176, 176, 176, 0.5);
 }
-.nav-list > .list > .item:last-child {
-  border-bottom: 0;
-}
 .nav-list > .list > .item > .link,
 .nav-list > .list > .item > .void-link {
   border-color: transparent;
