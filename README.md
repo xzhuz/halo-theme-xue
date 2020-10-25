@@ -81,3 +81,6 @@
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
 
 > 对于前端 React 感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支
+
+## 我们一起交流吧
+![](https://i.loli.net/2020/10/25/Zc2yRkPTYXqFi35.jpg)
