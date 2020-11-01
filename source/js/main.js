@@ -312,7 +312,7 @@ function formatContent() {
   const renderer = new marked.Renderer();
 
   renderer.heading = function (text, level, raw, slugger) {
-    return `<h${level} id=${raw}>${text}</h${level}>`;
+    return `<h${level} id=${generateId()}>${text}</h${level}>`;
   };
 
   renderer.paragraph = function (text) {

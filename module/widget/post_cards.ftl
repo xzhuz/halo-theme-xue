@@ -18,8 +18,8 @@
                             <img class="lazyload img-cover img-200 img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title!}" />
                         </a>
                     <#else>
-                        <a data-ajax href="${post.fullPath!}" class="img-cover no-thumb">
-                            <span class="full-image placeholder-bg" role="img" aria-label=""></span>
+                        <a data-ajax href="${post.fullPath!}" class="img-cover img-200 no-thumb">
+                            <span class="full-image  placeholder-bg" role="img" aria-label=""></span>
                         </a>
                     </#if>
                 </header>

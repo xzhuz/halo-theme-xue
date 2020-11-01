@@ -1010,7 +1010,6 @@ a {
   text-shadow: none;
   font-size: 12px;
   color: #fff;
-  line-height: 15px;
   background-color: #abbac3;
   margin: 5px 0;
 }
@@ -1020,13 +1019,13 @@ a {
 .github-badge .badge-subject {
   display: inline-block;
   background-color: #4d4d4d;
-  padding: 8px 4px 4px 6px;
+  padding: 6px 4px 4px 6px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 .github-badge .badge-value {
   display: inline-block;
-  padding: 8px 4px 4px 6px;
+  padding: 6px 4px 4px 6px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   margin-left: -6px;
@@ -3125,7 +3124,7 @@ a.no-thumb {
   -o-object-fit: cover;
   object-fit: cover;
 }
-img.img-200 {
+.img-cover.img-200 {
   height: 200px;
 }
 @media only screen and (max-width: 640px) {
@@ -3345,6 +3344,9 @@ pre code {
   margin: 0;
   padding: 0;
   color: inherit;
+}
+.md-content p code {
+  word-break: break-word;
 }
 li .mathjax-block,
 li p {
