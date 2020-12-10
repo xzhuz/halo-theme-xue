@@ -96,7 +96,7 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202011011234">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202012102234">
         
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
