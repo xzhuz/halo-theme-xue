@@ -97,7 +97,10 @@
 
        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
         <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202012102234">
-        
+        <#-- IDEA代码风格 -->
+        <#if settings.idea_code_style!false>
+             <link rel="stylesheet" href="${theme_base!}/dist/idea.css?ver=202012102234">
+        </#if>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">

@@ -247,6 +247,17 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    idea_code_style:
+      name: idea_code_style
+      label: IDEA代码风格
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     code_style:
       name: code_style
       label: 代码风格
