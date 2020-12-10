@@ -4124,9 +4124,6 @@ span.toc-link-dot {
     background: var(--night-background);
   }
 }
-.katex-display > .katex {
-  display: inline-block !important;
-}
 .jqcloud-hg {
   width: 100%;
   height: 300px;

@@ -19,7 +19,7 @@
 
 ## 预览
 
-[Preview](https://halo.hshan.fun) | [我的博客](https://baozi.fun)
+[Preview](https://halo.hshan.fun) | [个人网站](https://baozi.fun)
 
 > 我的[个人网站](https://baozi.fun)由于存在自定义，会和当前主题会有不同
 
@@ -79,8 +79,6 @@
 请下载最新发布版本，也可以通过 git 仓库直接安装。
 
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
-
-> 对于前端 React 感兴趣的小伙伴，可以看看 [react-next](https://github.com/xzzai/halo-theme-xue/tree/react-next) 分支
 
 ## 我们一起交流吧
 <img src="https://i.loli.net/2020/10/25/Zc2yRkPTYXqFi35.jpg" width="200" height="200"/>
