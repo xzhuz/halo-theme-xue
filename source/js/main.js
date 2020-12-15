@@ -644,6 +644,7 @@ function renderMath() {
  */
 function lazyloadImg() {
   var imgs = document.querySelectorAll('img.lazyload');
+  var randomImgs = document.querySelectorAll('img.img-random');
 
   //用来判断bound.top<=clientHeight的函数，返回一个bool值
   function isIn(el) {
@@ -659,20 +660,32 @@ function lazyloadImg() {
         loadImg(el);
       }
     })
+
+     Array.from(randomImgs).forEach(function (el) {
+          if (isIn(el)) {
+            loadRandomImgs(el);
+          }
+        })
   }
 
   function loadImg(el) {
     const loaded = el.getAttribute('data-loaded')
     if (!loaded) {
-      var index = el.getAttribute('index');
-      var imgIndex = !index ? new Date().getSeconds() : index;
-      if (el.classList.contains('img-random') && typeof photos !== 'undefined' && photos.length > 0) {
-        el.src = photos[imgIndex % photos.length];
-      } else {
-        el.src = el.dataset.src;
-      }
+      el.src = el.dataset.src;
       el.setAttribute('data-loaded', true)
     }
+  }
+
+  function loadRandomImgs(el) {
+   const loaded = el.getAttribute('data-loaded')
+      if (!loaded) {
+        var index = el.getAttribute('index');
+        var imgIndex = !index ? new Date().getSeconds() : index;
+        if (el.classList.contains('img-random') && typeof photos !== 'undefined' && photos.length > 0) {
+          el.src = photos[imgIndex % photos.length];
+        }
+        el.setAttribute('data-loaded', true)
+      }
   }
 
   window.onload = window.onscroll = function () { //onscroll()在滚动条滚动的时候触发

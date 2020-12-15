@@ -38,12 +38,19 @@
 
   const loading = "${theme_base!}/source/images/loading-45.svg";
   var photoList = `${settings.card_random_cover_list!''}`;
-  var photos = []
+  var photos = new Array();
   if (photoList && photoList.trim() !== '') {
     if(photoList.endsWith(';')) {
       photoList = photoList.substring(0, photoList.length - 1);
     }
-     photos = photoList.split(";");
+    var photoArr = photoList.split(";");
+    // 过滤photos中的空字符
+    for(let i = 0; i < photoArr.length; i++) {
+        if (photoArr[i] && photoArr[i].trim().length > 0){
+             photos.push(photoArr[i].trim());
+        }
+
+    }
   }
   // 默认收缩菜单
   var hideMenu = false;
