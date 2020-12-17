@@ -59,6 +59,7 @@
 
   // 是否开启代码高亮
   let enableCodeHighlight = false;
+  let collpaseCode = false;
   <#if settings.enable_code_highlight!true>
     enableCodeHighlight = true;
   </#if>
@@ -66,6 +67,10 @@
   // 是否开启行号
   <#if settings.enable_code_lineNumber!false> 
     enableLineNumber = typeof lineNumbersBlock === 'function';
+  </#if>
+
+  <#if settings.collpaseCode!false>
+     collpaseCode = true
   </#if>
 
   function renderTagCloud() {

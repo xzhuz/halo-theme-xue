@@ -235,6 +235,17 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    collpaseCode:
+      name: collpaseCode
+      label: 是否开启代码折叠
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     more_lang_code:
       name: more_lang_code
       label: 更多代码高亮
