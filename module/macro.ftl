@@ -96,7 +96,7 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202012182202">
         <#if settings.list_show_date!true>
           <style type="text/css">
             .posts-list .post:hover .post-preview {
@@ -140,7 +140,7 @@
     </body>
     <#include "plugins.ftl"/>
 <#--      <script src="${theme_base!}/source/js/main.js?ver=${.now?long}"></script>-->
-    <script src="${theme_base!}/source/js/main.js?ver=202012172201"></script>
+    <script src="${theme_base!}/source/js/main.js?ver=202012182202"></script>
 
   <#include "script.ftl">
 

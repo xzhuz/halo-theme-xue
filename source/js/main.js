@@ -174,7 +174,7 @@ function loadCodeLineNumber() {
   if (collpaseCode) {
     $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
       $(block).parent().wrap('<details></details>');
-      $(block).parent().before('<summary>代码</summary>')
+      $(block).parent().before('<summary>code</summary>')
     });
   }
 
