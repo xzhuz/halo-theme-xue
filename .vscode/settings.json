@@ -1,0 +1,10 @@
+{
+    "filewatcher.commands": [
+        {
+            "match": "/*.less",
+            "isAsync": true,
+            "cmd": "cd ${workspaceRoot} && npm run build",
+            "event": "onFileChange"
+        }        
+    ]
+}

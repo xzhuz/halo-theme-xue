@@ -25,6 +25,17 @@ genernal:
           label: 卡片
         - value: false
           label: 列表
+    list_show_date:
+      name: list_show_date
+      label: 列表样式下的文章默认封面是否是日期
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否         
     show_popular:
       name: show_popular
       label: 列表风格下是否展示热门文章
@@ -55,22 +66,6 @@ genernal:
     enabled_index_cover_height:
       name: enabled_index_cover_height
       label: 首页全屏图片
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    card_random_cover_list:
-      name: card_random_cover_list
-      label: 随机封面图片列表，分号分割
-      type: textarea
-      description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"
-    open_night_mode:
-      name: open_night_mode
-      label: 开启夜晚模式
       type: radio
       data-type: bool
       default: true
@@ -114,6 +109,22 @@ genernal:
         - value: false
           label: 关闭
       description: "打开后会默认收缩菜单"
+    open_night_mode:
+      name: open_night_mode
+      label: 开启夜晚模式
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭         
+    card_random_cover_list:
+      name: card_random_cover_list
+      label: 随机封面图片列表，分号分割
+      type: textarea
+      description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"
     Icp:
       name: Icp
       label: "ICP 备案号"

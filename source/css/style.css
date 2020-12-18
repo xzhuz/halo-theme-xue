@@ -2680,7 +2680,6 @@ figure {
   height: 100%;
   top: 0;
   left: 0;
-  transform: translateY(-100%);
   transition: all 0.35s ease-in-out 0s;
 }
 .posts-list .post-preview img {
@@ -2801,12 +2800,6 @@ figure {
 }
 .posts-list .post-mobile-date {
   display: none;
-}
-.posts-list .post:hover .post-preview {
-  transform: translateY(0);
-}
-.posts-list .post:hover .post-date {
-  transform: translateY(100%);
 }
 .post .zhiding {
   font-size: 1.5rem;

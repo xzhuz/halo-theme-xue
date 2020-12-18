@@ -96,7 +96,36 @@
         <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css" rel="stylesheet">
 
        <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
-        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202012102234">
+        <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">
+        <#if settings.list_show_date!true>
+          <style type="text/css">
+            .posts-list .post:hover .post-preview {
+              transform: translateY(0);
+            }
+
+            .posts-list .post:hover .post-date {
+              transform: translateY(100%);
+            }
+
+            .posts-list .post-preview {
+              transform: translateY(-100%);
+            }
+          </style>
+          <#else>
+            <style type="text/css">
+            .posts-list .post:hover .post-preview {
+             transform: translateY(100%);
+            }
+
+            .posts-list .post:hover .post-date {
+               transform: translateY(0);
+            }
+
+            .posts-list .post-date {
+              transform: translateY(-100%);
+            }
+          </style>
+        </#if>
         <#-- IDEA代码风格 -->
         <#if settings.idea_code_style!false>
              <link rel="stylesheet" href="${theme_base!}/dist/idea.css?ver=202012102234">
