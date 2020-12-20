@@ -5,8 +5,7 @@
             <#if post.thumbnail?? && post.thumbnail!=''>
                 <img width="300" height="200" src="${post.thumbnail}" alt="${post.title}"/>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    
-                    <img width="300" height="200" class="lazyload img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title}"/>
+                <img width="300" height="200" class="img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title}"/>
             </#if>
         </a>
 

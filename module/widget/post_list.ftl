@@ -15,7 +15,7 @@
                                 </a>
                             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                                 <a href="${post.fullPath!}">
-                                    <img class="lazyload img-random" src="${theme_base!}/source/images/loading.svg" data-src="" index="${post_index}" alt="${post.title}"/>
+                                    <img class="img-random" src="${theme_base!}/source/images/loading.svg" data-src="" index="${post_index}" alt="${post.title}"/>
                                 </a>
                             </#if>
                         </div>

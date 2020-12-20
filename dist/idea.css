@@ -9,11 +9,6 @@ pre table.hljs-ln tr, pre  table.hljs-ln thead {
   color: #a9b7c6 !important;
 }
 
-p code, ol code, ul code, h1 code, h2 code,
-h3 code, h4 code, h5 code {
-  background: #fefac7 !important;
-}
-
 /* 修复黑暗模式颜色不对的问题 */
 .night.night pre {
   background-color: #22252a !important;
