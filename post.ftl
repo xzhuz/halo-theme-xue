@@ -8,7 +8,7 @@
                 </div>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                 <div class="cover-bg">
-                    <img src="${theme_base!}/source/images/loading.svg" class="z-auto lazyload img-random"  alt="${post.title}"/>
+                    <img src="${theme_base!}/source/images/loading.svg" class="z-auto img-random"  alt="${post.title}"/>
                 </div>
             <#else>
                 <div class="placeholder-bg">

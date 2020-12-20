@@ -15,7 +15,7 @@
                         </a>
                     <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                         <a href="${post.fullPath!}" class="img-cover-bg lazyload-link">
-                            <img class="lazyload img-cover img-200 img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title!}" />
+                            <img class="img-cover img-200 img-random" index="${post_index}" src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title!}" />
                         </a>
                     <#else>
                         <a data-ajax href="${post.fullPath!}" class="img-cover img-200 no-thumb">
