@@ -32,7 +32,7 @@
                             <header class="absolute mh-hd bg-fff af-bg-fff mh-bg "> ${archive.month!} 月</header>
                             <span class="">
                             <#list archive.posts?sort_by("createTime")?reverse as post>
-                                <a class="ah-hf ah-hv base-color" href="${post.fullPath!}">
+                                <a class="ah-hf ah-hv" href="${post.fullPath!}">
                                     <span class="ah-dt">${post.createTime?string('MM-dd')}</span>
                                     <span class="ah-tt">${post.title!}</span>
                                 </a>
