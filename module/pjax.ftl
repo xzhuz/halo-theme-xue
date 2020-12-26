@@ -47,6 +47,11 @@
           // 格式化markdown文章
           const format = formatContent();
 
+          // 目录相关
+          if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+            dealContentToc();
+          }
+
           if ($('#container').find('.md-content').length > 0 && format) {
             return;
           } else {
@@ -54,10 +59,7 @@
             lazyloadImg();
           }
 
-          // 小屏幕下面初始化 toc
-          if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-            dealContentToc()
-          }
+
         }
 
         // 相册页面功能
