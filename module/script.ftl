@@ -1,4 +1,3 @@
-
 <#if is_categories?? || is_tags ??>
     <#--标签云-->
     <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
@@ -18,9 +17,6 @@
 <#if settings.enabled_mathjax!true>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
             integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-            crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-            integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
             crossorigin="anonymous"></script>
 </#if>
 

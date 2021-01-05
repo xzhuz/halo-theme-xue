@@ -8,21 +8,20 @@
 <#if settings.enable_code_highlight!true>
     <#-- 代码高亮-->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+    <#--其他语言包-->
+    <#if settings.more_lang_code!false>
+        <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"></script>
+    </#if>
     <#if settings.enable_code_lineNumber!false> 
         <#--代码行数-->
         <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/linesNumber.js"></script>
     </#if>
-</#if>
-<#--其他语言包-->
-<#if settings.more_lang_code!false>
-    <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/highlight.lang.js"></script>
 </#if>
 
 <#--目录-->
 <#if settings.post_toc!true>
     <script src="https://cdn.jsdelivr.net/npm/tocbot@4.11.2/dist/tocbot.min.js"></script>
 </#if>
-
 
 <#if settings.enable_photo!false>
     <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
@@ -40,21 +39,10 @@
 
 <script src="https://cdn.jsdelivr.net/gh/hshanx/static@master/js/simply-nav.js"></script>
 
-
-
 <script type="text/javascript">
   let openKatex = false;
   <#if settings.enabled_mathjax!true>
-  const katex_config = {
-    delimiters:
-        [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false},
-          {left: "\\(", right: "\\)", display: false},
-          {left: "\\[", right: "\\]", display: true},
-        ]
-  };
-  openKatex = true;
+      openKatex = true;
   </#if>
 
   // 是否开启代码高亮

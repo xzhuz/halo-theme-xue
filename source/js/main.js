@@ -164,7 +164,7 @@ function removeScrollTocFixed() {
     document.removeEventListener('scroll', tocScroll, false);
 }
 
-function loadCodeLineNumber() {
+function highlightCode() {
     if (enableLineNumber) {
         $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
             lineNumbersBlock(block);
@@ -295,13 +295,55 @@ function getWangYiMusic(id) {
 
 const wangyi = /\[music:\s*\d+\s*\]/g;
 
-var bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g
+var bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g;
+
+var blockReg = /\${2}([\s\S]*?)\${2}/g;
+var inlineReg = /\$([\s\S]*?)\$/g;
+
+/**
+ * 格式化公式
+ */
+function formatMath(kateBlock, isBlock) {
+    // 这一步很重要，需要把 &amp; 换成 &
+    var block = kateBlock.replaceAll("&amp;", "&");
+    if (block.length < 4) {
+        return;
+    }
+    var len = isBlock ? 2 : 1;
+    block = block.substring(len, block.length - len);
+    var html = katex.renderToString(block, {
+        throwOnError: false,
+        leqno: true,
+        fleqn: true,
+    });
+    return isBlock ? `<div style="text-align: center; margin: 1rem auto;">${html}</div>` : html;
+}
+
+/**
+ * 处理公式
+ */
+function dealMathx(content) {
+    if (openKatex) {
+        var kateBlocks = content.match(blockReg);
+        if (kateBlocks && kateBlocks.length > 0) {
+            for (let i = 0; i < kateBlocks.length; i++) {
+                content = content.replace(kateBlocks[i], formatMath(kateBlocks[i], true));
+            }
+        }
+        var kateInlines = content.match(inlineReg);
+        if (kateInlines && kateInlines.length > 0) {
+            for (let i = 0; i < kateInlines.length; i++) {
+                content = content.replace(kateInlines[i], formatMath(kateInlines[i], false));
+            }
+        }
+    }
+    return content;
+}
 
 /**
  * 将文本转成 markdown
  */
 function formatContent() {
-
     var mdContent = document.getElementById("original");
     const persentContent = $("#write");
     if (!mdContent || !persentContent) {
@@ -309,12 +351,14 @@ function formatContent() {
     }
     // 获取原始html
     let originalContent = mdContent.innerHTML;
+
     if (typeof originalContent === "undefined") {
         return false;
     }
     // 反转义原始markdown文本
     originalContent = HTMLDecode(originalContent);
-
+    // 处理公式， 这是主要是因为 \\ 的原因
+    originalContent = dealMathx(originalContent);
     persentContent.empty();
     persentContent.addClass("loading");
 
@@ -348,7 +392,7 @@ function formatContent() {
                 }
             }
         }
-        return `<p>${text}</p>`
+        return `<p>${text}</p>`;
     };
 
     renderer.link = function (href, title, text) {
@@ -443,13 +487,13 @@ function formatContent() {
     mdContent.remove();
     mdContent = null;
     // 代码行号
-    loadCodeLineNumber();
+    highlightCode();
 
     // 相册
     loadGallery()
 
     // 数学公式
-    renderMath()
+    // renderMath()
 
     // 图片懒加载
     lazyloadImg()
