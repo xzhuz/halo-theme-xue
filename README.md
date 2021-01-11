@@ -25,7 +25,7 @@
 
 ## 示例站点
 
-[微服务驿站](https://github.com/xzzai/halo-theme-xue/issues/www.superdevops.cn)
+[微服务驿站](http://www.superdevops.cn)
 
 [南国薏米](https://eelve.com/)
 
@@ -40,6 +40,16 @@
 [千与千寻](https://blog.chihiro.org.cn/)
 
 [Symon's Blog](https://www.ssymon.com/)
+
+[听风知秋雨](http://www.keepli.cn/)
+
+[WAY👌 Blog](https://www.wayok.cn/)
+
+[TBlog](https://blog.tellbin.cn/)
+
+[一束光](https://lijiakai.cn/)
+
+[露](https://www.wo66.cc/)
 
 ## 特性
 
