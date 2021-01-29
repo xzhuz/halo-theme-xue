@@ -82,7 +82,7 @@
         }
       }
 
-      show_date_time();
+      setInterval("show_date_time()","1000");
     </script>
 </#if>
 
