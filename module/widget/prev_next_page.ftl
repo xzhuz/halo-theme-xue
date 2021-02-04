@@ -3,7 +3,7 @@
         <div class="nav previous">
             <#if prevPost??>
                 <#if prevPost.thumbnail?? && prevPost.thumbnail!=''>
-                    <img class="lazyloaded" src="${theme_base!}/source/images/loading.svg" data-src="${prevPost.thumbnail}" alt="${prevPost.title!}" />
+                    <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${prevPost.thumbnail}" alt="${prevPost.title!}" />
                 <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                     <img class="img-random lazyloaded" index="${.now?string['ss']?number - 1}" src="${theme_base!}/source/images/loading.svg"
                          alt="${prevPost.title!}"/>

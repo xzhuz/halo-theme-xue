@@ -306,7 +306,7 @@ var inlineReg = /\$([\s\S]*?)\$/g;
 function formatMath(kateBlock, isBlock) {
     // 这一步很重要，需要把 &amp; 换成 &
     var block = kateBlock.replaceAll("&amp;", "&");
-    if (block.length < 4) {
+    if (block.length < 3) {
         return;
     }
     var len = isBlock ? 2 : 1;
