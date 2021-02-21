@@ -31,7 +31,7 @@
                     </#if>
                 </@categoryTag>
             </p>
-            <h2 style="margin-bottom: 0;">分类云</h2>
+            <h2 style="margin-bottom: 0;">云</h2>
             <div id="categoryCloud" class="card-content jqcloud jqcloud-hg"></div>
         </div>
     </main>

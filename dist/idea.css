@@ -1,0 +1,34 @@
+/* 修改代码块颜色 */
+pre  {
+  background-color: #22252a !important;
+}
+
+pre table.hljs-ln tr, pre  table.hljs-ln thead {
+  background-color: #22252a !important;
+  font-size: 13px !important;
+  color: #a9b7c6 !important;
+}
+
+/* 修复黑暗模式颜色不对的问题 */
+.night.night pre {
+  background-color: #22252a !important;
+}
+.night.night table tr:nth-child(2n), .night thead {
+  background-color: #22252a !important;
+}
+
+.night.night .hljs-string {
+  color:  #6A8759 !important;
+}
+
+.night.night p code,
+.night.night ol code,
+.night.night ul code,
+.night.night h1 code,
+.night.night h2 code,
+.night.night h3 code,
+.night.night h4 code,
+.night.night h5 code
+{
+  background: #3d3c29 !important;
+}

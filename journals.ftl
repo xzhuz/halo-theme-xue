@@ -18,64 +18,47 @@
                 </div>
             </div>
         </header>
-        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
-            <div id="tree-hole">
-                <ol class="comment-list">
+        <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal
+                ct-container cn-pd content-container is-container" id="moreContainer">
+            <div id="ziyan-list">
+                <div style="position: relative">
                     <#list journals.content as journal>
-                        <li id="li-comment-611"
-                            class="tree-hole-body tree-hole-<#if (journal_index % 2)==0>odd<#else>even</#if>">
-                            <div id="comment-611">
-                                <img class="avatar" src="${user.avatar!}" alt="${user.nickname!}" width="40"
-                                     height="40">
-                                <div class="tree-hole-box">
-                                    <div class="tree-hole-author">
-                                        <a href="${blog_url!}"
-                                           rel="external nofollow">${user.nickname}</a> ${journal.createTime?string('yyyy年MM月dd日')}
-                                    </div>
-                                    <p style="overflow-x: auto;">${journal.content!}</p>
+                        <div class="ziyan" style="transform-origin: center top;">
+                            <div class="ziyan-content">
+                                <div class="ziyan-header">
+                                    <span class="ziyan-username">${user.nickname!}</span>
+                                    <span class="is-verified-badge"></span>
+                                    <span class="ziyan-text">·</span>
+                                    <span class="ziyan-date time-ago" time="${journal.createTime}"></span>
+                                </div>
+                                <div class="ziyan-body markdown-body md-content">
+                                    ${journal.content!}
+                                </div>
+                                <div class="ziyan-footer" style="display: none">
+                                    <a class="ziyan-icon ziyan-reaction  ">
+                                        <div class="is-icon-reaction-wrap">
+                                            <span class="iconfont icon-like"></span>
+                                        </div>
+                                        <span class="is-reaction-count">
+                                            ${journal.likes}
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
-                        </li>
+                        </div>
                     </#list>
-                </ol>
-                <#--                <div class="tree-hole-go">-->
-                <#--                    <span class="tree-hole-go-aircraft"><i class="fa fa-paper-plane fa-lg"></i></span><br>-->
-                <#--                </div>-->
-                <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-                    <#if journals.totalPages gt 1>
-                        <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
-                            <ul class="pagination-list flex flex-row ">
-                                <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
-                                    <a class="pagination-circle " href="${pagination.prevPageFullPath!}">
-                                        <#--            <#include "icon/arrow-left.ftl">-->
-                                        <span class="cst-icon icon-previous"> </span>
-                                    </a>
-                                </li>
-                                <#list pagination.rainbowPages as number>
-                                    <#if number.isCurrent>
-                                        <li>
-                                            <a class="pagination-circle is-current"
-                                               href="${number.fullPath!}">${number.page!}</a>
-                                        </li>
-                                    <#else>
-                                        <li>
-                                            <a class="pagination-circle" href="${number.fullPath!}">${number.page!}</a>
-                                        </li>
-                                    </#if>
-                                </#list>
-                                <#if pagination.hasNext>
-                                    <li class="pagination-next">
-                                        <a class="pagination-circle" href="${pagination.nextPageFullPath!}">
-                                            <#--            <#include "icon/arrow-right.ftl">-->
-                                            <span class="cst-icon icon-next"> </span>
-                                        </a>
-                                    </li>
-                                </#if>
-                            </ul>
-                        </@paginationTag>
-                    </#if>
-                </nav>
+                </div>
             </div>
+        </div>
+        <div class="container mx-auto px-4 content-container <#if !(settings.posts_style!true)>mx-850</#if>">
+            <nav class="pagination flex flex-row justify-center mt-8" role="navigation"
+                 aria-label="pagination">
+                <#if journals.totalPages gt 1>
+                    <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">
+                        <#include "module/widget/more.ftl">
+                    </@paginationTag>
+                </#if>
+            </nav>
         </div>
     </main>
 </@layout>

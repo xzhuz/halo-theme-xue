@@ -4,44 +4,44 @@
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.sina??>
                 <a href="${settings.sina!}" class="circle pad-10" target="_blank" rel="noopener">
-                    <span class="cst-icon icon-weibo"> </span>
+                    <span class="iconfont icon-weibo"> </span>
                 </a>
             </#if>
             <#if settings.qq??>
                 <a href="//wpa.qq.com/msgrd?v=3&uin=${settings.qq!}&site=qq&menu=yes" class="circle pad-10"
                    target="_blank" rel="noopener" title="QQ Chat">
-                    <span class="cst-icon icon-qq"> </span>
+                    <span class="iconfont icon-tencentqq"> </span>
                 </a>
             </#if>
             <#if settings.telegram??>
                 <a href="https://t.me/${settings.telegram!}" class="circle pad-10" target="_blank" rel="noopener"
                    title="Telegram Chat">
-                    <span class="cst-icon icon-telegram"> </span>
+                    <span class="iconfont icon-telegram"> </span>
                 </a>
             </#if>
             <#if settings.twitter??>
                 <a href="${settings.twitter!}" class="circle pad-10" target="_blank" rel="noopener" title="Twitter">
-                    <span class="cst-icon icon-twitter"> </span>
+                    <span class="iconfont icon-twitter"> </span>
                 </a>
             </#if>
             <#if settings.github??>
                 <a href="${settings.github!}" class="circle pad-10" target="_blank" rel="noopener" title="Github">
-                    <span class="cst-icon icon-github"> </span>
+                    <span class="iconfont icon-github"> </span>
                 </a>
             </#if>
             <#if settings.zhihu??>
                 <a href="${settings.zhihu!}" class="circle pad-10" target="_blank" rel="noopener" title="知乎">
-                    <span class="iconfont icon-zhihu"> </span>
+                    <span class="iconfont icon-zhihu-circle-fill"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
                 <a href="mailto:${settings.mail!}" class="circle pad-10" target="_blank" rel="noopener" title="邮箱">
-                    <span class="cst-icon icon-email"> </span>
+                    <span class="iconfont icon-email"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
                 <a href="${atom_url!}" class="circle pad-10" target="_blank" rel="noopener" title="RSS">
-                    <span class="cst-icon icon-feed"> </span>
+                    <span class="iconfont icon-rss"> </span>
                 </a>
             </#if>
         </div>
@@ -101,11 +101,29 @@
     </div>
 </footer>
 
+<#if settings.right_corner_circle!true>
+    <#include "menu.ftl"/>
+</#if>
 <#if settings.Aplayer?? && settings.Aplayer != ''>
     <meting-js
-            server="netease"
-            type="playlist"
-            fixed="true"
-            id="${settings.Aplayer}">
+        server="netease"
+        type="playlist"
+        fixed="true"
+        id="${settings.Aplayer}">
     </meting-js>
 </#if>
+
+<#-- 搜索 -->
+<form method="get" action="/search">
+    <div class="hidden search-box" id="searchBox">
+        <div class="search-ipt ipt ipt-w">
+            <div class="ipt-ct ct-bg search-container" id="searchInput">
+                <label class="sh-lab">
+                    <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
+                    <i class="sh-icon iconfont icon-search"></i>
+                </label>
+                <a class="sh-exit iconfont icon-exit" onClick="toggleSearchBox()"></a>
+            </div>
+        </div>
+    </div>
+</form>

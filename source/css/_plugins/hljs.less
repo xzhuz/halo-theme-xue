@@ -1,4 +1,3 @@
-
 .hljs {
   display: block;
   overflow-x: auto;
@@ -7,8 +6,26 @@
   background: #f8f8f8;
 }
 
-.hljs-ln td, .hljs-ln tr {
-  border:none !important;
+.hljs-ln td,
+.hljs-ln tr {
+  border: none !important;
+}
+
+// .hljs-ln tr {
+//   position: relative;
+// }
+
+// .hljs-ln td.hljs-ln-numbers {
+//   position: absolute;
+//   box-shadow: 8px 0px 10px 0px #f8f8f8;
+//   -moz-box-shadow: 8px 0px 10px 0px #f8f8f8;
+//   -webkit-box-shadow: 8px 0px 10px 0px #f8f8f8;
+//   -o-box-shadow: 8px 0px 10px 0px #f8f8f8;
+//   -ms-box-shadow: 8px 0px 10px 0px #f8f8f8;
+// }
+
+.hljs-ln:first-child(.hljs-ln-numbers) {
+  display: none;
 }
 
 /* for block of numbers */
@@ -22,7 +39,7 @@
 
   text-align: center;
   color: #ccc;
-  border-right: 1px solid #CCC;
+  border-right: 1px solid #ccc;
   vertical-align: top;
   padding-right: 5px;
 
@@ -43,4 +60,12 @@ td .hljs-button {
   border: none !important;
   background-color: #f8f8f8 !important;
   box-shadow: none !important;
+}
+
+.hljs-ln-n:before {
+  content: attr(data-line-number);
+}
+
+table.hljs-ln td {
+  padding: 2px 0 2px 4px !important;
 }

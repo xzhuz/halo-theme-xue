@@ -1,0 +1,139 @@
+
+.popular-middle > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.popular-thumb {
+  position: relative;
+}
+
+.popular-thumb > a {
+  position: relative;
+  display: block;
+  //width: 210px;
+  height: 146px;
+}
+
+.popular-thumb > a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  content: '';
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+.popular-thumb:hover .entry-content > a, .popular-thumb:hover .popular-content {
+  opacity: 1;
+}
+
+.popular-thumb img {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.popular-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .9);
+  text-align: center;
+  opacity: 0;
+  transition: all .4s ease-out;
+}
+
+.popular-middle:before {
+  display: inline-block;
+  height: 100%;
+  min-height: 100%;
+  content: '';
+  vertical-align: middle;
+}
+
+.popular-content .entry-content {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 20px 40px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.entry-title {
+  margin-bottom: 15px;
+  //text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.popular-content .entry-title {
+  overflow: hidden;
+  margin-bottom: 2px;
+  color: #666;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+
+.popular-meta {
+  color: #999;
+  font-size: 12px;
+}
+
+.entry-date {
+  margin-bottom: 27px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.popular-content .entry-content > a {
+  display: block;
+  margin: 8px auto 0;
+  width: 24px;
+  border-radius: 50%;
+  color: #151515;
+  line-height: 24px;
+  opacity: 0;
+  transition: background .4s ease-out, opacity .7s ease-out;
+}
+
+.popular-posts .icon-yuedu {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 640px) {
+
+  .popular-content .entry-content {
+    padding: 15px 30px;
+  }
+  .entry-date {
+    font-size: 12px;
+  }
+  .popular-thumb {
+    margin-top: 2%
+  }
+
+  .popular-thumb > a {
+    height: 116px;
+  }
+
+  .popular-thumb img {
+    width: 98%;
+  }
+}
+

@@ -30,9 +30,8 @@
 }
 
 a.toc-link {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 17px;
-  color: var(--header-link-color);
   display: inline-block;
   max-width: 230px;
   vertical-align: middle;
@@ -127,19 +126,19 @@ span.toc-link-dot {
 }
 
 .node-name--H3 {
-  padding-left: .5rem;
+  //padding-left: .5rem;
 }
 
 .node-name--H4 {
-  padding-left: .7rem;
+  //padding-left: .7rem;
 }
 
 .node-name--H5 {
-  padding-left: .9rem;
+  //padding-left: .9rem;
 }
 
 .node-name--H6 {
-  padding-left: 1.1rem;
+  //padding-left: 1.1rem;
 }
 
 .toc-link:hover {
@@ -147,14 +146,15 @@ span.toc-link-dot {
 }
 
 .is-active-link {
-  opacity: .7 !important;
+  color: var(--toc-active-color);
+  font-weight: 700;
 }
 
 .is-active-link span {
   background-color: var(--toc-bg-color) !important;
 }
 
-#write ol > li, #write ul > li {
+.md-content ol > li, .md-content ul > li {
   line-height: 1.625rem !important;
 }
 
@@ -171,8 +171,6 @@ span.toc-link-dot {
 .toc-right-fixed {
   position: absolute;
   bottom: 0;
-  //right: 200px;
-  //right: -290px;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
