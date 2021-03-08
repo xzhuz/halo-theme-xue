@@ -91,4 +91,4 @@
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
 
 ## 用爱发电
-<img src="https://baozi.fun/upload/2020/09/wechatpay-qrcode-f95d53a9531b463bb72297ca6a2db2ce.png" width="200" height="200"/>
+<img src="https://i.loli.net/2021/03/08/mx3uE2nl6iLohr1.png" width="200" height="200"/>
