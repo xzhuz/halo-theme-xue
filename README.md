@@ -90,5 +90,5 @@
 
 详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
 
-## 我们一起交流吧
-<img src="https://i.loli.net/2020/10/25/Zc2yRkPTYXqFi35.jpg" width="200" height="200"/>
+## 用爱发电
+<img src="https://baozi.fun/upload/2020/09/wechatpay-qrcode-f95d53a9531b463bb72297ca6a2db2ce.png" width="200" height="200"/>
