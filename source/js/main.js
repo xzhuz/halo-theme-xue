@@ -349,6 +349,10 @@ function formatContent() {
     if (!mdContent || !persentContent) {
         return;
     }
+
+    // 数学公式
+    renderMath();
+
     // 获取原始html
     let originalContent = mdContent.innerHTML;
 
@@ -358,7 +362,7 @@ function formatContent() {
     // 反转义原始markdown文本
     originalContent = HTMLDecode(originalContent);
     // 处理公式， 这是主要是因为 \\ 的原因
-    originalContent = dealMathx(originalContent);
+    // originalContent = dealMathx(originalContent);
     persentContent.empty();
     persentContent.addClass("loading");
 
@@ -490,13 +494,10 @@ function formatContent() {
     highlightCode();
 
     // 相册
-    loadGallery()
-
-    // 数学公式
-    // renderMath()
+    loadGallery();
 
     // 图片懒加载
-    lazyloadImg()
+    lazyloadImg();
     return true;
 }
 
@@ -681,14 +682,19 @@ function getMore(e) {
 /**
  * 渲染数学公式
  */
+const katex_config = {
+    leqno: true,
+    delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+    ]
+}
 function renderMath() {
     if (openKatex && renderMathInElement && typeof renderMathInElement
         !== 'undefined') {
-        if (document.getElementById('write')) {
-            renderMathInElement(document.getElementById('write'), katex_config)
-        } else if (document.getElementById('ziyan')) {
-            renderMathInElement(document.getElementById('ziyan'), katex_config)
-        }
+            renderMathInElement(document.body, katex_config);
     }
 }
 
