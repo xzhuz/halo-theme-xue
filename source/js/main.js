@@ -358,7 +358,7 @@ function formatContent() {
     // 反转义原始markdown文本
     originalContent = HTMLDecode(originalContent);
     // 处理公式， 这是主要是因为 \\ 的原因
-    originalContent = dealMathx(originalContent);
+    // originalContent = dealMathx(originalContent);
     persentContent.empty();
     persentContent.addClass("loading");
 
@@ -490,13 +490,13 @@ function formatContent() {
     highlightCode();
 
     // 相册
-    loadGallery()
+    loadGallery();
 
     // 数学公式
-    // renderMath()
+    renderMath();
 
     // 图片懒加载
-    lazyloadImg()
+    lazyloadImg();
     return true;
 }
 
@@ -681,13 +681,22 @@ function getMore(e) {
 /**
  * 渲染数学公式
  */
+ const katexConfig = {
+    leqno: true,
+    delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+    ]
+}
 function renderMath() {
     if (openKatex && renderMathInElement && typeof renderMathInElement
         !== 'undefined') {
         if (document.getElementById('write')) {
-            renderMathInElement(document.getElementById('write'), katex_config)
+            renderMathInElement(document.getElementById('write'), katexConfig);
         } else if (document.getElementById('ziyan')) {
-            renderMathInElement(document.getElementById('ziyan'), katex_config)
+            renderMathInElement(document.getElementById('ziyan'), katexConfig);
         }
     }
 }
