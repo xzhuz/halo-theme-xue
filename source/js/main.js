@@ -785,7 +785,7 @@ function timeAgo(time) {
     if (days < 1) {
         return days + ' 天前'
     } else {
-        return formatDate(time, 'yyyy/MM/dd hh:mm');
+        return formatDate(time, 'yyyy/MM/dd HH:mm');
     }
 }
 
