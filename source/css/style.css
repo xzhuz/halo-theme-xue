@@ -3408,7 +3408,7 @@ ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
 .md-content {
-  font-size: 1.1rem;
+  /*font-size: 1.1rem;*/
 }
 .md-content h1,
 .md-content h2,

@@ -58,6 +58,9 @@
           if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
             dealContentToc()
           }
+
+          // const heti = new Heti('.heti');
+          // heti.autoSpacing(); // 自动进行中西文混排美化和标点挤压
         }
 
         // 相册页面功能

@@ -8,7 +8,8 @@
                 </div>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
                 <div class="cover-bg">
-                    <img src="${theme_base!}/source/images/loading.svg" class="z-auto lazyload img-random"  alt="${post.title}"/>
+                    <img src="${theme_base!}/source/images/loading.svg" class="z-auto lazyload img-random"
+                         alt="${post.title}"/>
                 </div>
             <#else>
                 <div class="placeholder-bg">
@@ -50,11 +51,12 @@
                 </div>
             </div>
         </header>
-        <div class="article-content content-container" id="gallery-content">
+        <div class="article-content content-container" id="gallery-content" style="max-width: unset;">
 
-            <div id="original" style="display: none">${post.originalContent?replace("<", "&lt;")?replace(">", "&gt;")}</div>
-            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container loading"
-                 id="write" >
+            <div id="original"
+                 style="display: none">${post.originalContent?replace("<", "&lt;")?replace(">", "&gt;")}</div>
+            <div class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container loading heti"
+                 id="write">
             </div>
             <div id="tocFlag"></div>
             <#if settings.post_toc!true>
@@ -90,7 +92,7 @@
         <#if settings.post_nepre!true>
             <#include "module/widget/prev_next_page.ftl">
         </#if>
-        
+
         <div class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
             <#include "module/comment.ftl">
             <#if is_post??>
