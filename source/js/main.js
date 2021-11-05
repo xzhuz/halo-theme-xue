@@ -482,7 +482,7 @@ function formatContent() {
 
     persentContent.empty();
     persentContent.removeClass("loading");
-    persentContent.html(marked(originalContent.trim()));
+    persentContent.html(marked.parse(originalContent.trim()));
 
     mdContent.remove();
     mdContent = null;
