@@ -1,5 +1,5 @@
 <!-- markdown 插件 -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
 
 <!--图片预览插件-->
 <#if settings.enable_image_view!false>
