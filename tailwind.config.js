@@ -3,7 +3,7 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: ["./*.ftl","./module/*.ftl","./module/widget/*.ftl"],
+  purge: ["./*.ftl", "./module/*.ftl", "./module/widget/*.ftl"],
   theme: {
     extend: {},
   },

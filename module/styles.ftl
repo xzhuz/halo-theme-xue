@@ -87,11 +87,10 @@
 <link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
       rel="stylesheet">
 
-<#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 <#-- IDEA代码风格 -->
 <#if settings.idea_code_style!false>
-  <link rel="stylesheet" href="${theme_base!}/dist/idea.css?ver=${theme.version!}">
+  <link rel="stylesheet" href="${theme_base!}/src/styles/idea.css?ver=${theme.version!}">
 </#if>
 <#if settings.list_show_date!true>
   <style type="text/css">

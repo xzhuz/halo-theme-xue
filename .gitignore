@@ -1,7 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 node_modules/
 .idea
-package-lock.json
-yarn.lock
 .DS_store
 .DS_Store

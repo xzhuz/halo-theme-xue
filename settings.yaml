@@ -35,7 +35,7 @@ genernal:
         - value: true
           label: 是
         - value: false
-          label: 否         
+          label: 否
     show_popular:
       name: show_popular
       label: 列表风格下是否展示热门文章
@@ -119,7 +119,7 @@ genernal:
         - value: true
           label: 开启
         - value: false
-          label: 关闭         
+          label: 关闭
     card_random_cover_list:
       name: card_random_cover_list
       label: 随机封面图片列表，分号分割
