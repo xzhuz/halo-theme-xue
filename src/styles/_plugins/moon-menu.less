@@ -1,4 +1,4 @@
-.moon-menu,.moon-menu-bg,.moon-menu-content {
+.moon-menu, .moon-menu-bg, .moon-menu-content {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -27,18 +27,18 @@
   transform-origin: 50% 50%;
 }
 
-.moon-menu-icon{
+.moon-menu-icon {
   font-size: 2.5em;
   line-height: 1.6em;
   color: var(--color, #fff);
   text-align: center;
 }
 
-.moon-menu-icon i,.moon-menu-icon svg{
-  transition: all .15s cubic-bezier(0,0,.382,1.618);
+.moon-menu-icon i, .moon-menu-icon svg {
+  transition: all .15s cubic-bezier(0, 0, .382, 1.618);
 }
 
-.moon-menu-icon.active i,.moon-menu-icon.active svg {
+.moon-menu-icon.active i, .moon-menu-icon.active svg {
   transform: rotate(90deg)
 }
 
@@ -75,6 +75,7 @@
   --color: #fff;
   --moon-item-bg-color: #000;
 }
+
 @media (prefers-color-scheme: dark) {
   .moon-menu {
     --moon-cricle: #2b5278;
@@ -84,11 +85,11 @@
 }
 
 .moon-dot {
-  transform: translate3d(2rem,2rem,0);
+  transform: translate3d(2rem, 2rem, 0);
 }
 
 .moon-dot circle {
-  transition: all .15s cubic-bezier(0,0,.382,1.618);
+  transition: all .15s cubic-bezier(0, 0, .382, 1.618);
   fill: #fff;
 }
 
@@ -99,14 +100,14 @@
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 50%;
-  background-color: rgba(0,0,0,.8);
-  box-shadow: 0 2px 4px 1px rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 0, .8);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .2);
   font-size: 1.5rem;
   line-height: 2.8rem;
   opacity: 0;
   cursor: pointer;
-  transition: .4s cubic-bezier(0,0,.382,1.618);
-  transition-property: transform,opacity;
+  transition: .4s cubic-bezier(0, 0, .382, 1.618);
+  transition-property: transform, opacity;
 }
 
 .moon-menu-items span:before {
@@ -127,6 +128,7 @@
   bottom: 0;
   left: 0
 }
+
 .moon-menu-item:before {
   color: #fff;
 }
@@ -166,7 +168,7 @@
   width: 252px;
   z-index: 150;
   transition-duration: 378ms;
-  transform: translate3d(252px,0,0);
+  transform: translate3d(252px, 0, 0);
 }
 
 .menu-bg {
@@ -175,7 +177,7 @@
 
 .mm-active {
   transform: translate3d(0px, 0px, 0px) !important;
-  box-shadow: -2px 0 3px rgba(0,0,0,.1);
+  box-shadow: -2px 0 3px rgba(0, 0, 0, .1);
 }
 
 .moon-content {
