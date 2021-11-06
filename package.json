@@ -2,16 +2,9 @@
   "name": "halo-theme-hshan",
   "version": "1.0.0",
   "description": "> 原始主题见[Subtle Galaxy](https://github.com/GalaxySuze/gridea-theme-subtle-galaxy)，原设计自Ghost Subtle主题，感谢做出这么漂亮的主题， 在原主题上面新增日志页面和目录以及一些个性化配置",
-  "main": "index.js",
   "scripts": {
-    "build": "npm run build-clean && npm run build-less && npm run build-autoprefix && npm run build-cleancss",
-    "build-autoprefix": "postcss --use autoprefixer --map false --output source/css/style.css source/css/style.css",
-    "build-clean": "rimraf css",
-    "build-cleancss": "cleancss -o dist/style.min.css source/css/style.css",
-    "build-less": "lessc source/css/style.less source/css/style.css",
-    "deploy": "npm run build",
-    "start": "npm run build-less -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite build --watch",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -24,16 +17,13 @@
   },
   "homepage": "https://github.com/xzzai/halo-theme-hshan#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "clean-css-cli": "^4.3.0",
-    "less": "^3.11.1",
-    "postcss-cli": "^7.1.0",
-    "rimraf": "^3.0.2",
-    "uglify-js": "^3.8.0"
-  },
-  "dependencies": {
-    "bulma": "^0.9.0",
-    "micromodal": "^0.4.6",
-    "tailwindcss": "^1.4.6"
+    "@types/node": "^16.4.3",
+    "autoprefixer": "^10.3.1",
+    "less": "^4.1.2",
+    "postcss": "^8.3.6",
+    "rollup-plugin-watch": "^1.0.1",
+    "tailwindcss": "^2.2.7",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.4"
   }
 }

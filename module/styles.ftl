@@ -51,6 +51,7 @@
     filter: grayscale(100%);
     filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   }
+
   </#if>
 
   <#if settings.enabled_index_cover_height!true>
@@ -90,10 +91,10 @@
       rel="stylesheet">
 
 <#--  <link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=${.now?long}">  -->
-<link rel="stylesheet" href="${theme_base!}/dist/style.min.css?ver=202012182202">
+<link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 <#-- IDEA代码风格 -->
 <#if settings.idea_code_style!false>
-  <link rel="stylesheet" href="${theme_base!}/dist/idea.css?ver=202012102234">
+  <link rel="stylesheet" href="${theme_base!}/dist/idea.css?ver=${theme.version!}">
 </#if>
 <#if settings.list_show_date!true>
   <style type="text/css">
