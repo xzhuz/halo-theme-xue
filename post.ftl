@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${post.title!} | ${options.blog_title!} " keywords="${meta_keywords!}" description="${meta_description!}">
+<@layout title="${post.title!} | ${options.blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover" id="postHeader">
             <#if post.thumbnail?? && post.thumbnail!=''>

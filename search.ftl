@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${keyword!} - 搜索结果 - ${blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="搜索结果：${keyword!} - ${blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.search_patternimg?? && settings.search_patternimg!=''>

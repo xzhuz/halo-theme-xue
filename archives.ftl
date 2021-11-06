@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${settings.achieve_title!'归档'} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.achieve_title!'归档'} | ${options.blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.archives_patternimg?? && settings.archives_patternimg!=''>
@@ -24,10 +24,10 @@
                 <#assign year="">
                 <#list archives as archive>
                     <section class="arch-year">
-                         <#if archive.year?c != year>
+                        <#if archive.year?c != year>
                             <h1 class="year-title bg-fff relative">${archive.year?c}</h1>
                             <#assign year="${archive.year?c}">
-                         </#if>   
+                        </#if>
                         <div class="relative pl-12">
                             <header class="absolute mh-hd bg-fff af-bg-fff mh-bg "> ${archive.month!} 月</header>
                             <span class="">

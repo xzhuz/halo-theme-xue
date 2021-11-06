@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${category.name} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="分类：${category.name} | ${options.blog_title!} ">
     <main class="mx-auto" id="container">
         <#if settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
             <#assign x = "${settings.card_random_cover_list}"?trim />

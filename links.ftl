@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${settings.links_title!'友情链接'} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.links_title!'友情链接'} | ${options.blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.links_patternimg?? && settings.links_patternimg!=''>

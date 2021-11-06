@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${options.blog_title!}">
     <main class="mx-auto home-page" id="container">
         <header class="bg-cover home-cover" id="homeHeader">
             <#if settings.home_cover?? && settings.home_cover!=''>

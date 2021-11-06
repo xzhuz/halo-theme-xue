@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="相册 | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="相册 | ${options.blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.photos_patternimg?? && settings.photos_patternimg!=''>

@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${settings.categories_title! 'Categories'} | ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.categories_title! 'Categories'} | ${options.blog_title!}">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>

@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${settings.tags_title! '标签列表'} | ${options.blog_title!} " keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${settings.tags_title! '标签列表'} | ${options.blog_title!} ">
     <main class="mx-auto" id="container">
         <header class="bg-cover post-cover">
             <#if settings.tag_patternimg?? && settings.tag_patternimg!=''>
