@@ -64,9 +64,6 @@
   </#if>
 </style>
 
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@1.4.6/dist/tailwind.min.css">
-
 <#if settings.enable_image_view!false>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
