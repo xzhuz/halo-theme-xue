@@ -10,9 +10,15 @@
           </#if>
       </#if>
     <header class="bg-cover post-cover">
-        <#if settings.tag_patternimg?? && settings.tag_patternimg!=''>
+        <#assign tag_patternimg="${tag.thumbnail!}" />
+
+        <#if !(tag_patternimg?? && tag_patternimg!='')>
+            <#assign tag_patternimg="${settings.tag_patternimg}" />
+        </#if>
+        
+        <#if tag_patternimg?? && tag_patternimg!=''>
           <div class="cover-bg">
-            <img src="${settings.tag_patternimg!}" class="z-auto"
+            <img src="${tag_patternimg!}" class="z-auto"
                  alt="${tag.name}">
           </div>
         <#else>

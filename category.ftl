@@ -10,9 +10,15 @@
           </#if>
       </#if>
     <header class="bg-cover post-cover">
-        <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>
+        <#assign categories_patternimg="${category.thumbnail!}" />
+
+        <#if !(categories_patternimg?? && categories_patternimg!='')>
+            <#assign categories_patternimg="${settings.categories_patternimg}" />
+        </#if>
+
+        <#if categories_patternimg?? && categories_patternimg!=''>
           <div class="cover-bg">
-            <img src="${settings.categories_patternimg!}" class="z-auto"
+            <img src="${categories_patternimg!}" class="z-auto"
                  alt="${category.name}">
           </div>
         <#else>
