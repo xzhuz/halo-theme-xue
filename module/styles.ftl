@@ -65,27 +65,21 @@
 </style>
 
 <#if settings.enable_image_view!false>
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/viewerjs@1.5.0/dist/viewer.min.css">
+  <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
 </#if>
 <#if settings.enable_code_highlight!true>
   <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.2/styles/${settings.code_style!'tomorrow-night-bright'}.css">
+        href="${theme_base!}/source/highlight.js/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 </#if>
 <#if settings.enabled_mathjax!true>
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="${theme_base!}/source/css/katex.min.css">
 </#if>
 <#if settings.Aplayer?? && settings.Aplayer != ''>
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <link rel="stylesheet" href="${theme_base!}/source/css/APlayer.min.css">
 </#if>
 
 <#--标签云-->
-<link href="https://cdn.jsdelivr.net/gh/xzzai/static@master/css/jqcloud.min.css"
-      rel="stylesheet">
+<link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 <#-- IDEA代码风格 -->

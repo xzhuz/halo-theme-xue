@@ -1,6 +1,6 @@
 <#if is_categories?? || is_tags ??>
     <#--标签云-->
-    <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js"></script>
+    <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>
     <script type='text/javascript'>
       $(function () {
         renderTagCloud();
@@ -10,17 +10,13 @@
 </#if>
 
 <#if settings.Aplayer?? && settings.Aplayer != ''>
-    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script src="${theme_base!}/source/js/APlayer.min.js"></script>
+    <script src="${theme_base!}/source/js/Meting.min.js"></script>
 </#if>
 
 <#if settings.enabled_mathjax!true>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-                  integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-                  crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-                  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-                  crossorigin="anonymous"></script>
+    <script defer src="${theme_base!}/source/js/katex.min.js"></script>
+    <script defer src="${theme_base!}/source/js/auto-render.min.js"></script>
 </#if>
 
 

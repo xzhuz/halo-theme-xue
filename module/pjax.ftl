@@ -1,7 +1,7 @@
 <#if settings.pjax_enabled!false>
-  <script src="https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jquery.pjax.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+  <script src="${theme_base!}/source/js/jquery.pjax.js"></script>
+  <script src="${theme_base!}/source/js/nprogress.min.js"></script>
+  <link rel="stylesheet" href="${theme_base!}/source/css/nprogress.min.css">
   <script type="text/javascript">
     $(document).pjax(
       'a[href]:not([href^="#"]):not([data-not-pjax]):not([target^="_blank"]), form',
@@ -81,7 +81,7 @@
       if ($('#container').find('.jqcloud').length > 0) {
         if (typeof $.fn.jQCloud !== "function") {
           $.getScript(
-            "https://cdn.jsdelivr.net/gh/xzzai/static@master/js/jqcloud-1.0.4.min.js",
+            "${theme_base!}/source/js/jqcloud-1.0.4.min.js",
             function () {
               renderTagCloud();
               renderCategoryCloud();

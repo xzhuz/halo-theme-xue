@@ -10,7 +10,7 @@
         <@global.head />
         <title>${title}</title>
         <#include "styles.ftl">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="${theme_base!}/source/js/jquery.min.js"></script>
     </head>
     <body class="<#if settings.default_night_mode!false>night</#if>">
     <#include "header.ftl">
