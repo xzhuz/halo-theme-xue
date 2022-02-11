@@ -690,17 +690,19 @@ const katexConfig = {
     {left: "\\[", right: "\\]", display: true}
   ]
 }
-
-function renderMath() {
-  if (openKatex && renderMathInElement && typeof renderMathInElement
-    !== 'undefined') {
-    if (document.getElementById('write')) {
-      renderMathInElement(document.getElementById('write'), katexConfig);
-    } else if (document.getElementById('ziyan')) {
-      renderMathInElement(document.getElementById('ziyan'), katexConfig);
-    }
-  }
-}
+/**
+ * 渲染数学公式
+ */
+// function renderMath() {
+//   if (openKatex && renderMathInElement && typeof renderMathInElement
+//     !== 'undefined') {
+//     if (document.getElementById('write')) {
+//       renderMathInElement(document.getElementById('write'), katexConfig);
+//     } else if (document.getElementById('ziyan')) {
+//       renderMathInElement(document.getElementById('ziyan'), katexConfig);
+//     }
+//   }
+// }
 
 /**
  * 懒加载图片
@@ -961,18 +963,6 @@ $(function () {
 
   // 处理导航菜单
   handleNavMenu();
-
-  // 格式化markdown文章
-  const format = formatContent();
-
-  // 目录相关
-  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-    dealContentToc();
-  }
-
-  if ($('#container').find('.md-content').length > 0 && format) {
-    return;
-  }
 
   // 相册
   loadGallery();

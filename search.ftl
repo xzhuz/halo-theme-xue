@@ -48,7 +48,7 @@
                 <label class="sh-lab sh-br">
                   <input class="sh-ipt" maxlength="30" name="keyword" spellcheck="false"
                          placeholder="Search" autocomplete="off">
-                  <i class="sh-icon iconfont icon-search"></i>
+                  <span class="sh-icon iconfont icon-search"></span>
                 </label>
               </form>
               <!-- search end -->

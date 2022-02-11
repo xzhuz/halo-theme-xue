@@ -25,17 +25,6 @@ genernal:
           label: 卡片
         - value: false
           label: 列表
-    list_show_date:
-      name: list_show_date
-      label: 列表样式下的文章默认封面是否是日期
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 是
-        - value: false
-          label: 否
     show_popular:
       name: show_popular
       label: 列表风格下是否展示热门文章
@@ -213,17 +202,6 @@ post:
           label: 开启
         - value: false
           label: 关闭
-    enabled_mathjax:
-      name: enabled_mathjax
-      label: 是否展示公式
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     enable_code_highlight:
       name: enable_code_highlight
       label: 是否开启代码高亮
@@ -351,42 +329,12 @@ title:
 social:
   label: 社交网络
   items:
-    sina:
-      name: sina
-      label: 新浪微博
-      type: text
-      placeholder: "用于展示底部新浪微博社交信息"
-      description: "新浪微博主页链接"
-    telegram:
-      name: telegram
-      label: Telegram
-      type: text
-      placeholder: "用于展示底部 Telegram 社交信息"
-      description: "Telegram 用户名"
-    twitter:
-      name: twitter
-      label: Twitter
-      type: text
-      placeholder: "用于展示底部 Twitter 社交信息"
-      description: "Twitter 主页链接"
-    qq:
-      name: qq
-      label: 腾讯 QQ
-      type: text
-      placeholder: "用于展示底部 QQ 社交信息"
-      description: "QQ 号码"
     github:
       name: github
       label: Github
       type: text
       placeholder: "用于展示底部 Github 社交信息"
       description: "GitHub 主页链接"
-    zhihu:
-      name: zhihu
-      label: 知乎
-      type: text
-      placeholder: "用于展示底部知乎社交信息"
-      description: "知乎主页链接"
     mail:
       name: mail
       label: 邮箱
@@ -460,12 +408,6 @@ other:
           label: 开启
         - value: false
           label: 关闭
-    Aplayer:
-      name: Aplayer
-      label: Aplayer吸底播放器
-      type: text
-      placeholder: "网易云歌单id"
-      description: "网易云歌单id, 比如: 60198. "
     xiang_ying_xiong_zhi_jing:
       name: xiang_ying_xiong_zhi_jing
       label: 向英雄致敬, 愿精神长存

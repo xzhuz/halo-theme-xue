@@ -71,47 +71,14 @@
   <link rel="stylesheet"
         href="${theme_base!}/source/highlight.js/styles/${settings.code_style!'tomorrow-night-bright'}.css">
 </#if>
-<#if settings.enabled_mathjax!true>
-  <link rel="stylesheet" href="${theme_base!}/source/css/katex.min.css">
-</#if>
-<#if settings.Aplayer?? && settings.Aplayer != ''>
-  <link rel="stylesheet" href="${theme_base!}/source/css/APlayer.min.css">
-</#if>
 
 <#--标签云-->
 <link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
+<#--  中文排版 -->
+<link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 <#-- IDEA代码风格 -->
 <#if settings.idea_code_style!false>
   <link rel="stylesheet" href="${theme_base!}/src/styles/idea.css?ver=${theme.version!}">
-</#if>
-<#if settings.list_show_date!true>
-  <style type="text/css">
-    .posts-list .post:hover .post-preview {
-      transform: translateY(0);
-    }
-
-    .posts-list .post:hover .post-date {
-      transform: translateY(100%);
-    }
-
-    .posts-list .post-preview {
-      transform: translateY(-100%);
-    }
-  </style>
-<#else>
-  <style type="text/css">
-    .posts-list .post:hover .post-preview {
-      transform: translateY(100%);
-    }
-
-    .posts-list .post:hover .post-date {
-      transform: translateY(0);
-    }
-
-    .posts-list .post-date {
-      transform: translateY(-100%);
-    }
-  </style>
 </#if>

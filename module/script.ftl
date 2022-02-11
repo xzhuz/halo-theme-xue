@@ -9,15 +9,11 @@
     </script>
 </#if>
 
-<#if settings.Aplayer?? && settings.Aplayer != ''>
-    <script src="${theme_base!}/source/js/APlayer.min.js"></script>
-    <script src="${theme_base!}/source/js/Meting.min.js"></script>
-</#if>
-
-<#if settings.enabled_mathjax!true>
-    <script defer src="${theme_base!}/source/js/katex.min.js"></script>
-    <script defer src="${theme_base!}/source/js/auto-render.min.js"></script>
-</#if>
+<#--<script defer src="${theme_base!}/source/js/heti-addon.min.js"></script>-->
+<#--<script>-->
+<#--  const heti = new Heti('.heti');-->
+<#--  heti.autoSpacing(); // 自动进行中西文混排美化和标点挤压-->
+<#--</script>-->
 
 
 <script type="text/javascript">

@@ -43,20 +43,22 @@
       // 存在 markdown 页面的功能
       if ($("#container").find('.md-content').length > 0) {
         // 格式化内容
-        // 格式化markdown文章
-        const format = formatContent();
+        // // 格式化markdown文章
+        // const format = formatContent();
+        //
+        // // 目录相关
+        // if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
+        //   dealContentToc();
+        // }
 
-        // 目录相关
-        if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-          dealContentToc();
-        }
-
-        if ($('#container').find('.md-content').length > 0 && format) {
-          return;
-        } else {
-          loadGallery();
-          lazyloadImg();
-        }
+        // if ($('#container').find('.md-content').length > 0 && format) {
+        //   return;
+        // } else {
+        //   loadGallery();
+        //   lazyloadImg();
+        // }
+        loadGallery();
+        lazyloadImg();
       }
 
       // 相册页面功能
