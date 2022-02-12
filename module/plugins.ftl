@@ -12,18 +12,24 @@
   </#if>
   <script type="text/javascript">
     document.querySelectorAll('pre code').forEach((el) => {
+      // 在页面上显示这个代码块的语言
+      var cls = el.getAttribute('class');
+      if (cls !== undefined) {
+        var lang = cls.split(' ')[0];
+        if (lang !== undefined) {
+          el.setAttribute('data-language', lang.replace('language-', ''))
+        }
+      }
       hljs.highlightBlock(el);
     });
   </script>
-  <#if settings.enable_code_lineNumber!false>
-  <#--代码行数-->
-    <script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
-    <script type="text/javascript">
-      $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-        lineNumbersBlock(block);
-      });
-    </script>
-  </#if>
+<#--代码行数-->
+  <script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
+  <script type="text/javascript">
+    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
+      lineNumbersBlock(block);
+    });
+  </script>
 </#if>
 
 <#--目录-->
@@ -55,11 +61,7 @@
   <#if settings.enable_code_highlight!true>
   enableCodeHighlight = true;
   </#if>
-  let enableLineNumber = false;
-  // 是否开启行号
-  <#if settings.enable_code_lineNumber!false>
-  enableLineNumber = typeof lineNumbersBlock === 'function';
-  </#if>
+  let enableLineNumber = true;
 
   <#if settings.collpaseCode!false>
   collpaseCode = true

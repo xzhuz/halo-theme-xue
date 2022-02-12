@@ -1,5 +1,4 @@
-<#--  公共的js,必须写到这边,因为有配置项 -->
-<style type="text/css">
+<style>
   :root {
     --base-bg-color: #fff;
     --header-bg-color: #fff;
@@ -19,6 +18,8 @@
     --cd-hover-color: #E53A40;
     --btn-pri-bg-color: #E53A40;
     --base-txt-color: #363636;
+    --base-code-text-color: #a9b7c6;
+    --base-code-block-bg-color:#282c34;
 
 
     /*--btn-pri-bg-color: #ff5f5f;*/
@@ -35,7 +36,7 @@
     --night-input-backgrround: #2d2d2d;
     --night-code-txt-color: #c5c8c6;
     --night-code-color: #969896;
-    --night-code-bg-color: #2d2d2d;
+    --night-code-bg-color: #282c34;
     --night-code-hljs-string-color: #0857b3;
     --night-page-a-color: #fff;
     --monospace: "Lucida Console", Consolas, "Courier", monospace;
@@ -67,18 +68,13 @@
 <#if settings.enable_image_view!false>
   <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
 </#if>
-<#if settings.enable_code_highlight!true>
-  <link rel="stylesheet"
-        href="${theme_base!}/source/highlight.js/styles/${settings.code_style!'tomorrow-night-bright'}.css">
-</#if>
 
 <#--标签云-->
 <link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
 <#--  中文排版 -->
-<link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
+<#--<link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">-->
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
-<#-- IDEA代码风格 -->
-<#if settings.idea_code_style!false>
-  <link rel="stylesheet" href="${theme_base!}/src/styles/idea.css?ver=${theme.version!}">
-</#if>
+
+<#--代码风格-->
+<link rel="stylesheet" href="${theme_base!}/source/highlight.js/styles/atom-one-dark.css">

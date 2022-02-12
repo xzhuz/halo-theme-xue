@@ -95,8 +95,7 @@ table tr {
   padding: 0;
 }
 
-table tr:nth-child(2n),
-thead {
+table tr:nth-child(2n), thead {
   background-color: #f8f8f8;
 }
 
@@ -156,8 +155,7 @@ pre {
   padding: 0.75rem 1rem;
   line-height: 1.6;
   overflow-wrap: normal;
-  border: 1px solid;
-  border-color: inherit;
+  border: 1px solid inherit;
 }
 
 pre pre {
@@ -491,7 +489,7 @@ ol > li > ol > li > ol > li {
   text-decoration: none;
 
   &:hover {
-    color: var(--base-hover-color)!important;
+    color: var(--base-hover-color) !important;
     text-decoration: none;
     border-block-end: none;
     padding-block-end: 0;
@@ -499,16 +497,30 @@ ol > li > ol > li > ol > li {
 }
 
 .md-content pre {
-  padding: 10px;
-  font-size: 85%;
+  position: relative;
+  padding: 0;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  background: #21252b;
   border: 0;
   border-radius: 3px;
-  color: #777777;
-  //margin-top: 0 !important;
+  color: var(--base-code-text-color);
   margin: 1em auto;
   overflow: auto;
+  font-family: consolas, 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+}
+
+.md-content pre code.hljs table {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border: none;
+}
+
+.md-content pre code:before {
+  content: attr(data-language);
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  color: var(--base-code-text-color);;
 }
 
 .md-content p img {
@@ -518,27 +530,6 @@ ol > li > ol > li > ol > li {
 .md-content p img.lazyload {
   display: block;
   margin: 1rem auto;
-}
-
-
-.code-tooltip {
-  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
-  border-top: 1px solid #eef2f2;
-}
-
-.gist .gist-meta {
-  background: none !important;
-}
-
-.gist .gist-file {
-  border-color: #eee !important;
-  border-radius: 3px !important;
-}
-
-.gist .gist-data {
-  padding: 0.4em 0 !important;
-  border-color: #eee !important;
-  border-radius: 3px 3px 0 0 !important;
 }
 
 @media only screen and (max-width: 800px) {
