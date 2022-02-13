@@ -241,10 +241,13 @@ function initToc() {
     hasInnerContainers: false,
   });
 
-  $(".toc-link").each(function () {
+  $('a[class*="node-name--H"]').each(function () {
+    // var cls = $(this).getAttribute('class');
+    // console.log(cls)
     const linkContent = $(this).html();
-    $(this).html('<span class="toc-link-dot"></span>' + linkContent);
+    $(this).html(`<span class="toc-link-dot"></span>${linkContent}`);
   });
+
   // 设置目录right
   tocEleRight();
 }
@@ -983,13 +986,13 @@ $(function () {
 
   // 处理导航菜单
   handleNavMenu();
-  
+
   // 处理目录
   dealContentToc()
 
   // 高亮代码
   highLightCode()
-  
+
   // 设置代码行号
   setCodeLineNumber()
 

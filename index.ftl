@@ -12,8 +12,9 @@
       </#if>
       <div class="cover-content index flex justify-center">
         <!-- 封面内容 -->
-        <h2
-                class="cover-title text-left md:text-4xl lg:text-4xl xl:text-5xl">${settings.home_title!options.blog_title!}</h2>
+        <h2 class="cover-title text-left md:text-4xl lg:text-4xl xl:text-5xl">
+          ${settings.home_title!options.blog_title!}
+        </h2>
         <p class="slogan text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
           <a class="arrow-down" href="javascript:" onClick="scollTo()">
@@ -23,7 +24,7 @@
       </div>
     </header>
     <div class="container mx-auto px-4 content-container postList <#if !(settings.posts_style!true)>mx-850</#if>">
-      <h3><span class="iconfont icon-new list-brands"></span>最新文章</h3>
+      <h3 class="mt-4 mb-0"><span class="iconfont icon-new list-brands mr-2 text-base"></span>最新文章</h3>
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
       <#else>

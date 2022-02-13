@@ -32,10 +32,6 @@
     color: var(--night-txt-color) !important;
   }
 
-  .posts-list .post-time-img {
-    border: none !important;
-  }
-
   table tr:nth-child(2n),
   thead {
     background-color: var(--night-code-bg-color) !important;
@@ -91,6 +87,10 @@
   .is-active-link {
     opacity: 0.6 !important;
     color: var(--toc-active-color) !important;
+  }
+
+  a.toc-link {
+    color: var(--night-toc-bg-color);
   }
 
   .post-category {
@@ -158,6 +158,15 @@
 
   .header-nav li a {
     color: #fff;
+  }
+
+  .post-date {
+    color: var(--night-txt-color) !important;
+  }
+
+  .posts-list > li ~ li,
+  .posts-list > li {
+    border-top: 1px solid rgb(65 68 76 / 86%)!important;
   }
 
   .header.open {
