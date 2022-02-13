@@ -953,6 +953,26 @@ function gallery() {
   });
 }
 
+function highLightCode() {
+  document.querySelectorAll('pre code').forEach((el) => {
+    // 在页面上显示这个代码块的语言
+    var cls = el.getAttribute('class');
+    if (cls !== undefined && cls !== null) {
+      var langs = cls.split(' ');
+      if (langs !== undefined && langs !== null) {
+        el.setAttribute('data-language', langs[0].replace('language-', ''))
+      }
+    }
+    hljs.highlightBlock(el);
+  });
+}
+
+function setCodeLineNumber() {
+  $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
+    lineNumbersBlock(block);
+  });
+}
+
 $(function () {
   checkNightMode()
 
@@ -963,6 +983,15 @@ $(function () {
 
   // 处理导航菜单
   handleNavMenu();
+  
+  // 处理目录
+  dealContentToc()
+
+  // 高亮代码
+  highLightCode()
+  
+  // 设置代码行号
+  setCodeLineNumber()
 
   // 相册
   loadGallery();

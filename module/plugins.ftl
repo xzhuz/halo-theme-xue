@@ -2,39 +2,22 @@
 <#if settings.enable_image_view!false>
   <script src="${theme_base!}/source/js/viewer.min.js"></script>
 </#if>
-<#if settings.enable_code_highlight!true>
 <#-- 代码高亮-->
-  <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
+<script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
 
 <#--其他语言包-->
-  <#if settings.more_lang_code!false>
-    <script src="${theme_base!}/source/highlight.js/highlight.lang.js"></script>
-  </#if>
-  <script type="text/javascript">
-    document.querySelectorAll('pre code').forEach((el) => {
-      // 在页面上显示这个代码块的语言
-      var cls = el.getAttribute('class');
-      if (cls !== undefined) {
-        var lang = cls.split(' ')[0];
-        if (lang !== undefined) {
-          el.setAttribute('data-language', lang.replace('language-', ''))
-        }
-      }
-      hljs.highlightBlock(el);
-    });
-  </script>
-<#--代码行数-->
-  <script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
-  <script type="text/javascript">
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      lineNumbersBlock(block);
-    });
-  </script>
+<#if settings.more_lang_code!false>
+  <script src="${theme_base!}/source/highlight.js/highlight.lang.js"></script>
 </#if>
+<#--代码行数-->
+<script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
 
 <#--目录-->
 <#if settings.post_toc!true>
   <script src="${theme_base!}/source/js/tocbot.min.js"></script>
+  <script type="text/javascript">
+    
+  </script>
 </#if>
 
 <#if settings.enable_photo!false>

@@ -202,41 +202,6 @@ post:
           label: 开启
         - value: false
           label: 关闭
-    code_style:
-      name: code_style
-      label: 代码风格
-      type: select
-      data-type: string
-      default: "tomorrow-night-bright"
-      description: "代码风格"
-      options:
-        - value: "tomorrow-night-bright"
-          label: "tomorrow"
-        - value: "atelier-lakeside-light"
-          label: "atelier"
-        - value: "atom-one-light"
-          label: "atom"
-        - value: "github"
-          label: "github"
-        - value: "github-gist"
-          label: "github-gist"
-        - value: "kimbie.light"
-          label: "kimbie"
-        - value: "paraiso-light"
-          label: "paraiso"
-        - value: "androidstudio"
-          label: "androidstudio"
-#    enabled_mermaid:
-#      name: enabled_mermaid
-#      label: Mermaid
-#      type: radio
-#      data-type: bool
-#      default: false
-#      options:
-#        - value: true
-#          label: 开启
-#        - value: false
-#          label: 关闭
 title:
   label: 自定义页面标题
   items:

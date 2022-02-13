@@ -5,7 +5,7 @@
     --link-color: #52616a;
     --header-text-color: #252c41;
     --header-link-color: #252c41;
-    --toc-active-color: #dddfe6;
+    --toc-active-color: #f1404b;
     --base-hover-color: #f1404b;
     --base-hl-color: #f1404b;
     --page-text-color: #fff;
@@ -72,7 +72,7 @@
 <#--标签云-->
 <link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
 <#--  中文排版 -->
-<#--<link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">-->
+<link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 
