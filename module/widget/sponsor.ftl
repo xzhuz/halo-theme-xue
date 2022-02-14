@@ -3,11 +3,11 @@
         <div class="icon">
             <#if settings.QR_code_zfb??>
                 <a href="javascript:;" id="alipay" onClick="toggleAliPay()"><i
-                            class="iconfont icon-alipay"></i></a>
+                            class="iconfont icon-yooxi"></i></a>
             </#if>
             <#if settings.QR_code_wx??>
                 <a href="javascript:;" id="wechat" onClick="toggleWeChat()"><i
-                            class="iconfont icon-wechatpay"></i></a>
+                            class="iconfont icon-wechat"></i></a>
             </#if>
         </div>
         <#if settings.QR_code_zfb??>
