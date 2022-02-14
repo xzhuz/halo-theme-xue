@@ -23,7 +23,7 @@
         </#if>
       </div>
     </header>
-    <div class="mx-auto px-10 content-container postList <#if !(settings.posts_style!true)>mx-850</#if>">
+    <div class="mx-auto px-10 content-container postList mx-850">
       <h3 class="mt-4 mb-0"><span class="iconfont icon-new list-brands mr-2 text-base"></span>最新文章</h3>
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
