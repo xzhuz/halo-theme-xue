@@ -1,23 +1,23 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} | ${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header class="bg-cover post-cover" id="postHeader">
+    <header class="bg-cover post-cover table relative w-full opacity-95" id="postHeader">
         <#if post.thumbnail?? && post.thumbnail!=''>
-          <div class="cover-bg">
+          <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
             <img src="${post.thumbnail!}" class="z-auto" alt="${post.title!}">
           </div>
         <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-          <div class="cover-bg">
+          <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
             <img src="${theme_base!}/source/images/loading.svg" class="z-auto img-random" alt="${post.title}"/>
           </div>
         <#else>
           <div class="placeholder-bg">
           </div>
         </#if>
-      <div class="cover-content post-cover-content flex justify-center">
+      <div class="cover-content table-cell post-cover-content relative w-full index flex justify-center">
         <!-- 封面内容 -->
-        <div class="inner flex flex-col justify-center">
-          <p class="post-title cover-title text-base lg:text-4xl xl:text-5xl md:text-3xl">${post.title!}</p>
+        <div class="inner flex flex-col justify-center pt-40 pb-40">
+          <p class="post-title cover-title text-white mb-5 mt-4 leading-loose relative w-full text-left text-4xl">${post.title!}</p>
           <div class="post-meta">
             <div class="post-meta-wrap">
               <img class="author-avatar"
@@ -51,7 +51,7 @@
       </div>
     </header>
     <div class="article-content content-container">
-      <div id="gallery-content" class="container mx-auto px-4 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container heti">
+      <div id="gallery-content" class="mx-auto px-10 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container heti">
         ${post.formatContent!}
       </div>
       <div id="tocFlag"></div>
@@ -61,7 +61,7 @@
     </div>
 
     <div
-      class="container mx-auto px-4 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal  cn-pd ct-container coffee-tags">
+      class="mx-auto px-10 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container coffee-tags">
       <blockquote class="post-copyright">
         <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"
                                     target="_blank"
@@ -73,7 +73,7 @@
 
 
     <div
-      class="container mx-auto px-4 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd coffee-tags ct-container">
+      class="mx-auto px-10 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal coffee-tags ct-container">
       <p class="flex flex-row justify-start flex-wrap">
           <#if post.tags?? && post.tags?size gt 0>
               <#list post.tags as tag>
@@ -92,7 +92,7 @@
       </#if>
 
     <div
-      class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container">
         <#include "module/comment.ftl">
         <@comment post,"post" />
     </div>

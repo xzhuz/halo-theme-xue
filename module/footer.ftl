@@ -1,19 +1,19 @@
 <footer class="footer mt-8">
-    <div class="inner container mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
+    <div class="inner px-10 mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
         <#-- 社交信息 begin -->
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.github??>
-                <a href="${settings.github!}" class="circle pad-10" target="_blank" rel="noopener" title="Github">
+                <a href="${settings.github!}" class="circle p-4" target="_blank" rel="noopener" title="Github">
                     <span class="iconfont icon-github"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
-                <a href="mailto:${settings.mail!}" class="circle pad-10" target="_blank" rel="noopener" title="邮箱">
+                <a href="mailto:${settings.mail!}" class="circle p-4" target="_blank" rel="noopener" title="邮箱">
                     <span class="iconfont icon-youxiang"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
-                <a href="${atom_url!}" class="circle pad-10" target="_blank" rel="noopener" title="RSS">
+                <a href="${atom_url!}" class="circle p-4" target="_blank" rel="noopener" title="RSS">
                     <span class="iconfont icon-rss"> </span>
                 </a>
             </#if>

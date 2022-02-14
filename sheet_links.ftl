@@ -1,9 +1,9 @@
 <#include "module/macro.ftl">
 <@layout title="${sheet.title!'友情链接'} | ${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header class="bg-cover post-cover">
+    <header class="bg-cover post-cover table relative w-full opacity-95">
         <#if settings.links_placeholder?? && settings.links_placeholder!=''>
-          <div class="cover-bg">
+          <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
             <img src="${settings.links_placeholder!}" class="z-auto"
                  alt="${sheet.title!'友情链接'}">
           </div>
@@ -11,15 +11,15 @@
           <div class="placeholder-bg">
           </div>
         </#if>
-      <div class="cover-content flex justify-center">
+      <div class="cover-content table-cell relative w-full index flex justify-center">
         <!-- 封面内容 -->
-        <div class="inner flex flex-col justify-center">
-          <p class="cover-title text-base md:text-4xl lg:text-4xl xl:text-5xl">${sheet.title!'友情链接'}</p>
+        <div class="inner flex flex-col justify-center pt-40 pb-40">
+          <p class="cover-title text-white mb-5 mt-4 leading-loose relative w-full text-left text-4xl">${sheet.title!'友情链接'}</p>
         </div>
       </div>
     </header>
     <div
-      class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
+      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
         <@linkTag method="listTeams">
             <#list teams as item>
                 <#if item.team?? && item.team!=''>
@@ -60,7 +60,7 @@
     </div>
 
     <div
-      class="container mx-auto px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
         <#include "module/comment.ftl">
         <@comment sheet,"sheet" />
     </div>

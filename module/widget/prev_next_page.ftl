@@ -1,4 +1,4 @@
-<div class="container mx-auto mt-4 pb-8  ct-container">
+<div class="mx-auto px-10 mt-4 pb-8  ct-container">
     <div class="entry-navigation">
         <div class="nav previous">
             <#if prevPost??>
