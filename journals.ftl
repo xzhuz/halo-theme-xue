@@ -23,27 +23,25 @@
       <div id="ziyan-list">
         <div style="position: relative">
             <#list journals.content as journal>
-              <div class="ziyan" style="transform-origin: center top;">
-                <div class="ziyan-content">
-                  <div class="ziyan-header">
-                    <span class="ziyan-username">${user.nickname!}</span>
-                    <span class="is-verified-badge"></span>
-                    <span class="ziyan-text">·</span>
-                    <span class="ziyan-date time-ago" time=${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}></span>
+              <div class="ziyan relative flex py-2.5 px-0" style="transform-origin: center top;">
+                <div class="ziyan-content cursor-pointer">
+                  <div class="ziyan-header text-base relative mb-2">
+                    <span class="ziyan-username font-semibold text-lg no-underline">${user.nickname!}</span>
+<#--                    <span class="is-verified-badge ml-2 inline-block"></span>-->
+                    <span class="ziyan-text font-semibold my-auto mx-1.5">·</span>
+                    <span class="ziyan-date time-ago text-gray-400" time=${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}></span>
                   </div>
-                  <div class="ziyan-body markdown-body md-content">
+                  <div class="ziyan-body markdown-body text-lg md-content tracking-widest">
                       ${journal.content!}
                   </div>
-                  <div class="ziyan-footer" style="display: none">
-                    <a class="ziyan-icon ziyan-reaction  ">
-                      <div class="is-icon-reaction-wrap">
-                        <span class="iconfont icon-like"></span>
-                      </div>
-                      <span class="is-reaction-count">
-                                            ${journal.likes}
-                                        </span>
-                    </a>
-                  </div>
+<#--                  <div class="ziyan-footer" style="display: none">-->
+<#--                    <a class="ziyan-icon ziyan-reaction  ">-->
+<#--                      <div class="is-icon-reaction-wrap">-->
+<#--                        <span class="iconfont icon-like"></span>-->
+<#--                      </div>-->
+<#--                      <span class="is-reaction-count">${journal.likes} </span>-->
+<#--                    </a>-->
+<#--                  </div>-->
                 </div>
               </div>
             </#list>
