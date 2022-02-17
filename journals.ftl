@@ -24,24 +24,33 @@
         <div style="position: relative">
             <#list journals.content as journal>
               <div class="ziyan relative flex py-2.5 px-0" style="transform-origin: center top;">
-                <div class="ziyan-content cursor-pointer">
+                <div class="ziyan-content">
                   <div class="ziyan-header text-base relative mb-2">
                     <span class="ziyan-username font-semibold text-lg no-underline">${user.nickname!}</span>
-<#--                    <span class="is-verified-badge ml-2 inline-block"></span>-->
                     <span class="ziyan-text font-semibold my-auto mx-1.5">·</span>
                     <span class="ziyan-date time-ago text-gray-400" time=${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}></span>
                   </div>
                   <div class="ziyan-body markdown-body text-lg md-content tracking-widest">
                       ${journal.content!}
                   </div>
-<#--                  <div class="ziyan-footer" style="display: none">-->
-<#--                    <a class="ziyan-icon ziyan-reaction  ">-->
-<#--                      <div class="is-icon-reaction-wrap">-->
-<#--                        <span class="iconfont icon-like"></span>-->
+                  <div class="ziyan-footer relative select-none text-base float-right">
+                    <a class="ziyan-icon mr-4 no-underline border-none outline-none">
+                      <div class="is-icon-reaction-wrap relative ">
+                        <span class="iconfont icon-round_like_fill cursor-pointer text-lg" onclick="likeJournal(this);" 
+                              data-path="${blog_url!}/api/content/journals/${journal.id}/likes">
+                        </span>
+                        <span class="is-reaction-count cursor-text text-lg">${journal.likes}</span>
+                      </div>
+                    </a>
+<#--                    <a class="ziyan-icon mr-4 no-underline border-none outline-none">-->
+<#--                      <div class="is-icon-reaction-wrap relative">-->
+<#--                        <span class="iconfont icon-comment cursor-pointer text-lg" onclick="commentJournal(this);"-->
+<#--                              data-path="${blog_url!}/api/content/journals/${journal.id}/likes">-->
+<#--                        </span>-->
+<#--                        <span class="is-reaction-count cursor-text text-lg">${journal.commentCount}</span>-->
 <#--                      </div>-->
-<#--                      <span class="is-reaction-count">${journal.likes} </span>-->
 <#--                    </a>-->
-<#--                  </div>-->
+                  </div>
                 </div>
               </div>
             </#list>

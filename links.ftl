@@ -19,13 +19,13 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container">
+      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal mx-850 cn-pd content-container">
         <@linkTag method="listTeams">
             <#list teams as item>
                 <#if item.team?? && item.team!=''>
                   <h2 class="w-full m-4 text-3xl">${item.team}</h2>
                 </#if>
-              <div class="flex flex-row flex-wrap grid lg:grid-cols-3 md:grid-cols-2">
+              <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2">
                   <#list item.links?sort_by('priority')?reverse  as link>
                     <a class="lk-card-im card-item-vel block" href="${link.url}" target="_blank"
                        onfocus="this.blur();">

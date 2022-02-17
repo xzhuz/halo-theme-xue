@@ -13,6 +13,8 @@
 
     $(document).on('pjax:complete', function () {
       NProgress.done();
+      
+      clickToZoomImg();
 
       // 检查夜间模式
       checkNightMode()
@@ -54,13 +56,12 @@
           dealContentToc();
         }
 
-        loadGallery();
-        lazyloadImg();
+        // lazyloadImg();
       }
 
       // 相册页面功能
       if ($("#container").find('.photos-page').length > 0) {
-        loadGallery();
+        gallery()
       }
 
       // 图片懒加载

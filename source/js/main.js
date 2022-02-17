@@ -136,20 +136,6 @@ function collapseNav() {
   }
 }
 
-// 图片
-function loadGallery() {
-  if (
-    typeof Viewer !== "undefined" &&
-    document.getElementById("gallery-content")
-  ) {
-    new Viewer(document.getElementById("gallery-content"), {
-      toolbar: true
-    });
-  }
-
-  gallery()
-}
-
 /********************************
  *
  *  文章页面相关
@@ -493,13 +479,13 @@ function formatContent() {
   highlightCode();
 
   // 相册
-  loadGallery();
+  gallery()
 
   // 数学公式
   renderMath();
 
   // 图片懒加载
-  lazyloadImg();
+  // lazyloadImg();
   return true;
 }
 
@@ -644,6 +630,33 @@ function getData(e) {
       $(pageContainer).addClass("loading");
     },
   });
+}
+
+function likeJournal(e) {
+  if ($(e).hasClass('liked')) {
+    return;
+  }
+  const path = $(e).data('path')
+  $.ajax({
+    type: "post",
+    url: path,
+    data: "{}",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (data) {
+      $(e).addClass('liked')
+      $(e).removeAttr('onclick');
+      var count =  $(e).siblings('.is-reaction-count')
+      var likeCount = parseInt(count.html())
+      $(e).siblings('.is-reaction-count').html(likeCount + 1);
+    },
+    error: function (msg) {
+    }
+  })
+}
+
+function commentJournal(e) {
+  
 }
 
 /**
@@ -976,7 +989,33 @@ function setCodeLineNumber() {
   });
 }
 
+
+function toBigImg() {
+  $(".opacityBottom").addClass("opacityBottom");//添加遮罩层
+  $(".opacityBottom").show();
+  $("html,body").addClass("none-scroll");//下层不可滑动
+  $(".bigImg").addClass("bigImg");//添加图片样式
+  $(".opacityBottom").click(function () {//点击关闭
+    $("html,body").removeClass("none-scroll");
+    $(".opacityBottom").remove();
+  });
+}
+
+function clickToZoomImg() {
+  $('img').click(function () {
+    //获取图片路径
+    var imgsrc = $(this).attr("src");
+    var opacityBottom = '<div class="opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>';
+    $(document.body).append(opacityBottom);
+    toBigImg();//变大函数
+  });
+}
+
 $(function () {
+  // 点击方法图片
+  clickToZoomImg();
+
+  // 检查黑夜模式
   checkNightMode()
 
   // 自动切换夜间模式
@@ -997,7 +1036,8 @@ $(function () {
   setCodeLineNumber()
 
   // 相册
-  loadGallery();
+  gallery()
+
   // 图片懒加载
   lazyloadImg();
 

@@ -15,13 +15,13 @@
   transition: all .25s ease .2s, -webkit-transform .5s cubic-bezier(.6, .2, .1, 1) .2s;
   transition: all .25s ease .2s, transform .5s cubic-bezier(.6, .2, .1, 1) .2s;
   transition: all .25s ease .2s, transform .5s cubic-bezier(.6, .2, .1, 1) .2s, -webkit-transform .5s cubic-bezier(.6, .2, .1, 1) .2s;
+
+  &:hover {
+    box-shadow: 0 1em 4em 0.5em #d7d7d7;
+  }
+
 }
 
-.is-container .ziyan-content:hover {
-  box-shadow: 0 1em 4em 0.5em #d7d7d7;
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px);
-}
 
 .is-container .ziyan-username {
   color: var(--text-color);
@@ -85,6 +85,40 @@
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+
+.is-container .is-icon-comment-wrap, .is-container .is-icon-reaction-wrap {
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  border: none;
+  outline: none;
+  padding: 2px;
+
+  .icon-round_like_fill {
+
+    &.liked {
+      color: var(--base-hover-color)
+    }
+  }
+
+}
+
+.is-container .is-icon-reaction-wrap {
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.is-container .ziyan-icon * {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.is-container .is-comment-count, .is-container .is-reaction-count {
+  font-weight: 500;
+  display: inline-block;
 }
 
 .sbtn {

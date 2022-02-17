@@ -1,7 +1,3 @@
-<!--图片预览插件-->
-<#if settings.enable_image_view!false>
-  <script src="${theme_base!}/source/js/viewer.min.js"></script>
-</#if>
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
 

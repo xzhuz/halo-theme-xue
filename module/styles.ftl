@@ -65,10 +65,6 @@
   </#if>
 </style>
 
-<#if settings.enable_image_view!false>
-  <link rel="stylesheet" href="${theme_base!}/source/css/viewer.min.css">
-</#if>
-
 <#--标签云-->
 <link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
 <#--  中文排版 -->
