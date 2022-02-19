@@ -11,12 +11,12 @@
             </#if>
         </div>
         <#if settings.QR_code_zfb??>
-            <div class="qrcode qrcode-alipay hidden p-4 w-48 h-48 z-50 my-4 mx-auto">
+            <div class="qrcode qrcode-alipay hidden p-4 w-56 h-56 z-50 my-4 mx-auto">
                 <img class="fade-down max-h-200" src="${settings.QR_code_zfb}">
             </div>
         </#if>
         <#if settings.QR_code_wx??>
-            <div class="qrcode qrcode-wechat hidden p-4 w-48 h-48 z-50 my-4 mx-auto">
+            <div class="qrcode qrcode-wechat hidden p-4 w-56 h-56 z-50 my-4 mx-auto">
                 <img class="fade-down max-h-200" src="${settings.QR_code_wx}">
             </div>
         </#if>
