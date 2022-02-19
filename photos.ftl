@@ -19,7 +19,7 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 tracking-wider md:leading-relaxed sm:leading-normal cn-pd photos-page content-container">
+      class="mx-auto px-10 mt-16 tracking-wider md:leading-relaxed sm:leading-normal cn-pd photos-page fade-up">
       <div class="photos-box article-content" id="gallery-content">
         <nav id="gallery-filter">
           <ul>

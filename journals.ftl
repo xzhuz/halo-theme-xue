@@ -18,8 +18,8 @@
         </div>
       </div>
     </header>
-    <div class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal
-                ct-container cn-pd content-container is-container" id="moreContainer">
+    <div class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal
+                ct-container cn-pd fade-up is-container" id="moreContainer">
       <div id="ziyan-list">
         <div style="position: relative">
             <#list journals.content as journal>
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="mx-auto px-10 content-container <#if !(settings.posts_style!true)>mx-850</#if>">
+    <div class="mx-auto px-10 fade-up <#if !(settings.posts_style!true)>mx-850</#if>">
       <nav class="pagination flex flex-row justify-center mt-8" role="navigation"
            aria-label="pagination">
           <#if journals.totalPages gt 1>

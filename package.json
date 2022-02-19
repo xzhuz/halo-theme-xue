@@ -25,5 +25,8 @@
     "tailwindcss": "^2.2.16",
     "typescript": "^4.3.5",
     "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.3.1"
   }
 }

@@ -1,30 +1,33 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}">
-  <main class="mx-auto home-page" id="container">
-    <header class="bg-cover home-cover table relative w-full opacity-95 h-1/2 z-10" id="homeHeader">
+  <main class="mx-auto" id="container">
+    <header class="bg-gray-900 table relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen <#else> h-1/2</#if>"
+            id="homeHeader">
       <#if settings.home_cover?? && settings.home_cover!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.home_cover!}"
-               alt="${settings.home_title!options.blog_title!}">
+               alt="${settings.home_title!options.blog_title!}"
+               class="h-full w-full left-0 object-cover absolute top-0"
+          />
         </div>
       <#else>
         <div class="placeholder-bg"></div>
       </#if>
-      <div class="cover-content table-cell relative w-full index flex justify-center">
+      <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
         <!-- 封面内容 -->
-        <h2 class="cover-title text-white mb-5 mt-4 leading-loose relative w-full text-left text-4xl">
+        <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center">
           ${settings.home_title!options.blog_title!}
         </h2>
-        <p class="slogan text-center text-white text-xl" id="slogan">${settings.home_description!}</p>
+        <p class="slogan text-center text-white text-xl text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
-          <a class="arrow-down" href="javascript:" onClick="scollTo()">
-            <span class="screen-reader-text">Scroll Down</span>
+          <a class="arrow-down absolute bottom-11 left-2/4 -m-5 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:inline-block <#else>hidden</#if>" href="javascript:" onClick="scollTo()">
+            <span class="screen-reader-text border-none h-px w-px overflow-hidden absolute p-0">Scroll Down</span>
           </a>
         </#if>
       </div>
     </header>
-    <div class="mx-auto px-10 content-container postList mx-850">
-      <h3 class="mt-4 mb-0"><span class="iconfont icon-new list-brands mr-2 text-base"></span>最新文章</h3>
+    <div class="mx-auto px-10 fade-up max-w-4xl">
+      <h3 class="mt-4 mb-0"><span class="iconfont icon-new text-red-600 mr-2 text-base"></span>最新文章</h3>
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
       <#else>

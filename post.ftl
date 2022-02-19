@@ -50,8 +50,8 @@
         </div>
       </div>
     </header>
-    <div class="article-content content-container">
-      <div id="gallery-content" class="mx-auto px-10 md-content mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container heti">
+    <div class="article-content fade-up">
+      <div id="gallery-content" class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal cn-pd ct-container heti">
         ${post.formatContent!}
       </div>
       <div id="tocFlag"></div>
@@ -61,7 +61,7 @@
     </div>
 
     <div
-      class="mx-auto px-10 mt-8 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container coffee-tags">
+      class="mx-auto px-10 mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container coffee-tags">
       <blockquote class="post-copyright">
         <p><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"
                                     target="_blank"
@@ -73,7 +73,7 @@
 
 
     <div
-      class="mx-auto px-10 mt-8 pb-4 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal coffee-tags ct-container">
+      class="mx-auto px-10 mt-8 pb-4 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal coffee-tags ct-container">
       <p class="flex flex-row justify-start flex-wrap">
           <#if post.tags?? && post.tags?size gt 0>
               <#list post.tags as tag>
@@ -92,7 +92,7 @@
       </#if>
 
     <div
-      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container">
+      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container">
         <#include "module/comment.ftl">
         <@comment post,"post" />
     </div>

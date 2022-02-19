@@ -1,6 +1,6 @@
 <#macro layout title>
     <!DOCTYPE html>
-    <html lang="zh">
+    <html lang="zh" class="p-0 m-0 h-full text-base sm:text-sm">
     <head>
         <meta charset="UTF-8">
         <meta name="keywords" content="${meta_keywords!}"/>
@@ -12,7 +12,7 @@
         <#include "styles.ftl">
         <script src="${theme_base!}/source/js/jquery.min.js"></script>
     </head>
-    <body class="<#if settings.default_night_mode!false>night</#if>">
+    <body class="<#if settings.default_night_mode!false>night</#if> p-0 m-0 h-full font-sans bg-white">
     <#include "header.ftl">
     <#nested >
     <#include "footer.ftl">

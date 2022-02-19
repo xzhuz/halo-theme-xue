@@ -19,7 +19,7 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal mx-850 cn-pd content-container">
+      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal max-w-5xl cn-pd fade-up">
         <@linkTag method="listTeams">
             <#list teams as item>
                 <#if item.team?? && item.team!=''>

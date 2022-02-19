@@ -32,7 +32,7 @@
         </div>
       </div>
     </header>
-    <div class="mx-auto px-10 content-container <#if !(settings.posts_style!true)>mx-850</#if>">
+    <div class="mx-auto px-10 fade-up <#if !(settings.posts_style!true)>mx-850</#if>">
         <#if settings.posts_style!true>
             <#include "module/widget/post_cards.ftl">
         <#else>

@@ -1,30 +1,6 @@
-.list-brands {
-  color: var(--base-hl-color);
-}
-
-.bg-cover {
-  background-color: var(--cover-default-bg);
-  height: 480px;
-}
-
-.bg-cover .slogan {
-  //font-size: 1.4rem;
-  //color: #fff;
-}
-
-.bg-cover .arrow-down:after,
-.bg-cover .arrow-down:before {
+.arrow-down:after,
+.arrow-down:before {
   background-color: #fff;
-}
-
-.cover-bg img {
-  height: 100%;
-  left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 100%;
 }
 
 .cover-bg {
@@ -34,66 +10,38 @@
 }
 
 .cover-content {
-  height: 480px;
-  vertical-align: middle;
+  //height: 480px;
+  //vertical-align: middle;
 }
 
-.cover-content .inner {
-  //padding-bottom: 120px;
-  //padding-top: 120px;
-  height: 480px;
-}
+//
+//.cover-content .inner {
+//  height: 480px;
+//}
+//
+//.cover-content.index .inner {
+//  height: 480px;
+//}
+//
+//.cover-content .inner .slogan {
+//  color: #d4d3d3;
+//  font-size: 1.5rem;
+//  letter-spacing: 2px;
+//}
 
-.cover-content.index .inner {
-  height: 480px;
-}
-
-.cover-content .inner .slogan {
-  color: #d4d3d3;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-}
-
-.eye-sight {
-  color: var(--text-color);
-}
 
 .svg-f svg {
   display: inline-block;
   padding-bottom: 5px;
 }
 
-.arrow-down,
-.arrow-left,
-.arrow-right,
-.arrow-up {
-  display: inline-block;
-  height: 30px;
-  position: relative;
-  width: 30px;
-}
-
-.bg-cover .arrow-down {
+.arrow-down {
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-name: blink;
   animation-name: blink;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  bottom: 30px;
-  left: 50%;
-  margin-left: -15px;
-  position: absolute;
-}
-
-.screen-reader-text {
-  border: 0 none;
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
 }
 
 .arrow-down:before {
@@ -105,13 +53,7 @@
 }
 
 .arrow-down:after,
-.arrow-down:before,
-.arrow-left:after,
-.arrow-left:before,
-.arrow-right:after,
-.arrow-right:before,
-.arrow-up:after,
-.arrow-up:before {
+.arrow-down:before{
   background-color: #adabac;
   content: "";
   height: 2px;
@@ -121,70 +63,4 @@
   position: absolute;
   top: 50%;
   width: 22px;
-}
-
-.postList a {
-  text-decoration: none;
-}
-
-/* Animations */
-@-moz-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-  }
 }

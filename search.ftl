@@ -21,7 +21,7 @@
 
       <#if posts?? && posts.content?size gt 0>
         <div
-          class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd"
+          class="mx-auto px-10 mt-16 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal"
           id="pageContainer">
             <#list posts.content as post>
               <a href="${post.fullPath}" class="ah-hf ah-hv relative block ml-6 px-0 pt-2 pb-2 leading-8">
@@ -40,7 +40,7 @@
           </#if>
       <#else >
         <div
-          class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ph-container cn-pd">
+          class="mx-auto px-10 mt-16 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
           <div id="post-list" class="post-list inner">
             <div class="">
               <!-- search start -->

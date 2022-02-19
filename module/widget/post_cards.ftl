@@ -44,7 +44,7 @@
                     <div class="lh-25">
                         <span class="visitors-count">
                             <span>${post.visits!}</span>
-                            <a href="javascript:void(0)" class="eye-sight">
+                            <a href="javascript:void(0)" class="eye-sight text-gray-800">
                                 <span class="iconfont icon-Eyesight"> </span>
                             </a>
                         </span>

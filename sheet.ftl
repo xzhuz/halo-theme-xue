@@ -19,13 +19,13 @@
       </div>
     </header>
     <div
-      class="px-10 mx-auto md-content px-4 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd content-container"
+      class="px-10 mx-auto md-content px-4 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up"
       id="write">
         ${sheet.formatContent!}
     </div>
 
     <div
-      class="mx-auto px-10 mt-16 max-w-6xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
         <#include "module/comment.ftl">
         <@comment sheet,"sheet" />
     </div>

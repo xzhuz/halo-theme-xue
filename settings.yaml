@@ -275,17 +275,6 @@ experimental:
           label: 开启
         - value: false
           label: 关闭
-    enable_image_view:
-      name: enable_image_view
-      label: 是否启用图片预览（点击全屏）
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     enable_photo:
       name: enable_photo
       label: 是否启用相册
