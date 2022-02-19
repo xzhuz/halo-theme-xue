@@ -1,21 +1,22 @@
 <#include "module/macro.ftl">
 <@layout title="${settings.jounarls_title!'Journals'} | ${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header class="bg-cover post-cover table relative w-full opacity-95">
-        <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>
-          <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-            <img src="${settings.journals_patternimg!}" class="z-auto"
-                 alt="${settings.jounarls_title! 'Journals'}">
-          </div>
-        <#else>
-          <div class="placeholder-bg">
-          </div>
-        </#if>
-      <div class="cover-content table-cell relative w-full index flex justify-center">
-        <!-- 封面内容 -->
-        <div class="inner flex flex-col justify-center pt-40 pb-40">
-          <p class="cover-title text-white mb-5 mt-4 leading-loose relative w-full text-left text-4xl">${settings.jounarls_title! 'Journals'}</p>
+    <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
+      <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>
+        <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
+          <img src="${settings.journals_patternimg!}"
+               class="h-full w-full left-0 object-cover absolute top-0"
+               alt="${settings.jounarls_title! '日志'}">
         </div>
+      <#else>
+        <div class="placeholder-bg">
+        </div>
+      </#if>
+      <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
+        <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center">
+          ${settings.jounarls_title! '日志'}
+        </h2>
+        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
       </div>
     </header>
     <div class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal

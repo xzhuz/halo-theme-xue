@@ -22,8 +22,30 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
+      }, 
+      animation: {
+        'search': 'searchShow .2s both',
+      },
+      zIndex: {
+        '999': '999',
+        '-1': '-1'
+      },
+      transformOrigin: {
+        '50': '50% 50%',
+        'full': '100%',
       }
-    }
+    },
+    rotate: {
+      '-45': '-45deg',
+      '-90': '-90deg',
+      '90': '90deg',
+    },
+    minHeight: {
+      '100': '100px'
+    },
+    maxHeight: {
+      '200': '200px'
+    },
   },
   variants: {},
   plugins: [

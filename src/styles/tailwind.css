@@ -10,7 +10,7 @@
     word-break: break-word;
   }
 
-  .bg-cover {
+  .fade-down {
     -webkit-animation: fade-down 0.3s;
     animation: fade-down 0.3s;
   }
@@ -18,6 +18,26 @@
   .fade-up {
     -webkit-animation: fade-up 0.3s;
     animation: fade-up 0.3s;
+  }
+
+  .placeholder-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: gradientBG 15s ease infinite;
+    -moz-animation: gradientBG 15s ease infinite;
+    animation: gradientBG 15s ease infinite;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .cover-bg {
+    -webkit-animation: fadein 1s ease-in-out;
+    animation: fadein 1s ease-in-out;
+    z-index: -1;
   }
 
   /*图片全屏*/
@@ -271,5 +291,64 @@
     }
   }
 
+
+  @-moz-keyframes gradientBG {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+  @-webkit-keyframes gradientBG {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+
+  @-webkit-keyframes searchShow {
+    0% {
+      transform: translate3d(0, -4rem, 0);
+      opacity: 0
+    }
+    to {
+      transform: none;
+      opacity: 1
+    }
+  }
+
+  @keyframes searchShow {
+    0% {
+      transform: translate3d(0, -4rem, 0);
+      opacity: 0
+    }
+    to {
+      transform: none;
+      opacity: 1
+    }
+  }
 
 }

@@ -1,21 +1,22 @@
 <#include "module/macro.ftl">
 <@layout title="${sheet.title!'友情链接'} | ${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header class="bg-cover post-cover table relative w-full opacity-95">
-        <#if settings.links_placeholder?? && settings.links_placeholder!=''>
-          <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-            <img src="${settings.links_placeholder!}" class="z-auto"
-                 alt="${sheet.title!'友情链接'}">
-          </div>
-        <#else>
-          <div class="placeholder-bg">
-          </div>
-        </#if>
-      <div class="cover-content table-cell relative w-full index flex justify-center">
-        <!-- 封面内容 -->
-        <div class="inner flex flex-col justify-center pt-40 pb-40">
-          <p class="cover-title text-white mb-5 mt-4 leading-loose relative w-full text-left text-4xl">${sheet.title!'友情链接'}</p>
+    <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
+      <#if settings.links_placeholder?? && settings.links_placeholder!=''>
+        <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
+          <img src="${settings.links_placeholder!}"
+               class="h-full w-full left-0 object-cover absolute top-0"
+               alt="${sheet.title!'友情链接'}">
         </div>
+      <#else>
+        <div class="placeholder-bg">
+        </div>
+      </#if>
+      <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
+        <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center">
+          ${sheet.title!'友情链接'}
+        </h2>
+        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
       </div>
     </header>
     <div
@@ -31,7 +32,7 @@
                        onfocus="this.blur();">
                       <div class="media">
                         <div class="media-left">
-                          <figure class="image is-64x64">
+                          <figure class="image is-64x64 block relative">
                               <#if link.logo?? && link.logo != ''>
                                 <img src="${link.logo}" alt="${link.name}">
                               <#elseif settings.links_placeholder?? && settings.links_placeholder != ''>

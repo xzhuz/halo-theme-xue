@@ -1,41 +1,41 @@
-<div class="mx-auto px-10 mt-4 pb-8  ct-container">
-    <div class="entry-navigation">
-        <div class="nav previous">
+<div class="mx-auto px-10 mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
+    <div class="entry-navigation bg-white rounded shadow-md flex mt-10 overflow-hidden w-full">
+        <div class="nav previous flex flex-col justify-center min-h-100 py-0 px-4 relative w-full sm:w-6/12 break-word">
             <#if prevPost??>
                 <#if prevPost.thumbnail?? && prevPost.thumbnail!=''>
-                    <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${prevPost.thumbnail}" alt="${prevPost.title!}" />
+                    <img class="lazyload h-full w-full left-0 top-0 object-cover absolute" src="${theme_base!}/source/images/loading.svg" data-src="${prevPost.thumbnail}" alt="${prevPost.title!}" />
                 <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    <img class="img-random lazyloaded" index="${.now?string['ss']?number - 1}" src="${theme_base!}/source/images/loading.svg"
+                    <img class="img-random lazyloaded h-full w-full left-0 top-0 object-cover absolute" index="${.now?string['ss']?number - 1}" src="${theme_base!}/source/images/loading.svg"
                          alt="${prevPost.title!}"/>
                 </#if>
-                <span>上一篇</span>
-                <h4 class="entry-title">${prevPost.title!}</h4>
-                <a class="u-permalink" href="${prevPost.fullPath!}"></a>
+                <span class="text-white font-medium text-lg pt-8 relative uppercase z-10">上一篇</span>
+                <h4 class="text-white text-lg mt-1 mx-0 mb-0 pb-8 relative z-10">${prevPost.title!}</h4>
+                <a class="absolute bottom-0 left-0 right-0 top-0 z-10" href="${prevPost.fullPath!}"></a>
              <#else>
                  <#if settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                     <img class="img-random lazyloaded" index="${.now?string['ss']?number - 1}" src="${theme_base!}/source/images/loading.svg"/>
+                     <img class="img-random lazyloaded h-full w-full left-0 top-0 object-cover absolute" index="${.now?string['ss']?number - 1}" src="${theme_base!}/source/images/loading.svg"/>
                  </#if>
-                 <span>上一篇</span>
-                 <h4 class="entry-title">无</h4>
+                 <span class="text-white font-medium text-lg pt-8 relative uppercase z-10">上一篇</span>
+                 <h4 class="text-white text-lg mt-1 mx-0 mb-0 pb-8 relative z-10">无</h4>
             </#if>
         </div>
-        <div class="nav next">
+        <div class="nav next items-end text-right flex flex-col justify-center min-h-100 py-0 px-4 relative w-full sm:w-6/12 break-word">
             <#if nextPost??>
                 <#if nextPost.thumbnail?? && nextPost.thumbnail!=''>
-                    <img class="lazyload" src="${theme_base!}/source/images/loading.svg" data-src="${nextPost.thumbnail}" alt="${nextPost.title!}"/>
+                    <img class="lazyload h-full w-full left-0 top-0 object-cover absolute" src="${theme_base!}/source/images/loading.svg" data-src="${nextPost.thumbnail}" alt="${nextPost.title!}"/>
                 <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    <img class="img-random lazyloaded" index="${.now?string['ss']?number + 1}" src="${theme_base!}/source/images/loading.svg"
+                    <img class="img-random lazyloaded h-full w-full left-0 top-0 object-cover absolute" index="${.now?string['ss']?number + 1}" src="${theme_base!}/source/images/loading.svg"
                          alt="${nextPost.title!}"/>
                 </#if>
-                <span>下一篇</span>
-                <h4 class="entry-title">${nextPost.title!}</h4>
-                <a class="u-permalink" href="${nextPost.fullPath}"></a>
+                <span class="text-white font-medium text-lg pt-8 relative uppercase z-10">下一篇</span>
+                <h4 class="text-white text-lg mt-1 mx-0 mb-0 pb-8 relative z-10">${nextPost.title!}</h4>
+                <a class="absolute bottom-0 left-0 right-0 top-0 z-10" href="${nextPost.fullPath}"></a>
             <#else>
                 <#if settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-                    <img class="img-random lazyloaded" index="${.now?string['ss']?number + 1}" src="${theme_base!}/source/images/loading.svg"/>
+                    <img class="img-random lazyloaded h-full w-full left-0 top-0 object-cover absolute" index="${.now?string['ss']?number + 1}" src="${theme_base!}/source/images/loading.svg" alt=""/>
                 </#if>
-                <span>下一篇</span>
-                <h4 class="entry-title">无</h4>
+                <span class="text-white font-medium text-lg pt-8 relative uppercase z-10">下一篇</span>
+                <h4 class="text-white text-lg mt-1 mx-0 mb-0 pb-8 relative z-10">无</h4>
             </#if>
         </div>
     </div>

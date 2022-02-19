@@ -1,10 +1,10 @@
 <div class="moon-menu" id="moonMenu" >
     <div class="moon-menu-items" >
-        <span class="moon-menu-item p-2.5 iconfont icon-up" onClick="ckBack2Top()"> </span>
-        <span class="moon-menu-item p-2.5 iconfont icon-down" onClick="ckBack2Bottom()"> </span>
-        <span class="moon-menu-item p-2.5 iconfont icon-search" onclick="toggleSearchBox()"></span>
+        <span class="moon-menu-item pl-2.5 iconfont icon-up" onClick="ckBack2Top()"> </span>
+        <span class="moon-menu-item pl-2.5 iconfont icon-down" onClick="ckBack2Bottom()"> </span>
+        <span class="moon-menu-item pl-2.5 iconfont icon-search" onclick="toggleSearchBox()"></span>
         <#if settings.post_toc!true>
-            <span class="moon-menu-item p-2.5 iconfont icon-toc hidden" onclick="ckShowContent()" id="smallToc"></span>
+            <span class="moon-menu-item pl-2.5 iconfont icon-toc hidden" onclick="ckShowContent()" id="smallToc"></span>
         </#if>
     </div>
 

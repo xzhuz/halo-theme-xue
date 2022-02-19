@@ -1,19 +1,19 @@
-<footer class="footer mt-8">
-    <div class="inner px-10 mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
+<footer class="footer mt-8 py-8 text-center border-t border-gray-100 shadow-md">
+    <div class="my-0 mx-auto px-10 mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
         <#-- 社交信息 begin -->
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.github??>
-                <a href="${settings.github!}" class="circle p-4" target="_blank" rel="noopener" title="Github">
+                <a href="${settings.github!}" class="circle p-2.5 m-2.5 hover:text-red-600  bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="Github">
                     <span class="iconfont icon-github"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
-                <a href="mailto:${settings.mail!}" class="circle p-4" target="_blank" rel="noopener" title="邮箱">
+                <a href="mailto:${settings.mail!}" class="circle p-2.5 m-2.5 hover:text-red-600 bg-transparent border border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="邮箱">
                     <span class="iconfont icon-youxiang"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
-                <a href="${atom_url!}" class="circle p-4" target="_blank" rel="noopener" title="RSS">
+                <a href="${atom_url!}" class="circle p-2.5 m-2.5 hover:text-red-600 bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="RSS">
                     <span class="iconfont icon-rss"> </span>
                 </a>
             </#if>
@@ -23,7 +23,7 @@
         <div class="site-info flex flex-col justify-center">
             <@global.footer />
             <#if settings.Icp??>
-                <p><a href="http://beian.miit.gov.cn" target="_blank" class="text-xs">${settings.Icp!}</a></p>
+                <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-xs">${settings.Icp!}</a></p>
             </#if>
             <#if settings.PublicSecurityRecord??>
                 <p style="display: inline-block;background-image: url(${theme_base!}/assets/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
@@ -80,14 +80,14 @@
 
 <#-- 搜索 -->
 <form method="get" action="/search">
-    <div class="hidden search-box" id="searchBox">
-        <div class="search-ipt ipt ipt-w">
-            <div class="ipt-ct ct-bg search-container" id="searchInput">
-                <label class="sh-lab">
-                    <input class="sh-ipt" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
-                    <span class="sh-icon iconfont icon-search"></span>
+    <div class="hidden fixed top-0 left-0 right-0 z-50 overflow-y-auto h-full bg-gray-200 bg-opacity-60" id="searchBox">
+        <div class="mt-24 mt-8 mx-auto max-w-3xl animate-search border-gray-100 ">
+            <div class="flex py-1 px-2 whitespace-nowrap rounded-md bg-white" id="searchInput">
+                <label class="flex flex-row-reverse flex-grow">
+                    <input class="flex-grow p-0 text-xl border-none leading-snug" maxlength="30" name="keyword" id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
+                    <span class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-search"></span>
                 </label>
-                <a class="sh-exit iconfont icon-exit" onClick="toggleSearchBox()"></a>
+                <a class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-exit" onClick="toggleSearchBox()"></a>
             </div>
         </div>
     </div>
