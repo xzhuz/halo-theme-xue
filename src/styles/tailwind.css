@@ -2,7 +2,6 @@
 @tailwind utilities;
 @tailwind components;
 
-
 @layer base {
   a {
     cursor: pointer;
@@ -331,5 +330,12 @@
       opacity: 1
     }
   }
+}
 
+@layer utilities {
+  @variants dark {
+    .filter-60 {
+      filter: brightness(0.6);
+    }
+  }
 }

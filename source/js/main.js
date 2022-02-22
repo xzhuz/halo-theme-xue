@@ -12,6 +12,14 @@ function dayNightSwitch() {
   } else {
     setLocalStorage(key, false);
   }
+  // const daySwitch = $("#daySwitch");
+  // daySwitch.toggleClass("daySwitch");
+  // const clsList = document.documentElement.classList;
+  // if (!clsList.contains('dark')) {
+  //   document.documentElement.classList.add('dark');
+  // } else {
+  //   document.documentElement.classList.remove('dark')
+  // }
 }
 
 /**
@@ -646,7 +654,7 @@ function likeJournal(e) {
     success: function (data) {
       $(e).addClass('liked')
       $(e).removeAttr('onclick');
-      var count =  $(e).siblings('.is-reaction-count')
+      var count = $(e).siblings('.is-reaction-count')
       var likeCount = parseInt(count.html())
       $(e).siblings('.is-reaction-count').html(likeCount + 1);
     },
@@ -656,7 +664,7 @@ function likeJournal(e) {
 }
 
 function commentJournal(e) {
-  
+
 }
 
 /**
@@ -1011,17 +1019,36 @@ function clickToZoomImg() {
   });
 }
 
+function tailDarkMode() {
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+
+// Whenever the user explicitly chooses light mode
+  localStorage.theme = 'light'
+
+// Whenever the user explicitly chooses dark mode
+  localStorage.theme = 'dark'
+
+// Whenever the user explicitly chooses to respect the OS preference
+  localStorage.removeItem('theme')
+}
+
 $(function () {
   // 点击方法图片
   clickToZoomImg();
 
+  tailDarkMode()
+
   // 检查黑夜模式
-  checkNightMode()
+  // checkNightMode()
 
   // 自动切换夜间模式
-  if (autoNightMode) {
-    autoDayNight();
-  }
+  // if (autoNightMode) {
+  //   autoDayNight();
+  // }
 
   // 处理导航菜单
   handleNavMenu();
@@ -1047,6 +1074,5 @@ $(function () {
 
     // 自言代码高亮
     hljsZiYanCode()
-
   }
 });

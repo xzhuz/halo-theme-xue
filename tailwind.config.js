@@ -13,7 +13,7 @@ module.exports = {
       xl: '1440px',
     },
     fontFamily: {
-      sans: ['Lato',"Noto Sans SC", "-apple-system", 'sans-serif'],
+      sans: ['Lato', "Noto Sans SC", "-apple-system", 'sans-serif'],
     },
     extend: {
       spacing: {
@@ -22,7 +22,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }, 
+      },
       animation: {
         'search': 'searchShow .2s both',
       },
@@ -33,7 +33,10 @@ module.exports = {
       transformOrigin: {
         '50': '50% 50%',
         'full': '100%',
-      }
+      },
+      filter: {
+        '60': 'brightness(0.6)',
+      },
     },
     rotate: {
       '-45': '-45deg',
@@ -47,8 +50,13 @@ module.exports = {
       '200': '200px'
     },
   },
-  variants: {},
+  variants: {
+    // textColor: ['dark'],
+    // textOpacity: ['dark'],
+    // backgroundColor: ['dark'],
+  },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    // require('tailwindcss-dark-mode')()
   ],
 }

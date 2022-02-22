@@ -1,21 +1,21 @@
 {
   "name": "halo-theme-xue",
   "version": "1.0.0",
-  "description": "> 原始主题见[Subtle Galaxy](https://github.com/GalaxySuze/gridea-theme-subtle-galaxy)，原设计自Ghost Subtle主题，感谢做出这么漂亮的主题， 在原主题上面新增日志页面和目录以及一些个性化配置",
+  "description": "大道至简",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xzzai/halo-theme-hshan.git"
+    "url": "https://github.com/xzhuz/halo-theme-xue.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xzzai/halo-theme-hshan/issues"
+    "url": "https://github.com/xzhuz/halo-theme-xue/issues"
   },
-  "homepage": "https://github.com/xzzai/halo-theme-hshan#readme",
+  "homepage": "https://github.com/xzhuz/halo-theme-xue#readme",
   "devDependencies": {
     "@types/node": "^16.4.3",
     "autoprefixer": "^10.3.1",

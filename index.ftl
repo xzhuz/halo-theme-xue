@@ -7,7 +7,7 @@
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.home_cover!}"
                alt="${settings.home_title!options.blog_title!}"
-               class="h-full w-full left-0 object-cover absolute top-0"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
           />
         </div>
       <#else>
@@ -15,11 +15,11 @@
       </#if>
       <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
         <!-- 封面内容 -->
-        <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center">
+        <h2 class="text-white dark:text-gray-300 mb-5 mt-4 leading-loose relative w-full text-4xl text-center">
           ${settings.home_title!options.blog_title!}
         </h2>
         <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
-        <p class="slogan text-center text-white text-xl text-center" id="slogan">${settings.home_description!}</p>
+        <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
           <a class="arrow-down absolute bottom-11 left-2/4 -m-5 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:inline-block <#else>hidden</#if>" href="javascript:" onClick="scollTo()">
             <span class="screen-reader-text border-none h-px w-px overflow-hidden absolute p-0">Scroll Down</span>
@@ -28,7 +28,8 @@
       </div>
     </header>
     <div class="mx-auto fade-up <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl</#if>">
-      <h3 class="mt-4 mb-0"><span class="iconfont icon-new text-red-600 mr-2 text-base"></span>最新文章</h3>
+      <h3 class="mt-4 mb-0 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base"></span>最新文章</h3>
+      <hr class="text-center w-full mx-auto mt-2 mb-2 hidden md:block"/>
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
       <#else>
