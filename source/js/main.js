@@ -2,24 +2,19 @@
 
 // 夜间模式
 function dayNightSwitch() {
-  const key = 'nightMode';
-  // 夜晚模式开关
-  const daySwitch = $("#daySwitch");
-  daySwitch.toggleClass("daySwitch");
-  $(document.body).toggleClass("night");
-  if (document.body.classList.contains('night')) {
-    setLocalStorage(key, true);
-  } else {
-    setLocalStorage(key, false);
-  }
+  // const key = 'nightMode';
+  // // 夜晚模式开关
   // const daySwitch = $("#daySwitch");
   // daySwitch.toggleClass("daySwitch");
-  // const clsList = document.documentElement.classList;
-  // if (!clsList.contains('dark')) {
-  //   document.documentElement.classList.add('dark');
+  // $(document.body).toggleClass("night");
+  // if (document.body.classList.contains('night')) {
+  //   setLocalStorage(key, true);
   // } else {
-  //   document.documentElement.classList.remove('dark')
+  //   setLocalStorage(key, false);
   // }
+  const daySwitch = $("#daySwitch");
+  daySwitch.toggleClass("daySwitch");
+  $(document.body).toggleClass("dark");
 }
 
 /**
@@ -28,21 +23,25 @@ function dayNightSwitch() {
 function autoDayNight() {
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
-    setLocalStorage('nightMode', true);
-    // 默认是日间模式，如果检测到系统处于夜间模式，则自动切换到夜间模式
-    checkNightMode()
+    $("#daySwitch").removeClass("daySwitch");
+    $(document.body).addClass("dark");
+    $(document.body).addClass("night");
+    
+  // } else {
+  //   $("#daySwitch").addClass("daySwitch");
+  //   $(document.body).removeClass("dark");
   }
 }
 
-function checkNightMode() {
-  const isNight = getLocalStorage('nightMode');
-  // 如果已经是夜间模式
-  if (isNight) {
-    const daySwitch = $("#daySwitch");
-    daySwitch.removeClass("daySwitch");
-    $(document.body).addClass("night");
-  }
-}
+// function checkNightMode() {
+//   const isNight = getLocalStorage('nightMode');
+//   // 如果已经是夜间模式
+//   if (isNight) {
+//     const daySwitch = $("#daySwitch");
+//     daySwitch.removeClass("daySwitch");
+//     $(document.body).addClass("night");
+//   }
+// }
 
 /**
  * 点击页面处理小屏幕目录事件
@@ -1024,6 +1023,8 @@ $(function () {
   // 点击方法图片
   clickToZoomImg();
 
+  autoDayNight();
+
   // 检查黑夜模式
   // checkNightMode()
 
@@ -1051,8 +1052,8 @@ $(function () {
   lazyloadImg();
 
   if ($('#container').find('.ziyan').length > 0) {
-    // 计算时间
-    setTimeAgo();
+    // // 计算时间
+    // setTimeAgo();
 
     // 自言代码高亮
     hljsZiYanCode()

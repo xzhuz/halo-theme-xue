@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="标签：${tag.name} | ${options.blog_title!}">
-  <main class="mx-auto" id="container">
+  <main class="mx-auto dark:bg-gray-900" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
       <#if tag.thumbnail?? && tag.thumbnail!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">

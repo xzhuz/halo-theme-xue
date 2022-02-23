@@ -17,12 +17,12 @@
       clickToZoomImg();
 
       // 检查夜间模式
-      checkNightMode()
+      // checkNightMode()
 
       // 自动切换夜间模式
-      if (autoNightMode) {
-        autoDayNight();
-      }
+      // if (autoNightMode) {
+      //   autoDayNight();
+      // }
 
       // 删除listener
       removeScrollTocFixed();

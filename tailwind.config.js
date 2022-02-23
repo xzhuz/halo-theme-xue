@@ -37,6 +37,9 @@ module.exports = {
       filter: {
         '60': 'brightness(0.6)',
       },
+      boxShadow: {
+        
+      },
     },
     rotate: {
       '-45': '-45deg',

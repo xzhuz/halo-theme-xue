@@ -7,14 +7,14 @@
             <#if post.thumbnail?? && post.thumbnail!=''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
-                <img class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700"
+                <img class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60"
                      src="${theme_base!}/source/images/loading.svg" data-src="${post.thumbnail}"
                      alt="${post.title}"/>
               </a>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
-                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700"
+                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60"
                      src="${theme_base!}/source/images/loading.svg" data-src=""
                      index="${post_index}" alt="${post.title}"/>
               </a>
@@ -28,7 +28,7 @@
           </div>
           <div class="flex-left flex flex-col justify-between pl-4 md:pl-4 h-16 md:h-36 w-full ">
             <a href="${post.fullPath!}" rel="bookmark"
-               class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none border-t border-dotted md:pt-2">
+               class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none border-t border-dotted dark:border-gray-800 md:pt-2">
               
               <h2 class="text-base md:text-2xl hover:text-red-500 mb-0 mt-0 relative z-50 dark:text-gray-300 inline-block transition-all duration-300">
                 <#if post.topPriority gt 0>

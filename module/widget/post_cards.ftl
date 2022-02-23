@@ -13,12 +13,12 @@
           <#if post.thumbnail?? && post.thumbnail!=''>
             <a href="${post.fullPath!}"
                class="img-cover-bg flex justify-center items-center h-48">
-              <img class="lazyload object-cover block relative h-48" src="${theme_base!}/source/images/loading.svg"
+              <img class="lazyload object-cover block relative h-48 dark:filter-60" src="${theme_base!}/source/images/loading.svg"
                    data-src="${post.thumbnail!''}" alt="${post.title}"/>
             </a>
           <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
             <a href="${post.fullPath!}" class="img-cover-bg flex justify-center items-center h-48">
-              <img class="object-cover block relative h-48 img-random" index="${post_index}"
+              <img class="object-cover block relative h-48 img-random dark:filter-60" index="${post_index}"
                    src="${theme_base!}/source/images/loading.svg" data-src="" alt="${post.title!}"/>
             </a>
           <#else>

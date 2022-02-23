@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="分类：${category.name} | ${options.blog_title!} ">
-  <main class="mx-auto" id="container">
+  <main class="mx-auto dark:bg-gray-900" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
       <#if settings.categories_patternimg?? && settings.categories_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
@@ -28,7 +28,8 @@
         <#-- 分页-->
         <#if posts.totalPages gt 1>
           <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
-              <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">                         <#include "module/widget/pagination.ftl">
+              <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">                       
+                <#include "module/widget/pagination.ftl">
               </@paginationTag>
           </nav>
         </#if>

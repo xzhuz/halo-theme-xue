@@ -285,6 +285,7 @@ ol > li > ol > li > ol > li {
 .md-content h4,
 .md-content h5,
 .md-content h6 {
+  z-index: 99;
   margin-left: -1.3rem;
   // 实现点击目录精准跳转到header
   margin-top: -60px !important;
@@ -360,8 +361,8 @@ ol > li > ol > li > ol > li {
   font-style: normal;
   font-weight: 900;
   line-height: 2;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
   z-index: -1;
 }
 
@@ -375,8 +376,8 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   font-style: normal;
   line-height: 2;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
   z-index: -1;
 }
 
@@ -390,8 +391,8 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
   z-index: -1;
 }
 
@@ -405,8 +406,8 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
   z-index: -1;
 }
 
@@ -421,8 +422,8 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
   z-index: -1;
 }
 
@@ -469,10 +470,13 @@ ol > li > ol > li > ol > li {
 }
 
 .md-content p {
-  margin: 1rem auto;
+  margin: 3px auto;
   line-height: 2;
 }
 
+.heti ul, .heti ol {
+ padding-inline-start: 18px;
+}
 .md-content blockquote p {
   margin: .6rem auto;
 }
