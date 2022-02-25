@@ -598,8 +598,29 @@ button:focus {
     background-color: transparent !important;
   }
 
-  .nav-list > .list.-left {
-    --tw-bg-opacity: 1;
-    background-color: rgba(31,41,55,var(--tw-bg-opacity)) !important;
+}
+
+@media all and (max-width: 768px) {
+
+  .link, .void-link {
+    --tw-text-opacity: 1;
+    color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  }
+  
+  .dark {
+    .link, .void-link {
+      --tw-text-opacity: 1;
+      color: rgba(209, 213, 219, var(--tw-text-opacity)) !important;
+    }
+
+    .nav {
+      --tw-bg-opacity: 1;
+      background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+    }
+
+    .nav-list > .list.-left {
+      --tw-bg-opacity: 1;
+      background-color: rgba(31, 41, 55, var(--tw-bg-opacity)) !important;
+    }
   }
 }

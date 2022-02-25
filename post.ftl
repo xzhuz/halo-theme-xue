@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${post.title!} | ${options.blog_title!}">
-  <main class="mx-auto dark:bg-gray-900" id="container">
+  <main class="mx-auto" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2" id="postHeader">
         <#if post.thumbnail?? && post.thumbnail!=''>
           <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
@@ -74,7 +74,7 @@
               </#list>
           </#if>
       </p>
-      <hr class="mt-4 bg-gray-100 dark:bg-gray-800 h-0.5 " >
+      <hr class="mt-4 bg-gray-100 dark:bg-gray-700 h-0.5 " >
     </div>
 
     <!-- 上一篇和下一篇 -->

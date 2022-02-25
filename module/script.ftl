@@ -43,16 +43,6 @@
 
     }
   }
-  // 默认收缩菜单
-  var hideMenu = false;
-  <#if settings.default_hide_menu!false> 
-      hideMenu = true;
-  </#if>
-
-  var autoNightMode = false
-  <#if settings.auto_night_mode!true>
-    autoNightMode = true;
-  </#if>
 </script>
 
 <#if settings.TimeStatistics??>

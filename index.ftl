@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}">
-  <main class="mx-auto dark:bg-gray-900" id="container">
+  <main class="mx-auto" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen <#else> h-1/2</#if>"
             id="homeHeader">
       <#if settings.home_cover?? && settings.home_cover!=''>
@@ -29,14 +29,14 @@
     </header>
     <div class="mx-auto fade-up  <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl</#if>">
       <h3 class="mt-4 mb-0 dark:text-gray-300 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
-<#--      <hr class="text-center w-full mx-auto mt-2 mb-2 hidden md:block bg-gray-300 dark:bg-gray-800"/>-->
+<#--      <hr class="text-center w-full mx-auto mt-2 mb-2 hidden md:block bg-gray-300 dark:bg-gray-700"/>-->
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
       <#else>
         <#include "module/widget/post_list.ftl">
       </#if>
       <#-- 分页-->
-      <nav class="pagination flex flex-row justify-center mt-8" role="navigation" aria-label="pagination">
+      <nav class="pagination flex flex-row justify-center my-8" role="navigation" aria-label="pagination">
         <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
           <#include "module/widget/pagination.ftl">
         </@paginationTag>

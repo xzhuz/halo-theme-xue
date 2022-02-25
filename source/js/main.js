@@ -1,16 +1,19 @@
 "use strict";
 
 // 夜间模式
-function dayNightSwitch() {
+function toggleDarkSwitch() {
   const daySwitch = $("#daySwitch");
   daySwitch.toggleClass("daySwitch");
   $(document.body).toggleClass("dark");
+  $('#navHeader').addClass('bg-transparent').removeClass('shadow-md')
+
+  handleScrollMenu()
 }
 
 /**
  * 自动切换夜间模式
  */
-function autoDayNight() {
+function toggleDarkMode() {
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
     $("#daySwitch").removeClass("daySwitch");
@@ -70,9 +73,7 @@ function handleNavMenu() {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
-  if (hideMenu) {
-    document.addEventListener('scroll', handleScrollMenu, false);
-  }
+  document.addEventListener('scroll', handleScrollMenu, false);
 }
 
 function handleScrollMenu() {
@@ -80,12 +81,13 @@ function handleScrollMenu() {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
-  var dark = $(document.body).hasClass("dark");
+  const dark = $(document.body).hasClass("dark");
   const scrollTop = getScrollTop();
+  console.log(scrollTop)
   if (scrollTop > 29) {
     if (dark) {
       $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')
-      $('.link').addClass('text-gray-100')
+      $('.link').addClass('text-gray-100').removeClass('text-gray-800')
     } else {
       $('#navHeader').addClass('bg-white').removeClass('bg-transparent').addClass('shadow-md').removeClass('dark:bg-gray-800')
       $('.link').addClass('text-gray-800').removeClass('text-gray-100')
@@ -689,7 +691,7 @@ $(function () {
   // 点击方法图片
   clickToZoomImg();
 
-  autoDayNight();
+  toggleDarkMode();
 
   // 处理导航菜单
   handleNavMenu();

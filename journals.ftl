@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="${settings.jounarls_title!'Journals'} | ${options.blog_title!}">
-  <main class="mx-auto dark:bg-gray-900" id="container">
+  <main class="mx-auto" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
       <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="mx-auto px-10 fade-up <#if !(settings.posts_style!true)>mx-850</#if>">
-      <nav class="pagination flex flex-row justify-center mt-8" role="navigation"
+      <nav class="pagination flex flex-row justify-center my-8" role="navigation"
            aria-label="pagination">
           <#if journals.totalPages gt 1>
               <@paginationTag method="journals" page="${journals.number}" total="${journals.totalPages}" display="3">

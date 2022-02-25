@@ -2,7 +2,7 @@
   <#if posts?? && posts.getTotalElements() gt 0>
     <ul class="posts-list pl-0">
       <#list posts.content as post>
-        <li class="post flex list-none relative w-full pt-5 pb-0 md:pb-5 mt-0 inline-block text-gray-200">
+        <li class="post flex list-none relative w-full pt-5 pb-0 md:pb-5 mt-0 inline-block text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow">
           <div class="overflow-hidden float-left relative flex-shrink-0 h-16 md:h-36 w-28 md:w-56 bg-gray-100 inline-block">
             <#if post.thumbnail?? && post.thumbnail!=''>
               <#assign hasImg = true />
@@ -28,7 +28,7 @@
           </div>
           <div class="flex-left flex flex-col justify-between pl-4 md:pl-4 h-16 md:h-36 w-full ">
             <a href="${post.fullPath!}" rel="bookmark"
-               class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none border-t border-dotted dark:border-gray-800 md:pt-2">
+               class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none">
               <h2 class="text-base md:text-2xl hover:text-red-500 mb-0 mt-0 relative z-50 dark:text-gray-300 inline-block">
                 <#if post.topPriority gt 0>
                   <i class="iconfont icon-pin-fill text-sm md:text-base text-gray-400"></i>

@@ -1,5 +1,5 @@
-<header class="nav-wrapper -sticky bg-transparent transition-opacity duration-300" id="navHeader">
-    <nav class="nav bg-white md:bg-transparent md:dark:bg-gray-800"  id="nav">    
+<header class="nav-wrapper -sticky bg-transparent transition-opacity duration-300" id="navHeader" style="flex: 0 0 auto;">
+    <nav class="nav bg-white md:bg-transparent"  id="nav">    
         <button class="toggle-nav">
             <div class="burger -squeeze">
                 <span class="burger-lines md:text-gray-800 "></span>
@@ -17,7 +17,7 @@
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
                         <li class="item flex flex-wrap p-0">
-                            <a class="link md:text-base sm:text-sm font-bold text-gray-100" href="${menu.url!}"
+                            <a class="link md:text-base sm:text-sm text-gray-100" href="${menu.url!}"
                                target="${menu.target!}">${menu.name}</a>
                         </li>
                     </#list>
@@ -34,7 +34,7 @@
         </#if>
         <#if settings.open_night_mode!true>
             <div class="day-switch" style="position: relative; right: 40px">
-                <div class="day-night-switch" role="button" onClick="dayNightSwitch()">
+                <div class="day-night-switch" role="button" onClick="toggleDarkSwitch()">
                     <div class="onOff daySwitch" id="daySwitch">
                         <div class="star star1"></div>
                         <div class="star star2"></div>

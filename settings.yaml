@@ -63,18 +63,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    auto_night_mode:
-      name: auto_night_mode
-      label: 自动夜晚模式
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-      description: "这里会根据浏览器主题改变"
     right_corner_circle:
       name: right_corner_circle
       label: 开启右下角按钮
@@ -86,18 +74,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    default_hide_menu:
-      name: default_hide_menu
-      label: 打开展示收缩菜单按钮
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-      description: "打开后会默认收缩菜单"
     open_night_mode:
       name: open_night_mode
       label: 开启夜晚模式
