@@ -13,31 +13,23 @@
 - [开始](https://baozi.fun/2020/09/29/halo-blog-transfer)
 - [预览](#预览)
 - [示例站点](#示例站点)
-- [文档](https://baozi.fun/2020/10/05/theme-xue-showcase)
+- [文档](https://baozi.fun/2022/02/26/markdown)
 - [主题特性](#特性)
 - [更新日志](#更新日志)
 
 ## 预览
 
-[Preview](https://halo.hshan.fun) | [个人网站](https://baozi.fun)
-
-> 我的[个人网站](https://baozi.fun)由于存在自定义，会和当前主题会有不同
+  [Preview](https://baozi.fun)
 
 ## 示例站点
 
-[微服务驿站](http://www.superdevops.cn)
-
 [南国薏米](https://eelve.com/)
-
-[通往体面生活的路上](https://codeyee.com/)
 
 [pengzhenjin's blog](https://www.pengzhenjin.top/)
 
 [nEo.](https://neo00.top/)
 
-[一只从代码中寻找乐趣的猿](https://zwc365.com/)
-
-[千与千寻](https://blog.chihiro.org.cn/)
+[一只从代码中寻找乐趣的猿](https://blog.chihiro.org.cn/)
 
 [Symon's Blog](https://www.ssymon.com/)
 
@@ -47,9 +39,9 @@
 
 [TBlog](https://blog.tellbin.cn/)
 
-[一束光](https://lijiakai.cn/)
-
 [露](https://www.wo66.cc/)
+
+谢谢上面同学的支持
 
 ## 特性
 
@@ -62,13 +54,14 @@
 - [x] 代码行号显示
 - [x] 链接页面分组显示
 - [x] 相册页面
-- [x] 适配 halo 1.3.x
+- [x] 适配 halo 1.5.x
 - [x] 随机文章封面
 - [x] 全局 PJAX
 - [x] 夜晚模式
 - [x] 文章分享功能
 - [x] ~~二级目录~~
 - [x] 支持 js 插件
+- [x] 首页多种列表模式
 
 ## 更新日志
 
@@ -83,6 +76,7 @@
 - ~~2020-08-05 二级目录~~
 - 2020-10-01 **支持 js 插件、目录升级、随机封面升级、首页升级、功能配置更灵活和高效、更多细节优化**
 - 2020-10-04 优化细节
+- 2022-02-26 集成tailwindcss，优化css文件、解决一些细节问题
 
 ## 安装
 
