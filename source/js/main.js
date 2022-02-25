@@ -1,38 +1,26 @@
 "use strict";
 
 // 夜间模式
-function dayNightSwitch() {
-  const key = 'nightMode';
-  // 夜晚模式开关
+function toggleDarkSwitch() {
   const daySwitch = $("#daySwitch");
   daySwitch.toggleClass("daySwitch");
-  $(document.body).toggleClass("night");
-  if (document.body.classList.contains('night')) {
-    setLocalStorage(key, true);
-  } else {
-    setLocalStorage(key, false);
-  }
+  $(document.body).toggleClass("dark");
+  $('#navHeader').addClass('bg-transparent').removeClass('shadow-md')
+
+  handleScrollMenu()
 }
 
 /**
  * 自动切换夜间模式
  */
-function autoDayNight() {
+function toggleDarkMode() {
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
-    setLocalStorage('nightMode', true);
-    // 默认是日间模式，如果检测到系统处于夜间模式，则自动切换到夜间模式
-    checkNightMode()
-  }
-}
-
-function checkNightMode() {
-  const isNight = getLocalStorage('nightMode');
-  // 如果已经是夜间模式
-  if (isNight) {
-    const daySwitch = $("#daySwitch");
-    daySwitch.removeClass("daySwitch");
-    $(document.body).addClass("night");
+    $("#daySwitch").removeClass("daySwitch");
+    $(document.body).addClass("dark");
+  } else {
+    $("#daySwitch").addClass("daySwitch");
+    $(document.body).removeClass("dark");
   }
 }
 
@@ -54,18 +42,6 @@ function documentClickToc(target) {
   }
 }
 
-
-function getHashCode(str, caseSensitive) {
-  if (!caseSensitive) {
-    str = str.toLowerCase();
-  }
-  var hash = 1315423911, i, ch;
-  for (i = str.length - 1; i >= 0; i--) {
-    ch = str.charCodeAt(i);
-    hash ^= ((hash << 5) + ch + (hash >> 2));
-  }
-  return (hash & 0x7FFFFFFF);
-}
 
 /**
  * 处理目录
@@ -97,57 +73,29 @@ function handleNavMenu() {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
-  if (hideMenu) {
-    document.addEventListener('scroll', handleScrollMenu, false);
-  }
+  document.addEventListener('scroll', handleScrollMenu, false);
 }
 
 function handleScrollMenu() {
-
   if (getClientWidth() <= 800) {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
+  const dark = $(document.body).hasClass("dark");
   const scrollTop = getScrollTop();
+  console.log(scrollTop)
   if (scrollTop > 29) {
-    $('#navHeader').addClass('nav-bg-fff')
-    $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-    $('#navHeader .collapse-nav').hide()
-    $('.collapse-burger').removeClass('open');
+    if (dark) {
+      $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')
+      $('.link').addClass('text-gray-100').removeClass('text-gray-800')
+    } else {
+      $('#navHeader').addClass('bg-white').removeClass('bg-transparent').addClass('shadow-md').removeClass('dark:bg-gray-800')
+      $('.link').addClass('text-gray-800').removeClass('text-gray-100')
+    }
   } else {
-    $('#navHeader').removeClass('nav-bg-fff')
-    $('#navHeader .nav').removeClass('opacity-100').addClass('opacity-0')
-    $('#navHeader .collapse-nav').show()
+    $('#navHeader').addClass('bg-transparent').removeClass('dark:bg-gray-800').removeClass('bg-white').removeClass('bg-transparent').removeClass('shadow-md')
+    $('.link').addClass('text-gray-100').removeClass('text-gray-800')
   }
-}
-
-function collapseNav() {
-  const burger = $('.collapse-burger');
-  burger.toggleClass('open');
-  const nav = $('#navHeader .nav');
-
-  nav.toggleClass('opacity-100')
-  if (nav.hasClass('opacity-100')) {
-    nav.removeClass('slideOut');
-    nav.addClass('slideIn');
-  } else {
-    nav.addClass('slideOut');
-    nav.removeClass('slideIn');
-  }
-}
-
-// 图片
-function loadGallery() {
-  if (
-    typeof Viewer !== "undefined" &&
-    document.getElementById("gallery-content")
-  ) {
-    new Viewer(document.getElementById("gallery-content"), {
-      toolbar: true
-    });
-  }
-
-  gallery()
 }
 
 /********************************
@@ -162,23 +110,6 @@ function scrollTocFixed() {
 
 function removeScrollTocFixed() {
   document.removeEventListener('scroll', tocScroll, false);
-}
-
-function highlightCode() {
-  if (enableLineNumber) {
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      lineNumbersBlock(block);
-    });
-  }
-
-  if (collpaseCode) {
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      $(block).parent().wrap('<details></details>');
-      $(block).parent().before('<summary>code</summary>')
-    });
-  }
-
-
 }
 
 //获取滚动条距离顶部位置
@@ -241,10 +172,13 @@ function initToc() {
     hasInnerContainers: false,
   });
 
-  $(".toc-link").each(function () {
+  $('a[class*="node-name--H"]').each(function () {
+    // var cls = $(this).getAttribute('class');
+    // console.log(cls)
     const linkContent = $(this).html();
-    $(this).html('<span class="toc-link-dot"></span>' + linkContent);
+    $(this).html(`<span class="toc-link-dot"></span>${linkContent}`);
   });
+
   // 设置目录right
   tocEleRight();
 }
@@ -269,248 +203,6 @@ function toggleWeChat() {
   $(".qrcode-wechat").toggleClass("hidden");
   $("#alipay i").removeClass("active-bg");
   $("#wechat i").toggleClass("active-bg");
-}
-
-function scollTo() {
-  const postHeight = $("#homeHeader").height();
-  window.scroll({top: postHeight, behavior: "smooth"});
-}
-
-function generateId() {
-  const chars = `ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz`;
-  let id = ``;
-  for (let i = 0; i < 8; i++) {
-    id += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return id;
-}
-
-function getBilibili(width, height, id) {
-  return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
-}
-
-function getWangYiMusic(id) {
-  return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=${id}&auto=1&height=90"></iframe>`
-}
-
-const wangyi = /\[music:\s*\d+\s*\]/g;
-
-const bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g;
-
-const blockReg = /\${2}([\s\S]*?)\${2}/g;
-const inlineReg = /\$([\s\S]*?)\$/g;
-
-/**
- * 格式化公式
- */
-function formatMath(kateBlock, isBlock) {
-  // 这一步很重要，需要把 &amp; 换成 &
-  let block = kateBlock.replaceAll("&amp;", "&");
-  if (block.length < 3) {
-    return;
-  }
-  const len = isBlock ? 2 : 1;
-  block = block.substring(len, block.length - len);
-  const html = katex.renderToString(block, {
-    throwOnError: false,
-    leqno: true,
-    fleqn: true,
-  });
-  return isBlock ? `<div style="text-align: center; margin: 1rem auto;">${html}</div>` : html;
-}
-
-/**
- * 处理公式
- */
-function dealMathx(content) {
-  if (openKatex) {
-    const kateBlocks = content.match(blockReg);
-    if (kateBlocks && kateBlocks.length > 0) {
-      for (let i = 0; i < kateBlocks.length; i++) {
-        content = content.replace(kateBlocks[i], formatMath(kateBlocks[i], true));
-      }
-    }
-    const kateInlines = content.match(inlineReg);
-    if (kateInlines && kateInlines.length > 0) {
-      for (let i = 0; i < kateInlines.length; i++) {
-        content = content.replace(kateInlines[i], formatMath(kateInlines[i], false));
-      }
-    }
-  }
-  return content;
-}
-
-/**
- * 将文本转成 markdown
- */
-function formatContent() {
-  let mdContent = document.getElementById("original");
-  const persentContent = $("#write");
-  if (!mdContent || !persentContent) {
-    return;
-  }
-  // 获取原始html
-  let originalContent = mdContent.innerHTML;
-
-  if (typeof originalContent === "undefined") {
-    return false;
-  }
-  // 反转义原始markdown文本
-  originalContent = HTMLDecode(originalContent);
-  // 处理公式， 这是主要是因为 \\ 的原因
-  // originalContent = dealMathx(originalContent);
-  persentContent.empty();
-  persentContent.addClass("loading");
-
-  const renderer = new marked.Renderer();
-
-  renderer.heading = function (text, level, raw, slugger) {
-    return `<h${level} id=${generateId()}>${text}</h${level}>`;
-  };
-
-  renderer.paragraph = function (text) {
-    // 渲染网易云音乐
-    const musics = text.match(wangyi);
-    if (musics && musics.length > 0) {
-      for (let i = 0; i < musics.length; i++) {
-        const wangyiMusic = musics[i].match(/\d+/);
-        if (wangyiMusic && wangyiMusic.length > 0) {
-          const id = wangyiMusic[0];
-          text = text.replace(musics[i], getWangYiMusic(id));
-        }
-      }
-    }
-
-    // 渲染bilibili视频
-    const videos = text.match(bilibili);
-    if (videos && videos.length > 0) {
-      for (let j = 0; j < videos.length; j++) {
-        const video = videos[j].match(/\d+/g);
-        if (video && video.length > 0 && video.length === 3) {
-          const aid = video[0], width = video[1], height = video[2];
-          text = text.replace(videos[j], getBilibili(width, height, aid));
-        }
-      }
-    }
-    return `<p>${text}</p>`;
-  };
-
-  renderer.link = function (href, title, text) {
-    if (href && href.startsWith('#')) {
-      return `<a href="${href}" rel="noopener noreferrer">${text}</a>`;
-    }
-    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-  };
-
-  renderer.image = function (href, title, text) {
-    const reg = /([^]*)\[([^]*)\]\(([^]*)\)/;
-    const isContainUrl = reg.test(text);
-    const imgHtml = `<img class="lazyload" src=${loading} data-src=${href} alt=${text}>`;
-    return `<span style="text-align: center;">
-              ${
-      isContainUrl
-        ? getImgWithUrlHtml(text.match(reg), href)
-        : imgHtml
-    }
-            </span>`;
-  };
-
-  function getImgWithUrlHtml(textArr, href) {
-    return `<img class="lazyload" src=${loading} data-src=${href} alt=${textArr[2]}></a>`;
-  }
-
-  renderer.listitem = function (text, task) {
-    if (task) {
-      return `<li style="list-style: none;">${text}</li>`;
-    }
-    return `<li>${text}</li>`;
-  };
-
-  renderer.blockquote = function (text) {
-    text = text.trim();
-    // 去掉换行符
-    text = text.replace(/[\r\n]/g, "<br/>");
-    text = text.replace(/<p>/g, "");
-    text = text.replace(/<\/p>/g, "<br>");
-    const textArr = text.split("<br>");
-    const context = [];
-    for (let i = 0; i < textArr.length; i++) {
-      if (textArr[i].trim().length === 0) {
-        continue;
-      }
-      let txt = textArr[i].replace(/<br\/>/g, '')
-      txt = txt.replace(/<br>/g, '')
-      context.push(`<p>${txt}</p>`);
-    }
-    return `<blockquote>${context.join("")}</blockquote>`;
-  };
-
-  renderer.table = function (header, body) {
-    if (body) {
-      body = "<tbody>" + body + "</tbody>";
-    }
-
-    return (
-      '<div class="md-table"><table>\n' +
-      "<thead>\n" +
-      header +
-      "</thead>\n" +
-      body +
-      "</table></div>\n"
-    );
-  };
-
-  marked.setOptions({
-    renderer: renderer,
-    highlight: function (code, language) {
-      if (enableCodeHighlight) {
-        const validLanguage = hljs.getLanguage(language)
-          ? language
-          : "plaintext";
-        return hljs.highlight(validLanguage, code).value;
-      }
-      return code;
-    },
-    pedantic: false,
-    gfm: true,
-    breaks: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    xhtml: false,
-  });
-
-  persentContent.empty();
-  persentContent.removeClass("loading");
-  persentContent.html(marked.parse(originalContent.trim()));
-
-  mdContent.remove();
-  mdContent = null;
-  // 代码行号
-  highlightCode();
-
-  // 相册
-  loadGallery();
-
-  // 数学公式
-  renderMath();
-
-  // 图片懒加载
-  lazyloadImg();
-  return true;
-}
-
-/**
- * 反转义 HTML
- * @param text
- * @returns {*}
- * @constructor
- */
-function HTMLDecode(text) {
-  const arrEntities = {lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"'};
-  return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, function (all, t) {
-    return arrEntities[t];
-  });
 }
 
 /*******************************
@@ -628,8 +320,6 @@ function getData(e) {
       $(page).append(pagination.children());
       lazyloadImg();
       if ($(data).find(".ziyan")) {
-        // 计算时间
-        setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
@@ -641,6 +331,33 @@ function getData(e) {
       $(pageContainer).addClass("loading");
     },
   });
+}
+
+function likeJournal(e) {
+  if ($(e).hasClass('liked')) {
+    return;
+  }
+  const path = $(e).data('path')
+  $.ajax({
+    type: "post",
+    url: path,
+    data: "{}",
+    contentType: "application/json",
+    dataType: "json",
+    success: function (data) {
+      $(e).addClass('liked')
+      $(e).removeAttr('onclick');
+      var count = $(e).siblings('.is-reaction-count')
+      var likeCount = parseInt(count.html())
+      $(e).siblings('.is-reaction-count').html(likeCount + 1);
+    },
+    error: function (msg) {
+    }
+  })
+}
+
+function commentJournal(e) {
+
 }
 
 /**
@@ -669,37 +386,13 @@ function getMore(e) {
       $(page).append(pagination.children());
       if ($(data).find(".ziyan")) {
         // 计算时间
-        setTimeAgo();
+        // setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
       }
     },
   });
-}
-
-/**
- * 渲染数学公式
- */
-const katexConfig = {
-  leqno: true,
-  delimiters: [
-    {left: "$$", right: "$$", display: true},
-    {left: "$", right: "$", display: false},
-    {left: "\\(", right: "\\)", display: false},
-    {left: "\\[", right: "\\]", display: true}
-  ]
-}
-
-function renderMath() {
-  if (openKatex && renderMathInElement && typeof renderMathInElement
-    !== 'undefined') {
-    if (document.getElementById('write')) {
-      renderMathInElement(document.getElementById('write'), katexConfig);
-    } else if (document.getElementById('ziyan')) {
-      renderMathInElement(document.getElementById('ziyan'), katexConfig);
-    }
-  }
 }
 
 /**
@@ -951,40 +644,76 @@ function gallery() {
   });
 }
 
-$(function () {
-  checkNightMode()
+function highLightCode() {
+  document.querySelectorAll('pre code').forEach((el) => {
+    // 在页面上显示这个代码块的语言
+    var cls = el.getAttribute('class');
+    if (cls !== undefined && cls !== null) {
+      var langs = cls.split(' ');
+      if (langs !== undefined && langs !== null) {
+        el.setAttribute('data-language', langs[0].replace('language-', ''))
+      }
+    }
+    hljs.highlightBlock(el);
+  });
+}
 
-  // 自动切换夜间模式
-  if (autoNightMode) {
-    autoDayNight();
-  }
+function setCodeLineNumber() {
+  $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
+    lineNumbersBlock(block);
+  });
+}
+
+
+function toBigImg() {
+  $(".opacityBottom").addClass("opacityBottom");//添加遮罩层
+  $(".opacityBottom").show();
+  $("html,body").addClass("none-scroll");//下层不可滑动
+  $(".bigImg").addClass("bigImg");//添加图片样式
+  $(".opacityBottom").click(function () {//点击关闭
+    $("html,body").removeClass("none-scroll");
+    $(".opacityBottom").remove();
+  });
+}
+
+function clickToZoomImg() {
+  $('img').click(function () {
+    //获取图片路径
+    var imgsrc = $(this).attr("src");
+    var opacityBottom = '<div class="opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>';
+    $(document.body).append(opacityBottom);
+    toBigImg();//变大函数
+  });
+}
+
+
+$(function () {
+  // 点击方法图片
+  clickToZoomImg();
+
+  toggleDarkMode();
 
   // 处理导航菜单
   handleNavMenu();
 
-  // 格式化markdown文章
-  const format = formatContent();
+  // 处理目录
+  dealContentToc()
 
-  // 目录相关
-  if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-    dealContentToc();
-  }
+  // 高亮代码
+  highLightCode()
 
-  if ($('#container').find('.md-content').length > 0 && format) {
-    return;
-  }
+  // 设置代码行号
+  setCodeLineNumber()
 
   // 相册
-  loadGallery();
+  gallery()
+
   // 图片懒加载
   lazyloadImg();
 
   if ($('#container').find('.ziyan').length > 0) {
-    // 计算时间
-    setTimeAgo();
 
     // 自言代码高亮
     hljsZiYanCode()
-
   }
 });

@@ -25,17 +25,6 @@ genernal:
           label: 卡片
         - value: false
           label: 列表
-    list_show_date:
-      name: list_show_date
-      label: 列表样式下的文章默认封面是否是日期
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 是
-        - value: false
-          label: 否
     show_popular:
       name: show_popular
       label: 列表风格下是否展示热门文章
@@ -74,18 +63,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    auto_night_mode:
-      name: auto_night_mode
-      label: 自动夜晚模式
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-      description: "这里会根据浏览器主题改变"
     right_corner_circle:
       name: right_corner_circle
       label: 开启右下角按钮
@@ -97,18 +74,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    default_hide_menu:
-      name: default_hide_menu
-      label: 打开展示收缩菜单按钮
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-      description: "打开后会默认收缩菜单"
     open_night_mode:
       name: open_night_mode
       label: 开启夜晚模式
@@ -213,108 +178,6 @@ post:
           label: 开启
         - value: false
           label: 关闭
-    enabled_mathjax:
-      name: enabled_mathjax
-      label: 是否展示公式
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    enable_code_highlight:
-      name: enable_code_highlight
-      label: 是否开启代码高亮
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    enable_code_lineNumber:
-      name: enable_code_lineNumber
-      label: 代码是否展示行号(需先开启代码高亮)
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    collpaseCode:
-      name: collpaseCode
-      label: 是否开启代码折叠
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    more_lang_code:
-      name: more_lang_code
-      label: 更多代码高亮
-      type: radio
-      data-type: bool
-      default: false
-      decription: "如果目前代码高亮不支持,可以尝试开启此开关"
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    idea_code_style:
-      name: idea_code_style
-      label: IDEA代码风格
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    code_style:
-      name: code_style
-      label: 代码风格
-      type: select
-      data-type: string
-      default: "tomorrow-night-bright"
-      description: "代码风格"
-      options:
-        - value: "tomorrow-night-bright"
-          label: "tomorrow"
-        - value: "atelier-lakeside-light"
-          label: "atelier"
-        - value: "atom-one-light"
-          label: "atom"
-        - value: "github"
-          label: "github"
-        - value: "github-gist"
-          label: "github-gist"
-        - value: "kimbie.light"
-          label: "kimbie"
-        - value: "paraiso-light"
-          label: "paraiso"
-        - value: "androidstudio"
-          label: "androidstudio"
-#    enabled_mermaid:
-#      name: enabled_mermaid
-#      label: Mermaid
-#      type: radio
-#      data-type: bool
-#      default: false
-#      options:
-#        - value: true
-#          label: 开启
-#        - value: false
-#          label: 关闭
 title:
   label: 自定义页面标题
   items:
@@ -351,42 +214,12 @@ title:
 social:
   label: 社交网络
   items:
-    sina:
-      name: sina
-      label: 新浪微博
-      type: text
-      placeholder: "用于展示底部新浪微博社交信息"
-      description: "新浪微博主页链接"
-    telegram:
-      name: telegram
-      label: Telegram
-      type: text
-      placeholder: "用于展示底部 Telegram 社交信息"
-      description: "Telegram 用户名"
-    twitter:
-      name: twitter
-      label: Twitter
-      type: text
-      placeholder: "用于展示底部 Twitter 社交信息"
-      description: "Twitter 主页链接"
-    qq:
-      name: qq
-      label: 腾讯 QQ
-      type: text
-      placeholder: "用于展示底部 QQ 社交信息"
-      description: "QQ 号码"
     github:
       name: github
       label: Github
       type: text
       placeholder: "用于展示底部 Github 社交信息"
       description: "GitHub 主页链接"
-    zhihu:
-      name: zhihu
-      label: 知乎
-      type: text
-      placeholder: "用于展示底部知乎社交信息"
-      description: "知乎主页链接"
     mail:
       name: mail
       label: 邮箱
@@ -410,17 +243,6 @@ experimental:
     pjax_enabled:
       name: pjax_enabled
       label: 全局 Pjax
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    enable_image_view:
-      name: enable_image_view
-      label: 是否启用图片预览（点击全屏）
       type: radio
       data-type: bool
       default: false
@@ -460,12 +282,6 @@ other:
           label: 开启
         - value: false
           label: 关闭
-    Aplayer:
-      name: Aplayer
-      label: Aplayer吸底播放器
-      type: text
-      placeholder: "网易云歌单id"
-      description: "网易云歌单id, 比如: 60198. "
     xiang_ying_xiong_zhi_jing:
       name: xiang_ying_xiong_zhi_jing
       label: 向英雄致敬, 愿精神长存

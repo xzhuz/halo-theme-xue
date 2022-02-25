@@ -13,14 +13,16 @@
 
     $(document).on('pjax:complete', function () {
       NProgress.done();
+      
+      clickToZoomImg();
 
       // 检查夜间模式
-      checkNightMode()
+      // checkNightMode()
 
       // 自动切换夜间模式
-      if (autoNightMode) {
-        autoDayNight();
-      }
+      // if (autoNightMode) {
+      //   autoDayNight();
+      // }
 
       // 删除listener
       removeScrollTocFixed();
@@ -33,8 +35,6 @@
       });
 
       if ($('#container').find('.ziyan').length > 0) {
-        // 计算时间
-        setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
@@ -42,26 +42,24 @@
 
       // 存在 markdown 页面的功能
       if ($("#container").find('.md-content').length > 0) {
-        // 格式化内容
-        // 格式化markdown文章
-        const format = formatContent();
 
+        // 高亮代码
+        highLightCode()
+
+        // 设置代码行号
+        setCodeLineNumber()
+        
         // 目录相关
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
           dealContentToc();
         }
 
-        if ($('#container').find('.md-content').length > 0 && format) {
-          return;
-        } else {
-          loadGallery();
-          lazyloadImg();
-        }
+        // lazyloadImg();
       }
 
       // 相册页面功能
       if ($("#container").find('.photos-page').length > 0) {
-        loadGallery();
+        gallery()
       }
 
       // 图片懒加载
@@ -79,17 +77,8 @@
       }
 
       if ($('#container').find('.jqcloud').length > 0) {
-        if (typeof $.fn.jQCloud !== "function") {
-          $.getScript(
-            "${theme_base!}/source/js/jqcloud-1.0.4.min.js",
-            function () {
-              renderTagCloud();
-              renderCategoryCloud();
-            });
-        } else {
-          renderTagCloud();
-          renderCategoryCloud();
-        }
+        renderTagCloud();
+        renderCategoryCloud();
 
       }
 

@@ -1,12 +1,9 @@
 .toc {
   position: fixed;
-  //right: calc((screen.width - 1024px) / 2) !important;
   bottom: 50%;
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
-  //z-index: 90;
   display: none;
-  //text-align: right;
   font-size: .9rem;
 }
 
@@ -50,15 +47,10 @@ a.toc-link:hover {
   color: var(--toc-bg-color) !important;
 }
 
-.is-active-link {
-  font-weight: 500;
-}
-
-
 .is-collapsible {
   max-height: 1000px;
   overflow: hidden;
-  transition: all 300ms ease-in-out
+  transition: all 300ms ease-in-out;
 }
 
 .is-collapsed {
@@ -126,19 +118,19 @@ span.toc-link-dot {
 }
 
 .node-name--H3 {
-  //padding-left: .5rem;
+  padding-left: .5rem;
 }
 
 .node-name--H4 {
-  //padding-left: .7rem;
+  padding-left: .7rem;
 }
 
 .node-name--H5 {
-  //padding-left: .9rem;
+  padding-left: .9rem;
 }
 
 .node-name--H6 {
-  //padding-left: 1.1rem;
+  padding-left: 1.1rem;
 }
 
 .toc-link:hover {
@@ -151,7 +143,7 @@ span.toc-link-dot {
 }
 
 .is-active-link span {
-  background-color: var(--toc-bg-color) !important;
+  background-color: var(--toc-active-color) !important;
 }
 
 .md-content ol > li, .md-content ul > li {

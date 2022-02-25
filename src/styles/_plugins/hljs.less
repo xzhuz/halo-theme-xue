@@ -2,27 +2,23 @@
   display: block;
   overflow-x: auto;
   padding: 0;
-  color: #383a42;
-  background: #f8f8f8;
+}
+
+pre table tr:nth-child(2n),
+pre thead {
+  background-color: initial !important;
+}
+pre code table {
+  border: none !important;
+  table-layout: initial !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 .hljs-ln td,
 .hljs-ln tr {
   border: none !important;
 }
-
-// .hljs-ln tr {
-//   position: relative;
-// }
-
-// .hljs-ln td.hljs-ln-numbers {
-//   position: absolute;
-//   box-shadow: 8px 0px 10px 0px #f8f8f8;
-//   -moz-box-shadow: 8px 0px 10px 0px #f8f8f8;
-//   -webkit-box-shadow: 8px 0px 10px 0px #f8f8f8;
-//   -o-box-shadow: 8px 0px 10px 0px #f8f8f8;
-//   -ms-box-shadow: 8px 0px 10px 0px #f8f8f8;
-// }
 
 .hljs-ln:first-child(.hljs-ln-numbers) {
   display: none;
@@ -36,22 +32,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
   text-align: center;
-  color: #ccc;
+  color: var(--base-code-text-color);
   border-right: 1px solid #ccc;
   vertical-align: top;
-  padding-right: 5px;
-
-  /* your custom style here */
-  width: 20px;
-  //min-width: 30px;
-  //background: rgba(200,200,200,.15);
-}
-
-/* for block of code */
-.hljs-ln-code {
-  padding-left: 10px !important;
+  padding-right: 10px;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  background: var(--base-code-block-bg-color);
 }
 
 /* for block of button */
@@ -67,5 +56,10 @@ td .hljs-button {
 }
 
 table.hljs-ln td {
-  padding: 2px 0 2px 4px !important;
+  padding: 2px 0 2px 4px;
+}
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 32px !important;
 }

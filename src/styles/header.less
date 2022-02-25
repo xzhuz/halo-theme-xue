@@ -1,7 +1,6 @@
 // 顶部 nav 样式
 .nav-wrapper {
-  background-color: var(--header-bg-color);
-  //border-bottom: 1px solid rgba(30,35,42,.06);
+  //background-color: var(--header-bg-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -12,10 +11,8 @@
   z-index: 100;
   padding: 0;
   display: block;
-  //transition: all 0.2s ease-in-out;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  //-webkit-transition: all 0.2s ease-in-out;
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
@@ -29,11 +26,11 @@
 }
 
 .nav-wrapper > .nav {
-  max-width: 80rem;
-  width: 90%;
+  //max-width: 80rem;
+  //width: 90%;
   height: 4rem;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  padding: 0 11%;
   display: flex;
   justify-content: space-between;
 }
@@ -45,71 +42,6 @@
   z-index: 999;
 }
 
-.slideIn {
-  animation: slideIn 0.6s ease 1; /*调用动画：动画名、时间、时间线条、播放次数*/
-  -webkit-animation: slideIn 0.6s ease 1; /*调用动画：动画名、时间、时间线条、播放次数*/
-}
-
-.slideOut {
-  animation: slideOut 0.6s ease-out 1; /*调用动画：动画名、时间、时间线条、播放次数*/
-  -webkit-animation: slideOut 0.6s ease-out 1; /*调用动画：动画名、时间、时间线条、播放次数*/
-}
-
-@-webkit-keyframes slideIn {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slideOut {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-}
-
-@keyframes slideOut {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-}
 
 .nav-wrapper > .nav > .toggle-nav {
   z-index: 2;
@@ -117,7 +49,7 @@
   -webkit-transition: all 0.3s;
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 768px) {
   .nav-wrapper > .nav > .toggle-nav {
     display: none;
   }
@@ -151,45 +83,46 @@
   right: 40px;
 }
 
-.nav-wrapper .search .icon-search {
+.nav-wrapper .search .by_icon_sousuo {
   font-size: 20px;
   cursor: pointer;
   // color: var(--header-link-color) !important;
 }
 
-.nav-wrapper .search .icon-search:hover {
+.nav-wrapper .search .by_icon_sousuo:hover {
   color: var(--base-hl-color);
 }
 
-.nav-bg-fff {
-  background-color: var(--header-bg-color) !important;
-  transition: all 0.6s;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
-  box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
+//.nav-bg-fff {
+//  background-color: var(--header-bg-color) !important;
+//  transition: all 0.6s;
+//  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
+//  box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.05);
+//
 
-  .nav-list > .list > .item > .link,
-  .nav-list > .list > .item > .void-link {
-    color: var(--header-link-color) !important;
-  }
-}
+//}
 
-@media screen and (min-width: 800px) {
+//.nav-list > .list > .item > .link,
+//.nav-list > .list > .item > .void-link {
+//  color: var(--header-link-color) !important;
+//}
+
+@media screen and (min-width: 768px) {
   .nav-wrapper.-sticky.-bottom > .nav > .nav-list > .list.-left {
     flex-direction: row;
     justify-content: flex-start;
   }
 
-  .nav-wrapper {
-    background: none;
-  }
-
-  .nav-list > .list > .item > .link,
-  .nav-list > .list > .item > .void-link {
-    color: #ffffff !important;
-  }
+  //.nav-wrapper {
+  //  background: none;
+  //}
+  //.nav-list > .list > .item > .link,
+  //.nav-list > .list > .item > .void-link {
+  //  color: #ffffff !important;
+  //}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .nav-wrapper.-sticky.-bottom {
     top: unset;
     bottom: unset;
@@ -269,12 +202,12 @@
   width: 40%;
 }
 
-.nav-list > .list > .item {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  border-bottom: 1px solid rgba(176, 176, 176, 0.5);
-}
+//.nav-list > .list > .item {
+//  display: flex;
+//  flex-wrap: wrap;
+//  padding: 0;
+//  border-bottom: 1px solid rgba(176, 176, 176, 0.5);
+//}
 
 // .nav-list > .list > .item:last-child {
 //   border-bottom: 0;
@@ -288,14 +221,14 @@
   background: transparent;
   font-size: 1.2rem;
   padding: 0.75rem 1rem 0.5rem 1.5rem;
-  color: var(--header-link-color);
+  //color: var(--header-link-color);
   transition: all 0.3s ease-in-out;
 }
 
-.nav-list > .list > .item > .link:hover,
-.nav-list > .list > .item > .link.-active {
-  color: var(--base-hover-color) !important;
-}
+//.nav-list > .list > .item > .link:hover,
+//.nav-list > .list > .item > .link.-active {
+//  color: var(--base-hover-color) !important;
+//}
 
 .nav-list > .list > .overlay {
   width: 40%;
@@ -584,7 +517,7 @@ button:focus {
   color: var(--base-hover-color) !important;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 768px) {
   .logo {
     display: none;
   }
@@ -606,7 +539,7 @@ button:focus {
   }
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 768px) {
   .nav-list {
     top: unset;
     left: unset;
@@ -652,5 +585,42 @@ button:focus {
     font-size: 1.1rem;
     outline: 0;
     transition: all 0.2s ease-in-out;
+  }
+}
+
+.dark {
+  .burger-lines, .burger-lines:after, .burger-lines:before {
+    --tw-text-opacity: 1;
+    background-color: rgba(156, 163, 175, var(--tw-text-opacity)) !important;
+  }
+
+  .burger.open .burger-lines {
+    background-color: transparent !important;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+
+  .link, .void-link {
+    --tw-text-opacity: 1;
+    color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  }
+  
+  .dark {
+    .link, .void-link {
+      --tw-text-opacity: 1;
+      color: rgba(209, 213, 219, var(--tw-text-opacity)) !important;
+    }
+
+    .nav {
+      --tw-bg-opacity: 1;
+      background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+    }
+
+    .nav-list > .list.-left {
+      --tw-bg-opacity: 1;
+      background-color: rgba(31, 41, 55, var(--tw-bg-opacity)) !important;
+    }
   }
 }

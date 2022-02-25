@@ -5,7 +5,7 @@ author:
   website: https://baozi.fun
 description: 大道至简
 logo:
-website: https://github.com/xzzai/halo-theme-xue
-repo: https://github.com/xzzai/halo-theme-xue
-version: 1.3.1
-require: 1.4.0
+website: https://github.com/xzhuz/halo-theme-xue
+repo: https://github.com/xzhuz/halo-theme-xue
+version: 1.3.2
+require: 1.5.0

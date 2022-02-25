@@ -95,8 +95,7 @@ table tr {
   padding: 0;
 }
 
-table tr:nth-child(2n),
-thead {
+table tr:nth-child(2n), thead {
   background-color: #f8f8f8;
 }
 
@@ -156,8 +155,7 @@ pre {
   padding: 0.75rem 1rem;
   line-height: 1.6;
   overflow-wrap: normal;
-  border: 1px solid;
-  border-color: inherit;
+  border: 1px solid inherit;
 }
 
 pre pre {
@@ -257,6 +255,26 @@ ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
 
+.md-content .heti ul, .md-content .heti ol {
+  padding-inline-start: 0;
+}
+
+.md-content .heti ul, .md-content .heti ol, .md-content .heti dl {
+  margin-block-start: 6px;
+  margin-block-end: 6px;
+}
+
+.md-content {
+  .heti p {
+    margin-block-start: 6px;
+    margin-block-end: 6px;
+  }
+
+  .heti pre code {
+    padding-left: 1rem;
+  }
+}
+
 .md-content {
   font-size: 1.1rem;
 }
@@ -267,11 +285,31 @@ ol > li > ol > li > ol > li {
 .md-content h4,
 .md-content h5,
 .md-content h6 {
+  z-index: 99;
   margin-left: -1.3rem;
   // 实现点击目录精准跳转到header
   margin-top: -60px !important;
   padding-top: 60px !important;
   outline: none !important;
+
+  &:before {
+    position: relative;
+    top: 0.1rem;
+    right: 0.5rem;
+    //right: calc(100% + 10px);
+    bottom: 0;
+    color: #b4b4b4;
+    font-size: 0.8rem;
+    font-weight: bold;
+    //font-variant: "small-caps";
+    border: 0;
+    border-radius: 0;
+    left: auto;
+    float: none;
+    padding: 0;
+    vertical-align: baseline;
+    line-height: 2;
+  }
 }
 
 .md-content h1:visited,
@@ -300,22 +338,22 @@ ol > li > ol > li > ol > li {
 .md-content h4::before,
 .md-content h5::before,
 .md-content h6::before {
-  position: relative;
-  top: 0.1rem;
-  right: 0.5rem;
-  //right: calc(100% + 10px);
-  bottom: 0;
-  color: #b4b4b4;
-  font-size: 0.8rem;
-  font-weight: bold;
-  font-variant: "small-caps";
-  border: 0;
-  border-radius: 0;
-  left: auto;
-  float: none;
-  padding: 0;
-  vertical-align: baseline;
-  line-height: 2;
+  //position: relative;
+  //top: 0.1rem;
+  //right: 0.5rem;
+  ////right: calc(100% + 10px);
+  //bottom: 0;
+  //color: #b4b4b4;
+  //font-size: 0.8rem;
+  //font-weight: bold;
+  ////font-variant: "small-caps";
+  //border: 0;
+  //border-radius: 0;
+  //left: auto;
+  //float: none;
+  //padding: 0;
+  //vertical-align: baseline;
+  //line-height: 2;
 }
 
 .md-content h1 {
@@ -323,8 +361,9 @@ ol > li > ol > li > ol > li {
   font-style: normal;
   font-weight: 900;
   line-height: 2;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
+  //z-index: -1;
 }
 
 .md-content h1::before {
@@ -337,8 +376,9 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   font-style: normal;
   line-height: 2;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
+  //z-index: -1;
 }
 
 .md-content h2::before {
@@ -351,8 +391,9 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
+  //z-index: -1;
 }
 
 .md-content h3::before {
@@ -365,8 +406,9 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
+  //z-index: -1;
 }
 
 .md-content h4::before {
@@ -380,8 +422,9 @@ ol > li > ol > li > ol > li {
   font-weight: 900;
   line-height: 2;
   font-style: normal;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  //margin-top: 14px;
+  //margin-bottom: 14px;
+  //z-index: -1;
 }
 
 .md-content h5::before,
@@ -404,20 +447,13 @@ ol > li > ol > li > ol > li {
 
 .md-content ol > li,
 .md-content ul > li {
-  //color: #ff5f5f;
   list-style: disc;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
-  //color: var(--base-hl-color);
 }
 
 .md-content ol > li {
   list-style: decimal !important;
-}
-
-.md-content ol > li > *,
-.md-content ul > li > * {
-  color: #333 !important;
 }
 
 .md-content ol > li > *:not(ol):not(ul),
@@ -434,10 +470,13 @@ ol > li > ol > li > ol > li {
 }
 
 .md-content p {
-  margin: 1rem auto;
+  margin: 3px auto;
   line-height: 2;
 }
 
+.heti ul, .heti ol {
+ padding-inline-start: 18px;
+}
 .md-content blockquote p {
   margin: .6rem auto;
 }
@@ -447,9 +486,12 @@ ol > li > ol > li > ol > li {
   margin: 0 auto;
 }
 
+.md-content blockquote {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
 .md-content a {
-  //text-decoration: underline;
-  //text-decoration-style: dotted;
   cursor: pointer;
   word-break: break-word;
   text-decoration: underline;
@@ -457,17 +499,37 @@ ol > li > ol > li > ol > li {
   text-underline-position: under;
 }
 
+.footnote-ref a, a.footnote-backref {
+  text-decoration: none;
+
+  &:hover {
+    color: var(--base-hover-color) !important;
+    text-decoration: none;
+    border-block-end: none;
+    padding-block-end: 0;
+  }
+}
+
 .md-content pre {
-  padding: 10px;
-  font-size: 85%;
+  position: relative;
+  padding: 0;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  background: #21252b;
   border: 0;
   border-radius: 3px;
-  color: #777777;
-  //margin-top: 0 !important;
+  color: var(--base-code-text-color);
   margin: 1em auto;
   overflow: auto;
+  font-family: consolas, 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+}
+
+.md-content pre code:before {
+  content: attr(data-language);
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  color: var(--base-code-text-color);
+  opacity: 0.6;
 }
 
 .md-content p img {
@@ -477,27 +539,6 @@ ol > li > ol > li > ol > li {
 .md-content p img.lazyload {
   display: block;
   margin: 1rem auto;
-}
-
-
-.code-tooltip {
-  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
-  border-top: 1px solid #eef2f2;
-}
-
-.gist .gist-meta {
-  background: none !important;
-}
-
-.gist .gist-file {
-  border-color: #eee !important;
-  border-radius: 3px !important;
-}
-
-.gist .gist-data {
-  padding: 0.4em 0 !important;
-  border-color: #eee !important;
-  border-radius: 3px 3px 0 0 !important;
 }
 
 @media only screen and (max-width: 800px) {

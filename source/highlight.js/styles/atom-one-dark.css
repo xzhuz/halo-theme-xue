@@ -21,9 +21,14 @@ hue-6-2: #e6c07b
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
+  padding: 0.5em 0.5em 0 0.5em;
+  /*color: #BBBBBB;*/
   background: #282c34;
+  font-size: 14px !important;
+}
+
+.hljs-params {
+  color: #D19A66;
 }
 
 .hljs-comment,
