@@ -19,7 +19,7 @@
     --btn-pri-bg-color: #E53A40;
     --base-txt-color: #363636;
     --base-code-text-color: #a9b7c6;
-    --base-code-block-bg-color:#282c34;
+    --base-code-block-bg-color: #282c34;
 
 
     /*--btn-pri-bg-color: #ff5f5f;*/
@@ -55,20 +55,22 @@
 
   </#if>
 
-<#--  <#if settings.enabled_index_cover_height!true>-->
-<#--  @media only screen and (min-width: 861px) {-->
-<#--    .home-cover {-->
-<#--      height: 100vh !important;-->
-<#--    }-->
-<#--  }-->
+  <#--  <#if settings.enabled_index_cover_height!true>-->
+  <#--  @media only screen and (min-width: 861px) {-->
+  <#--    .home-cover {-->
+  <#--      height: 100vh !important;-->
+  <#--    }-->
+  <#--  }-->
 
-<#--  </#if>-->
+  <#--  </#if>-->
 </style>
 
 <#--标签云-->
 <link href="${theme_base!}/source/css/jqcloud.min.css" rel="stylesheet">
 <#--  中文排版 -->
 <link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
+<link href="${theme_base!}/source/css/katex.min.css" rel="stylesheet">
+
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 

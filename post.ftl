@@ -46,7 +46,7 @@
     </header>
     <div class="article-content fade-up">
       <div  class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300" id="gallery-content">
-        ${post.formatContent!}
+        ${post.content!}
       </div>
       <div id="tocFlag"></div>
         <#if settings.post_toc!true>
@@ -67,13 +67,14 @@
       <p class="flex flex-row justify-start flex-wrap">
           <#if post.tags?? && post.tags?size gt 0>
               <#list post.tags as tag>
-                <a href="${tag.fullPath!}"class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 transition text-gray-800 no-underline" style="text-decoration: none !important;">
+                <a href="${tag.fullPath!}"
+                   class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline " style="text-decoration: none !important;">
                   #&nbsp;${tag.name!}
                 </a>
               </#list>
           </#if>
       </p>
-      <hr class="mt-4" style="background-color: rgba(96, 125, 139, .05); size: 2px;">
+      <hr class="mt-4 bg-gray-100 dark:bg-gray-800 h-0.5 " >
     </div>
 
     <!-- 上一篇和下一篇 -->

@@ -29,8 +29,7 @@
           <div class="flex-left flex flex-col justify-between pl-4 md:pl-4 h-16 md:h-36 w-full ">
             <a href="${post.fullPath!}" rel="bookmark"
                class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none border-t border-dotted dark:border-gray-800 md:pt-2">
-              
-              <h2 class="text-base md:text-2xl hover:text-red-500 mb-0 mt-0 relative z-50 dark:text-gray-300 inline-block transition-all duration-300">
+              <h2 class="text-base md:text-2xl hover:text-red-500 mb-0 mt-0 relative z-50 dark:text-gray-300 inline-block">
                 <#if post.topPriority gt 0>
                   <i class="iconfont icon-pin-fill text-sm md:text-base text-gray-400"></i>
                 </#if>

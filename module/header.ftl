@@ -1,13 +1,8 @@
-<header class="nav-wrapper -sticky  <#if settings.default_hide_menu!true> <#else>nav-bg-fff</#if>" id="navHeader">
-    <button class="collapse-nav" onClick="collapseNav()" id="collapseNav" style="<#if settings.default_hide_menu!true> <#else>display:none</#if>">
-        <div class="collapse-burger -squeeze">
-            <span class="burger-lines"></span>
-        </div>
-    </button>
-    <nav class="nav <#if settings.default_hide_menu!true>opacity-0<#else> opacity-100  </#if> "  id="nav">    
+<header class="nav-wrapper -sticky bg-transparent transition-opacity duration-300" id="navHeader">
+    <nav class="nav bg-white md:bg-transparent md:dark:bg-gray-800"  id="nav">    
         <button class="toggle-nav">
             <div class="burger -squeeze">
-                <span class="burger-lines"></span>
+                <span class="burger-lines md:text-gray-800 "></span>
             </div>
         </button>
         <#if settings.header_logoimg?? && settings.header_logoimg!=''>
@@ -21,8 +16,8 @@
             <div class="list -left " id="menuLinks">
                 <@menuTag method="tree">
                     <#list menus?sort_by('priority') as menu>
-                        <li class="item ">
-                            <a class="link md:text-base sm:text-sm" href="${menu.url!}"
+                        <li class="item flex flex-wrap p-0">
+                            <a class="link md:text-base sm:text-sm font-bold text-gray-100" href="${menu.url!}"
                                target="${menu.target!}">${menu.name}</a>
                         </li>
                     </#list>

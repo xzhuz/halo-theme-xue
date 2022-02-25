@@ -15,11 +15,9 @@ function autoDayNight() {
     '(prefers-color-scheme: dark)').matches) {
     $("#daySwitch").removeClass("daySwitch");
     $(document.body).addClass("dark");
-    $(document.body).addClass("night");
-    
-  // } else {
-  //   $("#daySwitch").addClass("daySwitch");
-  //   $(document.body).removeClass("dark");
+  } else {
+    $("#daySwitch").addClass("daySwitch");
+    $(document.body).removeClass("dark");
   }
 }
 
@@ -41,18 +39,6 @@ function documentClickToc(target) {
   }
 }
 
-
-function getHashCode(str, caseSensitive) {
-  if (!caseSensitive) {
-    str = str.toLowerCase();
-  }
-  var hash = 1315423911, i, ch;
-  for (i = str.length - 1; i >= 0; i--) {
-    ch = str.charCodeAt(i);
-    hash ^= ((hash << 5) + ch + (hash >> 2));
-  }
-  return (hash & 0x7FFFFFFF);
-}
 
 /**
  * 处理目录
@@ -90,36 +76,23 @@ function handleNavMenu() {
 }
 
 function handleScrollMenu() {
-
   if (getClientWidth() <= 800) {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     return;
   }
+  var dark = $(document.body).hasClass("dark");
   const scrollTop = getScrollTop();
   if (scrollTop > 29) {
-    $('#navHeader').addClass('nav-bg-fff')
-    $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-    $('#navHeader .collapse-nav').hide()
-    $('.collapse-burger').removeClass('open');
+    if (dark) {
+      $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')
+      $('.link').addClass('text-gray-100')
+    } else {
+      $('#navHeader').addClass('bg-white').removeClass('bg-transparent').addClass('shadow-md').removeClass('dark:bg-gray-800')
+      $('.link').addClass('text-gray-800').removeClass('text-gray-100')
+    }
   } else {
-    $('#navHeader').removeClass('nav-bg-fff')
-    $('#navHeader .nav').removeClass('opacity-100').addClass('opacity-0')
-    $('#navHeader .collapse-nav').show()
-  }
-}
-
-function collapseNav() {
-  const burger = $('.collapse-burger');
-  burger.toggleClass('open');
-  const nav = $('#navHeader .nav');
-
-  nav.toggleClass('opacity-100')
-  if (nav.hasClass('opacity-100')) {
-    nav.removeClass('slideOut');
-    nav.addClass('slideIn');
-  } else {
-    nav.addClass('slideOut');
-    nav.removeClass('slideIn');
+    $('#navHeader').addClass('bg-transparent').removeClass('dark:bg-gray-800').removeClass('bg-white').removeClass('bg-transparent').removeClass('shadow-md')
+    $('.link').addClass('text-gray-100').removeClass('text-gray-800')
   }
 }
 

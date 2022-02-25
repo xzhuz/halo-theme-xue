@@ -25,12 +25,13 @@
         <nav id="gallery-filter">
           <ul>
             <li>
-              <a href="javascript:void(0);" data-filter="*" class="active">全部</a>
+              <a href="javascript:void(0);" data-filter="*" class="active text-gray-800 dark:text-gray-300">全部</a>
             </li>
               <@photoTag method="listTeams">
                   <#list teams as item>
                     <li>
                       <a href="javascript:void(0);"
+                         class="text-gray-800 dark:text-gray-300"
                          data-filter=".${((item.team)?length>0)?string((item.team),'默认')}">${((item.team)?length>0)?string((item.team),'默认')}</a>
                     </li>
                   </#list>

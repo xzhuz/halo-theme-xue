@@ -29,7 +29,7 @@
               <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                   <#list item.links?sort_by('priority')?reverse  as link>
                     <a href="${link.url}"
-                       class="bg-gray-200 hover:shadow-md w-60 hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 transition text-gray-800 no-underline"
+                       class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline "
                        style="text-decoration: none !important;">
                       ${link.name} <span class="ml-4">${link.description}</span>
                     </a>
@@ -38,7 +38,7 @@
             </#list>
           <div id="write">
             <!--声明区域-->
-              ${sheet.formatContent!}
+              ${sheet.content!}
           </div>
         </@linkTag>
     </div>

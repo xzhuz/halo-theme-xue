@@ -22,7 +22,7 @@
     <div
       class="px-10 mx-auto md-content text-gray-800 dark:text-gray-300 px-4 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up"
       id="write">
-        ${sheet.formatContent!}
+        ${sheet.content!}
     </div>
 
     <div
