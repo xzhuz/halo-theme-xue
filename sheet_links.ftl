@@ -31,7 +31,7 @@
                     <a href="${link.url}"
                        class="bg-gray-200 w-56 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline "
                        style="text-decoration: none !important;">
-                      ${link.name} <span class="ml-4">${link.description}</span>
+                      ${link.name}
                     </a>
                   </#list>
               </div>
