@@ -27,7 +27,7 @@
         <#list archives as archive>
           <section class="arch-year pt-0.5 pb-0.5 px-0 relative border-transparent">
             <#if archive.year?c != year>
-              <h1 class="m-0 leading-9 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300 relative">${archive.year?c}</h1>
+              <h1 class="m-0 leading-9 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300 relative">${archive.year?c}</h1>
               <#assign year="${archive.year?c}">
             </#if>
             <div class="relative pl-12">
