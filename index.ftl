@@ -29,7 +29,7 @@
     </header>
     <div class="mx-auto fade-up  <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl</#if>">
       <h3 class="mt-4 mb-0 dark:text-gray-300 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
-      <hr class="text-center w-full mx-auto mt-2 mb-2 hidden md:block bg-gray-300 dark:bg-gray-800"/>
+<#--      <hr class="text-center w-full mx-auto mt-2 mb-2 hidden md:block bg-gray-300 dark:bg-gray-800"/>-->
       <#if settings.posts_style!true>
         <#include "module/widget/post_cards.ftl">
       <#else>

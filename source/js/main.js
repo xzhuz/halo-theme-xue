@@ -2,16 +2,6 @@
 
 // 夜间模式
 function dayNightSwitch() {
-  // const key = 'nightMode';
-  // // 夜晚模式开关
-  // const daySwitch = $("#daySwitch");
-  // daySwitch.toggleClass("daySwitch");
-  // $(document.body).toggleClass("night");
-  // if (document.body.classList.contains('night')) {
-  //   setLocalStorage(key, true);
-  // } else {
-  //   setLocalStorage(key, false);
-  // }
   const daySwitch = $("#daySwitch");
   daySwitch.toggleClass("daySwitch");
   $(document.body).toggleClass("dark");
@@ -32,16 +22,6 @@ function autoDayNight() {
   //   $(document.body).removeClass("dark");
   }
 }
-
-// function checkNightMode() {
-//   const isNight = getLocalStorage('nightMode');
-//   // 如果已经是夜间模式
-//   if (isNight) {
-//     const daySwitch = $("#daySwitch");
-//     daySwitch.removeClass("daySwitch");
-//     $(document.body).addClass("night");
-//   }
-// }
 
 /**
  * 点击页面处理小屏幕目录事件
@@ -157,23 +137,6 @@ function removeScrollTocFixed() {
   document.removeEventListener('scroll', tocScroll, false);
 }
 
-function highlightCode() {
-  if (enableLineNumber) {
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      lineNumbersBlock(block);
-    });
-  }
-
-  if (collpaseCode) {
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      $(block).parent().wrap('<details></details>');
-      $(block).parent().before('<summary>code</summary>')
-    });
-  }
-
-
-}
-
 //获取滚动条距离顶部位置
 function getScrollTop() {
   return document.documentElement.scrollTop || document.body.scrollTop;
@@ -265,248 +228,6 @@ function toggleWeChat() {
   $(".qrcode-wechat").toggleClass("hidden");
   $("#alipay i").removeClass("active-bg");
   $("#wechat i").toggleClass("active-bg");
-}
-
-function scollTo() {
-  const postHeight = $("#homeHeader").height();
-  window.scroll({top: postHeight, behavior: "smooth"});
-}
-
-function generateId() {
-  const chars = `ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz`;
-  let id = ``;
-  for (let i = 0; i < 8; i++) {
-    id += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return id;
-}
-
-function getBilibili(width, height, id) {
-  return `<iframe width="${width}" height="${height}" src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
-}
-
-function getWangYiMusic(id) {
-  return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=${id}&auto=1&height=90"></iframe>`
-}
-
-const wangyi = /\[music:\s*\d+\s*\]/g;
-
-const bilibili = /\[bilibili:\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\]/g;
-
-const blockReg = /\${2}([\s\S]*?)\${2}/g;
-const inlineReg = /\$([\s\S]*?)\$/g;
-
-/**
- * 格式化公式
- */
-function formatMath(kateBlock, isBlock) {
-  // 这一步很重要，需要把 &amp; 换成 &
-  let block = kateBlock.replaceAll("&amp;", "&");
-  if (block.length < 3) {
-    return;
-  }
-  const len = isBlock ? 2 : 1;
-  block = block.substring(len, block.length - len);
-  const html = katex.renderToString(block, {
-    throwOnError: false,
-    leqno: true,
-    fleqn: true,
-  });
-  return isBlock ? `<div style="text-align: center; margin: 1rem auto;">${html}</div>` : html;
-}
-
-/**
- * 处理公式
- */
-function dealMathx(content) {
-  if (openKatex) {
-    const kateBlocks = content.match(blockReg);
-    if (kateBlocks && kateBlocks.length > 0) {
-      for (let i = 0; i < kateBlocks.length; i++) {
-        content = content.replace(kateBlocks[i], formatMath(kateBlocks[i], true));
-      }
-    }
-    const kateInlines = content.match(inlineReg);
-    if (kateInlines && kateInlines.length > 0) {
-      for (let i = 0; i < kateInlines.length; i++) {
-        content = content.replace(kateInlines[i], formatMath(kateInlines[i], false));
-      }
-    }
-  }
-  return content;
-}
-
-/**
- * 将文本转成 markdown
- */
-function formatContent() {
-  let mdContent = document.getElementById("original");
-  const persentContent = $("#write");
-  if (!mdContent || !persentContent) {
-    return;
-  }
-  // 获取原始html
-  let originalContent = mdContent.innerHTML;
-
-  if (typeof originalContent === "undefined") {
-    return false;
-  }
-  // 反转义原始markdown文本
-  originalContent = HTMLDecode(originalContent);
-  // 处理公式， 这是主要是因为 \\ 的原因
-  // originalContent = dealMathx(originalContent);
-  persentContent.empty();
-  persentContent.addClass("loading");
-
-  const renderer = new marked.Renderer();
-
-  renderer.heading = function (text, level, raw, slugger) {
-    return `<h${level} id=${generateId()}>${text}</h${level}>`;
-  };
-
-  renderer.paragraph = function (text) {
-    // 渲染网易云音乐
-    const musics = text.match(wangyi);
-    if (musics && musics.length > 0) {
-      for (let i = 0; i < musics.length; i++) {
-        const wangyiMusic = musics[i].match(/\d+/);
-        if (wangyiMusic && wangyiMusic.length > 0) {
-          const id = wangyiMusic[0];
-          text = text.replace(musics[i], getWangYiMusic(id));
-        }
-      }
-    }
-
-    // 渲染bilibili视频
-    const videos = text.match(bilibili);
-    if (videos && videos.length > 0) {
-      for (let j = 0; j < videos.length; j++) {
-        const video = videos[j].match(/\d+/g);
-        if (video && video.length > 0 && video.length === 3) {
-          const aid = video[0], width = video[1], height = video[2];
-          text = text.replace(videos[j], getBilibili(width, height, aid));
-        }
-      }
-    }
-    return `<p>${text}</p>`;
-  };
-
-  renderer.link = function (href, title, text) {
-    if (href && href.startsWith('#')) {
-      return `<a href="${href}" rel="noopener noreferrer">${text}</a>`;
-    }
-    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-  };
-
-  renderer.image = function (href, title, text) {
-    const reg = /([^]*)\[([^]*)\]\(([^]*)\)/;
-    const isContainUrl = reg.test(text);
-    const imgHtml = `<img class="lazyload" src=${loading} data-src=${href} alt=${text}>`;
-    return `<span style="text-align: center;">
-              ${
-      isContainUrl
-        ? getImgWithUrlHtml(text.match(reg), href)
-        : imgHtml
-    }
-            </span>`;
-  };
-
-  function getImgWithUrlHtml(textArr, href) {
-    return `<img class="lazyload" src=${loading} data-src=${href} alt=${textArr[2]}></a>`;
-  }
-
-  renderer.listitem = function (text, task) {
-    if (task) {
-      return `<li style="list-style: none;">${text}</li>`;
-    }
-    return `<li>${text}</li>`;
-  };
-
-  renderer.blockquote = function (text) {
-    text = text.trim();
-    // 去掉换行符
-    text = text.replace(/[\r\n]/g, "<br/>");
-    text = text.replace(/<p>/g, "");
-    text = text.replace(/<\/p>/g, "<br>");
-    const textArr = text.split("<br>");
-    const context = [];
-    for (let i = 0; i < textArr.length; i++) {
-      if (textArr[i].trim().length === 0) {
-        continue;
-      }
-      let txt = textArr[i].replace(/<br\/>/g, '')
-      txt = txt.replace(/<br>/g, '')
-      context.push(`<p>${txt}</p>`);
-    }
-    return `<blockquote>${context.join("")}</blockquote>`;
-  };
-
-  renderer.table = function (header, body) {
-    if (body) {
-      body = "<tbody>" + body + "</tbody>";
-    }
-
-    return (
-      '<div class="md-table"><table>\n' +
-      "<thead>\n" +
-      header +
-      "</thead>\n" +
-      body +
-      "</table></div>\n"
-    );
-  };
-
-  marked.setOptions({
-    renderer: renderer,
-    highlight: function (code, language) {
-      if (enableCodeHighlight) {
-        const validLanguage = hljs.getLanguage(language)
-          ? language
-          : "plaintext";
-        return hljs.highlight(validLanguage, code).value;
-      }
-      return code;
-    },
-    pedantic: false,
-    gfm: true,
-    breaks: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    xhtml: false,
-  });
-
-  persentContent.empty();
-  persentContent.removeClass("loading");
-  persentContent.html(marked.parse(originalContent.trim()));
-
-  mdContent.remove();
-  mdContent = null;
-  // 代码行号
-  highlightCode();
-
-  // 相册
-  gallery()
-
-  // 数学公式
-  renderMath();
-
-  // 图片懒加载
-  // lazyloadImg();
-  return true;
-}
-
-/**
- * 反转义 HTML
- * @param text
- * @returns {*}
- * @constructor
- */
-function HTMLDecode(text) {
-  const arrEntities = {lt: "<", gt: ">", nbsp: " ", amp: "&", quot: '"'};
-  return text.replace(/&(lt|gt|nbsp|amp|quot);/gi, function (all, t) {
-    return arrEntities[t];
-  });
 }
 
 /*******************************
@@ -624,8 +345,6 @@ function getData(e) {
       $(page).append(pagination.children());
       lazyloadImg();
       if ($(data).find(".ziyan")) {
-        // 计算时间
-        setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
@@ -692,7 +411,7 @@ function getMore(e) {
       $(page).append(pagination.children());
       if ($(data).find(".ziyan")) {
         // 计算时间
-        setTimeAgo();
+        // setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
@@ -700,32 +419,6 @@ function getMore(e) {
     },
   });
 }
-
-/**
- * 渲染数学公式
- */
-const katexConfig = {
-  leqno: true,
-  delimiters: [
-    {left: "$$", right: "$$", display: true},
-    {left: "$", right: "$", display: false},
-    {left: "\\(", right: "\\)", display: false},
-    {left: "\\[", right: "\\]", display: true}
-  ]
-}
-/**
- * 渲染数学公式
- */
-// function renderMath() {
-//   if (openKatex && renderMathInElement && typeof renderMathInElement
-//     !== 'undefined') {
-//     if (document.getElementById('write')) {
-//       renderMathInElement(document.getElementById('write'), katexConfig);
-//     } else if (document.getElementById('ziyan')) {
-//       renderMathInElement(document.getElementById('ziyan'), katexConfig);
-//     }
-//   }
-// }
 
 /**
  * 懒加载图片
@@ -1025,14 +718,6 @@ $(function () {
 
   autoDayNight();
 
-  // 检查黑夜模式
-  // checkNightMode()
-
-  // 自动切换夜间模式
-  // if (autoNightMode) {
-  //   autoDayNight();
-  // }
-
   // 处理导航菜单
   handleNavMenu();
 
@@ -1052,8 +737,6 @@ $(function () {
   lazyloadImg();
 
   if ($('#container').find('.ziyan').length > 0) {
-    // // 计算时间
-    // setTimeAgo();
 
     // 自言代码高亮
     hljsZiYanCode()

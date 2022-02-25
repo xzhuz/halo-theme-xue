@@ -35,8 +35,6 @@
       });
 
       if ($('#container').find('.ziyan').length > 0) {
-        // 计算时间
-        setTimeAgo();
 
         // 自言代码高亮
         hljsZiYanCode()
@@ -79,17 +77,8 @@
       }
 
       if ($('#container').find('.jqcloud').length > 0) {
-        if (typeof $.fn.jQCloud !== "function") {
-          $.getScript(
-            "${theme_base!}/source/js/jqcloud-1.0.4.min.js",
-            function () {
-              renderTagCloud();
-              renderCategoryCloud();
-            });
-        } else {
-          renderTagCloud();
-          renderCategoryCloud();
-        }
+        renderTagCloud();
+        renderCategoryCloud();
 
       }
 

@@ -8,11 +8,14 @@
 <#--代码行数-->
 <script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
 
+<#--标签云-->
+<script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>
+
 <#--目录-->
 <#if settings.post_toc!true>
   <script src="${theme_base!}/source/js/tocbot.min.js"></script>
   <script type="text/javascript">
-    
+
   </script>
 </#if>
 
@@ -33,19 +36,6 @@
 <script src="${theme_base!}/source/js/simply-nav.js"></script>
 
 <script type="text/javascript">
-
-  // 是否开启代码高亮
-  let enableCodeHighlight = false;
-  let collpaseCode = false;
-  <#if settings.enable_code_highlight!true>
-  enableCodeHighlight = true;
-  </#if>
-  let enableLineNumber = true;
-
-  <#if settings.collpaseCode!false>
-  collpaseCode = true
-  </#if>
-
   function renderTagCloud() {
     // 标签云
     var tagCloud = $("#tagCloud");
@@ -56,11 +46,16 @@
     var tagArray = [
       <@tagTag method="list">
       <#list tags as tag>
-      {'text': '${tag.name!}', 'weight': '${tag.postCount!}', 'link': '${tag.fullPath!}'},
+      {
+        'text': '${tag.name!}',
+        'weight': '${tag.postCount!}', 
+        'link': '${tag.fullPath!}'
+      },
       </#list>
       </@tagTag>
     ];
 
+    console.log(tagCloud)
     // 标签云
     tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
 

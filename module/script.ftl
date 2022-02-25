@@ -1,6 +1,6 @@
 <#if is_categories?? || is_tags ??>
     <#--标签云-->
-    <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>
+<#--    <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>-->
     <script type='text/javascript'>
       $(function () {
         renderTagCloud();

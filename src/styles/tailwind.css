@@ -9,6 +9,10 @@
     word-break: break-word;
   }
 
+  .liked {
+    color: var(--base-hover-color)
+  }
+
   .fade-down {
     -webkit-animation: fade-down 0.3s;
     animation: fade-down 0.3s;

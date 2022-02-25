@@ -25,20 +25,20 @@
       <@postTag method="archiveMonth">
         <#assign year="">
         <#list archives as archive>
-          <section class="arch-year pt-0.5 pb-0.5 px-0 relative">
+          <section class="arch-year pt-0.5 pb-0.5 px-0 relative border-transparent">
             <#if archive.year?c != year>
-              <h1 class="m-0 leading-9 bg-white relative">${archive.year?c}</h1>
+              <h1 class="m-0 leading-9 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300 relative">${archive.year?c}</h1>
               <#assign year="${archive.year?c}">
             </#if>
             <div class="relative pl-12">
-              <header class="absolute mh-hd py-0 pl-2.5 pr-2.5 rounded left-6 text-white uppercase font-semibold leading-loose mt-6 af-bg-fff bg-gray-400 bg-none"> ${archive.month!}
-                月
+              <header class="absolute mh-hd py-0 pl-2.5 pr-2.5 rounded left-6 text-white uppercase font-semibold leading-loose mt-6 af-bg-fff bg-gray-400 dark:bg-gray-800 dark:text-gray-300"> 
+                ${archive.month!} 月
               </header>
               <span class="">
                             <#list archive.posts?sort_by("createTime")?reverse as post>
                               <a class="ah-hf transition-colors hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8" href="${post.fullPath!}">
-                                    <span class="ah-dt float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
-                                    <span class="ah-tt table-cell text-lg" style="line-height: inherit !important;">${post.title!}</span>
+                                    <span class="ah-dt float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60 dark:text-gray-300" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
+                                    <span class="ah-tt table-cell text-lg dark:text-gray-300" style="line-height: inherit !important;">${post.title!}</span>
                                 </a>
                             </#list>
                         </span>
