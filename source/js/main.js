@@ -10,7 +10,7 @@ function toggleDarkSwitch() {
   handleScrollMenu()
 
   checkLocalStorage()
- renderComment()
+  renderComment()
 }
 
 function checkLocalStorage() {
@@ -28,9 +28,11 @@ function checkLocalStorage() {
  * 自动切换夜间模式
  */
 function toggleDarkMode() {
- 
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
+    $("#daySwitch").removeClass("daySwitch");
+    $(document.body).addClass("dark");
+  } else if (localStorage.theme === 'dark') {
     $("#daySwitch").removeClass("daySwitch");
     $(document.body).addClass("dark");
   } else {
