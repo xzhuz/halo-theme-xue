@@ -85,8 +85,11 @@ blockquote {
 table {
   padding: 0;
   //word-break: initial;
-  table-layout: auto;
+  display: block;
+  table-layout: auto !important;
+  max-width: max-content;
   width: 100%;
+  overflow: auto;
 }
 
 table tr {
