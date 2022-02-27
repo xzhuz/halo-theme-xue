@@ -20,7 +20,7 @@
       </div>
     </header>
     <div
-            class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up"
+            class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up"
             id="pageContainer">
       <@postTag method="archiveMonth">
         <#assign year="">

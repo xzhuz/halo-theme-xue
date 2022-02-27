@@ -44,7 +44,7 @@
     </div>
 
     <div
-      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd">
+      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ">
         <#include "module/comment.ftl">
         <@comment sheet,"sheet" />
     </div>

@@ -20,7 +20,7 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up">
+      class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up">
       <h2 class="dark:text-gray-300 my-4">分类</h2>
       <p class="flex flex-row justify-start flex-wrap">
           <@categoryTag method="list">
