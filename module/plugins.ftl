@@ -55,7 +55,6 @@
       </@tagTag>
     ];
 
-    console.log(tagCloud)
     // 标签云
     tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
 

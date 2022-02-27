@@ -20,7 +20,7 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal max-w-5xl cn-pd fade-up">
+      class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal max-w-5xl fade-up">
         <@linkTag method="listTeams">
             <#list teams as item>
                 <#if item.team?? && item.team!=''>
@@ -29,7 +29,7 @@
               <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                   <#list item.links?sort_by('priority')?reverse  as link>
                     <a href="${link.url}"
-                       class="bg-gray-200 w-56 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline "
+                       class="bg-gray-200 w-56 text-center hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline "
                        style="text-decoration: none !important;">
                       ${link.name}
                     </a>
