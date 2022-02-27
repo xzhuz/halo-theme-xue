@@ -8,12 +8,27 @@ function toggleDarkSwitch() {
   $('#navHeader').addClass('bg-transparent').removeClass('shadow-md')
 
   handleScrollMenu()
+
+  checkLocalStorage()
+ renderComment()
+}
+
+function checkLocalStorage() {
+  if (!localStorage.theme) {
+    localStorage.setItem('theme', 'light')
+  }
+  if ($(document.body).hasClass('dark')) {
+    localStorage.setItem('theme', 'dark')
+  } else {
+    localStorage.setItem('theme', 'light')
+  }
 }
 
 /**
  * 自动切换夜间模式
  */
 function toggleDarkMode() {
+ 
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
     $("#daySwitch").removeClass("daySwitch");

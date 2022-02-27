@@ -55,12 +55,12 @@
     </div>
 
     <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal coffee-tags">
-      <blockquote class="post-copyright py-4">
-        <p class="m-0 text-base"><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"
-                                    target="_blank"
-                                    rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>
-        <p class="m-0 text-base"><b>Links: </b> <a href="${post.fullPath!}">${post.fullPath!}</a></p>
-      </blockquote>
+<#--      <blockquote class="post-copyright py-4">-->
+<#--        <p class="m-0 text-base"><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"-->
+<#--                                    target="_blank"-->
+<#--                                    rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>-->
+<#--        <p class="m-0 text-base"><b>Links: </b> <a href="${post.fullPath!}">${post.fullPath!}</a></p>-->
+<#--      </blockquote>-->
         <#include "module/widget/sponsor.ftl">
     </div>
     <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
