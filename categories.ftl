@@ -20,8 +20,8 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up">
-      <h2 class="dark:text-gray-300">分类</h2>
+      class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ct-container cn-pd fade-up">
+      <h2 class="dark:text-gray-300 my-4">分类</h2>
       <p class="flex flex-row justify-start flex-wrap">
           <@categoryTag method="list">
               <#if categories?? && categories?size gt 0>
@@ -33,8 +33,8 @@
               </#if>
           </@categoryTag>
       </p>
-      <h2 class="mb-0 dark:text-gray-300">云</h2>
-      <div id="categoryCloud" class="card-content jqcloud jqcloud-hg w-full h-72"></div>
+      <h2 class="my-4 dark:text-gray-300 hidden md:block">云</h2>
+      <div id="categoryCloud" class="card-content jqcloud jqcloud-hg w-full h-72 hidden md:block"></div>
     </div>
   </main>
 </@layout>

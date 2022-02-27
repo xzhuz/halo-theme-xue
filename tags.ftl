@@ -20,8 +20,8 @@
       </div>
     </header>
     <div
-      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up cloud">
-      <h2 class="dark:text-gray-300">标签</h2>
+      class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up cloud">
+      <h2 class="dark:text-gray-300 my-4">标签</h2>
       <p class="flex flex-row justify-start flex-wrap">
           <@tagTag method="list">
               <#if tags?? && tags?size gt 0>
@@ -33,8 +33,8 @@
               </#if>
           </@tagTag>
       </p>
-      <h2 class="dark:text-gray-300 mb-0">云</h2>
-      <div id="tagCloud" class="card-content jqcloud jqcloud-hg"></div>
+      <h2 class="dark:text-gray-300 my-4 hidden md:block">云</h2>
+      <div id="tagCloud" class="card-content jqcloud jqcloud-hg w-full h-72 hidden md:block "></div>
     </div>
   </main>
 </@layout>

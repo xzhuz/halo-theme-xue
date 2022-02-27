@@ -83,7 +83,6 @@ function handleScrollMenu() {
   }
   const dark = $(document.body).hasClass("dark");
   const scrollTop = getScrollTop();
-  console.log(scrollTop)
   if (scrollTop > 29) {
     if (dark) {
       $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')

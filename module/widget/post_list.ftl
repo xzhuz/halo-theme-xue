@@ -2,8 +2,8 @@
   <#if posts?? && posts.getTotalElements() gt 0>
     <ul class="posts-list pl-0">
       <#list posts.content as post>
-        <li class="post flex list-none relative w-full pt-5 pb-0 md:pb-5 mt-0 inline-block text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow">
-          <div class="overflow-hidden float-left relative flex-shrink-0 h-16 md:h-36 w-28 md:w-56 bg-gray-100 inline-block">
+        <li class="post flex list-none relative w-full py-3 md:py-5 mt-0 inline-block text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow">
+          <div class="overflow-hidden float-left relative flex-shrink-0 h-16 md:h-36 w-28 md:w-56 bg-gray-100 inline-block dark:filter-60">
             <#if post.thumbnail?? && post.thumbnail!=''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
@@ -14,7 +14,7 @@
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
-                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60"
+                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700"
                      src="${theme_base!}/source/images/loading.svg" data-src=""
                      index="${post_index}" alt="${post.title}"/>
               </a>
