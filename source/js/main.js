@@ -183,19 +183,22 @@ function initToc() {
     contentSelector: content,
     headingSelector: headerEl,
     scrollSmooth: true,
+    collapseDepth: 6,
+    // isCollapsedClass: '',
+    // collapsibleClass: 'is-collapsible',
     headingsOffset: 0 - $("#postHeader").height(),
-    // scrollSmoothOffset: -80, // 实现点击目录精准跳转到header
+    scrollSmoothOffset: -80, // 实现点击目录精准跳转到header
     hasInnerContainers: false,
   });
 
-  $('a[class*="node-name--H"]').each(function () {
-    // var cls = $(this).getAttribute('class');
-    // console.log(cls)
-    const linkContent = $(this).html();
-    $(this).html(`<span class="toc-link-dot"></span>${linkContent}`);
-  });
+  // $('a[class*="node-name--H"]').each(function () {
+  //   if ($(this).siblings('ol').length > 0) {
+  //     // $(this).addClass('iconfont icon-down')
+  //     $(this).append("")
+  //   }
+  // });
 
-  // 设置目录right
+  // 设置目录在页面中的正确位置
   tocEleRight();
 }
 
@@ -203,7 +206,7 @@ function tocEleRight() {
   const screenWidth = getClientWidth();
   const tocEle = document.getElementById("toc");
   if (tocEle) {
-    tocEle.style.left = (screenWidth - 800) / 2 + 820 + "px";
+    tocEle.style.left = (screenWidth - 768) / 2 + 820 + "px";
   }
 }
 
@@ -370,10 +373,6 @@ function likeJournal(e) {
     error: function (msg) {
     }
   })
-}
-
-function commentJournal(e) {
-
 }
 
 /**
