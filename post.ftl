@@ -45,7 +45,7 @@
       </div>
     </header>
     <div class="article-content fade-up">
-      <div  class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300" id="gallery-content">
+      <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300" id="gallery-content">
         ${post.content!}
       </div>
       <div id="tocFlag"></div>

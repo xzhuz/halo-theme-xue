@@ -18,7 +18,9 @@
                     <#list menus?sort_by('priority') as menu>
                         <li class="item flex flex-wrap p-0">
                             <a class="link md:text-base sm:text-sm text-gray-100" href="${menu.url!}"
-                               target="${menu.target!}">${menu.name}</a>
+                               target="${menu.target!}">
+                              ${menu.name}
+                            </a>
                         </li>
                     </#list>
                 </@menuTag>

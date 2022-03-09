@@ -16,10 +16,18 @@
   overflow: hidden;
   position: relative
 }
-
-.toc > .toc-list li {
-  list-style: none
-}
+//
+//.toc ol {
+//  counter-reset: section;
+//  list-style-type: none;
+//}
+//
+//
+//.toc li:before {
+//  counter-increment: section;
+//  content: counters(section, ".") ". ";
+//
+//}
 
 .toc-list {
   margin: 0;
@@ -33,18 +41,36 @@ a.toc-link {
   max-width: 230px;
   vertical-align: middle;
   text-align: left;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
+  transition: ease-in-out .3s;
   margin-top: -2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
   text-decoration: none !important;
+  //background-size: 0;
+
+  &:hover {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(to bottom, transparent 60%, rgba(229, 231, 235, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  }
+
+  &.bg-linear {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(to bottom, transparent 60%, rgba(229, 231, 235, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  }
 }
 
-a.toc-link:hover {
-  color: var(--toc-bg-color) !important;
+.dark a.toc-link {
+  &:hover {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(to bottom, transparent 60%, rgba(75, 85, 99, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  }
+
+  &.bg-linear {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(to bottom, transparent 60%, rgba(75, 85, 99, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  }
 }
 
 .is-collapsible {
@@ -64,21 +90,6 @@ a.toc-link:hover {
 
 .toc-link::after {
   width: 0;
-}
-
-.toc-hover {
-  opacity: 1 !important;
-  color: var(--toc-bg-color) !important;
-}
-
-span.toc-link-dot {
-  background: var(--night-toc-bg-color);
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-transition: background .5s;
-  transition: background .5s;
-  pointer-events: none;
 }
 
 .node-name--H1 span {
@@ -117,33 +128,14 @@ span.toc-link-dot {
   margin: 0 6px 6px 5px;
 }
 
-.node-name--H3 {
-  padding-left: .5rem;
+.is-collapsible {
+  margin-left: .4rem !important;
 }
 
-.node-name--H4 {
-  padding-left: .7rem;
-}
 
-.node-name--H5 {
-  padding-left: .9rem;
-}
-
-.node-name--H6 {
-  padding-left: 1.1rem;
-}
 
 .toc-link:hover {
   opacity: .7 !important;
-}
-
-.is-active-link {
-  color: var(--toc-active-color);
-  font-weight: 700;
-}
-
-.is-active-link span {
-  background-color: var(--toc-active-color) !important;
 }
 
 .md-content ol > li, .md-content ul > li {

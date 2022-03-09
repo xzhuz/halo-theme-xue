@@ -40,6 +40,13 @@ module.exports = {
       boxShadow: {
         
       },
+      maxWidth: {
+        '16': '16rem',
+      },
+      margin: {
+        'card': '68px auto 0',
+        'avatar': '-52px 8px 4px',
+      },
     },
     rotate: {
       '-45': '-45deg',
