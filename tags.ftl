@@ -15,6 +15,11 @@
       <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
         <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center dark:text-gray-300">
           ${settings.tags_title! '标签列表'}
+          <@tagTag method="list">
+            <sup>
+              ${tags?size}
+            </sup>
+          </@tagTag>
         </h2>
         <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
       </div>
