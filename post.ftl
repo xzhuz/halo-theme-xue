@@ -18,28 +18,23 @@
         <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-2xl md:text-4xl text-center dark:text-gray-300">
           ${post.title!}
         </h2>
-        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-4 mb-3"/>
         <!-- 封面内容 -->
-        <div class="post-meta text-white">
-          <div class="post-meta-wrap absolute h-24 text-right w-full bottom-2.5 right-2.5">
-            <img class="rounded-full float-right h-16 md:h-20 h-16 md:w-20 mt-1 md:mt-0 border-2 border-white mx-1 ml-3 dark:filter-60"
-                 srcset="${user.avatar!}, ${user.avatar!} 2x"
-                 src="${user.avatar!}" alt=""/>
-            <span class="tracking-wide uppercase block text-sm my-1 md:my-2 dark:text-gray-300">${post.visits} 次访问</span>
-            <time class="tracking-wide uppercase block text-sm my-1 md:my-2 dark:text-gray-300"> 发布: ${post.createTime?string("yyyy-MM-dd")}</time>
-            <time class="tracking-wide uppercase block text-sm my-1 md:my-2 dark:text-gray-300" >更新: ${post.editTime?string("yyyy-MM-dd")}</time>
-          </div>
+        <div class=" text-white">
           <div class="text-center">
-            <#if post.categories?? && post.categories?size gt 0>
-              <span class="iconfont icon-folder"> </span>
-            </#if>
-            <#if post.categories?? && post.categories?size gt 0>
-              <#list post.categories as category>
-                <a href="${category.fullPath!}" class="text-white no-underline">
-                  · ${category.name!}
-                </a>
-              </#list>
-            </#if>
+            <span class="iconfont icon-people "></span> ${user.nickname!} 
+            <span class="iconfont icon-see2 ml-3"></span> ${post.visits} 
+            <span class="iconfont icon-time ml-3"></span> ${post.createTime?string("yyyy-MM-dd")}
+            
+<#--            <#if post.categories?? && post.categories?size gt 0>-->
+<#--              <span class="iconfont icon-folder"> </span>-->
+<#--            </#if>-->
+<#--            <#if post.categories?? && post.categories?size gt 0>-->
+<#--              <#list post.categories as category>-->
+<#--                <a href="${category.fullPath!}" class="text-white no-underline">-->
+<#--                  · ${category.name!}-->
+<#--                </a>-->
+<#--              </#list>-->
+<#--            </#if>-->
           </div>
         </div>
       </div>

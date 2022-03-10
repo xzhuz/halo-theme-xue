@@ -1,5 +1,5 @@
 <div class="mx-auto px-10 mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
-    <div class="entry-navigation bg-white rounded shadow-md flex mt-10 overflow-hidden w-full">
+    <div class="entry-navigation bg-white rounded shadow-md flex flex-wrap mt-10 overflow-hidden w-full ">
         <div class="nav previous flex flex-col justify-center min-h-100 py-0 px-4 relative w-full sm:w-6/12 break-word">
             <#if prevPost??>
                 <#if prevPost.thumbnail?? && prevPost.thumbnail!=''>
