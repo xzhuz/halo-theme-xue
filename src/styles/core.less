@@ -31,6 +31,17 @@
 }
 
 .bg-linear {
-  --tw-bg-opacity: 1;
-  background: linear-gradient(to bottom, transparent 60%, rgba(229, 231, 235, var(--tw-bg-opacity)) 0%) no-repeat;
+  position: relative;
+}
+
+.bg-linear:after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100% !important;
+  height: 4px;
+  opacity: .6;
+  --tw-text-opacity: 1;
+  background: rgba(229, 231, 235, var(--tw-bg-opacity)) !important;
+  bottom: 2px !important;
 }

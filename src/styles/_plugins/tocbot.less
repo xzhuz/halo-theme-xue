@@ -41,25 +41,35 @@ a.toc-link {
   max-width: 230px;
   vertical-align: middle;
   text-align: left;
-  transition: ease-in-out .3s;
+  transition: all .3s;
   margin-top: -2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
   text-decoration: none !important;
-  //background-size: 0;
-
-  &:hover {
-    --tw-bg-opacity: 1;
-    background: linear-gradient(to bottom, transparent 60%, rgba(229, 231, 235, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  position: relative;
+  
+  &:after{
+    width: 0;
   }
-
-  &.bg-linear {
-    --tw-bg-opacity: 1;
-    background: linear-gradient(to bottom, transparent 60%, rgba(229, 231, 235, var(--tw-bg-opacity)) 0%) no-repeat !important;
+  
+  &:hover:after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100% !important;
+    height: 4px;
+    opacity: .6;
+    --tw-text-opacity: 1;
+    background: rgba(229, 231, 235, var(--tw-bg-opacity)) !important;
+    bottom: 2px !important;
   }
 }
+
+
+
+
 
 .dark a.toc-link {
   &:hover {
@@ -80,62 +90,13 @@ a.toc-link {
 }
 
 .is-collapsed {
-  max-height: 0
+  max-height: 0;
+  margin-left: .4rem !important;
 }
 
 .is-position-fixed {
   position: fixed !important;
   top: 0
-}
-
-.toc-link::after {
-  width: 0;
-}
-
-.node-name--H1 span {
-  width: 12px;
-  height: 12px;
-  border-radius: 12px;
-  margin-bottom: 2px;
-  margin-right: 6px;
-}
-
-.node-name--H2 span {
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  margin: 0 6px 4px 2px;
-}
-
-.node-name--H3 span {
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  margin: 0 6px 4px 3px;
-}
-
-.node-name--H4 span {
-  width: 6px;
-  height: 6px;
-  border-radius: 6px;
-  margin: 0 6px 5px 4px;
-}
-
-.node-name--H5 span, .node-name--H6 span {
-  width: 4px;
-  height: 4px;
-  border-radius: 4px;
-  margin: 0 6px 6px 5px;
-}
-
-.is-collapsible {
-  margin-left: .4rem !important;
-}
-
-
-
-.toc-link:hover {
-  opacity: .7 !important;
 }
 
 .md-content ol > li, .md-content ul > li {
