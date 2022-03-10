@@ -2,6 +2,13 @@
   <#if posts?? && posts.getTotalElements() gt 0>
     <#list posts.content as post>
       <div class="flex justify-between shadow hover:shadow-md rounded-md mt-4">
+        <#if post.topPriority gt 0>
+          <div class="post-top z-50 w-24 h-24 overflow-hidden absolute">
+            <div class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100">
+              置顶
+            </div>
+          </div>
+        </#if>
         <div class="flex flex-col h-full max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-lg">
           <div class="h-48">
             <#if post.thumbnail?? && post.thumbnail!=''>
