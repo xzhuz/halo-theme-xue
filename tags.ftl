@@ -21,7 +21,7 @@
             </sup>
           </@tagTag>
         </h2>
-        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
+<#--        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>-->
       </div>
     </header>
     <div

@@ -41,6 +41,10 @@ function toggleDarkMode() {
   }
 }
 
+// function loadMenu() {
+//  
+// }
+
 /**
  * 点击页面处理小屏幕目录事件
  * @param target
@@ -91,6 +95,16 @@ function handleNavMenu() {
     return;
   }
   document.addEventListener('scroll', handleScrollMenu, false);
+}
+
+function handleMenuActive() {
+  const pathname = document.location.pathname;
+  document.querySelectorAll('.menu-item').forEach((e) => {
+    $(e).removeClass('menu-active');
+    if ($(e).attr('href') === pathname) {
+      $(e).addClass('menu-active');
+    }
+  })
 }
 
 function handleScrollMenu() {
@@ -712,6 +726,8 @@ $(function () {
 
   // 处理导航菜单
   handleNavMenu();
+
+  handleMenuActive()
 
   // 处理目录
   dealContentToc()

@@ -16,6 +16,8 @@
       
       clickToZoomImg();
 
+      handleMenuActive();
+
       // 删除listener
       removeScrollTocFixed();
 
