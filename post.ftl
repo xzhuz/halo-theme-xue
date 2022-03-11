@@ -8,7 +8,7 @@
           </div>
         <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
           <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-            <img src="${theme_base!}/source/images/loading.svg" class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60" alt="${post.title}"/>
+            <img src="${theme_base!}/source/images/loading.gif" class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60" alt="${post.title}"/>
           </div>
         <#else>
           <div class="placeholder-bg">
@@ -24,24 +24,25 @@
             <span class="iconfont icon-people "></span> ${user.nickname!} 
             <span class="iconfont icon-see2 ml-3"></span> ${post.visits} 
             <span class="iconfont icon-time ml-3"></span> ${post.createTime?string("yyyy-MM-dd")}
-            
-<#--            <#if post.categories?? && post.categories?size gt 0>-->
-<#--              <span class="iconfont icon-folder"> </span>-->
-<#--            </#if>-->
-<#--            <#if post.categories?? && post.categories?size gt 0>-->
-<#--              <#list post.categories as category>-->
-<#--                <a href="${category.fullPath!}" class="text-white no-underline">-->
-<#--                  · ${category.name!}-->
-<#--                </a>-->
-<#--              </#list>-->
-<#--            </#if>-->
           </div>
         </div>
       </div>
     </header>
     <div class="article-content fade-up">
-      <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300" id="gallery-content">
+      <div class="mx-auto bg-white dark:bg-gray-800 rounded-md px-10 py-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300" id="gallery-content">
         ${post.content!}
+
+        <hr class="bg-gray-100 dark:bg-gray-700 " >
+        <p class="flex flex-row justify-start flex-wrap">
+          <#if post.tags?? && post.tags?size gt 0>
+            <#list post.tags as tag>
+              <a href="${tag.fullPath!}"
+                 class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline " style="text-decoration: none !important;">
+                #&nbsp;${tag.name!}
+              </a>
+            </#list>
+          </#if>
+        </p>
       </div>
       <div id="tocFlag"></div>
         <#if settings.post_toc!true>
@@ -49,27 +50,9 @@
         </#if>
     </div>
 
-    <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal coffee-tags">
-<#--      <blockquote class="post-copyright py-4">-->
-<#--        <p class="m-0 text-base"><b>Copyright: </b> 采用 <a href="https://creativecommons.org/licenses/by/4.0/"-->
-<#--                                    target="_blank"-->
-<#--                                    rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可</p>-->
-<#--        <p class="m-0 text-base"><b>Links: </b> <a href="${post.fullPath!}">${post.fullPath!}</a></p>-->
-<#--      </blockquote>-->
+    <div class="mx-auto md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
         <#include "module/widget/sponsor.ftl">
-    </div>
-    <div class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
-      <p class="flex flex-row justify-start flex-wrap">
-          <#if post.tags?? && post.tags?size gt 0>
-              <#list post.tags as tag>
-                <a href="${tag.fullPath!}"
-                   class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline " style="text-decoration: none !important;">
-                  #&nbsp;${tag.name!}
-                </a>
-              </#list>
-          </#if>
-      </p>
-      <hr class="mt-4 bg-gray-100 dark:bg-gray-700 h-0.5 " >
+      <hr class="bg-gray-100 dark:bg-gray-700 " >
     </div>
 
     <!-- 上一篇和下一篇 -->
@@ -78,7 +61,7 @@
       </#if>
 
     <div
-      class="mx-auto px-10 md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
+      class="mx-10 md:mx-auto md-content mt-8 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
         <#include "module/comment.ftl">
         <@comment post,"post" />
     </div>
