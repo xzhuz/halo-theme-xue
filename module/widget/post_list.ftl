@@ -8,14 +8,14 @@
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
                 <img class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60"
-                     src="${theme_base!}/source/images/loading.svg" data-src="${post.thumbnail}"
+                     src="${theme_base!}/source/images/loading.gif" data-src="${post.thumbnail}"
                      alt="${post.title}"/>
               </a>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
                 <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700"
-                     src="${theme_base!}/source/images/loading.svg" data-src=""
+                     src="${theme_base!}/source/images/loading.gif" data-src=""
                      index="${post_index}" alt="${post.title}"/>
               </a>
             <#else>

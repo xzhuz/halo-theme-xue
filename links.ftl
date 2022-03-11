@@ -28,15 +28,15 @@
           </#if>
           <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             <#list item.links?sort_by('priority')?reverse  as link>
-              <a class="m-card flex p-1.5 text-gray-600 bg-white rounded shadow-md justify-start content-start flex-col w-full max-w-16" style="background:#fff; color:#8e7f7f" target="_blank"
+              <a class="m-card flex p-1.5 text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-800 rounded shadow-md justify-start content-start flex-col w-full max-w-16" target="_blank"
                  href="${link.url}">
                 <div class="flex self-center">
-                  <img class="lazyload object-cover m-avatar w-20 h-20 rounded-full bg-white max-w-full border-2 border-white border-solid" data-src="${link.logo}" src="${theme_base!}/source/images/loading.svg" onerror="onerror=null;src='${theme_base!}/source/images/loading.svg'">
+                  <img class="lazyload object-cover m-avatar w-20 h-20 rounded-full bg-white max-w-full border-2 border-white border-solid" data-src="${link.logo}" src="${theme_base!}/source/images/loading.gif" onerror="onerror=null;src='${theme_base!}/source/images/loading.gif'">
                 </div>
-                <div class=" my-1.5 mx-3.5 flex flex-col text-center">
-                  <p class="pt-3 pb-1.5 font-semibold">${link.name}</p>
-                  <div class=" py-1.5 break-all flex items-center">
-                    <p class=" inline-block w-full overflow-hidden overflow-ellipsis whitespace-nowrap break-words m-0 text-center" title="${link.description}">${link.description}</p>
+                <div class=" my-1.5 mx-3.5 flex flex-col text-center bg-white dark:bg-gray-800">
+                  <p class="pt-3 pb-1.5 font-semibold text-gray-800 dark:text-gray-300">${link.name}</p>
+                  <div class="py-1.5 break-all flex items-center bg-white dark:bg-gray-800">
+                    <p class="inline-block w-full overflow-hidden overflow-ellipsis whitespace-nowrap break-words m-0 text-center" title="${link.description}">${link.description}</p>
                   </div>
                 </div>
               </a>
