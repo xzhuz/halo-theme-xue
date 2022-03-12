@@ -35,9 +35,6 @@
                 </#if>
                 ${post.title}
               </h2>
-              <#--              <#if hasImg>-->
-              <#--                <span class="text text-gray-500 uppercase tracking-wide float-right hidden md:inline-block ">${post.createTime?string("yyyy-MM-dd")}</span>-->
-              <#--              </#if>-->
             </a>
             <p class="leading-normal break-all overflow-hidden overflow-ellipsis m-0 text-sm md:text-base text-gray-400 md:line-clamp-2 text-justify hidden md:block font-normal">${post.summary!}</p>
             <div class="post-meta flex items-center items-center mr-auto w-full">
