@@ -4,11 +4,11 @@
       <div class="relative flex flex-col overflow-hidden rounded-lg w-full bg-base-100 shadow-xl">
         <figure class="flex items-center justify-center">
           <#if post.thumbnail?? && post.thumbnail!=''>
-            <img class="lazyload object-cover w-full h-56"
+            <img class="lazyload object-cover w-full h-56 no-zoom"
                  src="${theme_base!}/source/images/loading.gif"
                  data-src="${post.thumbnail!''}" alt="${post.title}"/>
           <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-            <img class="object-cover w-full h-56 img-random"
+            <img class="object-cover w-full h-56 img-random no-zoom"
                  index="${post_index}"
                  src="${theme_base!}/source/images/loading.gif"
                  alt="${post.title!}"

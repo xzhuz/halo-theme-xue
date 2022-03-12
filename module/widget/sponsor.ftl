@@ -1,5 +1,5 @@
 <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-    <section class="donate block text-center my-4 mx-auto">
+    <section class="donate inline-block text-center my-4 mx-auto">
         <div class="icon relative inline-block border-gray-100 dark:border-gray-700 border bg-white dark:bg-gray-800 rounded-full py-3 px-6 z-20">
             <#if settings.QR_code_zfb??>
                 <a href="javascript:;" id="alipay" class="pr-3 border-gray-600 dark:border-gray-700 border-r text-xl" onClick="toggleAliPay()" style="text-decoration: none !important;">

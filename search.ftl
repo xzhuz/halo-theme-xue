@@ -5,7 +5,7 @@
       <#if settings.search_patternimg?? && settings.search_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.search_patternimg!}"
-               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${keyword!}">
         </div>
       <#else>
