@@ -222,7 +222,7 @@ function tocEleRight() {
   const screenWidth = getClientWidth();
   const tocEle = document.getElementById("toc");
   if (tocEle) {
-    tocEle.style.left = (screenWidth - 800) / 2 + 900 + "px";
+    tocEle.style.left = (screenWidth - 768) / 2 + 820 + "px";
   }
 }
 
