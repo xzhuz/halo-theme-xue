@@ -2,15 +2,17 @@
 
 // 夜间模式
 function toggleDarkSwitch() {
-  const daySwitch = $("#daySwitch");
-  daySwitch.toggleClass("daySwitch");
+  // console.log(document.querySelector('#darkCheckbox').checked);
+  // console.log($("#darkCheckbox").checked)
   $(document.body).toggleClass("dark");
   $('#navHeader').addClass('bg-transparent').removeClass('shadow-md')
 
   handleScrollMenu()
 
   checkLocalStorage()
-  renderComment()
+  if (typeof renderComment === "function") {
+    renderComment()
+  }
 }
 
 function checkLocalStorage() {
@@ -28,23 +30,19 @@ function checkLocalStorage() {
  * 自动切换夜间模式
  */
 function toggleDarkMode() {
+  var darkCheckbox = document.querySelector('#darkCheckbox')
   if (window.matchMedia && window.matchMedia(
     '(prefers-color-scheme: dark)').matches) {
-    $("#daySwitch").removeClass("daySwitch");
+    darkCheckbox.checked = true
     $(document.body).addClass("dark");
   } else if (localStorage.theme === 'dark') {
-    $("#daySwitch").removeClass("daySwitch");
+    darkCheckbox.checked = true
     $(document.body).addClass("dark");
   } else {
-    $("#daySwitch").addClass("daySwitch");
+    darkCheckbox.checked = false
     $(document.body).removeClass("dark");
   }
 }
-
-// function loadMenu() {
-//  
-// }
-
 /**
  * 点击页面处理小屏幕目录事件
  * @param target
@@ -198,8 +196,8 @@ function initToc() {
     headingSelector: headerEl,
     scrollSmooth: true,
     // collapseDepth: 6,
-    // linkClass: 'toc-link transition-all duration-300',
-    activeLinkClass: 'is-active-link bg-linear',
+    // linkClass: 'toc-link bg-linear',
+    // activeLinkClass: 'is-active-link',
     // isCollapsedClass: '',
     // collapsibleClass: 'is-collapsible',
     headingsOffset: 0 - $("#postHeader").height(),
@@ -711,7 +709,7 @@ function toBigImg() {
 function clickToZoomImg() {
   $('img').click(function () {
     var cls = $(this).attr('class')
-    if (cls && cls.indexOf('no-zoom') > -1 ) {
+    if (cls && cls.indexOf('no-zoom') > -1) {
       return;
     }
     //获取图片路径

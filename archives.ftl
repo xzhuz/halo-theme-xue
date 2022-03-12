@@ -36,9 +36,9 @@
               </header>
               <span class="">
                             <#list archive.posts?sort_by("createTime")?reverse as post>
-                              <a class="ah-hf transition-colors hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8" href="${post.fullPath!}">
-                                    <span class="ah-dt float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60 dark:text-gray-300" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
-                                    <span class="ah-tt table-cell text-lg dark:text-gray-300" style="line-height: inherit !important;">${post.title!}</span>
+                              <a class="archive-info transition-colors relative block ml-6 px-0 pt-2 pb-2 leading-8" href="${post.fullPath!}">
+                                    <span class="archive-date float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60 dark:text-gray-300" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
+                                    <span class="archive-title table-cell text-lg dark:text-gray-300" style="line-height: inherit !important;">${post.title!}</span>
                                 </a>
                             </#list>
                         </span>
