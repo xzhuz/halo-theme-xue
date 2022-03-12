@@ -5,7 +5,7 @@
       <#if settings.journals_patternimg?? && settings.journals_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.journals_patternimg!}"
-               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${settings.jounarls_title! '日志'}">
         </div>
       <#else>
@@ -28,7 +28,7 @@
               <div class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl py-3 px-5">
                 <div class="flex">
                   <div class="mr-2">
-                    <img class="rounded-full h-10 w-10 dark:filter-60" src="${user.avatar!}" alt="${user.nickname!}"/>
+                    <img class="rounded-full h-10 w-10 dark:filter-60 no-zoom" src="${user.avatar!}" alt="${user.nickname!}"/>
                   </div>
                   <div>
                     <div class="flex space-x-1">
@@ -61,13 +61,13 @@
 
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
-                    <svg viewBox="0 0 24 24" fill="currentColor" onclick="likeJournal(this);" data-path="${blog_url!}/api/content/journals/${journal.id}/likes" class="w-6 h-6" style="">
+                    <svg viewBox="0 0 24 24" fill="currentColor" onclick="likes(this);" data-path="${blog_url!}/api/content/journals/${journal.id}/likes" class="w-6 h-6" style="">
                       <g>
                         <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
                         </path>
                       </g>
                     </svg>
-                    <span class="is-reaction-count">${journal.likes}</span>
+                    <span class="like-count">${journal.likes}</span>
                   </div>
                   <div class="flex space-x-2">
                     <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

@@ -4,13 +4,13 @@
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2" id="postHeader">
       <#if post.thumbnail?? && post.thumbnail!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-          <img src="${post.thumbnail!}" class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+          <img src="${post.thumbnail!}" class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${post.title!}">
         </div>
       <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${theme_base!}/source/images/loading.gif"
-               class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60" alt="${post.title}"/>
+               class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60 no-zoom" alt="${post.title}"/>
         </div>
       <#else>
         <div class="placeholder-bg">
@@ -53,8 +53,19 @@
       </#if>
     </div>
 
-    <div class="mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
+    <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#include "module/widget/sponsor.ftl">
+      <section class="donate inline-block text-center my-4 ml-4" onclick="likes(this);" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
+        <div  class="icon relative inline-block border-gray-100 dark:border-gray-700 border bg-red-600 hover:bg-red-500 rounded-full py-3 px-6 z-20 w-28 cursor-pointer">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block text-white" style="">
+            <g>
+              <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+              </path>
+            </g>
+          </svg>
+          <span class="like-count inline-block text-white">${post.likes}</span>
+        </div>
+      </section>
       <hr class="bg-gray-100 dark:bg-gray-700 ">
     </div>
 

@@ -368,7 +368,7 @@ function getData(e) {
   });
 }
 
-function likeJournal(e) {
+function likes(e) {
   if ($(e).hasClass('liked')) {
     return;
   }
@@ -382,9 +382,10 @@ function likeJournal(e) {
     success: function (data) {
       $(e).addClass('liked')
       $(e).removeAttr('onclick');
-      var count = $(e).siblings('.is-reaction-count')
+      var count = $('.like-count')
+      console.log(count)
       var likeCount = parseInt(count.html())
-      $(e).siblings('.is-reaction-count').html(likeCount + 1);
+      $('.like-count').html(likeCount + 1);
     },
     error: function (msg) {
     }
@@ -709,6 +710,10 @@ function toBigImg() {
 
 function clickToZoomImg() {
   $('img').click(function () {
+    var cls = $(this).attr('class')
+    if (cls && cls.indexOf('no-zoom') > -1 ) {
+      return;
+    }
     //获取图片路径
     var imgsrc = $(this).attr("src");
     var opacityBottom = '<div class="opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>';
