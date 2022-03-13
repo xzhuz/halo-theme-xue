@@ -411,3 +411,18 @@ ol > li > ol > li > ol > li {
     font-size: .9rem;
   }
 }
+
+.md-content a {
+  cursor: pointer;
+  word-break: break-word;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-position: under;
+  transition: box-shadow 0.5s cubic-bezier(0.71, 0, 0, 0.99);
+
+  &:hover {
+    text-decoration: none;
+    border: none;
+    box-shadow: inset 0 .3em 0 rgba(229, 231, 235, 1);
+  }
+}
