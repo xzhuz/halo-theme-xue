@@ -50,11 +50,13 @@
 .archive-info {
 
   .archive-title {
-    transition: box-shadow 0.5s cubic-bezier(0.71, 0, 0, 0.99);
+    transition: all 0.5s;
   }
   
   &:hover .archive-title {
-    box-shadow: inset 0 -0.3em 0 rgba(220, 38, 38, .6);
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-position: under;
   }
 }
 
