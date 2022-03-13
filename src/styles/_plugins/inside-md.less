@@ -415,14 +415,15 @@ ol > li > ol > li > ol > li {
 .md-content a {
   cursor: pointer;
   word-break: break-word;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-underline-position: under;
+  //text-decoration: underline;
+  //text-decoration-style: dashed;
+  //text-underline-position: under;
+  box-shadow: inset 0 -0.3em 0 rgba(229, 231, 235, 1);
   transition: box-shadow 0.5s cubic-bezier(0.71, 0, 0, 0.99);
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
     border: none;
-    box-shadow: inset 0 -0.3em 0 rgba(229, 231, 235, 1);
+    box-shadow: inset 0 -0.8em 0 rgba(229, 231, 235, 1);
   }
 }
