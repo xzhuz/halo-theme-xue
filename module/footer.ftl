@@ -3,17 +3,17 @@
         <#-- 社交信息 begin -->
         <div class="offsite-links flex flex-row justify-center flex-wrap">
             <#if settings.github??>
-                <a href="${settings.github!}" class="circle p-2.5 m-2.5 hover:text-red-600  bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="Github">
+                <a href="${settings.github!}" class="circle p-2.5 m-2.5 text-gray-400 hover:text-red-600  bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="Github">
                     <span class="iconfont icon-github"> </span>
                 </a>
             </#if>
             <#if settings.mail??>
-                <a href="mailto:${settings.mail!}" class="circle p-2.5 m-2.5 hover:text-red-600 bg-transparent border border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="邮箱">
+                <a href="mailto:${settings.mail!}" class="circle p-2.5 m-2.5 text-gray-400 hover:text-red-600 bg-transparent border border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="邮箱">
                     <span class="iconfont icon-youxiang"> </span>
                 </a>
             </#if>
             <#if settings.rss!true>
-                <a href="${atom_url!}" class="circle p-2.5 m-2.5 hover:text-red-600 bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="RSS">
+                <a href="${atom_url!}" class="circle p-2.5 m-2.5 text-gray-400 hover:text-red-600 bg-transparentborder border-gray-100 rounded-full text-gray-500 inline-block relative cursor-pointer w-10 h-10" target="_blank" rel="noopener" title="RSS">
                     <span class="iconfont icon-rss"> </span>
                 </a>
             </#if>

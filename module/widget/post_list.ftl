@@ -7,15 +7,15 @@
             <#if post.thumbnail?? && post.thumbnail!=''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
-                <img class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60"
-                     src="${theme_base!}/source/images/loading.svg" data-src="${post.thumbnail}"
+                <img class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60 no-zoom"
+                     src="${theme_base!}/source/images/loading.gif" data-src="${post.thumbnail}"
                      alt="${post.title}"/>
               </a>
             <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
               <#assign hasImg = true />
               <a href="${post.fullPath!}">
-                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700"
-                     src="${theme_base!}/source/images/loading.svg" data-src=""
+                <img class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 no-zoom"
+                     src="${theme_base!}/source/images/loading.gif" data-src=""
                      index="${post_index}" alt="${post.title}"/>
               </a>
             <#else>
@@ -35,9 +35,6 @@
                 </#if>
                 ${post.title}
               </h2>
-              <#--              <#if hasImg>-->
-              <#--                <span class="text text-gray-500 uppercase tracking-wide float-right hidden md:inline-block ">${post.createTime?string("yyyy-MM-dd")}</span>-->
-              <#--              </#if>-->
             </a>
             <p class="leading-normal break-all overflow-hidden overflow-ellipsis m-0 text-sm md:text-base text-gray-400 md:line-clamp-2 text-justify hidden md:block font-normal">${post.summary!}</p>
             <div class="post-meta flex items-center items-center mr-auto w-full">

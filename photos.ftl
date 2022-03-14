@@ -5,7 +5,7 @@
       <#if settings.photos_patternimg?? && settings.photos_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.photos_patternimg!}"
-               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${settings.photos_title!'相册'}">
         </div>
       <#else>
@@ -16,7 +16,6 @@
         <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center dark:text-gray-300">
           ${settings.photos_title!'相册'}
         </h2>
-<#--        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>-->
       </div>
     </header>
     <div
@@ -44,7 +43,7 @@
                   <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}">
                     <header class="gallery-icon">
                       <a data-fancybox="gallery" href="javascript:void(0);">
-                        <img class="lazyload dark:filter-60" src="${theme_base!}/source/images/loading.svg" data-src="${photo.url!}"
+                        <img class="lazyload dark:filter-60" src="${theme_base!}/source/images/loading.gif" data-src="${photo.url!}"
                              alt="${photo.name!}"/>
                       </a>
                     </header>

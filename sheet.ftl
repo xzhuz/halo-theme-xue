@@ -5,7 +5,7 @@
       <#if sheet.thumbnail?? && sheet.thumbnail!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${sheet.thumbnail!}"
-               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${sheet.title!}">
         </div>
       <#else>

@@ -63,28 +63,6 @@ genernal:
           label: 开启
         - value: false
           label: 关闭
-    right_corner_circle:
-      name: right_corner_circle
-      label: 开启右下角按钮
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    open_night_mode:
-      name: open_night_mode
-      label: 开启夜晚模式
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     card_random_cover_list:
       name: card_random_cover_list
       label: 随机封面图片列表，分号分割
@@ -117,42 +95,34 @@ head_img:
       name: archives_patternimg
       label: 归档页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     links_patternimg:
       name: links_patternimg
       label: 友情链接页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     tag_patternimg:
       name: tag_patternimg
       label: 标签页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     categories_patternimg:
       name: categories_patternimg
       label: 分类页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     journals_patternimg:
       name: journals_patternimg
       label: 日志下文章页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     photos_patternimg:
       name: photos_patternimg
       label: 相册页面默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     search_patternimg:
       name: search_patternimg
       label: 搜索结果默认头部图
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     links_placeholder:
       name: links_placeholder
       label: 友情链接默认用户头像
       type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
 post:
   label: 文章页
   items:

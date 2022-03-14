@@ -1,12 +1,14 @@
 <#if settings.QR_code_zfb?? || settings.QR_code_wx??>
-    <section class="donate block text-center my-4 mx-auto">
-        <div class="icon relative inline-block border-gray-100 dark:border-gray-800 border bg-white dark:bg-gray-900 rounded-full py-3 px-6 z-20">
+    <section class="donate inline-block text-center my-4 mx-auto">
+        <div class="icon relative inline-block border-gray-100 dark:border-gray-700 border bg-white dark:bg-gray-800 rounded-full py-3 px-6 z-20">
             <#if settings.QR_code_zfb??>
-                <a href="javascript:;" id="alipay" class="pr-3 border-gray-600 dark:border-gray-800 border-r text-xl" onClick="toggleAliPay()" style="text-decoration: none !important;">
+                <a href="javascript:;" id="alipay" class="pr-3 border-gray-600 dark:border-gray-700 border-r text-xl" onClick="toggleAliPay()" 
+                   style="text-decoration: none !important; box-shadow: none !important;">
                   <i class="iconfont icon-yooxi text-xl dark:text-gray-300"></i></a>
             </#if>
             <#if settings.QR_code_wx??>
-                <a href="javascript:;" id="wechat" class="pl-3"  onClick="toggleWeChat()" style="text-decoration: none !important;">
+                <a href="javascript:;" id="wechat" class="pl-3"  onClick="toggleWeChat()"
+                   style="text-decoration: none !important; box-shadow: none !important;">
                   <i class="iconfont icon-wechat text-xl dark:text-gray-300"></i></a>
             </#if>
         </div>

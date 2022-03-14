@@ -5,7 +5,7 @@
       <#if settings.search_patternimg?? && settings.search_patternimg!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.search_patternimg!}"
-               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60"
+               class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
                alt="${keyword!}">
         </div>
       <#else>
@@ -35,9 +35,9 @@
             <!-- search end -->
           </div>
             <#list posts.content as post>
-              <a href="${post.fullPath}" class="ah-hf hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8">
-                <span class="ah-dt float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60 dark:text-gray-400" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
-                <span class="ah-tt table-cell text-lg dark:text-gray-400" style="line-height: inherit !important;">${post.title!}</span>
+              <a href="${post.fullPath}" class="archive-info hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8">
+                <span class="archive-date float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60 dark:text-gray-400" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
+                <span class="archive-title table-cell text-lg dark:text-gray-400" style="line-height: inherit !important;">${post.title!}</span>
               </a>
             </#list>
         </div>
@@ -78,9 +78,9 @@
                             <@postTag method="latest" top="10">
                                 <#list posts as post>
                                   <li>
-                                    <a class="ah-hf hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8" href="${post.fullPath!}">
-                                      <span class="ah-dt float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
-                                      <span class="ah-tt table-cell text-lg" style="line-height: inherit !important;">${post.title!}</span>
+                                    <a class="archive-info hover:opacity-70 relative block ml-6 px-0 pt-2 pb-2 leading-8" href="${post.fullPath!}">
+                                      <span class="archive-date float-left pr-2 whitespace-nowrap tracking-wide text-sm opacity-60" style="line-height: inherit !important;">${post.createTime?string('MM-dd')}</span>
+                                      <span class="archive-title table-cell text-lg" style="line-height: inherit !important;">${post.title!}</span>
                                     </a>
                                   </li>
                                 </#list>

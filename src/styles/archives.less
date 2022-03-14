@@ -47,7 +47,20 @@
   transition: opacity 0.4s;
 }
 
-.ah-hf:before {
+.archive-info {
+
+  .archive-title {
+    transition: all 0.5s;
+  }
+  
+  &:hover .archive-title {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-position: under;
+  }
+}
+
+.archive-info:before {
   position: absolute;
   top: 1.5rem;
   left: -1rem;
