@@ -40,7 +40,7 @@
             <#list post.tags as tag>
               <a href="${tag.fullPath!}"
                  class="bg-gray-200 hover:shadow-md hover:text-white hover:bg-red-400 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:shadow-md dark:hover:text-white mt-2 mb-2 mr-2 block py-0 px-4 rounded leading-10 h-10 text-gray-800 no-underline "
-                 style="text-decoration: none !important;">
+                 style="text-decoration: none !important; box-shadow: none !important;">
                 #&nbsp;${tag.name!}
               </a>
             </#list>
@@ -55,8 +55,8 @@
 
     <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#include "module/widget/sponsor.ftl">
-      <section class="donate inline-block text-center my-4 ml-4" onclick="likes(this);" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
-        <div  class="icon relative inline-block border-gray-100 dark:border-gray-700 border bg-red-600 hover:bg-red-500 rounded-full py-3 px-6 z-20 w-28 cursor-pointer">
+      <section class="donate inline-block text-center my-4 w-56" onclick="likes(this);" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
+        <div  class="icon relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 px-6 z-20 w-28 cursor-pointer">
           <span class="iconfont icon-like-fill text-white" ></span>
           <span class="like-count inline-block text-white">${post.likes}</span>
         </div>
