@@ -43,6 +43,7 @@ function toggleDarkMode() {
     $(document.body).removeClass("dark");
   }
 }
+
 /**
  * 点击页面处理小屏幕目录事件
  * @param target
@@ -97,12 +98,13 @@ function handleNavMenu() {
 
 function handleMenuActive() {
   const pathname = document.location.pathname;
-  document.querySelectorAll('.menu-item').forEach((e) => {
-    $(e).removeClass('menu-active');
-    if ($(e).attr('href') === pathname) {
-      $(e).addClass('menu-active');
-    }
-  })
+  document.querySelectorAll('.menu-item')
+    .forEach((e) => {
+      $(e).removeClass('menu-active');
+      if ($(e).attr('href') === pathname) {
+        $(e).addClass('menu-active');
+      }
+    })
 }
 
 function handleScrollMenu() {

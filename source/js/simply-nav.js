@@ -13,8 +13,11 @@
     burger = document.querySelector('.burger'),
     pageOverlay = document.querySelector('.overlay'),
     navLinks = document.querySelectorAll(".link"),
+    menuItemHref = document.querySelectorAll('.menu-item'),
     body = document.querySelector('body'),
     html = document.querySelector('html');
+
+  const navCheckbox = document.querySelector('#navCheckbox')
 
   // Disable page scroll
   function disablePageScroll() {
@@ -30,23 +33,34 @@
   // Nav funtion (toggle)
   function toggleNav() {
     sideNav.classList.toggle('-open');
-    burger.classList.toggle('open');
+    // burger.classList.toggle('open');
     disablePageScroll();
-  };
+  }
+
+  function payOverlay() {
+    toggleNav()
+    menuItem()
+  }
 
   // To default
   toDefaults = () => {
     // Close nav menu
     sideNav.classList.remove('-open');
-    burger.classList.remove('open');
+    // burger.classList.remove('open');
     // Make sure scrolling is enabled
     body.classList.remove('_disableScroll');
     html.classList.remove('_disableScroll');
   }
 
+  function menuItem() {
+    const checked = navCheckbox.checked;
+    navCheckbox.checked = !checked;
+  }
+
   // Event listeners
   toggleNavBtn.addEventListener('click', toggleNav);
-  pageOverlay.addEventListener('click', toggleNav);
+  pageOverlay.addEventListener('click', payOverlay);
+  menuItemHref.forEach(e => e.addEventListener('click', menuItem))
 
   // (on mobile) close nav menu when link is clicked
   // this is useful on mobile when clicking an anchor tag on the current page (eg. index.html#last-section)

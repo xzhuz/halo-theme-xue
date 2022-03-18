@@ -188,14 +188,26 @@ social:
       name: github
       label: Github
       type: text
-      placeholder: "用于展示底部 Github 社交信息"
+      placeholder: "GitHub"
       description: "GitHub 主页链接"
     mail:
       name: mail
       label: 邮箱
       type: text
-      placeholder: "用于展示底部邮箱社交信息"
+      placeholder: "邮箱"
       description: "邮箱地址"
+    zhihu:
+      name: zhihu
+      label: 知乎
+      type: text
+      placeholder: "知乎"
+      description: "知乎个人主页地址" 
+    weibo:
+      name: weibo
+      label: 微博
+      type: text
+      placeholder: "微博"
+      description: "微博个人主页地址"
     rss:
       name: rss
       label: 订阅按钮

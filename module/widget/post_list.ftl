@@ -20,7 +20,7 @@
               </a>
             <#else>
               <#assign hasImg = false />
-              <div class="post-date text-7xl font-bold w-full h-full text-center pt-5 flex flex-col items-center justify-center uppercase text-gray-800">
+              <div class="post-date text-6xl font-bold w-full h-full text-center pt-8 md:pt-5  flex flex-col items-center justify-center uppercase text-gray-800">
                 ${post.createTime?string("dd")}
                 <span class="font-medium text-base block mt-3 uppercase">${post.createTime?string("yyyy年MM月")}</span>
               </div>
