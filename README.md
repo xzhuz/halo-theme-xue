@@ -3,8 +3,9 @@
 <p align="center">
 追求个性与至简
 </p>
-> 如果大家喜欢这个主题，请多多 star 和 fork。你的 star 和支持就是我的动力
->
+
+>如果大家喜欢这个主题，请多多 star 和 fork。你的 star 和支持就是我的动力
+
 > If you like this theme. Please star this repository.
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
@@ -16,33 +17,24 @@
 - [开始](https://baozi.fun/2020/09/29/halo-blog-transfer)
 - [预览](#预览)
 - [示例站点](https://github.com/xzhuz/halo-theme-xue/issues/67)
-- [文档](https://baozi.fun/2022/02/26/markdown)
-- [主题特性](#特性)
+- [主题功能](#功能)
 - [更新日志](#更新日志)
 
 ## 预览
 
   [Preview](https://baozi.fun)
 
-## 特性
+## 支持的功能
 
-- [x] 日志页面
-- [x] 文章目录且可配置
-- [x] 友链页面
-- [x] 页面标题可配置
-- [x] 适配移动端
-- [x] 搜索功能
-- [x] 代码行号显示
-- [x] 链接页面分组显示
-- [x] 相册页面
-- [x] 适配 halo 1.5.x
-- [x] 随机文章封面
-- [x] 全局 PJAX
-- [x] **深色模式**
-- [ ] 文章分享功能
-- [x] ~~二级目录~~
-- [x] 支持 js 插件
-- [x] 首页多种列表模式
+- [x] 适配 Halo 最新 1.5.0 版本
+- [x] 响应式主题
+- [x] 代码高亮和代码行号
+- [x] 可配置文章目录
+- [x] 文章随机封面
+- [x] 自定义网页标题
+- [x] JavaScript 插件支持
+- [x] 首页文章多样式支持
+- [x] 全局 Pjax
 
 ## 更新日志
 
@@ -54,17 +46,17 @@
 - 2020-07-26 重构相册页面
 - 2020-07-30 标签云功能
 - 2020-07-31 文章分享功能
-- ~~2020-08-05 二级目录~~
 - 2020-10-01 **支持 js 插件、目录升级、随机封面升级、首页升级、功能配置更灵活和高效、更多细节优化**
 - 2020-10-04 优化细节
 - 2022-02-26 集成tailwindcss，优化css文件、解决一些细节问题
+- 2022-03-19 更新文档、修复一些样式小问题，当前版本趋于稳定
 
 ## 安装
 
 请下载最新发布版本，也可以通过 git 仓库直接安装。
 
-详见：[下载地址](https://github.com/xzzai/halo-theme-xue/releases)
+详见：[下载地址](https://github.com/xzhuz/halo-theme-xue/releases)
 
-## 用爱发电
+## 支持
 
 <img src="https://i.loli.net/2021/03/08/mx3uE2nl6iLohr1.png" width="200" height="200"/>
