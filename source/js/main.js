@@ -107,6 +107,12 @@ function handleMenuActive() {
     })
 }
 
+
+function arrowDown() {
+  const postHeight = $("#homeHeader").height() - 56;
+  window.scroll({top: postHeight, behavior: "smooth"});
+}
+
 function handleScrollMenu() {
   if (getClientWidth() <= 800) {
     $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
