@@ -37,12 +37,12 @@
               </@photoTag>
           </ul>
         </nav>
-        <div class="gallery masonry-gallery">
+        <div class="gallery masonry-gallery" id="lightGallery">
             <@photoTag method="list">
                 <#list photos?sort_by('name')?reverse as photo>
-                  <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}">
+                  <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}" data-src="${photo.url!}">
                     <header class="gallery-icon">
-                      <a data-fancybox="gallery" href="javascript:void(0);">
+                      <a data-fancybox="gallery" href="javascript:void(0)" >
                         <img class="lazyload dark:filter-60" src="${theme_base!}/source/images/loading.gif" data-src="${photo.url!}"
                              alt="${photo.name!}"/>
                       </a>

@@ -32,7 +32,7 @@
     </header>
     <div class="article-content fade-up">
       <div class="mx-auto bg-white dark:bg-gray-800 rounded-md px-10 py-10 md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300"
-           id="gallery-content">
+           id="lightGallery">
         ${post.content!}
         <hr class="bg-gray-100 dark:bg-gray-700 ">
         <p class="flex flex-row justify-start flex-wrap">
