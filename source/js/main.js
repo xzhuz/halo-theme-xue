@@ -715,7 +715,6 @@ function toBigImg() {
 }
 
 function clickToZoomImg() {
-  // const gallery = document.getElementById('lightGallery');
   document.querySelectorAll("#lightGallery img").forEach(img => {
     console.log($(img))
     $(img).parent('p').attr('data-src', $(img).attr('src'));
