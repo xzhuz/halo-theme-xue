@@ -11,12 +11,14 @@
 <#--标签云-->
 <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>
 
+<#-- 图片 -->
+<script src="${theme_base!}/source/js/lightGallery.min.js"></script>
+
+<#--<script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/lib/js/lightgallery.min.js"></script>-->
+
 <#--目录-->
 <#if settings.post_toc!true>
   <script src="${theme_base!}/source/js/tocbot.min.js"></script>
-  <script type="text/javascript">
-
-  </script>
 </#if>
 
 <#if settings.enable_photo!false>

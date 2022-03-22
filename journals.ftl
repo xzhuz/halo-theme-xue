@@ -44,7 +44,7 @@
 
                 </div>
                 <div class="py-3">
-                  <div class="text-lg md-content">${journal.content!}</div>
+                  <div class="text-lg md-content" id="lightGallery">${journal.content!}</div>
                   <div class="flex">
                     <p class="text-gray-500 pt-1">${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</p>
                     <svg class="w-6 h-6 ml-auto text-gray-500" fill="currentColor" viewBox="0 0 24 24">
