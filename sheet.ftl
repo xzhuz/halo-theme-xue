@@ -21,7 +21,7 @@
     </header>
     <div
       class="px-10 mx-auto md-content text-gray-800 dark:text-gray-300 px-4 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up"
-      id="write">
+      id="lightGallery">
         ${sheet.content!}
     </div>
 
