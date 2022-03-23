@@ -716,13 +716,11 @@ function toBigImg() {
 
 function clickToZoomImg() {
   document.querySelectorAll("#lightGallery img").forEach(img => {
-    console.log($(img))
     $(img).parent('p').attr('data-src', $(img).attr('src'));
   })
 
-  $("#lightGallery").lightGallery({
-    cssEasing: 'cubic-bezier(0.000, 0.000, 0.580, 1.000)',
-    speed: 1000,
+  lightGallery(document.getElementById("lightGallery"), {
+    speed: 500
   });
 }
 
