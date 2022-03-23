@@ -42,10 +42,10 @@
                 <#list photos?sort_by('name')?reverse as photo>
                   <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}" data-src="${photo.url!}">
                     <header class="gallery-icon">
-                      <a data-fancybox="gallery" href="javascript:void(0)" >
+                      <span data-fancybox="gallery" href="${photo.url!}" >
                         <img class="lazyload dark:filter-60" src="${theme_base!}/source/images/loading.gif" data-src="${photo.url!}"
                              alt="${photo.name!}"/>
-                      </a>
+                      </span>
                     </header>
                     <figcaption class="gallery-caption">
                       <div class="entry-summary">

@@ -714,20 +714,27 @@ function toBigImg() {
   });
 }
 
-function clickToZoomImg() {
-  document.querySelectorAll("#lightGallery img").forEach(img => {
-    $(img).parent('p').attr('data-src', $(img).attr('src'));
-  })
-
-  lightGallery(document.getElementById("lightGallery"), {
-    speed: 500
+function handleZoomImg() {
+  const $imgs = $(
+    "#lightGallery img:not([class])"
+  );
+  if (!$imgs.length) {
+    return;
+  }
+  $imgs.each(function () {
+    const $this = $(this);
+    $this.wrap(
+      $(
+        `<span style="display: block;" data-fancybox="gallery" href="${$this.attr(
+          "src"
+        )}"></span>`
+      )
+    );
   });
 }
 
 
 $(function () {
-
-
   toggleDarkMode();
 
   // 处理导航菜单
@@ -739,7 +746,7 @@ $(function () {
   dealContentToc()
 
   // 点击方法图片
-  clickToZoomImg();
+  handleZoomImg();
 
   // 高亮代码
   highLightCode()
@@ -752,10 +759,5 @@ $(function () {
 
   // 图片懒加载
   lazyloadImg();
-
-  if ($('#container').find('.ziyan').length > 0) {
-
-    // 自言代码高亮
-    hljsZiYanCode()
-  }
+  
 });

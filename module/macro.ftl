@@ -10,7 +10,7 @@
     <@global.head />
     <title>${title}</title>
     <#include "styles.ftl">
-    <script src="${theme_base!}/source/js/jquery.min.js"></script>
+    <script src="${theme_base!}/source/js/plugins/jquery.min.js"></script>
   </head>
   <body class="dark p-0 m-0 h-full font-sans">
   <div class="flex flex-col h-full">
