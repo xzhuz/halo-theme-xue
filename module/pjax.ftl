@@ -1,6 +1,6 @@
 <#if settings.pjax_enabled!false>
-  <script src="${theme_base!}/source/js/jquery.pjax.js"></script>
-  <script src="${theme_base!}/source/js/nprogress.min.js"></script>
+  <script src="${theme_base!}/source/js/plugins/jquery.pjax.js"></script>
+  <script src="${theme_base!}/source/js/plugins/nprogress.min.js"></script>
   <link rel="stylesheet" href="${theme_base!}/source/css/nprogress.min.css">
   <script type="text/javascript">
     $(document).pjax(
@@ -14,7 +14,7 @@
     $(document).on('pjax:complete', function () {
       NProgress.done();
       
-      clickToZoomImg();
+      handleZoomImg();
 
       handleMenuActive();
 
@@ -27,12 +27,6 @@
         const comment = $(this).remove();
         commentParent.append(comment);
       });
-
-      if ($('#container').find('.ziyan').length > 0) {
-
-        // 自言代码高亮
-        hljsZiYanCode()
-      }
 
       // 存在 markdown 页面的功能
       if ($("#container").find('.md-content').length > 0) {
@@ -47,8 +41,6 @@
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
           dealContentToc();
         }
-
-        // lazyloadImg();
       }
 
       // 相册页面功能

@@ -9,33 +9,30 @@
 <script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
 
 <#--标签云-->
-<script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>
+<script src="${theme_base!}/source/js/plugins/jqcloud-1.0.4.min.js"></script>
 
 <#-- 图片 -->
-<script src="${theme_base!}/source/js/lightGallery.min.js"></script>
-
-<#--<script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/lib/js/lightgallery.min.js"></script>-->
+<script src="${theme_base!}/source/js/plugins/jquery.fancybox.min.js"></script>
 
 <#--目录-->
 <#if settings.post_toc!true>
-  <script src="${theme_base!}/source/js/tocbot.min.js"></script>
+  <script src="${theme_base!}/source/js/plugins/tocbot.min.js"></script>
 </#if>
 
-<#if settings.enable_photo!false>
-  <script src="${theme_base!}/source/js/isotope.pkgd.min.js"></script>
-</#if>
+<#--相册-->
+<script src="${theme_base!}/source/js/plugins/isotope.pkgd.min.js"></script>
+
+<script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 
 <#if settings.right_corner_circle!true>
 <#--右下角按钮-->
-  <script src="${theme_base!}/source/js/moon.js"></script>
+  <script src="${theme_base!}/source/js/plugins/moon.js"></script>
 </#if>
 
 
 <#if settings.visit_statistics!false>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </#if>
-
-<script src="${theme_base!}/source/js/simply-nav.js"></script>
 
 <script type="text/javascript">
   function renderTagCloud() {
@@ -50,7 +47,7 @@
       <#list tags as tag>
       {
         'text': '${tag.name!}',
-        'weight': '${tag.postCount!}', 
+        'weight': '${tag.postCount!}',
         'link': '${tag.fullPath!}'
       },
       </#list>

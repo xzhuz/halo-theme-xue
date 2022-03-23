@@ -9,13 +9,6 @@
     </script>
 </#if>
 
-<#--<script defer src="${theme_base!}/source/js/heti-addon.min.js"></script>-->
-<#--<script>-->
-<#--  const heti = new Heti('.heti');-->
-<#--  heti.autoSpacing(); // 自动进行中西文混排美化和标点挤压-->
-<#--</script>-->
-
-
 <script type="text/javascript">
   // console.clear();
   console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
