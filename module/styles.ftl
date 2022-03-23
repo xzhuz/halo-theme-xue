@@ -1,11 +1,6 @@
 <style>
   :root {
-    --base-bg-color: #fff;
     --header-bg-color: #fff;
-    --link-color: #52616a;
-    --header-text-color: #252c41;
-    --header-link-color: #252c41;
-    --toc-active-color: #f1404b;
     --base-hover-color: #f1404b;
     --base-hl-color: #f1404b;
     --page-text-color: #fff;
@@ -15,9 +10,7 @@
     --header-sub-bg-color: #f0f5f9;
     --header-sub-hover-bg-color: #c9d6de;
     --base-color: #4facfe;
-    --cd-hover-color: #E53A40;
     --btn-pri-bg-color: #E53A40;
-    --base-txt-color: #363636;
     --base-code-text-color: #a9b7c6;
     --base-code-block-bg-color: #282c34;
 
@@ -70,9 +63,13 @@
 <#--  中文排版 -->
 <link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
 <link href="${theme_base!}/source/css/katex.min.css" rel="stylesheet">
+<link href="${theme_base!}/source/css/lightGallery.css" rel="stylesheet">
+<#--<script src="${theme_base!}/source/css/lightGallery.css"></script>-->
 
+<#--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css">-->
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 
 <#--代码风格-->
 <link rel="stylesheet" href="${theme_base!}/source/highlight.js/styles/atom-one-dark.css">
+

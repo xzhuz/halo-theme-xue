@@ -43,6 +43,7 @@ function toggleDarkMode() {
     $(document.body).removeClass("dark");
   }
 }
+
 /**
  * 点击页面处理小屏幕目录事件
  * @param target
@@ -97,12 +98,19 @@ function handleNavMenu() {
 
 function handleMenuActive() {
   const pathname = document.location.pathname;
-  document.querySelectorAll('.menu-item').forEach((e) => {
-    $(e).removeClass('menu-active');
-    if ($(e).attr('href') === pathname) {
-      $(e).addClass('menu-active');
-    }
-  })
+  document.querySelectorAll('.menu-item')
+    .forEach((e) => {
+      $(e).removeClass('menu-active');
+      if ($(e).attr('href') === pathname) {
+        $(e).addClass('menu-active');
+      }
+    })
+}
+
+
+function arrowDown() {
+  const postHeight = $("#homeHeader").height() - 56;
+  window.scroll({top: postHeight, behavior: "smooth"});
 }
 
 function handleScrollMenu() {
@@ -707,23 +715,20 @@ function toBigImg() {
 }
 
 function clickToZoomImg() {
-  $('img').click(function () {
-    var cls = $(this).attr('class')
-    if (cls && cls.indexOf('no-zoom') > -1) {
-      return;
-    }
-    //获取图片路径
-    var imgsrc = $(this).attr("src");
-    var opacityBottom = '<div class="opacityBottom" style = "display:none"><img class="bigImg" src="' + imgsrc + '"></div>';
-    $(document.body).append(opacityBottom);
-    toBigImg();//变大函数
+  document.querySelectorAll("#lightGallery img").forEach(img => {
+    console.log($(img))
+    $(img).parent('p').attr('data-src', $(img).attr('src'));
+  })
+
+  $("#lightGallery").lightGallery({
+    cssEasing: 'cubic-bezier(0.000, 0.000, 0.580, 1.000)',
+    speed: 1000,
   });
 }
 
 
 $(function () {
-  // 点击方法图片
-  clickToZoomImg();
+
 
   toggleDarkMode();
 
@@ -734,6 +739,9 @@ $(function () {
 
   // 处理目录
   dealContentToc()
+
+  // 点击方法图片
+  clickToZoomImg();
 
   // 高亮代码
   highLightCode()
