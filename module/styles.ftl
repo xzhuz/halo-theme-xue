@@ -64,9 +64,7 @@
 <link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
 <link href="${theme_base!}/source/css/katex.min.css" rel="stylesheet">
 <link href="${theme_base!}/source/css/lightGallery.css" rel="stylesheet">
-<#--<script src="${theme_base!}/source/css/lightGallery.css"></script>-->
 
-<#--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css">-->
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">
 
