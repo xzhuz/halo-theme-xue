@@ -722,11 +722,13 @@ function handleZoomImg() {
   }
   $imgs.each(function () {
     const $this = $(this);
+    $this.addClass('lazyload')
+    const src = $this.attr('src')
+    $this.attr('data-src', src)
+    $this.attr('src', loadingGif)
     $this.wrap(
       $(
-        `<span style="display: block;" data-fancybox="gallery" href="${$this.attr(
-          "src"
-        )}"></span>`
+        `<span style="display: block;" data-fancybox="gallery" href="${src}"></span>`
       )
     );
   });
