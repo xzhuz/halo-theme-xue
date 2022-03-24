@@ -80,6 +80,8 @@
 
     categoryCloud.jQCloud(array, {autoResize: true, delayedMode: true});
   }
+  
+  const loadingGif = '${theme_base!}/source/images/loading.gif';
 </script>
 
 ${settings.other_script_file!''}
