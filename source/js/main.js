@@ -388,9 +388,9 @@ function likes(e) {
     success: function (data) {
       $(e).addClass('liked')
       $(e).removeAttr('onclick');
-      var count =  $(e).siblings('.like-count')
+      var count =  $(e).parent('div').find('.like-count')
       var likeCount = parseInt(count.html())
-      $(e).siblings('.like-count').html(likeCount + 1);
+      $(e).parent('div').find('.like-count').html(likeCount + 1);
     },
     error: function (msg) {
     }

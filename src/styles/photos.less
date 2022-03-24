@@ -34,32 +34,7 @@
 
 #gallery-filter ul li a {
   display: block;
-  //color: #222;
   position: relative;
-}
-
-#gallery-filter ul li a.active::after {
-  width: 100%;
-  transform: scale(1);
-}
-
-#gallery-filter ul li a:hover::after {
-  width: 100%;
-  transform: scale(1);
-}
-
-#gallery-filter ul li a::after {
-  content: "";
-  display: block;
-  border-bottom: 2px solid var(--base-hl-color);
-  width: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: scale(0, 1);
-  transform-origin: 50% 0;
-  transition: transform .35s;
 }
 
 .gallery-item {

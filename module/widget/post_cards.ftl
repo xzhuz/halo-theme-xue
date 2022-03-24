@@ -14,11 +14,11 @@
                  alt="${post.title!}"
             />
           <#else>
-            <span class="full-image placeholder-bg w-full h-56" role="img" aria-label=""></span>
+            <span class="full-image placeholder-bg w-full" role="img" aria-label=""></span>
           </#if>
         </figure>
         <div class="flex flex-col gap-2 px-4 py-6" style="flex: 1 1 auto; ">
-          <h2 class="flex items-center gap-2 text-xl leading-7 font-bold my-4 ">
+          <h2 class="flex items-center gap-2 text-xl leading-7 font-bold my-4 z-50">
             <a href="${post.fullPath!}" class="text-gray-800 dark:text-gray-600">${post.title!}</a>
           </h2>
           <div class="flex flex-wrap items-end gap-2 justify-end text-sm">
