@@ -24,10 +24,7 @@
 
 <script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 
-<#if settings.right_corner_circle!true>
-<#--右下角按钮-->
-  <script src="${theme_base!}/source/js/plugins/moon.js"></script>
-</#if>
+<script src="${theme_base!}/source/js/plugins/moon.js"></script>
 
 
 <#if settings.visit_statistics!false>

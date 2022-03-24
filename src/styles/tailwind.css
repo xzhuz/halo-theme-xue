@@ -17,7 +17,20 @@
     -webkit-animation: fade-down 0.3s;
     animation: fade-down 0.3s;
   }
-
+  
+  .bg-box-shadow {
+    cursor: pointer;
+    box-shadow: inset 0 0 #e5e7eb;
+    transition: box-shadow .5s cubic-bezier(.71,0,0,.99);
+    text-decoration: none;
+  }
+  
+  .bg-box-shadow.active,
+  .bg-box-shadow:hover {
+    border: none;
+    box-shadow: inset 0 -0.8em #e5e7eb;
+  }
+  
   .fade-up {
     -webkit-animation: fade-up 0.3s;
     animation: fade-up 0.3s;

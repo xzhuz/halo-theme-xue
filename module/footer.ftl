@@ -96,9 +96,7 @@
   </div>
 </footer>
 
-<#if settings.right_corner_circle!true>
-  <#include "menu.ftl"/>
-</#if>
+<#include "menu.ftl"/>
 
 <#-- 搜索 -->
 <form method="get" action="/search">
