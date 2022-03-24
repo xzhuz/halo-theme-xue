@@ -726,6 +726,7 @@ function handleZoomImg() {
     const src = $this.attr('src')
     $this.attr('data-src', src)
     $this.attr('src', loadingGif)
+    $this.css('max-height', '500px')
     $this.wrap(
       $(
         `<span style="display: block;" data-fancybox="gallery" href="${src}"></span>`
