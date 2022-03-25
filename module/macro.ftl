@@ -23,8 +23,7 @@
 
   </body>
   <#include "plugins.ftl"/>
-<#--  <script src="${theme_base!}/source/js/main.js?ver=${theme.version!}"></script>-->
-  <script src="${theme_base!}/source/js/util.js?ver=${theme.version!}"></script>
+  <script src="${theme_base!}/source/js/main.js?ver=${theme.version!}"></script>
   <#include "script.ftl">
 
   </html>

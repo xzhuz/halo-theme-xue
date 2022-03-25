@@ -96,7 +96,7 @@
   </div>
 </footer>
 
-<#include "menu.ftl"/>
+<#include "back2Top.ftl"/>
 
 <#-- 搜索 -->
 <form method="get" action="/search">
