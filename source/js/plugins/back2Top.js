@@ -22,11 +22,6 @@
       $('g.moon-dot').hide();
     }
 
-    // menuIcon.style.display = 'none';
-    // menuText.style.display = 'block';
-    // menuText.innerHTML = percent + '%';
-    // $('g.moon-dot').hide();
-
     // Update strokeDasharray
     const length = 196;
     document.querySelector('.moon-menu-border').style.strokeDasharray = percent * length / 100 + ' ' + length;
