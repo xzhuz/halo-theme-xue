@@ -96,7 +96,7 @@
   </div>
 </footer>
 
-<#include "menu.ftl"/>
+<#include "back2Top.ftl"/>
 
 <#-- 搜索 -->
 <form method="get" action="/search">
@@ -108,7 +108,7 @@
                  id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
           <span class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-search"></span>
         </label>
-        <a class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-exit" onClick="toggleSearchBox()"></a>
+        <a class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-exit search-btn"></a>
       </div>
     </div>
   </div>
