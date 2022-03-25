@@ -7,6 +7,14 @@
     --text-color: #333333;
     /*夜晚默认*/
     --night-txt-color: #a9a9b3;
+
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
   }
 
   <#--向英雄致敬-->

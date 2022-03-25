@@ -14,12 +14,9 @@
     $(document).on('pjax:complete', function () {
       NProgress.done();
       
-      handleZoomImg();
+      xueContext.wrapImage();
 
-      handleMenuActive();
-
-      // 删除listener
-      removeScrollTocFixed();
+      xueContext.handleNavActive();
 
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {
@@ -32,24 +29,24 @@
       if ($("#container").find('.md-content').length > 0) {
 
         // 高亮代码
-        highLightCode()
+        xueContext.highlightCode()
 
         // 设置代码行号
-        setCodeLineNumber()
+        // xueContext.setCodeLineNumber()
         
         // 目录相关
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-          dealContentToc();
+          xueContext.handleContentToc();
         }
       }
 
       // 相册页面功能
       if ($("#container").find('.photos-page').length > 0) {
-        gallery()
+        xueContext.gallery()
       }
 
       // 图片懒加载
-      lazyloadImg()
+      xueContext.lazyloadImage()
 
       //重载
       if (typeof _hmt !== 'undefined') {

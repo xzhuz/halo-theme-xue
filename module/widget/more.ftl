@@ -1,6 +1,6 @@
 <div class="pagination-list flex flex-row " id="pagination">
     <#if pagination.hasNext>
-        <div class="sbtn diag-btn more-btn see-more" role="button" path="${pagination.nextPageFullPath!}" onClick="getMore(this)">
+        <div class="sbtn diag-btn more-btn see-more" role="button" data-path="${pagination.nextPageFullPath!}">
             查看更多
         </div>
     <#else>
