@@ -17,7 +17,7 @@
       xueContext.wrapImage();
 
       xueContext.handleNavActive();
-
+      
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {
         const commentParent = $(this).parent();
@@ -31,13 +31,40 @@
         // 高亮代码
         xueContext.highlightCode()
 
-        // 设置代码行号
-        // xueContext.setCodeLineNumber()
-        
         // 目录相关
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
           xueContext.handleContentToc();
         }
+      }
+
+      // alipay
+      if ($("#container").find('.arrow-down').length > 0) {
+        xueContext.arrowDown()
+      }
+
+      // alipay
+      if ($("#container").find('#alipay').length > 0) {
+        xueContext.toggleAlipay()
+      }
+
+      // wechat
+      if ($("#container").find('#wechat').length > 0) {
+        xueContext.toggleWeChat()
+      }
+      
+      // 获取更多
+      if ($("#container").find('.more-btn').length > 0) {
+        xueContext.moreBtn()
+      }
+
+      // 喜欢
+      if ($("#container").find('.like-btn').length > 0) {
+        xueContext.likeBtn()
+      }
+
+      // 分页
+      if ($("#container").find('.pagination-circle').length > 0) {
+        xueContext.pageBtn()
       }
 
       // 相册页面功能

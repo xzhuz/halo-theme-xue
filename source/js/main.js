@@ -152,10 +152,8 @@ const xueContext = {
     const Obj = $("#tocFlag");
 
     //判断元素是否存在
-    if (Obj.length !== 1) {
-      return false;
-    }
-    return true;
+    return Obj.length === 1;
+
   },
 
   // 目录靠右
@@ -247,10 +245,12 @@ const xueContext = {
           $(page).empty();
           $(page).append(pagination.children());
           xueContext.lazyloadImage()
+          xueContext.pageBtn();
         },
         error: function () {
           $(pageContainer).empty();
           $(pageContainer).addClass("loading");
+          xueContext.pageBtn();
         },
       });
     });
@@ -276,8 +276,10 @@ const xueContext = {
           var count = $e.parent('div').find('.like-count')
           var likeCount = parseInt(count.html())
           $e.parent('div').find('.like-count').html(likeCount + 1);
+          xueContext.likeBtn()
         },
         error: function (msg) {
+          xueContext.likeBtn();
         }
       })
     });
@@ -308,10 +310,37 @@ const xueContext = {
           // 多次点击
           xueContext.moreBtn()
         },
+        error: function () {
+          xueContext.moreBtn()
+        }
       });
     });
   },
 
+  // 包裹图片 ,这个需要在 lazyloadImages 方法之前
+  wrapImage: function () {
+    const $imgs = $(
+      "#lightGallery img:not([class])"
+    );
+    if (!$imgs.length) {
+      return;
+    }
+    $imgs.each(function () {
+      const $this = $(this);
+      $this.addClass('lazyload')
+      const src = $this.attr('src')
+      $this.attr('data-src', src)
+      $this.attr('src', loadingGif)
+      $this.css('max-height', '500px')
+      $this.wrap(
+        $(
+          `<span style="display: block;" data-fancybox="gallery" href="${src}"></span>`
+        )
+      );
+    });
+  },
+
+  // 懒加载图片
   lazyloadImage: function () {
     const imgs = document.querySelectorAll('img.lazyload');
     const randomImgs = document.querySelectorAll('img.img-random');
@@ -420,30 +449,7 @@ const xueContext = {
     });
   },
 
-  // 包括图片
-  wrapImage: function () {
-    const $imgs = $(
-      "#lightGallery img:not([class])"
-    );
-    if (!$imgs.length) {
-      return;
-    }
-    $imgs.each(function () {
-      const $this = $(this);
-      $this.addClass('lazyload')
-      const src = $this.attr('src')
-      $this.attr('data-src', src)
-      $this.attr('src', loadingGif)
-      $this.css('max-height', '500px')
-      $this.wrap(
-        $(
-          `<span style="display: block;" data-fancybox="gallery" href="${src}"></span>`
-        )
-      );
-    });
-  },
-
-
+  // 处理置顶
   handleBack2Top: function () {
     function dealBack2Top() {
       if (xueContext.scrollTop() > 0) {
@@ -452,6 +458,7 @@ const xueContext = {
         $(".moon-menu").hide();
       }
     }
+
     document.addEventListener('scroll', dealBack2Top, false);
 
     const menuIcon = document.querySelector('.moon-menu-icon');
@@ -463,11 +470,24 @@ const xueContext = {
       menuIcon.style.display = 'none';
       menuText.style.display = 'block';
     });
-    
+
     document.querySelector('.moon-menu-button').addEventListener('click', function () {
       window.scroll({top: 0, behavior: 'smooth'});
     });
-  }
+  },
+
+  // // 计算文章列表高度
+  // calcPostListAreaHeight: function () {
+  //   var heroHeight = $('#hero').height();
+  //   console.log(heroHeight)
+  //   if (heroHeight < 1) {
+  //     return;
+  //   }
+  //   var footerHeight = $('#footer').height();
+  //   var clientHeight = document.body.scrollHeight;
+  //   // $('#container').css('height', clientHeight - footerHeight);
+  //   // $('#postList').css('height', $('#container').height() - heroHeight-  50).css();
+  // }
 };
 
 

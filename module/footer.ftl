@@ -1,4 +1,4 @@
-<footer class="footer py-8 text-center shadow-md dark:bg-gray-800" style="flex: 0 0 auto;">
+<footer class="footer py-8 text-center shadow-md dark:bg-gray-800" style="flex: 0 0 auto;" id="footer">
   <div class="my-0 mx-auto px-10 mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
     <#-- 社交信息 begin -->
     <div class="offsite-links flex flex-row justify-center flex-wrap">
