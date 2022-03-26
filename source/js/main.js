@@ -190,7 +190,8 @@ const xueContext = {
   // 处理首页 arrow-down
   arrowDown: function () {
     $('.arrow-down').click(function () {
-      const postHeight = $("#homeHeader").height() - 56;
+      const postHeight = $("#hero").height() - 56;
+      console.log(postHeight)
       window.scroll({top: postHeight, behavior: "smooth"});
     });
   },

@@ -1,8 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header id="hero" class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen <#else> h-1/2</#if>"
-            id="homeHeader">
+    <header id="hero" class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen <#else> h-1/2</#if>">
       <#if settings.home_cover?? && settings.home_cover!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.home_cover!}"
@@ -21,9 +20,11 @@
         <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
         <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
-          <a class="arrow-down absolute bottom-11 left-2/4 -m-5 z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:inline-block <#else>hidden</#if>" href="javascript:" onClick="arrowDown()">
-            <span class="screen-reader-text border-none h-px w-px overflow-hidden absolute p-0">Scroll Down</span>
-          </a>
+          <p class=" w-full text-4xl absolute bottom-11 text-center">
+            <a class="arrow-down z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:block <#else>hidden</#if>" href="javascript:void(0)">
+              <span class="iconfont icon-toBottom"></span>
+            </a>
+          </p>
         </#if>
       </div>
     </header>
