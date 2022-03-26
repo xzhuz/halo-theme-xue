@@ -24,7 +24,7 @@
 
 <script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 
-<script src="${theme_base!}/source/js/plugins/moon.js"></script>
+<script src="${theme_base!}/source/js/plugins/back2Top.js"></script>
 
 
 <#if settings.visit_statistics!false>

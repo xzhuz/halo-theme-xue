@@ -55,7 +55,7 @@
 
     <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#include "module/widget/sponsor.ftl">
-      <section class="donate inline-block text-center my-4 w-56" onclick="likes(this);" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
+      <section class="donate inline-block text-center my-4 w-56 like-btn" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
         <div class="icon relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 px-6 z-20 w-28 cursor-pointer">
           <span class="iconfont icon-like-fill text-white" ></span>
           <span class="like-count inline-block text-white">${post.likes}</span>

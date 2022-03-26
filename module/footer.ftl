@@ -1,4 +1,4 @@
-<footer class="footer py-8 text-center shadow-md dark:bg-gray-800" style="flex: 0 0 auto;">
+<footer class="footer py-8 text-center shadow-md dark:bg-gray-800" style="flex: 0 0 auto;" id="footer">
   <div class="my-0 mx-auto px-10 mx-auto flex flex-row lg:justify-between  md:justify-center items-center grid lg:grid-cols-2 md:grid-cols-1">
     <#-- 社交信息 begin -->
     <div class="offsite-links flex flex-row justify-center flex-wrap">
@@ -96,7 +96,7 @@
   </div>
 </footer>
 
-<#include "menu.ftl"/>
+<#include "back2Top.ftl"/>
 
 <#-- 搜索 -->
 <form method="get" action="/search">
@@ -108,7 +108,7 @@
                  id="searchBoxInput" spellcheck="false" placeholder="Search" autofocus="autofocus" autocomplete="off">
           <span class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-search"></span>
         </label>
-        <a class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-exit" onClick="toggleSearchBox()"></a>
+        <a class="p-4 text-2xl opacity-50 transition-opacity iconfont icon-exit search-btn"></a>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-.swap-rotate input:checked ~ .swap-on{
+.swap-rotate input:checked ~ .swap-on {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -7,9 +7,10 @@
   opacity: 1;
 }
 
-.swap-rotate .swap-on {
+.swap-rotate .swap-on,
+.swap-rotate input:indeterminate ~ .swap-on {
   --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .swap .swap-on {
@@ -24,9 +25,9 @@
 .swap > * {
   grid-column-start: 1;
   grid-row-start: 1;
-  transition-property: all;
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-property: transform, opacity;
 }
 
 .swap-rotate input:checked ~ .swap-off {

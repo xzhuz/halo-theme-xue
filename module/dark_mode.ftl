@@ -1,5 +1,5 @@
 <label class="relative inline-grid select-none place-content-center cursor-pointer h-full swap swap-rotate">
-  <input type="checkbox" id="darkCheckbox" class="border-none" onchange="toggleDarkSwitch()">
+  <input type="checkbox" id="darkCheckbox" class="border-none">
   <svg class="swap-off fill-current w-6 h-6 text-gray-100 link" viewBox="0 0 1024 1024"
        xmlns="http://www.w3.org/2000/svg"
        width="150" height="150"><path

@@ -14,13 +14,10 @@
     $(document).on('pjax:complete', function () {
       NProgress.done();
       
-      handleZoomImg();
+      xueContext.wrapImage();
 
-      handleMenuActive();
-
-      // 删除listener
-      removeScrollTocFixed();
-
+      xueContext.handleNavActive();
+      
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {
         const commentParent = $(this).parent();
@@ -32,24 +29,51 @@
       if ($("#container").find('.md-content').length > 0) {
 
         // 高亮代码
-        highLightCode()
+        xueContext.highlightCode()
 
-        // 设置代码行号
-        setCodeLineNumber()
-        
         // 目录相关
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {
-          dealContentToc();
+          xueContext.handleContentToc();
         }
+      }
+
+      // alipay
+      if ($("#container").find('.arrow-down').length > 0) {
+        xueContext.arrowDown()
+      }
+
+      // alipay
+      if ($("#container").find('#alipay').length > 0) {
+        xueContext.toggleAlipay()
+      }
+
+      // wechat
+      if ($("#container").find('#wechat').length > 0) {
+        xueContext.toggleWeChat()
+      }
+      
+      // 获取更多
+      if ($("#container").find('.more-btn').length > 0) {
+        xueContext.moreBtn()
+      }
+
+      // 喜欢
+      if ($("#container").find('.like-btn').length > 0) {
+        xueContext.likeBtn()
+      }
+
+      // 分页
+      if ($("#container").find('.pagination-circle').length > 0) {
+        xueContext.pageBtn()
       }
 
       // 相册页面功能
       if ($("#container").find('.photos-page').length > 0) {
-        gallery()
+        xueContext.gallery()
       }
 
       // 图片懒加载
-      lazyloadImg()
+      xueContext.lazyloadImage()
 
       //重载
       if (typeof _hmt !== 'undefined') {
