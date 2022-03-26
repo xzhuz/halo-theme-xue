@@ -21,7 +21,7 @@
         <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
         <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
-          <a class="arrow-down absolute bottom-11 left-2/4 -m-5 z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:inline-block <#else>hidden</#if>" href="javascript:" onClick="arrowDown()">
+          <a class="arrow-down absolute bottom-11 left-2/4 -m-5 z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:inline-block <#else>hidden</#if>" href="javascript:">
             <span class="screen-reader-text border-none h-px w-px overflow-hidden absolute p-0">Scroll Down</span>
           </a>
         </#if>
