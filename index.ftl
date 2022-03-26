@@ -22,7 +22,7 @@
         <#if settings.enabled_index_cover_height!true>
           <p class=" w-full text-4xl absolute bottom-11 text-center">
             <a class="arrow-down z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:block <#else>hidden</#if>" href="javascript:void(0)">
-              <span class="iconfont icon-toBottom"></span>
+              <span class="iconfont icon-toBottom text-white dark:text-gray-300"></span>
             </a>
           </p>
         </#if>
