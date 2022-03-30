@@ -14,6 +14,17 @@ genernal:
       label: 网站slogan
       type: text
       placeholder: "用于首页描述"
+    show_logo:
+      name: show_logo
+      label: 是否展示Logo
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否  
     posts_style:
       name: posts_style
       label: 首页文章列表展示风格

@@ -2,7 +2,14 @@
   <#if posts?? && posts.getTotalElements() gt 0>
     <#list posts.content as post>
       <div class="relative flex flex-col overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
-        <figure class="flex items-center justify-center">
+        <#if post.topPriority gt 0>
+          <div class="post-top z-50 w-24 h-24 overflow-hidden absolute">
+            <div class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100">
+              置顶
+            </div>
+          </div>
+        </#if>
+        <figure class="flex items-center justify-center h-56">
           <#if post.thumbnail?? && post.thumbnail!=''>
             <img class="lazyload object-cover w-full h-56 no-zoom"
                  src="${theme_base!}/source/images/loading.gif"
@@ -14,7 +21,7 @@
                  alt="${post.title!}"
             />
           <#else>
-            <span class="full-image placeholder-bg w-full" role="img" aria-label=""></span>
+            <span class="full-image placeholder-bg w-full h-56" role="img" aria-label=""></span>
           </#if>
         </figure>
         <div class="flex flex-col gap-2 px-4 py-6" style="flex: 1 1 auto; ">
