@@ -59,6 +59,9 @@ module.exports = {
     maxHeight: {
       '200': '200px'
     },
+    transform: {
+      '-half': 'translate(-50%,-50%)',
+    },
   },
   variants: {
     // textColor: ['dark'],

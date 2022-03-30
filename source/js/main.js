@@ -1,5 +1,21 @@
+const slideUp = {
+      distance: '2rem',
+      origin: 'bottom',
+      // opacity: 1,
+      // delay:100,
+      interval: 50,
+      duration: 500,
+      reset: true,
+      // easing: 'ease-in' 
+};
+
 // 主题相关函数
 const xueContext = {
+
+  // 滚动加载动画
+  reveal: function() {
+      ScrollReveal().reveal('.slide-up',  slideUp);
+  },
 
   // 深色模式
   toggleDarkMode: function () {
@@ -248,6 +264,7 @@ const xueContext = {
           $(page).append(pagination.children());
           xueContext.lazyloadImage()
           xueContext.pageBtn();
+          xueContext.reveal();
         },
         error: function () {
           $(pageContainer).empty();
@@ -310,7 +327,8 @@ const xueContext = {
           $(page).empty();
           $(page).append(pagination.children());
           // 多次点击
-          xueContext.moreBtn()
+          xueContext.moreBtn();
+          xueContext.reveal();
         },
         error: function () {
           xueContext.moreBtn()
@@ -454,26 +472,19 @@ const xueContext = {
   // 处理置顶
   handleBack2Top: function () {
     function dealBack2Top() {
+      if (document.body.clientWidth <= 800) {
+        return;
+      }
       if (xueContext.scrollTop() > 0) {
-        $(".moon-menu").show();
+        $(".back-2-top").show();
       } else {
-        $(".moon-menu").hide();
+        $(".back-2-top").hide();
       }
     }
 
     document.addEventListener('scroll', dealBack2Top, false);
 
-    const menuIcon = document.querySelector('.moon-menu-icon');
-    const menuText = document.querySelector('.moon-menu-text');
-    $('.moon-menu-button').mouseenter(function (e) {
-      menuIcon.style.display = 'block';
-      menuText.style.display = 'none';
-    }).mouseleave(function () {
-      menuIcon.style.display = 'none';
-      menuText.style.display = 'block';
-    });
-
-    document.querySelector('.moon-menu-button').addEventListener('click', function () {
+    document.querySelector('.back-2-top').addEventListener('click', function () {
       window.scroll({top: 0, behavior: 'smooth'});
     });
   },

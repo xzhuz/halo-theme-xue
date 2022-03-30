@@ -30,6 +30,9 @@
 
         // 高亮代码
         xueContext.highlightCode()
+  
+        // 滚动动画
+        xueContext.reveal()
 
         // 目录相关
         if (typeof tocbot !== "undefined" && document.getElementById("toc")) {

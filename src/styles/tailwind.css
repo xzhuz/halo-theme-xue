@@ -31,6 +31,15 @@
     box-shadow: inset 0 -0.8em #e5e7eb;
   }
   
+  .back-2-top:hover .icon-top {
+    -webkit-animation-name: hvr-icon-up;
+    animation-name: hvr-icon-up;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  
   .fade-up {
     -webkit-animation: fade-up 0.3s;
     animation: fade-up 0.3s;
@@ -345,6 +354,33 @@
     to {
       transform: none;
       opacity: 1
+    }
+  }
+
+  @-webkit-keyframes hvr-icon-up {
+    0%,
+    50%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25%,
+    75% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+  }
+  @keyframes hvr-icon-up {
+    0%,
+    50%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25%,
+    75% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
     }
   }
 }

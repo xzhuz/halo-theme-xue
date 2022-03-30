@@ -1,7 +1,7 @@
 <div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4 pagination-container" id="pageContainer">
   <#if posts?? && posts.getTotalElements() gt 0>
     <#list posts.content as post>
-      <div class="relative flex flex-col overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
+      <div class="relative flex flex-col slide-up overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
         <#if post.topPriority gt 0>
           <div class="post-top z-50 w-24 h-24 overflow-hidden absolute">
             <div class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100">
