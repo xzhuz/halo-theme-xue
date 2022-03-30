@@ -13,15 +13,16 @@
                 points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
       </svg>
     </label>
-    <#if settings.header_logoimg?? && settings.header_logoimg!=''>
-      <a href="${blog_url!}" id="headerLogo" class="logo-link"
-         onfocus="this.blur();">
-        <img src="${settings.header_logoimg}" alt="${blog_title!}" class="logo" id="logo"
-             style="height: 3rem"/>
-      </a>
-    </#if>
+   
     <div class="nav-list " role="navigation">
       <div class="list -left " id="menuLinks">
+        <#if settings.show_logo!false>
+         <li class="item p-0">
+                <a href="${blog_url!}" id="headerLogo" class="logo-link" onfocus="this.blur();">
+                <img src="${blog_logo!}" alt="${blog_title!}" class="logo" id="logo" style="height: 3rem"/>
+              </a>
+            </li>
+        </#if>
         <@menuTag method="tree">
           <#list menus?sort_by('priority') as menu>
             <li class="item p-0">
