@@ -83,8 +83,10 @@ const xueContext = {
     xueContext.addTocFixEvent();
   },
 
+
   // 初始化目录
   initialToc: function () {
+    wrapHeader();
     const headerEl = "h1,h2,h3,h4,h5,h6", //headers
       content = ".md-content"; //文章容器
     tocbot.init({
@@ -476,19 +478,6 @@ const xueContext = {
       window.scroll({top: 0, behavior: 'smooth'});
     });
   },
-
-  // // 计算文章列表高度
-  // calcPostListAreaHeight: function () {
-  //   var heroHeight = $('#hero').height();
-  //   console.log(heroHeight)
-  //   if (heroHeight < 1) {
-  //     return;
-  //   }
-  //   var footerHeight = $('#footer').height();
-  //   var clientHeight = document.body.scrollHeight;
-  //   // $('#container').css('height', clientHeight - footerHeight);
-  //   // $('#postList').css('height', $('#container').height() - heroHeight-  50).css();
-  // }
 };
 
 
