@@ -193,7 +193,6 @@ const xueContext = {
   arrowDown: function () {
     $('.arrow-down').click(function () {
       const postHeight = $("#hero").height() - 56;
-      console.log(postHeight)
       window.scroll({top: postHeight, behavior: "smooth"});
     });
   },

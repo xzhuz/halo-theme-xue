@@ -1,4 +1,4 @@
-<div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4" id="pageContainer">
+<div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4 pagination-container" id="pageContainer">
   <#if posts?? && posts.getTotalElements() gt 0>
     <#list posts.content as post>
       <div class="relative flex flex-col overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
