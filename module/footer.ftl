@@ -43,12 +43,12 @@
     <div class="site-info flex flex-col justify-center">
       <@global.footer />
       <#if settings.Icp??>
-        <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-base">${settings.Icp!}</a></p>
+        <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-base text-gray-800 dark:text-gray-500">${settings.Icp!}</a></p>
       </#if>
       <#if settings.PublicSecurityRecord?? && settings.PoliceSecurityRecordCode??>
         <p style="display: inline-block;background-image: url(${theme_base!}/source/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
           <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${settings.PoliceSecurityRecordCode!}" target="_blank"
-             class="text-base">${settings.PublicSecurityRecord!}</a>
+             class="text-base text-gray-800 dark:text-gray-500">${settings.PublicSecurityRecord!}</a>
         </p>
       </#if>
       <!-- 请尊重作者，请务必保留版权 -->
