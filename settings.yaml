@@ -84,11 +84,16 @@ genernal:
       label: "ICP 备案号"
       type: text
       placeholder: "填入 ICP 备案号，没有则不填. "
+    PoliceSecurityRecordCode:
+      name: PoliceSecurityRecordCode
+      label: "网安备案号编码"
+      type: text
+      placeholder: "网安备案号编码，用于链接跳转"  
     PublicSecurityRecord:
       name: PublicSecurityRecord
       label: "网安备案号"
       type: text
-      placeholder: "填入网安备案号代码，没有则不填"
+      placeholder: "填入网安备案号文字"
     QR_code_zfb:
       name: QR_code_zfb
       label: "支付宝二维码图片"

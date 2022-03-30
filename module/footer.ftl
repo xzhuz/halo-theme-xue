@@ -45,10 +45,10 @@
       <#if settings.Icp??>
         <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-xs">${settings.Icp!}</a></p>
       </#if>
-      <#if settings.PublicSecurityRecord??>
-        <p style="display: inline-block;background-image: url(${theme_base!}/assets/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
-          <a href="http://www.beian.gov.cn" target="_blank"
-             class="text-xs">${settings.PublicSecurityRecord!}</a>
+      <#if settings.PublicSecurityRecord?? && settings.PoliceSecurityRecordCode??>
+        <p style="display: inline-block;background-image: url(${theme_base!}/source/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
+          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${settings.PoliceSecurityRecordCode!}" target="_blank"
+             class="text-base">${settings.PublicSecurityRecord!}</a>
         </p>
       </#if>
       <!-- 请尊重作者，请务必保留版权 -->
