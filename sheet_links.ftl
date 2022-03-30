@@ -36,7 +36,7 @@
                       <div class=" my-1.5 mx-3.5 flex flex-col text-center">
                         <p class="pt-3 pb-1.5 font-semibold">${link.name}</p>
                         <div class=" py-1.5 break-all flex items-center">
-                          <p class=" inline-block w-full overflow-hidden overflow-ellipsis whitespace-nowrap break-words m-0 text-center" title="${link.description}">${link.description}</p>
+                          <p class=" inline-block w-full text-gray-600 dark:text-gray-500 overflow-hidden overflow-ellipsis whitespace-nowrap break-words m-0 text-center" title="${link.description}">${link.description}</p>
                         </div>
                       </div>
                     </a>
