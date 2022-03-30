@@ -26,6 +26,8 @@
 
 <script src="${theme_base!}/source/js/plugins/back2Top.js"></script>
 
+<script src="${theme_base!}/source/js/plugins/scrollreveal.js"></script>
+
 
 <#if settings.visit_statistics!false>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

@@ -24,7 +24,7 @@
       <div id="ziyan-list">
         <div style="position: relative">
           <#list journals.content as journal>
-            <div class="min-h-screen py-6 flex flex-col justify-center items-center">
+            <div class="min-h-screen py-6 flex flex-col justify-center items-center slide-up">
               <div class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl py-3 px-5">
                 <div class="flex">
                   <div class="mr-2">

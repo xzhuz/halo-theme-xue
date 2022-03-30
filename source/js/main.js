@@ -1,5 +1,21 @@
+const slideUp = {
+      distance: '2rem',
+      origin: 'bottom',
+      // opacity: 1,
+      // delay:100,
+      interval: 50,
+      duration: 500,
+      reset: true,
+      // easing: 'ease-in' 
+};
+
 // 主题相关函数
 const xueContext = {
+
+  // 滚动加载动画
+  reveal: function() {
+      ScrollReveal().reveal('.slide-up',  slideUp);
+  },
 
   // 深色模式
   toggleDarkMode: function () {
@@ -248,6 +264,7 @@ const xueContext = {
           $(page).append(pagination.children());
           xueContext.lazyloadImage()
           xueContext.pageBtn();
+          xueContext.reveal();
         },
         error: function () {
           $(pageContainer).empty();
@@ -310,7 +327,8 @@ const xueContext = {
           $(page).empty();
           $(page).append(pagination.children());
           // 多次点击
-          xueContext.moreBtn()
+          xueContext.moreBtn();
+          xueContext.reveal();
         },
         error: function () {
           xueContext.moreBtn()
