@@ -472,26 +472,19 @@ const xueContext = {
   // 处理置顶
   handleBack2Top: function () {
     function dealBack2Top() {
+      if (document.body.clientWidth <= 800) {
+        return;
+      }
       if (xueContext.scrollTop() > 0) {
-        $(".moon-menu").show();
+        $(".back-2-top").show();
       } else {
-        $(".moon-menu").hide();
+        $(".back-2-top").hide();
       }
     }
 
     document.addEventListener('scroll', dealBack2Top, false);
 
-    const menuIcon = document.querySelector('.moon-menu-icon');
-    const menuText = document.querySelector('.moon-menu-text');
-    $('.moon-menu-button').mouseenter(function (e) {
-      menuIcon.style.display = 'block';
-      menuText.style.display = 'none';
-    }).mouseleave(function () {
-      menuIcon.style.display = 'none';
-      menuText.style.display = 'block';
-    });
-
-    document.querySelector('.moon-menu-button').addEventListener('click', function () {
+    document.querySelector('.back-2-top').addEventListener('click', function () {
       window.scroll({top: 0, behavior: 'smooth'});
     });
   },

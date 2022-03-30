@@ -19,7 +19,7 @@ genernal:
       label: 是否展示Logo
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 是
