@@ -43,7 +43,7 @@
     <div class="site-info flex flex-col justify-center">
       <@global.footer />
       <#if settings.Icp??>
-        <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-xs">${settings.Icp!}</a></p>
+        <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-base">${settings.Icp!}</a></p>
       </#if>
       <#if settings.PublicSecurityRecord?? && settings.PoliceSecurityRecordCode??>
         <p style="display: inline-block;background-image: url(${theme_base!}/source/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
