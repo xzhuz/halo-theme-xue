@@ -1,6 +1,4 @@
 <#macro comment post,type>
-  <script src="${theme_base!}/source/js/plugins/vue.min.js"></script>
-  <script src="${options.comment_internal_plugin_js!'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
   <section class="comments-area">
     <div class="inner" id="commentInner${post.id}">
       <div id="haloComment${post.id}"></div>

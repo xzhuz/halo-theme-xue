@@ -1,14 +1,12 @@
-<#if is_post?? || is_sheet?? || is_journals??>
-  <script src="${theme_base!}/source/js/plugins/vue.min.js"></script>
-  <script src="${options.comment_internal_plugin_js!'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
-  <script>
-    var configs = {
-      autoLoad: true,
-      showUserAgent: true,
-      darkMode: localStorage.getItem('dark') === 'dark'
-    }
-  </script>
-</#if>
+<script src="${theme_base!}/source/js/plugins/vue.min.js"></script>
+<script src="${options.comment_internal_plugin_js!'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
+<script>
+  var configs = {
+    autoLoad: true,
+    showUserAgent: true,
+    darkMode: localStorage.getItem('dark') === 'dark'
+  }
+</script>
 
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
