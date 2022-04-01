@@ -10,7 +10,6 @@
   <script type="application/javascript" data-pjax-comment>
     function renderComment() {
       var haloComment = document.getElementById('haloComment${post.id}');
-      console.info('${post.id}', '${type}');
       if (!haloComment) {
         $('#' + '${post.id?c}').remove();
         $('#commentInner${post.id}').append('<div id="haloComment${post.id}"></div>');
