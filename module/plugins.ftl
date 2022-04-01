@@ -1,3 +1,15 @@
+<#if is_post?? || is_sheet?? || is_journals??>
+  <script src="${theme_base!}/source/js/plugins/vue.min.js"></script>
+  <script src="${options.comment_internal_plugin_js!'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
+  <script>
+    var configs = {
+      autoLoad: true,
+      showUserAgent: true,
+      darkMode: localStorage.getItem('dark') === 'dark'
+    }
+  </script>
+</#if>
+
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
 
@@ -22,9 +34,8 @@
 <#--相册-->
 <script src="${theme_base!}/source/js/plugins/isotope.pkgd.min.js"></script>
 
+<#--导航栏-->
 <script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
-
-<script src="${theme_base!}/source/js/plugins/back2Top.js"></script>
 
 <script src="${theme_base!}/source/js/plugins/scrollreveal.js"></script>
 

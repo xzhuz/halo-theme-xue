@@ -71,10 +71,12 @@
       </div>
     </#if>
 
-    <div
-            class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
-      <#include "module/comment.ftl">
-      <@comment post,"post" />
+    <div class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
+
+      <#if !post.disallowComment!false>
+        <#include "module/comment.ftl">
+        <@comment post,"post" />
+      </#if>
     </div>
   </main>
 </@layout>

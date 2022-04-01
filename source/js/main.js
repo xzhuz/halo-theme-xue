@@ -1,20 +1,20 @@
 const slideUp = {
-      distance: '2rem',
-      origin: 'bottom',
-      // opacity: 1,
-      // delay:100,
-      interval: 50,
-      duration: 500,
-      reset: false,
-      // easing: 'ease-in' 
+  distance: '2rem',
+  origin: 'bottom',
+  // opacity: 1,
+  // delay:100,
+  interval: 50,
+  duration: 500,
+  reset: false,
+  // easing: 'ease-in' 
 };
 
 // 主题相关函数
 const xueContext = {
 
   // 滚动加载动画
-  reveal: function() {
-      ScrollReveal().reveal('.slide-up',  slideUp);
+  reveal: function () {
+    ScrollReveal().reveal('.slide-up', slideUp);
   },
 
   // 深色模式
@@ -26,9 +26,12 @@ const xueContext = {
       xueContext.handleNavTheme()
       // 检查本地缓存
       xueContext.checkLocalStorage()
-      if (typeof renderComment === "function") {
-        renderComment()
-      }
+
+      $('script[data-pjax-comment]').each(function () {
+        const commentParent = $(this).parent();
+        const comment = $(this).remove();
+        commentParent.append(comment);
+      });
     });
   },
 
@@ -102,6 +105,9 @@ const xueContext = {
 
   // 初始化目录
   initialToc: function () {
+    if ($("#container").find('#toc').length < 1) {
+      return
+    }
     wrapHeader();
     const headerEl = "h1,h2,h3,h4,h5,h6", //headers
       content = ".md-content"; //文章容器
@@ -296,6 +302,9 @@ const xueContext = {
           var likeCount = parseInt(count.html())
           $e.parent('div').find('.like-count').html(likeCount + 1);
           xueContext.likeBtn()
+          
+          $e.removeClass('icon-heart')
+          $e.addClass('icon-heart-fill')
         },
         error: function (msg) {
           xueContext.likeBtn();
@@ -488,6 +497,15 @@ const xueContext = {
       window.scroll({top: 0, behavior: 'smooth'});
     });
   },
+
+  // 日志评论弹出框
+  journalModal: function () {
+    $('.comment-btn').click(e => {
+      const index = e.target.dataset.index
+      $(`#comment-${index}`).toggleClass('hidden')
+    })
+  }
+
 };
 
 

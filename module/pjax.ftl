@@ -40,6 +40,11 @@
         }
       }
 
+      // 日志
+      if ($("#container").find('#journals').length > 0) {
+        xueContext.journalModal()
+      }
+
       // alipay
       if ($("#container").find('.arrow-down').length > 0) {
         xueContext.arrowDown()
