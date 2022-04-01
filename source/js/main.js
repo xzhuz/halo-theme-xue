@@ -5,7 +5,7 @@ const slideUp = {
       // delay:100,
       interval: 50,
       duration: 500,
-      reset: true,
+      reset: false,
       // easing: 'ease-in' 
 };
 
