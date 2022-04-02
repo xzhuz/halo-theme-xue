@@ -44,17 +44,18 @@
                   </div>
                 </div>
                 <div class="py-6">
-                  <div class="text-lg md-content "  id="lightGallery">${journal.content!}</div>
+                  <div class="text-lg md-content" id="lightGallery">${journal.content!}</div>
                 </div>
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
-                    <span class="iconfont icon-heart w-6 h-6 hover:text-red-300 cursor-pointer like-btn" 
+                    <span class="iconfont icon-heart icon-${journal.id} w-6 h-6 hover:text-red-300 cursor-pointer like-btn" 
                           style="font-size: 1.5rem;line-height: 1.7rem;"
+                          data-index="${journal.id}"
                           data-path="${blog_url!}/api/content/journals/${journal.id}/likes"
                           fill="currentColor"
                     >
                     </span>
-                    <span class="like-count">${journal.likes}</span>
+                    <span class="like-count-${journal.id}">${journal.likes}</span>
                   </div>
                   <div class="flex space-x-2">
                     <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-red-300 comment-btn" data-index="${journal.id}">

@@ -285,27 +285,30 @@ const xueContext = {
   // 点击喜欢按钮
   likeBtn: function () {
     $('.like-btn').click(function (e) {
-      if ($(e).hasClass('liked')) {
+      var path = e.target.dataset.path
+      if (!path) {
+        return
+      }
+      var index = e.target.dataset.index
+      var $e = $(e.target)
+      if ($e.hasClass('liked')) {
         return;
       }
-      const path = e.target.dataset.path
-      const $e = $(e.target)
+      $e.addClass('liked')
       $.ajax({
         type: "post",
         url: path,
         data: "{}",
         contentType: "application/json",
         dataType: "json",
-        success: function (data) {
-          $e.addClass('liked')
-          // $(e).removeAttr('onclick');
-          var count = $e.parent('div').find('.like-count')
-          var likeCount = parseInt(count.html())
-          $e.parent('div').find('.like-count').html(likeCount + 1);
+        success: function () {
+          var $count = $('.like-count-' + index)
+          var likeCount = parseInt($count.html());
+          $count.html(likeCount + 1);
           xueContext.likeBtn()
-
-          $e.removeClass('icon-heart')
-          $e.addClass('icon-heart-fill')
+          var $icon = $('.icon-' + index)
+          $icon.removeClass('icon-heart')
+          $icon.addClass('icon-heart-fill')
         },
         error: function (msg) {
           xueContext.likeBtn();

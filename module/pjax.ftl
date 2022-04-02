@@ -43,6 +43,7 @@
       // 日志
       if ($("#container").find('#journals').length > 0) {
         xueContext.journalModal()
+        xueContext.createTimeAgo()
       }
 
       // alipay
