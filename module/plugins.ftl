@@ -1,12 +1,19 @@
-<script src="${theme_base!}/source/js/plugins/vue.min.js"></script>
-<script src="${options.comment_internal_plugin_js!'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
 <script>
+  function initComment() {
+    $('script[data-pjax-comment]').each(function () {
+      const commentParent = $(this).parent();
+      const comment = $(this).remove();
+      commentParent.append(comment);
+    });
+  }
   var configs = {
     autoLoad: true,
     showUserAgent: true,
     darkMode: localStorage.getItem('dark') === 'dark'
   }
 </script>
+<script src="${theme_base!}/source/js/plugins/vue.min.js" onload="initComment();"></script>
+<script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment-fly@master/dist/halo-comment.min.js'}"></script>
 
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>

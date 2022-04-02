@@ -82,7 +82,9 @@
 
       // 图片懒加载
       xueContext.lazyloadImage()
-
+    
+      // 随机卡片颜色
+      xueContext.randomBadgeColor()
       //重载
       if (typeof _hmt !== 'undefined') {
         // support 百度统计

@@ -40,25 +40,12 @@
                       </svg>
                     </span>
                     </div>
-                    <div class="text-gray-500 leading-4">@${user.nickname!}</div>
+                    <div class="text-gray-500 leading-4 text-sm time-ago" data-time="${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}">${journal.createTime?string("yyyy-MM-dd HH:mm")}</div>
                   </div>
                 </div>
-                <div class="py-3">
-                  <div class="text-lg md-content" id="lightGallery">${journal.content!}</div>
-                  <div class="flex">
-                    <p class="text-gray-500 pt-1">${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</p>
-                    <svg class="w-6 h-6 ml-auto text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                      <g>
-                        <path d="M12 18.042c-.553 0-1-.447-1-1v-5.5c0-.553.447-1 1-1s1 .447 1 1v5.5c0 .553-.447 1-1 1z">
-                        </path>
-                        <circle cx="12" cy="8.042" r="1.25"></circle>
-                        <path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z">
-                        </path>
-                      </g>
-                    </svg>
-                  </div>
+                <div class="py-6">
+                  <div class="text-lg md-content "  id="lightGallery">${journal.content!}</div>
                 </div>
-
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
                     <span class="iconfont icon-heart w-6 h-6 hover:text-red-300 cursor-pointer like-btn" 
@@ -85,9 +72,7 @@
                 </div>
               </div>
             </div>
-
           </#list>
-
         </div>
       </div>
     </div>

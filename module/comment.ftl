@@ -5,7 +5,7 @@
     </div>
   </section>
 
-  <script type="application/javascript" data-pjax-comment>
+  <script defer type="application/javascript" data-pjax-comment>
     function renderComment() {
       var haloComment = document.getElementById('haloComment${post.id}');
       if (!haloComment) {
@@ -14,6 +14,10 @@
       }
       if (!localStorage.theme) {
         localStorage.setItem('theme', 'light')
+      }
+      if (typeof Vue === "undefined") {
+        // console.error('Vue is not defined')
+        return
       }
       new Vue({
         el: '#haloComment${post.id}',
@@ -27,7 +31,6 @@
         template: `<halo-comment id="${post.id?c}" type="${type}" :configs="JSON.stringify(configs)" />`,
       });
     }
-
     renderComment();
   </script>
 </#macro>

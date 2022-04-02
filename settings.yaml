@@ -36,6 +36,28 @@ genernal:
           label: 卡片
         - value: false
           label: 列表
+    post_card_meta_info:
+      name: post_card_meta_info
+      label: 卡片是否展示元数据
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 展示
+        - value: false
+          label: 隐藏   
+    post_card_tag:
+      name: post_card_tag
+      label: 卡片是否展示标签
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 展示
+        - value: false
+          label: 隐藏
     show_popular:
       name: show_popular
       label: 列表风格下是否展示热门文章
@@ -47,17 +69,6 @@ genernal:
           label: 是
         - value: false
           label: 否
-    card_hover_summary:
-      name: card_hover_summary
-      label: 卡片风格首页是否展示文章简介
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
     home_cover:
       name: home_cover
       label: 首页背景
