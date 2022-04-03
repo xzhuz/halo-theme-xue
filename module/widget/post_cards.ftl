@@ -34,7 +34,7 @@
                 <#list post.tags as tag>
                   <#if tag_index &lt; 1>
                     <a href="${tag.fullPath!}" class="relative inline-block badge">
-                      <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background: ${tag.color!'rgba(248,113,113,1)'}"></i>
+                      <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
                       <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
                             style="color: ${tag.color!'rgba(248,113,113,1)'}"
                             data-value="${tag.name}">
