@@ -428,14 +428,14 @@ const xueContext = {
 
   // 随机徽章颜色
   randomBadgeColor: function () {
-    document.querySelectorAll('.badge').forEach(e => {
-      var text = $(e).find('span').attr('data-value')
-      var randomColor = Math.floor(text.hashCode() * 0xFFFFF).toString(16);
-      randomColor = randomColor && randomColor.length > 6 ? randomColor.substr(0, 6) : randomColor
-      $(e).find('i').removeClass('bg-red-400').attr('style', 'background-color: #' + randomColor);
-      $(e).find('span').removeClass('text-red-400').attr('style', 'color: #' + randomColor);
-
-    })
+    // document.querySelectorAll('.badge').forEach(e => {
+    //   var text = $(e).find('span').attr('data-value')
+    //   var randomColor = Math.floor(text.hashCode() * 0xFFFFF).toString(16);
+    //   randomColor = randomColor && randomColor.length > 6 ? randomColor.substr(0, 6) : randomColor
+    //   $(e).find('i').removeClass('bg-red-400').attr('style', 'background-color: #' + randomColor);
+    //   $(e).find('span').removeClass('text-red-400').attr('style', 'color: #' + randomColor);
+    //
+    // })
   },
 
   // 计算时间
