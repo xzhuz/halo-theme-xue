@@ -21,14 +21,15 @@
     </header>
     <div class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal
                 ct-container cn-pd fade-up is-container" id="moreContainer">
-      <div id="ziyan-list">
+      <div id="journals">
         <div style="position: relative">
           <#list journals.content as journal>
-            <div class="min-h-screen py-6 flex flex-col justify-center items-center">
+            <div class="min-h-screen py-6 flex flex-col justify-center items-center slide-up">
               <div class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl py-3 px-5">
                 <div class="flex">
                   <div class="mr-2">
-                    <img class="rounded-full h-10 w-10 dark:filter-60 no-zoom" src="${user.avatar!}" alt="${user.nickname!}"/>
+                    <img class="rounded-full h-10 w-10 dark:filter-60 no-zoom" src="${user.avatar!}"
+                         alt="${user.nickname!}"/>
                   </div>
                   <div>
                     <div class="flex space-x-1">
@@ -39,51 +40,40 @@
                       </svg>
                     </span>
                     </div>
-                    <div class="text-gray-500 leading-4">@${user.nickname!}</div>
+                    <div class="text-gray-500 leading-4 text-sm time-ago" data-time="${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}">${journal.createTime?string("yyyy-MM-dd HH:mm")}</div>
                   </div>
-
                 </div>
-                <div class="py-3">
+                <div class="py-6">
                   <div class="text-lg md-content" id="lightGallery">${journal.content!}</div>
-                  <div class="flex">
-                    <p class="text-gray-500 pt-1">${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</p>
-                    <svg class="w-6 h-6 ml-auto text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                      <g>
-                        <path d="M12 18.042c-.553 0-1-.447-1-1v-5.5c0-.553.447-1 1-1s1 .447 1 1v5.5c0 .553-.447 1-1 1z">
-                        </path>
-                        <circle cx="12" cy="8.042" r="1.25"></circle>
-                        <path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z">
-                        </path>
-                      </g>
-                    </svg>
-                  </div>
                 </div>
-
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
-                    <svg viewBox="0 0 24 24" fill="currentColor" data-path="${blog_url!}/api/content/journals/${journal.id}/likes" class="w-6 h-6 hover:text-red-300 like-btn" style="cursor: pointer;">
-                      <g>
-                        <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
-                        </path>
-                      </g>
-                    </svg>
-                    <span class="like-count">${journal.likes}</span>
+                    <span class="iconfont icon-heart icon-${journal.id} w-6 h-6 hover:text-red-300 cursor-pointer like-btn" 
+                          style="font-size: 1.5rem;line-height: 1.7rem;"
+                          data-index="${journal.id}"
+                          data-path="${blog_url!}/api/content/journals/${journal.id}/likes"
+                          fill="currentColor"
+                    >
+                    </span>
+                    <span class="like-count-${journal.id}">${journal.likes}</span>
                   </div>
                   <div class="flex space-x-2">
-                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-red-300 comment-btn" data-index="${journal.id}">
                       <g>
-                        <path
-                                d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z">
+                        <path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z">
                         </path>
                       </g>
                     </svg>
                     <span>${journal.commentCount}</span>
                   </div>
                 </div>
+                <div class=" space-x-5 pt-3 text-gray-500 hidden" id="comment-${journal.id}">
+                  <#include "module/comment.ftl">
+                  <@comment journal,"journal" />
+                </div>
               </div>
             </div>
           </#list>
-          
         </div>
       </div>
     </div>

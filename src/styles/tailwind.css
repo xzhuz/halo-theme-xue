@@ -8,7 +8,7 @@
     color: #374151;
     word-break: break-word;
   }
-
+  
   .liked {
     color: var(--base-hover-color)
   }
@@ -29,6 +29,15 @@
   .bg-box-shadow:hover {
     border: none;
     box-shadow: inset 0 -0.8em #e5e7eb;
+  }
+  
+  .back-2-top:hover .icon-top {
+    -webkit-animation-name: hvr-icon-up;
+    animation-name: hvr-icon-up;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   
   .fade-up {
@@ -177,12 +186,11 @@
 
   @font-face {
     font-family: "iconfont"; /* Project id 2025344 */
-    src: url('./fonts/iconfont.woff2?t=1648319540661') format('woff2'),
-    url('./fonts/iconfont.woff?t=1648319540661') format('woff'),
-    url('./fonts/iconfont.ttf?t=1648319540661') format('truetype');
+    src: url('./fonts/iconfont.woff2?t=1648886076889') format('woff2'),
+    url('./fonts/iconfont.woff?t=1648886076889') format('woff'),
+    url('./fonts/iconfont.ttf?t=1648886076889') format('truetype');
   }
-
-
+  
   @keyframes fade-down {
     0% {
       transform: translateY(-20px);
@@ -345,6 +353,33 @@
     to {
       transform: none;
       opacity: 1
+    }
+  }
+
+  @-webkit-keyframes hvr-icon-up {
+    0%,
+    50%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25%,
+    75% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+  }
+  @keyframes hvr-icon-up {
+    0%,
+    50%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    25%,
+    75% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
     }
   }
 }

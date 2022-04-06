@@ -1,8 +1,8 @@
 <div class="posts pagination-container" id="pageContainer">
   <#if posts?? && posts.getTotalElements() gt 0>
-    <ul class="posts-list pl-0">
+    <ul class="posts-list pl-0 ">
       <#list posts.content as post>
-        <li class="post flex list-none relative w-full py-3 md:py-5 inline-block text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow">
+        <li class="post slide-up flex list-none relative w-full py-3 md:py-5 inline-block text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow">
           <div class="overflow-hidden float-left relative flex-shrink-0 h-16 md:h-36 w-28 md:w-56 bg-gray-100 inline-block dark:filter-60">
             <#if post.thumbnail?? && post.thumbnail!=''>
               <#assign hasImg = true />

@@ -55,12 +55,14 @@
 
     <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#include "module/widget/sponsor.ftl">
-      <section class="donate inline-block text-center my-4 w-56 like-btn" data-path="${blog_url!}/api/content/posts/${post.id}/likes">
-        <div class="icon relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 px-6 z-20 w-28 cursor-pointer">
-          <span class="iconfont icon-like-fill text-white" ></span>
-          <span class="like-count inline-block text-white">${post.likes}</span>
+      <div class="inline-block text-center my-4  " >
+        <div role="button" class="icon relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-50 w-28 h-full cursor-pointer like-btn" 
+             data-index="${post.id}"
+             data-path="${blog_url!}/api/content/posts/${post.id}/likes">
+          <span class="iconfont icon-heart h-0 icon-${post.id} text-white z-10" ></span>
+          <span class="like-count inline-block h-0 text-white z-10 like-count-${post.id}">${post.likes}</span>
         </div>
-      </section>
+      </div>
       <hr class="bg-gray-100 dark:bg-gray-700 ">
     </div>
 
@@ -71,10 +73,12 @@
       </div>
     </#if>
 
-    <div
-            class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
-      <#include "module/comment.ftl">
-      <@comment post,"post" />
+    <div class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
+
+      <#if !post.disallowComment!false>
+        <#include "module/comment.ftl">
+        <@comment post,"post" />
+      </#if>
     </div>
   </main>
 </@layout>

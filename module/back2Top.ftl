@@ -1,17 +1,5 @@
-<div class="moon-menu hidden">
-  <div class="moon-menu-button">
-    <svg class="moon-menu-bg">
-      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
-      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
-      <g class="moon-dot">
-        <circle r=".2rem" cx="0" cy="-.8rem"></circle>
-        <circle r=".2rem"></circle>
-        <circle r=".2rem" cx="0" cy=".8rem"></circle>
-      </g>
-    </svg>
-    <div class="moon-menu-content">
-      <span class="moon-menu-text"></span>
-      <span class="moon-menu-icon"><span class="text-2xl iconfont icon-up"></span></span>
+<div class="back-2-top fixed right-12 bottom-48 hidden ">
+    <div class="relative w-16 h-16 rounded-full shadow-md bg-white dark:bg-gray-800 cursor-pointer text-center">
+      <span class="iconfont icon-top text-3xl text-gray-800 dark:text-gray-300 block w-16 h-16 -transform-half" style="line-height: 4rem;"></span>
     </div>
-  </div>
 </div>

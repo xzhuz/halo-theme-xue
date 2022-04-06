@@ -1,5 +1,21 @@
+const slideUp = {
+  distance: '2rem',
+  origin: 'bottom',
+  // opacity: 1,
+  // delay:100,
+  interval: 50,
+  duration: 500,
+  reset: false,
+  // easing: 'ease-in' 
+};
+
 // 主题相关函数
 const xueContext = {
+
+  // 滚动加载动画
+  reveal: function () {
+    ScrollReveal().reveal('.slide-up', slideUp);
+  },
 
   // 深色模式
   toggleDarkMode: function () {
@@ -10,9 +26,12 @@ const xueContext = {
       xueContext.handleNavTheme()
       // 检查本地缓存
       xueContext.checkLocalStorage()
-      if (typeof renderComment === "function") {
-        renderComment()
-      }
+
+      $('script[data-pjax-comment]').each(function () {
+        const commentParent = $(this).parent();
+        const comment = $(this).remove();
+        commentParent.append(comment);
+      });
     });
   },
 
@@ -86,6 +105,9 @@ const xueContext = {
 
   // 初始化目录
   initialToc: function () {
+    if ($("#container").find('#toc').length < 1) {
+      return
+    }
     wrapHeader();
     const headerEl = "h1,h2,h3,h4,h5,h6", //headers
       content = ".md-content"; //文章容器
@@ -248,6 +270,8 @@ const xueContext = {
           $(page).append(pagination.children());
           xueContext.lazyloadImage()
           xueContext.pageBtn();
+          xueContext.reveal();
+          xueContext.randomBadgeColor();
         },
         error: function () {
           $(pageContainer).empty();
@@ -261,24 +285,30 @@ const xueContext = {
   // 点击喜欢按钮
   likeBtn: function () {
     $('.like-btn').click(function (e) {
-      if ($(e).hasClass('liked')) {
+      var path = e.target.dataset.path
+      if (!path) {
+        return
+      }
+      var index = e.target.dataset.index
+      var $e = $(e.target)
+      if ($e.hasClass('liked')) {
         return;
       }
-      const path = e.target.dataset.path
-      const $e = $(e.target)
+      $e.addClass('liked')
       $.ajax({
         type: "post",
         url: path,
         data: "{}",
         contentType: "application/json",
         dataType: "json",
-        success: function (data) {
-          $e.addClass('liked')
-          // $(e).removeAttr('onclick');
-          var count = $e.parent('div').find('.like-count')
-          var likeCount = parseInt(count.html())
-          $e.parent('div').find('.like-count').html(likeCount + 1);
+        success: function () {
+          var $count = $('.like-count-' + index)
+          var likeCount = parseInt($count.html());
+          $count.html(likeCount + 1);
           xueContext.likeBtn()
+          var $icon = $('.icon-' + index)
+          $icon.removeClass('icon-heart')
+          $icon.addClass('icon-heart-fill')
         },
         error: function (msg) {
           xueContext.likeBtn();
@@ -310,7 +340,8 @@ const xueContext = {
           $(page).empty();
           $(page).append(pagination.children());
           // 多次点击
-          xueContext.moreBtn()
+          xueContext.moreBtn();
+          xueContext.reveal();
         },
         error: function () {
           xueContext.moreBtn()
@@ -395,6 +426,29 @@ const xueContext = {
     }
   },
 
+  // 随机徽章颜色
+  randomBadgeColor: function () {
+    // document.querySelectorAll('.badge').forEach(e => {
+    //   var text = $(e).find('span').attr('data-value')
+    //   var randomColor = Math.floor(text.hashCode() * 0xFFFFF).toString(16);
+    //   randomColor = randomColor && randomColor.length > 6 ? randomColor.substr(0, 6) : randomColor
+    //   $(e).find('i').removeClass('bg-red-400').attr('style', 'background-color: #' + randomColor);
+    //   $(e).find('span').removeClass('text-red-400').attr('style', 'color: #' + randomColor);
+    //
+    // })
+  },
+
+  // 计算时间
+  createTimeAgo() {
+    document.querySelectorAll('.time-ago').forEach(e => {
+      var time = timeAgo(new Date(e.dataset.time).getTime());
+      var $e = $(e)
+      $e.empty();
+      $e.html(time)
+    })
+  },
+
+
   // 相册页面
   gallery: function () {
     const $photoPage = $(".photos-page");
@@ -454,29 +508,30 @@ const xueContext = {
   // 处理置顶
   handleBack2Top: function () {
     function dealBack2Top() {
+      if (document.body.clientWidth <= 800) {
+        return;
+      }
       if (xueContext.scrollTop() > 0) {
-        $(".moon-menu").show();
+        $(".back-2-top").show();
       } else {
-        $(".moon-menu").hide();
+        $(".back-2-top").hide();
       }
     }
 
     document.addEventListener('scroll', dealBack2Top, false);
 
-    const menuIcon = document.querySelector('.moon-menu-icon');
-    const menuText = document.querySelector('.moon-menu-text');
-    $('.moon-menu-button').mouseenter(function (e) {
-      menuIcon.style.display = 'block';
-      menuText.style.display = 'none';
-    }).mouseleave(function () {
-      menuIcon.style.display = 'none';
-      menuText.style.display = 'block';
-    });
-
-    document.querySelector('.moon-menu-button').addEventListener('click', function () {
+    document.querySelector('.back-2-top').addEventListener('click', function () {
       window.scroll({top: 0, behavior: 'smooth'});
     });
   },
+
+  // 日志评论弹出框
+  journalModal: function () {
+    $('.comment-btn').click(e => {
+      const index = e.target.dataset.index
+      $(`#comment-${index}`).toggleClass('hidden')
+    })
+  }
 };
 
 

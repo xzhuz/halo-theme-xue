@@ -1,3 +1,20 @@
+<script>
+  function initComment() {
+    $('script[data-pjax-comment]').each(function () {
+      const commentParent = $(this).parent();
+      const comment = $(this).remove();
+      commentParent.append(comment);
+    });
+  }
+  var configs = {
+    autoLoad: true,
+    showUserAgent: true,
+    darkMode: localStorage.getItem('dark') === 'dark'
+  }
+</script>
+<script src="${theme_base!}/source/js/plugins/vue.min.js" onload="initComment();"></script>
+<script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment-fly@master/dist/halo-comment.min.js'}"></script>
+
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
 
@@ -22,9 +39,10 @@
 <#--相册-->
 <script src="${theme_base!}/source/js/plugins/isotope.pkgd.min.js"></script>
 
+<#--导航栏-->
 <script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 
-<script src="${theme_base!}/source/js/plugins/back2Top.js"></script>
+<script src="${theme_base!}/source/js/plugins/scrollreveal.js"></script>
 
 
 <#if settings.visit_statistics!false>

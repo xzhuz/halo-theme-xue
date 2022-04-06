@@ -19,9 +19,7 @@
 <#--        <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>-->
       </div>
     </header>
-    <div
-            class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up"
-            id="pageContainer">
+    <div class="mx-auto px-10 my-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal fade-up" id="pageContainer">
       <@postTag method="archiveMonth">
         <#assign year="">
         <#list archives as archive>
