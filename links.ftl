@@ -27,8 +27,8 @@
             <h3 class="w-full m-4">${item.team}</h3>
           </#if>
           <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-            <#list item.links?sort_by('priority')?reverse  as link>
-              <a class="m-card flex p-1.5 text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-800 rounded shadow-md justify-start content-start flex-col w-full max-w-16" target="_blank"
+            <#list item.links?sort_by('priority')?reverse as link>
+              <a class="m-card slide-up flex p-1.5 text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-800 rounded shadow-md justify-start content-start flex-col w-full max-w-16" target="_blank"
                  href="${link.url}">
                 <div class="flex self-center">
                   <img class="lazyload object-cover m-avatar w-20 h-20 dark:filter-60 rounded-full bg-white max-w-full border-2 border-white border-solid no-zoom" 

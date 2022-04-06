@@ -55,14 +55,14 @@
       <div class="badges">
         <div class="github-badge">
           <a style="color: #fff" rel="license" href="http://halo.run" target="_blank">
-            <span class="badge-subject">Powered</span>
+            <span class="badge-subject pr-8 mr-1">Powered</span>
             <span class="badge-value bg-blue">Halo</span>
           </a>
         </div>
         <div class="github-badge">
           <a style="color: #fff" rel="license" href="https://github.com/xzzai/halo-theme-xue.git"
              target="_blank">
-            <span class="badge-subject">Theme</span>
+            <span class="badge-subject pr-8 mr-1">Theme</span>
             <span class="badge-value bg-red">Xue</span>
           </a>
         </div>
@@ -70,7 +70,7 @@
         <#if settings.TimeStatistics??>
           <div class="github-badge">
             <a style="color: #fff" rel="license" href="javascript:void(0)">
-              <span class="badge-subject">运行</span>
+              <span class="badge-subject pr-8 mr-1">运行</span>
               <span class="badge-value bg-orange" id="span_dt_dt"></span>
             </a>
           </div>
@@ -78,14 +78,14 @@
         <#if settings.visit_statistics!false>
           <div class="github-badge">
             <a style="color: #fff" rel="license" href="javascript:void(0)">
-              <span class="badge-subject">用户</span>
+              <span class="badge-subject pr-8 mr-1">用户</span>
               <span id="busuanzi_container_site_uv"><span class="badge-value bg-brightgreen"
                                                           id="busuanzi_value_site_uv"></span></span>
             </a>
           </div>
           <div class="github-badge">
             <a style="color: #fff" rel="license" href="javascript:void(0)">
-              <span class="badge-subject">访问</span>
+              <span class="badge-subject pr-8 mr-1">访问</span>
               <span id="busuanzi_container_site_pv"><span class="badge-value bg-blueviolet"
                                                           id="busuanzi_value_site_pv"></span></span>
             </a>

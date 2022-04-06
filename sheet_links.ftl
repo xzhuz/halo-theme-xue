@@ -27,14 +27,14 @@
                 </#if>
               <div class="flex flex-row flex-wrap justify-items-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                   <#list item.links?sort_by('priority')?reverse  as link>
-                    <a class="m-card flex p-1.5 text-gray-600 bg-white rounded shadow-md justify-start content-start flex-col w-full max-w-16" style="background:#fff; color:#8e7f7f" target="_blank"
+                    <a class="m-card slide-up flex p-1.5 text-gray-600 bg-white dark:bg-gray-800 rounded shadow-md justify-start content-start flex-col w-full max-w-16" target="_blank"
                        href="${link.url}">
                       <div class="flex self-center">
                         <img class="lazyload object-cover m-avatar w-20 h-20 dark:filter-60 rounded-full bg-white max-w-full border-2 border-white border-solid no-zoom"
                              data-src="${link.logo}" src="${theme_base!}/source/images/loading.gif"
                              onerror="onerror=null;src='${settings.links_placeholder!'${theme_base!}/source/images/placeholder.png'}'">                      </div>
                       <div class=" my-1.5 mx-3.5 flex flex-col text-center">
-                        <p class="pt-3 pb-1.5 font-semibold">${link.name}</p>
+                        <p class="pt-3 pb-1.5 font-semibold text-gray-800 dark:text-gray-300">${link.name}</p>
                         <div class=" py-1.5 break-all flex items-center">
                           <p class=" inline-block w-full text-gray-600 dark:text-gray-500 overflow-hidden overflow-ellipsis whitespace-nowrap break-words m-0 text-center" title="${link.description}">${link.description}</p>
                         </div>
@@ -50,10 +50,11 @@
         </@linkTag>
     </div>
 
-    <div
-      class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ">
+    <div class="mx-auto px-10 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal ">
+      <#if !sheet.disallowComment!false>
         <#include "module/comment.ftl">
         <@comment sheet,"sheet" />
+      </#if>
     </div>
   </main>
 </@layout>

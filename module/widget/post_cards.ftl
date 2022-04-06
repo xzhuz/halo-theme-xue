@@ -1,4 +1,5 @@
-<div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4 pagination-container" id="pageContainer">
+<div class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4 pagination-container"
+     id="pageContainer">
   <#if posts?? && posts.getTotalElements() gt 0>
     <#list posts.content as post>
       <div class="relative flex flex-col slide-up overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
@@ -9,34 +10,63 @@
             </div>
           </div>
         </#if>
-        <figure class="flex items-center justify-center h-56">
-          <#if post.thumbnail?? && post.thumbnail!=''>
-            <img class="lazyload object-cover w-full h-56 no-zoom"
-                 src="${theme_base!}/source/images/loading.gif"
-                 data-src="${post.thumbnail!''}" alt="${post.title}"/>
-          <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-            <img class="object-cover w-full h-56 img-random no-zoom"
-                 index="${post_index}"
-                 src="${theme_base!}/source/images/loading.gif"
-                 alt="${post.title!}"
-            />
-          <#else>
-            <span class="full-image placeholder-bg w-full h-56" role="img" aria-label=""></span>
-          </#if>
-        </figure>
-        <div class="flex flex-col gap-2 px-4 py-6" style="flex: 1 1 auto; ">
-          <h2 class="flex items-center gap-2 text-xl leading-7 font-bold my-4 z-50">
-            <a href="${post.fullPath!}" class="text-gray-800 dark:text-gray-600">${post.title!}</a>
-          </h2>
-          <div class="flex flex-wrap items-end gap-2 justify-end text-sm">
-            <#if post.tags?size gt 0>
-              <#list post.tags as tag>
-                <div class="badge-outline bg-transparent text-gray-800 dark:text-gray-600 h-5 inline-flex items-center justify-center transition duration-200 ease-in-out px-2 border rounded-full border-gray-800 dark:border-gray-600">
-                  ${tag.name}
-                </div>
-              </#list>
+        <figure class="flex items-center justify-center h-56 cursor-pointer">
+          <a href="${post.fullPath!}" class="w-full">
+            <#if post.thumbnail?? && post.thumbnail!=''>
+              <img class="lazyload object-cover w-full h-56 no-zoom"
+                   src="${theme_base!}/source/images/loading.gif"
+                   data-src="${post.thumbnail!''}" alt="${post.title}"/>
+            <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
+              <img class="object-cover w-full h-56 img-random no-zoom"
+                   index="${post_index}"
+                   src="${theme_base!}/source/images/loading.gif"
+                   alt="${post.title!}"
+              />
+            <#else>
+              <span class="full-image placeholder-bg w-full h-56" role="img" aria-label=""></span>
             </#if>
-          </div>
+          </a>
+        </figure>
+        <div class="flex flex-col gap-2 px-4 py-6 bg-white dark:bg-gray-800" style="flex: 1 1 auto; ">
+          <#if settings.post_card_tag!false>
+            <div class="text-sm h-4">
+              <#if post.tags?size gt 0>
+                <#list post.tags as tag>
+                  <#if tag_index &lt; 1>
+                    <a href="${tag.fullPath!}" class="relative inline-block badge">
+                      <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
+                      <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
+                            style="color: ${tag.color!'rgba(248,113,113,1)'}"
+                            data-value="${tag.name}">
+                        ${tag.name}
+                      </span>
+                    </a>
+                  </#if>
+                </#list>
+              </#if>
+            </div>
+          </#if>
+          <h2 class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if> z-50">
+            <a href="${post.fullPath!}" class="text-gray-800 dark:text-gray-300">${post.title!}</a>
+          </h2>
+          <#if settings.post_card_meta_info!false>
+            <div class="grad grid-cols-2 text-sm">
+              <div class="inline-block text-gray-500">
+                <span>${post.createTime?string("yyyy-MM-dd")}</span>
+              </div>
+              <div class="inline-block float-right">
+                <span class="iconfont icon-see2 text-gray-500">
+                  <label>${post.visits}</label>
+                </span>
+                <span class="iconfont icon-comment1 text-gray-500">
+                   <label>${post.commentCount}</label>
+                </span>
+                <span class="iconfont icon-like3 text-gray-500">
+                  <label>${post.likes}</label>
+                </span>
+              </div>
+            </div>
+          </#if>
         </div>
       </div>
     </#list>

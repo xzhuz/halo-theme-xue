@@ -40,6 +40,12 @@
         }
       }
 
+      // 日志
+      if ($("#container").find('#journals').length > 0) {
+        xueContext.journalModal()
+        xueContext.createTimeAgo()
+      }
+
       // alipay
       if ($("#container").find('.arrow-down').length > 0) {
         xueContext.arrowDown()
@@ -77,7 +83,9 @@
 
       // 图片懒加载
       xueContext.lazyloadImage()
-
+    
+      // 随机卡片颜色
+      xueContext.randomBadgeColor()
       //重载
       if (typeof _hmt !== 'undefined') {
         // support 百度统计
