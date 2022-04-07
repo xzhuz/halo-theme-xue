@@ -302,13 +302,11 @@ const xueContext = {
         contentType: "application/json",
         dataType: "json",
         success: function () {
-          var $count = $('.like-count-' + index)
-          var likeCount = parseInt($count.html());
-          $count.html(likeCount + 1);
+          var count = $e.attr('data-count')
+          $e.attr('data-count', parseInt(count) + 1)
+          $e.removeClass('icon-heart')
+          $e.addClass('icon-heart-fill')
           xueContext.likeBtn()
-          var $icon = $('.icon-' + index)
-          $icon.removeClass('icon-heart')
-          $icon.addClass('icon-heart-fill')
         },
         error: function (msg) {
           xueContext.likeBtn();

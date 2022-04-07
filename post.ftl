@@ -56,12 +56,12 @@
     <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#include "module/widget/sponsor.ftl">
       <div class="inline-block text-center my-4  " >
-        <div role="button" class="icon relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-50 w-28 h-full cursor-pointer like-btn" 
-             data-index="${post.id}"
-             data-path="${blog_url!}/api/content/posts/${post.id}/likes">
-          <span class="iconfont icon-heart h-0 icon-${post.id} text-white z-10" ></span>
-          <span class="like-count inline-block h-0 text-white z-10 like-count-${post.id}">${post.likes}</span>
-        </div>
+        <span role="button" class="iconfont icon-heart text-white relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-50 w-28 h-full cursor-pointer like-btn" 
+             style="font-size: 1.5rem; line-height: 1.7rem;padding-top: 15px;"
+             data-path="${blog_url!}/api/content/posts/${post.id}/likes"
+             data-count="${post.likes}"
+        >
+        </span>
       </div>
       <hr class="bg-gray-100 dark:bg-gray-700 ">
     </div>
