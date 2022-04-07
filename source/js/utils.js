@@ -109,7 +109,6 @@ function wrapPreCode() {
   document.querySelectorAll('pre').forEach((el) => {
     $(el).wrap(`<div class="code-toolbar"></div>`)
     var language = $(el).find('code[class*="language-"]')
-    
     $(el).after(`<div class="toolbar"><div class="toolbar-item"><span data-rel="${$(language).attr('data-language')}"></span></div></div>`)
   })
 }
@@ -131,19 +130,24 @@ function addCodeCopyBtn() {
     $this.addClass('line-numbers');
     $this.prepend('<span class="iconfont icon-copy code-copy-btn" title="复制内容"></span><span class="iconfont icon-arrow-down-filling code-expander" title="折叠/展开"></span>');
 
-    $this.children('.by_code_expander').click(() => {
-      $this.toggleClass('by_code_close');
+    $this.children('.code-expander').click(() => {
+      $this.toggleClass('code-block-close');
     });
 
     new ClipboardJS($this.children('.icon-copy')[0], {
       text: () => $this.find("code[class*='language-']").text(),
-    });
+    }).on("success", () => Qmsg.success("复制成功！"));
   })
-  codeExpander();
 }
 
-function codeExpander() {
-  $('.code-expander').click(function (e) {
-    $(e.target).parent('pre.line-numbers').toggleClass('code-block-close')
-  });
+function toggleNavCheckBox() {
+  const navCheckbox = document.querySelector('#navCheckbox')
+  const navListOpen = document.querySelectorAll('.nav-list.-open')
+  if (navListOpen.length < 1) {
+    navCheckbox.checked = false;
+  } else {
+    navCheckbox.checked = true
+  }
+ 
 }
+
