@@ -7,5 +7,5 @@ description: 大道至简
 logo:
 website: https://github.com/xzhuz/halo-theme-xue
 repo: https://github.com/xzhuz/halo-theme-xue
-version: 1.4.0
-require: 1.5.0
+version: 1.4.1
+require: 1.5.1

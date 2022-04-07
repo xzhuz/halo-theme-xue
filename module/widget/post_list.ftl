@@ -50,7 +50,7 @@
               <span class=" text-xs mr-1 text-gray-500 inline-block md:hidden">${post.commentCount!} </span>
               <span class="iconfont icon-round_like_fill  text-xs mr-1 text-gray-500 inline-block md:hidden"></span>
               <span class=" text-xs mr-1 text-gray-500 inline-block md:hidden">${post.likes!} </span>
-              <span class="text text-gray-500 uppercase text-sm ml-auto tracking-wide hidden md:inline-block">${post.createTime?string("yyyy-MM-dd hh:mm")}</span>
+              <span class="text text-gray-500 uppercase text-sm ml-auto tracking-wide hidden md:inline-block">${post.createTime?string("yyyy-MM-dd HH:mm")}</span>
               <span class="text text-gray-500 uppercase text-xs ml-auto tracking-wide inline-block md:hidden">${post.createTime?string("yyyy-MM")}</span>
             </div>
           </div>
