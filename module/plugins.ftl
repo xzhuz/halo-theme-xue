@@ -39,6 +39,9 @@
 <#--相册-->
 <script src="${theme_base!}/source/js/plugins/isotope.pkgd.min.js"></script>
 
+<#--相册-->
+<script src="${theme_base!}/source/js/plugins/clipboard.min.js"></script>
+
 <#--导航栏-->
 <script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 

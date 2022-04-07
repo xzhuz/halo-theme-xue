@@ -5,7 +5,7 @@
  */
 function randomId(len) {
   len = len || 32;
-  var $chars = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefhijklmnoprstuvwxyz0123456789'; 
+  var $chars = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefhijklmnoprstuvwxyz0123456789';
   var maxPos = $chars.length;
   var pwd = '';
   for (i = 0; i < len; i++) {
@@ -24,12 +24,12 @@ function wrapHeader() {
 }
 
 // 计算 hash
-String.prototype.hashCode = function() {
+String.prototype.hashCode = function () {
   var hash = 0, i, chr;
   if (this.length === 0) return hash;
   for (i = 0; i < this.length; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
+    chr = this.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
     hash |= 0; // Convert to 32bit integer
   }
   return Math.abs(hash);
@@ -92,6 +92,58 @@ var timeAgo = function (timestamp) {
   } else if (minC >= 1) {
     return parseInt(minC) + "分钟前";
   }
-  console.info(monthC,weekC,dayC,hourC,minC)
+  console.info(monthC, weekC, dayC, hourC, minC)
   return '刚刚';
 };
+
+
+/**
+ * ****************************
+ * 文章页相关工具方法
+ * ****************************
+ */
+/**
+ * 包裹代码块
+ */
+function wrapPreCode() {
+  document.querySelectorAll('pre').forEach((el) => {
+    $(el).wrap(`<div class="code-toolbar"></div>`)
+    var language = $(el).find('code[class*="language-"]')
+    
+    $(el).after(`<div class="toolbar"><div class="toolbar-item"><span data-rel="${$(language).attr('data-language')}"></span></div></div>`)
+  })
+}
+
+/**
+ * 添加代码块复制按钮
+ */
+function addCodeCopyBtn() {
+  const $pre = $(".md-content pre");
+  if (!$pre.length) {
+    return;
+  }
+  $pre.each(function () {
+    let $this = $(this);
+    const $codes = $this.find("code");
+    if ($codes.length <= 0) {
+      return;
+    }
+    $this.addClass('line-numbers');
+    $this.prepend('<span class="iconfont icon-copy code-copy-btn" title="复制内容"></span><span class="iconfont icon-arrow-down-filling code-expander" title="折叠/展开"></span>');
+
+    $this.children('.by_code_expander').click(() => {
+      $this.toggleClass('by_code_close');
+    });
+
+    new ClipboardJS($this.children('.icon-copy')[0], {
+      text: () => $this.find("code[class*='language-']").text(),
+    });
+  })
+  codeExpander();
+}
+
+function codeExpander() {
+  $('.code-expander').click(function (e) {
+    $(e.target).parent('pre.line-numbers').toggleClass('code-block-close')
+  });
+}

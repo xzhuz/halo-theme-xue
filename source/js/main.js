@@ -108,7 +108,8 @@ const xueContext = {
     if ($("#container").find('#toc').length < 1) {
       return
     }
-    wrapHeader();
+    // 不用生成随机 id 的方式,新版本的 tocbot 能够解决锚点的问题
+    // wrapHeader();
     const headerEl = "h1,h2,h3,h4,h5,h6", //headers
       content = ".md-content"; //文章容器
     tocbot.init({
@@ -271,7 +272,6 @@ const xueContext = {
           xueContext.lazyloadImage()
           xueContext.pageBtn();
           xueContext.reveal();
-          xueContext.randomBadgeColor();
         },
         error: function () {
           $(pageContainer).empty();
@@ -426,18 +426,7 @@ const xueContext = {
     }
   },
 
-  // 随机徽章颜色
-  randomBadgeColor: function () {
-    // document.querySelectorAll('.badge').forEach(e => {
-    //   var text = $(e).find('span').attr('data-value')
-    //   var randomColor = Math.floor(text.hashCode() * 0xFFFFF).toString(16);
-    //   randomColor = randomColor && randomColor.length > 6 ? randomColor.substr(0, 6) : randomColor
-    //   $(e).find('i').removeClass('bg-red-400').attr('style', 'background-color: #' + randomColor);
-    //   $(e).find('span').removeClass('text-red-400').attr('style', 'color: #' + randomColor);
-    //
-    // })
-  },
-
+ 
   // 计算时间
   createTimeAgo() {
     document.querySelectorAll('.time-ago').forEach(e => {
@@ -447,8 +436,7 @@ const xueContext = {
       $e.html(time)
     })
   },
-
-
+  
   // 相册页面
   gallery: function () {
     const $photoPage = $(".photos-page");
@@ -494,16 +482,19 @@ const xueContext = {
       hljs.highlightBlock(el);
     });
 
+    // 包裹代码块
+    wrapPreCode()
+    
     // 设置代码行号
-    xueContext.setCodeLineNumber();
-  },
-
-  // 设置代码行号
-  setCodeLineNumber: function () {
     $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
       lineNumbersBlock(block);
     });
+
+    
+    // 代码复制按钮
+    addCodeCopyBtn();
   },
+ 
 
   // 处理置顶
   handleBack2Top: function () {
