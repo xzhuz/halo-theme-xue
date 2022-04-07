@@ -136,7 +136,18 @@ function addCodeCopyBtn() {
 
     new ClipboardJS($this.children('.icon-copy')[0], {
       text: () => $this.find("code[class*='language-']").text(),
-    });
+    }).on("success", () => Qmsg.success("复制成功！"));
   })
+}
+
+function toggleNavCheckBox() {
+  const navCheckbox = document.querySelector('#navCheckbox')
+  const navListOpen = document.querySelectorAll('.nav-list.-open')
+  if (navListOpen.length < 1) {
+    navCheckbox.checked = false;
+  } else {
+    navCheckbox.checked = true
+  }
+ 
 }
 

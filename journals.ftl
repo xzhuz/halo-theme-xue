@@ -49,7 +49,7 @@
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
                     <span class="iconfont icon-heart relative inline-block h-full cursor-pointer like-btn" 
-                          style="font-size: 1.5rem;line-height: 1.7rem;"
+                          style="font-size: 1.5rem;line-height: 1.6rem;"
                           data-path="${blog_url!}/api/content/journals/${journal.id}/likes"
                           data-count="${journal.likes}"
                           fill="currentColor"

@@ -1,12 +1,9 @@
 const slideUp = {
   distance: '2rem',
   origin: 'bottom',
-  // opacity: 1,
-  // delay:100,
   interval: 50,
   duration: 500,
   reset: false,
-  // easing: 'ease-in' 
 };
 
 // 主题相关函数
@@ -26,6 +23,10 @@ const xueContext = {
       xueContext.handleNavTheme()
       // 检查本地缓存
       xueContext.checkLocalStorage()
+      
+      if (document.body.clientWidth <= 800) {
+        toggleNavCheckBox();
+      }
 
       $('script[data-pjax-comment]').each(function () {
         const commentParent = $(this).parent();
@@ -211,7 +212,6 @@ const xueContext = {
       });
   },
 
-
   // 处理首页 arrow-down
   arrowDown: function () {
     $('.arrow-down').click(function () {
@@ -245,7 +245,12 @@ const xueContext = {
   toggleSearchBox: function () {
     $('.search-btn').click(function () {
       $('#searchBox').toggleClass('hidden');
+
+      if (document.body.clientWidth <= 800) {
+        toggleNavCheckBox();
+      }
     });
+   
   },
 
   // 分页信息
