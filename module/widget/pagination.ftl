@@ -1,9 +1,11 @@
     <ul class="pagination-list flex flex-row " id="pagination">
-        <li class="pagination-previous<#if pagination.hasPrev><#else > is-invisible </#if>">
-        <span class="pagination-circle" data-path="${pagination.prevPageFullPath!}" >
-            <span class="iconfont icon-left dark:text-gray-300"> </span>
+      <#if pagination.hasPrev>
+        <li class="pagination-previous">
+        <span class="pagination-circle iconfont icon-left dark:text-gray-300" data-path="${pagination.prevPageFullPath!}" >
+<#--            <span class="iconfont icon-left dark:text-gray-300"></span>-->
         </span>
         </li>
+      </#if>
         <#list pagination.rainbowPages as number>
             <#if number.isCurrent>
                 <li>
@@ -18,8 +20,8 @@
         </#list>
         <#if pagination.hasNext>
             <li class="pagination-next">
-            <span class="pagination-circle dark:text-gray-300" data-path="${pagination.nextPageFullPath!}" >
-                <span class="iconfont icon-right dark:text-gray-300"> </span>
+            <span class="pagination-circle iconfont icon-right dark:text-gray-300" data-path="${pagination.nextPageFullPath!}" >
+<#--                <span class="iconfont icon-right dark:text-gray-300"> </span>-->
             </span>
             </li>
         </#if>
