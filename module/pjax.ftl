@@ -46,7 +46,7 @@
         xueContext.createTimeAgo()
       }
 
-      // alipay
+      // arrow down
       if ($("#container").find('.arrow-down').length > 0) {
         xueContext.arrowDown()
       }

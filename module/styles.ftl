@@ -34,6 +34,7 @@
 <link href="${theme_base!}/source/css/heti.min.css" rel="stylesheet">
 <link href="${theme_base!}/source/css/katex.min.css" rel="stylesheet">
 <link href="${theme_base!}/source/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="${theme_base!}/source/css/qmsg.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="${theme_base!}/dist/style.css?ver=${theme.version!}">

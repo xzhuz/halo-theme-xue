@@ -48,14 +48,14 @@
                 </div>
                 <div class="flex space-x-5 pt-3 text-gray-500 border-t border-gray-300 dark:border-gray-700">
                   <div class="flex space-x-2">
-                    <span class="iconfont icon-heart icon-${journal.id} w-6 h-6 hover:text-red-300 cursor-pointer like-btn" 
-                          style="font-size: 1.5rem;line-height: 1.7rem;"
-                          data-index="${journal.id}"
+                    <span class="iconfont icon-heart relative inline-block h-full cursor-pointer like-btn" 
+                          style="font-size: 1.5rem;line-height: 1.6rem;"
                           data-path="${blog_url!}/api/content/journals/${journal.id}/likes"
+                          data-count="${journal.likes}"
                           fill="currentColor"
                     >
                     </span>
-                    <span class="like-count-${journal.id}">${journal.likes}</span>
+<#--                    <span class="like-count-${journal.id}">${journal.likes}</span>-->
                   </div>
                   <div class="flex space-x-2">
                     <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-red-300 comment-btn" data-index="${journal.id}">
