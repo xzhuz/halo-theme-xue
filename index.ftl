@@ -29,10 +29,20 @@
       </div>
     </header>
     <div id="postList" class="mx-auto fade-up <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl flex flex-col</#if>">
-      <h3 class="mb-4 mt-8 dark:text-gray-300 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
+     
       <#if settings.posts_style!true>
+        <h3 class="mb-4 mt-8 dark:text-gray-300 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
         <#include "module/widget/post_cards.ftl">
       <#else>
+        <#if settings.show_popular!true>
+          <div class="popular-posts">
+            <h3 class="mb-4 mt-8 dark:text-gray-300"><span class="iconfont icon-hot text-red-600 mr-2 text-base "></span>热门文章</h3>
+            <div class="posts grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+              <#include "module/widget/popular_posts.ftl">
+            </div>
+          </div>
+        </#if>
+        <h3 class="mb-4 mt-8 dark:text-gray-300"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
         <#include "module/widget/post_list.ftl">
       </#if>
       <#-- 分页-->

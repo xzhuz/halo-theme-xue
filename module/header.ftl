@@ -30,6 +30,18 @@
                  href="${menu.url!}" target="${menu.target!}">
                 ${menu.name}
               </a>
+<#--              <#if menu.children?? && menu.children?size gt 0>-->
+<#--                  <ul class="sub-menu-item">-->
+<#--                    <#list menu.children?sort_by('priority') as child>-->
+<#--                    <li class="item p-0">-->
+<#--                      <a class="menu-item link md:text-base sm:text-sm text-gray-100" data-path="${child.url!}"-->
+<#--                         href="${child.url!}" target="${child.target!}">-->
+<#--                        ${child.name}-->
+<#--                      </a>-->
+<#--                    </li>-->
+<#--                    </#list>-->
+<#--                  </ul>-->
+<#--              </#if>-->
             </li>
           </#list>
         </@menuTag>
