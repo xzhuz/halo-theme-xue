@@ -1,4 +1,4 @@
-<header class="nav-wrapper w-full -sticky bg-transparent transition-opacity duration-300bg-white dark:bg-gray-800 opacity-100" id="navHeader"
+<header class="nav-wrapper w-full -sticky bg-transparent transition-opacity duration-300 bg-white dark:bg-gray-800 opacity-100" id="navHeader"
         style="flex: 0 0 auto;">
   <nav class="nav bg-white" id="nav">
     <label class="inline-grid select-none place-content-center cursor-pointer h-full swap swap-rotate nav-lines ">
