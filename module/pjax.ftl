@@ -18,6 +18,8 @@
 
       xueContext.handleNavActive();
       
+      xueContext.handleNavTheme()
+      
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {
         const commentParent = $(this).parent();

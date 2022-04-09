@@ -39,9 +39,9 @@
         <p class="flex flex-row justify-start flex-wrap">
           <#if post.tags?? && post.tags?size gt 0>
             <#list post.tags as tag>
-              <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none"
+              <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none ml-2 post-tag"
               style="box-shadow: none !important;">
-                <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
+                <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
                 <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
                       style="color: ${tag.color!'rgba(248,113,113,1)'}"
                       data-value="${tag.name}">

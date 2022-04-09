@@ -68,24 +68,16 @@ const xueContext = {
   handleNavTheme: function () {
     // 客户端宽度小于 800, 就不需要处理了
     if (document.body.clientWidth <= 800) {
-      $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-      return;
+      $('#navHeader').addClass('opacity-100').removeClass('opacity-0')
     }
-    // 获取是否是深色模式
-    const dark = $(document.body).hasClass("dark");
-    const scrollTop = xueContext.scrollTop();
-    // 滚动高度
-    if (scrollTop > 0) {
-      if (dark) {
-        $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')
-        $('.link').addClass('text-gray-100').removeClass('text-gray-800')
+    // 主页
+    if ($("#container").find('.full-screen').length > 0) {
+      $('#navHeader').addClass('opacity-0').removeClass('opacity-100')
+      if (xueContext.scrollTop() > 0) {
+        $('#navHeader').addClass('opacity-100').removeClass('opacity-0')
       } else {
-        $('#navHeader').addClass('bg-white').removeClass('bg-transparent').addClass('shadow-md').removeClass('dark:bg-gray-800')
-        $('.link').addClass('text-gray-800').removeClass('text-gray-100')
+        $('#navHeader').removeClass('opacity-100').addClass('opacity-0')
       }
-    } else {
-      $('#navHeader').addClass('bg-transparent').removeClass('dark:bg-gray-800').removeClass('bg-white').removeClass('bg-transparent').removeClass('shadow-md')
-      $('.link').addClass('text-gray-100').removeClass('text-gray-800')
     }
   },
 
@@ -102,8 +94,7 @@ const xueContext = {
     xueContext.initialToc();
     xueContext.addTocFixEvent();
   },
-
-
+  
   // 初始化目录
   initialToc: function () {
     if ($("#container").find('#toc').length < 1) {
