@@ -1,6 +1,6 @@
 <header class="nav-wrapper w-full -sticky bg-transparent transition-opacity duration-300 bg-white dark:bg-gray-800 opacity-100" id="navHeader"
         style="flex: 0 0 auto;">
-  <nav class="nav bg-white" id="nav">
+  <nav class="nav bg-transparent" id="nav">
     <label class="inline-grid select-none place-content-center cursor-pointer h-full swap swap-rotate nav-lines ">
       <input type="checkbox" class="toggle-nav" id="navCheckbox"/>
       <svg class="swap-off fill-current nav-line" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
