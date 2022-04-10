@@ -1,6 +1,6 @@
-<header class="nav-wrapper w-full -sticky bg-transparent transition-opacity duration-300 bg-white dark:bg-gray-800 opacity-100" id="navHeader"
+<header class="nav-wrapper w-full -sticky bg-transparent transition-opacity duration-300 opacity-100" id="navHeader"
         style="flex: 0 0 auto;">
-  <nav class="nav bg-transparent" id="nav">
+  <nav class="nav bg-white md:bg-transparent" id="nav">
     <label class="inline-grid select-none place-content-center cursor-pointer h-full swap swap-rotate nav-lines ">
       <input type="checkbox" class="toggle-nav" id="navCheckbox"/>
       <svg class="swap-off fill-current nav-line" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -31,7 +31,7 @@
                   <ul class="sub-menu-item bg-white dark:bg-gray-800 block md:hidden md:absolute z-50 w-auto md:text-center rounded-md md:shadow-lx">
                     <#list menu.children?sort_by('priority') as child>
                     <li class="item pl-10 md:pl-0 h-8 w-full m-0 min-w-max">
-                      <a class="menu-item link text-gray-800 dark:text-gray-100 md:text-base sm:text-sm text-gray-100" data-path="${child.url!}"
+                      <a class="menu-item text-gray-800 dark:text-gray-100 md:text-base sm:text-sm text-gray-100" data-path="${child.url!}"
                          href="${child.url!}" target="${child.target!}">
                         ${child.name}
                       </a>

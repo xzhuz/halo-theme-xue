@@ -53,6 +53,10 @@
         xueContext.arrowDown()
       }
 
+      if ($("#container").find('.icon-Share').length > 0) {
+        xueContext.shareBtn()
+      }
+
       // alipay
       if ($("#container").find('#alipay').length > 0) {
         xueContext.toggleAlipay()

@@ -68,16 +68,23 @@ const xueContext = {
   handleNavTheme: function () {
     // 客户端宽度小于 800, 就不需要处理了
     if (document.body.clientWidth <= 800) {
-      $('#navHeader').addClass('opacity-100').removeClass('opacity-0')
+      $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
     }
-    // 主页
-    if ($("#container").find('.full-screen').length > 0) {
-      $('#navHeader').addClass('opacity-0').removeClass('opacity-100')
-      if (xueContext.scrollTop() > 0) {
-        $('#navHeader').addClass('opacity-100').removeClass('opacity-0')
+    // 获取是否是深色模式
+    const dark = $(document.body).hasClass("dark");
+    const scrollTop = xueContext.scrollTop();
+    // 滚动高度
+    if (scrollTop > 0) {
+      if (dark) {
+        $('#navHeader').addClass('dark:bg-gray-800').removeClass('bg-transparent').addClass('shadow-md')
+        $('.link').addClass('text-gray-100').removeClass('text-gray-800')
       } else {
-        $('#navHeader').removeClass('opacity-100').addClass('opacity-0')
+        $('#navHeader').addClass('bg-white').removeClass('bg-transparent').addClass('shadow-md').removeClass('dark:bg-gray-800')
+        $('.link').addClass('text-gray-800').removeClass('text-gray-100')
       }
+    } else {
+      $('#navHeader').addClass('bg-transparent').removeClass('dark:bg-gray-800').removeClass('bg-white').removeClass('bg-transparent').removeClass('shadow-md')
+      $('.link').addClass('text-gray-100').removeClass('text-gray-800')
     }
   },
 
@@ -303,6 +310,7 @@ const xueContext = {
           $e.removeClass('icon-heart')
           $e.addClass('icon-heart-fill')
           xueContext.likeBtn()
+          Qmsg.success("Thanks for your support！")
         },
         error: function (msg) {
           xueContext.likeBtn();
@@ -341,6 +349,14 @@ const xueContext = {
           xueContext.moreBtn()
         }
       });
+    });
+  },
+
+  shareBtn: function () {
+    var clipboard = new ClipboardJS('.share-link');
+    clipboard.on('success', function(e) {
+      Qmsg.success('Copy article link success.');
+      e.clearSelection();
     });
   },
 
@@ -406,7 +422,7 @@ const xueContext = {
       const loaded = el.getAttribute('data-loaded')
       if (!loaded) {
         var index = el.getAttribute('index');
-        var imgIndex = !index ? new Date().getSeconds() : index;
+        var imgIndex = !index ? new Date().getMinutes() : index;
         if (el.classList.contains('img-random') && typeof photos !== 'undefined' && photos.length > 0) {
           el.src = photos[imgIndex % photos.length];
         }

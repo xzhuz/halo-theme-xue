@@ -36,21 +36,44 @@
            id="lightGallery">
         ${post.content!}
         <hr class="bg-gray-100 dark:bg-gray-700 ">
-        <p class="flex flex-row justify-start flex-wrap">
-          <#if post.tags?? && post.tags?size gt 0>
-            <#list post.tags as tag>
-              <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none ml-2 post-tag"
-              style="box-shadow: none !important;">
-                <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
-                <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
-                      style="color: ${tag.color!'rgba(248,113,113,1)'}"
-                      data-value="${tag.name}">
+        <div class="flex flex-row justify-between flex-wrap">
+          <div class="tag-list">
+            <#if post.tags?? && post.tags?size gt 0>
+              <#list post.tags as tag>
+                <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none ml-2 post-tag"
+                   style="box-shadow: none !important;">
+                  <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full"
+                     style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
+                  <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
+                        style="color: ${tag.color!'rgba(248,113,113,1)'}"
+                        data-value="${tag.name}">
                         ${tag.name}
                       </span>
+                </a>
+              </#list>
+            </#if>
+          </div>
+          <#if settings.allow_share!true>
+            <div class="share-items ml-2 mt-2 md:mt-0 ">
+              <a class="share-link" href="javascript:;" data-clipboard-text="${post.fullPath!}"
+                 rel="noopener noreferrer" title="复制文章链接">
+                <span class="iconfont icon-round_link_fill text-3xl"></span>
               </a>
-            </#list>
+              <a href="http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：${post.title!}，原文链接：${post.fullPath!}&pic=${post.thumbnail!}"
+                 target="_blank" rel="noopener noreferrer" title="分享到新浪微博">
+                <span class="iconfont icon-xinlang text-3xl" style="color:rgb(245, 100, 103);"></span>
+              </a>
+              <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${post.fullPath!}&sharesource=qzone&title=${post.title!}&pics=${post.thumbnail!}"
+                 target="_blank" rel="noopener noreferrer" title="分享到QQ空间">
+                <span class="iconfont icon-Qzone text-3xl" style="color: rgb(245, 190, 63);"></span>
+              </a>
+              <a href="https://connect.qq.com/widget/shareqq/index.html?url=${post.fullPath!}&title=${post.title!}&pics=${post.thumbnail!}"
+                 target="_blank" rel="noopener noreferrer" title="分享到QQ">
+                <span class="iconfont icon-QQ text-3xl" style=" color: rgb(104, 165, 225);"></span>
+              </a>
+            </div>
           </#if>
-        </p>
+        </div>
       </div>
       <div id="tocFlag"></div>
       <#if settings.post_toc!true>
