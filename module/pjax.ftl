@@ -53,7 +53,7 @@
         xueContext.arrowDown()
       }
 
-      if ($("#container").find('.icon-Share').length > 0) {
+      if ($("#container").find('.share-items').length > 0) {
         xueContext.shareBtn()
         xueContext.shareItem()
       }
