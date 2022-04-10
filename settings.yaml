@@ -181,7 +181,7 @@ post:
           label: 关闭
     allow_share:
       name: allow_share
-      label: 开启分享
+      label: 开启分享(需开启文章绝对路径)
       type: radio
       data-type: bool
       default: true
