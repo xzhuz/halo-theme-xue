@@ -69,7 +69,6 @@ const xueContext = {
     // 客户端宽度小于 800, 就不需要处理了
     if (document.body.clientWidth <= 800) {
       $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
-      return;
     }
     // 获取是否是深色模式
     const dark = $(document.body).hasClass("dark");
@@ -102,8 +101,7 @@ const xueContext = {
     xueContext.initialToc();
     xueContext.addTocFixEvent();
   },
-
-
+  
   // 初始化目录
   initialToc: function () {
     if ($("#container").find('#toc').length < 1) {
@@ -312,6 +310,7 @@ const xueContext = {
           $e.removeClass('icon-heart')
           $e.addClass('icon-heart-fill')
           xueContext.likeBtn()
+          Qmsg.success("Thanks for your support！")
         },
         error: function (msg) {
           xueContext.likeBtn();
@@ -351,6 +350,25 @@ const xueContext = {
         }
       });
     });
+  },
+
+  shareBtn: function () {
+    var clipboard = new ClipboardJS('.share-link');
+    clipboard.on('success', function(e) {
+      Qmsg.success('Copy article link success.');
+      e.clearSelection();
+    });
+  },
+
+  shareItem: function () {
+    const url = document.location.href;
+    document.querySelectorAll('.share-item')
+      .forEach((e) => {
+        var $e = $(e)
+        var href =  $e.attr('href')
+        $e.attr('href', href.replace('{url}', url))
+      });
+    
   },
 
   // 包裹图片 ,这个需要在 lazyloadImages 方法之前
@@ -415,7 +433,7 @@ const xueContext = {
       const loaded = el.getAttribute('data-loaded')
       if (!loaded) {
         var index = el.getAttribute('index');
-        var imgIndex = !index ? new Date().getSeconds() : index;
+        var imgIndex = !index ? new Date().getMinutes() : index;
         if (el.classList.contains('img-random') && typeof photos !== 'undefined' && photos.length > 0) {
           el.src = photos[imgIndex % photos.length];
         }

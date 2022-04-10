@@ -10,7 +10,7 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
 
-![](https://cdn.jsdelivr.net/gh/xzhuz/static@master/img/preview.png)
+![](./screenshot.png)
 
 ## 说明
 

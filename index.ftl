@@ -1,7 +1,7 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}">
   <main class="mx-auto" id="container">
-    <header id="hero" class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen <#else> h-1/2</#if>">
+    <header id="hero" class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen full-screen<#else> h-1/2</#if>">
       <#if settings.home_cover?? && settings.home_cover!=''>
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.home_cover!}"
@@ -20,7 +20,7 @@
         <hr class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"/>
         <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center" id="slogan">${settings.home_description!}</p>
         <#if settings.enabled_index_cover_height!true>
-          <p class=" w-full text-4xl absolute bottom-11 text-center">
+          <p class="w-full text-4xl absolute bottom-11 text-center">
             <a class="arrow-down z-50 <#if settings.enabled_index_cover_height!true>hidden sm:hidden md:block <#else>hidden</#if>" href="javascript:void(0)">
               <span class="iconfont icon-toBottom text-white dark:text-gray-300"></span>
             </a>
@@ -29,7 +29,6 @@
       </div>
     </header>
     <div id="postList" class="mx-auto fade-up <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl flex flex-col</#if>">
-     
       <#if settings.posts_style!true>
         <h3 class="mb-4 mt-8 dark:text-gray-300 hidden md:block"><span class="iconfont icon-new text-red-600 mr-2 text-base "></span>最新文章</h3>
         <#include "module/widget/post_cards.ftl">
