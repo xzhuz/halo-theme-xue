@@ -360,6 +360,17 @@ const xueContext = {
     });
   },
 
+  shareItem: function () {
+    const url = document.location.href;
+    document.querySelectorAll('.share-item')
+      .forEach((e) => {
+        var $e = $(e)
+        var href =  $e.attr('href')
+        $e.attr('href', href.replace('{url}', url))
+      });
+    
+  },
+
   // 包裹图片 ,这个需要在 lazyloadImages 方法之前
   wrapImage: function () {
     const $imgs = $(

@@ -59,15 +59,15 @@
                  rel="noopener noreferrer" title="复制文章链接">
                 <span class="iconfont icon-round_link_fill text-3xl"></span>
               </a>
-              <a href="http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：${post.title!}，原文链接：${post.fullPath!}&pic=${post.thumbnail!}"
+              <a class="share-item" href="http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：${post.title!}，原文链接：{url}&pic=${post.thumbnail!}"
                  target="_blank" rel="noopener noreferrer" title="分享到新浪微博">
                 <span class="iconfont icon-xinlang text-3xl" style="color:rgb(245, 100, 103);"></span>
               </a>
-              <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${post.fullPath!}&sharesource=qzone&title=${post.title!}&pics=${post.thumbnail!}"
+              <a class="share-item" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&sharesource=qzone&title=${post.title!}&pics=${post.thumbnail!}"
                  target="_blank" rel="noopener noreferrer" title="分享到QQ空间">
                 <span class="iconfont icon-Qzone text-3xl" style="color: rgb(245, 190, 63);"></span>
               </a>
-              <a href="https://connect.qq.com/widget/shareqq/index.html?url=${post.fullPath!}&title=${post.title!}&pics=${post.thumbnail!}"
+              <a class="share-item" href="https://connect.qq.com/widget/shareqq/index.html?url={url}&title=${post.title!}&pics=${post.thumbnail!}"
                  target="_blank" rel="noopener noreferrer" title="分享到QQ">
                 <span class="iconfont icon-QQ text-3xl" style=" color: rgb(104, 165, 225);"></span>
               </a>

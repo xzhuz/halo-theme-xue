@@ -55,6 +55,7 @@
 
       if ($("#container").find('.icon-Share').length > 0) {
         xueContext.shareBtn()
+        xueContext.shareItem()
       }
 
       // alipay
