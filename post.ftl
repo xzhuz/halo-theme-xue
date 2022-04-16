@@ -37,10 +37,10 @@
         ${post.content!}
         <hr class="bg-gray-100 dark:bg-gray-700 ">
         <div class="flex flex-row justify-between flex-wrap">
-          <div class="tag-list">
+          <div class="tag-list leading-9">
             <#if post.tags?? && post.tags?size gt 0>
               <#list post.tags as tag>
-                <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none ml-2 post-tag"
+                <a href="${tag.fullPath!}" class="relative inline-block badge shadow-none mr-1 post-tag mb-2"
                    style="box-shadow: none !important;">
                   <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full"
                      style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
@@ -54,7 +54,7 @@
             </#if>
           </div>
           <#if settings.allow_share!true>
-            <div class="share-items ml-2 mt-2 md:mt-0 ">
+            <div class="share-items">
               <a class="share-link" href="javascript:;" data-clipboard-text="${post.fullPath!}"
                  rel="noopener noreferrer" title="复制文章链接">
                 <span class="iconfont icon-round_link_fill text-3xl"></span>
@@ -102,7 +102,6 @@
     </#if>
 
     <div class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
-
       <#if !post.disallowComment!false>
         <#include "module/comment.ftl">
         <@comment post,"post" />
