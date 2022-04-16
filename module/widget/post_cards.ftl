@@ -58,10 +58,10 @@
                 <span class="iconfont icon-see2 text-gray-500">
                   <label>${post.visits}</label>
                 </span>
-                <span class="iconfont icon-comment1 text-gray-500">
+                <span class="iconfont icon-uqur text-gray-500">
                    <label>${post.commentCount}</label>
                 </span>
-                <span class="iconfont icon-like3 text-gray-500">
+                <span class="iconfont icon-like text-gray-500">
                   <label>${post.likes}</label>
                 </span>
               </div>
