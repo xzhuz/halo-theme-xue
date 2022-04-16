@@ -90,8 +90,9 @@ const xueContext = {
   },
 
   closeMobileSideBar: function () {
-    $('.menu-btn').click(function () {
+    $('.menu-btn').click(function (e) {
       $('.mobile-sidebar').toggleClass('active')
+      e.preventDefault()
     });
   },
 

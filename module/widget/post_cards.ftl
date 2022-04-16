@@ -4,7 +4,7 @@
     <#list posts.content as post>
       <div class="relative flex flex-col slide-up overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
         <#if post.topPriority gt 0>
-          <div class="post-top z-50 w-24 h-24 overflow-hidden absolute">
+          <div class="post-top w-24 h-24 overflow-hidden absolute">
             <div class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100">
               置顶
             </div>
@@ -46,7 +46,7 @@
               </#if>
             </div>
           </#if>
-          <h2 class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if> z-50">
+          <h2 class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if>">
             <a href="${post.fullPath!}" class="text-gray-800 dark:text-gray-300">${post.title!}</a>
           </h2>
           <#if settings.post_card_meta_info!false>

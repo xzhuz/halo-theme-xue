@@ -20,9 +20,9 @@
       
       xueContext.handleNavTheme()
       
-      xueContext.closeMobileSideBar()
+      // xueContext.closeMobileSideBar()
       
-      xueContext.mobileSubMenu();
+      // xueContext.mobileSubMenu();
       
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {
