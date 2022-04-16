@@ -1,16 +1,16 @@
-# <div align="center" style="font-weight:800; font-size: 30px">Halo Theme Xue</div>
+<h1 style="text-align: center;">Halo Theme Xue</h1>
 
-<p align="center">
+<p style="text-align: center">
 追求个性与至简
 </p>
 
->如果大家喜欢这个主题，请多多 star 和 fork。你的 star 和支持就是我的动力
+> 如果大家喜欢这个主题，请多多 star 和 fork。你的 star 和支持就是我的动力
 
-> If you like this theme. Please star this repository.
+> If you like this theme. Please star or fork.
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
 
-![](./screenshot.png)
+![截图](./screenshot.png)
 
 ## 说明
 

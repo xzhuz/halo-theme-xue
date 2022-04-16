@@ -28,7 +28,8 @@
               <div class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl py-3 px-5">
                 <div class="flex">
                   <div class="mr-2">
-                    <img class="rounded-full h-10 w-10 dark:filter-60 no-zoom" src="${user.avatar!}"
+                    <img class="rounded-full h-10 w-10 dark:filter-60 no-zoom" 
+                         src="${user.avatar!}"
                          alt="${user.nickname!}"/>
                   </div>
                   <div>

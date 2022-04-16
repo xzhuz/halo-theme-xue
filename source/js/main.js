@@ -16,17 +16,17 @@ const xueContext = {
 
   // 深色模式
   toggleDarkMode: function () {
-    $('#darkCheckbox').click(function () {
+    $('.dark-btn').click(function () {
+      $(document.body).toggleClass("dark");
+    });
+    
+    $('.darkCheckbox').click(function () {
       $(document.body).toggleClass("dark");
       $('#navHeader').addClass('bg-transparent').removeClass('shadow-md')
       // 处理导航栏主题
       xueContext.handleNavTheme()
       // 检查本地缓存
       xueContext.checkLocalStorage()
-      
-      if (document.body.clientWidth <= 800) {
-        toggleNavCheckBox();
-      }
 
       $('script[data-pjax-comment]').each(function () {
         const commentParent = $(this).parent();
@@ -38,7 +38,7 @@ const xueContext = {
 
   // 加载的时候检查深色模式
   loadCheckDarkMode: function () {
-    var darkCheckbox = document.querySelector('#darkCheckbox')
+    var darkCheckbox = document.querySelector('.darkCheckbox')
     if (window.matchMedia && window.matchMedia(
       '(prefers-color-scheme: dark)').matches) {
       darkCheckbox.checked = true
@@ -68,7 +68,8 @@ const xueContext = {
   handleNavTheme: function () {
     // 客户端宽度小于 800, 就不需要处理了
     if (document.body.clientWidth <= 800) {
-      $('#navHeader .nav').addClass('opacity-100').removeClass('opacity-0')
+      $('#navHeader .nav').removeClass('opacity-100').removeClass('opacity-0')
+      return;
     }
     // 获取是否是深色模式
     const dark = $(document.body).hasClass("dark");
@@ -88,6 +89,20 @@ const xueContext = {
     }
   },
 
+  closeMobileSideBar: function () {
+    $('.menu-btn').click(function (e) {
+      $('.mobile-sidebar').toggleClass('active')
+      e.preventDefault()
+    });
+  },
+
+  mobileSubMenu: function () {
+    $('.has-sub-item').click(function(e) {
+      var $e = $(e.target);
+      $e.toggleClass('sub-open');
+    })
+  },
+
   //获取滚动条距离顶部位置
   scrollTop: function () {
     return document.documentElement.scrollTop || document.body.scrollTop;
@@ -101,7 +116,7 @@ const xueContext = {
     xueContext.initialToc();
     xueContext.addTocFixEvent();
   },
-  
+
   // 初始化目录
   initialToc: function () {
     if ($("#container").find('#toc').length < 1) {
@@ -243,12 +258,8 @@ const xueContext = {
   toggleSearchBox: function () {
     $('.search-btn').click(function () {
       $('#searchBox').toggleClass('hidden');
-
-      if (document.body.clientWidth <= 800) {
-        toggleNavCheckBox();
-      }
     });
-   
+
   },
 
   // 分页信息
@@ -354,7 +365,7 @@ const xueContext = {
 
   shareBtn: function () {
     var clipboard = new ClipboardJS('.share-link');
-    clipboard.on('success', function(e) {
+    clipboard.on('success', function (e) {
       Qmsg.success('Copy article link success.');
       e.clearSelection();
     });
@@ -365,10 +376,10 @@ const xueContext = {
     document.querySelectorAll('.share-item')
       .forEach((e) => {
         var $e = $(e)
-        var href =  $e.attr('href')
+        var href = $e.attr('href')
         $e.attr('href', href.replace('{url}', url))
       });
-    
+
   },
 
   // 包裹图片 ,这个需要在 lazyloadImages 方法之前
@@ -447,7 +458,7 @@ const xueContext = {
     }
   },
 
- 
+
   // 计算时间
   createTimeAgo() {
     document.querySelectorAll('.time-ago').forEach(e => {
@@ -457,7 +468,7 @@ const xueContext = {
       $e.html(time)
     })
   },
-  
+
   // 相册页面
   gallery: function () {
     const $photoPage = $(".photos-page");
@@ -505,17 +516,17 @@ const xueContext = {
 
     // 包裹代码块
     wrapPreCode()
-    
+
     // 设置代码行号
     $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
       lineNumbersBlock(block);
     });
 
-    
+
     // 代码复制按钮
     addCodeCopyBtn();
   },
- 
+
 
   // 处理置顶
   handleBack2Top: function () {

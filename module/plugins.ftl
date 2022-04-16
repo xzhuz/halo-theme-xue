@@ -45,9 +45,6 @@
 <#--消息弹出框-->
 <script src="${theme_base!}/source/js/plugins/qmsg.js"></script>
 
-<#--导航栏-->
-<script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
-
 <script src="${theme_base!}/source/js/plugins/scrollreveal.js"></script>
 
 
