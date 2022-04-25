@@ -126,6 +126,7 @@ function addCodeCopyBtn() {
     if ($codes.length <= 0) {
       return;
     }
+    var content = $codes[0].innerText
     $this.addClass('line-numbers');
     $this.prepend('<span class="iconfont icon-copy code-copy-btn" title="复制内容"></span><span class="iconfont icon-arrow-down-filling code-expander" title="折叠/展开"></span>');
 
@@ -134,8 +135,10 @@ function addCodeCopyBtn() {
     });
 
     new ClipboardJS($this.children('.icon-copy')[0], {
-      text: () => $this.find("code[class*='language-']").text(),
-    }).on("success", () => Qmsg.success("Copy success！"));
+      text: function() {
+        return content
+      },
+    }).on("success", () => Qmsg.success("Copy success！"))
   })
 }
 
