@@ -92,6 +92,7 @@ const xueContext = {
   closeMobileSideBar: function () {
     $('.menu-btn').click(function (e) {
       $('.mobile-sidebar').toggleClass('active')
+      $('.non-click-bg').toggleClass('hidden')
       e.preventDefault()
     });
   },
