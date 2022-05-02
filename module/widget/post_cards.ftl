@@ -29,10 +29,10 @@
         </figure>
         <div class="flex flex-col gap-2 px-4 py-6 bg-white dark:bg-gray-800" style="flex: 1 1 auto; ">
           <#if settings.post_card_tag!false>
-            <div class="text-sm h-4">
+            <div class="text-sm h-5 overflow-hidden">
               <#if post.tags?size gt 0>
                 <#list post.tags as tag>
-                  <#if tag_index &lt; 1>
+<#--                  <#if tag_index &lt; 1>-->
                     <a href="${tag.fullPath!}" class="relative inline-block badge">
                       <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
                       <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
@@ -41,7 +41,7 @@
                         ${tag.name}
                       </span>
                     </a>
-                  </#if>
+<#--                  </#if>-->
                 </#list>
               </#if>
             </div>
