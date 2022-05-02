@@ -19,6 +19,10 @@
       xueContext.handleNavActive();
       
       xueContext.handleNavTheme()
+
+      // 切换页面后,要隐藏菜单
+      $('.mobile-sidebar').removeClass('active')
+      $('.non-click-bg').addClass('hidden')
       
       // 重新加载 评论
       $('script[data-pjax-comment]').each(function () {

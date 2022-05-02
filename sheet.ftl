@@ -24,7 +24,7 @@
         ${sheet.content!}
     </div>
 
-    <div class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
+    <div class="px-10 mx-auto md-content text-gray-800 dark:text-gray-300 px-4 mt-16 max-w-5xl tracking-wider md:leading-relaxed sm:leading-normal">
       <#if !sheet.disallowComment!false>
         <#include "module/comment.ftl">
         <@comment sheet,"sheet" />

@@ -3,7 +3,7 @@
         style="flex: 0 0 auto;">
   <nav class="nav bg-white dark:bg-gray-900 md:bg-transparent" id="nav">
     <label class="inline-grid select-none place-content-center cursor-pointer h-full inline-block md:hidden ">
-      <span class="iconfont icon-menu menu-btn text-gray-800 dark:text-gray-100"></span>
+      <span class="iconfont icon-menu menu-btn text-gray-800 dark:text-gray-100 text-xl"></span>
     </label>
     <#if settings.show_logo!false>
       <a href="${blog_url!}" id="headerLogo" class="flex justify-center items-center p-2" onfocus="this.blur();">
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <div class="mobile-sidebar bg-gray-100 dark:bg-gray-900 flex flex-col h-screen z-50 fixed top-0 left-0 w-10/12">
+    <div class="mobile-sidebar bg-gray-100 dark:bg-gray-900 flex flex-col h-screen z-50 fixed top-0 left-0 w-3/5">
       <div class="mobile-sidebar-inner">
         <div class="flex text-right p-4 justify-end text-lg">
           <span class="text-gray-800 dark:text-gray-100 fill-current mx-2.5">
@@ -88,5 +88,6 @@
         </div>
       </div>
     </div>
+    <div class="non-click-bg z-40 overflow-hidden w-full h-full fixed bg-gray-200 opacity-60 hidden menu-btn"></div>
   </nav>
 </header>
