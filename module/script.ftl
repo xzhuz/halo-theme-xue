@@ -33,7 +33,13 @@
         if (photoArr[i] && photoArr[i].trim().length > 0){
              photos.push(photoArr[i].trim());
         }
-
+    }
+    // 随机排列图片
+    for (let index = 0; index < photos.length; index++) {
+        let randomIndex = Math.floor(Math.random() * photos.length);
+        let temp = photos[randomIndex];
+        photos[randomIndex] = photos[index];
+        photos[index] = temp;
     }
   }
 </script>
