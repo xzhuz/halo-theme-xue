@@ -55,7 +55,7 @@
           </div>
           <#if settings.allow_share!true>
             <div class="share-items">
-              <a class="share-link" href="javascript:;" data-clipboard-text="${post.fullPath!}"
+              <a class="share-link" href="javascript:;" data-clipboard-text="${blog_url!}${post.fullPath!}"
                  rel="noopener noreferrer" title="复制文章链接">
                 <span class="iconfont icon-round_link_fill text-3xl"></span>
               </a>
