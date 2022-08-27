@@ -225,10 +225,6 @@ ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
 
-.md-content .heti ul, .md-content .heti ol {
-  padding-inline-start: 0;
-}
-
 .md-content .heti ul, .md-content .heti ol, .md-content .heti dl {
   margin-block-start: 6px;
   margin-block-end: 6px;
@@ -242,6 +238,10 @@ ol > li > ol > li > ol > li {
 
   .heti pre code {
     padding-left: 1rem;
+  }
+
+  .heti ul, .heti ol {
+    padding-inline-start: 16px !important;
   }
 }
 

@@ -45,7 +45,7 @@
                   <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full"
                      style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
                   <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
-                        style="color: ${tag.color!'rgba(248,113,113,1)'}"
+                        style="font-size: 1rem; font-weight:400; color: ${tag.color!'rgba(248,113,113,1)'}"
                         data-value="${tag.name}">
                         ${tag.name}
                       </span>
