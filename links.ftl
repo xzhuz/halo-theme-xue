@@ -13,10 +13,12 @@
         </div>
       </#if>
       <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
-        <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center dark:text-gray-300">
-          <img class=" object-cover ring-2 ring-white m-avatar w-20 h-20 rounded-full bg-white max-w-full border-2 border-white border-solid mx-auto no-zoom" src="${user.avatar}" alt="${user.nickname!}">
-        </h2>
-        <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center">${settings.home_description!}</p>
+        <img class=" object-cover  my-4 ring-2 ring-white m-avatar w-20 h-20 rounded-full bg-white max-w-full border-2 border-white border-solid mx-auto no-zoom" src="${user.avatar}" alt="${user.nickname!}">
+        <#if settings.home_description!=''>
+          <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center">
+            ${settings.home_description!}
+          </p>
+        </#if>
       </div>
     </header>
     <div

@@ -4,7 +4,7 @@
     <#list posts.content as post>
       <div class="relative flex flex-col slide-up overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4">
         <#if post.topPriority gt 0>
-          <div class="post-top z-50 w-24 h-24 overflow-hidden absolute">
+          <div class="post-top w-24 h-24 overflow-hidden absolute">
             <div class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100">
               置顶
             </div>
@@ -29,10 +29,11 @@
         </figure>
         <div class="flex flex-col gap-2 px-4 py-6 bg-white dark:bg-gray-800" style="flex: 1 1 auto; ">
           <#if settings.post_card_tag!false>
-            <div class="text-sm h-4">
+            <div class="text-sm h-5 overflow-hidden">
               <#if post.tags?size gt 0>
                 <#list post.tags as tag>
-                  <#if tag_index &lt; 1>
+                <#-- 最多显示 3 个标签-->
+                  <#if tag_index &lt; 3>
                     <a href="${tag.fullPath!}" class="relative inline-block badge">
                       <i class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full" style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
                       <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
@@ -46,7 +47,7 @@
               </#if>
             </div>
           </#if>
-          <h2 class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if> z-50">
+          <h2 class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if>">
             <a href="${post.fullPath!}" class="text-gray-800 dark:text-gray-300">${post.title!}</a>
           </h2>
           <#if settings.post_card_meta_info!false>
@@ -58,10 +59,10 @@
                 <span class="iconfont icon-see2 text-gray-500">
                   <label>${post.visits}</label>
                 </span>
-                <span class="iconfont icon-comment1 text-gray-500">
+                <span class="iconfont icon-uqur text-gray-500">
                    <label>${post.commentCount}</label>
                 </span>
-                <span class="iconfont icon-like3 text-gray-500">
+                <span class="iconfont icon-like text-gray-500">
                   <label>${post.likes}</label>
                 </span>
               </div>

@@ -13,7 +13,7 @@
   }
 </script>
 <script src="${theme_base!}/source/js/plugins/vue.min.js" onload="initComment();"></script>
-<script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/gh/halo-dev/halo-comment-fly@master/dist/halo-comment.min.js'}"></script>
+<script src="${'${theme_base!}/source/js/plugins/halo-comment.min.js'}"></script>
 
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
@@ -44,9 +44,6 @@
 
 <#--消息弹出框-->
 <script src="${theme_base!}/source/js/plugins/qmsg.js"></script>
-
-<#--导航栏-->
-<script src="${theme_base!}/source/js/plugins/simply-nav.js"></script>
 
 <script src="${theme_base!}/source/js/plugins/scrollreveal.js"></script>
 

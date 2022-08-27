@@ -38,7 +38,8 @@ module.exports = {
         '60': 'brightness(0.6)',
       },
       boxShadow: {
-        
+        'lx': '0 1px 40px -8px rgb(0 0 0 / 50%)',
+        'none': 'none',
       },
       maxWidth: {
         '16': '16rem',

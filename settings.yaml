@@ -3,6 +3,56 @@
 genernal:
   label: 通用设置
   items:
+    show_logo:
+      name: show_logo
+      label: LOGO展示
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 是
+        - value: false
+          label: 否   
+    pjax_enabled:
+      name: pjax_enabled
+      label: 全局 Pjax
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭       
+    Icp:
+      name: Icp
+      label: "ICP 备案号"
+      type: text
+      placeholder: "填入 ICP 备案号，没有则不填. "
+    PoliceSecurityRecordCode:
+      name: PoliceSecurityRecordCode
+      label: "网安备案号编码"
+      type: text
+      placeholder: "网安备案号编码，用于链接跳转"  
+    PublicSecurityRecord:
+      name: PublicSecurityRecord
+      label: "网安备案号"
+      type: text
+      placeholder: "填入网安备案号文字"
+    card_random_cover_list:
+        name: card_random_cover_list
+        label: 随机封面图片列表，分号分割
+        type: textarea
+        description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"  
+home_setting:
+  label: 首页设置
+  items:
+    home_cover:
+      name: home_cover
+      label: 首页背景
+      type: attachment
+      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
     home_title:
       name: home_title
       label: 首页展示博客名
@@ -14,17 +64,17 @@ genernal:
       label: 网站slogan
       type: text
       placeholder: "用于首页描述"
-    show_logo:
-      name: show_logo
-      label: 是否展示Logo
+    enabled_index_cover_height:
+      name: enabled_index_cover_height
+      label: 首页全屏图片
       type: radio
       data-type: bool
-      default: false
+      default: true
       options:
         - value: true
-          label: 是
+          label: 开启
         - value: false
-          label: 否  
+          label: 关闭
     posts_style:
       name: posts_style
       label: 首页文章列表展示风格
@@ -46,7 +96,7 @@ genernal:
         - value: true
           label: 展示
         - value: false
-          label: 隐藏   
+          label: 隐藏
     post_card_tag:
       name: post_card_tag
       label: 卡片是否展示标签
@@ -63,60 +113,14 @@ genernal:
       label: 列表风格下是否展示热门文章
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 是
         - value: false
           label: 否
-    home_cover:
-      name: home_cover
-      label: 首页背景
-      type: attachment
-      default: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
-    enabled_index_cover_height:
-      name: enabled_index_cover_height
-      label: 首页全屏图片
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    card_random_cover_list:
-      name: card_random_cover_list
-      label: 随机封面图片列表，分号分割
-      type: textarea
-      description: "英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片"
-    Icp:
-      name: Icp
-      label: "ICP 备案号"
-      type: text
-      placeholder: "填入 ICP 备案号，没有则不填. "
-    PoliceSecurityRecordCode:
-      name: PoliceSecurityRecordCode
-      label: "网安备案号编码"
-      type: text
-      placeholder: "网安备案号编码，用于链接跳转"  
-    PublicSecurityRecord:
-      name: PublicSecurityRecord
-      label: "网安备案号"
-      type: text
-      placeholder: "填入网安备案号文字"
-    QR_code_zfb:
-      name: QR_code_zfb
-      label: "支付宝二维码图片"
-      type: attachment
-      placeholder: "支付宝收款二维码链接，不填不显示"
-    QR_code_wx:
-      name: QR_code_wx
-      label: "微信二维码图片"
-      type: attachment
-      placeholder: "微信收款二维码链接，不填不显示"
 head_img:
-  label: 网页首部图片
+  label: 网页头部图片
   items:
     archives_patternimg:
       name: archives_patternimg
@@ -175,6 +179,27 @@ post:
           label: 开启
         - value: false
           label: 关闭
+    allow_share:
+      name: allow_share
+      label: 开启分享
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭       
+    QR_code_zfb:
+      name: QR_code_zfb
+      label: "支付宝二维码图片"
+      type: attachment
+      placeholder: "支付宝收款二维码链接，不填不显示"
+    QR_code_wx:
+      name: QR_code_wx
+      label: "微信二维码图片"
+      type: attachment
+      placeholder: "微信收款二维码链接，不填不显示"       
 title:
   label: 自定义页面标题
   items:
@@ -246,21 +271,6 @@ social:
           label: 开启
         - value: false
           label: 关闭
-experimental:
-  label: 高级功能
-  items:
-    pjax_enabled:
-      name: pjax_enabled
-      label: 全局 Pjax
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-
 other:
   label: 其他
   items:
@@ -271,7 +281,7 @@ other:
       description: "填入起始时间，格式：月/日/年 时:分:秒，如08/20/2018 12:00:00"
     visit_statistics:
       name: visit_statistics
-      label: 用户访问统计
+      label: 用户访问统计(需要引入不蒜子统计脚本,官网:https://busuanzi.ibruce.info)
       type: radio
       data-type: bool
       default: false

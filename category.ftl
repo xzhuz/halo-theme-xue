@@ -18,19 +18,17 @@
       </div>
     </header>
     <div class="mx-auto fade-up pt-4 <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl</#if>">
-        <#if settings.posts_style!true>
-            <#include "module/widget/post_cards.ftl">
-        <#else>
-            <#include "module/widget/post_list.ftl">
-        </#if>
+      <#if settings.posts_style!true>
+        <#include "module/widget/post_cards.ftl">
+      <#else>
+        <#include "module/widget/post_list.ftl">
+      </#if>
         <#-- 分页-->
-        <#if posts.totalPages gt 1>
-          <nav class="pagination flex flex-row justify-center my-8" role="navigation" aria-label="pagination">
-              <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">                       
-                <#include "module/widget/pagination.ftl">
-              </@paginationTag>
-          </nav>
-        </#if>
+      <nav class="pagination flex flex-row justify-center my-8" role="navigation" aria-label="pagination">
+        <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+          <#include "module/widget/pagination.ftl">
+        </@paginationTag>
+      </nav>
     </div>
   </main>
 </@layout>

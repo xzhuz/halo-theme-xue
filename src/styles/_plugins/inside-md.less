@@ -225,10 +225,6 @@ ol > li > ol > li > ol > li {
   list-style-type: lower-roman;
 }
 
-.md-content .heti ul, .md-content .heti ol {
-  padding-inline-start: 0;
-}
-
 .md-content .heti ul, .md-content .heti ol, .md-content .heti dl {
   margin-block-start: 6px;
   margin-block-end: 6px;
@@ -242,6 +238,10 @@ ol > li > ol > li > ol > li {
 
   .heti pre code {
     padding-left: 1rem;
+  }
+
+  .heti ul, .heti ol {
+    padding-inline-start: 16px !important;
   }
 }
 
@@ -379,6 +379,7 @@ ol > li > ol > li > ol > li {
 
 div.code-toolbar {
   position: relative;
+  margin-bottom: 1.2rem;
 }
 
 div.code-toolbar > .toolbar {
@@ -482,11 +483,15 @@ div.code-toolbar>.toolbar>.toolbar-item:first-child span::before {
   text-decoration: none;
 
   &:hover {
-    color: var(--base-hover-color) !important;
     text-decoration: none;
     border-block-end: none;
     padding-block-end: 0;
   }
+}
+
+a.post-tag:hover {
+  border:none !important;
+  padding: 0 !important;
 }
 
 .md-content pre {

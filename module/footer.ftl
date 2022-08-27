@@ -40,7 +40,7 @@
     </div>
     <#-- 社交信息 end -->
 
-    <div class="site-info flex flex-col justify-center">
+    <div class="site-info flex flex-col justify-center text-gray-800 dark:text-gray-500">
       <@global.footer />
       <#if settings.Icp??>
         <p class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-base text-gray-800 dark:text-gray-500">${settings.Icp!}</a></p>

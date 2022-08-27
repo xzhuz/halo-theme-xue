@@ -92,7 +92,6 @@ var timeAgo = function (timestamp) {
   } else if (minC >= 1) {
     return parseInt(minC) + "分钟前";
   }
-  console.info(monthC, weekC, dayC, hourC, minC)
   return '刚刚';
 };
 
@@ -127,6 +126,7 @@ function addCodeCopyBtn() {
     if ($codes.length <= 0) {
       return;
     }
+    var content = $codes[0].innerText
     $this.addClass('line-numbers');
     $this.prepend('<span class="iconfont icon-copy code-copy-btn" title="复制内容"></span><span class="iconfont icon-arrow-down-filling code-expander" title="折叠/展开"></span>');
 
@@ -135,19 +135,16 @@ function addCodeCopyBtn() {
     });
 
     new ClipboardJS($this.children('.icon-copy')[0], {
-      text: () => $this.find("code[class*='language-']").text(),
-    }).on("success", () => Qmsg.success("复制成功！"));
+      text: function() {
+        return content
+      },
+    }).on("success", () => Qmsg.success("Copy success！"))
   })
 }
 
 function toggleNavCheckBox() {
   const navCheckbox = document.querySelector('#navCheckbox')
   const navListOpen = document.querySelectorAll('.nav-list.-open')
-  if (navListOpen.length < 1) {
-    navCheckbox.checked = false;
-  } else {
-    navCheckbox.checked = true
-  }
- 
+  navCheckbox.checked = navListOpen.length >= 1;
 }
 
