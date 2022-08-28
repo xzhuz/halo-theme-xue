@@ -39,6 +39,10 @@
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
+
+  .back-2-top {
+    z-index: 999;
+  }
   
   .fade-up {
     -webkit-animation: fade-up 0.3s;

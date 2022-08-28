@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="相册 | ${options.blog_title!}">
+<@layout title="${settings.photos_title!'相册'} | ${options.blog_title!}">
   <main class="mx-auto" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2">
       <#if settings.photos_patternimg?? && settings.photos_patternimg!=''>
