@@ -367,6 +367,7 @@ const xueContext = {
   shareBtn: function () {
     var clipboard = new ClipboardJS('.share-link');
     clipboard.on('success', function (e) {
+      console.log(111)
       Qmsg.success('Copy article link success.');
       e.clearSelection();
     });
@@ -379,6 +380,12 @@ const xueContext = {
         var $e = $(e)
         var href = $e.attr('href')
         $e.attr('href', href.replace('{url}', url))
+        
+        var text = $e.attr('data-clipboard-text')
+
+        if (text) {
+          $e.attr('data-clipboard-text', url)
+        }
       });
 
   },
