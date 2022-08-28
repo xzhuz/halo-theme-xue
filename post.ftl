@@ -85,7 +85,7 @@
       <#include "module/widget/sponsor.ftl">
       <div class="inline-block text-center my-4  ">
         <span role="button"
-              class="iconfont icon-heart text-white relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-50 w-28 h-full cursor-pointer like-btn"
+              class="iconfont icon-heart text-white relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-10 w-28 h-full cursor-pointer like-btn"
               data-path="${blog_url!}/api/content/posts/${post.id}/likes"
               data-count="${post.likes}"
         >
