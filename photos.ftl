@@ -21,26 +21,26 @@
     <div
       class="mx-auto px-10 mt-16 tracking-wider md:leading-relaxed sm:leading-normal cn-pd photos-page fade-up">
       <div class="photos-box article-content" id="gallery-content">
-        <nav id="gallery-filter">
+        <div id="gallery-filter">
           <ul>
             <li>
               <a href="javascript:void(0);" data-filter="*" class="active text-gray-800 dark:text-gray-300 bg-box-shadow">全部</a>
             </li>
-              <@photoTag method="listTeams">
-                  <#list teams as item>
-                    <li>
-                      <a href="javascript:void(0);"
-                         class="text-gray-800 dark:text-gray-300 bg-box-shadow"
-                         data-filter=".${((item.team)?length>0)?string((item.team),'默认')}">${((item.team)?length>0)?string((item.team),'默认')}</a>
-                    </li>
-                  </#list>
-              </@photoTag>
+            <@photoTag method="listTeams">
+              <#list teams as item>
+                <li>
+                  <a href="javascript:void(0);"
+                     class="text-gray-800 dark:text-gray-300 bg-box-shadow"
+                     data-filter=".${((item.team)?length>0)?string((item.team),'无分组')}">${((item.team)?length>0)?string((item.team),'无分组')}</a>
+                </li>
+              </#list>
+            </@photoTag>
           </ul>
-        </nav>
+        </div>
         <div class="gallery masonry-gallery" id="lightGallery">
             <@photoTag method="list">
                 <#list photos?sort_by('name')?reverse as photo>
-                  <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'默认')}" data-src="${photo.url!}">
+                  <figure class="gallery-item col-3 ${((photo.team)?length>0)?string((photo.team),'无分组')}" data-src="${photo.url!}">
                     <header class="gallery-icon">
                       <span data-fancybox="gallery" href="${photo.url!}" >
                         <img class="lazyload dark:filter-60" src="${theme_base!}/source/images/loading.gif" data-src="${photo.url!}"
