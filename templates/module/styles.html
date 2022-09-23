@@ -17,17 +17,17 @@
       --tw-translate-y: 0;
       --tw-rotate: 0;
     }
-  
-    /* <#--向英雄致敬-->
-    <#if settings.xiang_ying_xiong_zhi_jing!false>
-      html {
-        -webkit-filter: grayscale(100%);
-        -moz-filter: grayscale(100%);
-        -o-filter: grayscale(100%);
-        filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-      }
-    </#if> */
   </style>
+  <th:block th:if="${theme.config.other.xiang_ying_xiong_zhi_jing}">
+    <style>
+    html {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    }
+    </style>
+  </th:block>
   
   <link th:href="@{/assets/css/jqcloud.min.css}" rel="stylesheet">
   <link th:href="@{/assets/css/heti.min.css}" rel="stylesheet">

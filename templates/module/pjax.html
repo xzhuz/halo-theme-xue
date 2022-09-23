@@ -1,7 +1,7 @@
-<#if settings.pjax_enabled!false>
-  <script src="${theme_base!}/source/js/plugins/jquery.pjax.js"></script>
-  <script src="${theme_base!}/source/js/plugins/nprogress.min.js"></script>
-  <link rel="stylesheet" href="${theme_base!}/source/css/nprogress.min.css">
+<th:block th:if="${theme.config.genernal.pjax_enabled}" th:fragment="pjax">
+  <script th:src="@{/assets/js/plugins/jquery.pjax.js}"></script>
+  <script th:src="@{/assets/js/plugins/nprogress.min.js}"></script>
+  <link rel="stylesheet" th:href="@{/assets/css/nprogress.min.css}">
   <script type="text/javascript">
     $(document).pjax(
       'a[href]:not([href^="#"]):not([data-not-pjax]):not([target^="_blank"]), form',
@@ -121,4 +121,4 @@
     });
 
   </script>
-</#if>
+</th:block>

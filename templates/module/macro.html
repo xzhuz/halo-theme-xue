@@ -13,7 +13,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <title>Halo</title>
+    <title th:text="${site.title}"></title>
     <th:block th:replace="module/styles :: styles" />
     <script th:src="@{/assets/js/plugins/jquery.min.js}"></script>
   </head>
@@ -26,7 +26,7 @@
       <th:block th:replace="module/footer :: footer" />
     </div>
   </body>
-  <th:block th:replace="module/plugins :: plugins"/>
+  <th:block th:replace="module/plugins :: plugins" />
   <script th:src="@{/assets/js/utils.js}"></script>
   <script th:src="@{/assets/js/main.js}"></script>
   <th:block th:replace="module/script :: script" />
