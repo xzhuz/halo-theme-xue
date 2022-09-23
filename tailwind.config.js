@@ -1,67 +1,67 @@
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: ["./*.ftl", "./module/*.ftl", "./module/widget/*.ftl"],
+  purge: ["./templates/**/*.html"],
   theme: {
     screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
     },
     fontFamily: {
-      sans: ['Lato', "Noto Sans SC", "-apple-system", 'sans-serif'],
+      sans: ["Lato", "Noto Sans SC", "-apple-system", "sans-serif"],
     },
     extend: {
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: "32rem",
+        144: "36rem",
       },
       borderRadius: {
-        '4xl': '2rem',
+        "4xl": "2rem",
       },
       animation: {
-        'search': 'searchShow .2s both',
+        search: "searchShow .2s both",
       },
       zIndex: {
-        '999': '999',
-        '-1': '-1'
+        999: "999",
+        "-1": "-1",
       },
       transformOrigin: {
-        '50': '50% 50%',
-        'full': '100%',
+        50: "50% 50%",
+        full: "100%",
       },
       filter: {
-        '60': 'brightness(0.6)',
+        60: "brightness(0.6)",
       },
       boxShadow: {
-        'lx': '0 1px 40px -8px rgb(0 0 0 / 50%)',
-        'none': 'none',
+        lx: "0 1px 40px -8px rgb(0 0 0 / 50%)",
+        none: "none",
       },
       maxWidth: {
-        '16': '16rem',
+        16: "16rem",
       },
       margin: {
-        'card': '68px auto 0',
-        'avatar': '-52px 8px 4px',
+        card: "68px auto 0",
+        avatar: "-52px 8px 4px",
       },
     },
     rotate: {
-      '-45': '-45deg',
-      '-90': '-90deg',
-      '90': '90deg',
+      "-45": "-45deg",
+      "-90": "-90deg",
+      90: "90deg",
     },
     minHeight: {
-      '100': '100px'
+      100: "100px",
     },
     maxHeight: {
-      '200': '200px'
+      200: "200px",
     },
     transform: {
-      '-half': 'translate(-50%,-50%)',
+      "-half": "translate(-50%,-50%)",
     },
   },
   variants: {
@@ -70,7 +70,7 @@ module.exports = {
     // backgroundColor: ['dark'],
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
+    require("@tailwindcss/line-clamp"),
     // require('tailwindcss-dark-mode')()
   ],
-}
+};

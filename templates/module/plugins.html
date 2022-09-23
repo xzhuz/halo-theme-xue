@@ -1,0 +1,108 @@
+<th:block th:fragment="plugins">
+  <script>
+    function initComment() {
+      $("script[data-pjax-comment]").each(function () {
+        const commentParent = $(this).parent();
+        const comment = $(this).remove();
+        commentParent.append(comment);
+      });
+    }
+    var configs = {
+      autoLoad: true,
+      showUserAgent: true,
+      darkMode: localStorage.getItem("dark") === "dark",
+    };
+  </script>
+  <script
+    th:src="@{/assets/js/plugins/vue.min.js}"
+    onload="initComment();"
+  ></script>
+  <script th:src="@{/assets/js/plugins/halo-comment.min.js}"></script>
+
+  <!-- 代码高亮 -->
+  <script th:src="@{/assets/highlight.js/highlight.min.js}"></script>
+
+  <!-- 代码行数 -->
+  <script th:src="@{/assets/highlight.js/linesNumber.js}"></script>
+
+  <!-- 标签云 -->
+  <script th:src="@{/assets/js/plugins/jqcloud-1.0.4.min.js}"></script>
+
+  <!-- 图片 -->
+  <script th:src="@{/assets/js/plugins/jquery.fancybox.min.js}"></script>
+
+  <!-- 目录 -->
+  <th:block th:if="${theme.config.post.post_toc}">
+    <script src="@{/assets/js/plugins/tocbot.min.js}"></script>
+  </th:block>
+
+  <!-- 相册 -->
+  <script th:src="@{/assets/js/plugins/isotope.pkgd.min.js}"></script>
+
+  <!-- 复制按钮 -->
+  <script th:src="@{/assets/js/plugins/clipboard.min.js}"></script>
+
+  <!-- 消息弹出框 -->
+  <script th:src="@{/assets/js/plugins/qmsg.js}"></script>
+
+  <script th:src="@{/assets/js/plugins/scrollreveal.js}"></script>
+
+  <th:block th:if="${theme.config.other.visit_statistics}">
+    <script
+      async
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+  </th:block>
+
+  <script type="text/javascript">
+    function renderTagCloud() {
+      // 标签云
+      var tagCloud = $("#tagCloud");
+      if (!(tagCloud && tagCloud.children().length === 0)) {
+        return;
+      }
+      // 标签
+      var tagArray = [
+        <@tagTag method="list">
+        <#list tags as tag>
+        {
+          'text': '${tag.name!}',
+          'weight': '${tag.postCount!}',
+          'link': '${tag.fullPath!}'
+        },
+        </#list>
+        </@tagTag>
+      ];
+
+      // 标签云
+      tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
+
+    }
+
+    function renderCategoryCloud() {
+      // 分类云
+      var categoryCloud = $("#categoryCloud");
+      if (!(categoryCloud && categoryCloud.children().length === 0)) {
+        return;
+      }
+      // 分类
+      var array = [
+        <@categoryTag method="list">
+        <#list categories as category>
+        {
+          'text': '${category.name!}',
+          'weight': '${category.postCount!}',
+          'link': '${category.fullPath!}'
+        },
+        </#list>
+        </@categoryTag>
+      ];
+
+      categoryCloud.jQCloud(array, {autoResize: true, delayedMode: true});
+    }
+
+    const loadingGif = '${theme_base!}/source/images/loading.gif';
+  </script>
+
+  ${settings.other_script_file!''}
+</th:block>

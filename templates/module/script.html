@@ -1,4 +1,5 @@
-<#if is_categories?? || is_tags ??>
+<th:block th:fragment="script">
+  <#if is_categories?? || is_tags ??>
     <#--标签云-->
 <#--    <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script>-->
     <script type='text/javascript'>
@@ -12,9 +13,9 @@
 <script type="text/javascript">
   // console.clear();
   console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
-  <#if settings.github??>
-    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "${settings.github!}");
-  </#if>
+  <th:block th:if="${theme.config.social?.github}">
+    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "[[${theme.config.social?.github}]]");
+  </th:block>
 </script>
 
 <script type="text/javascript">
@@ -44,12 +45,12 @@
   }
 </script>
 
-<#if settings.TimeStatistics??>
+<th:block th:if="${theme.config.other.TimeStatistics}">
     <script type="text/javascript">
       // 建站时间统计
       function show_date_time() {
         if ($("#span_dt_dt").length > 0) {
-          BirthDay = new Date("${settings.TimeStatistics!}");
+          BirthDay = new Date("[[${theme.config.other.TimeStatistics}]]");
           today = new Date();
           timeold = (today.getTime() - BirthDay.getTime());
           sectimeold = timeold / 1000;
@@ -68,8 +69,10 @@
 
       setInterval("show_date_time()","1000");
     </script>
-</#if>
+</th:block>
 
 
 <#-- Pjax 相关代码 -->
 <#include "pjax.ftl">
+
+</th:block>
