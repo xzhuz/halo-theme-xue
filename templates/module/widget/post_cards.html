@@ -1,67 +1,67 @@
 <div
   th:fragment="post_cards"
-  class="posts grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:gap-6 md:gap-4 sm:gap-3 mt-4 pagination-container"
+  class="posts xs:grid-cols-1 pagination-container mt-4 grid sm:grid-cols-2 sm:gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6"
   id="pageContainer"
 >
   <div
     th:each="post,iterStat : ${postItems}"
-    class="relative flex flex-col slide-up overflow-hidden rounded-lg w-full bg-base-100 shadow-xl mt-4"
+    class="slide-up bg-base-100 relative mt-4 flex w-full flex-col overflow-hidden rounded-lg shadow-xl"
   >
     <div
       th:if="${post.spec.pinned}"
-      class="post-top w-24 h-24 overflow-hidden absolute"
+      class="post-top absolute h-24 w-24 overflow-hidden"
     >
       <div
-        class="shadow-lg text-center transform -rotate-45 relative py-1 px-0 top-3 -left-8 w-28 bg-red-600 text-gray-100"
+        class="relative top-3 -left-8 w-28 -rotate-45 transform bg-red-600 py-1 px-0 text-center text-gray-100 shadow-lg"
       >
         置顶
       </div>
     </div>
-    <figure class="flex items-center justify-center h-56 cursor-pointer">
+    <figure class="flex h-56 cursor-pointer items-center justify-center">
       <a th:href="${post.status.permalink}" class="w-full">
         <img
           th:if="${not #strings.isEmpty(post.spec.cover)}"
-          class="lazyload object-cover w-full h-56 no-zoom"
+          class="lazyload no-zoom h-56 w-full object-cover"
           th:src="@{/assets/images/loading.gif}"
           th:attr="data-src=${post.spec.cover}"
           th:alt="${post.spec.title}"
         />
         <img
           th:if="${#strings.isEmpty(post.spec.cover)} and ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
-          class="object-cover w-full h-56 img-random no-zoom"
+          class="img-random no-zoom h-56 w-full object-cover"
           th:attr="index=${iterStat.index}"
           th:src="@{/assets/images/loading.gif}"
           th:alt="${post.spec.title}"
         />
         <span
           th:unless="${not #strings.isEmpty(post.spec.cover)} or ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
-          class="full-image placeholder-bg w-full h-56"
+          class="full-image placeholder-bg h-56 w-full"
           role="img"
           aria-label=""
         ></span>
       </a>
     </figure>
     <div
-      class="flex flex-col gap-2 px-4 py-6 bg-white dark:bg-gray-800"
+      class="flex flex-col gap-2 bg-white px-4 py-6 dark:bg-gray-800"
       style="flex: 1 1 auto"
     >
       <div
         th:if="${theme.config.home_setting.post_card_tag}"
-        class="text-sm h-5 overflow-hidden"
+        class="h-5 overflow-hidden text-sm"
       >
         <th:block th:if="${not #lists.isEmpty(post.tags)}">
           <a
             th:each="tag : ${post.tags}"
             th:href="${tag.status.permalink}"
             th:title="${tag.spec.displayName}"
-            class="relative inline-block badge"
+            class="badge relative inline-block"
           >
             <i
-              class="bg-red-400 opacity-10 absolute top-0 left-0 w-full h-full"
+              class="absolute top-0 left-0 h-full w-full bg-red-400 opacity-10"
               th:style="'background-color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"
             ></i>
             <span
-              class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
+              class="badge-outline h-5 cursor-pointer rounded-sm px-2 py-0.5 text-red-400"
               th:style="'color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"
               th:attr="data-value=${tag.spec.displayName}"
               th:text="${tag.spec.displayName}"
@@ -71,7 +71,7 @@
         </th:block>
       </div>
       <h2
-        class="flex items-center gap-2 text-xl leading-7 <#if settings.post_card_tag>mb-2 mt-3 <#else> my-4 </#if>"
+        class="<#if settings.post_card_tag>mb-2 <#else> </#if> my-4 mt-3 flex items-center gap-2 text-xl leading-7"
       >
         <a
           th:href="${post.status.permalink}"
@@ -88,7 +88,7 @@
             th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
           ></span>
         </div>
-        <div class="inline-block float-right">
+        <div class="float-right inline-block">
           <span class="iconfont icon-see2 text-gray-500">
             <label>0</label>
           </span>

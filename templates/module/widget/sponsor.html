@@ -1,10 +1,10 @@
 <section
   th:if="${theme.config.post.QR_code_zfb} or ${theme.config.post.QR_code_wx}"
   th:fragment="sponsor"
-  class="donate inline-block text-center my-4 mx-auto w-56"
+  class="donate my-4 mx-auto inline-block w-56 text-center"
 >
   <div
-    class="icon relative inline-block border-gray-100 dark:border-gray-700 border bg-white dark:bg-gray-800 rounded-full py-3 px-6 z-20"
+    class="icon relative z-20 inline-block rounded-full border border-gray-100 bg-white py-3 px-6 dark:border-gray-700 dark:bg-gray-800"
   >
     <a
       th:if="${theme.config.post.QR_code_zfb}"
@@ -14,7 +14,7 @@
       style="text-decoration: none !important; box-shadow: none !important"
     >
       <i
-        class="iconfont icon-yooxi hover:text-red-500 text-xl dark:text-gray-300 border-r border-gray-600 dark:border-gray-700 pr-3"
+        class="iconfont icon-yooxi border-r border-gray-600 pr-3 text-xl hover:text-red-500 dark:border-gray-700 dark:text-gray-300"
       ></i
     ></a>
     <a
@@ -25,25 +25,25 @@
       style="text-decoration: none !important; box-shadow: none !important"
     >
       <i
-        class="iconfont icon-wechat hover:text-red-500 text-xl dark:text-gray-300"
+        class="iconfont icon-wechat text-xl hover:text-red-500 dark:text-gray-300"
       ></i
     ></a>
   </div>
   <div
     th:if="${theme.config.post.QR_code_zfb}"
-    class="qrcode qrcode-alipay hidden p-4 w-56 h-56 z-50 my-4 mx-auto"
+    class="qrcode qrcode-alipay z-50 my-4 mx-auto hidden h-56 w-56 p-4"
   >
     <img
-      class="fade-down max-h-200 dark:filter-60"
+      class="fade-down dark:filter-60 max-h-200"
       th:src="${theme.config.post.QR_code_zfb}"
     />
   </div>
   <div
     th:if="${theme.config.post.QR_code_wx}"
-    class="qrcode qrcode-wechat hidden p-4 w-56 h-56 z-50 my-4 mx-auto"
+    class="qrcode qrcode-wechat z-50 my-4 mx-auto hidden h-56 w-56 p-4"
   >
     <img
-      class="fade-down max-h-200 dark:filter-60"
+      class="fade-down dark:filter-60 max-h-200"
       th:src="${theme.config.post.QR_code_wx}"
     />
   </div>

@@ -7,17 +7,17 @@
     <main class="mx-auto" id="container">
       <header
         id="hero"
-        class="bg-gray-900 table fade-down relative w-full opacity-95 z-10"
+        class="fade-down relative z-10 table w-full bg-gray-900 opacity-95"
         th:classappend="${theme.config.home_setting.enabled_index_cover_height} ? 'h-1/2 sm:h-1/2 md:h-screen full-screen':'h-1/2'"
       >
         <div
           th:if="${not #strings.isEmpty(theme.config.home_setting.home_cover)}"
-          class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
         >
           <img
             th:src="${theme.config.home_setting.home_cover}"
             alt="${settings.home_title!options.blog_title!}"
-            class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
           />
         </div>
         <div
@@ -25,24 +25,24 @@
           class="placeholder-bg"
         ></div>
         <div
-          class="h-96 align-middle table-cell relative w-full index justify-center"
+          class="index relative table-cell h-96 w-full justify-center align-middle"
         >
           <!-- 封面内容 -->
           <h2
-            class="text-white dark:text-gray-300 mb-5 mt-4 leading-loose relative w-full text-4xl text-center"
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
             th:text="${site.title}"
           ></h2>
           <hr
-            class="text-center bg-red-300 h-0.5 border-none w-20 mx-auto -mt-5 mb-3"
+            class="mx-auto -mt-5 mb-3 h-0.5 w-20 border-none bg-red-300 text-center"
           />
           <p
-            class="slogan text-white dark:text-gray-300 text-lg md:text-xl text-center"
+            class="slogan text-center text-lg text-white dark:text-gray-300 md:text-xl"
             id="slogan"
             th:text="${site.subtitle}"
           ></p>
           <p
             th:if="${theme.config.home_setting.enabled_index_cover_height}"
-            class="w-full text-4xl absolute bottom-11 text-center"
+            class="absolute bottom-11 w-full text-center text-4xl"
           >
             <a
               class="arrow-down z-50 hidden sm:hidden md:block"
@@ -58,12 +58,12 @@
       <div
         id="postList"
         th:with="postItems=${posts.items}"
-        class="mx-auto fade-up"
+        class="fade-up mx-auto"
         th:classappend="${theme.config.home_setting.posts_style}?'px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl':'px-5 max-w-4xl flex flex-col'"
       >
         <th:block th:if="${theme.config.home_setting.posts_style}">
-          <h3 class="mb-4 mt-8 dark:text-gray-300 hidden md:block">
-            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span>
+          <h3 class="mb-4 mt-8 hidden dark:text-gray-300 md:block">
+            <span class="iconfont icon-new mr-2 text-base text-red-600"></span>
             最新文章
           </h3>
           <th:block th:replace="module/widget/post_cards :: post_cards" />
@@ -75,16 +75,16 @@
           >
             <h3 class="mb-4 mt-8 dark:text-gray-300">
               <span
-                class="iconfont icon-hot text-red-600 mr-2 text-base"
+                class="iconfont icon-hot mr-2 text-base text-red-600"
               ></span>
               热门文章
             </h3>
-            <div class="posts grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+            <div class="posts grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4">
               <!-- <#include "module/widget/popular_posts.ftl"> -->
             </div>
           </div>
           <h3 class="mb-4 mt-8 dark:text-gray-300">
-            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span>
+            <span class="iconfont icon-new mr-2 text-base text-red-600"></span>
             最新文章
           </h3>
           <th:block th:replace="module/widget/post_list :: post_list" />
@@ -92,13 +92,30 @@
 
         <!-- 分页 -->
         <nav
-          class="pagination flex flex-row justify-center my-8"
+          class="pagination my-8 flex flex-row justify-center"
           role="navigation"
           aria-label="pagination"
         >
           <!-- <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
             <#include "module/widget/pagination.ftl">
           </@paginationTag> -->
+
+          <ul class="pagination-list flex flex-row" id="pagination">
+            <li th:if="${posts.hasPrevious()}" class="pagination-previous">
+              <span
+                class="pagination-circle iconfont icon-left dark:text-gray-300"
+                th:attr="data-path=${posts.prevUrl}"
+              >
+              </span>
+            </li>
+            <li th:if="${posts.hasNext()}" class="pagination-next">
+              <span
+                class="pagination-circle iconfont icon-right dark:text-gray-300"
+                th:attr="data-path=${posts.nextUrl}"
+              >
+              </span>
+            </li>
+          </ul>
         </nav>
       </div>
     </main>

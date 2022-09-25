@@ -6,26 +6,26 @@
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
       <header
-        class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2"
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
         id="postHeader"
       >
         <div
           th:if="${not #strings.isEmpty(post.spec.cover)}"
-          class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
         >
           <img
             th:src="${post.spec.cover}"
-            class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
             th:alt="${post.spec.title}"
           />
         </div>
         <div
           th:if="${#strings.isEmpty(post.spec.cover)} and ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
-          class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
         >
           <img
             th:src="@{/assets/images/loading.gif}"
-            class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60 no-zoom"
+            class="img-random dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
             th:alt="${post.spec.title}"
           />
         </div>
@@ -34,11 +34,11 @@
           class="placeholder-bg"
         ></div>
         <div
-          class="h-96 align-middle table-cell relative w-full index justify-center"
+          class="index relative table-cell h-96 w-full justify-center align-middle"
         >
           <h2
             th:text="${post.spec.title}"
-            class="text-white mb-5 mt-4 leading-loose relative w-full text-2xl md:text-4xl text-center dark:text-gray-300"
+            class="relative mb-5 mt-4 w-full text-center text-2xl leading-loose text-white dark:text-gray-300 md:text-4xl"
           ></h2>
           <!-- 封面内容 -->
           <div class="text-white">
@@ -57,27 +57,27 @@
       </header>
       <div class="article-content fade-up">
         <div
-          class="mx-auto bg-white dark:bg-gray-800 rounded-md px-10 py-10 md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300"
+          class="md-content heti mx-auto mt-8 max-w-4xl rounded-md bg-white px-10 py-10 tracking-wider text-gray-800 dark:bg-gray-800 dark:text-gray-300 sm:leading-normal md:leading-relaxed"
           id="lightGallery"
         >
           <th:block th:utext="${post.content.content}" />
           <hr class="bg-gray-100 dark:bg-gray-700" />
-          <div class="flex flex-row justify-between flex-wrap">
+          <div class="flex flex-row flex-wrap justify-between">
             <div class="tag-list leading-9">
               <a
                 th:each="tag : ${post.tags}"
                 th:href="${tag.status.permalink}"
                 th:title="${tag.spec.displayName}"
-                class="relative inline-block badge shadow-none mr-1 post-tag mb-2"
+                class="badge post-tag relative mr-1 mb-2 inline-block shadow-none"
                 style="box-shadow: none !important"
               >
                 <i
-                  class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full"
+                  class="absolute top-0 left-0 h-full w-full bg-red-400 opacity-10 hover:opacity-20"
                   th:style="'background-color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"
                 ></i>
 
                 <span
-                  class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
+                  class="badge-outline h-5 cursor-pointer rounded-sm px-2 py-0.5 text-red-400"
                   style="font-size: 1rem; font-weight: 400"
                   th:styleappend="'color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"
                   th:attr="data-value=${tag.spec.displayName}"
@@ -144,14 +144,14 @@
       </div>
 
       <div
-        class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal"
+        class="md-content mx-auto mt-8 max-w-4xl text-center tracking-wider sm:leading-normal md:leading-relaxed"
       >
         <th:block th:replace="module/widget/sponsor :: sponsor" />
-        <div class="inline-block text-center my-4">
+        <div class="my-4 inline-block text-center">
           <!-- TODO add display likes support -->
           <span
             role="button"
-            class="iconfont icon-heart text-white relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-10 w-28 h-full cursor-pointer like-btn"
+            class="iconfont icon-heart like-btn relative z-10 inline-block h-full w-28 cursor-pointer rounded-full bg-red-600 py-3 text-white hover:bg-red-500"
             data-path="/api/content/posts/likes"
             th:attr="data-count=0"
           >
@@ -168,7 +168,7 @@
     </#if> -->
 
       <div
-        class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal"
+        class="md-content mx-4 mt-8 max-w-4xl tracking-wider sm:leading-normal md:mx-auto md:leading-relaxed"
       >
         <!-- <#if !post.disallowComment!false>
         <#include "module/comment.ftl">

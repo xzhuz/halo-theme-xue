@@ -6,17 +6,17 @@
   <ul class="posts-list pl-0">
     <li
       th:each="post,iterStat : ${postItems}"
-      class="post slide-up flex list-none relative w-full py-3 md:py-5 text-gray-200 bg-white dark:bg-gray-800 rounded-lg my-4 p-4 hover:shadow"
+      class="post slide-up relative my-4 flex w-full list-none rounded-lg bg-white p-4 py-3 text-gray-200 hover:shadow dark:bg-gray-800 md:py-5"
     >
       <div
-        class="overflow-hidden float-left relative flex-shrink-0 h-16 md:h-36 w-28 md:w-56 bg-gray-100 inline-block dark:filter-60"
+        class="dark:filter-60 relative float-left inline-block h-16 w-28 flex-shrink-0 overflow-hidden bg-gray-100 md:h-36 md:w-56"
       >
         <a
           th:if="${not #strings.isEmpty(post.spec.cover)}"
           th:href="${post.status.permalink}"
         >
           <img
-            class="lazyload object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 dark:filter-60 no-zoom"
+            class="lazyload dark:filter-60 no-zoom h-full w-full transform object-cover transition-transform duration-700 hover:scale-110"
             th:src="@{/assets/images/loading.gif}"
             th:attr="data-src=${post.spec.cover}"
             alt="${post.title}"
@@ -27,7 +27,7 @@
           th:href="${post.status.permalink}"
         >
           <img
-            class="img-random object-cover w-full h-full transform hover:scale-110 transition-transform duration-700 no-zoom"
+            class="img-random no-zoom h-full w-full transform object-cover transition-transform duration-700 hover:scale-110"
             th:src="@{/assets/images/loading.gif}"
             data-src=""
             th:attr="index=${iterStat.index}"
@@ -36,38 +36,38 @@
         </a>
         <div
           th:unless="${not #strings.isEmpty(post.spec.cover)} or ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
-          class="post-date text-6xl font-bold w-full h-full text-center pt-8 md:pt-5 flex flex-col items-center justify-center uppercase text-gray-800"
+          class="post-date flex h-full w-full flex-col items-center justify-center pt-8 text-center text-6xl font-bold uppercase text-gray-800 md:pt-5"
         >
           <th:block th:text="${#dates.format(post.spec.publishTime,'dd')}" />
           <span
-            class="font-medium text-base block mt-3 uppercase"
+            class="mt-3 block text-base font-medium uppercase"
             th:text="${#dates.format(post.spec.publishTime,'yyyy 年 MM 月')}"
           ></span>
         </div>
       </div>
       <div
-        class="flex-left flex flex-col justify-between pl-4 md:pl-4 h-16 md:h-36 w-full"
+        class="flex-left flex h-16 w-full flex-col justify-between pl-4 md:h-36 md:pl-4"
       >
         <a
           th:href="${post.status.permalink}"
           rel="bookmark"
-          class="text-gray-800 hover:text-red-600 dark:text-gray-300 flex-none"
+          class="flex-none text-gray-800 hover:text-red-600 dark:text-gray-300"
         >
           <h2
-            class="text-base md:text-2xl hover:text-red-500 mb-0 mt-0 relative z-50 dark:text-gray-300 inline-block"
+            class="relative z-50 mb-0 mt-0 inline-block text-base hover:text-red-500 dark:text-gray-300 md:text-2xl"
           >
             <i
               th:if="${post.spec.pinned}"
-              class="iconfont icon-pin-fill text-sm md:text-base text-gray-400"
+              class="iconfont icon-pin-fill text-sm text-gray-400 md:text-base"
             ></i>
             <th:block th:text="${post.spec.title}" />
           </h2>
         </a>
         <p
-          class="leading-normal break-all overflow-hidden overflow-ellipsis m-0 text-sm md:text-base text-gray-400 md:line-clamp-2 text-justify hidden md:block font-normal"
+          class="m-0 hidden overflow-hidden overflow-ellipsis break-all text-justify text-sm font-normal leading-normal text-gray-400 md:block md:text-base md:line-clamp-2"
           th:text="${post.status.excerpt}"
         ></p>
-        <div class="post-meta flex items-center mr-auto w-full">
+        <div class="post-meta mr-auto flex w-full items-center">
           <!-- <#if post.categories?? && post.categories?size gt 0>
                 <#list post.categories as category>
                   <a class="text-sm mr-1 text-gray-500 hover:text-red-600 hidden md:inline-block" href="${category.fullPath!}">
@@ -77,23 +77,23 @@
                 </#list>
               </#if> -->
           <span
-            class="iconfont icon-comment text-xs mr-1 text-gray-500 inline-block md:hidden"
+            class="iconfont icon-comment mr-1 inline-block text-xs text-gray-500 md:hidden"
           ></span>
-          <span class="text-xs mr-1 text-gray-500 inline-block md:hidden"
+          <span class="mr-1 inline-block text-xs text-gray-500 md:hidden"
             >${post.commentCount!}
           </span>
           <span
-            class="iconfont icon-round_like_fill text-xs mr-1 text-gray-500 inline-block md:hidden"
+            class="iconfont icon-round_like_fill mr-1 inline-block text-xs text-gray-500 md:hidden"
           ></span>
-          <span class="text-xs mr-1 text-gray-500 inline-block md:hidden"
+          <span class="mr-1 inline-block text-xs text-gray-500 md:hidden"
             >${post.likes!}
           </span>
           <span
-            class="text text-gray-500 uppercase text-sm ml-auto tracking-wide hidden md:inline-block"
+            class="text ml-auto hidden text-sm uppercase tracking-wide text-gray-500 md:inline-block"
             th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd HH:mm')}"
           ></span>
           <span
-            class="text text-gray-500 uppercase text-xs ml-auto tracking-wide inline-block md:hidden"
+            class="text ml-auto inline-block text-xs uppercase tracking-wide text-gray-500 md:hidden"
             th:text="${#dates.format(post.spec.publishTime,'yyyy-MM')}"
           ></span>
         </div>
