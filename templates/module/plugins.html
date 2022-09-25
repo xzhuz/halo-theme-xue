@@ -33,7 +33,7 @@
 
   <!-- 目录 -->
   <th:block th:if="${theme.config.post.post_toc}">
-    <script src="@{/assets/js/plugins/tocbot.min.js}"></script>
+    <script th:src="@{/assets/js/plugins/tocbot.min.js}"></script>
   </th:block>
 
   <!-- 相册 -->
@@ -54,7 +54,7 @@
     ></script>
   </th:block>
 
-  <script type="text/javascript">
+  <script type="text/javascript" th:inline="javascript">
     function renderTagCloud() {
       // 标签云
       var tagCloud = $("#tagCloud");
@@ -62,21 +62,20 @@
         return;
       }
       // 标签
-      var tagArray = [
-        <@tagTag method="list">
-        <#list tags as tag>
-        {
-          'text': '${tag.name!}',
-          'weight': '${tag.postCount!}',
-          'link': '${tag.fullPath!}'
-        },
-        </#list>
-        </@tagTag>
-      ];
+      var tagArray =
+        /*[[${tagFinder.listAll()}]]*/
 
-      // 标签云
-      tagCloud.jQCloud(tagArray, {autoResize: true, delayedMode: true});
-
+        // 标签云
+        tagCloud.jQCloud(
+          tagArray.map((tag) => {
+            return {
+              text: tag.spec.displayName,
+              weight: tag.status.posts.length,
+              link: tag.status.permalink,
+            };
+          }),
+          { autoResize: true, delayedMode: true }
+        );
     }
 
     function renderCategoryCloud() {
@@ -86,23 +85,24 @@
         return;
       }
       // 分类
-      var array = [
-        <@categoryTag method="list">
-        <#list categories as category>
-        {
-          'text': '${category.name!}',
-          'weight': '${category.postCount!}',
-          'link': '${category.fullPath!}'
-        },
-        </#list>
-        </@categoryTag>
-      ];
+      var array =
+        /*[[${categoryFinder.listAll()}]]*/
 
-      categoryCloud.jQCloud(array, {autoResize: true, delayedMode: true});
+        // 分类云
+        categoryCloud.jQCloud(
+          array.map((category) => {
+            return {
+              text: category.spec.displayName,
+              weight: category.status.posts.length,
+              link: category.status.permalink,
+            };
+          }),
+          { autoResize: true, delayedMode: true }
+        );
     }
 
-    const loadingGif = '${theme_base!}/source/images/loading.gif';
+    const loadingGif = /*[[${#theme.assets('/assets/images/loading.gif')}]]*/ ""
   </script>
 
-  ${settings.other_script_file!''}
+  <!-- ${settings.other_script_file!''} -->
 </th:block>
