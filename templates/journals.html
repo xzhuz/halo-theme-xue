@@ -6,13 +6,13 @@
         <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
           <img src="${settings.journals_patternimg!}"
                class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
-               alt="${settings.jounarls_title! '日志'}">
+               alt="${settings.jounarls_title! '日志'}" />
         </div>
       <#else>
         <div class="placeholder-bg">
         </div>
       </#if>
-      <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
+      <div class="h-96 align-middle table-cell relative w-full index justify-center">
         <h2 class="text-white mb-5 mt-4 leading-loose relative w-full text-4xl text-center dark:text-gray-300">
           ${settings.jounarls_title! '日志'} <sup>${journals.totalElements}</sup>
         </h2>

@@ -6,7 +6,7 @@
 >
   <nav class="nav bg-white dark:bg-gray-900 md:bg-transparent" id="nav">
     <label
-      class="inline-grid select-none place-content-center cursor-pointer h-full inline-block md:hidden"
+      class="inline-grid select-none place-content-center cursor-pointer h-full md:hidden"
     >
       <span
         class="iconfont icon-menu menu-btn text-gray-800 dark:text-gray-100 text-xl"
@@ -39,7 +39,7 @@
         >
           <th:block th:unless="${#lists.isEmpty(menuItem.children)}">
             <span
-              class="link text-gray-800 dark:text-gray-100 md:text-base sm:text-sm text-gray-100 block"
+              class="link text-gray-800 dark:text-gray-100 md:text-base sm:text-sm block"
               th:text="${menuItem.status.displayName}"
             ></span>
             <ul
@@ -50,7 +50,7 @@
                 class="item pl-10 md:pl-0 h-8 w-full m-0 min-w-max"
               >
                 <a
-                  class="menu-item text-gray-800 dark:text-gray-100 md:text-base sm:text-sm text-gray-100"
+                  class="menu-item text-gray-800 dark:text-gray-100 md:text-base sm:text-sm"
                   data-path="${child.url!}"
                   th:href="${child.status.href}"
                   target="${child.target!}"
@@ -62,7 +62,7 @@
           </th:block>
           <a
             th:if="${#lists.isEmpty(menuItem.children)}"
-            class="menu-item link block text-gray-800 dark:text-gray-100 md:text-base sm:text-sm text-gray-100"
+            class="menu-item link block text-gray-800 dark:text-gray-100 md:text-base sm:text-sm"
             data-path="${menu.url!}"
             th:href="${menuItem.status.href}"
             target="${menu.target!}"

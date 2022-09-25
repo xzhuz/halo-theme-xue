@@ -11,7 +11,7 @@
         th:classappend="${theme.config.home_setting.enabled_index_cover_height} ? 'h-1/2 sm:h-1/2 md:h-screen full-screen':'h-1/2'"
       >
         <div
-          th:if="${theme.config.home_setting.home_cover}"
+          th:if="${not #strings.isEmpty(theme.config.home_setting.home_cover)}"
           class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute"
         >
           <img
@@ -21,7 +21,7 @@
           />
         </div>
         <div
-          th:if="${theme.config.home_setting.home_cover} == null"
+          th:unless="${#strings.isEmpty(theme.config.home_setting.home_cover)}"
           class="placeholder-bg"
         ></div>
         <div
@@ -80,7 +80,7 @@
               热门文章
             </h3>
             <div class="posts grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
-              <#include "module/widget/popular_posts.ftl">
+              <!-- <#include "module/widget/popular_posts.ftl"> -->
             </div>
           </div>
           <h3 class="mb-4 mt-8 dark:text-gray-300">
