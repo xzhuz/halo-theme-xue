@@ -33,10 +33,12 @@
   
       <div class="site-info flex flex-col justify-center text-gray-800 dark:text-gray-500">
         <halo:footer />
-        <p th:if="${theme.config.genernal?.Icp}" class="leading-6"><a href="http://beian.miit.gov.cn" target="_blank" class="text-base text-gray-800 dark:text-gray-500" th:text="${theme.config.genernal?.Ic}"></a></p>
-          <p  style="display: inline-block;background-image: url(${theme_base!}/source/images/beian.png);background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;">
-            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${settings.PoliceSecurityRecordCode!}" target="_blank"
-               class="text-base text-gray-800 dark:text-gray-500">${settings.PublicSecurityRecord!}</a>
+        <p th:if="${theme.config.genernal?.Icp}" class="leading-6">
+          <a href="http://beian.miit.gov.cn" target="_blank" class="text-base text-gray-800 dark:text-gray-500" th:text="${theme.config.genernal?.Ic}"></a>
+        </p>
+          <p th:if="${theme.config.genernal.PublicSecurityRecord} and ${theme.config.genernal.PoliceSecurityRecordCode}" style="display: inline-block;background-repeat: no-repeat;background-position: top left;background-size: contain;padding-left: 20px;" th:styleappend="'background-image: url('+${#theme.assets('/images/beian.png')}+')'">
+            <a th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={code}(code=${theme.config.genernal.PoliceSecurityRecordCode})}" target="_blank"
+               class="text-base text-gray-800 dark:text-gray-500" th:text="${theme.config.genernal.PublicSecurityRecord}"></a>
           </p>
         <!-- 请尊重作者，请务必保留版权 -->
         <div class="badges">

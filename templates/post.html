@@ -6,28 +6,24 @@
 <th:block th:fragment="content">
   <main class="mx-auto" id="container">
     <header class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 h-1/2" id="postHeader">
-      <#if post.thumbnail?? && post.thumbnail!=''>
-        <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-          <img src="${post.thumbnail!}" class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
-               alt="${post.title!}">
+        <div th:if="${not #strings.isEmpty(post.spec.cover)}" class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
+          <img th:src="${post.spec.cover}" class="h-full w-full left-0 object-cover absolute top-0 dark:filter-60 no-zoom"
+               th:alt="${post.spec.title}">
         </div>
-      <#elseif settings.card_random_cover_list?? && settings.card_random_cover_list != ''>
-        <div class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
-          <img src="${theme_base!}/source/images/loading.gif"
+        <div th:if="${#strings.isEmpty(post.spec.cover)} and ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}" class="cover-bg bottom-0 left-0 right-0 top-0 opacity-30 absolute">
+          <img th:src="@{/assets/images/loading.gif}"
                class="h-full w-full left-0 object-cover absolute top-0 img-random dark:filter-60 no-zoom"
-               alt="${post.title}"/>
+               th:alt="${post.spec.title}"/>
         </div>
-      <#else>
-        <div class="placeholder-bg">
+        <div th:unless="${not #strings.isEmpty(post.spec.cover)} or ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}" class="placeholder-bg">
         </div>
-      </#if>
       <div class="h-96 align-middle table-cell relative w-full index justify-center">
         <h2 th:text="${post.spec.title}" class="text-white mb-5 mt-4 leading-loose relative w-full text-2xl md:text-4xl text-center dark:text-gray-300">
         </h2>
         <!-- 封面内容 -->
         <div class=" text-white">
           <div class="text-center">
-            <span class="iconfont icon-people "></span> ${user.nickname!}
+            <span class="iconfont icon-people "></span> <th:block th:text="${post.contributors[0].displayName}"/>
             <!-- TODO -->
             <span class="iconfont icon-see2 ml-3"></span> 0
             <span class="iconfont icon-time ml-3"></span><th:block th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}" />
@@ -48,28 +44,30 @@
                 class="relative inline-block badge shadow-none mr-1 post-tag mb-2"
                    style="box-shadow: none !important;">
                   <i class="bg-red-400 opacity-10 hover:opacity-20 absolute top-0 left-0 w-full h-full"
-                     style="background-color: ${tag.color!'rgba(248,113,113,1)'}"></i>
+                     th:style="'background-color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"></i>
+
                   <span class="badge-outline text-red-400 h-5 px-2 py-0.5 rounded-sm cursor-pointer"
-                        style="font-size: 1rem; font-weight:400; color: ${tag.color!'rgba(248,113,113,1)'}"
-                        data-value="${tag.name}">
+                        style="font-size: 1rem; font-weight:400;"
+                        th:styleappend="'color:'+${tag.spec.color} ? 'rgba(248,113,113,1)'"
+                        th:attr="data-value=${tag.spec.displayName}">
                         <th:block th:text="${tag.spec.displayName}"/>
                       </span>
                 </a>
           </div>
             <div th:if="${theme.config.post.allow_share}" class="share-items">
-              <a class="share-link share-item" href="javascript:;" data-clipboard-text="${post.fullPath!}"
+              <a class="share-link share-item" href="javascript:void(0);" th:attr="data-clipboard-text=${post.status.permalink}"
                  rel="noopener noreferrer" title="复制文章链接">
                 <span class="iconfont icon-round_link_fill text-3xl"></span>
               </a>
-              <a class="share-item" href="http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：${post.title!}，原文链接：{url}&pic=${post.thumbnail!}"
+              <a class="share-item" th:href="@{http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：{title}，原文链接：{url}&pic={pic}(title=${post.spec.title},url=${post.status.permalink},pic=${post.spec.cover})}"
                  target="_blank" rel="noopener noreferrer" title="分享到新浪微博">
                 <span class="iconfont icon-xinlang text-3xl" style="color:rgb(245, 100, 103);"></span>
               </a>
-              <a class="share-item" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&sharesource=qzone&title=${post.title!}&pics=${post.thumbnail!}"
+              <a class="share-item" th:href="@{https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={url}&sharesource=qzone&title={title}&pics=${pics}(url=${post.status.permalink},title=${post.spec.title},pics=${post.spec.cover})}"
                  target="_blank" rel="noopener noreferrer" title="分享到QQ空间">
                 <span class="iconfont icon-Qzone text-3xl" style="color: rgb(245, 190, 63);"></span>
               </a>
-              <a class="share-item" href="https://connect.qq.com/widget/shareqq/index.html?url={url}&title=${post.title!}&pics=${post.thumbnail!}"
+              <a class="share-item" th:href="@{https://connect.qq.com/widget/shareqq/index.html?url={url}&title={title}&pics={pics}(url=${post.status.permalink},title=${post.spec.title},pics=${post.spec.cover})}"
                  target="_blank" rel="noopener noreferrer" title="分享到QQ">
                 <span class="iconfont icon-QQ text-3xl" style=" color: rgb(104, 165, 225);"></span>
               </a>
@@ -77,39 +75,38 @@
         </div>
       </div>
       <div id="tocFlag"></div>
-      <#if settings.post_toc!true>
-        <aside id="toc" class="toc"></aside>
-      </#if>
+        <aside th:if="${theme.config.post.post_toc}" id="toc" class="toc"></aside>
     </div>
 
     <div class="mx-auto md-content mt-8 text-center max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
       <th:block th:replace="module/widget/sponsor :: sponsor"/>
-      <div class="inline-block text-center my-4  ">
+      <div class="inline-block text-center my-4">
+        <!-- TODO add display likes support -->
         <span role="button"
               class="iconfont icon-heart text-white relative inline-block bg-red-600 hover:bg-red-500 rounded-full py-3 z-10 w-28 h-full cursor-pointer like-btn"
-              data-path="${blog_url!}/api/content/posts/${post.id}/likes"
-              data-count="${post.likes}"
+              data-path="/api/content/posts/likes"
+              th:attr="data-count=0"
         >
         </span>
       </div>
-      <hr class="bg-gray-100 dark:bg-gray-700 ">
+      <hr class="bg-gray-100 dark:bg-gray-700">
     </div>
 
     <!-- 上一篇和下一篇 -->
-    <#if settings.post_nepre!true>
+    <!-- <#if settings.post_nepre!true>
       <div class="mx-4 md:mx-auto mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
         <#include "module/widget/prev_next_page.ftl">
       </div>
-    </#if>
+    </#if> -->
 
     <div class="mx-4 md:mx-auto md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
-      <#if !post.disallowComment!false>
+      <!-- <#if !post.disallowComment!false>
         <#include "module/comment.ftl">
         <@comment post,"post" />
-      </#if>
+      </#if> -->
     </div>
   </main>
-  </th:block>
+</th:block>
 </html>
 
 

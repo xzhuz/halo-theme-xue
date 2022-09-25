@@ -7,7 +7,8 @@
     <main class="mx-auto" id="container">
       <header
         id="hero"
-        class="bg-gray-900 table fade-down relative w-full opacity-95 z-10 <#if settings.enabled_index_cover_height!true>h-1/2 sm:h-1/2 md:h-screen full-screen<#else> h-1/2</#if>"
+        class="bg-gray-900 table fade-down relative w-full opacity-95 z-10"
+        th:classappend="${theme.config.home_setting.enabled_index_cover_height} ? 'h-1/2 sm:h-1/2 md:h-screen full-screen':'h-1/2'"
       >
         <div
           th:if="${theme.config.home_setting.home_cover}"
@@ -24,7 +25,7 @@
           class="placeholder-bg"
         ></div>
         <div
-          class="h-96 align-middle table-cell relative w-full index flex justify-center"
+          class="h-96 align-middle table-cell relative w-full index justify-center"
         >
           <!-- 封面内容 -->
           <h2
@@ -57,31 +58,34 @@
       <div
         id="postList"
         th:with="postItems=${posts.items}"
-        class="mx-auto fade-up <#if settings.posts_style!true>px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl <#else> px-5 max-w-4xl flex flex-col</#if>"
+        class="mx-auto fade-up"
+        th:classappend="${theme.config.home_setting.posts_style}?'px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl':'px-5 max-w-4xl flex flex-col'"
       >
-        <th:block th:if="${theme.config.home_setting.posts_style} == true">
+        <th:block th:if="${theme.config.home_setting.posts_style}">
           <h3 class="mb-4 mt-8 dark:text-gray-300 hidden md:block">
-            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span
-            >最新文章
+            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span>
+            最新文章
           </h3>
           <th:block th:replace="module/widget/post_cards :: post_cards" />
         </th:block>
-        <th:block th:if="${theme.config.home_setting.posts_style} == false">
+        <th:block th:unless="${theme.config.home_setting.posts_style}">
           <div
             th:if="${theme.config.home_setting.show_popular}"
             class="popular-posts"
           >
             <h3 class="mb-4 mt-8 dark:text-gray-300">
-              <span class="iconfont icon-hot text-red-600 mr-2 text-base"></span
-              >热门文章
+              <span
+                class="iconfont icon-hot text-red-600 mr-2 text-base"
+              ></span>
+              热门文章
             </h3>
             <div class="posts grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
               <#include "module/widget/popular_posts.ftl">
             </div>
           </div>
           <h3 class="mb-4 mt-8 dark:text-gray-300">
-            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span
-            >最新文章
+            <span class="iconfont icon-new text-red-600 mr-2 text-base"></span>
+            最新文章
           </h3>
           <th:block th:replace="module/widget/post_list :: post_list" />
         </th:block>
