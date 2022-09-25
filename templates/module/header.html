@@ -35,7 +35,8 @@
       <div class="list">
         <li
           th:each="menuItem : ${menuFinder.getDefault().menuItems}"
-          class="item <#if menu.children?? && menu.children?size gt 0>has-sub cursor-pointer</#if> relative p-0"
+          class="item relative p-0"
+          th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub cursor-pointer'}"
         >
           <th:block th:unless="${#lists.isEmpty(menuItem.children)}">
             <span
@@ -109,7 +110,8 @@
           >
             <li
               th:each="menuItem : ${menuFinder.getDefault().menuItems}"
-              class="<#if menu.children?? && menu.children?size gt 0>has-sub-item cursor-pointer</#if> relative mb-3 block rounded-md bg-white py-3.5 px-4 dark:bg-gray-800"
+              class="relative mb-3 block rounded-md bg-white py-3.5 px-4 dark:bg-gray-800"
+              th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub-item cursor-pointer'}"
             >
               <span
                 th:unless="${#lists.isEmpty(menuItem.children)}"

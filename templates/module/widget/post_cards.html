@@ -71,7 +71,8 @@
         </th:block>
       </div>
       <h2
-        class="<#if settings.post_card_tag>mb-2 <#else> </#if> my-4 mt-3 flex items-center gap-2 text-xl leading-7"
+        class="my-4 mt-3 flex items-center gap-2 text-xl leading-7"
+        th:classappend="${theme.config.home_setting.post_card_tag}?'mb-2'"
       >
         <a
           th:href="${post.status.permalink}"
