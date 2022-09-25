@@ -2,7 +2,7 @@
   <script th:src="@{/assets/js/plugins/jquery.pjax.js}"></script>
   <script th:src="@{/assets/js/plugins/nprogress.min.js}"></script>
   <link rel="stylesheet" th:href="@{/assets/css/nprogress.min.css}">
-  <script type="text/javascript">
+  <script type="text/javascript" th:inline="javascript">
     $(document).pjax(
       'a[href]:not([href^="#"]):not([data-not-pjax]):not([target^="_blank"]), form',
       '#container', {fragment: '#container', timeout: 8000});
@@ -112,7 +112,7 @@
 
       }
 
-      // ${settings.common_js!''};
+      /*[(${theme.config.other.common_js})]*/
 
     });
 

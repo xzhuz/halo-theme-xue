@@ -105,5 +105,5 @@
       /*[[${#theme.assets('/assets/images/loading.gif')}]]*/ "";
   </script>
 
-  <!-- ${settings.other_script_file!''} -->
+  <th:block th:utext="${theme.config.other.other_script_file}" />
 </th:block>

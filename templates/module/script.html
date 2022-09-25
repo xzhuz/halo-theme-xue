@@ -27,11 +27,12 @@
     </script>
   </th:block>
 
-  <script type="text/javascript">
-    // ${settings.common_js!''}
+  <script type="text/javascript" th:inline="javascript">
 
-    const loading = "[[${#theme.assets('/images/loading-45.svg')}]]";
-    var photoList = "[[${theme.config.genernal.card_random_cover_list}]]";
+    /*[(${theme.config.other.common_js})]*/
+
+    const loading =  /*[[${#theme.assets('/images/loading-45.svg')}]]*/
+    var photoList =  /*[[${theme.config.genernal.card_random_cover_list}]]*/
     var photos = new Array();
     if (photoList && photoList.trim() !== "") {
       if (photoList.endsWith(";")) {
