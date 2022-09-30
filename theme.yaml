@@ -1,7 +1,7 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 spec:
-  displayName: 雪
+  displayName: Xue
   author:
     name: 雪
     website: https://baozi.fun

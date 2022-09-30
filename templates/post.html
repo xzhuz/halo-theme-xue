@@ -170,10 +170,15 @@
       <div
         class="md-content mx-4 mt-8 max-w-4xl tracking-wider sm:leading-normal md:mx-auto md:leading-relaxed"
       >
-        <!-- <#if !post.disallowComment!false>
-        <#include "module/comment.ftl">
-        <@comment post,"post" />
-      </#if> -->
+        <section class="comments-area">
+          <div class="inner" id="commentInner${post.id}">
+            <halo:comment
+              group="content.halo.run"
+              kind="Post"
+              th:attr="name=${post.metadata.name}"
+            />
+          </div>
+        </section>
       </div>
     </main>
   </th:block>
