@@ -70,7 +70,7 @@
           tagArray.map((tag) => {
             return {
               text: tag.spec.displayName,
-              weight: tag.status.posts.length,
+              weight: tag.status.postCount,
               link: tag.status.permalink,
             };
           }),
@@ -93,7 +93,7 @@
           array.map((category) => {
             return {
               text: category.spec.displayName,
-              weight: category.status.posts.length,
+              weight: category.status.postCount,
               link: category.status.permalink,
             };
           }),

@@ -29,7 +29,7 @@
             class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white"
           >
             <th:block th:text="${tag.spec.displayName}" />
-            <sup th:text="${#lists.size(tag.status.posts)}"> </sup>
+            <sup th:text="${tag.status.postCount}"> </sup>
           </h2>
         </div>
       </header>

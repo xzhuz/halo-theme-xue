@@ -45,10 +45,7 @@
             style="text-decoration: none !important"
           >
             <th:block th:text="${tag.spec.displayName}" />
-            <span
-              class="ml-4"
-              th:text="${#lists.size(tag.status.posts)}"
-            ></span>
+            <span class="ml-4" th:text="${tag.status.postCount}"></span>
           </a>
         </p>
         <h2 class="my-4 hidden dark:text-gray-300 md:block">云</h2>
