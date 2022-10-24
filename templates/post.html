@@ -66,7 +66,7 @@
             <div class="tag-list leading-9">
               <a
                 th:each="tag : ${post.tags}"
-                th:href="${tag.status.permalink}"
+                th:href="@{${tag.status.permalink}}"
                 th:title="${tag.spec.displayName}"
                 class="badge post-tag relative mr-1 mb-2 inline-block shadow-none"
                 style="box-shadow: none !important"

@@ -18,7 +18,7 @@
       </div>
     </div>
     <figure class="flex h-56 cursor-pointer items-center justify-center">
-      <a th:href="${post.status.permalink}" class="w-full">
+      <a th:href="@{${post.status.permalink}}" class="w-full">
         <img
           th:if="${not #strings.isEmpty(post.spec.cover)}"
           class="lazyload no-zoom h-56 w-full object-cover"
@@ -52,7 +52,7 @@
         <th:block th:if="${not #lists.isEmpty(post.tags)}">
           <a
             th:each="tag : ${post.tags}"
-            th:href="${tag.status.permalink}"
+            th:href="@{${tag.status.permalink}}"
             th:title="${tag.spec.displayName}"
             class="badge relative inline-block"
           >
@@ -75,7 +75,7 @@
         th:classappend="${theme.config.home_setting.post_card_tag}?'mb-2'"
       >
         <a
-          th:href="${post.status.permalink}"
+          th:href="@{${post.status.permalink}}"
           class="text-gray-800 dark:text-gray-300"
           th:text="${post.spec.title}"
         ></a>

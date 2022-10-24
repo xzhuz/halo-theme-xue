@@ -53,7 +53,7 @@
                 <a
                   class="menu-item text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
                   data-path="${child.url!}"
-                  th:href="${child.status.href}"
+                  th:href="@{${child.status.href}}"
                   target="${child.target!}"
                   th:text="${child.status.displayName}"
                 >
@@ -65,7 +65,7 @@
             th:if="${#lists.isEmpty(menuItem.children)}"
             class="menu-item link block text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
             data-path="${menu.url!}"
-            th:href="${menuItem.status.href}"
+            th:href="@{${menuItem.status.href}}"
             target="${menu.target!}"
             th:text="${menuItem.status.displayName}"
           >
@@ -127,7 +127,7 @@
                 >
                   <a
                     class="relative block p-0 text-sm text-gray-800 dark:text-gray-100"
-                    th:href="${child.status.href}"
+                    th:href="@{${child.status.href}}"
                     th:text="${child.status.displayName}"
                   ></a>
                 </li>
@@ -135,7 +135,7 @@
               <a
                 th:if="${#lists.isEmpty(menuItem.children)}"
                 class="relative block p-0 text-base text-gray-800 dark:text-gray-100"
-                th:href="${menuItem.status.href}"
+                th:href="@{${menuItem.status.href}}"
                 th:text="${menuItem.status.displayName}"
               ></a>
             </li>
