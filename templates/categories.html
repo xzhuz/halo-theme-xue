@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(theme.config.head_img.categories_patternimg)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${theme.config.head_img.categories_patternimg}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${theme.config.title.categories_title} ? '分类列表'"
+          />
+        </div>
+        <div
+          th:unless="${#strings.isEmpty(theme.config.head_img.categories_patternimg)}"
+          class="placeholder-bg"
+        ></div>
+        <div
+          class="index relative table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+          >
+            <th:block
+              th:text="${theme.config.title.categories_title} ? '分类列表'"
+            />
+            <sup th:text="${#lists.size(categories)}"> </sup>
+          </h2>
+        </div>
+      </header>
+      <div
+        class="fade-up mx-auto my-16 max-w-5xl px-10 tracking-wider sm:leading-normal md:leading-relaxed"
+      >
+        <h2 class="my-4 dark:text-gray-300">分类</h2>
+        <p class="flex flex-row flex-wrap justify-start">
+          <a
+            th:each="category : ${categories}"
+            th:href="@{${category.status.permalink}}"
+            class="mt-2 mb-2 mr-2 block h-10 rounded bg-gray-200 py-0 px-4 leading-10 text-gray-800 no-underline hover:bg-red-400 hover:text-white hover:shadow-md dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-red-400 dark:hover:text-white dark:hover:shadow-md"
+            style="text-decoration: none !important"
+          >
+            <th:block th:text="${category.spec.displayName}" />
+            <span class="ml-4" th:text="${category.status.postCount}"></span>
+          </a>
+        </p>
+        <h2 class="my-4 hidden dark:text-gray-300 md:block">云</h2>
+        <div
+          id="categoryCloud"
+          class="card-content jqcloud jqcloud-hg hidden h-72 w-full md:block"
+        ></div>
+      </div>
+    </main>
+  </th:block>
+</html>

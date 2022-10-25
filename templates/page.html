@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(singlePage.spec.cover)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${singlePage.spec.cover}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${singlePage.spec.title}"
+          />
+        </div>
+        <div
+          th:unless="${#strings.isEmpty(singlePage.spec.cover)}"
+          class="placeholder-bg"
+        ></div>
+        <div
+          class="index relative table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+            th:text="${singlePage.spec.title}"
+          ></h2>
+        </div>
+      </header>
+      <div
+        class="md-content fade-up mx-auto mt-16 max-w-5xl px-10 tracking-wider text-gray-800 dark:text-gray-300 sm:leading-normal md:leading-relaxed"
+        id="lightGallery"
+        th:utext="${singlePage.content.content}"
+      ></div>
+
+      <div
+        class="md-content mx-auto mt-16 max-w-5xl px-10 tracking-wider text-gray-800 dark:text-gray-300 sm:leading-normal md:leading-relaxed"
+      >
+        <section class="comments-area" data-not-pjax>
+          <div class="inner">
+            <halo:comment
+              group="content.halo.run"
+              kind="Post"
+              th:attr="name=${singlePage.metadata.name}"
+            />
+          </div>
+        </section>
+      </div>
+    </main>
+  </th:block>
+</html>

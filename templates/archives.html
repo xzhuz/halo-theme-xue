@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(theme.config.head_img.archives_patternimg)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${theme.config.head_img.archives_patternimg}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${theme.config.title.achieve_title} ? '归档'"
+          />
+        </div>
+        <div
+          th:unless="${#strings.isEmpty(theme.config.head_img.archives_patternimg)}"
+          class="placeholder-bg"
+        ></div>
+        <div
+          class="index relative table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+          >
+            <th:block
+              th:text="${theme.config.title.achieve_title} ? '归档'"
+            />
+          </h2>
+        </div>
+      </header>
+      <div
+        class="fade-up mx-auto my-16 max-w-5xl px-10 tracking-wider sm:leading-normal md:leading-relaxed"
+        id="pageContainer"
+      >
+        <th:block th:each="archive : ${archives.items}">
+          <section
+            class="archive-year relative border-transparent px-0 pt-0.5 pb-0.5"
+          >
+            <h1
+              class="relative m-0 bg-gray-50 leading-9 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+              th:text="${archive.year}"
+            ></h1>
+            <div th:each="month : ${archive.months}" class="relative pl-12">
+              <header
+                class="archive-hd af-bg-fff absolute left-6 mt-6 rounded bg-gray-400 py-0 pl-2.5 pr-2.5 font-semibold uppercase leading-loose text-white dark:bg-gray-700 dark:text-gray-100"
+                th:text="${month.month} + ' 月'"
+              ></header>
+              <span class="">
+                <a
+                  th:each="post : ${month.posts}"
+                  class="archive-info relative ml-6 block px-0 pt-2 pb-2 leading-8 transition-colors"
+                  th:href="@{${post.status.permalink}}"
+                >
+                  <span
+                    class="archive-date float-left whitespace-nowrap pr-2 text-sm tracking-wide opacity-60 dark:text-gray-300"
+                    style="line-height: inherit !important"
+                    th:text="${#dates.format(post.spec.publishTime,'MM-dd')}"
+                  ></span>
+                  <span
+                    class="archive-title bg-box-shadow table-cell text-lg dark:text-gray-300"
+                    style="line-height: inherit !important; position: relative"
+                    th:text="${post.spec.title}"
+                  >
+                  </span>
+                </a>
+              </span>
+            </div>
+          </section>
+        </th:block>
+      </div>
+    </main>
+  </th:block>
+</html>

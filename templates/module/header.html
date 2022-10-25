@@ -1,0 +1,150 @@
+<header
+  th:fragment="header"
+  class="nav-wrapper fixed top-0 left-0 right-0 z-50 w-full bg-transparent p-0 opacity-100 transition-opacity duration-300"
+  id="navHeader"
+  style="flex: 0 0 auto"
+>
+  <nav class="nav bg-white dark:bg-gray-900 md:bg-transparent" id="nav">
+    <label
+      class="inline-grid h-full cursor-pointer select-none place-content-center md:hidden"
+    >
+      <span
+        class="iconfont icon-menu menu-btn text-xl text-gray-800 dark:text-gray-100"
+      ></span>
+    </label>
+    <a
+      th:if="${theme.config.genernal.show_logo}"
+      id="headerLogo"
+      class="flex items-center justify-center p-2"
+      onfocus="this.blur();"
+    >
+      <img
+        th:src="${site.logo}"
+        alt="${blog_title!}"
+        class="logo"
+        id="logo"
+        style="height: 3rem"
+      />
+    </a>
+    <span
+      class="iconfont icon-search link search-btn ml-0 inline-block cursor-pointer fill-current text-gray-800 dark:text-gray-100 md:ml-4 md:hidden"
+      style="padding-top: 1.4rem; font-size: 1.4rem; font-weight: 300"
+    >
+    </span>
+    <div class="nav-list absolute top-16 bottom-0 hidden list-none md:block">
+      <div class="list">
+        <li
+          th:each="menuItem : ${menuFinder.getDefault().menuItems}"
+          class="item relative p-0"
+          th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub cursor-pointer'}"
+        >
+          <th:block th:unless="${#lists.isEmpty(menuItem.children)}">
+            <span
+              class="link block text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
+              th:text="${menuItem.status.displayName}"
+            ></span>
+            <ul
+              class="sub-menu-item z-50 block w-auto rounded-md bg-white dark:bg-gray-800 md:absolute md:hidden md:text-center md:shadow-lx"
+            >
+              <li
+                th:each="child : ${menuItem.children}"
+                class="item m-0 h-8 w-full min-w-max pl-10 md:pl-0"
+              >
+                <a
+                  class="menu-item text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
+                  data-path="${child.url!}"
+                  th:href="@{${child.status.href}}"
+                  target="${child.target!}"
+                  th:text="${child.status.displayName}"
+                >
+                </a>
+              </li>
+            </ul>
+          </th:block>
+          <a
+            th:if="${#lists.isEmpty(menuItem.children)}"
+            class="menu-item link block text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
+            data-path="${menu.url!}"
+            th:href="@{${menuItem.status.href}}"
+            target="${menu.target!}"
+            th:text="${menuItem.status.displayName}"
+          >
+          </a>
+        </li>
+
+        <li
+          class="item flex flex-col p-0 md:flex-row"
+          style="margin-left: auto"
+        >
+          <span
+            class="link fill-current text-gray-800 dark:text-gray-100"
+            style="padding-top: 0.8rem"
+          >
+            <th:block th:replace="module/dark_mode :: dark_mode" />
+          </span>
+          <span
+            class="iconfont icon-search link search-btn ml-0 hidden cursor-pointer fill-current text-gray-800 dark:text-gray-100 md:ml-4 md:inline-block"
+            style="padding-top: 1rem; font-size: 1.4rem"
+          >
+          </span>
+        </li>
+      </div>
+    </div>
+
+    <div
+      class="mobile-sidebar fixed top-0 left-0 z-50 flex h-screen w-3/5 flex-col bg-gray-100 dark:bg-gray-900"
+    >
+      <div class="mobile-sidebar-inner">
+        <div class="flex justify-end p-4 text-right text-lg">
+          <span class="mx-2.5 fill-current text-gray-800 dark:text-gray-100">
+            <i class="iconfont dark-btn cursor-pointer"></i>
+          </span>
+          <span
+            class="iconfont icon-close-circle-fill menu-btn mx-2.5 cursor-pointer text-xl text-gray-800 dark:text-gray-300"
+          ></span>
+        </div>
+        <div class="relative py-0 px-4">
+          <ul
+            class="z-50 overflow-y-auto overflow-x-hidden pl-0"
+            style="flex: 1 1 auto"
+          >
+            <li
+              th:each="menuItem : ${menuFinder.getDefault().menuItems}"
+              class="relative mb-3 block rounded-md bg-white py-3.5 px-4 dark:bg-gray-800"
+              th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub-item cursor-pointer'}"
+            >
+              <span
+                th:unless="${#lists.isEmpty(menuItem.children)}"
+                class="relative z-0 flex justify-between p-0 text-base text-gray-800 dark:text-gray-100"
+              >
+                <th:block th:text="${menuItem.status.displayName}" />
+                <i class="iconfont icon-right drop-down-menu"></i>
+              </span>
+              <ul class="sub-menu relative pl-0" style="display: none">
+                <li
+                  th:each="child : ${menuItem.children}"
+                  class="mt-4 list-none"
+                >
+                  <a
+                    class="relative block p-0 text-sm text-gray-800 dark:text-gray-100"
+                    th:href="@{${child.status.href}}"
+                    th:text="${child.status.displayName}"
+                  ></a>
+                </li>
+              </ul>
+              <a
+                th:if="${#lists.isEmpty(menuItem.children)}"
+                class="relative block p-0 text-base text-gray-800 dark:text-gray-100"
+                th:href="@{${menuItem.status.href}}"
+                th:text="${menuItem.status.displayName}"
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      class="non-click-bg menu-btn fixed z-40 hidden h-full w-full overflow-hidden bg-gray-200 opacity-60"
+    ></div>
+  </nav>
+</header>

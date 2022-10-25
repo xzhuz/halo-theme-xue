@@ -1,11 +1,17 @@
-id: bao
-name: 雪
-author:
-  name: 雪
-  website: https://baozi.fun
-description: 大道至简
-logo:
-website: https://github.com/xzhuz/halo-theme-xue
-repo: https://github.com/xzhuz/halo-theme-xue
-version: 1.4.2
-require: 1.5.1
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+spec:
+  displayName: Xue
+  author:
+    name: 雪
+    website: https://baozi.fun
+  description: 大道至简
+  logo:
+  website: https://github.com/xzhuz/halo-theme-xue
+  repo: https://github.com/xzhuz/halo-theme-xue
+  settingName: theme-xue-setting
+  configMapName: theme-xue-configMap
+  version: 0.0.0
+  require: "2.0"
+metadata:
+  name: theme-xue

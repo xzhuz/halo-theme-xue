@@ -1,0 +1,194 @@
+<th:block th:fragment="footer">
+  <footer
+    class="footer py-8 text-center shadow-md dark:bg-gray-800"
+    style="flex: 0 0 auto"
+    id="footer"
+  >
+    <div
+      class="my-0 mx-auto grid flex-row items-center px-10 md:grid-cols-1 md:justify-center lg:grid-cols-2 lg:justify-between"
+    >
+      <!-- 社交信息 begin -->
+      <div class="offsite-links flex flex-row flex-wrap justify-center">
+        <a
+          th:if="${theme.config.social?.github}"
+          th:href="${theme.config.social.github}"
+          class="circle relative m-2.5 inline-block h-10 w-10 cursor-pointer rounded-full border border-gray-100 bg-transparent p-2 text-gray-500 hover:text-red-600"
+          target="_blank"
+          rel="noopener"
+          title="Github"
+        >
+          <span class="iconfont icon-github"> </span>
+        </a>
+        <a
+          th:if="${theme.config.social?.mail}"
+          th:href="@{mailto:{email}(email=${theme.config.social?.mail})}"
+          class="circle relative m-2.5 inline-block h-10 w-10 cursor-pointer rounded-full border border-gray-100 bg-transparent p-2 text-gray-500 hover:text-red-600"
+          target="_blank"
+          rel="noopener"
+          title="邮箱"
+        >
+          <span class="iconfont icon-youxiang"> </span>
+        </a>
+        <a
+          th:if="${theme.config.social?.rss}"
+          href="/rss.xml"
+          class="circle relative m-2.5 inline-block h-10 w-10 cursor-pointer rounded-full border border-gray-100 bg-transparent p-2 text-gray-500 hover:text-red-600"
+          target="_blank"
+          rel="noopener"
+          title="RSS"
+        >
+          <span class="iconfont icon-rss"> </span>
+        </a>
+        <a
+          th:if="${theme.config.social?.zhihu}"
+          th:href="${theme.config.social?.zhihu}"
+          class="circle relative m-2.5 inline-block h-10 w-10 cursor-pointer rounded-full border border-gray-100 bg-transparent p-2 text-gray-500 hover:text-red-600"
+          target="_blank"
+          rel="noopener"
+          title="知乎"
+        >
+          <span class="iconfont icon-zhihu-circle-fill"> </span>
+        </a>
+        <a
+          th:if="${theme.config.social?.weibo}"
+          th:href="${theme.config.social?.weibo}"
+          class="circle relative m-2.5 inline-block h-10 w-10 cursor-pointer rounded-full border border-gray-100 bg-transparent p-2 text-gray-500 hover:text-red-600"
+          target="_blank"
+          rel="noopener"
+          title="微博"
+        >
+          <span class="iconfont icon-weibo"> </span>
+        </a>
+      </div>
+      <!-- 社交信息 end  -->
+
+      <div
+        class="site-info flex flex-col justify-center text-gray-800 dark:text-gray-500"
+      >
+        <halo:footer />
+        <p th:if="${theme.config.genernal?.Icp}" class="leading-6">
+          <a
+            href="http://beian.miit.gov.cn"
+            target="_blank"
+            class="text-base text-gray-800 dark:text-gray-500"
+            th:text="${theme.config.genernal?.Ic}"
+          ></a>
+        </p>
+        <p
+          th:if="${theme.config.genernal.PublicSecurityRecord} and ${theme.config.genernal.PoliceSecurityRecordCode}"
+          style="
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-size: contain;
+            padding-left: 20px;
+          "
+          th:styleappend="'background-image: url('+${#theme.assets('/images/beian.png')}+')'"
+        >
+          <a
+            th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={code}(code=${theme.config.genernal.PoliceSecurityRecordCode})}"
+            target="_blank"
+            class="text-base text-gray-800 dark:text-gray-500"
+            th:text="${theme.config.genernal.PublicSecurityRecord}"
+          ></a>
+        </p>
+        <!-- 请尊重作者，请务必保留版权 -->
+        <div class="badges">
+          <div class="github-badge">
+            <a
+              style="color: #fff"
+              rel="license"
+              href="http://halo.run"
+              target="_blank"
+            >
+              <span class="badge-subject mr-1 pr-8">Powered</span>
+              <span class="badge-value bg-blue">Halo</span>
+            </a>
+          </div>
+          <div class="github-badge">
+            <a
+              style="color: #fff"
+              rel="license"
+              href="https://github.com/xzzai/halo-theme-xue.git"
+              target="_blank"
+            >
+              <span class="badge-subject mr-1 pr-8">Theme</span>
+              <span class="badge-value bg-red">Xue</span>
+            </a>
+          </div>
+
+          <div
+            th:if="${theme.config.other?.TimeStatistics}"
+            class="github-badge"
+          >
+            <a style="color: #fff" rel="license" href="javascript:void(0)">
+              <span class="badge-subject mr-1 pr-8">运行</span>
+              <span class="badge-value bg-orange" id="span_dt_dt"></span>
+            </a>
+          </div>
+          <div
+            th:if="${theme.config.other?.visit_statistics}"
+            class="github-badge"
+          >
+            <a style="color: #fff" rel="license" href="javascript:void(0)">
+              <span class="badge-subject mr-1 pr-8">用户</span>
+              <span id="busuanzi_container_site_uv">
+                <span
+                  class="badge-value bg-brightgreen"
+                  id="busuanzi_value_site_uv"
+                ></span>
+              </span>
+            </a>
+          </div>
+          <div class="github-badge">
+            <a style="color: #fff" rel="license" href="javascript:void(0)">
+              <span class="badge-subject mr-1 pr-8">访问</span>
+              <span id="busuanzi_container_site_pv">
+                <span
+                  class="badge-value bg-blueviolet"
+                  id="busuanzi_value_site_pv"
+                ></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <th:block th:replace="module/back2Top :: back2Top" />
+
+  <!-- 搜索  -->
+  <form method="get" action="/search">
+    <div
+      class="fixed top-0 left-0 right-0 z-50 hidden h-full overflow-y-auto bg-gray-200 bg-opacity-60"
+      id="searchBox"
+    >
+      <div class="mx-auto mt-24 max-w-3xl animate-search border-gray-100">
+        <div
+          class="flex whitespace-nowrap rounded-md bg-white py-1 px-2"
+          id="searchInput"
+        >
+          <label class="flex flex-grow flex-row-reverse">
+            <input
+              class="flex-grow border-none p-0 text-xl leading-snug"
+              maxlength="30"
+              name="keyword"
+              id="searchBoxInput"
+              spellcheck="false"
+              placeholder="Search"
+              autofocus="autofocus"
+              autocomplete="off"
+            />
+            <span
+              class="iconfont icon-search p-4 text-2xl opacity-50 transition-opacity"
+            ></span>
+          </label>
+          <a
+            class="iconfont icon-exit search-btn p-4 text-2xl opacity-50 transition-opacity"
+          ></a>
+        </div>
+      </div>
+    </div>
+  </form>
+</th:block>
