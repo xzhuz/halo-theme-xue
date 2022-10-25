@@ -1,24 +1,4 @@
 <th:block th:fragment="plugins">
-  <script>
-    function initComment() {
-      $("script[data-pjax-comment]").each(function () {
-        const commentParent = $(this).parent();
-        const comment = $(this).remove();
-        commentParent.append(comment);
-      });
-    }
-    var configs = {
-      autoLoad: true,
-      showUserAgent: true,
-      darkMode: localStorage.getItem("dark") === "dark",
-    };
-  </script>
-  <script
-    th:src="@{/assets/js/plugins/vue.min.js}"
-    onload="initComment();"
-  ></script>
-  <script th:src="@{/assets/js/plugins/halo-comment.min.js}"></script>
-
   <!-- 代码高亮 -->
   <script th:src="@{/assets/highlight.js/highlight.min.js}"></script>
 

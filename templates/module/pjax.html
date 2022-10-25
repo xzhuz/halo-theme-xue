@@ -24,13 +24,6 @@
       $('.mobile-sidebar').removeClass('active')
       $('.non-click-bg').addClass('hidden')
       
-      // 重新加载 评论
-      $('script[data-pjax-comment]').each(function () {
-        const commentParent = $(this).parent();
-        const comment = $(this).remove();
-        commentParent.append(comment);
-      });
-
       // 存在 markdown 页面的功能
       if ($("#container").find('.md-content').length > 0) {
 
@@ -109,7 +102,6 @@
       if ($('#container').find('.jqcloud').length > 0) {
         renderTagCloud();
         renderCategoryCloud();
-
       }
 
       /*[(${theme.config.other.common_js})]*/
