@@ -470,7 +470,7 @@ const xueContext = {
   // 计算时间
   createTimeAgo() {
     document.querySelectorAll('.time-ago').forEach(e => {
-      var time = timeAgo(new Date(e.dataset.time).getTime());
+      var time = timeAgo(new Date(e.dataset.time.replace(/\-/g, "/")).getTime());
       var $e = $(e)
       $e.empty();
       $e.html(time)
