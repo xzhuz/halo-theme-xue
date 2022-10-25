@@ -68,25 +68,32 @@
           th:text="${post.status.excerpt}"
         ></p>
         <div class="post-meta mr-auto flex w-full items-center">
-          <!-- <#if post.categories?? && post.categories?size gt 0>
-                <#list post.categories as category>
-                  <a class="text-sm mr-1 text-gray-500 hover:text-red-600 hidden md:inline-block" href="${category.fullPath!}">
-                    <#if category_index != 0> · </#if>
-                    <span class="iconfont icon-tag2"></span>
-                    <span>${category.name!} </span> </a>
-                </#list>
-              </#if> -->
+          <th:block th:if="${not #lists.isEmpty(post.categories)}">
+            <a
+              th:each="category,categoryStat : ${post.categories}"
+              class="mr-1 hidden text-sm text-gray-500 hover:text-red-600 md:inline-block"
+              th:href="@{${category.status.permalink}}"
+            >
+              <th:block th:if="${categoryStat.index != 0}"> · </th:block>
+              <span class="iconfont icon-tag2"></span>
+              <span th:text="${category.spec.displayName}"></span>
+            </a>
+          </th:block>
           <span
             class="iconfont icon-comment mr-1 inline-block text-xs text-gray-500 md:hidden"
           ></span>
-          <span class="mr-1 inline-block text-xs text-gray-500 md:hidden"
-            >${post.commentCount!}
+          <span
+            class="mr-1 inline-block text-xs text-gray-500 md:hidden"
+            th:text="${post.stats.comment}"
+          >
           </span>
           <span
             class="iconfont icon-round_like_fill mr-1 inline-block text-xs text-gray-500 md:hidden"
           ></span>
-          <span class="mr-1 inline-block text-xs text-gray-500 md:hidden"
-            >${post.likes!}
+          <span
+            class="mr-1 inline-block text-xs text-gray-500 md:hidden"
+            th:text="${post.stats.upvote}"
+          >
           </span>
           <span
             class="text ml-auto hidden text-sm uppercase tracking-wide text-gray-500 md:inline-block"

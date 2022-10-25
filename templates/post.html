@@ -45,10 +45,10 @@
             <div class="text-center">
               <span class="iconfont icon-people"></span>
               <th:block th:text="${post.contributors[0].displayName}" />
-              <!-- TODO -->
-              <span class="iconfont icon-see2 ml-3"></span> 0
-              <span class="iconfont icon-time ml-3"></span
-              ><th:block
+              <span class="iconfont icon-see2 ml-3"></span>
+              <th:block th:text="${post.stats.visit}"></th:block>
+              <span class="iconfont icon-time ml-3"></span>
+              <th:block
                 th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
               />
             </div>
@@ -170,7 +170,7 @@
       <div
         class="md-content mx-4 mt-8 max-w-4xl tracking-wider sm:leading-normal md:mx-auto md:leading-relaxed"
       >
-        <section class="comments-area">
+        <section class="comments-area" data-not-pjax>
           <div class="inner">
             <halo:comment
               group="content.halo.run"
