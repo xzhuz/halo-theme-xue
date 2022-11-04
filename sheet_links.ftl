@@ -14,9 +14,9 @@
       </#if>
       <div class="h-96 align-middle table-cell relative w-full index flex justify-center">
         <img class=" object-cover  my-4 ring-2 ring-white m-avatar w-20 h-20 rounded-full bg-white max-w-full border-2 border-white border-solid mx-auto no-zoom" src="${user.avatar}" alt="${user.nickname!}">
-        <#if sheet.summary!='' || settings.home_description!=''>
+        <#if sheet.summary?? || settings.home_description??>
           <p class="slogan text-center text-white dark:text-gray-300 text-lg md:text-xl text-center">
-            <#if sheet.summary!='' >${sheet.summary}<#else>${settings.home_description!}</#if>
+            <#if sheet.summary?? >${sheet.summary}<#else>${settings.home_description!}</#if>
           </p>
         </#if>
       </div>
@@ -46,7 +46,7 @@
                   </#list>
               </div>
             </#list>
-          <#if sheet.content != ''>
+          <#if sheet.content??>
             <div class="mx-auto bg-white dark:bg-gray-800 rounded-md px-10 py-10 md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300"
                  id="lightGallery">
                 ${sheet.content!}
