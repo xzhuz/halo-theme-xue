@@ -256,13 +256,6 @@ const xueContext = {
     });
   },
 
-  toggleSearchBox: function () {
-    $('.search-btn').click(function () {
-      $('#searchBox').toggleClass('hidden');
-    });
-
-  },
-
   // 分页信息
   pageBtn: function () {
     $('.pagination-circle').click(function (e) {

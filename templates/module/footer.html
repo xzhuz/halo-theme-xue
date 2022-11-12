@@ -157,38 +157,4 @@
   </footer>
 
   <th:block th:replace="module/back2Top :: back2Top" />
-
-  <!-- 搜索  -->
-  <form method="get" action="/search">
-    <div
-      class="fixed top-0 left-0 right-0 z-50 hidden h-full overflow-y-auto bg-gray-200 bg-opacity-60"
-      id="searchBox"
-    >
-      <div class="mx-auto mt-24 max-w-3xl animate-search border-gray-100">
-        <div
-          class="flex whitespace-nowrap rounded-md bg-white py-1 px-2"
-          id="searchInput"
-        >
-          <label class="flex flex-grow flex-row-reverse">
-            <input
-              class="flex-grow border-none p-0 text-xl leading-snug"
-              maxlength="30"
-              name="keyword"
-              id="searchBoxInput"
-              spellcheck="false"
-              placeholder="Search"
-              autofocus="autofocus"
-              autocomplete="off"
-            />
-            <span
-              class="iconfont icon-search p-4 text-2xl opacity-50 transition-opacity"
-            ></span>
-          </label>
-          <a
-            class="iconfont icon-exit search-btn p-4 text-2xl opacity-50 transition-opacity"
-          ></a>
-        </div>
-      </div>
-    </div>
-  </form>
 </th:block>

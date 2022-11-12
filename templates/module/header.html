@@ -27,14 +27,16 @@
       />
     </a>
     <span
+      th:if="${pluginFinder.available('PluginSearchWidget')}"
       class="iconfont icon-search link search-btn ml-0 inline-block cursor-pointer fill-current text-gray-800 dark:text-gray-100 md:ml-4 md:hidden"
       style="padding-top: 1.4rem; font-size: 1.4rem; font-weight: 300"
+      onclick="SearchWidget.open()"
     >
     </span>
     <div class="nav-list absolute top-16 bottom-0 hidden list-none md:block">
       <div class="list">
         <li
-          th:each="menuItem : ${menuFinder.getDefault().menuItems}"
+          th:each="menuItem : ${menuFinder.getPrimary().menuItems}"
           class="item relative p-0"
           th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub cursor-pointer'}"
         >
@@ -83,8 +85,10 @@
             <th:block th:replace="module/dark_mode :: dark_mode" />
           </span>
           <span
+            th:if="${pluginFinder.available('PluginSearchWidget')}"
             class="iconfont icon-search link search-btn ml-0 hidden cursor-pointer fill-current text-gray-800 dark:text-gray-100 md:ml-4 md:inline-block"
             style="padding-top: 1rem; font-size: 1.4rem"
+            onclick="SearchWidget.open()"
           >
           </span>
         </li>
@@ -109,7 +113,7 @@
             style="flex: 1 1 auto"
           >
             <li
-              th:each="menuItem : ${menuFinder.getDefault().menuItems}"
+              th:each="menuItem : ${menuFinder.getPrimary().menuItems}"
               class="relative mb-3 block rounded-md bg-white py-3.5 px-4 dark:bg-gray-800"
               th:classappend="${#lists.isEmpty(menuItem.children) ? '' : 'has-sub-item cursor-pointer'}"
             >

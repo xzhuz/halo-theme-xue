@@ -1,10 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: ["./templates/**/*.html"],
+  content: ["./templates/**/*.html"],
   theme: {
     screens: {
       sm: "480px",
