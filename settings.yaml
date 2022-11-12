@@ -44,7 +44,7 @@ spec:
     - group: home_setting
       label: 首页设置
       formSchema:
-        - $formkit: text
+        - $formkit: attachment
           name: home_cover
           label: 首页背景
           value: https://cdn.jsdelivr.net/gh/xzzai/static@master/uPic/default-bg.jpg
@@ -105,28 +105,28 @@ spec:
     - group: head_img
       label: 网页头部图片
       formSchema:
-        - $formkit: text
+        - $formkit: attachment
           name: archives_patternimg
           label: 归档页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: links_patternimg
           label: 友情链接页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: tag_patternimg
           label: 标签页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: categories_patternimg
           label: 分类页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: journals_patternimg
           label: 日志下文章页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: photos_patternimg
           label: 相册页面默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: search_patternimg
           label: 搜索结果默认头部图
-        - $formkit: text
+        - $formkit: attachment
           name: links_placeholder
           label: 友情链接默认用户头像
     - group: post
@@ -159,11 +159,11 @@ spec:
               label: 开启
             - value: false
               label: 关闭
-        - $formkit: text
+        - $formkit: attachment
           name: QR_code_zfb
           label: 支付宝二维码图片
           placeholder: 支付宝收款二维码链接，不填不显示
-        - $formkit: text
+        - $formkit: attachment
           name: QR_code_wx
           label: 微信二维码图片
           placeholder: 微信收款二维码链接，不填不显示
