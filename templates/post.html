@@ -44,7 +44,7 @@
           <div class="text-white">
             <div class="text-center">
               <span class="iconfont icon-people"></span>
-              <th:block th:text="${post.contributors[0].displayName}" />
+              <th:block th:text="${post.owner.displayName}" />
               <span class="iconfont icon-see2 ml-3"></span>
               <th:block th:text="${post.stats.visit}"></th:block>
               <span class="iconfont icon-time ml-3"></span>
