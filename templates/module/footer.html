@@ -66,16 +66,16 @@
         class="site-info flex flex-col justify-center text-gray-800 dark:text-gray-500"
       >
         <halo:footer />
-        <p th:if="${theme.config.genernal?.Icp}" class="leading-6">
+        <p th:if="${theme.config.general?.Icp}" class="leading-6">
           <a
             href="http://beian.miit.gov.cn"
             target="_blank"
             class="text-base text-gray-800 dark:text-gray-500"
-            th:text="${theme.config.genernal?.Ic}"
+            th:text="${theme.config.general?.Ic}"
           ></a>
         </p>
         <p
-          th:if="${theme.config.genernal.PublicSecurityRecord} and ${theme.config.genernal.PoliceSecurityRecordCode}"
+          th:if="${theme.config.general.PublicSecurityRecord} and ${theme.config.general.PoliceSecurityRecordCode}"
           style="
             display: inline-block;
             background-repeat: no-repeat;
@@ -86,10 +86,10 @@
           th:styleappend="'background-image: url('+${#theme.assets('/images/beian.png')}+')'"
         >
           <a
-            th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={code}(code=${theme.config.genernal.PoliceSecurityRecordCode})}"
+            th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={code}(code=${theme.config.general.PoliceSecurityRecordCode})}"
             target="_blank"
             class="text-base text-gray-800 dark:text-gray-500"
-            th:text="${theme.config.genernal.PublicSecurityRecord}"
+            th:text="${theme.config.general.PublicSecurityRecord}"
           ></a>
         </p>
         <!-- 请尊重作者，请务必保留版权 -->

@@ -4,7 +4,7 @@ metadata:
   name: theme-xue-setting
 spec:
   forms:
-    - group: genernal
+    - group: general
       label: 通用设置
       formSchema:
         - $formkit: radio
@@ -37,10 +37,25 @@ spec:
           name: PublicSecurityRecord
           label: 网安备案号
           placeholder: 填入网安备案号文字
-        - $formkit: textarea
+        - $formkit: radio
+          name: enabled_card_random_cover_list
+          label: 开启随机封面图片
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: repeater
           name: card_random_cover_list
-          label: 随机封面图片列表，分号分割
-          help: 英文分号(;)分割。注意，这里面填写了图片路径则默认开启了随机图片
+          label: 随机封面图片列表
+          value:
+            - url:
+          children:
+            - $formkit: attachment
+              name: url
+              label: 图片地址
+
     - group: home_setting
       label: 首页设置
       formSchema:
