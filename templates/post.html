@@ -20,7 +20,7 @@
           />
         </div>
         <div
-          th:if="${#strings.isEmpty(post.spec.cover)} and ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
+          th:if="${#strings.isEmpty(post.spec.cover)} and ${theme.config.general.enabled_card_random_cover_list}"
           class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
         >
           <img
@@ -30,7 +30,7 @@
           />
         </div>
         <div
-          th:unless="${not #strings.isEmpty(post.spec.cover)} or ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
+          th:unless="${not #strings.isEmpty(post.spec.cover)} or ${theme.config.general.enabled_card_random_cover_list}"
           class="placeholder-bg"
         ></div>
         <div
@@ -44,7 +44,7 @@
           <div class="text-white">
             <div class="text-center">
               <span class="iconfont icon-people"></span>
-              <th:block th:text="${post.contributors[0].displayName}" />
+              <th:block th:text="${post.owner.displayName}" />
               <span class="iconfont icon-see2 ml-3"></span>
               <th:block th:text="${post.stats.visit}"></th:block>
               <span class="iconfont icon-time ml-3"></span>

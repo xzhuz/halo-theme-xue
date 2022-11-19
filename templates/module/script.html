@@ -28,23 +28,13 @@
   </th:block>
 
   <script type="text/javascript" th:inline="javascript">
-
     /*[(${theme.config.other.common_js})]*/
 
-    const loading =  /*[[${#theme.assets('/images/loading-45.svg')}]]*/
-    var photoList =  /*[[${theme.config.genernal.card_random_cover_list}]]*/
-    var photos = new Array();
-    if (photoList && photoList.trim() !== "") {
-      if (photoList.endsWith(";")) {
-        photoList = photoList.substring(0, photoList.length - 1);
-      }
-      var photoArr = photoList.split(";");
-      // 过滤photos中的空字符
-      for (let i = 0; i < photoArr.length; i++) {
-        if (photoArr[i] && photoArr[i].trim().length > 0) {
-          photos.push(photoArr[i].trim());
-        }
-      }
+    const loading = "[(${#theme.assets('/images/loading-45.svg')})]";
+    var photoList =
+      /*[(${theme.config.general.card_random_cover_list})]*/
+    var photos = photoList.map(photo => photo.url)
+    if (photoList.length > 0) {
       // 随机排列图片
       for (let index = 0; index < photos.length; index++) {
         let randomIndex = Math.floor(Math.random() * photos.length);

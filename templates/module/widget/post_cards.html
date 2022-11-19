@@ -27,14 +27,14 @@
           th:alt="${post.spec.title}"
         />
         <img
-          th:if="${#strings.isEmpty(post.spec.cover)} and ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
+          th:if="${#strings.isEmpty(post.spec.cover)} and ${theme.config.general.enabled_card_random_cover_list}"
           class="img-random no-zoom h-56 w-full object-cover"
           th:attr="index=${iterStat.index}"
           th:src="@{/assets/images/loading.gif}"
           th:alt="${post.spec.title}"
         />
         <span
-          th:unless="${not #strings.isEmpty(post.spec.cover)} or ${not #strings.isEmpty(theme.config.genernal.card_random_cover_list)}"
+          th:unless="${not #strings.isEmpty(post.spec.cover)} or ${theme.config.general.enabled_card_random_cover_list}"
           class="full-image placeholder-bg h-56 w-full"
           role="img"
           aria-label=""
