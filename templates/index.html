@@ -21,7 +21,7 @@
           />
         </div>
         <div
-          th:unless="${#strings.isEmpty(theme.config.home_setting.home_cover)}"
+          th:if="${#strings.isEmpty(theme.config.home_setting.home_cover)}"
           class="placeholder-bg"
         ></div>
         <div

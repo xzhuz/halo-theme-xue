@@ -71,7 +71,7 @@
             href="http://beian.miit.gov.cn"
             target="_blank"
             class="text-base text-gray-800 dark:text-gray-500"
-            th:text="${theme.config.genernal?.Ic}"
+            th:text="${theme.config.genernal?.Icp}"
           ></a>
         </p>
         <p
@@ -140,7 +140,10 @@
               </span>
             </a>
           </div>
-          <div class="github-badge">
+          <div 
+            th:if="${theme.config.other?.visit_statistics}"
+            class="github-badge"
+          >
             <a style="color: #fff" rel="license" href="javascript:void(0)">
               <span class="badge-subject mr-1 pr-8">访问</span>
               <span id="busuanzi_container_site_pv">

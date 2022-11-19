@@ -56,7 +56,6 @@
                   class="menu-item text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
                   data-path="${child.url!}"
                   th:href="@{${child.status.href}}"
-                  target="${child.target!}"
                   th:text="${child.status.displayName}"
                 >
                 </a>
@@ -68,7 +67,6 @@
             class="menu-item link block text-gray-800 dark:text-gray-100 sm:text-sm md:text-base"
             data-path="${menu.url!}"
             th:href="@{${menuItem.status.href}}"
-            target="${menu.target!}"
             th:text="${menuItem.status.displayName}"
           >
           </a>
