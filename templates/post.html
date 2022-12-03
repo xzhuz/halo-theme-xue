@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="module/macro :: html(~{::content})"
+  th:replace="module/macro :: html(title = ${post.spec.title} + ' - ' + ${site.title}, content = ~{::content})"
 >
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
@@ -20,7 +20,7 @@
           />
         </div>
         <div
-          th:if="${not #strings.isEmpty(post.spec.cover)} or ${theme.config.general.enabled_card_random_cover_list}"
+          th:if="${#strings.isEmpty(post.spec.cover)} and ${theme.config.general.enabled_card_random_cover_list}"
           class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
         >
           <img
@@ -30,7 +30,7 @@
           />
         </div>
         <div
-          th:if="${#strings.isEmpty(post.spec.cover)} and ${!theme.config.general.enabled_card_random_cover_list}"
+          th:if="${#strings.isEmpty(post.spec.cover)} and ${not theme.config.general.enabled_card_random_cover_list}"
           class="placeholder-bg"
         ></div>
         <div

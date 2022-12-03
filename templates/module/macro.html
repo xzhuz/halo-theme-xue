@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html
-  th:fragment="html (content)"
+  th:fragment="html (title, content)"
   lang="zh"
   class="m-0 h-full p-0 text-base sm:text-sm"
 >
   <head>
     <meta charset="UTF-8" />
-    <meta name="keywords" content="${meta_keywords!}" />
-    <meta name="description" content="${meta_description!}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <title th:text="${site.title}"></title>
+    <title th:text="${title}"></title>
     <th:block th:replace="module/styles :: styles" />
     <script th:src="@{/assets/js/plugins/jquery.min.js}"></script>
     <script
