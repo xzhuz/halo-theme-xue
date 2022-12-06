@@ -49,8 +49,7 @@ spec:
         - $formkit: repeater
           name: card_random_cover_list
           label: 随机封面图片列表
-          value:
-            - url:
+          value: []
           children:
             - $formkit: attachment
               name: url

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="module/macro :: html(~{::content})"
+  th:replace="module/macro :: html(title = ${singlePage.spec.title} + ' - ' + ${site.title}, content = ~{::content})"
 >
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
@@ -46,6 +46,7 @@
               group="content.halo.run"
               kind="Post"
               th:attr="name=${singlePage.metadata.name}"
+              colorScheme="localStorage.getItem('theme') || 'dark'"
             />
           </div>
         </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="module/macro :: html(~{::content})"
+  th:replace="module/macro :: html(title = '归档 - ' + ${site.title}, content = ~{::content})"
 >
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
@@ -28,9 +28,7 @@
           <h2
             class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
           >
-            <th:block
-              th:text="${theme.config.title.achieve_title} ? '归档'"
-            />
+            <th:block th:text="${theme.config.title.achieve_title} ? '归档'" />
           </h2>
         </div>
       </header>
