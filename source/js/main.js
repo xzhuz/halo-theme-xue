@@ -188,9 +188,7 @@ const xueContext = {
 
   // 检查目录是否存在
   checkToc: function () {
-    const tocId = "#toc";
     const Obj = $("#tocFlag");
-
     //判断元素是否存在
     return Obj.length === 1;
 
@@ -367,8 +365,7 @@ const xueContext = {
   shareBtn: function () {
     var clipboard = new ClipboardJS('.share-link');
     clipboard.on('success', function (e) {
-      console.log(111)
-      Qmsg.success('Copy article link success.');
+      Qmsg.success('Copy article address succeed.');
       e.clearSelection();
     });
   },
@@ -380,9 +377,7 @@ const xueContext = {
         var $e = $(e)
         var href = $e.attr('href')
         $e.attr('href', href.replace('{url}', url))
-        
         var text = $e.attr('data-clipboard-text')
-
         if (text) {
           $e.attr('data-clipboard-text', url)
         }
@@ -520,16 +515,12 @@ const xueContext = {
         }
       }
       hljs.highlightBlock(el);
+      // 使用最新的行号插件，不需要单独写了
+      hljs.lineNumbersBlock(el);
     });
 
     // 包裹代码块
     wrapPreCode()
-
-    // 设置代码行号
-    $('.md-content  pre>code[class*="language-"]').each(function (i, block) {
-      lineNumbersBlock(block);
-    });
-
 
     // 代码复制按钮
     addCodeCopyBtn();
