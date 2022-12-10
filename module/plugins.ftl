@@ -17,13 +17,10 @@
 
 <#-- 代码高亮-->
 <script src="${theme_base!}/source/highlight.js/highlight.min.js"></script>
-
 <#--其他语言包-->
-<#if settings.more_lang_code!false>
-  <script src="${theme_base!}/source/highlight.js/highlight.lang.js"></script>
-</#if>
+<script src="${theme_base!}/source/highlight.js/highlight.lang.js"></script>
 <#--代码行数-->
-<script src="${theme_base!}/source/highlight.js/linesNumber.js"></script>
+<script src="${theme_base!}/source/highlight.js/highlight-line-numbers.js"></script>
 
 <#--标签云-->
 <script src="${theme_base!}/source/js/plugins/jqcloud-1.0.4.min.js"></script>

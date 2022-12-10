@@ -31,11 +31,13 @@
         </div>
       </div>
     </header>
+    <#--  文章主内容  -->
     <div class="article-content fade-up">
       <div class="mx-auto bg-white dark:bg-gray-800 rounded-md px-10 py-10 md-content mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal heti text-gray-800 dark:text-gray-300"
            id="lightGallery">
         ${post.content!}
         <hr class="bg-gray-100 dark:bg-gray-700 ">
+        <#--  标签  -->
         <div class="flex flex-row justify-between flex-wrap">
           <div class="tag-list leading-9">
             <#if post.tags?? && post.tags?size gt 0>
@@ -53,6 +55,7 @@
               </#list>
             </#if>
           </div>
+          <#--  分享  -->
           <#if settings.allow_share!true>
             <div class="share-items">
               <a class="share-link share-item" href="javascript:;" data-clipboard-text="${post.fullPath!}"

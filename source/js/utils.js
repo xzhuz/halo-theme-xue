@@ -122,23 +122,22 @@ function addCodeCopyBtn() {
   }
   $pre.each(function () {
     let $this = $(this);
-    const $codes = $this.find("code");
-    if ($codes.length <= 0) {
-      return;
-    }
-    var content = $codes[0].innerText
     $this.addClass('line-numbers');
     $this.prepend('<span class="iconfont icon-copy code-copy-btn" title="复制内容"></span><span class="iconfont icon-arrow-down-filling code-expander" title="折叠/展开"></span>');
-
     $this.children('.code-expander').click(() => {
       $this.toggleClass('code-block-close');
     });
 
     new ClipboardJS($this.children('.icon-copy')[0], {
-      text: function() {
-        return content
+      text: () => {
+        // fix copy code with extra \n   https://github.com/xzhuz/halo-theme-xue/issues/324
+        let $code = $($this.find("code[class*='language-']")[0])
+        let codeLines = [...$code.find("td[class*='hljs-ln-code']")]
+        let codeArr = [] 
+        codeLines.forEach(line => codeArr.push(line.innerText))
+        return codeArr.join('\n');
       },
-    }).on("success", () => Qmsg.success("Copy success！"))
+    }).on("success", () => Qmsg.success("Copy succeed！"))
   })
 }
 

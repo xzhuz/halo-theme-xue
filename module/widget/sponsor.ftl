@@ -4,22 +4,30 @@
             <#if settings.QR_code_zfb??>
                 <a href="javascript:;" id="alipay" class="text-xl"
                    style="text-decoration: none !important; box-shadow: none !important;">
-                  <i class="iconfont icon-yooxi hover:text-red-500 text-xl dark:text-gray-300 border-r border-gray-600 dark:border-gray-700 pr-3"></i></a>
+                    <i class="iconfont icon-yooxi hover:text-red-500 text-xl dark:text-gray-300"></i>
+                </a>
+            </#if>
+            <#if settings.QR_code_zfb?? && settings.QR_code_wx??>
+                <i class="border-r border-gray-600 dark:border-gray-700 pl-1.5 mr-1.5"></i>
             </#if>
             <#if settings.QR_code_wx??>
-                <a href="javascript:;" id="wechat" class="pl-3" 
+                <a href="javascript:;" id="wechat" 
                    style="text-decoration: none !important; box-shadow: none !important;">
                   <i class="iconfont icon-wechat hover:text-red-500 text-xl dark:text-gray-300"></i></a>
             </#if>
         </div>
         <#if settings.QR_code_zfb??>
             <div class="qrcode qrcode-alipay hidden p-4 w-56 h-56 z-50 my-4 mx-auto">
-                <img class="fade-down max-h-200 dark:filter-60" src="${settings.QR_code_zfb}">
+                <span style="display: block;" data-fancybox="gallery" href="${settings.QR_code_zfb}">
+                  <img class="fade-down max-h-200 dark:filter-60" src="${settings.QR_code_zfb}">
+                </span>
             </div>
         </#if>
         <#if settings.QR_code_wx??>
             <div class="qrcode qrcode-wechat hidden p-4 w-56 h-56 z-50 my-4 mx-auto">
-                <img class="fade-down max-h-200 dark:filter-60" src="${settings.QR_code_wx}">
+                <span style="display: block;" data-fancybox="gallery" href="${settings.QR_code_wx}">
+                  <img class="fade-down max-h-200 dark:filter-60" src="${settings.QR_code_wx}">
+                </span>
             </div>
         </#if>
     </section>
