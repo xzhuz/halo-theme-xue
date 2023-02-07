@@ -27,7 +27,7 @@
             th:src="@{/assets/images/loading.gif}"
             class="img-random dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
             th:alt="${post.spec.title}"
-          />
+          />  
         </div>
         <div
           th:if="${#strings.isEmpty(post.spec.cover)} and ${not theme.config.general.enabled_card_random_cover_list}"
