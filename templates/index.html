@@ -96,10 +96,6 @@
           role="navigation"
           aria-label="pagination"
         >
-          <!-- <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
-            <#include "module/widget/pagination.ftl">
-          </@paginationTag> -->
-
           <ul class="pagination-list flex flex-row" id="pagination">
             <li th:if="${posts.hasPrevious()}" class="pagination-previous">
               <span
