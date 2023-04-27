@@ -38,6 +38,13 @@
 - [x] 集成 fancybox 灯箱插件
 - [x] 优化主题稳定性
 
+## 插件适配
+
+- 评论组件：<https://github.com/halo-sigs/plugin-comment-widget>
+- 搜索组件：<https://github.com/halo-sigs/plugin-search-widget>
+- 瞬间：<https://github.com/halo-sigs/plugin-moments>
+- 相册：<https://github.com/halo-sigs/plugin-photos>
+
 ## 更新日志
 
 - 2020-07-05 重构, 简化主题

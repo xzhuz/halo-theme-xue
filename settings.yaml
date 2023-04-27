@@ -132,8 +132,8 @@ spec:
           name: categories_patternimg
           label: 分类页面默认头部图
         - $formkit: attachment
-          name: journals_patternimg
-          label: 日志下文章页面默认头部图
+          name: moments_patternimg
+          label: 瞬间页面默认头部图
         - $formkit: attachment
           name: photos_patternimg
           label: 相册页面默认头部图
@@ -189,10 +189,6 @@ spec:
           label: 友链页面标题
           value: 友链
         - $formkit: text
-          name: jounarls_title
-          label: 日志页面标题
-          value: 日志
-        - $formkit: text
           name: tags_title
           label: 标签页面标题
           value: 标签列表
@@ -204,10 +200,6 @@ spec:
           name: achieve_title
           label: 归档页面标题
           value: 归档
-        - $formkit: text
-          name: photos_title
-          label: 相册页面标题
-          value: 相册
     - group: social
       label: 社交网络
       formSchema:
