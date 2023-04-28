@@ -159,11 +159,12 @@
       </div>
 
       <!-- 上一篇和下一篇 -->
-      <!-- <#if settings.post_nepre!true>
-      <div class="mx-4 md:mx-auto mt-8 max-w-4xl tracking-wider md:leading-relaxed sm:leading-normal">
-        <#include "module/widget/prev_next_page.ftl">
+      <div
+        th:if="${theme.config.post.post_nepre}"
+        class="mx-4 mt-8 max-w-4xl tracking-wider sm:leading-normal md:mx-auto md:leading-relaxed"
+      >
+        <th:block th:replace="~{module/widget/prev_next_page}" />
       </div>
-    </#if> -->
 
       <div
         class="md-content mx-4 mt-8 max-w-4xl tracking-wider sm:leading-normal md:mx-auto md:leading-relaxed"
