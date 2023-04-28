@@ -27,7 +27,7 @@
             th:src="@{/assets/images/loading.gif}"
             class="img-random dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
             th:alt="${post.spec.title}"
-          />  
+          />
         </div>
         <div
           th:if="${#strings.isEmpty(post.spec.cover)} and ${not theme.config.general.enabled_card_random_cover_list}"
@@ -148,12 +148,10 @@
       >
         <th:block th:replace="module/widget/sponsor :: sponsor" />
         <div class="my-4 inline-block text-center">
-          <!-- TODO add display likes support -->
           <span
             role="button"
             class="iconfont icon-heart like-btn relative z-10 inline-block h-full w-28 cursor-pointer rounded-full bg-red-600 py-3 text-white hover:bg-red-500"
-            data-path="/api/content/posts/likes"
-            th:attr="data-count=0"
+            th:attr="data-count=${post.stats.upvote},data-group=content.halo.run,data-plural=posts,data-name=${post.metadata.name}"
           >
           </span>
         </div>
