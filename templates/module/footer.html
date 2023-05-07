@@ -118,7 +118,7 @@
           </div>
 
           <div
-            th:if="${theme.config.other?.TimeStatistics}"
+            th:unless="${#strings.isEmpty(theme.config.other?.TimeStatistics)}"
             class="github-badge"
           >
             <a style="color: #fff" rel="license" href="javascript:void(0)">
@@ -140,7 +140,7 @@
               </span>
             </a>
           </div>
-          <div 
+          <div
             th:if="${theme.config.other?.visit_statistics}"
             class="github-badge"
           >

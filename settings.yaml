@@ -235,10 +235,9 @@ spec:
     - group: other
       label: 其他
       formSchema:
-        - $formkit: text
+        - $formkit: datetime-local
           name: TimeStatistics
           label: 站点运行时间统计
-          help: 填入起始时间，格式：月/日/年 时:分:秒，如08/20/2018 12:00:00
         - $formkit: radio
           name: visit_statistics
           label: 用户访问统计(需要引入不蒜子统计脚本,官网:https://busuanzi.ibruce.info)

@@ -45,7 +45,7 @@
     }
   </script>
 
-  <th:block th:if="${theme.config.other.TimeStatistics}">
+  <th:block th:unless="${#strings.isEmpty(theme.config.other.TimeStatistics)}">
     <script type="text/javascript">
       // 建站时间统计
       function show_date_time() {

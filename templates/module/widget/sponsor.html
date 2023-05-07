@@ -1,5 +1,5 @@
 <section
-  th:if="${theme.config.post.QR_code_zfb} or ${theme.config.post.QR_code_wx}"
+  th:unless="${#strings.isEmpty(theme.config.post.QR_code_zfb)} and ${#strings.isEmpty(theme.config.post.QR_code_wx)}"
   th:fragment="sponsor"
   class="donate my-4 mx-auto inline-block w-56 text-center"
 >
@@ -7,7 +7,7 @@
     class="icon relative z-20 inline-block rounded-full border border-gray-100 bg-white py-3 px-6 dark:border-gray-700 dark:bg-gray-800"
   >
     <a
-      th:if="${theme.config.post.QR_code_zfb}"
+      th:unless="${#strings.isEmpty(theme.config.post.QR_code_zfb)}"
       href="javascript:;"
       id="alipay"
       class="text-xl"
@@ -18,7 +18,7 @@
       ></i
     ></a>
     <a
-      th:if="${theme.config.post.QR_code_wx}"
+      th:unless="${#strings.isEmpty(theme.config.post.QR_code_wx)}"
       href="javascript:;"
       id="wechat"
       class="pl-3"
@@ -30,7 +30,7 @@
     ></a>
   </div>
   <div
-    th:if="${theme.config.post.QR_code_zfb}"
+    th:unless="${#strings.isEmpty(theme.config.post.QR_code_zfb)}"
     class="qrcode qrcode-alipay z-50 my-4 mx-auto hidden h-56 w-56 p-4"
   >
     <img
@@ -39,7 +39,7 @@
     />
   </div>
   <div
-    th:if="${theme.config.post.QR_code_wx}"
+    th:unless="${#strings.isEmpty(theme.config.post.QR_code_wx)}"
     class="qrcode qrcode-wechat z-50 my-4 mx-auto hidden h-56 w-56 p-4"
   >
     <img
