@@ -6,7 +6,7 @@
 
 <p align="center">
 <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/xzhuz/halo-theme-xue?include_prereleases&style=flat-square">
-<a href="https://github.com/halo-dev/halo"><img src="https://img.shields.io/badge/dynamic/yaml?label=Halo&query=$.spec.requires&url=https://raw.githubusercontent.com/halo-sigs/plugin-s3/main/src/main/resources/plugin.yaml&style=flat-square" alt="Halo"/></a>
+<a href="https://github.com/halo-dev/halo"><img src="https://img.shields.io/badge/dynamic/yaml?label=Halo&query=$.spec.requires&url=https://raw.githubusercontent.com/xzhuz/halo-theme-xue/next/theme.yaml&style=flat-square" alt="Halo"/></a>
 </p>
 
 > 此分支是适配 Halo 2.0 的版本，Halo 1.x 请访问 <https://github.com/xzhuz/halo-theme-xue/tree/master>
