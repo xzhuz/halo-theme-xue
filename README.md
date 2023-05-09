@@ -1,14 +1,15 @@
-<h1 style="text-align: center;">Halo Theme Xue</h1>
+# Halo Theme Xue
 
-<p style="text-align: center">
+<p align="center">
 追求个性与至简
 </p>
 
-> 如果大家喜欢这个主题，请多多 star 和 fork。你的 star 和支持就是我的动力
+<p align="center">
+<img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/xzhuz/halo-theme-xue?include_prereleases&style=flat-square">
+<a href="https://github.com/halo-dev/halo"><img src="https://img.shields.io/badge/dynamic/yaml?label=Halo&query=$.spec.requires&url=https://raw.githubusercontent.com/halo-sigs/plugin-s3/main/src/main/resources/plugin.yaml&style=flat-square" alt="Halo"/></a>
+</p>
 
-> If you like this theme. Please star or fork.
-
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/halo-dev/halo?label=halo&style=flat-square)
+> 此分支是适配 Halo 2.0 的版本，Halo 1.x 请访问 <https://github.com/xzhuz/halo-theme-xue/tree/master>
 
 ![截图](./screenshot.png)
 
@@ -22,11 +23,11 @@
 
 ## 预览
 
-  [Preview](https://baozi.fun)
+[Preview](https://demo.halo.run/?preview-theme=theme-xue)
 
 ## 支持的功能
 
-- [x] 适配 Halo 最新 1.5.0 版本
+- [x] 适配 Halo 最新 2.4.0 版本
 - [x] 响应式主题
 - [x] 代码高亮和代码行号
 - [x] 可配置文章目录
