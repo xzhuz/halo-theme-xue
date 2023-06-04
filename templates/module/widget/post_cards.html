@@ -91,13 +91,13 @@
         </div>
         <div class="float-right inline-block">
           <span class="iconfont icon-see2 text-gray-500">
-            <label>0</label>
+            <label th:text="${post.stats.visit}"></label>
           </span>
           <span class="iconfont icon-uqur text-gray-500">
-            <label>0</label>
+            <label th:text="${post.stats.comment}"></label>
           </span>
           <span class="iconfont icon-like text-gray-500">
-            <label>0</label>
+            <label th:text="${post.stats.upvote}"></label>
           </span>
         </div>
       </div>
