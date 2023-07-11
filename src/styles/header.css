@@ -1,0 +1,113 @@
+.nav-list a {
+  text-decoration: none !important;
+}
+.nav-wrapper > .nav {
+  height: 4rem;
+  margin: 0 auto;
+  padding: 0 11%;
+  display: flex;
+  justify-content: space-between;
+}
+._disableScroll {
+  overflow-y: hidden !important;
+}
+.nav-list {
+  top: unset;
+  left: unset;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: initial;
+  background: transparent;
+}
+.nav-list > .list {
+  height: 100%;
+  width: 100%;
+  border-top: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+.nav-list > .list > .item {
+  margin-left: 1.5rem;
+  margin-bottom: 0;
+  border-bottom-color: transparent;
+  justify-content: flex-start;
+}
+.nav-list > .list > .item > .link {
+  border-color: transparent;
+  background: transparent;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  flex-basis: unset;
+  padding: 0.75rem 0 0.5rem;
+  outline: 0;
+}
+.menu-active:after {
+  content: '·';
+  font-weight: 900;
+}
+.nav-lines {
+  opacity: 0;
+}
+.sub-menu-item {
+  padding: 10px 15px;
+  top: 46px;
+  right: -30%;
+  animation: fade-up 0.3s 0.1s ease both;
+  -webkit-animation: fade-up 0.3s 0.1s ease both;
+}
+.sub-menu-item:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff;
+}
+.dark .sub-menu-item:before {
+  border-color: transparent transparent rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+.has-sub:hover .sub-menu-item {
+  display: block;
+}
+.mobile-sidebar {
+  transition: all 0.3s;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+.mobile-sidebar.active {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+.drop-down-menu {
+  transition: 300ms ease;
+}
+.sub-open .drop-down-menu,
+.sub-open ~ .drop-down-menu {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.sub-open .sub-menu,
+.sub-open ~ .sub-menu {
+  display: block !important;
+}
+.dark-btn:before {
+  content: "\e65d";
+  display: inline-block;
+}
+.dark .dark-btn:before {
+  content: "\e663";
+}

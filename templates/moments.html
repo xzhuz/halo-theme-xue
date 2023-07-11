@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(title = |${title} - ${site.title}|, content = ~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(theme.config.head_img.moments_patternimg)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${theme.config.head_img.moments_patternimg}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${title}"
+          />
+        </div>
+
+        <div
+          th:unless="${#strings.isEmpty(theme.config.head_img.moments_patternimg)}"
+          class="placeholder-bg"
+        ></div>
+
+        <div
+          class="index relative flex table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+          >
+            <th:block th:text="${title}"></th:block>
+            <sup th:text="${moments.total}"></sup>
+          </h2>
+        </div>
+      </header>
+      <div
+        class="ct-container cn-pd fade-up is-container mx-auto mt-16 max-w-5xl px-10 tracking-wider sm:leading-normal md:leading-relaxed"
+        id="moreContainer"
+      >
+        <div id="journals">
+          <div class="relative">
+            <div
+              th:each="moment : ${moments.items}"
+              class="min-h-screen slide-up flex flex-col items-center justify-center py-6"
+            >
+              <div
+                class="w-full rounded-2xl border border-gray-300 bg-white py-3 px-5 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div class="flex">
+                  <div class="mr-2">
+                    <img
+                      class="dark:filter-60 no-zoom h-10 w-10 rounded-full"
+                      th:src="${moment.owner.avatar}"
+                      th:alt="${moment.owner.displayName}"
+                    />
+                  </div>
+                  <div>
+                    <div class="flex space-x-1">
+                      <span
+                        class="font-bold text-gray-800 dark:text-gray-300"
+                        th:text="${moment.owner.displayName}"
+                      ></span>
+                      <span class="text-blue-500">
+                        <svg
+                          class="h-5 w-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-label="Verified account"
+                        >
+                          <g>
+                            <path
+                              d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                            ></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="time-ago text-sm leading-4 text-gray-500"
+                      th:attr="data-time=${#dates.format(moment.spec.releaseTime,'yyyy-MM-dd HH:mm')}"
+                      th:text="${#dates.format(moment.spec.releaseTime,'yyyy-MM-dd HH:mm')}"
+                    ></div>
+                  </div>
+                </div>
+                <div class="py-6">
+                  <div
+                    class="md-content text-lg"
+                    id="lightGallery"
+                    th:utext="${moment.spec.content.html}"
+                  ></div>
+                </div>
+                <div
+                  class="flex space-x-5 border-t border-gray-300 pt-3 text-gray-500 dark:border-gray-700"
+                >
+                  <div class="flex space-x-2">
+                    <span
+                      class="iconfont icon-heart like-btn relative inline-block h-full cursor-pointer"
+                      style="font-size: 1.5rem; line-height: 1.6rem"
+                      th:attr="data-count=${moment.stats.upvote},data-group=moment.halo.run,data-plural=moments,data-name=${moment.metadata.name}"
+                      fill="currentColor"
+                    >
+                    </span>
+                  </div>
+                  <div class="flex space-x-2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="comment-btn h-6 w-6 cursor-pointer hover:text-red-300"
+                      th:attr="data-index=${moment.metadata.name}"
+                    >
+                      <g>
+                        <path
+                          d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span th:text="${moment.stats.approvedComment}"></span>
+                  </div>
+                </div>
+                <div
+                  class="hidden space-x-5 pt-3 text-gray-500"
+                  th:id="|comment-${moment.metadata.name}|"
+                >
+                  <halo:comment
+                    group="moment.halo.run"
+                    kind="Moment"
+                    th:attr="name=${moment.metadata.name}"
+                    colorScheme="localStorage.getItem('theme') || 'dark'"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up mx-auto px-10">
+        <nav
+          class="pagination my-8 flex flex-row justify-center"
+          role="navigation"
+          aria-label="pagination"
+        >
+          <div class="pagination-list flex flex-row" id="pagination">
+            <div
+              th:if="${moments.hasNext()}"
+              class="sbtn diag-btn more-btn see-more"
+              role="button"
+              th:attr="data-path=${moments.nextUrl}"
+            >
+              查看更多
+            </div>
+            <p th:unless="${moments.hasNext()}" style="color: #cccccc">
+              ~你已经到底了~
+            </p>
+          </div>
+        </nav>
+      </div>
+    </main>
+  </th:block>
+</html>
