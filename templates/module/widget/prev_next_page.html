@@ -1,0 +1,82 @@
+<div
+  th:with="postCursor = ${postFinder.cursor(post.metadata.name)}"
+  class="entry-navigation mt-10 flex w-full flex-wrap overflow-hidden rounded bg-white shadow-md"
+>
+  <div
+    class="nav previous break-word relative flex min-h-100 w-full flex-col justify-center py-0 px-4 sm:w-6/12"
+  >
+    <th:block th:if="${postCursor.hasPrevious()}">
+      <img
+        th:if="${not #strings.isEmpty(postCursor.previous.spec.cover)}"
+        class="lazyload dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+        th:src="@{/assets/images/loading.gif}"
+        th:attr="data-src=${postCursor.previous.spec.cover}"
+        th:alt="${postCursor.previous.spec.title}"
+      />
+      <span
+        class="relative z-10 pt-8 text-lg font-medium uppercase text-white dark:text-gray-300"
+      >
+        上一篇
+      </span>
+      <h4
+        class="relative z-10 mx-0 mt-1 mb-0 pb-8 text-lg text-white dark:text-gray-300"
+        th:text="${postCursor.previous.spec.title}"
+      ></h4>
+      <a
+        class="absolute bottom-0 left-0 right-0 top-0 z-10 dark:text-gray-300"
+        th:href="@{${postCursor.previous.status.permalink}}"
+      ></a>
+    </th:block>
+    <th:block th:unless="${postCursor.hasPrevious()}">
+      <span
+        class="relative z-10 pt-8 text-lg font-medium uppercase text-white dark:text-gray-300"
+      >
+        上一篇
+      </span>
+      <h4
+        class="relative z-10 mx-0 mt-1 mb-0 pb-8 text-lg text-white dark:text-gray-300"
+      >
+        无
+      </h4>
+    </th:block>
+  </div>
+  <div
+    class="nav next break-word relative flex min-h-100 w-full flex-col items-end justify-center py-0 px-4 text-right sm:w-6/12"
+  >
+    <th:block th:if="${postCursor.hasNext()}">
+      <img
+        th:if="${not #strings.isEmpty(postCursor.next.spec.cover)}"
+        class="lazyload dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+        th:src="@{/assets/images/loading.gif}"
+        th:attr="data-src=${postCursor.next.spec.cover}"
+        th:alt="${postCursor.next.spec.title}"
+      />
+      <span
+        class="relative z-10 pt-8 text-lg font-medium uppercase text-white dark:text-gray-300"
+      >
+        下一篇
+      </span>
+      <h4
+        class="relative z-10 mx-0 mt-1 mb-0 pb-8 text-lg text-white dark:text-gray-300"
+        th:text="${postCursor.next.spec.title}"
+      ></h4>
+      <a
+        class="absolute bottom-0 left-0 right-0 top-0 z-10 dark:text-gray-300"
+        th:href="@{${postCursor.next.status.permalink}}"
+      ></a>
+    </th:block>
+
+    <th:block th:unless="${postCursor.hasNext()}">
+      <span
+        class="relative z-10 pt-8 text-lg font-medium uppercase text-white dark:text-gray-300"
+      >
+        下一篇
+      </span>
+      <h4
+        class="relative z-10 mx-0 mt-1 mb-0 pb-8 text-lg text-white dark:text-gray-300"
+      >
+        无
+      </h4>
+    </th:block>
+  </div>
+</div>

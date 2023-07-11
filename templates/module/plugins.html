@@ -1,0 +1,89 @@
+<th:block th:fragment="plugins">
+  <!-- 代码高亮 -->
+  <script th:src="@{/assets/highlight.js/highlight.min.js}"></script>
+
+  <!-- 代码行数 -->
+  <script th:src="@{/assets/highlight.js/linesNumber.js}"></script>
+
+  <!-- 标签云 -->
+  <script th:src="@{/assets/js/plugins/jqcloud-1.0.4.min.js}"></script>
+
+  <!-- 图片 -->
+  <script th:src="@{/assets/js/plugins/jquery.fancybox.min.js}"></script>
+
+  <!-- 目录 -->
+  <th:block th:if="${theme.config.post.post_toc}">
+    <script th:src="@{/assets/js/plugins/tocbot.min.js}"></script>
+  </th:block>
+
+  <!-- 相册 -->
+  <script th:src="@{/assets/js/plugins/isotope.pkgd.min.js}"></script>
+
+  <!-- 复制按钮 -->
+  <script th:src="@{/assets/js/plugins/clipboard.min.js}"></script>
+
+  <!-- 消息弹出框 -->
+  <script th:src="@{/assets/js/plugins/qmsg.js}"></script>
+
+  <script th:src="@{/assets/js/plugins/scrollreveal.js}"></script>
+
+  <th:block th:if="${theme.config.other.visit_statistics}">
+    <script
+      async
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+  </th:block>
+
+  <script type="text/javascript" th:inline="javascript">
+    function renderTagCloud() {
+      // 标签云
+      var tagCloud = $("#tagCloud");
+      if (!(tagCloud && tagCloud.children().length === 0)) {
+        return;
+      }
+      // 标签
+      var tagArray =
+        /*[[${tagFinder.listAll()}]]*/
+
+        // 标签云
+        tagCloud.jQCloud(
+          tagArray.map((tag) => {
+            return {
+              text: tag.spec.displayName,
+              weight: tag.status.postCount,
+              link: tag.status.permalink,
+            };
+          }),
+          { autoResize: true, delayedMode: true }
+        );
+    }
+
+    function renderCategoryCloud() {
+      // 分类云
+      var categoryCloud = $("#categoryCloud");
+      if (!(categoryCloud && categoryCloud.children().length === 0)) {
+        return;
+      }
+      // 分类
+      var array =
+        /*[[${categoryFinder.listAll()}]]*/
+
+        // 分类云
+        categoryCloud.jQCloud(
+          array.map((category) => {
+            return {
+              text: category.spec.displayName,
+              weight: category.status.postCount,
+              link: category.status.permalink,
+            };
+          }),
+          { autoResize: true, delayedMode: true }
+        );
+    }
+
+    const loadingGif =
+      /*[[${#theme.assets('/assets/images/loading.gif')}]]*/ "";
+  </script>
+
+  <th:block th:utext="${theme.config.other.other_script_file}" />
+</th:block>

@@ -1,0 +1,78 @@
+<th:block th:fragment="script">
+  <!-- 标签云 -->
+  <!-- <script src="${theme_base!}/source/js/jqcloud-1.0.4.min.js"></script> -->
+  <script type="text/javascript" th:inline="javascript">
+    $(function () {
+      renderTagCloud();
+      renderCategoryCloud();
+    });
+  </script>
+
+  <script type="text/javascript">
+    // TODO准备在设置中添加
+    console.log(
+      "%c 很高兴，能在这遇见你！",
+      "background:#24272A; color:#ffffff",
+      ""
+    );
+  </script>
+
+  <th:block th:if="${theme.config.social?.github}">
+    <script type="text/javascript">
+      console.log(
+        "%c Github %c",
+        "background:#24272A; color:#ffffff",
+        "",
+        "[[${theme.config.social?.github}]]"
+      );
+    </script>
+  </th:block>
+
+  <script type="text/javascript" th:inline="javascript">
+    /*[(${theme.config.other.common_js})]*/
+
+    const loading = "[(${#theme.assets('/images/loading-45.svg')})]";
+    var photoList =
+      /*[(${theme.config.general.card_random_cover_list})]*/
+    var photos = photoList.map(photo => photo.url)
+    if (photoList.length > 0) {
+      // 随机排列图片
+      for (let index = 0; index < photos.length; index++) {
+        let randomIndex = Math.floor(Math.random() * photos.length);
+        let temp = photos[randomIndex];
+        photos[randomIndex] = photos[index];
+        photos[index] = temp;
+      }
+    }
+  </script>
+
+  <th:block th:if="${theme.config.other.TimeStatistics}">
+    <script type="text/javascript">
+      // 建站时间统计
+      function show_date_time() {
+        if ($("#span_dt_dt").length > 0) {
+          BirthDay = new Date("[[${theme.config.other.TimeStatistics}]]");
+          today = new Date();
+          timeold = today.getTime() - BirthDay.getTime();
+          sectimeold = timeold / 1000;
+          secondsold = Math.floor(sectimeold);
+          msPerDay = 24 * 60 * 60 * 1000;
+          e_daysold = timeold / msPerDay;
+          daysold = Math.floor(e_daysold);
+          e_hrsold = (e_daysold - daysold) * 24;
+          hrsold = Math.floor(e_hrsold);
+          e_minsold = (e_hrsold - hrsold) * 60;
+          minsold = Math.floor((e_hrsold - hrsold) * 60);
+          seconds = Math.floor((e_minsold - minsold) * 60);
+          span_dt_dt.innerHTML =
+            daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        }
+      }
+
+      setInterval("show_date_time()", "1000");
+    </script>
+  </th:block>
+
+  <!-- Pjax 相关代码  -->
+  <th:block th:replace="module/pjax :: pjax" />
+</th:block>

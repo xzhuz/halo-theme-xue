@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(title = |${title} - ${site.title}|, content = ~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(theme.config.head_img.photos_patternimg)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${theme.config.head_img.photos_patternimg}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${title}"
+          />
+        </div>
+
+        <div
+          th:unless="${#strings.isEmpty(theme.config.head_img.photos_patternimg)}"
+          class="placeholder-bg"
+        ></div>
+
+        <div
+          class="index relative flex table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+            th:text="${title}"
+          ></h2>
+        </div>
+      </header>
+      <div
+        class="cn-pd photos-page fade-up mx-auto mt-16 px-10 tracking-wider sm:leading-normal md:leading-relaxed"
+      >
+        <div class="photos-box article-content" id="gallery-content">
+          <div id="gallery-filter">
+            <ul>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  data-filter="*"
+                  class="active bg-box-shadow text-gray-800 dark:text-gray-300"
+                >
+                  全部
+                </a>
+              </li>
+              <li th:each="group : ${photoFinder.groupBy()}">
+                <a
+                  href="javascript:void(0);"
+                  class="bg-box-shadow text-gray-800 dark:text-gray-300"
+                  th:attr="data-filter=|.${group.spec.displayName}|"
+                  th:text="${group.spec.displayName}"
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="gallery masonry-gallery" id="lightGallery">
+            <th:block th:each="group : ${photoFinder.groupBy()}">
+              <figure
+                th:each="photo : ${group.photos}"
+                class="gallery-item col-3"
+                th:classappend="${group.spec.displayName}"
+                th:attr="data-src=${photo.spec.url}"
+              >
+                <header class="gallery-icon">
+                  <span data-fancybox="gallery" th:href="${photo.spec.url}">
+                    <img
+                      class="lazyload dark:filter-60"
+                      th:src="@{/assets/images/loading.gif}"
+                      th:attr="data-src=${photo.spec.url}"
+                      th:alt="${photo.spec.displayName}"
+                    />
+                  </span>
+                </header>
+                <figcaption class="gallery-caption">
+                  <div class="entry-summary">
+                    <h3 th:text="${photo.spec.displayName}"></h3>
+                    <p
+                      th:unless="${#strings.isEmpty(photo.spec.description)}"
+                      th:text="${photo.spec.description}"
+                    ></p>
+                  </div>
+                </figcaption>
+                <p
+                  class="name"
+                  style="display: none"
+                  th:text="${photo.spec.displayName}"
+                ></p>
+              </figure>
+            </th:block>
+          </div>
+        </div>
+      </div>
+    </main>
+  </th:block>
+</html>

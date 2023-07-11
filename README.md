@@ -38,6 +38,13 @@
 - [x] 集成 fancybox 灯箱插件
 - [x] 优化主题稳定性
 
+## 插件适配
+
+- 评论组件：<https://github.com/halo-sigs/plugin-comment-widget>
+- 搜索组件：<https://github.com/halo-sigs/plugin-search-widget>
+- 瞬间：<https://github.com/halo-sigs/plugin-moments>
+- 相册：<https://github.com/halo-sigs/plugin-photos>
+
 ## 更新日志
 
 - 2020-07-05 重构, 简化主题
@@ -52,7 +59,10 @@
 - 2020-10-04 优化细节
 - 2022-02-26 集成tailwindcss，优化css文件、解决一些细节问题
 - 2022-03-19 更新文档、修复一些样式小问题，当前版本趋于稳定
+- 2023-02-07 适配 halo2.0.0
 
+- 2023-07-07 增加点击头像跳转后台,优化header布局,优化备案号间距、图标清晰度,增加控制文章标题（h1 ~ h6）前面的图标显隐功能
+- 2023-07-11 修复元数据显示问题
 ## 安装
 
 请下载最新发布版本，也可以通过 git 仓库直接安装。
