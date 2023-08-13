@@ -38,3 +38,7 @@
     padding: .85rem 0 .85rem;
 }
 
+/*修复移动端菜单太长，无上下滑动的问题*/
+.mobile-sidebar {
+    overflow-y: scroll;
+}
