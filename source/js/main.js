@@ -562,3 +562,26 @@ const xueContext = {
     Object.values(xueContext).forEach(f => f());
   });
 })();
+
+// 当页面滚动时，隐藏顶部菜单栏
+window.addEventListener('wheel', function(event) {  
+  var myElement = document.getElementById('navHeader');  
+  var scrollDistance = event.deltaY > 60 ? 60 : event.deltaY;  
+  var viewportWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;  
+  var viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;  
+  var pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;  
+  
+  if (viewportWidth < 768) {  
+    // 如果视口宽度小于768px，始终显示导航栏  
+    myElement.style.display = 'block';  
+    myElement.style.opacity = '1';  
+  } else if (scrollDistance > 0 && viewportHeight < pageHeight) {  
+    // 如果滚动距离大于0px且页面实时高度大于窗口高度，隐藏导航栏（逐渐消失）  
+    myElement.style.display = 'block';  
+    myElement.style.opacity = '0';  
+  } else {  
+    // 否则，显示导航栏（逐渐出现）  
+    myElement.style.display = 'block';  
+    myElement.style.opacity = '1';  
+  }  
+});
