@@ -34,6 +34,7 @@
 }
 
 /*修复二级菜单消失太快，难以选中的问题*/
-.sub-menu-item {
-    top: 40px;
+.nav-list>.list>.item>.link {
+    padding: .85rem 0 .85rem;
 }
+
