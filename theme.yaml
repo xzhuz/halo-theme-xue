@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/xzhuz/halo-theme-xue
   settingName: theme-xue-setting
   configMapName: theme-xue-configMap
-  version: "2.0.0-beta.2"
+  version: "2.0.0-beta.3"
   requires: ">=2.4.0"
