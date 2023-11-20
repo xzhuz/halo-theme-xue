@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="module/macro :: html(title = '分类：' + ${category.spec.displayName} + ' - ' + ${site.title}, content = ~{::content})"
+  th:replace="~{module/macro :: html(title = '分类：' + ${category.spec.displayName} + ' - ' + ${site.title}, content = ~{::content})}"
 >
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
@@ -39,10 +39,10 @@
         th:classappend="${theme.config.home_setting.posts_style}?'px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl':'px-5 max-w-4xl'"
       >
         <th:block th:if="${theme.config.home_setting.posts_style}">
-          <th:block th:replace="module/widget/post_cards :: post_cards" />
+          <th:block th:replace="~{module/widget/post_cards :: post_cards}" />
         </th:block>
         <th:block th:unless="${theme.config.home_setting.posts_style}">
-          <th:block th:replace="module/widget/post_list :: post_list" />
+          <th:block th:replace="~{module/widget/post_list :: post_list}" />
         </th:block>
         <!-- 分页 -->
         <nav

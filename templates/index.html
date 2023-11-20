@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="module/macro :: html(title = ${site.title},content = ~{::content})"
+  th:replace="~{module/macro :: html(title = ${site.title},content = ~{::content})}"
 >
   <th:block th:fragment="content">
     <main class="mx-auto" id="container">
@@ -66,7 +66,7 @@
             <span class="iconfont icon-new mr-2 text-base text-red-600"></span>
             最新文章
           </h3>
-          <th:block th:replace="module/widget/post_cards :: post_cards" />
+          <th:block th:replace="~{module/widget/post_cards :: post_cards}" />
         </th:block>
         <th:block th:unless="${theme.config.home_setting.posts_style}">
           <div
@@ -87,7 +87,7 @@
             <span class="iconfont icon-new mr-2 text-base text-red-600"></span>
             最新文章
           </h3>
-          <th:block th:replace="module/widget/post_list :: post_list" />
+          <th:block th:replace="~{module/widget/post_list :: post_list}" />
         </th:block>
 
         <!-- 分页 -->

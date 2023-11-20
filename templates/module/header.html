@@ -80,7 +80,7 @@
             class="link fill-current text-gray-800 dark:text-gray-100"
             style="padding-top: 0.8rem"
           >
-            <th:block th:replace="module/dark_mode :: dark_mode" />
+            <th:block th:replace="~{module/dark_mode :: dark_mode}" />
           </span>
           <span
             th:if="${pluginFinder.available('PluginSearchWidget')}"
