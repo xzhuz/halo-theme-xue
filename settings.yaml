@@ -8,6 +8,17 @@ spec:
       label: 通用设置
       formSchema:
         - $formkit: radio
+          name: default_color_scheme
+          label: 默认配色
+          value: system
+          options:
+            - value: system
+              label: 跟随系统
+            - value: dark
+              label: 暗黑
+            - value: light
+              label: 明亮
+        - $formkit: radio
           name: show_logo
           label: LOGO展示
           value: false

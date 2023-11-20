@@ -18,6 +18,10 @@
       th:if="${theme.config.general.pjax_enabled} and ${pluginFinder.available('PluginCommentWidget')}"
       src="/plugins/PluginCommentWidget/assets/static/comment-widget.iife.js"
     ></script>
+
+    <script th:inline="javascript">
+      var defaultColorScheme = [[${theme.config.general.default_color_scheme}]]
+    </script>
   </head>
   <body class="m-0 h-full p-0 font-sans">
     <div class="flex h-full flex-col">

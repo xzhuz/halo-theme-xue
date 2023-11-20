@@ -26,38 +26,43 @@ const xueContext = {
       xueContext.handleNavTheme();
       // 检查本地缓存
       xueContext.checkLocalStorage();
-
-      $("script[data-pjax-comment]").each(function () {
-        const commentParent = $(this).parent();
-        const comment = $(this).remove();
-        commentParent.append(comment);
-      });
     });
   },
 
   // 加载的时候检查深色模式
   loadCheckDarkMode: function () {
     var darkCheckbox = document.querySelector(".darkCheckbox");
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      darkCheckbox.checked = true;
-      $(document.body).addClass("dark");
-    } else if (localStorage.theme === "dark") {
-      darkCheckbox.checked = true;
+
+    const storedColorScheme = localStorage.getItem("theme");
+
+    let actualColorScheme = "";
+
+    if (defaultColorScheme === "system" && !storedColorScheme) {
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        actualColorScheme = "dark";
+      } else {
+        actualColorScheme = "light";
+      }
+    }
+
+    if (storedColorScheme) {
+      actualColorScheme = storedColorScheme;
+    }
+
+    darkCheckbox.checked = actualColorScheme === "dark";
+
+    if (actualColorScheme === "dark") {
       $(document.body).addClass("dark");
     } else {
-      darkCheckbox.checked = false;
       $(document.body).removeClass("dark");
     }
   },
 
   // 检查本地缓存
   checkLocalStorage: function () {
-    if (!localStorage.theme) {
-      localStorage.setItem("theme", "light");
-    }
     if ($(document.body).hasClass("dark")) {
       localStorage.setItem("theme", "dark");
     } else {
