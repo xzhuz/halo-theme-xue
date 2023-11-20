@@ -29,15 +29,15 @@
     </style>
   </th:block>
   
-  <link th:href="@{/assets/css/fonts.css}" rel="stylesheet">
-  <link th:href="@{/assets/css/jqcloud.min.css}" rel="stylesheet">
-  <link th:href="@{/assets/css/heti.min.css}" rel="stylesheet">
-  <link th:href="@{/assets/css/katex.min.css}" rel="stylesheet">
-  <link th:href="@{/assets/css/jquery.fancybox.min.css}" rel="stylesheet">
-  <link th:href="@{/assets/css/qmsg.css}" rel="stylesheet">
+  <link th:href="@{/assets/css/fonts.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
+  <link th:href="@{/assets/css/jqcloud.min.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
+  <link th:href="@{/assets/css/heti.min.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
+  <link th:href="@{/assets/css/katex.min.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
+  <link th:href="@{/assets/css/jquery.fancybox.min.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
+  <link th:href="@{/assets/css/qmsg.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
   
   
-  <link rel="stylesheet" th:href="@{/assets/dist/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}">
   
   <link rel="stylesheet" th:href="@{/assets/highlight.js/styles/atom-one-dark.css}">
 </th:block>

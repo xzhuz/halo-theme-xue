@@ -38,7 +38,7 @@
     </div>
   </body>
   <th:block th:replace="~{module/plugins :: plugins}" />
-  <script th:src="@{/assets/js/utils.js}"></script>
-  <script th:src="@{/assets/js/main.js}"></script>
+  <script th:src="@{/assets/js/utils.js?v={version}(version=${theme.spec.version})}"></script>
+  <script th:src="@{/assets/js/main.js?v={version}(version=${theme.spec.version})}"></script>
   <th:block th:replace="~{module/script :: script}" />
 </html>
