@@ -14,6 +14,11 @@
     <title th:text="${title}"></title>
     <th:block th:replace="~{module/styles :: styles}" />
     <script th:src="@{/assets/js/plugins/jquery.min.js}"></script>
+
+    <script
+      th:src="@{/assets/dist/main.iife.js?v={version}(version=${theme.spec.version})}"
+    ></script>
+
     <script
       th:if="${theme.config.general.pjax_enabled} and ${pluginFinder.available('PluginCommentWidget')}"
       src="/plugins/PluginCommentWidget/assets/static/comment-widget.iife.js"
