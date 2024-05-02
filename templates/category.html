@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="module/macro :: html(title = '分类：' + ${category.spec.displayName} + ' - ' + ${site.title}, content = ~{::content})"
+>
+  <th:block th:fragment="content">
+    <main class="mx-auto" id="container">
+      <header
+        class="fade-down relative z-10 table h-1/2 w-full bg-gray-900 opacity-95"
+      >
+        <div
+          th:if="${not #strings.isEmpty(category.spec.cover)}"
+          class="cover-bg absolute bottom-0 left-0 right-0 top-0 opacity-30"
+        >
+          <img
+            th:src="${category.spec.cover}"
+            class="dark:filter-60 no-zoom absolute left-0 top-0 h-full w-full object-cover"
+            th:alt="${category.spec.displayName}"
+          />
+        </div>
+        <div
+          th:unless="${#strings.isEmpty(category.spec.cover)}"
+          class="placeholder-bg"
+        ></div>
+        <div
+          class="index relative table-cell h-96 w-full justify-center align-middle"
+        >
+          <h2
+            class="relative mb-5 mt-4 w-full text-center text-4xl leading-loose text-white dark:text-gray-300"
+          >
+            <th:block th:text="${category.spec.displayName}" />
+            <sup th:text="${category.status.postCount}"> </sup>
+          </h2>
+        </div>
+      </header>
+      <div
+        th:with="postItems=${posts.items}"
+        class="fade-up mx-auto pt-4"
+        th:classappend="${theme.config.home_setting.posts_style}?'px-5 md:px-0 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl':'px-5 max-w-4xl'"
+      >
+        <th:block th:if="${theme.config.home_setting.posts_style}">
+          <th:block th:replace="module/widget/post_cards :: post_cards" />
+        </th:block>
+        <th:block th:unless="${theme.config.home_setting.posts_style}">
+          <th:block th:replace="module/widget/post_list :: post_list" />
+        </th:block>
+        <!-- 分页 -->
+        <nav
+          class="pagination my-8 flex flex-row justify-center"
+          role="navigation"
+          aria-label="pagination"
+        >
+          <!-- <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+          <#include "module/widget/pagination.ftl">
+        </@paginationTag> -->
+          <ul class="pagination-list flex flex-row" id="pagination">
+            <li th:if="${posts.hasPrevious()}" class="pagination-previous">
+              <span
+                class="pagination-circle iconfont icon-left dark:text-gray-300"
+                th:attr="data-path=${posts.prevUrl}"
+              >
+              </span>
+            </li>
+            <li th:if="${posts.hasNext()}" class="pagination-next">
+              <span
+                class="pagination-circle iconfont icon-right dark:text-gray-300"
+                th:attr="data-path=${posts.nextUrl}"
+              >
+              </span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </th:block>
+</html>
